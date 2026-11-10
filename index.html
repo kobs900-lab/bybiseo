@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>영업비서 · 고객 탭 UX/UI 리디자인</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--ink:#15171c;--sub:#5d6371;--line:#e2e5ea;--accent:#2563eb;--accent-soft:#e8f0fe}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",sans-serif;word-break:keep-all}
+main{max-width:880px;margin:0 auto;padding:56px 20px 80px}
+header{margin-bottom:28px}
+.eyebrow{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px}
+h1{margin:0;font-size:28px;letter-spacing:-.5px}
+.lead{margin:8px 0 0;color:var(--sub);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 6px 20px rgba(20,24,40,.04)}
+.badge{display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;border-radius:8px;padding:3px 9px;background:var(--accent-soft);color:var(--accent)}
+.card h2{margin:0;font-size:20px;letter-spacing:-.3px}
+.card p{margin:0;color:var(--sub);font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;font-size:14.5px;border-radius:12px;padding:12px 16px;background:var(--ink);color:#fff;transition:opacity .15s}
+.btn:hover{opacity:.88}
+.btn.primary{background:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:6px;padding-top:4px;border-top:1px solid var(--line)}
+.links a{text-decoration:none;font-size:12.5px;font-weight:600;color:var(--sub);background:var(--bg);border-radius:8px;padding:5px 10px}
+.links a:hover{background:var(--accent-soft);color:var(--accent)}
+.note{margin-top:24px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);color:var(--sub);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">영업비서 모바일 CRM · 고객 관리 리디자인</div>
+    <h1>UX 분석 &amp; 디자인 시안</h1>
+    <p class="lead">모든 프로토타입 데이터는 가상 데이터로 구성되어 있으며, 실제 고객 개인정보 캡처는 배포본에서 제외되어 있습니다.</p>
+  </header>
+
+  <div class="grid">
+    <section class="card">
+      <span class="badge">문서 1 · 현황 분석 &amp; 화면 기획서</span>
+      <h2>고객 메뉴 UX 분석</h2>
+      <p>정보 구조도(IA), AS-IS 와이어프레임, 화면/컴포넌트 기획서(의견 입력), 개선 제안 1·2 프로토타입, 데이터 흐름 및 문제점 50건 정리</p>
+      <a class="btn primary" href="./고객메뉴_분석/영업비서_고객메뉴_분석.html">분석 · 기획서 열기 →</a>
+      <div class="links">
+        <a href="./고객메뉴_분석/영업비서_고객메뉴_분석.html#ia">① 서비스 구조도</a>
+        <a href="./고객메뉴_분석/영업비서_고객메뉴_분석.html#as">② 현황 AS-IS</a>
+        <a href="./고객메뉴_분석/영업비서_고객메뉴_분석.html#plan">③ 개선 기획</a>
+        <a href="./고객메뉴_분석/영업비서_고객메뉴_분석.html#tobe">④ 개선 디자인</a>
+        <a href="./고객메뉴_분석/영업비서_고객메뉴_분석.html#data">⑤ 데이터 흐름</a>
+        <a href="./고객메뉴_분석/영업비서_고객메뉴_분석.html#list">⑥ 문제점 목록</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <span class="badge">문서 2 · 인터랙티브 시안 7종</span>
+      <h2>Astryx 디자인 시안 (A~G)</h2>
+      <p>Meta Astryx 디자인 시스템(v0.7.4) 실제 컴포넌트와 테마 7종을 적용한 인터랙티브 고객 탭 프로토타입 및 비교표</p>
+      <a class="btn" href="./영업비서_고객탭_Astryx_시안.html">Astryx 시안 열기 →</a>
+      <div class="links">
+        <a href="./영업비서_고객탭_Astryx_시안.html#ov">개요</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#A">A. 파이프라인</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#B">B. 오늘 할 일</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#C">C. AI 브리핑</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#D">D. 고밀도</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#E">E. 현장 중심</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#F">F. 대화형</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#G">G. 다크 현장</a>
+        <a href="./영업비서_고객탭_Astryx_시안.html#cmp">비교</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="note">
+    <strong>참고:</strong> 「고객 메뉴 UX 분석」의 ②번 탭은 개인정보 보호를 위해 실제 캡처 이미지(PNG)가 배포본에 포함되지 않으므로, 상단 전환 스위치에서 <b>인터랙티브 와이어프레임</b> 모드로 확인하실 수 있습니다.
+  </div>
+</main>
+</body>
+</html>

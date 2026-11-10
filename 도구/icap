@@ -1,0 +1,39 @@
+#!/bin/zsh
+# icap — USB로 연결된 아이폰 화면을 원본 해상도 PNG로 캡처
+# 사용법:
+#   icap <앱이름> [화면이름]     예) icap 토스 홈   →  ~/Desktop/앱캡처/토스/01_홈.png
+#   icap status                 연결·개발자모드·터널 상태 점검
+export PYTHONWARNINGS=ignore
+P="$HOME/.venvs/pmd3/bin/pymobiledevice3"
+ROOT="${ICAP_ROOT:-$HOME/Desktop/앱캡처}"
+
+if [[ "$1" == "status" ]]; then
+  echo "▶ USB 연결 기기";        $P usbmux list 2>&1 | grep -E '"(DeviceName|ProductVersion|ProductType|UniqueDeviceID)"' || echo "  (없음 — 케이블·신뢰 확인)"
+  echo "▶ 개발자 모드";          $P amfi developer-mode-status 2>&1 | tail -1
+  echo "▶ iOS17+ 터널(tunneld)"; pgrep -fl "remote tunneld" >/dev/null && echo "  실행 중" || echo "  꺼져 있음 → 다른 터미널에서: sudo $P remote tunneld"
+  exit 0
+fi
+
+[[ -z "$1" ]] && { echo "사용법: icap <앱이름> [화면이름]  |  icap status"; exit 1; }
+APP="$1"; NAME="${2:-screen}"
+DIR="$ROOT/$APP"; [[ "$APP" == "영업비서" && -z "$ICAP_ROOT" ]] && DIR="$HOME/영업비서/고객메뉴_분석"; mkdir -p "$DIR"
+EXIST=( "$DIR"/[0-9][0-9]_*.png(N) )
+N=$(( ${#EXIST} + 1 ))
+OUT="$DIR/$(printf '%02d' $N)_${NAME// /_}.png"
+
+shot() { $P developer dvt screenshot "$@" "$OUT" >/dev/null 2>&1 && [[ -s "$OUT" ]]; }
+
+if shot || shot --tunnel ""; then
+  echo "✅ $OUT"
+  sips -g pixelWidth -g pixelHeight "$OUT" 2>/dev/null | awk '/pixel/{printf "   %s %s\n",$1,$2}'
+  exit 0
+fi
+
+# 개발자 디스크 이미지 마운트 후 재시도
+$P mounter auto-mount >/dev/null 2>&1 || $P mounter auto-mount --tunnel "" >/dev/null 2>&1
+if shot || shot --tunnel ""; then echo "✅ $OUT"; exit 0; fi
+
+rm -f "$OUT"
+echo "❌ 캡처 실패 — 'icap status'로 점검하세요."
+$P developer dvt screenshot --tunnel "" "$OUT" 2>&1 | tail -3
+exit 1

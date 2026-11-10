@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# 민감 정보 · 실제 고객 개인정보 포함 파일 제외
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.MP4
+*.pdf
+고객메뉴_분석/심층분석/*.json
+
+# 이전 리서치 · 임시 작업물 제외
+research/
+_workspace/
+tmp/
+도구/astryx_시안_소스/all.mjs

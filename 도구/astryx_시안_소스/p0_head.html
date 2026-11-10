@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko" data-astryx-theme="neutral" style="color-scheme:light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>영업비서 고객 탭 · Astryx 시안</title>
+<!-- Astryx (MIT, Meta) 0.7.4 — core CSS + 테마 7종 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/core@0.7.4/src/reset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/core@0.7.4/dist/astryx.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-neutral@0.7.4/dist/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-butter@0.7.4/dist/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-y2k@0.7.4/dist/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-stone@0.7.4/dist/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-chocolate@0.7.4/dist/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-matcha@0.7.4/dist/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-gothic@0.7.4/dist/theme.css">
+<!-- 테마별 글꼴 (Google Fonts) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Sarina&family=Poppins:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Albert+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&family=Playwrite+US+Trad&family=Fustat:wght@400;500;600;700&family=Manufacturing+Consent&family=JetBrains+Mono:wght@400;500&display=swap">
+<script type="importmap">
+{"imports":{
+  "react":"https://esm.sh/react@19.2.0",
+  "react/jsx-runtime":"https://esm.sh/react@19.2.0/jsx-runtime",
+  "react-dom":"https://esm.sh/react-dom@19.2.0",
+  "react-dom/client":"https://esm.sh/react-dom@19.2.0/client",
+  "@astryxdesign/core":"https://esm.sh/@astryxdesign/core@0.7.4?external=react,react-dom",
+  "@heroicons/react/24/outline":"https://esm.sh/@heroicons/react@2.2.0/24/outline?external=react",
+  "htm":"https://esm.sh/htm@3.1.1"
+}}
+</script>
+<style>
+/* ---------- 페이지 ---------- */
+html,body{margin:0;background:var(--color-background-body);color:var(--color-text-primary);font-family:var(--font-family-body)}
+*{box-sizing:border-box}
+.ax-page{min-height:100vh}
+.ax-hdr{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--color-background-body) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--color-border)}
+.ax-hdr-in{max-width:1280px;margin:0 auto;padding:12px 24px 0}
+.ax-navtabs{margin-top:8px;overflow-x:auto}
+.ax-main{max-width:1280px;margin:0 auto;padding:28px 24px 80px}
+.ax-boot{padding:60px 24px;text-align:center;color:#666;font:15px/1.6 -apple-system,sans-serif}
+.ax-boot b{display:block;font-size:18px;color:#222;margin-bottom:6px}
+.ax-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.ax-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ax-ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.ax-ovc{background:var(--color-background-body);border-radius:var(--radius-page);padding:10px}
+.ax-common{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.ax-num{display:inline-flex;width:22px;height:22px;border-radius:50%;align-items:center;justify-content:center;background:var(--color-accent);color:var(--color-on-accent);font-size:12px;font-weight:700;flex:none}
+.ax-tblwrap{overflow-x:auto;border:1px solid var(--color-border);border-radius:var(--radius-container)}
+.ax-thb{border:0;background:none;font:inherit;font-weight:700;color:var(--color-text-primary);cursor:pointer;padding:0;text-align:left;white-space:nowrap}
+.ax-thb:hover{text-decoration:underline}
+/* 시안 페이지 */
+.ax-cp{display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:start}
+.ax-cp-phone{position:sticky;top:120px;display:flex;flex-direction:column;gap:14px;align-items:center}
+.ax-jumps{width:375px;display:flex;flex-direction:column;gap:8px}
+.ax-cp-info{min-width:0}
+.ax-sw{background:var(--color-background-body);border-radius:var(--radius-container);padding:14px;display:flex;flex-direction:column;gap:12px;color:var(--color-text-primary);border:1px solid var(--color-border)}
+.ax-swrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ax-swi{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--color-text-secondary)}
+.ax-swi i{width:40px;height:40px;border-radius:var(--radius-element);border:1px solid var(--color-border)}
+.ax-swc{width:26px;height:26px;border-radius:50%;border:2px solid}
+.ax-swtype{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ax-swtype span{font-size:22px;font-weight:600}
+@media(max-width:980px){.ax-cp{grid-template-columns:1fr}.ax-cp-phone{position:static}.ax-2col{grid-template-columns:1fr}}
+@media(max-width:600px){.ax-main{padding:20px 16px 60px}.ax-hdr-in{padding:10px 16px 0}.ax-jumps{width:100%}}
+
+/* ---------- 휴대폰 ---------- */
+.ph{width:375px;height:780px;max-width:calc(100vw - 32px);border:10px solid #121317;border-radius:52px;position:relative;overflow:hidden;background:var(--color-background-body);color:var(--color-text-primary);font-family:var(--font-family-body);box-shadow:0 30px 60px rgba(20,24,40,.22),0 0 0 1px rgba(0,0,0,.4);flex:none}
+.ph-in{position:absolute;inset:0;display:flex;flex-direction:column}
+.ph-sb{height:46px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:6px 28px 0;font:600 15px/1 -apple-system,sans-serif;background:var(--color-background-body);z-index:6}
+.ph-sbi{display:flex;gap:5px;align-items:center}
+.ph-bat{display:inline-block;width:24px;height:11px;border:1.5px solid currentColor;border-radius:3px;position:relative;opacity:.9}
+.ph-bat::after{content:"";position:absolute;inset:1.5px;right:5px;background:currentColor;border-radius:1px}
+.ph-notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:112px;height:32px;background:#000;border-radius:20px;z-index:7}
+.ph-scr{flex:1;overflow-y:auto;overflow-x:hidden;position:relative;scrollbar-width:none;overscroll-behavior:contain}
+.ph-scr::-webkit-scrollbar{display:none}
+.ph-tab{flex:none;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--color-border);background:var(--color-background-surface);padding:6px 6px 22px;z-index:5}
+.ph-tabb{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font:500 10.5px/1.2 var(--font-family-body);color:var(--color-text-secondary);cursor:pointer;padding:4px 0}
+.ph-tabb.on{color:var(--color-text-primary);font-weight:700}
+.ph-home{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:120px;height:5px;border-radius:3px;background:var(--color-text-primary);opacity:.85;z-index:40;pointer-events:none}
+.ph-toast{position:absolute;left:16px;right:16px;bottom:96px;z-index:45;background:var(--color-text-primary);color:var(--color-background-body);border-radius:var(--radius-element);padding:11px 14px;font-size:13px;line-height:1.4;box-shadow:var(--shadow-high);animation:axin .2s ease}
+@keyframes axin{from{opacity:0;transform:translateY(8px)}}
+.ph-sheet-wrap{position:absolute;inset:0;z-index:30;display:flex;flex-direction:column;justify-content:flex-end}
+.ph-dim{position:absolute;inset:0;background:rgba(0,0,0,.38);animation:axfade .2s}
+@keyframes axfade{from{opacity:0}}
+.ph-sheet{position:relative;max-height:72%;background:var(--color-background-popover);border-radius:var(--radius-page) var(--radius-page) 0 0;display:flex;flex-direction:column;box-shadow:var(--shadow-high);animation:axup .24s cubic-bezier(.2,.8,.2,1);padding-bottom:20px}
+.ph-sheet.tall{max-height:88%}
+.ph-sheet.full{height:94%;max-height:94%}
+@keyframes axup{from{transform:translateY(40px);opacity:.4}}
+.ph-grab{width:40px;height:5px;border-radius:3px;background:var(--color-border-emphasized);margin:8px auto 10px;flex:none}
+.ph-sheet-body{flex:1;overflow-y:auto;min-height:0;scrollbar-width:none}
+.ph-sheet-body::-webkit-scrollbar{display:none}
+.ph-sheet-foot{flex:none;padding:12px 16px 0;border-top:1px solid var(--color-border)}
+
+/* ---------- 휴대폰 안 공통 블록 ---------- */
+.ax-head{position:relative;background:var(--color-background-body);padding:6px 16px 10px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--color-border)}
+.ax-head.tight{gap:8px;position:sticky;top:0;z-index:4}
+.ax-pad{padding:8px 16px}
+.ax-scrollx{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;align-items:center;padding-bottom:2px;margin-inline:-16px;padding-inline:16px}
+.ax-scrollx.tight{margin:0;padding:0}
+.ax-scrollx::-webkit-scrollbar{display:none}
+.ax-scrollx>*{flex:none}
+.ax-gsep{font-size:11px;color:var(--color-text-secondary);padding:0 2px 0 8px;white-space:nowrap;border-left:1px solid var(--color-border)}
+.ax-applied{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ax-dot{width:12px;height:12px;border-radius:50%;border:2px solid;display:inline-block}
+.ax-grp{border-top:1px solid var(--color-border)}
+.ax-funnel{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.ax-fun{border:1px solid var(--color-border);background:var(--color-background-card);border-radius:var(--radius-element);padding:8px 2px 7px;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;font-family:var(--font-family-body);color:var(--color-text-primary);position:relative}
+.ax-fun b{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.ax-fun span{font-size:10.5px;color:var(--color-text-secondary);white-space:nowrap}
+.ax-fun::before{content:"";position:absolute;left:8px;right:8px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--c)}
+.ax-fun.on{background:var(--b);border-color:var(--c)}
+.ax-fun.on span{color:var(--color-text-primary);font-weight:600}
+.ax-board{display:flex;gap:10px;overflow-x:auto;padding:4px 16px 24px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ax-col{flex:none;width:220px;scroll-snap-align:start;background:var(--color-background-muted);border-radius:var(--radius-container);padding:10px}
+.ax-detail{min-height:100%;display:flex;flex-direction:column}
+.ax-top{position:sticky;top:0;z-index:4;display:flex;align-items:center;justify-content:space-between;padding:2px 8px;background:var(--color-background-body);min-height:48px}
+.ax-tabs{position:sticky;top:48px;z-index:3;background:var(--color-background-body);padding:0 8px}
+.ax-tabs.scroll{top:0;padding:0 4px}
+.ax-steps{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.ax-stp{display:flex;flex-direction:column;align-items:center;gap:4px;position:relative;font-size:10.5px;color:var(--color-text-secondary);text-align:center}
+.ax-stp::before{content:"";position:absolute;top:11px;left:-50%;right:50%;height:2px;background:var(--color-border)}
+.ax-stp:first-child::before{display:none}
+.ax-stp i{position:relative;z-index:1;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:11px;background:var(--color-background-card);border:2px solid var(--color-border)}
+.ax-stp.done i{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-on-accent)}
+.ax-stp.done::before,.ax-stp.on::before{background:var(--color-accent)}
+.ax-stp.on i{border-color:var(--color-accent);color:var(--color-text-primary);box-shadow:0 0 0 4px var(--color-accent-muted)}
+.ax-stp.on{color:var(--color-text-primary);font-weight:700}
+.ax-abar{position:sticky;bottom:0;z-index:4;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:6px;padding:10px 12px 26px;background:var(--color-background-surface);border-top:1px solid var(--color-border);margin-top:auto}
+.ax-abar.big{grid-template-columns:1fr 1fr;gap:8px}
+.ax-next{display:flex;gap:8px;align-items:flex-start;background:var(--color-accent-muted);border-radius:var(--radius-element);padding:10px 12px}
+.ax-next.sm{padding:8px 10px;gap:6px}
+.ax-quote{display:flex;gap:6px;align-items:flex-start;border-left:3px solid var(--color-accent);padding:2px 0 2px 8px}
+.ax-memo{border:1px solid var(--color-border);border-radius:var(--radius-element);padding:10px 12px;display:flex;flex-direction:column;gap:6px;background:var(--color-background-card)}
+.ax-talk{display:flex;flex-direction:column;gap:6px;padding-top:8px}
+.ax-bub{max-width:85%;border-radius:14px;padding:7px 10px;font-size:13px;line-height:1.45;background:var(--color-background-muted)}
+.ax-bub small{display:block;font-size:10.5px;color:var(--color-text-secondary);margin-bottom:2px}
+.ax-bub.a{align-self:flex-end;background:var(--color-accent-muted)}
+.ax-tl{display:flex;flex-direction:column;gap:12px;position:relative;padding-top:6px}
+.ax-tli{display:grid;grid-template-columns:28px 1fr;gap:10px;position:relative}
+.ax-tli:not(:last-child)::after{content:"";position:absolute;left:13px;top:30px;bottom:-12px;width:2px;background:var(--color-border)}
+.ax-tld{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.ax-kpi{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ax-fab{position:absolute;right:18px;bottom:100px;z-index:8}
+/* D 고밀도 */
+.ax-rowhead{display:flex;justify-content:space-between;padding:8px 16px 4px;font-size:11px;color:var(--color-text-secondary);text-transform:none}
+.ax-rows-wrap{display:flex;flex-direction:column}
+.ax-row{display:flex;gap:10px;align-items:center;padding:9px 16px;border-bottom:1px solid var(--color-border);cursor:pointer;background:var(--color-background-body)}
+.ax-row:hover{background:var(--color-background-muted)}
+.ax-row.sel{background:var(--color-accent-muted)}
+.ax-rowd{width:8px;height:8px;border-radius:50%;flex:none}
+.ax-rowm{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.ax-rowl{display:flex;gap:6px;align-items:baseline;min-width:0}
+.ax-rowl b{font-weight:600;font-size:14.5px;flex:none}
+.ax-rowl span{font-size:12px;color:var(--color-text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ax-rows{font-size:12px;color:var(--color-text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ax-rown{font-size:12px;font-weight:600;color:var(--color-text-accent)}
+.ax-rowr{display:flex;flex-direction:column;align-items:flex-end;flex:none;font-size:12px;font-variant-numeric:tabular-nums}
+.ax-rowr small{font-size:10.5px;color:var(--color-text-secondary)}
+.ax-bulk{position:sticky;bottom:0;z-index:5;display:flex;flex-direction:column;gap:8px;padding:12px 16px;background:var(--color-background-surface);border-top:1px solid var(--color-border);box-shadow:var(--shadow-med)}
+/* E 현장 */
+.ax-sbar{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px;background:var(--color-background-muted)}
+.ax-sbar i{display:block;min-width:3px}
+.ax-legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--color-text-secondary)}
+.ax-legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+/* F 대화 */
+.ax-chat{display:flex;flex-direction:column;min-height:100%}
+.ax-pin{position:sticky;top:48px;z-index:3;display:flex;gap:6px;align-items:center;margin:0 12px;padding:8px 12px;border-radius:var(--radius-element);background:var(--color-accent-muted)}
+.ax-msgs{flex:1;display:flex;flex-direction:column;gap:12px;padding:16px 12px}
+.ax-msg{display:flex;flex-direction:column;gap:3px;max-width:88%}
+.ax-msg.l{align-self:flex-start}.ax-msg.r{align-self:flex-end;align-items:flex-end}.ax-msg.c{align-self:center;align-items:center}
+.ax-at{font-size:10.5px;color:var(--color-text-secondary);padding:0 4px}
+.ax-sys{align-self:center;font-size:11.5px;color:var(--color-text-secondary);background:var(--color-background-muted);border-radius:999px;padding:4px 10px;display:flex;gap:4px;align-items:center;max-width:92%;text-align:center}
+.ax-sys small{opacity:.8}
+.ax-bubl{background:var(--color-background-card);border:1px solid var(--color-border);border-radius:16px 16px 16px 4px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}
+.ax-bubr{background:var(--color-accent);color:var(--color-on-accent);border-radius:16px 16px 4px 16px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}
+.ax-bubr *{color:inherit !important}
+.ax-callb{background:var(--color-background-card);border:1px solid var(--color-border);border-radius:16px 16px 16px 4px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.ax-evt{display:flex;gap:8px;align-items:center;border:1px dashed var(--color-border-emphasized);border-radius:var(--radius-element);padding:8px 12px;font-size:13px}
+.ax-evt div{display:flex;flex-direction:column}
+.ax-evt span{color:var(--color-text-secondary);font-size:12px}
+.ax-evt.pay{border-color:var(--color-border-orange);background:var(--color-background-orange)}
+.ax-composer{position:sticky;bottom:0;z-index:4;padding:8px 12px 26px;background:var(--color-background-surface);border-top:1px solid var(--color-border);display:flex;flex-direction:column;gap:8px}
+/* 결과 시트 */
+.ax-res{display:grid;grid-template-columns:1fr;gap:8px;padding:4px 16px}
+.ax-res.big{grid-template-columns:1fr 1fr}
+.ax-resb{display:flex;gap:10px;align-items:center;text-align:left;border:1px solid var(--color-border);background:var(--color-background-card);color:var(--color-text-primary);border-radius:var(--radius-container);padding:12px;cursor:pointer;font-family:var(--font-family-body)}
+.ax-res.big .ax-resb{flex-direction:column;align-items:flex-start;min-height:104px;padding:14px}
+.ax-resb b{display:block;font-size:15px}
+.ax-res.big .ax-resb b{font-size:17px}
+.ax-resb small{display:block;font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.ax-resi{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--color-background-muted);flex:none}
+.ax-resb.on{border-color:var(--color-accent);box-shadow:0 0 0 2px var(--color-accent) inset;background:var(--color-accent-muted)}
+/* G 다크 */
+.ax-gname{font-family:var(--font-family-heading);font-size:40px;line-height:1.05;font-weight:700;letter-spacing:-.5px}
+.ax-gchips{display:flex;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div id="root"><div class="ax-boot"><b>Astryx 시안을 불러오는 중…</b>인터넷 연결이 필요해요 (jsDelivr · esm.sh · Google Fonts).<br>계속 이 화면이면 네트워크를 확인해 주세요.</div></div>
+<script type="module">
