@@ -20,7 +20,7 @@ await st('as-filter',()=>{A.sheet='filter';renderAs();});
 await st('as-search',()=>{A.sheet=null;A.scr='search';renderAs();});
 for(const id of [1,2,3,4,5]){await st('as-detail-'+id,()=>{asOpen(id);},1100);}
 await st('plan',()=>{showTab('plan');});
-for(const act of ['st:부재중','copen','st:재통화','sheet:filter','sort:관심도','f:own:담당자1','sheet:','clear','go:search','q:신혼집','go:list','open:3','call','res:부재중','sheet:log','logt:방문 상담','sheet:','sheet:edit','sheet:','sheet:more','sheet:del','sheet:','go:add','reset']){await st('pp-'+act,()=>{ppDo(act);},60);}
+for(const act of ['st:부재중','st:재통화','st:전체','sheet:menu','sheet:','sheet:filter','sort:관심도','f:own:담당자1','sheet:','clear','go:search','q:신혼집','go:list','open:3','rx:1','call','res:부재중','sheet:log','logt:방문 상담','sheet:','sheet:edit','sheet:','sheet:stage','sheet:','sheet:mdel:0','sheet:','sheet:more','sheet:del','sheet:','go:add','reset']){await st('pp-'+act,()=>{ppDo(act);},60);}
 await st('plan-group',()=>{document.querySelector('[data-pg="상세"]').click();});
 await st('plan-note',()=>{document.querySelector('[data-pg="전체"]').click();const t=document.querySelector('[data-pn="C05"]');t.value='테스트 의견';t.dispatchEvent(new Event('input',{bubbles:true}));});
 await st('crit-modal',()=>{showTab('list');document.querySelectorAll('#critBox .crit')[1].click();},300);

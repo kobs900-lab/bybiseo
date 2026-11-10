@@ -734,15 +734,26 @@ details.rest table{margin:0 0 6px}
 .pp-jump button.on{background:#111;color:#fff;border-color:#111}
 .pp-jump button b{margin-right:4px}
 .pp-badge{font-weight:800;font-size:12px;background:#111;color:#fff;border-radius:6px;padding:3px 8px}
-.wf3-t6{flex-wrap:nowrap !important;gap:4px !important}
+.wf3-t6{display:grid !important;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px !important}
 .wf3-t6 .wf2-tile{flex:1 1 0 !important;min-width:0 !important;padding:5px 1px;align-items:center;text-align:center}
-.wf3-t6 .wf2-tile small{font-size:9px;letter-spacing:-.6px;white-space:nowrap}
+.wf3-t6 .wf2-tile small{font-size:9px;letter-spacing:-.7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .wf3-t6 .wf2-tile b{font-size:11.5px;letter-spacing:-.3px}
 .asx-ttl{font-size:16px;margin:22px 0 12px;scroll-margin-top:130px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
 .asx-ttl:first-of-type{margin-top:4px}
 .asx-ttl small{font-size:12.5px;font-weight:500;color:var(--mute)}
 .nx-pub{font-size:12.5px;color:var(--mute);margin:0 0 12px}
 @media(max-width:900px){.pp-wrap{grid-template-columns:1fr}.pp-stage{padding:10px}}
+/* 현행 기준 카드 · 유지 점검 */
+.wf3-plat{width:22px;height:22px;border-radius:50%;border:1.5px solid #9e9e9e;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;color:#424242;flex:none;line-height:1}
+.wf3-dots{font-size:9px;letter-spacing:1px;color:#616161;white-space:nowrap}
+.wf3-meta{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;color:#616161;min-width:0;flex-wrap:wrap}
+.wf3-meta span{display:inline-flex;align-items:center;gap:2px;white-space:nowrap}
+.wf3-meta .wf2-i .ic{width:12px;height:12px}
+.wf3-new{font-size:9.5px;font-weight:800;border:1.5px dashed #757575;border-radius:5px;padding:0 5px;color:#424242;white-space:nowrap;flex:none}
+.kp{display:inline-block;font-size:10.5px;font-weight:800;border-radius:5px;padding:1px 6px;white-space:nowrap}
+.kp-k{background:#e8f5e9;color:#1b5e20}.kp-m{background:#e3f2fd;color:#0d47a1}.kp-c{background:#fff3e0;color:#e65100}.kp-n{background:#f3e5f5;color:#4a148c}
+.keep-sum{background:#f6f7f9;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 14px;font-size:13px;line-height:1.7}
+.scard-diff h4 small{font-weight:500;color:var(--mute);margin-left:6px}
 /* 탭 정리 · 현행 비교 (cmp-) */
 .tabs .tab-sep{flex:none;align-self:center;width:1px;height:18px;background:var(--line);margin:0 8px}
 .tabs .tab-lbl{flex:none;align-self:center;font-size:11px;color:var(--mute);white-space:nowrap;margin-right:2px}
@@ -770,8 +781,8 @@ details.rest table{margin:0 0 6px}
 .scard-diff table{width:100%;border-collapse:collapse;font-size:12.5px}
 .scard-diff td{padding:5px 6px;vertical-align:top;border-top:1px solid var(--line);line-height:1.5}
 .scard-diff tr:first-child td{border-top:0}
-.scard-diff td:first-child{color:var(--sub);width:44%}
-.scard-diff td:nth-child(2){width:18px;color:var(--mute)}
+.scard-diff td:first-child{color:var(--ink);width:40%}
+.scard-diff td:nth-child(2){width:46px}
 .cmp-off .pp-asis,.cmp-off .scard-asis,.cmp-off .scard-diff{display:none}
 .cmp-off .pp-wrap.pp-cmp{grid-template-columns:auto minmax(0,1fr)}
 .cmp-off .scard-b.scard-cmp{grid-template-columns:auto 1fr}
@@ -869,7 +880,7 @@ details.rest table{margin:0 0 6px}
   <div class="cmp-bar"><label class="asx-sw"><input type="checkbox" id="cmpSw" checked><span class="asx-tg"></span>현행과 나란히 보기</label><span>켜 두면 프로토타입과 화면 기획서 옆에 지금 앱의 같은 화면이 함께 보입니다</span></div>
   <div class="sec" id="ppSec" style="border-color:#111">
     <h2>개선 기획 — 눌러 보는 프로토타입</h2>
-    <p class="lead">아래 화면 기획서(SCR-01~09)를 하나로 이은 흑백 프로토타입입니다. 상태 · 필터 · 검색 · 카드 · 상세 · 통화 결과 · 기록 · 수정 · 삭제까지 <b>모든 영역을 눌러 볼 수 있습니다.</b> 화면을 옮기면 왼쪽의 현행 화면도 같이 바뀝니다. 데이터는 전부 가상이며 새로고침하면 처음으로 돌아갑니다.</p>
+    <p class="lead">아래 화면 기획서(SCR-01~09)를 하나로 이은 흑백 프로토타입입니다. 상태 · 필터 · 검색 · 카드 · 상세 · 통화 결과 · 기록 · 수정 · 삭제까지 <b>모든 영역을 눌러 볼 수 있습니다.</b> <b>현행 화면의 정보는 모두 남기고</b> 위치와 형태만 다듬었으며, 새로 넣은 것은 「추가 제안」으로 표시했습니다. 화면을 옮기면 왼쪽의 현행 화면도 같이 바뀝니다. 데이터는 전부 가상이며 새로고침하면 처음으로 돌아갑니다.</p>
     <div class="pp-wrap pp-cmp" id="ppBox">
       <div class="pp-asis"><div class="pp-colh"><i>현행</i>실제 앱 · 같은 화면</div><div id="ppAsis"></div></div>
       <div><div class="pp-colh"><i class="new">개선</i>프로토타입 · 눌러 보기</div><div class="pp-stage"><div class="pp-phone" id="ppPhone"></div></div></div>
@@ -878,7 +889,8 @@ details.rest table{margin:0 0 6px}
   </div>
   <div class="sec" style="border-color:#111">
     <h2>개선 기획 — 화면 기획서</h2>
-    <p class="lead">추천 방향을 <b>IA 구조(고객 관리 → 고객 목록 · 고객 등록 · 고객 상세) 순서</b>의 전체 화면 흑백 와이어프레임으로 정리했습니다. 화면마다 왼쪽에 현행 화면, 가운데에 개선안, 오른쪽에 달라지는 점을 두었습니다. 화면 오른쪽 표의 <b>컴포넌트</b> 버튼을 누르면 아래 컴포넌트 상세로 이동해, 이 자리에 맞는 최적의 컴포넌트인지 확인하실 수 있습니다. 화면 · 컴포넌트마다 의견 칸이 있고 이 브라우저에 자동 저장됩니다.</p>
+    <p class="lead">추천 방향을 <b>IA 구조(고객 관리 → 고객 목록 · 고객 등록 · 고객 상세) 순서</b>의 전체 화면 흑백 와이어프레임으로 정리했습니다. <b>현행 화면에서 출발합니다.</b> 현행 요소는 모두 남기고 위치와 형태만 다듬었으며, 화면마다 왼쪽에 현행 화면, 가운데에 개선안, 오른쪽에 현행 요소가 어떻게 됐는지 점검표를 두었습니다. 화면 오른쪽 표의 <b>컴포넌트</b> 버튼을 누르면 아래 컴포넌트 상세로 이동해, 이 자리에 맞는 최적의 컴포넌트인지 확인하실 수 있습니다. 화면 · 컴포넌트마다 의견 칸이 있고 이 브라우저에 자동 저장됩니다.</p>
+    <div class="keep-sum" id="keepSum"></div>
     <div class="scr-top"><div class="seg" id="scrBr"></div></div>
     <div id="scrMap"></div>
   </div>
@@ -1503,58 +1515,64 @@ const wbtn=(t,p)=>`<span class="wf2-btn ${p?'p':''}">${t}</span>`;
 const wchip=(t,on)=>`<span class="wf2-chip ${on?'on':''}">${t}</span>`;
 const STG_BASE=[['미지정','296'],['부재중','2,810'],['방문 예약','422'],['가계약','48'],['정계약','15'],['관심없음','2,743']];   // 기본 상태 6개 (웹 기능표 CRM-125 「기본 6개+직접 최대 6개」, CRM-021 담당자별 실적 카드의 6개 항목 기준)
 const STG_CUSTOM=[['재통화','771'],['타현장','253'],['상','564'],['중','761'],['하','2,166'],['아파트먼트','580']];   // 커스텀 상태 — 관리자·소유자가 0~6개 추가, 이름·색상·순서를 직접 정함 (CRM-125 · CRM-126)
-const wTiles=(sel)=>`<div class="wf3-tiles wf3-t6">${STG_BASE.map(([a,b])=>`<div class="wf2-tile ${sel===a?'on':''}"><small>${a}</small><b>${b}</b></div>`).join('')}</div>`;
-const wStatusRow=(sel,open)=>`<div><div class="wf2-row wf2-gap">${wchip('전체 11,430',sel==='전체')}${sel!=='전체'&&!open?wchip(sel,1):''}<span style="flex:1"></span>${wbtn('커스텀 상태 '+STG_CUSTOM.length+(open?' ▴':' ▾'))}</div>${open?`<div class="wf2-row wf2-gap mt">${STG_CUSTOM.map(([k,n])=>wchip(k+' '+n,sel===k)).join('')}</div>`:''}</div>`;
+const STG_SHOW=[...STG_BASE,...STG_CUSTOM];   // 화면에는 나누지 않고 관리자가 정한 순서 그대로 한 번에 보여 준다 (D-17)
+const wTiles=(sel)=>`<div class="wf3-tiles wf3-t6">${STG_SHOW.map(([a,b])=>`<div class="wf2-tile ${sel===a?'on':''}"><small>${a}</small><b>${b}</b></div>`).join('')}</div>`;
+const PLAT_IC={'메타':'∞','네이버':'N','구글':'G','카카오':'K','유튜브':'▶','직접':'직','내 페이지':'내','기타':'·'};   // 실제 디자인에서는 매체 로고
+const wplat=p=>`<span class="wf3-plat" title="유입 매체: ${p}">${PLAT_IC[p]||'·'}</span>`;
+const wdots=n=>`<span class="wf3-dots" title="관심도">${'●'.repeat(n)}${'○'.repeat(3-n)}</span>`;
+const wmeta=(memo,resv,call)=>`<span class="wf3-meta"><span>${wi('edit_note')}${memo}</span><span>${wi('calendar_month')}${resv||'예약 없음'}</span><span>${wi('schedule')}${call||'최근통화 없음'}</span></span>`;
+const wnew='<span class="wf3-new">추가 제안</span>';
 const CAMP=['PH1603','덕소역 더블뷰한강','북오산자이 드포레','윤슬자이','카시아 속초','코르디아서울드래곤시티','디애스턴 한남','르엘 어퍼하우스','소요한남','에테르노 용산','파크사이드','기본 캠페인'];
 const wFilterFull=()=>`<div class="wf2-row wf2-sb">${wc(1)}${wl('필터 · 정렬','b')}<span style="flex:1"></span>${wi('close')}</div>
   <div class="wf2-sec">${wc(2)}${wl('정렬 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${['등록일 최신순','관심도','최근 활동','상태','이름'].map((x,i)=>wchip(x,i===0)).join('')}</div>
-  <div class="wf2-sec">${wc(3)}${wl('담당자 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('전체',1)}${wchip('★ 내 고객')}${wchip('담당자1')}${wchip('담당자2')}${wchip('담당자3')}${wchip('담당자4')}</div>
-  <div class="wf2-sec">${wc(4)}${wl('관심도 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('●●● 상')}${wchip('●●○ 중')}${wchip('●○○ 하')}</div>
-  <div class="wf2-sec">${wc(5)}${wl('플랫폼 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${['메타','네이버','구글','카카오','직접','내 페이지','기타'].map(x=>wchip(x)).join('')}</div>
-  <div class="wf2-sec">${wc(6)}${wl('캠페인(현장) · 여러 개 선택','s')}</div><div class="wf2-search">${wi('search')}${wl('현장 검색','s')}</div><div class="wf2-row wf2-gap mt">${CAMP.map(x=>wchip(x)).join('')}</div>
-  <div class="wf2-sec">${wc(7)}${wl('등록일 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${['전체','오늘','최근 7일','최근 30일','직접설정'].map((x,i)=>wchip(x,i===0)).join('')}</div>
+  <div class="wf2-sec">${wc(3)}${wl('플랫폼 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${['메타','네이버','구글','카카오','직접','내 페이지','기타'].map(x=>wchip(x)).join('')}</div>
+  <div class="wf2-sec">${wc(4)}${wl('캠페인(현장) · 여러 개 선택','s')}</div><div class="wf2-search">${wi('search')}${wl('현장 검색','s')}</div><div class="wf2-row wf2-gap mt">${CAMP.map(x=>wchip(x)).join('')}</div>
+  <div class="wf2-sec">${wc(5)}${wl('등록일 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${['전체','오늘','최근 7일','최근 30일','직접설정'].map((x,i)=>wchip(x,i===0)).join('')}</div>
+  <div class="wf2-sec">${wc(6)}${wl('담당자 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('전체',1)}${wchip('★ 내 고객')}${wchip('담당자1')}${wchip('담당자2')}${wchip('담당자3')}${wchip('담당자4')}</div>
+  <div class="wf2-sec">${wc(7)}${wl('관심도 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('●●● 상')}${wchip('●●○ 중')}${wchip('●○○ 하')}</div>
   <div class="wf2-row wf2-gap mt">${wbtn('초기화')}<span class="grow"></span>${wc(8)}${wbtn('128명 보기',1)}</div>`;
 const PLAN=[
  {g:'목록',id:'C01',t:'목록 헤더',goal:'어디에 있는지와 검색 진입점을 한 줄로.',
   wf:`<div class="wf2-row wf2-sb">${wl('고객','h')}<span class="wf2-row">${wc(1)}${wi('search')}${wc(2)}${wi('more_horiz')}</span></div>`,
   parts:['검색 아이콘 → 전용 검색 화면으로 이동','더보기 → 고객 추가 · 일괄 작업 등 드문 기능'],rules:['스크롤하면 헤더는 고정, 아래 단계 요약은 접힘'],iss:['Q1','L2']},
- {g:'목록',id:'C02',t:'기본 상태 요약',goal:'기본 상태 6개의 고객 수를 한 줄로.',
-  wf:`<div>${wc(1)}${wTiles('미지정')}</div><div class="mt">${wc(2)}${wl('누르면 그 상태만 보기 · 다시 누르면 전체','s')}</div>`,
-  parts:['기본 상태 6개(미지정 · 부재중 · 방문 예약 · 가계약 · 정계약 · 관심없음)를 한 줄 타일로 표시','타일을 누르면 그 상태만 보기, 다시 누르면 전체로 돌아감'],rules:['숫자는 실시간','기본 6개는 웹 기능표 기준(CRM-125 · CRM-021). 이름을 바꿀 수 있는지는 확인 필요'],iss:['S2','L2']},
- {g:'목록',id:'C03',t:'전체 · 커스텀 상태 (처음엔 접힘)',goal:'상태를 빠짐없이 제공하되 처음에는 한 줄만 차지하게.',
-  wf:`<div>${wc(1)}${wStatusRow('전체',0)}</div><div class="mt">${wc(2)}${wStatusRow('재통화',1)}</div>`,
-  parts:['처음에는 「전체」와 「커스텀 상태 n ▾」 버튼만 한 줄로 표시','버튼을 누르면 커스텀 상태가 펼쳐짐 — 기본 6개 + 커스텀 최대 6개 = 최대 12개'],rules:['커스텀 상태를 고른 채 접어도 고른 상태 칩은 남김 (선택이 화면 밖으로 사라지지 않게)','커스텀 상태가 없는 워크스페이스는 버튼을 숨김','상태 이름 · 순서는 관리자가 정한 그대로 표시 — 임의로 묶거나 바꾸지 않음'],iss:['N10','L5','L3','S3']},
- {g:'목록',id:'C04',t:'적용 조건 · 필터 버튼',goal:'지금 건 조건과 필터 진입을 한 줄로.',
-  wf:`<div class="wf2-row wf2-gap">${wc(1)}${wchip('관심도 상 ✕')}${wchip('담당자 담당자1 ✕')}<span class="wf2-link">모두 해제</span><span style="flex:1"></span>${wc(2)}${wbtn(wi('tune')+' 필터·정렬 2',1)}</div>`,
-  parts:['건 조건은 칩으로 남기고 ✕로 바로 해제','오른쪽 「필터·정렬」 버튼 하나에 적용 개수 배지'],rules:['정렬은 기본값(등록일 최신순)이면 따로 보여 주지 않고, 바꿨을 때만 칩으로 표시','정렬 5종은 필터 시트 맨 위 (현재 앱과 같은 위치)'],iss:['F1','L5']},
- {g:'목록',id:'C05',t:'고객 카드',goal:'카드만 보고 다음 행동을 판단할 수 있게.',
-  wf:`<div class="wf2-box"><div class="wf2-row">${wc(1)}<span class="wf2-av"></span><div class="wf2-col">${wl('홍길동','b')}${w(55)}</div>${wc(2)}${wchip('방문 약속')}</div>
+ {g:'목록',id:'C02',t:'상태 타일 (전체 + 최대 12개)',goal:'상태를 나누지 않고 한 번에, 두 줄 안에.',
+  wf:`<div class="wf2-row wf2-gap">${wc(1)}${wchip('전체 11,430')}${wl('상태 12개','s')}</div><div class="mt">${wc(2)}${wTiles('미지정')}</div>`,
+  parts:['「전체」 칩 — 누르면 상태 선택 해제','상태 타일 6칸 × 2줄 — 기본 6개 + 커스텀 최대 6개를 나누지 않고, 관리자가 정한 순서 그대로'],rules:['숫자는 실시간','고른 상태는 진하게 표시되고 항상 화면 안에 있음 (가로로 밀리지 않음)','상태가 6개 이하면 한 줄만 차지','이름과 개수는 설정 그대로 · 이름이 길면 말줄임 (기능표 CRM-125 · CRM-126)'],iss:['S2','L2','N10','L3','S3']},
+ {g:'목록',id:'C03',t:'적용 조건 칩',goal:'지금 무엇을 걸어 놓고 보는지 항상 보이게.',
+  wf:`<div class="wf2-row wf2-gap">${wc(1)}${wchip('관심도 상 ✕')}${wchip('담당자 담당자1 ✕')}${wchip('정렬 관심도 ✕')}${wc(2)}<span class="wf2-link">모두 해제</span></div>`,
+  parts:['필터 시트에서 건 조건과 기본값이 아닌 정렬을 칩으로 표시, ✕로 바로 해제','조건이 둘 이상이면 「모두 해제」'],rules:['조건이 없으면 이 줄은 나타나지 않음','앱을 다시 열어도 조건이 유지되면 반드시 표시'],iss:['L5','F1']},
+ {g:'목록',id:'C04',t:'필터 · 검색 줄',goal:'현행 줄을 그대로 두고, 필터를 걸었는지 보이게.',
+  wf:`<div class="wf2-row wf2-gap" style="flex-wrap:nowrap">${wc(1)}${wbtn(wi('tune')+' 필터·정렬 2',1)}${wc(2)}<div class="wf2-search" style="flex:1;min-width:0">${wi('search')}${wl('이름·전화·현장·메모 검색','s')}</div></div>`,
+  parts:['「필터·정렬」 버튼 — 적용 개수 표시. 정렬 · 플랫폼 · 캠페인(현장) · 등록일 · 담당자 · 관심도가 이 안에 있음','검색창 — 누르면 전용 검색 화면'],rules:['캠페인(현장)을 고르는 곳은 현행처럼 필터 안','정렬은 현행처럼 필터 시트 맨 위'],iss:['F1','L5','Q1']},
+ {g:'목록',id:'C05',t:'고객 카드',goal:'현행 카드의 정보를 하나도 빼지 않고, 잘못 누르지 않게.',
+  wf:`<div class="wf2-box"><div class="wf2-row">${wc(1)}${wplat('네이버')}${wl('B현장','s')}<span style="flex:1"></span>${wl('담당자1 · 11/8','s')}</div>
+      <div class="wf2-row mt">${wc(2)}${wl('김영희','b')}${wdots(3)}<span style="flex:1"></span>${wchip('방문 예약')}</div>
       <div class="wf2-ctx mt">${wc(3)}${wi('wand_stars')}${w(80)}</div>
       <div class="wf2-row gap mt">${wc(4)}${wchip('✦ 예산 7억')}${wchip('✦ 신혼집')}</div>
-      <div class="wf2-row wf2-sb mt">${wc(5)}<span class="wf2-row">${wi('calendar_month')}${wl('11/15 12:00 방문','s')}</span>${wc(6)}${wbtn(wi('call')+' 전화',1)}</div></div>`,
-  parts:['이름 · 현장 · 담당자 · 등록일 (1줄)','단계 배지 — 상태 배지와 전화 버튼을 떨어뜨림','최근 통화 AI 요약 또는 최근 메모 2줄','AI 키워드는 ✦ 표시로 사람이 붙인 태그와 구분 (최대 3개)','다음 일정 · 최근 통화 · 기록 수는 실제 데이터 기준','주 행동 버튼 1개 (단계에 따라 전화 / 문자 / 기록)'],rules:['카드 아무 곳 → 상세, 버튼만 행동'],iss:['L1','L4','L6','N1']},
+      <div class="wf2-row wf2-sb mt">${wc(5)}${wmeta(2,'11/15 12:00','11/8 21:04')}${wc(6)}${wbtn(wi('call')+' 전화',1)}</div></div>`,
+  parts:['유입 매체 아이콘 · 현장명 · 담당자 · 등록일 (현행 1행 그대로)','이름 · 관심도 점 · 상태 배지 (현행 2행 그대로)','최근 메모 한 줄 — 통화가 있으면 AI 요약','AI 키워드 칩 — ✦ 표시로 사람이 붙인 값과 구분','메모 수 · 예약 일정 · 최근 통화 (현행 4행 그대로)','전화 버튼 — 상태 배지 옆에서 카드 아래로 옮김'],rules:['현행 카드의 정보는 하나도 빼지 않음','카드 아무 곳 → 상세, 전화 버튼만 발신','유입 매체는 현행 7개(메타 · 네이버 · 구글 · 카카오 · 직접 · 내 페이지 · 기타). 유튜브 같은 추가 매체는 확인 필요'],iss:['L1','L4','L6','N1']},
  {g:'목록',id:'C06',t:'필터 시트',goal:'현재 필터 항목은 그대로, 선택 방식과 결과 수가 보이게.',
   wf:`<div class="wf2-sheet">${wFilterFull()}</div>`,
-  parts:['헤더 · 닫기','정렬 5종 그대로(등록일 최신순 · 관심도 · 최근 활동 · 상태 · 이름) — 하나 선택','담당자: 「내 고객」 + 실제 담당자','관심도 상 · 중 · 하','플랫폼 7개 그대로','캠페인(현장) 12개 그대로 + 검색','등록일 5개 그대로','적용 버튼에 결과 수 미리 표시'],rules:['섹션 제목 옆에 「여러 개 / 하나」 선택 방식 표기','시트는 하단 탭바 위 레이어 · 탭바 숨김'],iss:['F3','F4','F5','F6','S1']},
+  parts:['헤더 · 닫기','정렬 5개 그대로 (등록일 최신순 · 관심도 · 최근 활동 · 상태 · 이름)','플랫폼 7개 그대로','캠페인(현장) 12개 그대로 + 검색','등록일 5개 그대로','담당자: 현행 「전체」 + 「내 고객」 · 담당자 목록','관심도 상 · 중 · 하','적용 버튼에 결과 수 미리 표시'],rules:['섹션 제목 옆에 「여러 개 / 하나」 선택 방식 표기','시트는 하단 탭바 위 레이어 · 탭바 숨김'],iss:['F3','F4','F5','F6','S1']},
  {g:'목록',id:'C07',t:'검색 화면',goal:'무엇이 왜 걸렸는지 보이는 검색.',
   wf:`<div class="wf2-row gap">${wc(1)}<div class="wf2-search grow">${wi('search')}${wl('하남','s')}</div>${wl('취소','s')}</div>
       <div class="wf2-row gap mt">${wc(2)}${wchip('전체',1)}${wchip('이름')}${wchip('메모')}${wchip('통화 내용')}</div>
-      <div class="wf2-box mt">${wl('홍길동','b')} ${wchip('계약 진행')}<div class="mt">${wc(3)}${wl('메모 일치 · …거주지역 <u>하남</u>…','s')}</div></div>
+      <div class="wf2-box mt">${wl('홍길동','b')} ${wchip('가계약')}<div class="mt">${wc(3)}${wl('메모 일치 · …거주지역 <u>하남</u>…','s')}</div></div>
       <div class="wf2-empty mt">${wc(4)}${wl('「하남」 검색 결과가 없어요','s')}</div>`,
   parts:['전용 화면 · 지우기 · 취소 · 최근 검색어','검색 범위 칩 (녹음 대화 포함 여부 명시)','어느 필드가 일치했는지 표시 + 하이라이트','결과 0건 전용 빈 화면'],rules:['검색은 항상 전체 고객 대상 (숨은 탭 무시)'],iss:['Q1','Q2','Q3','N9']},
  {g:'상세',id:'C08',t:'상세 헤더',goal:'나가기는 하나, 드문 기능은 ⋯ 안으로.',
-  wf:`<div class="wf2-row wf2-sb">${wc(1)}${wi('arrow_back_ios_new')}${wl('홍길동','b')}<span style="flex:1"></span>${wc(2)}${wi('more_horiz')}</div>`,
-  parts:['뒤로(<) 하나만 · 닫기(X) 제거','⋯ 메뉴: 내페이지 공유 · 보류 · 고객 삭제'],rules:['스크롤하면 이름 + 단계 배지만 남는 축소 헤더'],iss:['D9','D10','D2']},
+  wf:`<div class="wf2-row">${wc(1)}${wi('arrow_back_ios_new')}${wl('홍길동','b')}${wchip('가계약')}<span style="flex:1"></span>${wbtn('내페이지 공유',1)}${wc(2)}${wi('more_horiz')}</div>`,
+  parts:['‹ 뒤로 · 이름 · 상태 · 「내페이지 공유」는 현행 그대로','닫기(✕) 자리에 ⋯ 메뉴 (보류 · 고객 삭제) — 뒤로와 역할이 같아서'],rules:['스크롤해도 헤더는 고정 (현행 그대로)'],iss:['D9','D10','D2']},
  {g:'상세',id:'C09',t:'프로필 요약',goal:'이 고객이 누구인지 3줄로.',
-  wf:`<div class="wf2-row">${wc(1)}${wl('홍길동','h')}${wchip('계약 진행')}<span style="flex:1"></span>${wc(2)}${wbtn('수정')}</div>
+  wf:`<div class="wf2-row">${wc(1)}${wl('홍길동','h')}${wchip('가계약')}<span style="flex:1"></span>${wc(2)}${wbtn('수정')}</div>
       <div class="mt">${wc(3)}${wl('●●○ 관심도 중 · A단지 · 담당 김','s')}</div><div>${wl('010-0000-0000 · 유입 메타 광고','s')}</div>`,
   parts:['이름 + 단계 배지','[수정] → 수정 시트 (보기 모드가 기본)','관심도(라벨 포함) · 현장 · 담당자 · 연락처 · 유입 경로'],rules:['이름 · 상태를 화면에서 한 번만 보여 줌'],iss:['D1','D7','D11','N6']},
  {g:'상세',id:'C10',t:'빠른 행동 바',goal:'가장 자주 하는 일을 엄지 한 번에.',
   wf:`<div class="wf2-row gap">${wc(1)}${wbtn(wi('call')+' 전화',1)}${wbtn(wi('sms')+' 문자')}${wbtn(wi('calendar_month')+' 일정')}${wc(2)}${wbtn(wi('edit_note')+' 기록')}</div>`,
   parts:['전화가 주 버튼 (가장 진함)','기록 → 기록 추가 시트'],rules:['공유는 여기에 넣지 않음'],iss:['D9','L6']},
  {g:'상세',id:'C11',t:'단계 진행 바',goal:'어디까지 왔는지 보이되, 함부로 바뀌지 않게.',
-  wf:`<div class="wf2-steps">${['새 문의','연락 중','방문 약속','계약 진행','계약 완료'].map((x,i)=>`<div class="${i<3?'d':i===3?'c':''}"><i></i>${x}</div>`).join('')}</div><div class="mt">${wc(1)}${wl('누르면 「계약 진행으로 바꿀까요?」 확인','s')}</div>`,
-  parts:['단계를 직접 바꿀 때는 확인 대화상자 + 기록에 남김'],rules:['통화 결과 · 입금 기록을 저장하면 단계 변경을 자동 제안'],iss:['S2','D18']},
+  wf:`<div class="wf2-steps">${['미지정','부재중','방문 예약','가계약','정계약'].map((x,i)=>`<div class="${i<3?'d':i===3?'c':''}"><i></i>${x}</div>`).join('')}</div><div class="mt">${wc(1)}${wl('누르면 「가계약으로 바꿀까요?」 확인','s')}</div>`,
+  parts:['단계를 직접 바꿀 때는 확인 대화상자 + 기록에 남김'],rules:['보류 — 현행 구조를 바꾸는 제안이라, 현행 기준을 먼저 맞춘 뒤 다시 검토 (D-16)','통화 결과 · 입금 기록을 저장하면 상태 변경을 자동 제안'],iss:['S2','D18']},
  {g:'상세',id:'C12',t:'다음 할 일 카드',goal:'AI 제안과 일정을 맨 위로.',
   wf:`<div class="wf2-box"><div class="wf2-row">${wl('다음 할 일','b')}</div>
       <div class="wf2-row mt">${wc(1)}${wi('calendar_month')}<div class="wf2-col">${wl('11/15(토) 12:00 방문','s')}${w(40)}</div></div>
@@ -1562,17 +1580,17 @@ const PLAN=[
   parts:['다가오는 일정 (없으면 「첫 통화 걸기」 같은 단계별 기본 할 일)','최근 통화의 AI 제안','바로 실행 버튼'],rules:['단계마다 내용이 바뀜'],iss:['D8','D6','D17']},
  {g:'상세',id:'C13',t:'한눈에 보기',goal:'메모를 뒤지지 않고 핵심 정보 확인.',
   wf:`<div class="wf2-grid">${['연락처','관심도','사는 곳','희망 타입','예산 ✦AI','유입','최근 통화','다음 일정'].map((x,i)=>`<div class="wf2-kv">${i===4?wc(2):i===0?wc(1):''}<small>${x}</small>${w(70)}</div>`).join('')}</div>`,
-  parts:['칸을 누르면 그 항목만 수정 (저장/취소)','AI가 통화에서 뽑은 값은 AI 표시 → 확정하면 일반 값'],rules:['값이 없으면 「아직 몰라요」 · 줄바꿈 허용 (말줄임 금지)'],iss:['D5','D1','N6']},
+  parts:['칸을 누르면 그 항목만 수정 (저장/취소)','AI가 통화에서 뽑은 값은 AI 표시 → 확정하면 일반 값'],rules:['보류 — 현행 구조를 바꾸는 제안이라, 현행 기준을 먼저 맞춘 뒤 다시 검토 (D-16)','값이 없으면 「아직 몰라요」 · 줄바꿈 허용 (말줄임 금지)'],iss:['D5','D1','N6']},
  {g:'상세',id:'C14',t:'계약 정보 카드',goal:'계약 · 입금을 메모가 아닌 구조로.',
   wf:`<div class="wf2-box"><div class="wf2-row wf2-sb">${wl('계약 정보','b')}${wc(1)}${wl('수정 이력 1','s')}</div>
       <div class="wf2-row wf2-sb mt">${wl('호실','s')}${wl('가동 1204호 → 1501호','s')}</div>
       <div class="wf2-row wf2-sb mt">${wl('1차 계약금 1,000만','s')}${wc(2)}${wchip('입금 완료')}</div>
       <div class="wf2-row wf2-sb mt">${wl('2차 계약금 2,500만','s')}${wchip('9/21 예정')}</div></div>`,
-  parts:['호실 · 타입 변경은 이력으로 남김','계약금 회차별 상태 (예정 · 완료 · 지연)'],rules:['가계약 · 계약 완료 단계에서만 노출','삭제는 권한자만'],iss:['D5','D16','D18']},
+  parts:['호실 · 타입 변경은 이력으로 남김','계약금 회차별 상태 (예정 · 완료 · 지연)'],rules:['보류 — 현행 구조를 바꾸는 제안이라, 현행 기준을 먼저 맞춘 뒤 다시 검토 (D-16)','가계약 · 정계약 상태에서만 노출','삭제는 권한자만'],iss:['D5','D16','D18']},
  {g:'상세',id:'C15',t:'통합 기록 타임라인',goal:'메모 · 통화 · 일정 · 입금을 한 줄씩 한곳에.',
   wf:`<div class="wf2-row gap">${wc(1)}${wchip('전체 8',1)}${wchip('통화 2')}${wchip('상담 2')}${wchip('입금 1')}${wchip('메모 3')}</div>
       ${['call|통화 1분 27초|AI 요약','forum|방문 상담|사람','payments|1차 계약금 입금|사람','flag|광고 문의|자동'].map((x,i)=>{const [a,b,c]=x.split('|');return `<div class="wf2-tl">${i===0?wc(2):''}${wi(a)}<div class="wf2-col">${wl(b,'s')}${w(60)}</div>${i===0?wc(3):''}${wchip(c)}</div>`;}).join('')}`,
-  parts:['유형 필터 칩 + 개수','유형 아이콘 + 제목 + 요약 1줄','작성자 배지: 사람 · AI · 자동'],rules:['같은 내용은 한 번만 (메모 · 타임라인 · 통화 섹션 중복 제거)','최근 5개 + 더 보기'],iss:['D4','D7','D12','D13','N1']},
+  parts:['유형 필터 칩 + 개수','유형 아이콘 + 제목 + 요약 1줄','작성자 배지: 사람 · AI · 자동'],rules:['보류 — 현행 구조를 바꾸는 제안이라, 현행 기준을 먼저 맞춘 뒤 다시 검토 (D-16)','같은 내용은 한 번만 (메모 · 타임라인 · 통화 섹션 중복 제거)','최근 5개 + 더 보기'],iss:['D4','D7','D12','D13','N1']},
  {g:'상세',id:'C16',t:'통화 기록 아이템',goal:'AI 요약은 바로, 나머지는 펼쳐서.',
   wf:`<div class="wf2-box"><div class="wf2-row wf2-sb">${wl('9/15 13:03 · 1분 27초','s')}${wc(1)}${wchip('녹음')}</div>
       <div class="wf2-ctx mt">${wl('AI 요약','s')}${w(90)}</div>
@@ -1668,9 +1686,10 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')critClose();});
    ========================================================= */
 const wsb=`<div class="wf3-sbar"><span>9:41</span><span class="wf3-sbi">${wi('signal_cellular_alt')}${wi('wifi')}${wi('battery_full')}</span></div>`;
 const wtab=`<div class="wf3-tabbar">${[['home','홈'],['group','고객'],['calendar_month','일정'],['groups','멤버'],['menu','메뉴']].map(([i,l],k)=>`<span class="${k===1?'on':''}">${wi(i)}${l}</span>`).join('')}</div>`;
-const wcard=(n,name,stage,ctx,kw,when,act)=>`<div class="wf2-box wf3-card">${n?wc(n):''}<div class="wf2-row"><span class="wf2-av"></span><div class="wf2-col">${wl(name,'b')}${w(55)}</div>${wchip(stage)}</div>
-  <div class="wf2-ctx mt">${wi(ctx==='ai'?'wand_stars':'edit_note')}${w(78)}</div>${kw?`<div class="wf2-row wf2-gap mt">${kw.map(k=>wchip('✦ '+k)).join('')}</div>`:''}
-  <div class="wf2-row wf2-sb mt"><span class="wf2-row">${wi('calendar_month')}${wl(when,'s')}</span>${wbtn(wi(act[0])+' '+act[1],1)}</div></div>`;
+const wcard=(n,c)=>`<div class="wf2-box wf3-card">${n?wc(n):''}<div class="wf2-row">${wplat(c.plat)}${wl(c.camp,'s')}<span style="flex:1"></span>${wl(c.own+' · '+c.reg,'s')}</div>
+  <div class="wf2-row mt">${wl(c.name,'b')}${wdots(c.int)}<span style="flex:1"></span>${wchip(c.st)}</div>${c.hit?`<div class="mt">${wl(c.hit,'s')}</div>`:''}
+  <div class="wf2-ctx mt">${wi(c.ctx==='ai'?'wand_stars':'edit_note')}${w(78)}</div>${c.kw?`<div class="wf2-row wf2-gap mt">${c.kw.map(k=>wchip('✦ '+k)).join('')}</div>`:''}
+  <div class="wf2-row wf2-sb mt">${wmeta(c.memo,c.resv,c.call)}${wbtn(wi('call')+' 전화',1)}</div></div>`;
 const wunder=(h)=>`<div class="wf3-under">${h}</div>`;
 /* 현행(실제 앱 캡처)과 나란히 보기 — ③ 개선 기획 공용 */
 const CMPI={};
@@ -1680,59 +1699,65 @@ const cmpBox=(key,a)=>{const i=Math.min(CMPI[key]||0,a.f.length-1),f=a.f[i];
 const SCR=[
  {id:'SCR-01',br:'list',t:'고객 목록',path:'고객 관리 › 고객 목록',entry:'하단 탭 「고객」',
   frame:`${wsb}<div class="wf3-pad">
-    <div class="wf2-row wf2-sb">${wc(1)}${wl('고객 관리','h')}<span style="flex:1"></span>${wi('search')}${wi('more_horiz')}</div>
-    <div class="mt">${wc(2)}${wTiles('')}</div>
-    <div class="mt">${wc(3)}${wStatusRow('전체',0)}</div>
-    <div class="wf2-row wf2-gap mt">${wc(4)}${wchip('관심도 상 ✕')}${wchip('담당자 담당자1 ✕')}<span style="flex:1"></span>${wbtn(wi('tune')+' 필터·정렬 2',1)}</div>
-    <div class="mt">${wcard(5,'홍길동','미지정','memo',null,'광고 문의 · 11/9',['call','전화'])}</div>
-    <div class="mt">${wcard(0,'김영희','방문 예약','ai',['예산 7억','신혼집'],'11/15 12:00 방문',['sms','문자'])}</div>
-    <div class="mt">${wcard(0,'이철수','가계약','ai',null,'2차 계약금 9/21',['edit_note','기록'])}</div>
+    <div class="wf2-row wf2-sb">${wc(1)}${wi('arrow_back_ios_new')}${wl('고객 관리','h')}<span style="flex:1"></span>${wi('menu')}</div>
+    <div class="wf2-row wf2-gap mt">${wc(2)}${wchip('전체 11,430',1)}${wl('상태 12개','s')}</div>
+    <div class="mt">${wTiles('')}</div>
+    <div class="wf2-row wf2-gap mt" style="flex-wrap:nowrap">${wc(3)}${wbtn(wi('tune')+' 필터·정렬 2',1)}<div class="wf2-search" style="flex:1;min-width:0">${wi('search')}${wl('이름·전화·현장·메모 검색','s')}</div></div>
+    <div class="wf2-row wf2-gap mt">${wc(4)}${wchip('관심도 상 ✕')}${wchip('담당자 담당자1 ✕')}</div>
+    <div class="mt">${wcard(5,{plat:'메타',camp:'A현장',own:'담당자1',reg:'11/9',name:'홍길동',int:0,st:'미지정',ctx:'memo',memo:1,resv:'',call:''})}</div>
+    <div class="mt">${wcard(0,{plat:'네이버',camp:'B현장',own:'담당자1',reg:'11/8',name:'김영희',int:3,st:'방문 예약',ctx:'ai',kw:['예산 7억','신혼집'],memo:2,resv:'11/15 12:00',call:'11/8 21:04'})}</div>
+    <div class="mt">${wcard(0,{plat:'구글',camp:'B현장',own:'담당자2',reg:'9/14',name:'이철수',int:3,st:'가계약',ctx:'ai',memo:6,resv:'9/21',call:'9/15 13:03'})}</div>
     <div class="wf3-fab">${wc(6)}${wi('add')}</div></div>${wc(7)}${wtab}`,
-  rows:[[1,'목록 헤더','C01','화면 이름 · 검색 진입 · 더보기'],[2,'기본 상태 요약','C02','기본 상태 6개(미지정 · 부재중 · 방문 예약 · 가계약 · 정계약 · 관심없음)의 고객 수를 한 줄로. 누르면 그 상태만 보기, 다시 누르면 전체'],[3,'전체 · 커스텀 상태','C03','처음에는 접힘 — 「전체」와 「커스텀 상태 n ▾」 버튼만 한 줄. 누르면 커스텀 상태(관리자가 추가한 최대 6개)가 펼쳐짐. 기본 6 + 커스텀 6 = 최대 12개'],[4,'적용 조건 · 필터','C04','건 조건은 칩으로 표시(✕ 해제), 오른쪽에 「필터·정렬」 버튼 하나. 정렬은 기본값이 아닐 때만 칩으로 표시'],[5,'고객 카드','C05','이름 · 상태 · 맥락(AI 요약/메모) · AI 키워드 · 다음 일정 · 주 행동 1개'],[6,'고객 추가','','→ SCR-04 고객 등록'],[7,'하단 탭','','IA 1단계 (홈 · 고객 · 일정 · 멤버 · 메뉴)']]},
- {id:'SCR-02',br:'list',t:'필터 · 정렬',path:'고객 목록 › 필터 · 정렬',entry:'SCR-01 ④ 「필터·정렬」',
-  frame:`${wsb}${wunder(`<div class="wf3-pad">${wl('고객 관리','h')}<div class="mt">${wTiles('')}</div>${wcard(0,'홍길동','미지정','memo',null,'광고 문의',['call','전화'])}</div>`)}
+  rows:[[1,'상단 헤더','C01','현행 그대로 — ‹ 뒤로 · 화면 제목 · ≡ 전체 메뉴(워크스페이스 전환 포함)'],[2,'상태 (전체 + 최대 12개)','C02','「전체」 칩 + 상태 타일 6칸 × 2줄. 기본 6개와 커스텀 최대 6개를 나누지 않고, 관리자가 정한 순서 그대로 한 번에 보여 줌. 누르면 그 상태만 보기, 다시 누르면 전체'],[3,'필터 · 검색 줄','C04','현행 그대로 — 「필터·정렬」 버튼(적용 개수 표시) + 검색창. 캠페인(현장) 선택은 지금처럼 필터 안에 있음. 검색창을 누르면 SCR-03'],[4,'적용 조건 칩','C03','필터나 정렬을 걸었을 때만 나타남. ✕로 바로 해제'],[5,'고객 카드','C05','현행 정보 전부 유지 — 유입 매체 아이콘 · 현장명 · 담당자 · 등록일 / 이름 · 관심도 · 상태 / 최근 메모(통화가 있으면 AI 요약) / AI 키워드 / 메모 수 · 예약 · 최근통화 / 전화'],[6,'+ 버튼','','현행 그대로 → SCR-04 고객 등록'],[7,'하단 탭','','현행 그대로 (홈 · 고객 · 일정 · 멤버 · 메뉴)']]},
+ {id:'SCR-02',br:'list',t:'필터 · 정렬',path:'고객 목록 › 필터 · 정렬',entry:'SCR-01 ③ 「필터·정렬」',
+  frame:`${wsb}${wunder(`<div class="wf3-pad">${wl('고객 관리','h')}<div class="mt">${wTiles('')}</div></div>`)}
     <div class="wf3-sheet">${wFilterFull()}</div>`,
-  rows:[[1,'시트 헤더','C06','탭바를 가리고 위로 올라오는 시트'],[2,'정렬','C06','현재 5개 그대로 (등록일 최신순 · 관심도 · 최근 활동 · 상태 · 이름). 현재 앱처럼 필터 시트 안에 둠'],[3,'담당자','C06','전체 + 「내 고객」 + 실제 담당자 목록'],[4,'관심도','C06','상 · 중 · 하'],[5,'플랫폼','C06','현재 7개 그대로 (메타 · 네이버 · 구글 · 카카오 · 직접 · 내 페이지 · 기타)'],[6,'캠페인(현장)','C06','현재 12개 그대로 + 현장 검색'],[7,'등록일','C06','현재 5개 그대로 (전체 · 오늘 · 최근 7일 · 최근 30일 · 직접설정)'],[8,'결과 보기','C06','적용 전에 결과 수를 미리 표시']]},
- {id:'SCR-03',br:'list',t:'검색',path:'고객 목록 › 검색',entry:'SCR-01 ① 검색 아이콘',
-  frame:`${wsb}<div class="wf3-pad"><div class="wf2-row wf2-gap">${wc(1)}<div class="wf2-search grow">${wi('search')}${wl('하남','s')}${wi('cancel')}</div>${wl('취소','s')}</div>
-    <div class="wf2-row wf2-gap mt">${wc(2)}${wchip('전체',1)}${wchip('이름')}${wchip('전화')}${wchip('메모')}${wchip('통화 내용')}</div>
-    <div class="mt">${wc(3)}${wl('전체 고객에서 3명','s')}</div>
-    ${['메모 일치 · …거주지역 <u>하남</u>…','AI 요약 일치 · …<u>하남</u>에 거주…','통화 내용 일치 · …<u>하남</u>미입니다…'].map((x,i)=>`<div class="wf2-box mt">${i===0?wc(4):''}<div class="wf2-row">${wl(['홍길동','김영희','이철수'][i],'b')}${wchip(['계약 진행','방문 약속','연락 중'][i])}</div><div class="mt">${wl(x,'s')}</div></div>`).join('')}
+  rows:[[1,'시트 헤더','C06','현행 그대로 — 제목 · 닫기. 탭바를 가리고 위로 올라오게'],[2,'정렬','C06','현행 5개 그대로 (등록일 최신순 · 관심도 · 최근 활동 · 상태 · 이름)'],[3,'플랫폼','C06','현행 7개 그대로 (메타 · 네이버 · 구글 · 카카오 · 직접 · 내 페이지 · 기타)'],[4,'캠페인(현장)','C06','현행 12개 그대로 + 현장 검색 추가. 캠페인을 고르는 곳은 지금처럼 여기'],[5,'등록일','C06','현행 5개 그대로 (전체 · 오늘 · 최근 7일 · 최근 30일 · 직접설정)'],[6,'담당자','C06','현행 「전체」 + 「내 고객」 · 담당자 목록 추가'],[7,'관심도','C06','현행 3개 그대로 (상 · 중 · 하)'],[8,'초기화 · 적용','C06','현행 그대로. 적용 버튼에 결과 수를 미리 표시']]},
+ {id:'SCR-03',br:'list',t:'검색',path:'고객 목록 › 검색',entry:'SCR-01 ③ 검색창',
+  frame:`${wsb}<div class="wf3-pad"><div class="wf2-row wf2-gap">${wc(1)}<div class="wf2-search grow">${wi('search')}${wl('신혼집','s')}${wi('cancel')}</div>${wl('취소','s')}</div>
+    <div class="wf2-row wf2-gap mt">${wc(2)}${wchip('전체',1)}${wchip('이름')}${wchip('전화')}${wchip('현장')}${wchip('메모')}${wchip('통화 내용')}</div>
+    <div class="mt">${wc(3)}${wl('전체 고객에서 2명','s')}</div>
+    <div class="mt">${wcard(4,{plat:'네이버',camp:'B현장',own:'담당자1',reg:'11/8',name:'김영희',int:3,st:'방문 예약',ctx:'ai',memo:2,resv:'11/15 12:00',call:'11/8 21:04',hit:'통화 내용 일치 · …예산 7억, <u>신혼집</u> 찾는 중…'})}</div>
     <div class="wf2-empty mt">${wc(5)}${wl('검색 결과 없음 화면 (0건일 때)','s')}</div>
     <div class="mt">${wc(6)}${wl('최근 검색 (검색어 없을 때)','s')}</div></div>`,
-  rows:[[1,'검색창 · 취소','C07','전용 화면 · 지우기 · 취소'],[2,'검색 범위','C07','녹음 대화 포함 여부를 칩으로 명시'],[3,'결과 범위','C07','항상 전체 고객 대상임을 표시'],[4,'결과 아이템','C07','어느 필드가 일치했는지 + 하이라이트'],[5,'0건 화면','C21','「검색 결과가 없어요」 전용 빈 화면'],[6,'최근 검색','C07','검색어가 없을 때']]},
+  rows:[[1,'검색창 · 취소','C07','현행 검색창을 전용 화면으로 · 지우기 · 취소'],[2,'검색 범위','C07','현행 검색 대상(이름 · 전화 · 현장 · 메모 · 통화 내용)을 칩으로 보여 줌. 녹음 대화 전문은 대상이 아님을 표시'],[3,'결과 범위','C07','고른 상태와 상관없이 항상 전체 고객에서 검색'],[4,'결과 카드','C07','현행처럼 목록과 같은 카드 + 어느 항목이 일치했는지 한 줄 추가'],[5,'0건 화면','C21','추가 — 「검색 결과가 없어요」 전용 화면'],[6,'최근 검색','C07','추가 — 검색어가 없을 때']]},
  {id:'SCR-04',br:'add',t:'고객 등록',path:'고객 관리 › + 고객 등록',entry:'SCR-01 ⑥ +',
   frame:`${wsb}<div class="wf3-pad"><div class="wf2-row wf2-sb">${wc(1)}${wl('고객 등록','h')}<span style="flex:1"></span>${wi('close')}</div>
-    <div class="wf3-field mt">${wc(2)}${wl('이름 *','s')}<div class="wf2-input">${w(30)}</div></div>
-    <div class="wf3-field">${wl('연락처 *','s')}<div class="wf2-input">${w(45)}</div></div>
-    <div class="wf3-field">${wl('현장 *','s')}<div class="wf2-input wf2-row wf2-sb">${w(35)}${wi('keyboard_arrow_down')}</div></div>
-    <div class="wf3-field">${wc(3)}${wl('유입 경로','s')}<div class="wf2-row wf2-gap">${wchip('직접',1)}${wchip('메타')}${wchip('네이버')}${wchip('소개')}</div></div>
-    <div class="wf3-field">${wc(4)}${wl('단계','s')}<div class="wf2-row wf2-gap">${wchip('새 문의',1)}${wchip('연락 중')}${wchip('방문 약속')}</div></div>
-    <div class="wf2-grid">${['관심도','담당자','사는 곳','희망 타입'].map((x,i)=>`<div class="wf3-field">${i===0?wc(5):''}${wl(x,'s')}<div class="wf2-input">${w(40)}</div></div>`).join('')}</div>
-    <div class="wf3-field">${wc(6)}${wl('메모','s')}<div class="wf2-input" style="height:40px"></div></div>
-    <div class="wf2-row wf2-gap mt">${wbtn('취소')}<span class="grow"></span>${wc(7)}${wbtn('저장',1)}</div></div>`,
-  rows:[[1,'등록 헤더','','시트 형태 · 닫기'],[2,'필수 입력','','이름 · 연락처 · 현장 (라벨은 「현장」 하나로)'],[3,'유입 경로','','직접 등록 고객도 유입 경로를 남김 (N6)'],[4,'단계','C11','공통 영업 단계 · 현장을 먼저 고르지 않아도 선택 (N8)'],[5,'추가 정보','C13','관심도 · 담당자 · 사는 곳 · 희망 타입 (메모 양식에서 승격)'],[6,'메모','C18','첫 메모'],[7,'저장','C19','필수 입력 전 비활성 · 저장 후 상세로 이동']]},
+    <div class="wf3-field mt">${wc(2)}${wl('이름 *','s')}<div class="wf2-input">${wl('고객 이름 입력','s')}</div></div>
+    <div class="wf3-field">${wl('연락처 *','s')}<div class="wf2-input">${wl('010-0000-0000','s')}</div></div>
+    <div class="wf3-field">${wl('캠페인 (현장) *','s')}<div class="wf2-input wf2-row wf2-sb">${wl('현장 선택','s')}${wi('keyboard_arrow_down')}</div></div>
+    <div class="wf2-grid">${['나이','성별'].map((x,i)=>`<div class="wf3-field">${i===0?wc(3):''}${wl(x,'s')}<div class="wf2-input">${wl('선택 입력','s')}</div></div>`).join('')}</div>
+    <div class="wf2-grid">${['관심도','담당자'].map((x,i)=>`<div class="wf3-field">${i===0?wc(4):''}${wl(x,'s')}<div class="wf2-input wf2-row wf2-sb">${wl('선택','s')}${wi('keyboard_arrow_down')}</div></div>`).join('')}</div>
+    <div class="wf3-field">${wc(5)}${wl('상태','s')}<div class="wf2-input wf2-row wf2-sb">${wl('미지정','s')}${wi('keyboard_arrow_down')}</div></div>
+    <div class="wf3-field">${wc(6)}<span class="wf2-row">${wl('유입 경로','s')}${wnew}</span><div class="wf2-row wf2-gap">${wchip('직접',1)}${wchip('소개')}${wchip('현장 방문')}${wchip('기타')}</div></div>
+    <div class="wf3-field">${wc(7)}${wl('메모','s')}<div class="wf2-input" style="height:40px">${wl('메모 입력 (선택)','s')}</div></div>
+    <div class="wf2-row wf2-gap mt">${wbtn('취소')}<span class="grow"></span>${wc(8)}${wbtn('저장',1)}</div></div>`,
+  rows:[[1,'시트 헤더','','현행 그대로 — 「고객 등록」 · 닫기'],[2,'필수 입력','','현행 그대로 — 이름 · 연락처 · 캠페인(현장)'],[3,'나이 · 성별','','현행 그대로 (선택 입력)'],[4,'관심도 · 담당자','','현행 그대로. 현장을 먼저 고르지 않아도 입력할 수 있게 (N8)'],[5,'상태','C02','현행 그대로 — 설정된 상태 전체에서 선택'],[6,'유입 경로','','추가 제안 — 직접 등록한 고객도 어디서 왔는지 남김 (N6)'],[7,'메모','','현행 그대로 (선택 입력)'],[8,'취소 · 저장','C19','현행 그대로 — 필수 입력 전에는 저장 비활성']]},
  {id:'SCR-05',br:'detail',t:'고객 상세 (전체 스크롤)',path:'고객 관리 › 고객 상세',entry:'SCR-01 ⑤ 고객 카드',
   frame:`${wsb}<div class="wf3-pad">
-    <div class="wf2-row wf2-sb">${wc(1)}${wi('arrow_back_ios_new')}<span style="flex:1"></span>${wi('more_horiz')}</div>
-    <div class="mt"><div class="wf2-row">${wc(2)}${wl('홍길동','h')}${wchip('계약 진행')}<span style="flex:1"></span>${wbtn('수정')}</div><div class="mt">${wl('●●○ 관심도 중 · A단지 · 담당 김','s')}</div><div>${wl('010-0000-0000 · 유입 메타 광고','s')}</div></div>
-    <div class="wf2-row wf2-gap mt">${wc(3)}${wbtn(wi('call')+' 전화',1)}${wbtn(wi('sms')+' 문자')}${wbtn(wi('calendar_month')+' 일정')}${wbtn(wi('edit_note')+' 기록')}</div>
-    <div class="mt wf2-row">${wc(4)}<div class="wf2-steps grow">${['새 문의','연락 중','방문','계약 진행','완료'].map((x,i)=>`<div class="${i<3?'d':i===3?'c':''}"><i></i>${x}</div>`).join('')}</div></div>
-    <div class="wf2-box mt">${wc(5)}${wl('다음 할 일','b')}<div class="wf2-row mt">${wi('calendar_month')}${wl('9/21 2차 계약금 확인','s')}</div><div class="wf2-row mt">${wi('wand_stars')}${w(70)}${wbtn('보내기')}</div></div>
-    <div class="mt">${wc(6)}${wl('한눈에 보기','b')}</div><div class="wf2-grid mt">${['연락처','관심도','사는 곳','희망 타입','예산 ✦','유입','최근 통화','다음 일정'].map(x=>`<div class="wf2-kv"><small>${x}</small>${w(65)}</div>`).join('')}</div>
-    <div class="wf2-box mt">${wc(7)}${wl('계약 정보','b')}<div class="wf2-row wf2-sb mt">${wl('호실','s')}${w(40)}</div><div class="wf2-row wf2-sb mt">${wl('1차 계약금','s')}${wchip('입금 완료')}</div><div class="wf2-row wf2-sb mt">${wl('2차 계약금','s')}${wchip('9/21 예정')}</div></div>
-    <div class="mt">${wc(8)}${wl('기록','b')}</div><div class="wf2-row wf2-gap mt">${wchip('전체 8',1)}${wchip('통화 2')}${wchip('상담 2')}${wchip('입금 1')}${wchip('메모 3')}</div>
-    <div class="wf2-box mt">${wc(9)}<div class="wf2-row wf2-sb">${wi('call')}${wl('통화 1분 27초','s')}<span class="grow"></span>${wchip('AI 요약')}</div><div class="wf2-ctx mt">${w(85)}</div><div class="mt">${wl('AI 제안 · 시간대 요약 · 대화 ▾','s')}</div></div>
-    ${['forum|방문 상담','payments|1차 계약금 입금','flag|광고 문의'].map(x=>{const [a,b]=x.split('|');return `<div class="wf2-tl">${wi(a)}<div class="wf2-col">${wl(b,'s')}${w(55)}</div></div>`;}).join('')}
-    <div class="wf3-more">${wl('기록 4개 더 보기','s')}</div>
-    <div class="mt">${wc(10)}${wl('기술 정보 · 리드 ID','s')}</div></div>`,
-  rows:[[1,'상세 헤더','C08','뒤로 하나 · ⋯(공유 · 보류 · 삭제) — 스크롤 시 이름+단계만 남는 축소 헤더'],[2,'프로필 요약','C09','이름 · 단계 · 관심도 · 현장 · 담당자 · 연락처 · 유입. [수정] → SCR-08'],[3,'빠른 행동 바','C10','전화(주) · 문자 · 일정 · 기록. 전화 → 통화 후 SCR-06, 기록 → SCR-07'],[4,'단계 진행 바','C11','현재 단계 표시 · 직접 변경 시 확인'],[5,'다음 할 일','C12','다가오는 일정 + AI 제안 + 바로 실행. 단계마다 내용이 바뀜'],[6,'한눈에 보기','C13','핵심 정보 8칸 · 칸을 누르면 그 항목만 수정'],[7,'계약 정보','C14','가계약 · 계약 완료 단계에서만 노출 · 수정 이력'],[8,'기록 필터','C15','통화 · 상담 · 입금 · 메모 유형별 개수'],[9,'통화 기록 아이템','C16','AI 요약은 바로, 제안 · 대화는 펼쳐서 · 출처 라벨'],[10,'기술 정보','','리드 ID 등은 맨 아래에 접어 둠 (삭제 버튼은 두지 않음)']]},
+    <div class="wf2-row">${wc(1)}${wi('arrow_back_ios_new')}${wl('이철수','b')}${wchip('가계약')}<span style="flex:1"></span>${wbtn('내페이지 공유',1)}${wi('more_horiz')}</div>
+    <div class="wf2-box mt">${wc(2)}<div class="wf2-row">${wplat('구글')}${wl('B현장','s')}<span style="flex:1"></span>${wl('담당자2 · 9/14','s')}</div><div class="wf2-row mt">${wl('이철수','b')}${wdots(3)}<span style="flex:1"></span>${wchip('가계약')}${wbtn(wi('call')+' 전화',1)}</div></div>
+    <div class="wf2-row wf2-gap mt">${wc(3)}${wbtn(wi('sms')+' 문자')}${wbtn(wi('calendar_month')+' 일정')}${wbtn(wi('edit_note')+' 기록')}${wnew}</div>
+    <div class="wf2-box mt">${wc(4)}<div class="wf2-row">${wl('다음 할 일','b')}${wnew}</div><div class="wf2-row wf2-sb mt">${wl('2차 계약금 확인 · 9/21','s')}${wbtn('기록')}</div></div>
+    <div class="wf2-row mt">${wc(5)}${wl('기본 정보','b')}<span style="flex:1"></span>${wl('리드 ID 0000…','s')}${wbtn('수정')}</div>
+    <div class="wf2-grid mt">${['이름','연락처','나이','성별','관심도','담당자','등록일','상태'].map(x=>`<div class="wf2-kv"><small>${x}</small>${w(60)}</div>`).join('')}</div>
+    <div class="wf2-row mt">${wc(6)}${wl('메모','b')}<span style="flex:1"></span>${wl('+ 메모 추가','s')}</div>
+    <div class="wf2-box mt">${w(88)}<div class="mt">${w(60)}</div><div class="wf2-row wf2-sb mt">${wl('담당자2 · 9/16 21:58','s')}<span class="wf2-row">${wi('edit')}${wi('delete')}</span></div></div>
+    <div class="wf2-row mt">${wc(7)}${wl('미팅 예약','b')}<span style="flex:1"></span>${wl('+ 일정 추가','s')}</div>
+    <div class="wf2-box mt"><div class="wf2-row">${wl('9/21','b')}<div class="wf2-col">${wl('방문 일정','b')}${wl('12:00 – 13:00 · 담당자2','s')}</div>${wi('edit')}${wi('delete')}</div></div>
+    <div class="mt">${wc(8)}${wl('AI 통화 요약','b')}</div>
+    <div class="wf2-box mt"><div class="wf2-row wf2-sb">${wi('call')}${wl('9/15 13:03 통화 · 1분 27초 · 담당자2','s')}<span class="grow"></span>${wi('keyboard_arrow_up')}</div><div class="wf2-ctx mt">${wl('AI 요약','s')}${w(55)}</div><div class="wf2-ctx mt">${wl('AI 제안','s')}${w(45)}</div><div class="wf2-row wf2-gap mt">${wchip('✦ 계약금')}${wchip('✦ 34평')}</div><div class="mt">${wl('상세 요약 · 녹음 대화 · 전체 대화 보기 (26건) ▾','s')}</div></div>
+    <div class="mt">${wc(9)}${wl('통화 이력','b')}</div><div class="wf2-tl">${wi('call')}<div class="wf2-col">${wl('9/15 13:03 · 발신 · 1분 27초','s')}</div></div>
+    <div class="mt">${wc(10)}${wl('활동 타임라인','b')}</div>${['edit_note|9/16 21:58 메모','call|9/15 13:03 통화','calendar_month|9/15 일정 등록','flag|9/14 리드 등록'].map(x=>{const [a,b]=x.split('|');return `<div class="wf2-tl">${wi(a)}<div class="wf2-col">${wl(b,'s')}</div></div>`;}).join('')}
+    <div class="mt">${wc(11)}${wl('내페이지 활동','b')}</div><div class="wf2-empty mt">${wl('아직 활동이 없습니다. 내페이지를 공유해보세요.','s')}</div>
+    <div class="mt">${wc(12)}${wl('고객 삭제는 위 ⋯ 메뉴로 이동','s')}</div></div>`,
+  rows:[[1,'고정 헤더','C08','현행 그대로 — ‹ 뒤로 · 이름 · 상태 · 「내페이지 공유」. 뒤로와 역할이 같은 닫기(✕) 자리를 ⋯(보류 · 고객 삭제)로 바꾸는 제안'],[2,'요약 카드','C09','현행 그대로 — 유입 매체 · 현장 · 담당자 · 등록일 / 이름 · 관심도 · 상태 · 전화'],[3,'빠른 행동','C10','추가 제안 — 문자 · 일정 · 기록. 전화 뒤에는 SCR-06, 기록은 SCR-07'],[4,'다음 할 일','C12','추가 제안 — 다가오는 일정과 AI 제안을 한 줄로'],[5,'기본 정보','C19','현행 항목 그대로 (이름 · 연락처 · 나이 · 성별 · 관심도 · 담당자 · 등록일 · 상태) + 리드 ID에 라벨. 누르면 바로 바뀌던 것을 보기 모드로 두고 [수정] → SCR-08. 상태를 바꿀 때는 확인'],[6,'메모','C18','현행 그대로 — + 메모 추가 · 메모 카드 · 작성자 · 시각 · 수정 · 삭제. 삭제에 확인 추가'],[7,'미팅 예약','','현행 그대로 — + 일정 추가 · 방문 일정 카드(날짜 · 시간 · 담당자 · 삭제). 수정 추가'],[8,'AI 통화 요약','C16','현행 그대로 — 통화 카드(일시 · 길이 · 담당자) · AI 요약 · AI 제안 · 키워드 · 상세 요약 · 녹음 대화 · 전체 대화 보기'],[9,'통화 이력','C16','현행 그대로. AI 통화 요약에 있는 통화가 여기에도 보이게 맞춤 (N1)'],[10,'활동 타임라인','C15','현행 그대로 — 메모 · 통화 · 일정 · 리드 등록을 시간순으로'],[11,'내페이지 활동','','현행 그대로'],[12,'고객 삭제','C20','맨 아래 버튼을 ⋯ 메뉴로 옮김 (SCR-09)']]},
  {id:'SCR-06',br:'detail',t:'통화 결과',path:'고객 상세 › 통화 결과',entry:'SCR-05 ③ 전화 → 통화 종료',
   frame:`${wsb}${wunder(`<div class="wf3-pad">${wl('홍길동','h')}<div class="wf2-row wf2-gap mt">${wbtn('전화',1)}${wbtn('문자')}</div>${w(80)}</div>`)}
     <div class="wf3-sheet">${wc(1)}${wl('홍길동님과 통화 어땠나요?','b')}<div class="wf2-grid mt">${['phone_disabled|안 받았어요','replay|다시 걸기로','apartment|방문 약속','do_not_disturb_on|관심 없대요'].map((x,i)=>{const [a,b]=x.split('|');return `<div class="wf2-opt">${i===0?wc(2):i===2?wc(3):''}${wi(a)}${wl(b,'s')}</div>`;}).join('')}</div>
       <div class="wf2-opt mt">${wc(4)}${wi('edit_note')}${wl('상담 내용도 남길래요 → SCR-07','s')}</div>
       <div class="mt">${wc(5)}${wl('방문 약속 선택 시','s')}</div><div class="wf2-row wf2-gap">${wchip('내일')}${wchip('토요일',1)}${wchip('오후 3시',1)}</div>
-      <div class="wf2-toast mt">${wc(6)}${wl('「방문 약속」으로 옮겼어요 · 되돌리기','s')}</div></div>`,
+      <div class="wf2-toast mt">${wc(6)}${wl('상태를 「방문 예약」으로 바꿨어요 · 되돌리기','s')}</div></div>`,
   rows:[[1,'통화 결과 시트','C17','통화가 끝나면 자동으로 뜸'],[2,'안 받았어요','C17','부재 횟수 +1 · 재시도 알림 (N4)'],[3,'방문 약속','C17','날짜 · 시간 칩 → 단계 · 일정 자동'],[4,'상담 내용 남기기','C18','→ SCR-07'],[5,'후속 선택','C17','다시 걸기 → 언제, 방문 약속 → 날짜 · 시간'],[6,'결과 안내','C19','되돌리기 제공']]},
  {id:'SCR-07',br:'detail',t:'기록 추가',path:'고객 상세 › 기록 추가',entry:'SCR-05 ③ 기록 · SCR-06 ④',
   frame:`${wsb}${wunder(`<div class="wf3-pad">${wl('홍길동','h')}${w(70)}</div>`)}
@@ -1752,7 +1777,7 @@ const SCR=[
   frame:`${wsb}${wunder(`<div class="wf3-pad">${wl('홍길동','h')}${w(70)}</div>`)}
     <div class="wf3-sheet"><div class="wf2-li">${wc(1)}${wi('share')}${wl('내페이지 공유','s')}</div><div class="wf2-li">${wc(2)}${wi('do_not_disturb_on')}${wl('보류로 옮기기','s')}</div><div class="wf2-li">${wc(3)}${wi('delete')}${wl('고객 삭제','s')}</div>
       <div class="wf2-box mt">${wc(4)}${wl('홍길동님을 삭제할까요?','b')}<div class="mt">${wl('기록이 모두 사라져요. 보류를 추천해요.','s')}</div><div class="wf2-row wf2-gap mt">${wbtn('보류로 옮기기')}${wbtn('삭제')}</div></div></div>`,
-  rows:[[1,'내페이지 공유','C20','헤더 주 버튼에서 이동'],[2,'보류','C20','연락 중단은 삭제 대신 보류'],[3,'고객 삭제','C20','스크롤 끝에서 이동'],[4,'삭제 확인','C20','보류를 먼저 권함 · 휴지통 보관 기간 안내']]}
+  rows:[[1,'내페이지 공유','C20','헤더에 그대로 두고, 메뉴에서도 열 수 있게'],[2,'보류','C20','연락 중단은 삭제 대신 보류'],[3,'고객 삭제','C20','스크롤 끝에서 이동'],[4,'삭제 확인','C20','보류를 먼저 권함 · 휴지통 보관 기간 안내']]}
 ];
 /* 화면별 현행 캡처와 달라지는 점 (현행 → 개선) */
 const SCR_ASIS={
@@ -1767,17 +1792,33 @@ const SCR_ASIS={
  'SCR-09':{f:[['06-5i_상세_가계약_하단_삭제','상세 맨 아래']],diff:[['고객 삭제가 스크롤 끝에 일반 카드처럼 있음','⋯ 메뉴 안으로 이동'],['연락을 멈추려면 삭제하거나 그대로 둬야 함','보류 상태 제공'],['삭제 뒤 어떻게 되는지 안내가 없음','휴지통 이동과 보관 기간 안내']]}
 };
 SCR.forEach(s=>{s.asis=SCR_ASIS[s.id];});
+/* 현행 요소 유지 점검 — 현행 캡처의 요소가 개선안에서 어떻게 되는지 하나씩 대조한다.
+   [현행 요소, 처리(유지 · 이동 · 변경 · 추가), 개선안에서의 자리 · 설명] */
+const SCR_KEEP={
+ 'SCR-01':[['‹ 뒤로 · 「고객 관리」 제목','유지','① 헤더'],['≡ 전체 메뉴 (워크스페이스 전환)','유지','① 헤더'],['상태 칩: 전체 + 12개, 고객 수','변경','② 가로로 미는 한 줄 → 「전체」 칩 + 6칸 × 2줄 타일. 개수와 이름은 그대로'],['「전체 13개 ▾」 상태 선택 시트','변경','② 상태가 모두 화면에 보여서 시트를 따로 열 필요가 없음'],['「필터」 버튼','유지','③ 이름을 「필터·정렬」로, 적용 개수 표시'],['검색창 (이름 · 전화 · 현장 · 메모)','유지','③ 누르면 검색 화면(SCR-03)'],['카드: 유입 매체 아이콘','유지','⑤ 1행 맨 앞'],['카드: 현장(캠페인) 이름','유지','⑤ 1행'],['카드: 담당자 · 등록일','유지','⑤ 1행 오른쪽'],['카드: 고객 이름','유지','⑤ 2행'],['카드: 관심도 점','유지','⑤ 2행'],['카드: 상태 배지','유지','⑤ 2행 오른쪽'],['카드: 📞 전화','이동','⑤ 상태 배지 옆 → 카드 아래 오른쪽 (잘못 누름 방지)'],['카드: 최근 메모 한 줄','유지','⑤ 3행. 통화가 있으면 AI 요약'],['카드: AI 키워드 칩','유지','⑤ 4행'],['카드: 메모 수 · 예약 여부 · 최근 통화','유지','⑤ 5행'],['+ 버튼','유지','⑥'],['하단 탭바','유지','⑦'],['(현행에 없음)','추가','④ 적용 조건 칩 — 필터를 건 사실이 목록에 보이게']],
+ 'SCR-02':[['시트 헤더 「필터」 · 닫기','유지','① 이름만 「필터 · 정렬」'],['정렬 5개','유지','② 순서 · 이름 그대로'],['플랫폼 7개','유지','③'],['캠페인(현장) 12개','유지','④ + 현장 검색'],['등록일 5개','유지','⑤'],['담당자 (지금은 「전체」뿐)','유지','⑥ + 「내 고객」 · 담당자 목록'],['관심도 3개','유지','⑦'],['초기화 · 적용','유지','⑧ 적용 버튼에 결과 수'],['하단 탭바가 시트를 가림','변경','① 시트가 탭바 위로 올라옴']],
+ 'SCR-03':[['검색창 (목록 화면 안)','변경','① 전용 검색 화면으로'],['검색 대상: 이름 · 전화 · 현장 · 메모 · 통화 내용','유지','② 범위 칩으로 드러냄'],['고른 상태 칩 줄이 검색 중에도 남음','변경','③ 검색은 항상 전체 고객'],['검색 결과 = 목록과 같은 카드','유지','④ + 일치 항목 한 줄'],['키보드 · 입력 보조 바','유지','기기 기본 동작'],['(현행에 없음)','추가','⑤ 0건 화면 · ⑥ 최근 검색']],
+ 'SCR-04':[['시트 헤더 「고객 등록」 · 닫기','유지','①'],['이름 *','유지','②'],['연락처 *','유지','②'],['캠페인 (현장) *','유지','②'],['나이 · 성별','유지','③'],['관심도 · 담당자','유지','④ 현장을 먼저 고르지 않아도 입력'],['상태','유지','⑤'],['메모','유지','⑦'],['취소 · 저장','유지','⑧'],['(현행에 없음)','추가','⑥ 유입 경로']],
+ 'SCR-05':[['헤더: ‹ 뒤로 · 이름 · 상태 배지','유지','①'],['헤더: 「내페이지 공유」 버튼','유지','①'],['헤더: ✕ 닫기','변경','① 뒤로와 같은 역할이라 ⋯ 메뉴로 바꾸는 제안'],['요약 카드: 현장 · 담당자 · 등록일','유지','② + 유입 매체 아이콘'],['요약 카드: 이름 · 관심도 · 상태 · 📞','유지','②'],['기본 정보: 리드 ID (라벨 없음)','유지','⑤ 라벨을 붙임'],['기본 정보: 이름 · 연락처','유지','⑤'],['기본 정보: 나이 · 성별','유지','⑤'],['기본 정보: 관심도 · 담당자','유지','⑤'],['기본 정보: 등록일 · 상태','유지','⑤'],['누르면 바로 수정됨 (저장 버튼 없음)','변경','⑤ 보기 모드 + [수정] (SCR-08)'],['메모: + 메모 추가','유지','⑥'],['메모 카드 · 수정 · 삭제','유지','⑥ 삭제에 확인 추가'],['메모 작성자 · 시각','유지','⑥'],['미팅 예약: + 일정 추가','유지','⑦'],['방문 일정 카드 (날짜 · 시간 · 담당자 · 삭제)','유지','⑦ + 수정'],['AI 통화 요약: 통화 카드 (일시 · 길이 · 담당자)','유지','⑧'],['AI 요약','유지','⑧'],['AI 제안','유지','⑧'],['키워드 칩','유지','⑧'],['상세 요약 (시간대별)','유지','⑧ 펼쳐서'],['녹음 내용 (대화) · 전체 대화 보기','유지','⑧ 펼쳐서'],['통화 이력','유지','⑨'],['활동 타임라인','유지','⑩'],['내페이지 활동','유지','⑪'],['고객 삭제 (맨 아래 버튼)','이동','⑫ ⋯ 메뉴 (SCR-09)'],['(현행에 없음)','추가','③ 빠른 행동 · ④ 다음 할 일']],
+ 'SCR-06':[['(현행에 없는 화면)','추가','통화 뒤 상태 · 일정 · 메모를 한 번에 정리하는 시트'],['상태 드롭다운으로 직접 변경','유지','상세 ⑤ 기본 정보에 그대로 있음']],
+ 'SCR-07':[['+ 메모 추가 (자유 입력)','유지','「메모」 유형으로 그대로'],['(현행에 없음)','추가','방문 상담 · 입금을 질문으로 받는 유형']],
+ 'SCR-08':[['기본 정보 8개 항목 수정','유지','항목은 그대로, 시트에서 수정'],['누르면 바로 저장','변경','저장 · 취소 · 되돌리기'],['(현행에 없음)','추가','유입 계정명 칸']],
+ 'SCR-09':[['고객 삭제','이동','상세 맨 아래 → ⋯ 메뉴'],['「내페이지 공유」','유지','헤더에 그대로 (메뉴에서도 열 수 있음)'],['(현행에 없음)','추가','보류 · 삭제 전 확인']]
+};
+SCR.forEach(s=>{s.keep=SCR_KEEP[s.id]||[];});
+const keepCount=()=>{const c={유지:0,이동:0,변경:0,추가:0};SCR.forEach(s=>s.keep.forEach(k=>c[k[1]]++));return c;};
 const SCRB={list:{t:'고객 목록',c:'#86efac'},add:{t:'+ 고객 등록',c:'#86efac'},detail:{t:'고객 상세',c:'#16a34a'}};
 let scrBr='전체';
 function renderScr(){
   document.getElementById('scrBr').innerHTML=['전체','list','add','detail'].map(k=>`<button data-sb="${k}" class="${scrBr===k?'on':''}">${k==='전체'?'전체 '+SCR.length:SCRB[k].t+' '+SCR.filter(s=>s.br===k).length}</button>`).join('');
   document.getElementById('scrMap').innerHTML=`<div class="smap"><div class="smap-root">고객 관리</div><div class="smap-row">${Object.entries(SCRB).map(([k,b])=>`<div class="smap-col"><div class="smap-h ${k==='detail'?'key':''}">${b.t}</div>${SCR.filter(s=>s.br===k).map((s,i)=>`<button class="smap-n ${i?'sub':''}" data-goscr="${s.id}"><b>${s.id}</b>${esc(s.t)}</button>`).join('')}</div>`).join('')}</div></div>`;
+  {const c=keepCount(),n=c.유지+c.이동+c.변경;document.getElementById('keepSum').innerHTML=`<b>현행 요소 유지 점검</b> — 현행 캡처에서 뽑은 요소 <b>${n}개</b> 가운데 <span class="kp kp-k">유지</span> ${c.유지} · <span class="kp kp-m">이동</span> ${c.이동} · <span class="kp kp-c">변경</span> ${c.변경}, 빠진 것 0개. 현행에 없던 <span class="kp kp-n">추가</span> 제안은 ${c.추가}개이며 화면에 「추가 제안」으로 표시했습니다. 화면마다 아래 표에서 하나씩 확인할 수 있습니다.`;}
   const list=SCR.filter(s=>scrBr==='전체'||s.br===scrBr);
   document.getElementById('scrList').innerHTML=list.map(s=>`<article class="scard" id="scr-${s.id}">
     <div class="scard-h"><span class="scard-id">${s.id}</span><h3>${esc(s.t)}</h3><span class="scard-path">${ic('chevron_right')}${esc(s.path)}</span><span class="scard-entry">진입: ${esc(s.entry)}</span></div>
     <div class="scard-b scard-cmp"><div class="scard-asis"><div class="pp-colh"><i>현행</i>실제 앱</div><div id="asis-${s.id}">${cmpBox(s.id,s.asis)}</div></div>
       <div class="scard-wf"><div class="pp-colh"><i class="new">개선</i>와이어프레임</div><div class="wf3-phone">${s.frame}</div></div>
-      <div class="scard-desc"><div class="scard-diff"><h4>현행과 달라지는 점</h4><table>${s.asis.diff.map(([a,b])=>`<tr><td>${esc(a)}</td><td>→</td><td><b>${esc(b)}</b></td></tr>`).join('')}</table></div><table class="scr-tab"><tr><th>No</th><th>영역</th><th>컴포넌트</th><th>설명</th></tr>${s.rows.map(([n,a,cid,d])=>`<tr><td><span class="wf2-n">${n}</span></td><td><b>${esc(a)}</b></td><td>${cid?`<button class="scr-cp" data-gocomp="${cid}">${cid}</button>`:'<span class="scr-new">화면 전용</span>'}</td><td>${esc(d)}</td></tr>`).join('')}</table>
+      <div class="scard-desc"><div class="scard-diff"><h4>현행 요소 유지 점검<small>현행 ${s.keep.filter(k=>k[1]!=='추가').length}개 · 추가 ${s.keep.filter(k=>k[1]==='추가').length}개</small></h4><table>${s.keep.map(([a,k,b])=>`<tr><td>${esc(a)}</td><td><span class="kp kp-${({유지:'k',이동:'m',변경:'c',추가:'n'})[k]}">${k}</span></td><td>${esc(b)}</td></tr>`).join('')}</table></div><table class="scr-tab"><tr><th>No</th><th>영역</th><th>컴포넌트</th><th>설명</th></tr>${s.rows.map(([n,a,cid,d])=>`<tr><td><span class="wf2-n">${n}</span></td><td><b>${esc(a)}</b></td><td>${cid?`<button class="scr-cp" data-gocomp="${cid}">${cid}</button>`:'<span class="scr-new">화면 전용</span>'}</td><td>${esc(d)}</td></tr>`).join('')}</table>
       <label class="pc-note"><span>${ic('edit')}이 화면에 대한 의견</span><textarea data-pn="${s.id}" rows="2" placeholder="화면 구성 · 컴포넌트 배치에 대한 의견 (자동 저장)">${esc(planNotes[s.id]||'')}</textarea></label></div></div></article>`).join('');
 }
 document.getElementById('tab-plan').addEventListener('click',e=>{
@@ -1796,19 +1837,19 @@ const PP_OWN=['담당자1','담당자2','담당자3','담당자4'];
 const PP_PLAT=['메타','네이버','구글','카카오','직접','내 페이지','기타'];
 const PP_SORT=['등록일 최신순','관심도','최근 활동','상태','이름'];
 const PP_DATE=['전체','오늘','최근 7일','최근 30일','직접설정'];
-const PP_SCOPE=['전체','이름','전화','메모','통화 내용'];
+const PP_SCOPE=['전체','이름','전화','현장','메모','통화 내용'];
 const PP_INFO=['거주 지역','희망 타입','평수','방문 경로','예산','방문 인원','나이대','실거주 · 투자'];
 const PP_STN=[...STG_BASE,...STG_CUSTOM].map(x=>x[0]);
 const PP_SALE=STG_BASE.slice(0,5).map(x=>x[0]);
 const PP_INIT=()=>[
  {id:1,name:'홍길동',st:'미지정',int:0,own:'담당자1',plat:'메타',camp:CAMP[0],reg:0,act:0,phone:'010-0000-0101',ctx:'memo',tx:'[광고 폼] 계약 조건 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/9 09:06',t:'[광고 폼] 어떤 상담을 원하시나요? : 계약 조건 문의'}]},
  {id:2,name:'김영희',st:'방문 예약',int:3,own:'담당자1',plat:'네이버',camp:CAMP[1],reg:1,act:0,phone:'010-0000-0102',ctx:'ai',tx:'예산 7억, 신혼집 찾는 중. 11/15 12시 방문하기로 함',kw:['예산 7억','신혼집'],next:'11/15 12:00 방문',info:{'예산':'7억','실거주 · 투자':'실거주','방문 인원':'2명'},recs:[{k:'통화',at:'11/8 21:04',t:'예산 7억, 신혼집 찾는 중. 11/15 12시 방문하기로 함',sug:'방문 전날 위치 안내 문자를 보내 보세요',n:74},{k:'메모',at:'11/8 20:29',t:'[광고 폼] 방문 상담 문의'}]},
- {id:3,name:'이철수',st:'가계약',int:3,own:'담당자2',plat:'메타',camp:CAMP[1],reg:50,act:2,phone:'010-0000-0103',ctx:'ai',tx:'1차 계약금 입금 확인. 2차는 9/21 예정',kw:['계약금'],next:'2차 계약금 9/21',info:{'희망 타입':'84㎡','평수':'34평','호실':'가상 A동 1001호','1차 계약금':'1,000만원','2차 예정':'9/21'},recs:[{k:'입금',at:'9/16 21:58',t:'1차 계약금 1,000만원 입금 확인'},{k:'통화',at:'9/15 13:03',t:'계약 조건 설명, 가계약 진행하기로 함',n:26},{k:'상담',at:'9/14 15:00',t:'방문 상담 · 2명 · 84㎡ 선호'}]},
- {id:4,name:'박도윤',st:'정계약',int:3,own:'담당자2',plat:'카카오',camp:CAMP[2],reg:10,act:1,phone:'010-0000-0104',ctx:'memo',tx:'정계약 완료, 서류 전달 예정',kw:[],next:'서류 전달 11/20',info:{'호실':'가상 B동 501호','1차 계약금':'1,000만원','2차 예정':'완납'},recs:[{k:'입금',at:'10/31 17:32',t:'2차 계약금 입금 확인'},{k:'상담',at:'10/31 11:23',t:'계약서 작성 · 도장 날인'}]},
- {id:5,name:'최수아',st:'부재중',int:1,own:'담당자1',plat:'메타',camp:CAMP[0],reg:2,act:0,miss:2,phone:'010-0000-0105',ctx:'memo',tx:'두 번 전화했지만 받지 않음',kw:[],next:'오늘 다시 전화',info:{},recs:[{k:'메모',at:'11/9 10:42',t:'두 번 전화했지만 받지 않음'}]},
+ {id:3,name:'이철수',st:'가계약',int:3,own:'담당자2',plat:'메타',camp:CAMP[1],reg:50,act:2,phone:'010-0000-0103',ctx:'ai',tx:'1차 계약금 입금 확인. 2차는 9/21 예정',kw:['계약금'],next:'9/21 12:00 방문',info:{'희망 타입':'84㎡','평수':'34평','호실':'가상 A동 1001호','1차 계약금':'1,000만원','2차 예정':'9/21'},recs:[{k:'입금',at:'9/16 21:58',t:'1차 계약금 1,000만원 입금 확인'},{k:'통화',at:'9/15 13:03',t:'계약 조건 설명, 가계약 진행하기로 함',n:26},{k:'상담',at:'9/14 15:00',t:'방문 상담 · 2명 · 84㎡ 선호'}]},
+ {id:4,name:'박도윤',st:'정계약',int:3,own:'담당자2',plat:'카카오',camp:CAMP[2],reg:10,act:1,phone:'010-0000-0104',ctx:'memo',tx:'정계약 완료, 서류 전달 예정',kw:[],next:'11/20 14:00 방문',info:{'호실':'가상 B동 501호','1차 계약금':'1,000만원','2차 예정':'완납'},recs:[{k:'입금',at:'10/31 17:32',t:'2차 계약금 입금 확인'},{k:'상담',at:'10/31 11:23',t:'계약서 작성 · 도장 날인'}]},
+ {id:5,name:'최수아',st:'부재중',int:1,own:'담당자1',plat:'메타',camp:CAMP[0],reg:2,act:0,miss:2,phone:'010-0000-0105',ctx:'memo',tx:'두 번 전화했지만 받지 않음',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/9 10:42',t:'두 번 전화했지만 받지 않음'}]},
  {id:6,name:'정하준',st:'부재중',int:0,own:'담당자3',plat:'구글',camp:CAMP[3],reg:5,act:4,miss:1,phone:'010-0000-0106',ctx:'memo',tx:'[광고 폼] 분양가 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/4 14:10',t:'[광고 폼] 분양가 문의'}]},
  {id:7,name:'한지우',st:'관심없음',int:0,own:'담당자3',plat:'메타',camp:CAMP[4],reg:20,act:12,phone:'010-0000-0107',ctx:'ai',tx:'다른 지역을 알아보는 중이라 관심 없다고 함',kw:[],next:'',info:{},recs:[{k:'통화',at:'10/28 16:20',t:'다른 지역을 알아보는 중이라 관심 없다고 함',n:8}]},
- {id:8,name:'오민석',st:'재통화',int:2,own:'담당자1',plat:'네이버',camp:CAMP[0],reg:3,act:1,phone:'010-0000-0108',ctx:'ai',tx:'업무 중이라 저녁 7시 이후 통화를 원함',kw:['저녁 통화'],next:'오늘 19:00 전화',info:{},recs:[{k:'통화',at:'11/9 10:39',t:'업무 중이라 저녁 7시 이후 통화를 원함',n:6}]},
+ {id:8,name:'오민석',st:'재통화',int:2,own:'담당자1',plat:'네이버',camp:CAMP[0],reg:3,act:1,phone:'010-0000-0108',ctx:'ai',tx:'업무 중이라 저녁 7시 이후 통화를 원함',kw:['저녁 통화'],next:'오늘 19:00 전화 약속',info:{},recs:[{k:'통화',at:'11/9 10:39',t:'업무 중이라 저녁 7시 이후 통화를 원함',n:6}]},
  {id:9,name:'서하늘',st:'타현장',int:2,own:'담당자4',plat:'메타',camp:CAMP[5],reg:15,act:9,phone:'010-0000-0109',ctx:'memo',tx:'다른 현장에 더 관심 있다고 함',kw:[],next:'',info:{},recs:[{k:'메모',at:'10/31 04:20',t:'다른 현장에 더 관심 있다고 함'}]},
  {id:10,name:'강다은',st:'상',int:3,own:'담당자2',plat:'직접',camp:CAMP[6],reg:7,act:3,phone:'010-0000-0110',ctx:'ai',tx:'실거주 목적, 34평 희망. 주말 방문 검토 중',kw:['실거주','34평'],next:'',info:{'평수':'34평','실거주 · 투자':'실거주'},recs:[{k:'통화',at:'11/7 12:34',t:'실거주 목적, 34평 희망. 주말 방문 검토 중',n:31}]},
  {id:11,name:'윤태호',st:'중',int:2,own:'담당자4',plat:'내 페이지',camp:CAMP[7],reg:8,act:6,phone:'010-0000-0111',ctx:'memo',tx:'내 페이지에서 자료 요청',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/2 09:30',t:'내 페이지에서 자료 요청'}]},
@@ -1816,7 +1857,7 @@ const PP_INIT=()=>[
  {id:13,name:'배준호',st:'아파트먼트',int:2,own:'담당자1',plat:'메타',camp:CAMP[9],reg:4,act:4,phone:'010-0000-0113',ctx:'memo',tx:'아파트먼트 타입 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/5 13:15',t:'아파트먼트 타입 문의'}]},
  {id:14,name:'신유리',st:'미지정',int:0,own:'담당자4',plat:'카카오',camp:CAMP[11],reg:0,act:0,phone:'010-0000-0114',ctx:'memo',tx:'[광고 폼] 방문 상담 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/9 08:16',t:'[광고 폼] 방문 상담 문의'}]}
 ];
-const PP_NEW=()=>({name:'',phone:'',camp:'',plat:'직접',st:'미지정',int:0,own:PP_OWN[0],memo:''});
+const PP_NEW=()=>({name:'',phone:'',camp:'',age:'',gender:'',src:'직접',st:'미지정',int:0,own:PP_OWN[0],memo:''});
 const PP_F0=()=>({own:[],int:[],plat:[],camp:[],date:'전체'});
 let PPD=PP_INIT();
 const PP={scr:'list',st:'전체',cOpen:false,sort:PP_SORT[0],f:PP_F0(),sheet:null,arg:null,cid:null,q:'',scope:'전체',toast:'',undo:null,rec:'전체',rx:{},tech:false,campQ:'',add:PP_NEW(),log:null,when:{},hist:[],seq:0};
@@ -1834,31 +1875,35 @@ function ppFiltered(){
   return l.sort((a,b)=>s==='관심도'?b.int-a.int:s==='최근 활동'?a.act-b.act:s==='상태'?PP_STN.indexOf(a.st)-PP_STN.indexOf(b.st):s==='이름'?a.name.localeCompare(b.name,'ko'):(a.reg-b.reg||a.id-b.id));
 }
 const ppTab=()=>`<div class="wf3-tabbar pp-tabbar">${[['home','홈'],['group','고객'],['calendar_month','일정'],['groups','멤버'],['menu','메뉴']].map(([i,l],k)=>`<span class="${k===1?'on':''}" data-pp="${k===1?'go:list':'toast:「'+l+'」 탭은 이번 범위(고객 탭) 밖입니다'}">${wi(i)}${l}</span>`).join('')}</div>`;
-const ppCard=c=>{const a=ppAct(c);return `<div class="wf2-box wf3-card pp-card" data-pp="open:${c.id}"><div class="wf2-row"><span class="wf2-av"></span><div class="wf2-col" style="flex:1;min-width:0">${wl(esc(c.name),'b')}<span class="wf2-t s pp-el">${esc(c.camp)} · ${c.own}</span></div>${c.hold?wchip('보류'):''}${wchip(c.st)}</div>
+const ppReg=c=>c.reg===0?'오늘':c.reg+'일 전';
+const ppLastCall=c=>{const r=c.recs.find(x=>x.k==='통화');return r?r.at:'';};
+const ppMemoN=c=>c.recs.filter(x=>x.k!=='통화').length;
+const ppCard=(c,hit)=>`<div class="wf2-box wf3-card pp-card" data-pp="open:${c.id}"><div class="wf2-row">${wplat(c.plat)}<span class="wf2-t s pp-el" style="flex:1">${esc(c.camp)}</span><span class="wf2-t s" style="white-space:nowrap">${c.own} · ${ppReg(c)}</span></div>
+  <div class="wf2-row mt">${wl(esc(c.name),'b')}${wdots(c.int)}<span style="flex:1"></span>${c.hold?wchip('보류'):''}${wchip(c.st)}</div>${hit?`<div class="wf2-row mt"><span class="pp-tag">${hit[0]} 일치</span><span class="wf2-t s pp-el">${hit[1]}</span></div>`:''}
   <div class="wf2-ctx mt">${wi(c.ctx==='ai'?'wand_stars':'edit_note')}<span class="wf2-t s pp-el">${esc(c.tx)}</span></div>${c.kw.length?`<div class="wf2-row wf2-gap mt">${c.kw.map(k=>wchip('✦ '+esc(k))).join('')}</div>`:''}
-  <div class="wf2-row wf2-sb mt"><span class="wf2-row">${wi('calendar_month')}${wl(esc(c.next||'일정 없음'),'s')}</span><span class="wf2-btn p" data-pp="act:${c.id}">${wi(a[0])} ${a[1]}</span></div></div>`;};
+  <div class="wf2-row wf2-sb mt">${wmeta(ppMemoN(c),esc(c.next),ppLastCall(c))}<span class="wf2-btn p" data-pp="act:${c.id}">${wi('call')} 전화</span></div></div>`;
 function ppListHtml(){
-  const l=ppFiltered(),n=ppFN(),cs=STG_CUSTOM.find(x=>x[0]===PP.st),f=PP.f;
+  const l=ppFiltered(),n=ppFN(),f=PP.f;
   const chips=[...f.own.map(v=>['담당자 '+v,'fx:own:'+v]),...f.int.map(v=>['관심도 '+['','하','중','상'][v],'fx:int:'+v]),...f.plat.map(v=>['플랫폼 '+v,'fx:plat:'+v]),...f.camp.map(v=>['현장 '+esc(v),'fx:camp:'+esc(v)]),...(f.date!=='전체'?[['등록일 '+f.date,'fx:date:']]:[]),...(PP.sort!==PP_SORT[0]?[['정렬 '+PP.sort,'fx:sort:']]:[])];
   return `<div class="pp-body">
-    <div class="wf2-row wf2-sb">${wl('고객 관리','h')}<span style="flex:1"></span><span class="pp-ib" data-pp="go:search" title="검색">${wi('search')}</span><span class="pp-ib" data-pp="toast:더보기 — 엑셀 일괄 등록 · 내보내기(소유자)처럼 드물게 쓰는 기능 자리입니다" title="더보기">${wi('more_horiz')}</span></div>
-    <div class="wf3-tiles wf3-t6 mt">${STG_BASE.map(([a,b])=>`<div class="wf2-tile ${PP.st===a?'on':''}" data-pp="st:${a}"><small>${a}</small><b>${b}</b></div>`).join('')}</div>
-    <div class="wf2-row wf2-gap mt">${ppChip('전체 11,430',PP.st==='전체','st:전체')}${cs&&!PP.cOpen?ppChip(cs[0]+' '+cs[1],1,'st:'+cs[0]):''}<span style="flex:1"></span>${ppBtn('커스텀 상태 '+STG_CUSTOM.length+(PP.cOpen?' ▴':' ▾'),0,'copen')}</div>
-    ${PP.cOpen?`<div class="wf2-row wf2-gap mt">${STG_CUSTOM.map(([k,c])=>ppChip(k+' '+c,PP.st===k,'st:'+k)).join('')}</div>`:''}
-    <div class="wf2-row wf2-gap mt">${chips.map(([t,p])=>ppChip(t+' ✕',0,p)).join('')}${chips.length>1?`<span class="wf2-link" data-pp="clear">모두 해제</span>`:''}<span style="flex:1"></span>${ppBtn(wi('tune')+' 필터·정렬'+(n?' '+n:''),n?1:0,'sheet:filter')}</div>
+    <div class="wf2-row wf2-sb"><span class="pp-ib" data-pp="toast:뒤로 — 하단 탭 화면에서 어디로 돌아가는지는 확인이 필요합니다" title="뒤로">${wi('arrow_back_ios_new')}</span>${wl('고객 관리','h')}<span style="flex:1"></span><span class="pp-ib" data-pp="sheet:menu" title="전체 메뉴">${wi('menu')}</span></div>
+    <div class="wf2-row wf2-gap mt">${ppChip('전체 11,430',PP.st==='전체','st:전체')}<span class="wf2-t s">상태 ${STG_SHOW.length}개 · 누르면 그 상태만</span></div>
+    <div class="wf3-tiles wf3-t6 mt">${STG_SHOW.map(([a,b])=>`<div class="wf2-tile ${PP.st===a?'on':''}" data-pp="st:${a}" title="${a}"><small>${a}</small><b>${b}</b></div>`).join('')}</div>
+    <div class="wf2-row wf2-gap mt" style="flex-wrap:nowrap">${ppBtn(wi('tune')+' 필터·정렬'+(n?' '+n:''),n?1:0,'sheet:filter')}<div class="wf2-search" style="flex:1;min-width:0" data-pp="go:search">${wi('search')}<span class="wf2-t s pp-el">이름·전화·현장·메모 검색</span></div></div>
+    ${chips.length?`<div class="wf2-row wf2-gap mt">${chips.map(([t,p])=>ppChip(t+' ✕',0,p)).join('')}${chips.length>1?`<span class="wf2-link" data-pp="clear">모두 해제</span>`:''}</div>`:''}
     <div class="pp-cnt">예시 고객 ${l.length}명 · ${PP.sort}</div>
-    ${l.length?l.map(ppCard).join(''):`<div class="pp-empty">${wi('search')}<b>조건에 맞는 고객이 없어요</b><span>상태나 필터를 바꿔 보세요</span>${ppBtn('조건 모두 해제',0,'clear')}</div>`}
+    ${l.length?l.map(c=>ppCard(c)).join(''):`<div class="pp-empty">${wi('search')}<b>조건에 맞는 고객이 없어요</b><span>상태나 필터를 바꿔 보세요</span>${ppBtn('조건 모두 해제',0,'clear')}</div>`}
   </div><span class="pp-fab" data-pp="go:add" title="고객 추가">${wi('add')}</span>${ppTab()}`;
 }
 function ppSheetFilter(){
   const f=PP.f,tg=(k,v)=>ppChip(esc(v),f[k].includes(v),'f:'+k+':'+esc(v));
   return `<div class="wf2-row wf2-sb">${wl('필터 · 정렬','b')}<span style="flex:1"></span><span class="pp-ib" data-pp="sheet:">${wi('close')}</span></div>
   <div class="wf2-sec">${wl('정렬 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${PP_SORT.map(x=>ppChip(x,PP.sort===x,'sort:'+x)).join('')}</div>
-  <div class="wf2-sec">${wl('담당자 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${ppChip('전체',!f.own.length,'fall:own')}${ppChip('★ 내 고객',f.own.length===1&&f.own[0]===PP_OWN[0],'fmine')}${PP_OWN.map(x=>tg('own',x)).join('')}</div>
-  <div class="wf2-sec">${wl('관심도 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${[[3,'●●● 상'],[2,'●●○ 중'],[1,'●○○ 하']].map(([v,t])=>ppChip(t,f.int.includes(v),'f:int:'+v)).join('')}</div>
   <div class="wf2-sec">${wl('플랫폼 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${PP_PLAT.map(x=>tg('plat',x)).join('')}</div>
   <div class="wf2-sec">${wl('캠페인(현장) · 여러 개 선택','s')}</div><div class="wf2-search">${wi('search')}<input class="pp-in" id="ppCampQ" placeholder="현장 검색" value="${esc(PP.campQ)}"></div><div class="wf2-row wf2-gap mt" id="ppCamps">${ppCamps()}</div>
   <div class="wf2-sec">${wl('등록일 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${PP_DATE.map(x=>ppChip(x,f.date===x,'f:date:'+x)).join('')}</div>
+  <div class="wf2-sec">${wl('담당자 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${ppChip('전체',!f.own.length,'fall:own')}${ppChip('★ 내 고객',f.own.length===1&&f.own[0]===PP_OWN[0],'fmine')}${PP_OWN.map(x=>tg('own',x)).join('')}</div>
+  <div class="wf2-sec">${wl('관심도 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${[[3,'●●● 상'],[2,'●●○ 중'],[1,'●○○ 하']].map(([v,t])=>ppChip(t,f.int.includes(v),'f:int:'+v)).join('')}</div>
   <div class="wf2-row wf2-gap mt">${ppBtn('초기화',0,'freset')}<span style="flex:1"></span>${ppBtn(ppFiltered().length+'명 보기',1,'sheet:')}</div>`;
 }
 function ppCamps(){const l=CAMP.filter(x=>!PP.campQ||x.includes(PP.campQ));return l.map(x=>ppChip(esc(x),PP.f.camp.includes(x),'f:camp:'+esc(x))).join('')||wl('일치하는 현장이 없어요','s');}
@@ -1867,11 +1912,11 @@ function ppSearchRes(){
   if(!q)return `<div class="wf2-sec">${wl('최근 검색','s')}</div>${['신혼집','계약금','010-0000'].map(x=>`<div class="pp-li" data-pp="q:${x}">${wi('history')}${wl(x)}</div>`).join('')}`;
   const res=[];
   PPD.filter(c=>!c.gone).forEach(c=>{
-    const fs=[['이름',c.name],['전화',c.phone],['메모',c.recs.filter(r=>r.k!=='통화').map(r=>r.t).join(' / ')],['통화 내용',c.recs.filter(r=>r.k==='통화').map(r=>r.t).join(' / ')+' '+c.kw.join(' ')]];
+    const fs=[['이름',c.name],['전화',c.phone],['현장',c.camp],['메모',c.recs.filter(r=>r.k!=='통화').map(r=>r.t).join(' / ')],['통화 내용',c.recs.filter(r=>r.k==='통화').map(r=>r.t).join(' / ')+' '+c.kw.join(' ')]];
     const m=fs.find(([k,v])=>(PP.scope==='전체'||PP.scope===k)&&v.includes(q));if(m)res.push([c,m]);});
   if(!res.length)return `<div class="pp-empty">${wi('search')}<b>검색 결과가 없어요</b><span>「${esc(q)}」 · 전체 고객 대상 · 범위: ${PP.scope}</span>${ppBtn(wi('person_add')+' 고객 직접 등록',0,'go:add')}</div>`;
   const hl=v=>{const i=v.indexOf(q),s=Math.max(0,i-8);return (s?'…':'')+esc(v.slice(s,i))+'<mark>'+esc(q)+'</mark>'+esc(v.slice(i+q.length,i+q.length+18));};
-  return `<div class="pp-cnt">전체 고객에서 ${res.length}명 (선택한 상태 · 필터와 무관)</div>`+res.map(([c,[k,v]])=>`<div class="wf2-box pp-card" data-pp="open:${c.id}"><div class="wf2-row">${wl(esc(c.name),'b')}<span style="flex:1"></span>${wchip(c.st)}</div><div class="wf2-row mt"><span class="pp-tag">${k} 일치</span><span class="wf2-t s pp-el">${hl(v)}</span></div></div>`).join('');
+  return `<div class="pp-cnt">전체 고객에서 ${res.length}명 (고른 상태 · 필터와 무관)</div>`+res.map(([c,[k,v]])=>ppCard(c,[k,hl(v)])).join('');
 }
 function ppSearchHtml(){return `<div class="pp-body"><div class="wf2-row wf2-gap" style="flex-wrap:nowrap"><div class="wf2-search" style="flex:1;min-width:0">${wi('search')}<input class="pp-in" id="ppQ" placeholder="이름 · 전화 · 현장 · 메모 검색" value="${esc(PP.q)}"><span class="pp-ib" data-pp="q:" title="지우기">${wi('cancel')}</span></div><span class="wf2-t s" data-pp="go:list">취소</span></div>
   <div class="wf2-row wf2-gap mt">${PP_SCOPE.map(x=>ppChip(x,PP.scope===x,'scope:'+x)).join('')}</div><div class="pp-note">녹음 대화 전문은 검색되지 않습니다. 「통화 내용」은 AI 요약 · 키워드만 찾습니다</div><div id="ppRes">${ppSearchRes()}</div></div>${ppTab()}`;}
@@ -1880,35 +1925,43 @@ function ppAddHtml(){
   return `<div class="pp-top"><span class="wf2-t b">고객 등록</span><span style="flex:1"></span><span class="pp-ib" data-pp="go:list" title="닫기">${wi('close')}</span></div><div class="pp-body" style="padding-bottom:16px">
    <label class="pp-fld"><small>이름 *</small><input data-ppa="name" placeholder="고객 이름 입력" value="${esc(a.name)}"></label>
    <label class="pp-fld"><small>연락처 *</small><input data-ppa="phone" placeholder="010-0000-0000" value="${esc(a.phone)}"></label>
-   <label class="pp-fld"><small>현장 *</small><select data-ppa="camp"><option value="">현장 선택</option>${CAMP.map(x=>`<option ${a.camp===x?'selected':''}>${esc(x)}</option>`).join('')}</select></label>
-   <div class="wf2-sec">${wl('유입 경로','s')}</div><div class="wf2-row wf2-gap">${PP_PLAT.map(x=>ppChip(x,a.plat===x,'a:plat:'+x)).join('')}</div>
-   <div class="wf2-sec">${wl('상태 · 기본 6개','s')}</div><div class="wf2-row wf2-gap">${STG_BASE.map(([x])=>ppChip(x,a.st===x,'a:st:'+x)).join('')}</div>
-   <div class="wf2-sec">${wl('상태 · 커스텀','s')}</div><div class="wf2-row wf2-gap">${STG_CUSTOM.map(([x])=>ppChip(x,a.st===x,'a:st:'+x)).join('')}</div>
+   <label class="pp-fld"><small>캠페인 (현장) *</small><select data-ppa="camp"><option value="">현장 선택</option>${CAMP.map(x=>`<option ${a.camp===x?'selected':''}>${esc(x)}</option>`).join('')}</select></label>
+   <div class="pp-grid"><label class="pp-fld"><small>나이</small><input data-ppa="age" placeholder="선택 입력" value="${esc(a.age)}"></label><label class="pp-fld"><small>성별</small><select data-ppa="gender"><option value="">선택 입력</option>${['남','여'].map(x=>`<option ${a.gender===x?'selected':''}>${x}</option>`).join('')}</select></label></div>
    <div class="wf2-sec">${wl('관심도','s')}</div><div class="wf2-row wf2-gap">${[[0,'선택 안 함'],[3,'●●● 상'],[2,'●●○ 중'],[1,'●○○ 하']].map(([v,t])=>ppChip(t,a.int===v,'a:int:'+v)).join('')}</div>
    <div class="wf2-sec">${wl('담당자','s')}</div><div class="wf2-row wf2-gap">${PP_OWN.map(x=>ppChip(x,a.own===x,'a:own:'+x)).join('')}</div>
-   <label class="pp-fld"><small>메모 (선택)</small><textarea data-ppa="memo" rows="2" placeholder="첫 메모">${esc(a.memo)}</textarea></label>
+   <div class="wf2-sec">${wl('상태','s')}</div><div class="wf2-row wf2-gap">${STG_SHOW.map(([x])=>ppChip(x,a.st===x,'a:st:'+x)).join('')}</div>
+   <div class="wf2-sec">${wl('유입 경로','s')}${wnew}</div><div class="wf2-row wf2-gap">${['직접','소개','현장 방문','기타'].map(x=>ppChip(x,a.src===x,'a:src:'+x)).join('')}</div>
+   <label class="pp-fld"><small>메모</small><textarea data-ppa="memo" rows="2" placeholder="메모 입력 (선택)">${esc(a.memo)}</textarea></label>
    <div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'go:list')}<span style="flex:1"></span><span class="wf2-btn p${ok?'':' pp-dis'}" id="ppAddSave" data-pp="addsave">저장</span></div></div>`;
 }
 function ppDetailHtml(){
   const c=ppC();if(!c)return ppListHtml();
-  const a=ppAct(c),si=PP_SALE.indexOf(c.st);
+  const all=c.recs.map((r,i)=>[r,i]),calls=all.filter(([r])=>r.k==='통화'),memos=all.filter(([r])=>r.k!=='통화');
   const todo={'미지정':['첫 통화하기','전화'],'부재중':['다시 전화하기 · 부재 '+(c.miss||1)+'회','전화'],'재통화':['약속한 시간에 전화하기','전화'],'방문 예약':['방문 전날 안내 문자 보내기','문자'],'가계약':['2차 계약금 확인하기','기록'],'정계약':['계약 서류 전달하기','기록']}[c.st]||['다음 연락 일정 잡기','일정'];
   const tp={'전화':'call','기록':'sheet:log','일정':'sheet:sched','문자':'toast:문자 작성 화면으로 이동합니다 (가상)'};
-  const recs=c.recs.map((r,i)=>[r,i]).filter(([r])=>PP.rec==='전체'||r.k===PP.rec),cnt=k=>c.recs.filter(r=>r.k===k).length;
-  return `<div class="pp-top"><span class="pp-ib" data-pp="go:list" title="뒤로">${wi('arrow_back_ios_new')}</span>${wl(esc(c.name),'b')}${wchip(c.st)}${c.hold?wchip('보류'):''}<span style="flex:1"></span><span class="pp-ib" data-pp="sheet:more" title="더보기">${wi('more_horiz')}</span></div>
+  const dur=r=>(r.n?Math.max(1,Math.round(r.n/18)):1)+'분';
+  const ti={통화:'call',메모:'edit_note',상담:'forum',입금:'payments'};
+  return `<div class="pp-top"><span class="pp-ib" data-pp="go:list" title="뒤로">${wi('arrow_back_ios_new')}</span>${wl(esc(c.name),'b')}${wchip(c.st)}${c.hold?wchip('보류'):''}<span style="flex:1"></span>${ppBtn('내페이지 공유',1,'toast:내페이지 공유 — 카카오톡 · 문자 · 링크 복사 중 고르는 화면입니다 (가상)')}<span class="pp-ib" data-pp="sheet:more" title="더보기">${wi('more_horiz')}</span></div>
   <div class="pp-body" style="padding-bottom:20px">
-   <div class="wf2-box"><div class="wf2-row"><span class="wf2-av"></span><div class="wf2-col" style="flex:1;min-width:0">${wl(esc(c.name),'b')}<span class="wf2-t s pp-el">${ppInt(c.int)} · ${esc(c.camp)}</span></div>${ppBtn(wi('edit')+' 수정',0,'sheet:edit')}</div>
-     <div class="pp-kv2 mt"><span>담당자</span><b>${c.own}</b><span>연락처</span><b>${esc(c.phone)}</b><span>유입</span><b>${c.plat}</b><span>등록일</span><b>${c.reg?c.reg+'일 전':'오늘'}</b></div></div>
-   <div class="pp-qa mt">${[['call','전화'],['sms','문자'],['event_available','일정'],['edit_note','기록']].map(([i,t])=>`<span class="wf2-btn ${t===a[1]?'p':''}" data-pp="${tp[t]}">${wi(i)} ${t}</span>`).join('')}</div>
-   <div class="wf2-sec">${wl('상태','s')}<span style="flex:1"></span><span class="wf2-link" data-pp="sheet:stage">전체 상태에서 고르기</span></div>
-   <div class="pp-steps">${PP_SALE.map((s,i)=>`<span class="${i===si?'on':i<si?'done':''}" data-pp="ask:${s}">${s}</span>`).join('')}</div>${si<0?`<div class="pp-note">지금 상태 「${c.st}」는 위 진행 순서에 없는 상태입니다</div>`:''}
-   <div class="wf2-box mt"><div class="wf2-row">${wi('lightbulb')}${wl('다음 할 일','b')}</div><div class="wf2-row wf2-sb mt"><span class="wf2-t">${todo[0]}</span>${ppBtn(todo[1],1,tp[todo[1]])}</div>${c.next?`<div class="wf2-row mt">${wi('calendar_month')}${wl(esc(c.next),'s')}</div>`:''}</div>
-   <div class="wf2-sec">${wl('한눈에 보기','s')}<span class="wf2-t s" style="margin-left:auto">칸을 누르면 그 항목만 수정</span></div>
-   <div class="pp-grid">${PP_INFO.map(k=>`<div class="pp-cell" data-pp="sheet:edit:${k}"><small>${k}</small><b>${esc(c.info[k]||'—')}</b></div>`).join('')}</div>
-   ${['가계약','정계약'].includes(c.st)?`<div class="wf2-box mt"><div class="wf2-row">${wi('contract')}${wl('계약 정보','b')}</div><div class="pp-kv2 mt"><span>호실</span><b>${esc(c.info['호실']||'—')}</b><span>1차 계약금</span><b>${esc(c.info['1차 계약금']||'—')}</b><span>2차</span><b>${esc(c.info['2차 예정']||'—')}</b></div><div class="wf2-t s mt" data-pp="toast:수정 이력 — 누가 언제 무엇을 바꿨는지 보여 줄 자리입니다">수정 이력 보기 ›</div></div>`:''}
-   <div class="wf2-sec">${wl('기록','s')}</div><div class="wf2-row wf2-gap">${['전체','통화','상담','입금','메모'].map(k=>ppChip(k+' '+(k==='전체'?c.recs.length:cnt(k)),PP.rec===k,'rec:'+k)).join('')}</div>
-   ${recs.length?recs.map(([r,i])=>`<div class="wf2-box mt" data-pp="rx:${i}"><div class="wf2-row"><span class="pp-tag">${r.k}</span>${wl(esc(r.at),'s')}<span style="flex:1"></span>${wi(PP.rx[i]?'keyboard_arrow_up':'keyboard_arrow_down')}</div><div class="wf2-t mt ${PP.rx[i]?'':'pp-el'}">${r.k==='통화'?'<b>AI 요약</b> ':''}${esc(r.t)}</div>${PP.rx[i]&&r.k==='통화'?`<div class="pp-sub mt"><b>AI 제안</b> ${esc(r.sug||'다음 통화에서 방문 일정을 제안해 보세요')}</div><div class="pp-sub mt"><b>대화</b> 고객 00:06 · 담당자 00:13 … (가상 대화 ${r.n||12}건)</div><div class="wf2-t s mt">출처: 앱 통화 녹음</div>`:''}</div>`).join(''):`<div class="pp-empty sm">${wl('이 유형의 기록이 없어요','s')}</div>`}
-   <div class="wf2-sec" data-pp="tech">${wl('기술 정보','s')}<span style="flex:1"></span>${wi(PP.tech?'keyboard_arrow_up':'keyboard_arrow_down')}</div>${PP.tech?`<div class="pp-kv2"><span>리드 ID</span><b>0000 0000 0000 ${1000+c.id}</b><span>유입 폼</span><b>인스턴트 폼 (가상)</b></div>`:''}
+   <div class="wf2-box"><div class="wf2-row">${wplat(c.plat)}<span class="wf2-t s pp-el" style="flex:1">${esc(c.camp)}</span><span class="wf2-t s" style="white-space:nowrap">${c.own} · ${ppReg(c)}</span></div>
+     <div class="wf2-row mt">${wl(esc(c.name),'b')}${wdots(c.int)}<span style="flex:1"></span>${wchip(c.st)}${ppBtn(wi('call')+' 전화',1,'call')}</div></div>
+   <div class="wf2-row wf2-gap mt">${ppBtn(wi('sms')+' 문자',0,tp['문자'])}${ppBtn(wi('event_available')+' 일정',0,'sheet:sched')}${ppBtn(wi('edit_note')+' 기록',0,'sheet:log')}${wnew}</div>
+   <div class="wf2-box mt"><div class="wf2-row">${wi('lightbulb')}${wl('다음 할 일','b')}${wnew}</div><div class="wf2-row wf2-sb mt"><span class="wf2-t">${todo[0]}</span>${ppBtn(todo[1],1,tp[todo[1]])}</div></div>
+   <div class="wf2-sec">${wl('기본 정보','b')}<span style="flex:1"></span>${ppBtn(wi('edit')+' 수정',0,'sheet:edit')}</div>
+   <div class="wf2-t s" style="margin-bottom:5px">리드 ID 0000 0000 0000 ${1000+c.id}</div>
+   <div class="pp-grid">${[['이름',c.name],['연락처',c.phone],['나이',c.age||'—'],['성별',c.gender||'—'],['관심도',ppInt(c.int)],['담당자',c.own],['등록일',ppReg(c)]].map(([k,v])=>`<div class="pp-cell" data-pp="sheet:edit"><small>${k}</small><b>${esc(v)}</b></div>`).join('')}<div class="pp-cell" data-pp="sheet:stage"><small>상태 ▾</small><b>${c.st}</b></div></div>
+   <div class="wf2-sec">${wl('메모','b')}<span style="flex:1"></span><span class="wf2-link" data-pp="logt:메모">+ 메모 추가</span></div>
+   ${memos.length?memos.map(([r,i])=>`<div class="wf2-box mt"><div class="wf2-t">${r.k!=='메모'?`<span class="pp-tag">${r.k}</span> `:''}${esc(r.t)}</div><div class="wf2-row wf2-sb mt"><span class="wf2-t s">${c.own} · ${esc(r.at)}</span><span class="wf2-row"><span class="pp-ib" data-pp="toast:메모 수정 — 내용을 고치는 시트가 열립니다 (가상)" title="수정">${wi('edit')}</span><span class="pp-ib" data-pp="sheet:mdel:${i}" title="삭제">${wi('delete')}</span></span></div></div>`).join(''):`<div class="pp-empty sm">${wl('메모가 없습니다','s')}</div>`}
+   <div class="wf2-sec">${wl('미팅 예약','b')}<span style="flex:1"></span><span class="wf2-link" data-pp="sheet:sched">+ 일정 추가</span></div>
+   ${c.next?`<div class="wf2-box"><div class="wf2-row">${wi('calendar_month')}<div class="wf2-col" style="flex:1;min-width:0"><span class="wf2-t b">${/전화|알림/.test(c.next)?'재통화 일정':'방문 일정'}</span><span class="wf2-t s">${esc(c.next)} · ${c.own}</span></div><span class="pp-ib" data-pp="sheet:sched" title="수정">${wi('edit')}</span><span class="pp-ib" data-pp="sdel" title="삭제">${wi('delete')}</span></div></div>`:`<div class="pp-empty sm">${wl('방문 일정이 없습니다','s')}</div>`}
+   <div class="wf2-sec">${wl('AI 통화 요약','b')}</div>
+   ${calls.length?calls.map(([r,i])=>`<div class="wf2-box mt" data-pp="rx:${i}"><div class="wf2-row">${wi('call')}<span class="wf2-t b" style="flex:1">${esc(r.at)} 통화</span>${wi(PP.rx[i]?'keyboard_arrow_up':'keyboard_arrow_down')}</div><div class="wf2-t s">${dur(r)} · ${c.own}</div>
+      <div class="pp-sub mt"><b>AI 요약</b> ${esc(r.t)}</div>${PP.rx[i]?`<div class="pp-sub mt"><b>AI 제안</b> ${esc(r.sug||'다음 통화에서 방문 일정을 제안해 보세요')}</div>${c.kw.length?`<div class="wf2-row wf2-gap mt">${c.kw.map(k=>wchip('✦ '+esc(k))).join('')}</div>`:''}<div class="pp-sub mt"><b>상세 요약</b> 00:01 인사와 용건 확인 · 00:29 조건 안내 · 01:11 다음 약속</div><div class="pp-sub mt"><b>녹음 내용</b> 고객 00:06 · 담당자 00:13 … <u>전체 대화 보기 (${r.n||12}건)</u></div>`:`<div class="wf2-t s mt">AI 제안 · 키워드 · 상세 요약 · 녹음 내용 보기 ▾</div>`}</div>`).join(''):`<div class="pp-empty sm">${wl('통화 녹음이 올라오면 AI가 요약해 드려요','s')}</div>`}
+   <div class="wf2-sec">${wl('통화 이력','b')}</div>
+   ${calls.length?calls.map(([r])=>`<div class="pp-li">${wi('call')}<span class="wf2-t s">${esc(r.at)} · 발신 · ${dur(r)}</span></div>`).join(''):`<div class="pp-empty sm">${wl('통화 이력이 없어요','s')}</div>`}
+   <div class="wf2-sec">${wl('활동 타임라인','b')}</div>
+   ${c.recs.map(r=>`<div class="pp-li">${wi(ti[r.k]||'edit_note')}<span class="wf2-t s pp-el">${esc(r.at)} · ${r.k} · ${esc(r.t)}</span></div>`).join('')}<div class="pp-li">${wi('flag')}<span class="wf2-t s pp-el">리드 등록 · ${esc(c.camp)}</span></div>
+   <div class="wf2-sec">${wl('내페이지 활동','b')}</div><div class="pp-empty sm">${wl('아직 활동이 없습니다. 내페이지를 공유해보세요.','s')}</div>
   </div>`;
 }
 function ppSheetHtml(){
@@ -1916,21 +1969,24 @@ function ppSheetHtml(){
   if(s==='filter')return ppSheetFilter();
   const head=t=>`<div class="wf2-row wf2-sb">${wl(t,'b')}<span style="flex:1"></span><span class="pp-ib" data-pp="sheet:" title="닫기">${wi('close')}</span></div>`;
   const opt=(i,t,d,p,x)=>`<div class="pp-opt ${x||''}" data-pp="${p}">${wi(i)}<div class="wf2-col"><b>${t}</b>${d?`<span>${d}</span>`:''}</div>${wi('chevron_right')}</div>`;
+  if(s==='menu')return head('나의 워크스페이스 ▾')+[['dashboard','대시보드'],['group','고객 관리 · 18'],['calendar_month','캘린더'],['flag','광고 현황'],['task_alt','할일'],['history','최근 활동'],['forum','메시지']].map(([i,t])=>opt(i==='dashboard'?'home':i,t,'',t.startsWith('고객 관리')?'sheet:':'toast:「'+t+'」는 이번 범위(고객 탭) 밖입니다')).join('')+`<div class="wf2-sec">${wl('관리','s')}</div>`+[['groups','멤버 관리'],['description','자료함'],['delete','휴지통'],['share','내 페이지 관리']].map(([i,t])=>opt(i,t,'','toast:「'+t+'」는 이번 범위(고객 탭) 밖입니다')).join('');
   if(!c)return head('안내');
+  if(s==='mdel')return head('메모 삭제')+`<div class="wf2-t mt">이 메모를 지울까요? 지우면 되돌릴 수 없습니다.</div><div class="pp-sub mt">${esc((c.recs[+PP.arg]||{}).t||'')}</div><div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('삭제',1,'mdelok')}</div>`;
   if(s==='call')return head('통화 결과 · '+esc(c.name))+`<div class="pp-note">통화가 끝나면 자동으로 뜨는 시트입니다. 하나만 누르면 상태 · 일정 · 알림이 함께 정리됩니다</div>`
     +opt('phone_disabled','안 받았어요','상태 → 부재중 · 부재 횟수 +1 · 재시도 알림','res:부재중')+opt('replay','다시 걸기로 했어요','상태 → 재통화 · 언제 걸지 선택','res:재통화')+opt('event_available','방문 약속을 잡았어요','상태 → 방문 예약 · 날짜 · 시간 선택','res:방문 예약')+opt('do_not_disturb_on','관심 없대요','상태 → 관심없음','res:관심없음')+opt('swap_horiz','다른 현장에 관심 있대요','상태 → 타현장','res:타현장')+opt('edit_note','상담 내용 남기기','기록 추가로 이동','sheet:log')+`<div class="wf2-t s mt">상태를 바꾸지 않으려면 닫기를 누르세요</div>`;
   if(s==='when'||s==='sched'){const v=s==='when'&&PP.arg==='재통화',w=PP.when;
     const ds=v?['오늘','내일','모레']:['내일','이번 주 토','이번 주 일'],ts=v?['오전','오후','저녁 7시 이후']:['11:00','14:00','16:00'];
     return head(s==='sched'?'일정 추가':v?'언제 다시 걸까요?':'방문 날짜 · 시간')+`<div class="wf2-sec">${wl('날짜','s')}</div><div class="wf2-row wf2-gap">${ds.map(x=>ppChip(x,w.d===x,'wd:'+x)).join('')}${ppChip('직접 선택',w.d==='직접 선택','wd:직접 선택')}</div><div class="wf2-sec">${wl('시간','s')}</div><div class="wf2-row wf2-gap">${ts.map(x=>ppChip(x,w.t===x,'wt:'+x)).join('')}</div>
     <div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('저장',1,'whensave',!(w.d&&w.t))}</div>`;}
-  if(s==='stage')return head('상태 바꾸기')+`<div class="wf2-sec">${wl('기본 상태 6개','s')}</div><div class="wf2-row wf2-gap">${STG_BASE.map(([x])=>ppChip(x,c.st===x,'ask:'+x)).join('')}</div><div class="wf2-sec">${wl('커스텀 상태 (관리자가 최대 6개 추가)','s')}</div><div class="wf2-row wf2-gap">${STG_CUSTOM.map(([x])=>ppChip(x,c.st===x,'ask:'+x)).join('')}</div><div class="pp-note">상태 이름 · 순서는 관리자가 설정에서 정한 그대로 보여 줍니다</div>`;
+  if(s==='stage')return head('상태 바꾸기')+`<div class="wf2-sec">${wl('상태 '+STG_SHOW.length+'개 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${STG_SHOW.map(([x])=>ppChip(x,c.st===x,'ask:'+x)).join('')}</div><div class="pp-note">상태 이름 · 순서는 관리자가 설정에서 정한 그대로 보여 줍니다</div>`;
   if(s==='ask')return head('상태 변경 확인')+`<div class="wf2-t mt">「${esc(c.name)}」 상태를 <b>${c.st}</b> → <b>${PP.arg}</b>(으)로 바꿀까요?</div><div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('바꾸기',1,'setst')}</div>`;
   if(s==='more')return head('더보기')+opt('share','내페이지 공유','고객에게 내 페이지 링크 보내기','toast:내페이지 공유 화면으로 이동합니다 (가상)')+opt('schedule',c.hold?'보류 해제':'보류','연락을 잠시 멈춤 · 목록에는 남음','hold')+opt('delete','고객 삭제','휴지통으로 이동','sheet:del','pp-danger');
   if(s==='del')return head('고객 삭제')+`<div class="wf2-t mt">「${esc(c.name)}」을(를) 삭제하면 휴지통으로 이동합니다. 연락만 멈추려면 <b>보류</b>를 권합니다.</div><div class="pp-note">웹 기능표 기준 고객 삭제는 관리자 · 소유자만 가능하고 휴지통에서 복원됩니다. 보관 기간은 확인이 필요합니다</div><div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('보류로 두기',0,'hold')}${ppBtn('삭제',1,'del')}</div>`;
-  if(s==='edit'){const k=PP.arg;
-    return head(k?k+' 수정':'정보 수정')+(k?`<label class="pp-fld"><small>${k}</small><input data-ppf="info:${k}" value="${esc(c.info[k]||'')}" placeholder="입력"></label>`
-      :`<label class="pp-fld"><small>이름</small><input data-ppf="name" value="${esc(c.name)}"></label><label class="pp-fld"><small>유입 계정명 (이름과 따로 적는 칸)</small><input data-ppf="acct" value="${esc(c.acct||'')}" placeholder="예: 광고 폼에 적힌 이름"></label><label class="pp-fld"><small>연락처</small><input data-ppf="phone" value="${esc(c.phone)}"></label><label class="pp-fld"><small>리드 ID · 등록일 (읽기 전용)</small><input readonly value="0000 0000 0000 ${1000+c.id} · ${c.reg?c.reg+'일 전':'오늘'}"></label>`)
-      +`<div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('저장',1,'editsave')}</div>`;}
+  if(s==='edit')return head('정보 수정')+`<label class="pp-fld"><small>이름</small><input data-ppf="name" value="${esc(c.name)}"></label><label class="pp-fld"><small>연락처</small><input data-ppf="phone" value="${esc(c.phone)}"></label><div class="pp-grid"><label class="pp-fld"><small>나이</small><input data-ppf="age" value="${esc(c.age||'')}" placeholder="선택 입력"></label><label class="pp-fld"><small>성별</small><input data-ppf="gender" value="${esc(c.gender||'')}" placeholder="선택 입력"></label></div>
+    <div class="wf2-sec">${wl('관심도','s')}</div><div class="wf2-row wf2-gap">${[[3,'●●● 상'],[2,'●●○ 중'],[1,'●○○ 하'],[0,'없음']].map(([v,t])=>ppChip(t,c.int===v,'eint:'+v)).join('')}</div>
+    <div class="wf2-sec">${wl('담당자','s')}</div><div class="wf2-row wf2-gap">${PP_OWN.map(x=>ppChip(x,c.own===x,'eown:'+x)).join('')}</div>
+    <label class="pp-fld"><small>유입 계정명 ${wnew}</small><input data-ppf="acct" value="${esc(c.acct||'')}" placeholder="광고 폼에 적힌 이름이 실명과 다를 때"></label><label class="pp-fld"><small>리드 ID · 등록일 (읽기 전용)</small><input readonly value="0000 0000 0000 ${1000+c.id} · ${ppReg(c)}"></label><div class="pp-note">상태는 기본 정보의 「상태 ▾」에서 확인을 거쳐 바꿉니다</div>
+    <div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('저장',1,'editsave')}</div>`;
   if(s==='log'){const g=PP.log;
     if(!g)return head('기록 추가')+`<div class="pp-note">기록 유형을 고르면 질문이 하나씩 나옵니다</div>`+opt('forum','방문 상담','질문 3개','logt:방문 상담')+opt('payments','입금','질문 2개','logt:입금')+opt('edit_note','메모','자유 입력','logt:메모');
     const qs=PP_LOGQ[g.type];
@@ -1940,7 +1996,7 @@ function ppSheetHtml(){
     return head(g.type+' · 확인')+`<div class="pp-kv2 mt">${qs.map(([q],i)=>`<span>${q}</span><b>${g.ans[i]}</b>`).join('')}</div><div class="pp-note">저장하면 한눈에 보기 · 계약 정보에 반영됩니다</div><div class="wf2-row wf2-gap mt">${ppBtn('이전',0,'logback')}<span style="flex:1"></span>${ppBtn('저장',1,'logsave')}</div>`;}
   return head('안내');
 }
-const PP_SCRID=()=>PP.sheet==='filter'?['SCR-02','필터 · 정렬']:['call','when'].includes(PP.sheet)?['SCR-06','통화 결과']:PP.sheet==='log'?['SCR-07','기록 추가']:PP.sheet==='edit'?['SCR-08','정보 수정']:['more','del'].includes(PP.sheet)?['SCR-09','더보기 · 삭제']:PP.scr==='search'?['SCR-03','검색']:PP.scr==='add'?['SCR-04','고객 등록']:PP.scr==='detail'?['SCR-05','고객 상세']:['SCR-01','고객 목록'];
+const PP_SCRID=()=>PP.sheet==='menu'?['SCR-01','고객 목록 · 전체 메뉴']:PP.sheet==='mdel'?['SCR-05','고객 상세 · 메모 삭제 확인']:PP.sheet==='filter'?['SCR-02','필터 · 정렬']:['call','when'].includes(PP.sheet)?['SCR-06','통화 결과']:PP.sheet==='log'?['SCR-07','기록 추가']:PP.sheet==='edit'?['SCR-08','정보 수정']:['more','del'].includes(PP.sheet)?['SCR-09','더보기 · 삭제']:PP.scr==='search'?['SCR-03','검색']:PP.scr==='add'?['SCR-04','고객 등록']:PP.scr==='detail'?['SCR-05','고객 상세']:['SCR-01','고객 목록'];
 function ppSide(){
   const [id,t]=PP_SCRID();
   document.getElementById('ppSide').innerHTML=`<h3><span class="pp-badge">${id}</span>${t}</h3><p>왼쪽 화면의 모든 영역을 눌러 볼 수 있습니다. 누른 결과는 아래에 기록됩니다. 데이터는 전부 가상이며 새로고침하면 처음으로 돌아갑니다.</p>
@@ -1975,7 +2031,7 @@ function ppDo(act){
   else if(cmd==='tab'||cmd==='toast'){ppSay(arg);ppLog(arg.split(' — ')[0]);}
   else if(cmd==='st'){PP.st=PP.st===arg&&arg!=='전체'?'전체':arg;ppLog('상태 「'+PP.st+'」 보기');}
   else if(cmd==='copen'){PP.cOpen=!PP.cOpen;ppLog('커스텀 상태 '+(PP.cOpen?'펼치기':'접기'));}
-  else if(cmd==='sheet'){const j=arg.indexOf(':');PP.sheet=(j<0?arg:arg.slice(0,j))||null;PP.arg=j<0?null:arg.slice(j+1);if(PP.sheet==='log')PP.log=null;if(PP.sheet==='sched')PP.when={};if(PP.sheet)ppLog({filter:'필터 · 정렬 시트 열기',more:'더보기 열기',edit:(PP.arg||'정보')+' 수정 열기',log:'기록 추가 열기',stage:'상태 바꾸기 열기',del:'삭제 확인 열기',sched:'일정 추가 열기'}[PP.sheet]||PP.sheet);else PP.campQ='';}
+  else if(cmd==='sheet'){const j=arg.indexOf(':');PP.sheet=(j<0?arg:arg.slice(0,j))||null;PP.arg=j<0?null:arg.slice(j+1);if(PP.sheet==='log')PP.log=null;if(PP.sheet==='sched')PP.when={};if(PP.sheet)ppLog({filter:'필터 · 정렬 시트 열기',menu:'전체 메뉴 열기',mdel:'메모 삭제 확인',more:'더보기 열기',edit:(PP.arg||'정보')+' 수정 열기',log:'기록 추가 열기',stage:'상태 바꾸기 열기',del:'삭제 확인 열기',sched:'일정 추가 열기'}[PP.sheet]||PP.sheet);else PP.campQ='';}
   else if(cmd==='sort'){PP.sort=arg;ppLog('정렬: '+arg);}
   else if(cmd==='f'){const [k,v0]=[arg.slice(0,arg.indexOf(':')),arg.slice(arg.indexOf(':')+1)];if(k==='date')PP.f.date=v0;else{const v=k==='int'?+v0:v0,a=PP.f[k],x=a.indexOf(v);x<0?a.push(v):a.splice(x,1);}ppLog('필터 '+({own:'담당자',int:'관심도',plat:'플랫폼',camp:'현장',date:'등록일'}[k])+' 선택');}
   else if(cmd==='fall'){PP.f[arg]=[];ppLog('담당자 전체');}
@@ -1984,7 +2040,7 @@ function ppDo(act){
   else if(cmd==='fx'){const [k,v0]=[arg.slice(0,arg.indexOf(':')),arg.slice(arg.indexOf(':')+1)];if(k==='date')PP.f.date='전체';else if(k==='sort')PP.sort=PP_SORT[0];else{const v=k==='int'?+v0:v0;PP.f[k]=PP.f[k].filter(x=>x!==v);}ppLog('조건 칩 해제');}
   else if(cmd==='clear'){PP.f=PP_F0();PP.sort=PP_SORT[0];PP.st='전체';ppLog('조건 모두 해제');}
   else if(cmd==='open'){PP.cid=+arg;PP.scr='detail';PP.sheet=null;PP.rec='전체';PP.rx={};PP.tech=false;ppLog('「'+ppC().name+'」 상세 열기');}
-  else if(cmd==='act'){PP.cid=+arg;const a=ppAct(ppC())[1];if(a==='전화'){PP.sheet='call';ppLog('카드에서 전화 → 통화 결과');}else if(a==='기록'){PP.scr='detail';PP.sheet='log';PP.log=null;ppLog('카드에서 기록 추가');}else{ppSay('문자 작성 화면으로 이동합니다 (가상)');ppLog('카드에서 문자');}}
+  else if(cmd==='act'){PP.cid=+arg;PP.sheet='call';ppLog('카드에서 전화 → 통화 결과');}
   else if(cmd==='call'){PP.sheet='call';ppLog('전화 → 통화 결과 시트');}
   else if(cmd==='res'){if(arg==='재통화'||arg==='방문 예약'){PP.sheet='when';PP.arg=arg;PP.when={};ppLog('통화 결과: '+arg+' → 일정 고르기');}else{ppSetSt(c,arg);PP.sheet=null;ppLog('통화 결과: '+arg);}}
   else if(cmd==='wd'){PP.when.d=arg;}
@@ -2000,9 +2056,13 @@ function ppDo(act){
   else if(cmd==='scope'){PP.scope=arg;ppLog('검색 범위: '+arg);}
   else if(cmd==='q'){PP.q=arg;ppLog(arg?'최근 검색어 「'+arg+'」':'검색어 지우기');}
   else if(cmd==='a'){const k=arg.slice(0,arg.indexOf(':')),v=arg.slice(arg.indexOf(':')+1);PP.add[k]=k==='int'?+v:v;}
-  else if(cmd==='addsave'){const a=PP.add;if(!(a.name.trim()&&a.phone.trim()&&a.camp)){ppSay('이름 · 연락처 · 현장을 먼저 입력해 주세요');}else{const n={id:Math.max(...PPD.map(x=>x.id))+1,name:a.name.trim(),st:a.st,int:a.int,own:a.own,plat:a.plat,camp:a.camp,reg:0,act:0,phone:a.phone.trim(),ctx:'memo',tx:a.memo.trim()||'직접 등록',kw:[],next:'',info:{},recs:a.memo.trim()?[{k:'메모',at:'방금',t:a.memo.trim()}]:[]};PPD.unshift(n);PP.cid=n.id;PP.scr='detail';PP.rec='전체';PP.rx={};ppSay('고객을 등록했어요',()=>{PPD=PPD.filter(x=>x!==n);PP.scr='list';PP.cid=null;});ppLog('고객 등록 저장 → 상세');}}
-  else if(cmd==='editsave'){const els=[...document.querySelectorAll('#ppPhone [data-ppf]')],p={name:c.name,phone:c.phone,acct:c.acct,info:{...c.info}};els.forEach(el=>{const k=el.dataset.ppf;if(k.startsWith('info:'))c.info[k.slice(5)]=el.value.trim();else c[k]=el.value.trim()||c[k];});PP.sheet=null;ppSay('저장했어요',()=>{Object.assign(c,p);});ppLog('정보 수정 저장');}
-  else if(cmd==='logt'){PP.log={type:arg,ans:[]};ppLog('기록 유형: '+arg);}
+  else if(cmd==='addsave'){const a=PP.add;if(!(a.name.trim()&&a.phone.trim()&&a.camp)){ppSay('이름 · 연락처 · 현장을 먼저 입력해 주세요');}else{const n={id:Math.max(...PPD.map(x=>x.id))+1,name:a.name.trim(),st:a.st,int:a.int,own:a.own,plat:'직접',src:a.src,age:a.age.trim(),gender:a.gender,camp:a.camp,reg:0,act:0,phone:a.phone.trim(),ctx:'memo',tx:a.memo.trim()||'직접 등록',kw:[],next:'',info:{},recs:a.memo.trim()?[{k:'메모',at:'방금',t:a.memo.trim()}]:[]};PPD.unshift(n);PP.cid=n.id;PP.scr='detail';PP.rec='전체';PP.rx={};ppSay('고객을 등록했어요',()=>{PPD=PPD.filter(x=>x!==n);PP.scr='list';PP.cid=null;});ppLog('고객 등록 저장 → 상세');}}
+  else if(cmd==='editsave'){const els=[...document.querySelectorAll('#ppPhone [data-ppf]')],p={name:c.name,phone:c.phone,acct:c.acct,age:c.age,gender:c.gender,info:{...c.info}};els.forEach(el=>{const k=el.dataset.ppf;if(k.startsWith('info:'))c.info[k.slice(5)]=el.value.trim();else if(k==='name'||k==='phone')c[k]=el.value.trim()||c[k];else c[k]=el.value.trim();});PP.sheet=null;ppSay('저장했어요',()=>{Object.assign(c,p);});ppLog('정보 수정 저장');}
+  else if(cmd==='logt'){PP.sheet='log';PP.log={type:arg,ans:[]};ppLog('기록 유형: '+arg);}
+  else if(cmd==='mdelok'){const i=+PP.arg,p=c.recs.slice();c.recs.splice(i,1);PP.sheet=null;ppSay('메모를 지웠어요',()=>{c.recs=p;});ppLog('메모 삭제');}
+  else if(cmd==='sdel'){const p=c.next;c.next='';ppSay('방문 일정을 지웠어요',()=>{c.next=p;});ppLog('방문 일정 삭제');}
+  else if(cmd==='eint'){c.int=+arg;}
+  else if(cmd==='eown'){c.own=arg;}
   else if(cmd==='loga'){PP.log.ans.push(arg);}
   else if(cmd==='logback'){if(PP.log&&PP.log.ans.length)PP.log.ans.pop();else PP.log=null;}
   else if(cmd==='logsave'){const g=PP.log,p={recs:c.recs.slice(),info:{...c.info},tx:c.tx};let t;
