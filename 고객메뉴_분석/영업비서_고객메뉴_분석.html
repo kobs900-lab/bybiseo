@@ -864,6 +864,115 @@ details.rest table{margin:0 0 6px}
 .nx-note .ic{width:18px;height:18px;flex:none}
 .nx-note p{margin:0;flex:1;min-width:220px}
 .nx-note button{flex:none;border:1px solid #d9c27a;background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:12.5px;font-weight:700;color:#5b4a14;cursor:pointer}
+/* pp- : ③ 개선 기획 — 눌러 보는 프로토타입 */
+.pp-wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start;margin-top:14px}
+.pp-stage{background:#f2f2f2;border-radius:12px;padding:18px;display:flex;justify-content:center}
+.pp-phone{width:340px;height:700px;max-width:calc(100vw - 76px);background:#fff;border:2px solid #757575;border-radius:30px;position:relative;overflow:hidden;font-size:12.5px;color:#424242;display:flex;flex-direction:column;padding-top:10px;line-height:1.45}
+.pp-phone [data-pp]{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pp-phone [data-pp]:active{opacity:.6}
+.pp-body{flex:1;overflow-y:auto;padding:6px 14px 78px;position:relative}
+.pp-top{display:flex;align-items:center;gap:6px;padding:2px 10px 8px;border-bottom:1.5px solid #e0e0e0;flex:none}
+.pp-ib{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:8px;flex:none}
+.pp-ib .ic{width:18px;height:18px}
+.pp-tabbar{margin-top:0;background:#fff;flex:none}
+.pp-fab{position:absolute;right:16px;bottom:64px;width:44px;height:44px;border-radius:50%;background:#424242;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:5}
+.pp-fab .wf2-i{color:#fff}
+.pp-cnt{font-size:11px;color:#9e9e9e;margin:10px 0 2px}
+.pp-card{margin-top:8px}
+.pp-el{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;display:block}
+.pp-empty{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:34px 10px;color:#757575}
+.pp-empty.sm{padding:14px}
+.pp-empty b{color:#212121;font-size:14px}
+.pp-dim{position:absolute;inset:0;background:rgba(0,0,0,.35);z-index:10}
+.pp-sheet{position:absolute;left:0;right:0;bottom:0;max-height:88%;overflow-y:auto;z-index:11;margin:0 !important}
+.pp-toast{position:absolute;left:12px;right:12px;bottom:66px;background:#212121;color:#fff;border-radius:10px;padding:9px 12px;font-size:12px;display:flex;gap:8px;align-items:center;z-index:20;line-height:1.4}
+.pp-toast u{margin-left:auto;font-weight:800;white-space:nowrap}
+.pp-in{border:0;outline:0;background:none;font:inherit;flex:1;min-width:0;color:#212121}
+.pp-fld{display:flex;flex-direction:column;gap:3px;margin-top:9px}
+.pp-fld small{font-size:11px;color:#757575;font-weight:700}
+.pp-fld input,.pp-fld select,.pp-fld textarea{border:1.5px solid #bdbdbd;border-radius:9px;padding:7px 9px;font:inherit;background:#fff;color:#212121;width:100%;box-sizing:border-box}
+.pp-fld input[readonly]{background:#f2f2f2;color:#9e9e9e}
+.pp-dis{opacity:.4}
+.pp-note{font-size:11px;color:#757575;background:#f5f5f5;border-radius:8px;padding:6px 8px;margin-top:8px;line-height:1.45}
+.pp-tag{font-size:10px;font-weight:800;border:1.5px solid #9e9e9e;border-radius:5px;padding:0 5px;color:#424242;white-space:nowrap;flex:none}
+.pp-li{display:flex;gap:8px;align-items:center;padding:9px 2px;border-bottom:1px solid #eee}
+.pp-kv2{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:12px}
+.pp-kv2 span{color:#757575}
+.pp-kv2 b{color:#212121;font-weight:700}
+.pp-qa{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.pp-qa .wf2-btn{justify-content:center;padding:8px 2px}
+.pp-steps{display:flex;gap:3px}
+.pp-steps span{flex:1;text-align:center;font-size:10.5px;padding:6px 1px;border:1.5px solid #bdbdbd;border-radius:7px;color:#757575;white-space:nowrap;background:#fff;letter-spacing:-.3px}
+.pp-steps span.done{background:#e0e0e0;color:#424242}
+.pp-steps span.on{background:#424242;border-color:#424242;color:#fff;font-weight:800}
+.pp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.pp-cell{border:1.5px solid #bdbdbd;border-radius:9px;padding:6px 8px;display:flex;flex-direction:column;gap:1px;background:#fff;min-width:0}
+.pp-cell small{font-size:10px;color:#757575}
+.pp-cell b{font-size:12px;color:#212121}
+.pp-sub{font-size:11.5px;background:#f5f5f5;border-radius:7px;padding:6px 8px;color:#424242}
+.pp-opt{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid #eee}
+.pp-opt .wf2-col{flex:1;min-width:0}
+.pp-opt b{color:#212121;font-size:13px}
+.pp-opt .wf2-col span{font-size:11px;color:#757575}
+.pp-opt.pp-danger b{color:#b91c1c}
+.pp-prog{height:4px;background:#e0e0e0;border-radius:2px;overflow:hidden;margin:8px 0}
+.pp-prog i{display:block;height:100%;background:#424242}
+.pp-phone mark{background:#ffe58a;color:inherit;padding:0 1px}
+.pp-side{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.pp-side h3{font-size:15px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0}
+.pp-side h4{font-size:12.5px;color:var(--sub);margin:16px 0 6px}
+.pp-side p{margin:6px 0 0;color:var(--sub);font-size:13px;line-height:1.55}
+.pp-side ol{margin:0;padding-left:18px;font-size:12.5px;color:var(--sub);line-height:1.7}
+.pp-side ol li:first-child{color:var(--ink);font-weight:700}
+.pp-jump{display:flex;flex-wrap:wrap;gap:6px}
+.pp-jump button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:5px 9px;font:inherit;font-size:12px;cursor:pointer;color:var(--ink)}
+.pp-jump button.on{background:#111;color:#fff;border-color:#111}
+.pp-jump button b{margin-right:4px}
+.pp-badge{font-weight:800;font-size:12px;background:#111;color:#fff;border-radius:6px;padding:3px 8px}
+.wf3-t6{flex-wrap:nowrap !important;gap:4px !important}
+.wf3-t6 .wf2-tile{flex:1 1 0 !important;min-width:0 !important;padding:5px 1px;align-items:center;text-align:center}
+.wf3-t6 .wf2-tile small{font-size:9px;letter-spacing:-.6px;white-space:nowrap}
+.wf3-t6 .wf2-tile b{font-size:11.5px;letter-spacing:-.3px}
+.asx-ttl{font-size:16px;margin:22px 0 12px;scroll-margin-top:130px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.asx-ttl:first-of-type{margin-top:4px}
+.asx-ttl small{font-size:12.5px;font-weight:500;color:var(--mute)}
+.nx-pub{font-size:12.5px;color:var(--mute);margin:0 0 12px}
+@media(max-width:900px){.pp-wrap{grid-template-columns:1fr}.pp-stage{padding:10px}}
+/* 탭 정리 · 현행 비교 (cmp-) */
+.tabs .tab-sep{flex:none;align-self:center;width:1px;height:18px;background:var(--line);margin:0 8px}
+.tabs .tab-lbl{flex:none;align-self:center;font-size:11px;color:var(--mute);white-space:nowrap;margin-right:2px}
+.tabs button.tab-sub{font-weight:500;font-size:13px;opacity:.72}
+.tabs button.tab-sub.on{opacity:1}
+.tab-hold{background:#fff8e6;border:1px solid #f1dfa9;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px;line-height:1.55;color:#5b4a14}
+.cmp-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px;font-size:13px;color:var(--sub)}
+.pp-wrap.pp-cmp{grid-template-columns:auto auto minmax(0,1fr)}
+.pp-asis{width:236px;min-width:0}
+.pp-colh{font-size:12px;font-weight:800;color:var(--sub);display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.pp-colh i{font-style:normal;font-size:11px;font-weight:800;border-radius:5px;padding:1px 6px;background:#e5e7eb;color:#374151}
+.pp-colh i.new{background:#111;color:#fff}
+.cmp-shot{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#000;line-height:0;cursor:zoom-in}
+.cmp-shot img{width:100%;display:block}
+.cmp-shot .nx-cap{width:100%;aspect-ratio:1260/2736;border:0;border-radius:0}
+.cmp-cap{font-size:12px;color:var(--sub);line-height:1.5;margin:8px 0 0}
+.cmp-sw{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.cmp-sw button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:2px 9px;font:inherit;font-size:11.5px;cursor:pointer;color:var(--sub)}
+.cmp-sw button.on{background:#111;border-color:#111;color:#fff}
+.scard-b.scard-cmp{grid-template-columns:auto auto 1fr}
+.scard-asis{width:220px;background:#f2f2f2;border-radius:12px;padding:14px;align-self:start;min-width:0}
+.scard-cmp .scard-wf{flex-direction:column;align-items:center;justify-content:flex-start}
+.scard-cmp .scard-wf .pp-colh{align-self:flex-start}
+.scard-diff{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:#fafafa}
+.scard-diff h4{font-size:12.5px;margin:0 0 6px;color:var(--ink)}
+.scard-diff table{width:100%;border-collapse:collapse;font-size:12.5px}
+.scard-diff td{padding:5px 6px;vertical-align:top;border-top:1px solid var(--line);line-height:1.5}
+.scard-diff tr:first-child td{border-top:0}
+.scard-diff td:first-child{color:var(--sub);width:44%}
+.scard-diff td:nth-child(2){width:18px;color:var(--mute)}
+.cmp-off .pp-asis,.cmp-off .scard-asis,.cmp-off .scard-diff{display:none}
+.cmp-off .pp-wrap.pp-cmp{grid-template-columns:auto minmax(0,1fr)}
+.cmp-off .scard-b.scard-cmp{grid-template-columns:auto 1fr}
+@media(max-width:1180px){.pp-wrap.pp-cmp .pp-side{grid-column:1/-1}.pp-wrap.pp-cmp{grid-template-columns:auto auto}.scard-b.scard-cmp{grid-template-columns:auto 1fr}.scard-b.scard-cmp .scard-desc{grid-column:1/-1}}
+@media(max-width:760px){.pp-wrap.pp-cmp,.cmp-off .pp-wrap.pp-cmp{grid-template-columns:1fr}.pp-asis{width:100%;max-width:240px;margin:0 auto;order:2}.pp-wrap.pp-cmp .pp-side{order:3}.scard-b.scard-cmp,.cmp-off .scard-b.scard-cmp{grid-template-columns:1fr}.scard-asis{width:auto;max-width:260px;margin:0 auto}}
 #pnAs.asx-hide-iss .asx-pi{display:none}
 @media(max-width:720px){.asx-bar{position:static}.asx-b{grid-template-columns:1fr}}
 </style>
@@ -876,10 +985,11 @@ details.rest table{margin:0 0 6px}
   <nav class="tabs" id="tabs">
     <button data-tab="ia" class="on">① 서비스 구조도</button>
     <button data-tab="as">② 현황 와이어프레임 <span class="n">AS-IS</span></button>
-    <button data-tab="plan">③ 개선 기획 <span class="n">와이어프레임</span></button>
-    <button data-tab="tobe" class="tobe">④ 개선 디자인 <span class="n">제안 1 · 2</span></button>
-    <button data-tab="data">⑤ 데이터 흐름 <span class="n">심층</span></button>
-    <button data-tab="list">⑥ 문제점 전체 목록 <span class="n">핵심 6 · 전체 <span id="issCount"></span></span></button>
+    <button data-tab="plan">③ 개선 기획 <span class="n">프로토타입 · 현행 비교</span></button>
+    <span class="tab-sep"></span><span class="tab-lbl">참고</span>
+    <button data-tab="data" class="tab-sub">데이터 흐름</button>
+    <button data-tab="list" class="tab-sub">문제점 목록 <span class="n">핵심 6 · 전체 <span id="issCount"></span></span></button>
+    <button data-tab="tobe" class="tobe tab-sub">개선 디자인 <span class="n">보류</span></button>
   </nav>
 </div></header>
 
@@ -940,21 +1050,32 @@ details.rest table{margin:0 0 6px}
 <!-- ===================== ② AS-IS ===================== -->
 <section class="tab" id="tab-as">
   <div class="asx-bar">
-    <div class="asx-seg"><button data-asxm="doc">실제 화면 + 기능 설명</button><button data-asxm="proto">인터랙티브 와이어프레임</button></div>
+    <div class="asx-seg"><button data-asxm="proto">인터랙티브 와이어프레임 ↓</button><button data-asxm="doc">실제 화면 + 기능 설명 ↓</button></div>
     <label class="asx-sw"><input type="checkbox" id="asxIss"><span class="asx-tg"></span>문제점 표시 <small>켜면 영역별 문제 ID · 화면별 문제 목록이 보입니다</small></label>
   </div>
-  <div id="asxDoc"></div>
+  <h3 class="asx-ttl" id="asxProtoTtl">인터랙티브 와이어프레임 <small>지금 앱을 가상 데이터로 다시 그린 것입니다. 눌러서 움직여 볼 수 있습니다</small></h3>
   <div class="proto" id="asProto">
     <div class="phone-col"><div class="phone" id="phAs"></div></div>
     <aside class="panel" id="pnAs"></aside>
   </div>
+  <h3 class="asx-ttl" id="asxDocTtl">실제 화면 + 기능 설명 <small>실제 앱 캡처 13장과 영역별 기능</small></h3>
+  <div id="asxDoc"></div>
 </section>
 
-<!-- ===================== ③ PLAN ===================== -->
 <section class="tab" id="tab-plan">
+  <div class="cmp-bar"><label class="asx-sw"><input type="checkbox" id="cmpSw" checked><span class="asx-tg"></span>현행과 나란히 보기</label><span>켜 두면 프로토타입과 화면 기획서 옆에 지금 앱의 같은 화면이 함께 보입니다</span></div>
+  <div class="sec" id="ppSec" style="border-color:#111">
+    <h2>개선 기획 — 눌러 보는 프로토타입</h2>
+    <p class="lead">아래 화면 기획서(SCR-01~09)를 하나로 이은 흑백 프로토타입입니다. 상태 · 필터 · 검색 · 카드 · 상세 · 통화 결과 · 기록 · 수정 · 삭제까지 <b>모든 영역을 눌러 볼 수 있습니다.</b> 화면을 옮기면 왼쪽의 현행 화면도 같이 바뀝니다. 데이터는 전부 가상이며 새로고침하면 처음으로 돌아갑니다.</p>
+    <div class="pp-wrap pp-cmp" id="ppBox">
+      <div class="pp-asis"><div class="pp-colh"><i>현행</i>실제 앱 · 같은 화면</div><div id="ppAsis"></div></div>
+      <div><div class="pp-colh"><i class="new">개선</i>프로토타입 · 눌러 보기</div><div class="pp-stage"><div class="pp-phone" id="ppPhone"></div></div></div>
+      <aside class="pp-side" id="ppSide"></aside>
+    </div>
+  </div>
   <div class="sec" style="border-color:#111">
     <h2>개선 기획 — 화면 기획서</h2>
-    <p class="lead">두 제안을 합친 추천 방향을 <b>IA 구조(고객 관리 → 고객 목록 · 고객 등록 · 고객 상세) 순서</b>의 전체 화면 흑백 와이어프레임으로 정리했습니다. 화면 오른쪽 표의 <b>컴포넌트</b> 버튼을 누르면 아래 컴포넌트 상세로 이동해, 이 자리에 맞는 최적의 컴포넌트인지 확인하실 수 있습니다. 화면 · 컴포넌트마다 의견 칸이 있고 이 브라우저에 자동 저장됩니다.</p>
+    <p class="lead">추천 방향을 <b>IA 구조(고객 관리 → 고객 목록 · 고객 등록 · 고객 상세) 순서</b>의 전체 화면 흑백 와이어프레임으로 정리했습니다. 화면마다 왼쪽에 현행 화면, 가운데에 개선안, 오른쪽에 달라지는 점을 두었습니다. 화면 오른쪽 표의 <b>컴포넌트</b> 버튼을 누르면 아래 컴포넌트 상세로 이동해, 이 자리에 맞는 최적의 컴포넌트인지 확인하실 수 있습니다. 화면 · 컴포넌트마다 의견 칸이 있고 이 브라우저에 자동 저장됩니다.</p>
     <div class="scr-top"><div class="seg" id="scrBr"></div></div>
     <div id="scrMap"></div>
   </div>
@@ -969,6 +1090,7 @@ details.rest table{margin:0 0 6px}
 
 <!-- ===================== ④ TO-BE ===================== -->
 <section class="tab" id="tab-tobe">
+  <div class="tab-hold"><b>보류 중인 탭입니다.</b> 디자인은 구조와 기획을 먼저 확정한 뒤 다시 진행합니다(2026-11-10 결정). 아래 제안 1 · 2는 그 전에 만든 초안이라, 상태를 기본 6개 + 커스텀 최대 6개로 보는 지금 기준과 맞지 않는 부분이 있습니다.</div>
   <div class="dsw"><button data-dsw="tobe" class="on">제안 1 · 보기·단계 중심</button><button data-dsw="easy" class="">제안 2 · 할 일 중심 (쉬운 버전)</button></div>
   <div class="sec" style="border-color:#bfe3cb">
     <h2>개선 제안 1 — "보기 중심 · 단계 중심 · 기록 통합"</h2>
@@ -993,6 +1115,7 @@ details.rest table{margin:0 0 6px}
 
 <!-- ===================== ④ EASY ===================== -->
 <section class="tab" id="tab-easy">
+  <div class="tab-hold"><b>보류 중인 탭입니다.</b> 디자인은 구조와 기획을 먼저 확정한 뒤 다시 진행합니다(2026-11-10 결정). 아래 제안 1 · 2는 그 전에 만든 초안이라, 상태를 기본 6개 + 커스텀 최대 6개로 보는 지금 기준과 맞지 않는 부분이 있습니다.</div>
   <div class="dsw"><button data-dsw="tobe" class="">제안 1 · 보기·단계 중심</button><button data-dsw="easy" class="on">제안 2 · 할 일 중심 (쉬운 버전)</button></div>
   <div class="sec e2-intro">
     <h2>개선 제안 2 — "할 일을 알려 주는 비서" (처음 쓰는 사람용)</h2>
@@ -1077,7 +1200,7 @@ details.rest table{margin:0 0 6px}
       <tr><td><b>리드 ID</b></td><td>기본 정보 오른쪽 위 (라벨 없음)</td><td>자동</td><td>-</td><td>-</td><td class="warn">형식 2종: 16자리 숫자 / 'unified_' + UUID</td></tr>
       <tr><td><b>상태</b> (12종)</td><td>카드 배지, 상세 헤더·요약 카드·기본 정보, 상태 칩·시트(숫자), 필터 정렬</td><td>고객 등록 — <b>현장을 먼저 골라야 선택 가능</b></td><td>상세 '상태' 드롭다운 <span class="warn">(즉시 반영 추정, 미검증)</span></td><td>-</td><td>상태 목록이 현장마다 다를 가능성</td></tr>
       <tr><td><b>관심도</b> (상·중·하)</td><td>카드·요약 카드의 점 미터(라벨 없음), 상세 기본 정보, 필터</td><td>고객 등록 '관심도'</td><td>상세 '관심도' 드롭다운 (미검증)</td><td>-</td><td class="warn">상태 '상' 고객은 관심도가 비어 있고, 상태 '타현장' 고객은 관심도 '중' — 두 값이 따로 놂</td></tr>
-      <tr><td><b>담당자</b></td><td>카드 오른쪽 위, 요약 카드, 기본 정보, 통화 카드</td><td>고객 등록(현장 선택 후)</td><td>상세 드롭다운 (미검증)</td><td>-</td><td>'파크_송'처럼 팀_성 형식 계정명 / 필터에는 '전체'만</td></tr>
+      <tr><td><b>담당자</b></td><td>카드 오른쪽 위, 요약 카드, 기본 정보, 통화 카드</td><td>고객 등록(현장 선택 후)</td><td>상세 드롭다운 (미검증)</td><td>-</td><td>'팀_성' 형식 계정명 / 필터에는 '전체'만</td></tr>
       <tr><td><b>메모</b></td><td>목록 카드(최신 1줄), 상세 메모, 활동 타임라인(복제)</td><td>+ 메모 추가 / 등록 폼 메모 / 리드 폼 응답 자동</td><td>메모마다 ✏️ (미검증)</td><td>메모마다 🗑 (미검증)</td><td>통화 결과를 담당자가 메모로 다시 적음('업무중이예요/문자주세요') · 무효 번호도 메모로 기록</td></tr>
       <tr><td><b>미팅 예약</b></td><td>상세 미팅 예약, 타임라인 '방문 일정'</td><td>+ 일정 추가</td><td class="warn">수정 수단 안 보임</td><td>🗑</td><td class="warn">일정이 있어도 목록 카드는 '예약 없음'</td></tr>
       <tr><td><b>AI 통화</b><br>요약 · 제안 · 키워드 · 대화</td><td>상세 AI 통화 요약, 타임라인, <b>목록 카드 파란 칩</b>, 검색(요약·키워드)</td><td>녹음 업로드 시 자동</td><td>없음</td><td>없음</td><td class="warn">전화번호 기준으로 붙음 → 다른 현장·다른 담당자의 과거 통화까지 노출</td></tr>
@@ -1233,37 +1356,37 @@ ISS.push(
 /* ---------- dummy customers (가상) ---------- */
 const TALK1 = [['c','00:00','여보세요?'],['a','00:00','네, A단지 분양 상담실입니다. 문자 남겨 주셔서 연락드렸습니다.'],['c','00:06','언제 시작했어요?'],['a','00:29','8월 초에 시작했고 한강뷰 세대는 거의 다 분양됐습니다. 한번 방문해 보시면 좋습니다.'],['c','00:50','저는 하남에 살아요.'],['a','00:51','네, 자료 먼저 문자로 보내드릴게요.']];
 const CUST = [
- {id:1,name:'김민수',st:'미지정',camp:'PH-A',owner:'담당자1',date:'11/9',reg:'2026.11.09',phone:'010-0000-0001',lead:'3543 6428 5580 5639',int:0,gender:'',tags:[],
+ {id:1,name:'김민수',st:'미지정',camp:'PH-A',owner:'담당자1',date:'11/9',reg:'2026.11.09',phone:'010-0000-0001',lead:'0000 0000 0000 0001',int:0,gender:'',tags:[],
   memos:[{t:'[인스턴트 폼] 어떤 상담을 원하시나요? : 계약조건 문의',by:'회사계정',at:'2026.11.09 09:06'}],mtg:[],calls:[],
   tl:[{at:'11/9 09:06',ti:'',bd:'[인스턴트 폼] 어떤 상담을 원하시나요? : 계약조건 문의',c:'#eab308'},{at:'11/9 09:05',ti:'리드 등록',bd:'PH-A',c:'#38bdf8'}]},
- {id:2,name:'이서연',st:'가계약',camp:'A단지_한강뷰',owner:'담당자2',date:'9/14',reg:'2026.09.14',phone:'010-0000-0002',lead:'1431 3292 5224 1309',int:0,gender:'',tags:['A단지','한강뷰','분양'],
+ {id:2,name:'이서연',st:'가계약',camp:'A단지_한강뷰',owner:'담당자2',date:'9/14',reg:'2026.09.14',phone:'010-0000-0002',lead:'0000 0000 0000 0002',int:0,gender:'',tags:['A단지','한강뷰','분양'],
   memos:[
    {t:'◆ A단지 상담내용 ◆ 방문일자 :10월7일 11시 고객명 : 이서연 번호 : 00-0002 방문경로 : 계약자 방문인원 : 1명 거주지역 : 미사 담당자 : 담당자2 상담지원 : 팀장 원하는타입 : 동호수 : 3001 상담내용 : -3001 계약서 도장날인, 확정분양가 도장날인 - 실거주',by:'회사계정',at:'2026.10.07 12:51'},
-   {t:'◆ A단지 상담내용 ◆ 방문일자 : 9월16일 6시30분방문 고객명 : 이서연 번호 : 00-0062 방문경로 : 비서방 방문인원 : 1 거주지역 : 하남 원하는타입 : 74A 상담내용 : -고층 희망 -한강뷰가 좋아서 오심 -2004호 계약하심',by:'회사계정',at:'2026.09.16 21:58'},
+   {t:'◆ A단지 상담내용 ◆ 방문일자 : 9월16일 6시30분방문 고객명 : 이서연 번호 : 00-0062 방문경로 : 비서방 방문인원 : 1 거주지역 : 하남 원하는타입 : 74A 상담내용 : -고층 희망 -한강뷰가 좋아서 오심 -1204호 계약하심',by:'회사계정',at:'2026.09.16 21:58'},
    {t:'■입금보고■ *입금호실 : 102-2004 *계약자명 : 이서연 *입금자명 : 이서연 *입금구분 : *입금금액 : 10,000,000원 *1차 계약금 : 9/16 1000만원 *2차 계약금: 9/21 2500만원 *비 고 :',by:'회사계정',at:'2026.09.16 21:54'},
    {t:'오늘6시 방문예정',by:'담당자2',at:'2026.09.16 15:12'},
    {t:'A단지 분양 관련 안내 통화로, 분양은 8월 초 시작되어 한강뷰 세대는 대부분 분양 완료 상태로 안내됨. 고객은 우선 자료 전송을 요청했고 이후 통화하겠다고 응답함.',by:'회사계정',at:'2026.09.15 15:24'}],
   mtg:[{m:'10월',d:'7',time:'오전 11:00 - 오후 3:00',who:'담당자2'}],
   calls:[{at:'9/15 13:03',dur:'1분 27초',who:'담당자2',sum:'A단지 분양 관련 안내 통화. 분양은 8월 초 시작, 한강뷰 세대는 대부분 분양 완료. 고객은 자료를 먼저 요청했고 이후 통화하겠다고 함.',sug:'즉시 문자/카카오톡으로 브로셔·분양가표·잔여세대 현황을 보내고, 회신이 없으면 후속 통화로 방문 일정을 제안하세요.',kw:['A단지','한강뷰 아파트','분양','8월 초 분양 시작','방문 제안'],det:[['00:01','문자 문의에 대한 콜백'],['00:29','8월 초 분양 시작, 한강뷰 대부분 완료 안내'],['00:55','방문 여부 즉시 확정하지 않음'],['01:21','자료 먼저 요청, 이후 통화 예정']],talk:TALK1,total:26}],
   tl:[{at:'10/7 12:51',ti:'',bd:'◆ A단지 상담내용 ◆ 방문일자 :10월7일 11시 … 3001 계약서 도장날인',c:'#eab308',by:'회사계정'},{at:'10/7 11:09',ti:'',bd:'',c:'#38bdf8',by:'회사계정'},{at:'10/7 11:00',ti:'방문 일정',bd:'',c:'#f97316',by:'담당자2'},{at:'9/16 21:58',ti:'',bd:'◆ A단지 상담내용 ◆ 방문일자 : 9월16일 …',c:'#e11d48',by:'회사계정'},{at:'9/14 23:54',ti:'리드 등록',bd:'A단지_한강뷰',c:'#38bdf8'}]},
- {id:3,name:'박지훈',st:'정계약',camp:'B단지_드포레',owner:'담당자3',date:'10/31',reg:'2026.10.31',phone:'010-0000-0003',lead:'1125 2606 0348 4598',int:3,gender:'',tags:['B단지','현장 방문','오늘'],
-  memos:[{t:'10월31일 202동 1801호 1000만원 입금완료 정계약발행 서류미비(본인서명사실확인서) 2차계약금 : 11월15일',by:'담당자3',at:'2026.10.31 17:32'},{t:'통화. 오늘 오후1~2시반 방문예약',by:'담당자3',at:'2026.10.31 11:23'},{t:'[인스턴트 폼] 어떤 상담을 원하시나요? : 모델하우스 방문 예약',by:'회사계정',at:'2026.10.31 04:20'}],
+ {id:3,name:'박지훈',st:'정계약',camp:'B단지',owner:'담당자3',date:'10/31',reg:'2026.10.31',phone:'010-0000-0003',lead:'0000 0000 0000 0003',int:3,gender:'',tags:['B단지','현장 방문','오늘'],
+  memos:[{t:'10월31일 나동 903호 1000만원 입금완료 정계약발행 서류미비(본인서명사실확인서) 2차계약금 : 11월15일',by:'담당자3',at:'2026.10.31 17:32'},{t:'통화. 오늘 오후1~2시반 방문예약',by:'담당자3',at:'2026.10.31 11:23'},{t:'[인스턴트 폼] 어떤 상담을 원하시나요? : 모델하우스 방문 예약',by:'회사계정',at:'2026.10.31 04:20'}],
   mtg:[{m:'10월',d:'31',time:'오후 1:00 - 오후 3:00',who:'담당자3'}],
   calls:[{at:'10/31 11:10',dur:'1분 3초',who:'담당자3',sum:'상담사는 B단지 현장 방문을 제안했고, 고객은 오늘 오후 4시에 방문하기로 함. 주소와 안내 문자를 요청.',sug:'주소와 안내 문자를 즉시 발송하세요.',kw:['B단지','현장 방문','오늘','방문 예약','3시 반'],det:[['00:13','오늘 현장 구경 가능 여부 제안'],['00:25','방문 예약은 4시까지 가능 안내'],['00:48','최종 방문 시간 4시로 확정'],['00:55','주소 및 안내 문자 요청']],talk:[['a','00:01','안 들렸어요?'],['c','00:01','네 말씀하세요'],['a','00:02','B단지 상담실입니다. 문자 주셨죠?'],['c','00:09','네네']],total:18}],
-  tl:[{at:'10/31 13:00',ti:'방문 일정',bd:'',c:'#f97316',by:'담당자3'},{at:'10/31 11:23',ti:'',bd:'통화. 오늘 오후1~2시반 방문예약',c:'#eab308',by:'담당자3'},{at:'10/31 11:10',ti:'통화 (1분 3초)',bd:'상담사는 B단지 현장 방문을 제안했고…',c:'#e11d48',by:'회사계정'},{at:'10/31 04:08',ti:'리드 등록',bd:'B단지_드포레',c:'#38bdf8'}]},
- {id:4,name:'Alex - 최현우',st:'방문 예약',camp:'PH-A',owner:'담당자4',date:'11/8',reg:'2026.11.08',phone:'010-0000-0004',lead:'1153 9591 4758 7141',int:3,gender:'남',tags:['서초 P.H.','남부터미널역 2번…','중공된 건물'],
-  memos:[{t:'남부터미널 인근거주/평수/계약조건문의 가족중 실거주&갭투자 검토/방문예약',by:'담당자4',at:'2026.11.08 21:12'},{t:'[인스턴트 폼] 어떤 상담을 원하시나요? : 계약조건 문의',by:'회사계정',at:'2026.11.08 20:29'}],
+  tl:[{at:'10/31 13:00',ti:'방문 일정',bd:'',c:'#f97316',by:'담당자3'},{at:'10/31 11:23',ti:'',bd:'통화. 오늘 오후1~2시반 방문예약',c:'#eab308',by:'담당자3'},{at:'10/31 11:10',ti:'통화 (1분 3초)',bd:'상담사는 B단지 현장 방문을 제안했고…',c:'#e11d48',by:'회사계정'},{at:'10/31 04:08',ti:'리드 등록',bd:'B단지',c:'#38bdf8'}]},
+ {id:4,name:'Alex - 최현우',st:'방문 예약',camp:'PH-A',owner:'담당자4',date:'11/8',reg:'2026.11.08',phone:'010-0000-0004',lead:'0000 0000 0000 0004',int:3,gender:'남',tags:['A현장','○○역 2번…','중공된 건물'],
+  memos:[{t:'○○역 인근거주/평수/계약조건문의 가족중 실거주&갭투자 검토/방문예약',by:'담당자4',at:'2026.11.08 21:12'},{t:'[인스턴트 폼] 어떤 상담을 원하시나요? : 계약조건 문의',by:'회사계정',at:'2026.11.08 20:29'}],
   mtg:[{m:'11월',d:'15',time:'오후 12:00 - 오후 1:00',who:'담당자4'}],
-  calls:[{at:'11/8 21:04',dur:'4분 51초',who:'담당자4',sum:'고객은 다음 주 월요일 오후 1시 방문으로 예약 의사를 밝힘. 공급가 15억부터, 장금유예 40% 등 조건과 실거주 의무 없음 안내. 카톡으로 홈페이지·명함·안내 시안을 보내기로 함.',sug:'카카오톡으로 홈페이지·명함·안내 시안 링크와 방문 일정 확인 문자를 즉시 전송하세요.',kw:['서초 P.H.','남부터미널역 2번 출구','중공된 건물','소형 아파트','실거주 의무 없음'],det:[['00:20','다음 주 월요일 방문 가능 여부 제안'],['00:45','방문 시간 오후 1시 제안'],['03:24','25평형 등 투자 가능성 안내'],['04:07','방문 전 30분 전 연락 요청']],talk:[['c','00:02','아 예 안녕하세요'],['a','00:04','혹시 부재중 보시고 전화 주셨을까요?'],['c','00:07','예 예 맞아요'],['a','00:08','네, 영상 보시고 문의 남겨 주셔서 전화드렸습니다.']],total:74}],
-  tl:[{at:'11/15 12:00',ti:'방문 일정',bd:'',c:'#f97316',by:'담당자4'},{at:'11/8 21:12',ti:'',bd:'',c:'#38bdf8',by:'담당자4'},{at:'11/8 21:12',ti:'',bd:'남부터미널 인근거주/평수/계약조건문의 …',c:'#eab308',by:'담당자4'},{at:'11/8 21:04',ti:'통화 (4분 51초)',bd:'고객은 다음 주 월요일 오후 1시 방문으로…',c:'#e11d48',by:'회사계정'},{at:'11/8 20:27',ti:'리드 등록',bd:'PH-A',c:'#38bdf8'}]},
- {id:5,name:'정하은',st:'부재중',camp:'C단지',owner:'담당자1',date:'11/8',reg:'2026.11.08',phone:'010-0000-0005',lead:'1200 0000 0000 0005',int:0,gender:'',tags:[],memos:[{t:'[인스턴트 폼] 어떤 상담을 원하시나요? : 분양가 문의',by:'회사계정',at:'2026.11.08 10:02'}],mtg:[],calls:[],tl:[{at:'11/8 10:01',ti:'리드 등록',bd:'C단지',c:'#38bdf8'}]},
- {id:6,name:'윤재민',st:'재통화',camp:'A단지_한강뷰',owner:'담당자2',date:'11/7',reg:'2026.11.07',phone:'010-0000-0006',lead:'1200 0000 0000 0006',int:2,gender:'',tags:['다음주 화요일'],memos:[{t:'다음 주 화요일 오후 재통화 요청',by:'담당자2',at:'2026.11.07 14:20'}],mtg:[],calls:[],tl:[{at:'11/7 14:20',ti:'',bd:'다음 주 화요일 오후 재통화 요청',c:'#eab308'}]},
- {id:7,name:'한소율',st:'관심없음',camp:'C단지',owner:'담당자1',date:'11/6',reg:'2026.11.06',phone:'010-0000-0007',lead:'1200 0000 0000 0007',int:1,gender:'',tags:[],memos:[{t:'타 지역 희망, 관심 없음',by:'담당자1',at:'2026.11.06 18:00'}],mtg:[],calls:[],tl:[]},
- {id:8,name:'오준혁',st:'상',camp:'PH-A',owner:'담당자4',date:'11/5',reg:'2026.11.05',phone:'010-0000-0008',lead:'1200 0000 0000 0008',int:0,gender:'',tags:[],memos:[{t:'적극 검토 중',by:'담당자4',at:'2026.11.05 11:00'}],mtg:[],calls:[],tl:[]},
- {id:9,name:'서지아',st:'하',camp:'B단지_드포레',owner:'담당자3',date:'11/4',reg:'2026.11.04',phone:'010-0000-0009',lead:'1200 0000 0000 0009',int:0,gender:'',tags:[],memos:[{t:'가격 부담',by:'담당자3',at:'2026.11.04 16:40'}],mtg:[],calls:[],tl:[]},
- {id:10,name:'임도윤',st:'아파트먼트',camp:'D단지',owner:'담당자2',date:'11/3',reg:'2026.11.03',phone:'010-0000-0010',lead:'1200 0000 0000 0010',int:0,gender:'',tags:[],memos:[{t:'아파트먼트 상품 문의',by:'회사계정',at:'2026.11.03 09:30'}],mtg:[],calls:[],tl:[]},
- {id:11,name:'장유나',st:'타현장',camp:'D단지',owner:'담당자1',date:'11/2',reg:'2026.11.02',phone:'010-0000-0011',lead:'1200 0000 0000 0011',int:0,gender:'',tags:[],memos:[{t:'다른 현장 문의로 이관',by:'담당자1',at:'2026.11.02 13:10'}],mtg:[],calls:[],tl:[]},
- {id:12,name:'신우진',st:'중',camp:'A단지_한강뷰',owner:'담당자3',date:'11/1',reg:'2026.11.01',phone:'010-0000-0012',lead:'1200 0000 0000 0012',int:0,gender:'',tags:[],memos:[{t:'자료 검토 후 연락 예정',by:'담당자3',at:'2026.11.01 17:25'}],mtg:[],calls:[],tl:[]}
+  calls:[{at:'11/8 21:04',dur:'4분 51초',who:'담당자4',sum:'고객은 다음 주 월요일 오후 1시 방문으로 예약 의사를 밝힘. 공급가 15억부터, 장금유예 40% 등 조건과 실거주 의무 없음 안내. 카톡으로 홈페이지·명함·안내 시안을 보내기로 함.',sug:'카카오톡으로 홈페이지·명함·안내 시안 링크와 방문 일정 확인 문자를 즉시 전송하세요.',kw:['A현장','○○역 2번 출구','중공된 건물','소형 아파트','실거주 의무 없음'],det:[['00:20','다음 주 월요일 방문 가능 여부 제안'],['00:45','방문 시간 오후 1시 제안'],['03:24','25평형 등 투자 가능성 안내'],['04:07','방문 전 30분 전 연락 요청']],talk:[['c','00:02','아 예 안녕하세요'],['a','00:04','혹시 부재중 보시고 전화 주셨을까요?'],['c','00:07','예 예 맞아요'],['a','00:08','네, 영상 보시고 문의 남겨 주셔서 전화드렸습니다.']],total:74}],
+  tl:[{at:'11/15 12:00',ti:'방문 일정',bd:'',c:'#f97316',by:'담당자4'},{at:'11/8 21:12',ti:'',bd:'',c:'#38bdf8',by:'담당자4'},{at:'11/8 21:12',ti:'',bd:'○○역 인근거주/평수/계약조건문의 …',c:'#eab308',by:'담당자4'},{at:'11/8 21:04',ti:'통화 (4분 51초)',bd:'고객은 다음 주 월요일 오후 1시 방문으로…',c:'#e11d48',by:'회사계정'},{at:'11/8 20:27',ti:'리드 등록',bd:'PH-A',c:'#38bdf8'}]},
+ {id:5,name:'정하은',st:'부재중',camp:'C단지',owner:'담당자1',date:'11/8',reg:'2026.11.08',phone:'010-0000-0005',lead:'0000 0000 0000 0005',int:0,gender:'',tags:[],memos:[{t:'[인스턴트 폼] 어떤 상담을 원하시나요? : 분양가 문의',by:'회사계정',at:'2026.11.08 10:02'}],mtg:[],calls:[],tl:[{at:'11/8 10:01',ti:'리드 등록',bd:'C단지',c:'#38bdf8'}]},
+ {id:6,name:'윤재민',st:'재통화',camp:'A단지_한강뷰',owner:'담당자2',date:'11/7',reg:'2026.11.07',phone:'010-0000-0006',lead:'0000 0000 0000 0006',int:2,gender:'',tags:['다음주 화요일'],memos:[{t:'다음 주 화요일 오후 재통화 요청',by:'담당자2',at:'2026.11.07 14:20'}],mtg:[],calls:[],tl:[{at:'11/7 14:20',ti:'',bd:'다음 주 화요일 오후 재통화 요청',c:'#eab308'}]},
+ {id:7,name:'한소율',st:'관심없음',camp:'C단지',owner:'담당자1',date:'11/6',reg:'2026.11.06',phone:'010-0000-0007',lead:'0000 0000 0000 0007',int:1,gender:'',tags:[],memos:[{t:'타 지역 희망, 관심 없음',by:'담당자1',at:'2026.11.06 18:00'}],mtg:[],calls:[],tl:[]},
+ {id:8,name:'오준혁',st:'상',camp:'PH-A',owner:'담당자4',date:'11/5',reg:'2026.11.05',phone:'010-0000-0008',lead:'0000 0000 0000 0008',int:0,gender:'',tags:[],memos:[{t:'적극 검토 중',by:'담당자4',at:'2026.11.05 11:00'}],mtg:[],calls:[],tl:[]},
+ {id:9,name:'서지아',st:'하',camp:'B단지',owner:'담당자3',date:'11/4',reg:'2026.11.04',phone:'010-0000-0009',lead:'0000 0000 0000 0009',int:0,gender:'',tags:[],memos:[{t:'가격 부담',by:'담당자3',at:'2026.11.04 16:40'}],mtg:[],calls:[],tl:[]},
+ {id:10,name:'임도윤',st:'아파트먼트',camp:'D단지',owner:'담당자2',date:'11/3',reg:'2026.11.03',phone:'010-0000-0010',lead:'0000 0000 0000 0010',int:0,gender:'',tags:[],memos:[{t:'아파트먼트 상품 문의',by:'회사계정',at:'2026.11.03 09:30'}],mtg:[],calls:[],tl:[]},
+ {id:11,name:'장유나',st:'타현장',camp:'D단지',owner:'담당자1',date:'11/2',reg:'2026.11.02',phone:'010-0000-0011',lead:'0000 0000 0000 0011',int:0,gender:'',tags:[],memos:[{t:'다른 현장 문의로 이관',by:'담당자1',at:'2026.11.02 13:10'}],mtg:[],calls:[],tl:[]},
+ {id:12,name:'신우진',st:'중',camp:'A단지_한강뷰',owner:'담당자3',date:'11/1',reg:'2026.11.01',phone:'010-0000-0012',lead:'0000 0000 0000 0012',int:0,gender:'',tags:[],memos:[{t:'자료 검토 후 연락 예정',by:'담당자3',at:'2026.11.01 17:25'}],mtg:[],calls:[],tl:[]}
 ];
 const byId = id => CUST.find(c=>c.id===id);
 
@@ -1273,7 +1396,7 @@ const byId = id => CUST.find(c=>c.id===id);
 function ic(n,c){return '<svg class="ic'+(c?' '+c:'')+'"><use href="#i-'+n+'"></use></svg>';}
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const mk = (id,left) => `<i class="mk${left?' l':''}" data-mk="${id}">${id}</i>`;
-const capSrc = f => encodeURI(f + '.png');
+const CAP_LOCAL = location.protocol==='file:', capPub = f => encodeURI('공개캡처/' + f + '.webp'), capSrc = f => CAP_LOCAL ? encodeURI(f + '.png') : capPub(f);   // 로컬: 원본 PNG · 온라인: 고객 정보를 가린 공개 사본
 function meter(n,big){const cols=['#d6d9de','#93c5fd','#f59e0b','#ef4444'];let h='<span class="meter">';for(let i=1;i<=3;i++)h+=`<i style="background:${i<=n?cols[n]:'#d6d9de'}${big?';width:7px;height:7px':''}"></i>`;return h+'</span>';}
 function pillAs(st){const c=stC(st);return `<span class="pill" style="background:${c}22;color:${c}">${esc(st)}</span>`;}
 function thumbs(list){return '<div class="thumbs">'+list.map(([f,cap])=>`<figure data-lb="${esc(f)}"><img loading="lazy" src="${capSrc(f)}" alt="${esc(cap)}"><figcaption>${esc(cap)}</figcaption></figure>`).join('')+'</div>';}
@@ -1296,7 +1419,9 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove(
    이미지를 못 불러오면 깨진 아이콘 대신 같은 비율의 자리표시를 넣어 배치(연결선·영역 띠)를 유지한다. */
 document.addEventListener('error',e=>{
   const im=e.target;
-  if(!im||im.tagName!=='IMG'||!/\.png$/i.test(im.getAttribute('src')||''))return;
+  const src=im&&im.tagName==='IMG'?(im.getAttribute('src')||''):'';
+  if(!/\.(png|webp)$/i.test(src))return;
+  if(/\.png$/i.test(src)){im.setAttribute('src',encodeURI('공개캡처/')+src.replace(/\.png$/i,'.webp'));return;}   // 원본이 없으면 가린 공개 사본으로
   if(im.closest('#lb')){lb.classList.remove('on');return;}
   const host=im.closest('[data-lb]'),name=host?host.dataset.lb:'';
   const ph=document.createElement('div');
@@ -1312,7 +1437,7 @@ document.addEventListener('error',e=>{
 function nxNote(){
   const root=document.getElementById('asxDoc');
   if(!root||root.querySelector('.nx-note'))return;
-  root.insertAdjacentHTML('afterbegin','<div class="nx-note">'+ic('info')+'<p>온라인 버전에는 <b>실제 화면 캡처</b>를 넣지 않았습니다(고객 개인정보 포함). 영역 번호와 기능 설명은 그대로이고, 화면 모양은 가상 데이터로 그린 와이어프레임에서 볼 수 있습니다.</p><button type="button" data-asxm="proto">인터랙티브 와이어프레임으로 보기</button></div>');
+  root.insertAdjacentHTML('afterbegin','<div class="nx-note">'+ic('info')+'<p>온라인 버전에는 <b>실제 화면 캡처</b>를 넣지 않았습니다(고객 개인정보 포함). 영역 번호와 기능 설명은 그대로이고, 화면 모양은 위쪽의 인터랙티브 와이어프레임(가상 데이터)에서 볼 수 있습니다.</p><button type="button" data-asxm="proto">와이어프레임으로 올라가기</button></div>');
 }
 
 /* tabs */
@@ -1411,7 +1536,7 @@ function asFilterSheet(){
    <div class="sb2" style="padding-bottom:84px">
     <div class="fsec rel">정렬${mk('F1')}</div><div class="fchips">${ch('sort','등록일','등록일 최신순')}${ch('sort','관심도')}${ch('sort','최근 활동')}${ch('sort','상태')}${ch('sort','이름')}</div>
     <div class="fsec rel">플랫폼${mk('F4')}</div><div class="fchips">${['메타','네이버','구글','카카오','직접','내 페이지','기타'].map(v=>ch('plat',v,null,1)).join('')}</div>
-    <div class="fsec rel">캠페인${mk('F5')}</div><div class="fchips">${['PH-A','A단지 한강뷰','B단지 드포레','C단지','D단지','E단지','F단지','G단지','H단지','I단지','J단지','기본 캠페인'].map(v=>ch('camp',v,null,1)).join('')}</div>
+    <div class="fsec rel">캠페인${mk('F5')}</div><div class="fchips">${['PH-A','A단지 한강뷰','B단지','C단지','D단지','E단지','F단지','G단지','H단지','I단지','J단지','기본 캠페인'].map(v=>ch('camp',v,null,1)).join('')}</div>
     <div class="fsec">등록일</div><div class="fchips">${['전체','오늘','최근 7일','최근 30일','직접설정'].map(v=>ch('date',v)).join('')}</div>
     <div class="fsec rel">담당자${mk('F3')}</div><div class="fchips"><button class="chip o on">전체</button></div>
     <div class="fsec rel">관심도${mk('F2')}</div><div class="fchips">${[[3,'상'],[2,'중'],[1,'하']].map(([n,l])=>`<button class="chip o ${F.int.includes(l)?'on':''}" data-a="fchip" data-g="int" data-v="${l}" data-m="1">${meter(n)} ${l}</button>`).join('')}</div>
@@ -1603,7 +1728,7 @@ function toSearch(){
   let res='';
   if(q){const hits=[];CUST.forEach(c=>{fields.forEach(([fn,get])=>{if(T.scope!=='전체'&&T.scope!==fn)return;const txt=get(c);const i=txt.indexOf(q);if(i>=0&&!hits.find(h=>h.c===c))hits.push({c,fn,snip:txt.slice(Math.max(0,i-12),i+q.length+18),i:Math.min(12,i)});});});
     res=hits.length?`<div style="padding:0 16px 6px;color:#8b919e;font-size:12px">전체 고객에서 ${hits.length}명 · 단계·필터와 무관</div><div class="sres">${hits.map(h=>`<div class="hit" data-t="open" data-v="${h.c.id}"><b>${esc(h.c.name)}</b> ${pillTo(stageOf(h.c))}<br><small>${h.fn} 일치 · </small><small>${esc(h.snip.slice(0,h.i))}<mark>${esc(q)}</mark>${esc(h.snip.slice(h.i+q.length))}</small></div>`).join('')}</div>`:'<div class="empty"><b>결과가 없어요</b>범위를 「전체」로 바꿔 보세요</div>';}
-  else res=`<div class="recent"><div style="color:#8b919e;font-size:12px;border:0">최근 검색</div>${['하남','3001','방문'].map(r=>`<div data-t="qset" data-v="${r}" style="cursor:pointer"><svg class="ic"><use href="#i-history"></use></svg> ${r}<span style="color:#c3c8cf"><svg class="ic"><use href="#i-close"></use></svg></span></div>`).join('')}</div>`;
+  else res=`<div class="recent"><div style="color:#8b919e;font-size:12px;border:0">최근 검색</div>${['하남','1501','방문'].map(r=>`<div data-t="qset" data-v="${r}" style="cursor:pointer"><svg class="ic"><use href="#i-history"></use></svg> ${r}<span style="color:#c3c8cf"><svg class="ic"><use href="#i-close"></use></svg></span></div>`).join('')}</div>`;
   return `<div class="scr wf" style="background:#fff"><div class="row" style="padding-top:8px"><label class="srch focus"><svg class="ic"><use href="#i-search"></use></svg> <input id="toQ" placeholder="이름, 전화, 현장, 메모, 통화 내용" value="${esc(q)}" enterkeyhint="search" inputmode="search" autocomplete="off">${q?'<span data-t="qset" data-v="" style="cursor:pointer"><svg class="ic"><use href="#i-cancel"></use></svg></span>':''}</label><button class="btn" style="background:none" data-t="home">취소</button></div>
    <div class="chips">${['전체','이름','전화','현장','메모','통화 내용'].map(s=>`<button class="chip o ${T.scope===s?'on':''}" data-t="scope" data-v="${s}">${s}</button>`).join('')}</div>${res}</div>`;
 }
@@ -1627,7 +1752,7 @@ function toDetail(){
   const stIdx=STG.findIndex(s=>s.k===st);
   const tl=tlItems(c).filter(x=>T.tlf==='전체'||x.ty===T.tlf);
   const contract=(st==='가계약'||st==='정계약')?`<div class="box"><h5>계약 정보 <span class="by-b h" style="margin-left:6px">${st}</span><button class="r" data-t="toast" data-v="계약 정보 수정 (수정 이력이 남습니다)">수정</button></h5>
-    <dl class="kv"><dt>동호수</dt><dd>${c.id===2?'102동 2004호 → 3001호 <span style="color:#a16207;font-size:11px">변경 1회</span>':'202동 1801호'}</dd><dt>타입</dt><dd>${c.id===2?'74A':'-'}</dd><dt>계약일</dt><dd>${c.id===2?'2026.10.07 (계약서 날인)':'2026.10.31'}</dd></dl>
+    <dl class="kv"><dt>동호수</dt><dd>${c.id===2?'가동 1204호 → 1501호 <span style="color:#a16207;font-size:11px">변경 1회</span>':'나동 903호'}</dd><dt>타입</dt><dd>${c.id===2?'74A':'-'}</dd><dt>계약일</dt><dd>${c.id===2?'2026.10.07 (계약서 날인)':'2026.10.31'}</dd></dl>
     <div class="pay"><span>1차 계약금 1,000만 원</span><span class="st-ok">입금 완료 · ${c.id===2?'9/16':'10/31'}</span></div>
     <div class="pay"><span>2차 계약금 ${c.id===2?'2,500만 원':'미정'}</span><span class="st-wait">${c.id===2?'예정 9/21 · 확인 필요':'예정 11/15'}</span></div></div>`:'';
   const tlHtml=L?'<div class="skel" style="height:56px;margin-bottom:8px"></div><div class="skel" style="height:56px"></div>':(tl.length?`<div class="tl tl2">${tl.map(x=>{let inner='';
@@ -1669,8 +1794,8 @@ function toEditSheet(){
 }
 function toRecSheet(){
   const forms={
-   '상담·방문':[['방문일시','2026-11-15 12:00'],['방문경로','선택: 계약자 / 비서방 / 광고 / 지인'],['방문인원','1'],['거주지역','하남'],['희망 타입','74A'],['관심 동호수','3001'],['상담 내용','고층 희망, 실거주 검토…']],
-   '입금':[['호실','102동 2004호'],['입금 구분','선택: 1차 계약금 / 2차 계약금 / 중도금'],['입금액','10,000,000'],['입금자','계약자와 동일'],['입금일','2026-09-16'],['비고','']],
+   '상담·방문':[['방문일시','2026-11-15 12:00'],['방문경로','선택: 계약자 / 비서방 / 광고 / 지인'],['방문인원','1'],['거주지역','하남'],['희망 타입','74A'],['관심 동호수','1501'],['상담 내용','고층 희망, 실거주 검토…']],
+   '입금':[['호실','가동 1204호'],['입금 구분','선택: 1차 계약금 / 2차 계약금 / 중도금'],['입금액','10,000,000'],['입금자','계약자와 동일'],['입금일','2026-09-16'],['비고','']],
    '메모':[['내용','자유롭게 적어 주세요']]
   };
   return `<div class="dim" data-t="close"></div><div class="sheet ov" style="max-height:90%"><div class="grab"></div><div class="sh"><b>기록 추가</b></div>
@@ -1890,7 +2015,7 @@ const E2JI={'새 문의':0,'연락 중':1,'방문 약속':2,'계약 진행':3,'�
 const E2INT={3:'많음',2:'보통',1:'조금',0:'아직 몰라요'};
 const E2REC={
  '방문 상담':[['어디에 사세요?','chips',['하남','미사','서울','기타']],['어떤 타입을 원하세요?','chips',['59','74A','84','아직 몰라요']],['관심은 어느 정도로 보였나요?','chips',['많음','보통','조금']],['기억할 내용이 있나요? (선택)','text','예: 고층 희망, 실거주']],
- '입금':[['어떤 돈이 들어왔나요?','chips',['1차 계약금','2차 계약금','중도금']],['얼마인가요?','chips',['1,000만 원','2,500만 원','직접 입력']],['몇 동 몇 호인가요?','text','예: 102동 2004호']],
+ '입금':[['어떤 돈이 들어왔나요?','chips',['1차 계약금','2차 계약금','중도금']],['얼마인가요?','chips',['1,000만 원','2,500만 원','직접 입력']],['몇 동 몇 호인가요?','text','예: 가동 1204호']],
  '메모':[['무엇을 남길까요?','text','자유롭게 적어 주세요']]
 };
 const E2COACH=[['task_alt','오늘 할 일을 먼저 보여 드려요','누구에게 먼저 연락할지 고민하지 마세요.<br>위에서부터 하나씩 누르면 돼요.'],['call','버튼 하나로 전화하고','통화가 끝나면 결과만 골라 주세요.<br>단계와 일정은 앱이 알아서 바꿔요.'],['edit_note','기록은 질문에 답하듯','양식을 외울 필요 없어요.<br>질문이 하나씩 나오고, 고르기만 하면 돼요.']];
@@ -1992,7 +2117,7 @@ function e2Story(c){
   c.calls.forEach((k,ix)=>it.push({i:'call',ty:'통화',t:`통화 ${k.dur}`,d:k.at,by:k.who,bt:'ai',call:ix}));
   c.memos.forEach(m=>{const d=m.at.slice(5,16).replace('.','/');const hum=m.by!=='회사계정';
     if(m.t.startsWith('◆')){const x=m.t.split('상담내용 :')[1]||'';it.push({i:'forum',ty:'상담',t:'방문 상담',d,p:x.replace(/^\s*-/,'').trim().slice(0,90),by:'담당자',bt:'h'});}
-    else if(m.t.startsWith('■입금'))it.push({i:'payments',ty:'입금',t:'1차 계약금 입금',d,p:'1,000만 원 · 102동 2004호 · 2차 2,500만 원은 9/21 예정',by:'담당자',bt:'h'});
+    else if(m.t.startsWith('■입금'))it.push({i:'payments',ty:'입금',t:'1차 계약금 입금',d,p:'1,000만 원 · 가동 1204호 · 2차 2,500만 원은 9/21 예정',by:'담당자',bt:'h'});
     else if(m.t.startsWith('[인스턴트'))it.push({i:'flag',ty:'문의',t:'광고를 보고 문의',d,p:'"'+m.t.split(': ').pop()+'"',by:'시스템',bt:'sys'});
     else if(/통화로|응답함/.test(m.t))return;
     else it.push({i:'edit_note',ty:'메모',t:'메모',d,p:m.t,by:hum?m.by:'회사 계정',bt:hum?'h':'sys'});});
@@ -2012,7 +2137,7 @@ function e2Detail(){
   const c=byId(E.cust),s=e2S(c),ji=E2JI[s],hold=s==='보류';
   const todos=e2Todos(c),all=e2Story(c),st=all.filter(x=>E.tlf==='전체'||x.ty===E.tlf),show=E.storyAll?st:st.slice(0,5);
   const contract=(s==='계약 진행'||s==='계약 완료')&&(c.id===2||c.id===3)?`<div class="e2-box"><h4>${ic('contract')}계약 정보</h4>
-    <div class="e2-pay"><span>호실</span><b>${c.id===2?'102동 2004호 → 3001호':'202동 1801호'}</b></div>
+    <div class="e2-pay"><span>호실</span><b>${c.id===2?'가동 1204호 → 1501호':'나동 903호'}</b></div>
     <div class="e2-pay"><span>1차 계약금 · ${c.id===2?'1,000만 원':'1,000만 원'}</span><span class="e2-okc">${ic('check_circle')}입금 완료</span></div>
     <div class="e2-pay"><span>2차 계약금 · ${c.id===2?'2,500만 원':'미정'}</span>${s==='계약 완료'&&c.id===2?`<span class="e2-okc">${ic('check_circle')}입금 완료</span>`:`<span class="e2-waitc">${ic('schedule')}${c.id===2?'9/21 예정':'11/15 예정'}</span>`}</div></div>`:'';
   return `<div class="e2-scr"><div class="e2-top"><button data-e="home" aria-label="뒤로">${ic('arrow_back_ios_new')}</button><span style="flex:1"></span><button data-e="help" aria-label="도움말">${ic('info')}</button><button data-e="del" aria-label="더보기">${ic('more_horiz')}</button></div>
@@ -2187,30 +2312,32 @@ const wc=(n)=>`<span class="wf2-n">${n}</span>`;                         // 번�
 const wi=(name)=>`<span class="wf2-i">${ic(name)}</span>`;               // 회색 아이콘
 const wbtn=(t,p)=>`<span class="wf2-btn ${p?'p':''}">${t}</span>`;
 const wchip=(t,on)=>`<span class="wf2-chip ${on?'on':''}">${t}</span>`;
-const STG_ALL=[['영업 단계',[['미지정','296'],['부재중','2,810'],['방문 예약','422'],['가계약','48'],['정계약','15']]],['결과 · 할 일',[['관심없음','2,743'],['재통화','771'],['타현장','253']]],['등급',[['상','564'],['중','761'],['하','2,166']]],['상품',[['아파트먼트','580']]]];
-const wStatusAll=(sel)=>`<div class="wf3-stgrp"><div class="wf2-row wf2-gap">${wchip('전체 11,430',sel==='전체')}</div>${STG_ALL.map(([g,l])=>`<div class="wf3-stg"><small>${g}</small><div class="wf2-row wf2-gap">${l.map(([k,n])=>wchip(k+' '+n,sel===k)).join('')}</div></div>`).join('')}</div>`;
-const wTiles=()=>`<div class="wf3-tiles">${[['미지정','296'],['부재중','2,810'],['방문 예약','422'],['가계약','48'],['정계약','15']].map(([a,b],i)=>`<div class="wf2-tile ${i===0?'on':''}"><small>${a}</small><b>${b}</b></div>`).join('')}</div>`;
+const STG_BASE=[['미지정','296'],['부재중','2,810'],['방문 예약','422'],['가계약','48'],['정계약','15'],['관심없음','2,743']];   // 기본 상태 6개 (웹 기능표 CRM-125 「기본 6개+직접 최대 6개」, CRM-021 담당자별 실적 카드의 6개 항목 기준)
+const STG_CUSTOM=[['재통화','771'],['타현장','253'],['상','564'],['중','761'],['하','2,166'],['아파트먼트','580']];   // 커스텀 상태 — 관리자·소유자가 0~6개 추가, 이름·색상·순서를 직접 정함 (CRM-125 · CRM-126)
+const wTiles=(sel)=>`<div class="wf3-tiles wf3-t6">${STG_BASE.map(([a,b])=>`<div class="wf2-tile ${sel===a?'on':''}"><small>${a}</small><b>${b}</b></div>`).join('')}</div>`;
+const wStatusRow=(sel,open)=>`<div><div class="wf2-row wf2-gap">${wchip('전체 11,430',sel==='전체')}${sel!=='전체'&&!open?wchip(sel,1):''}<span style="flex:1"></span>${wbtn('커스텀 상태 '+STG_CUSTOM.length+(open?' ▴':' ▾'))}</div>${open?`<div class="wf2-row wf2-gap mt">${STG_CUSTOM.map(([k,n])=>wchip(k+' '+n,sel===k)).join('')}</div>`:''}</div>`;
 const CAMP=['PH1603','덕소역 더블뷰한강','북오산자이 드포레','윤슬자이','카시아 속초','코르디아서울드래곤시티','디애스턴 한남','르엘 어퍼하우스','소요한남','에테르노 용산','파크사이드','기본 캠페인'];
-const wFilterFull=()=>`<div class="wf2-row wf2-sb">${wc(1)}${wl('필터','b')}<span style="flex:1"></span>${wi('close')}</div>
-  <div class="wf2-sec">${wc(2)}${wl('담당자 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('전체',1)}${wchip('★ 내 고객')}${wchip('유사라')}${wchip('서정희')}${wchip('황인경')}${wchip('파크_송')}</div>
-  <div class="wf2-sec">${wc(3)}${wl('관심도 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('●●● 상')}${wchip('●●○ 중')}${wchip('●○○ 하')}</div>
-  <div class="wf2-sec">${wc(4)}${wl('플랫폼 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${['메타','네이버','구글','카카오','직접','내 페이지','기타'].map(x=>wchip(x)).join('')}</div>
-  <div class="wf2-sec">${wc(5)}${wl('캠페인(현장) · 여러 개 선택','s')}</div><div class="wf2-search">${wi('search')}${wl('현장 검색','s')}</div><div class="wf2-row wf2-gap mt">${CAMP.map(x=>wchip(x)).join('')}</div>
-  <div class="wf2-sec">${wc(6)}${wl('등록일 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${['전체','오늘','최근 7일','최근 30일','직접설정'].map((x,i)=>wchip(x,i===0)).join('')}</div>
-  <div class="wf2-row wf2-gap mt">${wbtn('초기화')}<span class="grow"></span>${wc(7)}${wbtn('128명 보기',1)}</div>`;
+const wFilterFull=()=>`<div class="wf2-row wf2-sb">${wc(1)}${wl('필터 · 정렬','b')}<span style="flex:1"></span>${wi('close')}</div>
+  <div class="wf2-sec">${wc(2)}${wl('정렬 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${['등록일 최신순','관심도','최근 활동','상태','이름'].map((x,i)=>wchip(x,i===0)).join('')}</div>
+  <div class="wf2-sec">${wc(3)}${wl('담당자 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('전체',1)}${wchip('★ 내 고객')}${wchip('담당자1')}${wchip('담당자2')}${wchip('담당자3')}${wchip('담당자4')}</div>
+  <div class="wf2-sec">${wc(4)}${wl('관심도 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${wchip('●●● 상')}${wchip('●●○ 중')}${wchip('●○○ 하')}</div>
+  <div class="wf2-sec">${wc(5)}${wl('플랫폼 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${['메타','네이버','구글','카카오','직접','내 페이지','기타'].map(x=>wchip(x)).join('')}</div>
+  <div class="wf2-sec">${wc(6)}${wl('캠페인(현장) · 여러 개 선택','s')}</div><div class="wf2-search">${wi('search')}${wl('현장 검색','s')}</div><div class="wf2-row wf2-gap mt">${CAMP.map(x=>wchip(x)).join('')}</div>
+  <div class="wf2-sec">${wc(7)}${wl('등록일 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${['전체','오늘','최근 7일','최근 30일','직접설정'].map((x,i)=>wchip(x,i===0)).join('')}</div>
+  <div class="wf2-row wf2-gap mt">${wbtn('초기화')}<span class="grow"></span>${wc(8)}${wbtn('128명 보기',1)}</div>`;
 const PLAN=[
  {g:'목록',id:'C01',t:'목록 헤더',goal:'어디에 있는지와 검색 진입점을 한 줄로.',
   wf:`<div class="wf2-row wf2-sb">${wl('고객','h')}<span class="wf2-row">${wc(1)}${wi('search')}${wc(2)}${wi('more_horiz')}</span></div>`,
   parts:['검색 아이콘 → 전용 검색 화면으로 이동','더보기 → 고객 추가 · 일괄 작업 등 드문 기능'],rules:['스크롤하면 헤더는 고정, 아래 단계 요약은 접힘'],iss:['Q1','L2']},
- {g:'목록',id:'C02',t:'단계 요약 (퍼널)',goal:'영업 단계별 고객 수를 한눈에.',
-  wf:`<div class="wf2-row">${wc(1)}${wTiles()}</div><div class="mt">${wc(2)}${wl('누르면 해당 상태만 보기','s')}</div>`,
-  parts:['영업 단계 5개(미지정 · 부재중 · 방문 예약 · 가계약 · 정계약)를 줄이지 않고 표시','타일을 누르면 아래 상태 필터와 연동'],rules:['숫자는 실시간'],iss:['S2','L2']},
- {g:'목록',id:'C03',t:'상태 필터 + 적용 필터 칩',goal:'상태를 빠짐없이 보여 주면서, 지금 무엇을 보고 있는지 항상 보이게.',
-  wf:`<div>${wc(1)}${wStatusAll('미지정')}</div><div class="wf2-row wf2-gap mt">${wc(2)}${wchip('관심도 상 ✕')}${wchip('담당자 유사라 ✕')}<span class="wf2-link">모두 해제</span></div>`,
-  parts:['전체 + 상태 12종을 모두 표시 — 빼지 않고 영업 단계 / 결과·할 일 / 등급 / 상품으로 묶어 찾기 쉽게','필터 시트에서 건 조건은 목록 위 칩으로 남고 ✕로 바로 해제'],rules:['선택한 상태는 화면 밖으로 밀려나지 않게','앱을 다시 열어도 선택이 유지되면 반드시 표시'],iss:['N10','L5','L3','S3']},
- {g:'목록',id:'C04',t:'정렬 · 필터 툴바',goal:'정렬과 필터를 분리.',
-  wf:`<div class="wf2-row wf2-sb">${wc(1)}${wbtn(wi('swap_vert')+' 최근 활동순 ▾')}<span style="flex:1"></span>${wc(2)}${wbtn(wi('tune')+' 필터 2',1)}</div>`,
-  parts:['정렬 드롭다운: 최근 활동 · 다음 일정 · 등록 최신/오래된 · 관심도 · 이름','필터 버튼에 적용 개수 배지'],rules:['정렬은 필터 시트에 넣지 않음'],iss:['F1','L5']},
+ {g:'목록',id:'C02',t:'기본 상태 요약',goal:'기본 상태 6개의 고객 수를 한 줄로.',
+  wf:`<div>${wc(1)}${wTiles('미지정')}</div><div class="mt">${wc(2)}${wl('누르면 그 상태만 보기 · 다시 누르면 전체','s')}</div>`,
+  parts:['기본 상태 6개(미지정 · 부재중 · 방문 예약 · 가계약 · 정계약 · 관심없음)를 한 줄 타일로 표시','타일을 누르면 그 상태만 보기, 다시 누르면 전체로 돌아감'],rules:['숫자는 실시간','기본 6개는 웹 기능표 기준(CRM-125 · CRM-021). 이름을 바꿀 수 있는지는 확인 필요'],iss:['S2','L2']},
+ {g:'목록',id:'C03',t:'전체 · 커스텀 상태 (처음엔 접힘)',goal:'상태를 빠짐없이 제공하되 처음에는 한 줄만 차지하게.',
+  wf:`<div>${wc(1)}${wStatusRow('전체',0)}</div><div class="mt">${wc(2)}${wStatusRow('재통화',1)}</div>`,
+  parts:['처음에는 「전체」와 「커스텀 상태 n ▾」 버튼만 한 줄로 표시','버튼을 누르면 커스텀 상태가 펼쳐짐 — 기본 6개 + 커스텀 최대 6개 = 최대 12개'],rules:['커스텀 상태를 고른 채 접어도 고른 상태 칩은 남김 (선택이 화면 밖으로 사라지지 않게)','커스텀 상태가 없는 워크스페이스는 버튼을 숨김','상태 이름 · 순서는 관리자가 정한 그대로 표시 — 임의로 묶거나 바꾸지 않음'],iss:['N10','L5','L3','S3']},
+ {g:'목록',id:'C04',t:'적용 조건 · 필터 버튼',goal:'지금 건 조건과 필터 진입을 한 줄로.',
+  wf:`<div class="wf2-row wf2-gap">${wc(1)}${wchip('관심도 상 ✕')}${wchip('담당자 담당자1 ✕')}<span class="wf2-link">모두 해제</span><span style="flex:1"></span>${wc(2)}${wbtn(wi('tune')+' 필터·정렬 2',1)}</div>`,
+  parts:['건 조건은 칩으로 남기고 ✕로 바로 해제','오른쪽 「필터·정렬」 버튼 하나에 적용 개수 배지'],rules:['정렬은 기본값(등록일 최신순)이면 따로 보여 주지 않고, 바꿨을 때만 칩으로 표시','정렬 5종은 필터 시트 맨 위 (현재 앱과 같은 위치)'],iss:['F1','L5']},
  {g:'목록',id:'C05',t:'고객 카드',goal:'카드만 보고 다음 행동을 판단할 수 있게.',
   wf:`<div class="wf2-box"><div class="wf2-row">${wc(1)}<span class="wf2-av"></span><div class="wf2-col">${wl('홍길동','b')}${w(55)}</div>${wc(2)}${wchip('방문 약속')}</div>
       <div class="wf2-ctx mt">${wc(3)}${wi('wand_stars')}${w(80)}</div>
@@ -2219,7 +2346,7 @@ const PLAN=[
   parts:['이름 · 현장 · 담당자 · 등록일 (1줄)','단계 배지 — 상태 배지와 전화 버튼을 떨어뜨림','최근 통화 AI 요약 또는 최근 메모 2줄','AI 키워드는 ✦ 표시로 사람이 붙인 태그와 구분 (최대 3개)','다음 일정 · 최근 통화 · 기록 수는 실제 데이터 기준','주 행동 버튼 1개 (단계에 따라 전화 / 문자 / 기록)'],rules:['카드 아무 곳 → 상세, 버튼만 행동'],iss:['L1','L4','L6','N1']},
  {g:'목록',id:'C06',t:'필터 시트',goal:'현재 필터 항목은 그대로, 선택 방식과 결과 수가 보이게.',
   wf:`<div class="wf2-sheet">${wFilterFull()}</div>`,
-  parts:['헤더 · 닫기 (정렬은 툴바로 분리)','담당자: 「내 고객」 + 실제 담당자','관심도 상 · 중 · 하','플랫폼 7개 그대로','캠페인(현장) 12개 그대로 + 검색','등록일 5개 그대로','적용 버튼에 결과 수 미리 표시'],rules:['섹션 제목 옆에 「여러 개 / 하나」 선택 방식 표기','시트는 하단 탭바 위 레이어 · 탭바 숨김'],iss:['F3','F4','F5','F6','S1']},
+  parts:['헤더 · 닫기','정렬 5종 그대로(등록일 최신순 · 관심도 · 최근 활동 · 상태 · 이름) — 하나 선택','담당자: 「내 고객」 + 실제 담당자','관심도 상 · 중 · 하','플랫폼 7개 그대로','캠페인(현장) 12개 그대로 + 검색','등록일 5개 그대로','적용 버튼에 결과 수 미리 표시'],rules:['섹션 제목 옆에 「여러 개 / 하나」 선택 방식 표기','시트는 하단 탭바 위 레이어 · 탭바 숨김'],iss:['F3','F4','F5','F6','S1']},
  {g:'목록',id:'C07',t:'검색 화면',goal:'무엇이 왜 걸렸는지 보이는 검색.',
   wf:`<div class="wf2-row gap">${wc(1)}<div class="wf2-search grow">${wi('search')}${wl('하남','s')}</div>${wl('취소','s')}</div>
       <div class="wf2-row gap mt">${wc(2)}${wchip('전체',1)}${wchip('이름')}${wchip('메모')}${wchip('통화 내용')}</div>
@@ -2249,7 +2376,7 @@ const PLAN=[
   parts:['칸을 누르면 그 항목만 수정 (저장/취소)','AI가 통화에서 뽑은 값은 AI 표시 → 확정하면 일반 값'],rules:['값이 없으면 「아직 몰라요」 · 줄바꿈 허용 (말줄임 금지)'],iss:['D5','D1','N6']},
  {g:'상세',id:'C14',t:'계약 정보 카드',goal:'계약 · 입금을 메모가 아닌 구조로.',
   wf:`<div class="wf2-box"><div class="wf2-row wf2-sb">${wl('계약 정보','b')}${wc(1)}${wl('수정 이력 1','s')}</div>
-      <div class="wf2-row wf2-sb mt">${wl('호실','s')}${wl('102동 2004호 → 3001호','s')}</div>
+      <div class="wf2-row wf2-sb mt">${wl('호실','s')}${wl('가동 1204호 → 1501호','s')}</div>
       <div class="wf2-row wf2-sb mt">${wl('1차 계약금 1,000만','s')}${wc(2)}${wchip('입금 완료')}</div>
       <div class="wf2-row wf2-sb mt">${wl('2차 계약금 2,500만','s')}${wchip('9/21 예정')}</div></div>`,
   parts:['호실 · 타입 변경은 이력으로 남김','계약금 회차별 상태 (예정 · 완료 · 지연)'],rules:['가계약 · 계약 완료 단계에서만 노출','삭제는 권한자만'],iss:['D5','D16','D18']},
@@ -2357,23 +2484,27 @@ const wcard=(n,name,stage,ctx,kw,when,act)=>`<div class="wf2-box wf3-card">${n?w
   <div class="wf2-ctx mt">${wi(ctx==='ai'?'wand_stars':'edit_note')}${w(78)}</div>${kw?`<div class="wf2-row wf2-gap mt">${kw.map(k=>wchip('✦ '+k)).join('')}</div>`:''}
   <div class="wf2-row wf2-sb mt"><span class="wf2-row">${wi('calendar_month')}${wl(when,'s')}</span>${wbtn(wi(act[0])+' '+act[1],1)}</div></div>`;
 const wunder=(h)=>`<div class="wf3-under">${h}</div>`;
+/* 현행(실제 앱 캡처)과 나란히 보기 — ③ 개선 기획 공용 */
+const CMPI={};
+let CMP_ON=true;try{CMP_ON=localStorage.getItem('youngup_cmp_v1')!=='0';}catch(e){}
+const cmpBox=(key,a)=>{const i=Math.min(CMPI[key]||0,a.f.length-1),f=a.f[i];
+  return `<div class="cmp-shot" data-lb="${esc(f[0])}"><img src="${capSrc(f[0])}" alt="현행 ${esc(f[1])}"></div>${a.f.length>1?`<div class="cmp-sw">${a.f.map((x,j)=>`<button data-cmpk="${key}" data-cmpi="${j}" class="${j===i?'on':''}">${esc(x[1])}</button>`).join('')}</div>`:''}<p class="cmp-cap">${esc(a.note||('현행 · '+f[1]))}</p>`;};
 const SCR=[
  {id:'SCR-01',br:'list',t:'고객 목록',path:'고객 관리 › 고객 목록',entry:'하단 탭 「고객」',
   frame:`${wsb}<div class="wf3-pad">
     <div class="wf2-row wf2-sb">${wc(1)}${wl('고객 관리','h')}<span style="flex:1"></span>${wi('search')}${wi('more_horiz')}</div>
-    <div class="mt">${wc(2)}${wTiles()}</div>
-    <div class="mt">${wc(3)}${wStatusAll('전체')}</div>
-    <div class="wf2-row wf2-gap mt">${wc(4)}${wchip('관심도 상 ✕')}${wchip('담당자 유사라 ✕')}</div>
-    <div class="wf2-row wf2-sb mt">${wc(5)}${wbtn(wi('swap_vert')+' 등록일 최신순 ▾')}<span style="flex:1"></span>${wbtn(wi('tune')+' 필터 2')}</div>
-    <div class="mt">${wcard(6,'홍길동','미지정','memo',null,'광고 문의 · 11/9',['call','전화'])}</div>
+    <div class="mt">${wc(2)}${wTiles('')}</div>
+    <div class="mt">${wc(3)}${wStatusRow('전체',0)}</div>
+    <div class="wf2-row wf2-gap mt">${wc(4)}${wchip('관심도 상 ✕')}${wchip('담당자 담당자1 ✕')}<span style="flex:1"></span>${wbtn(wi('tune')+' 필터·정렬 2',1)}</div>
+    <div class="mt">${wcard(5,'홍길동','미지정','memo',null,'광고 문의 · 11/9',['call','전화'])}</div>
     <div class="mt">${wcard(0,'김영희','방문 예약','ai',['예산 7억','신혼집'],'11/15 12:00 방문',['sms','문자'])}</div>
     <div class="mt">${wcard(0,'이철수','가계약','ai',null,'2차 계약금 9/21',['edit_note','기록'])}</div>
-    <div class="wf3-fab">${wc(7)}${wi('add')}</div></div>${wc(8)}${wtab}`,
-  rows:[[1,'목록 헤더','C01','화면 이름 · 검색 진입 · 더보기'],[2,'단계 요약','C02','영업 단계 5개(미지정 · 부재중 · 방문 예약 · 가계약 · 정계약) 고객 수. 누르면 해당 상태만 보기'],[3,'상태 필터','C03','전체 + 상태 12종을 줄이지 않고 모두 표시 · 영업 단계 / 결과·할 일 / 등급 / 상품으로 묶음 · 선택은 항상 보임'],[4,'적용 필터 칩','C03','필터 시트에서 건 조건을 목록 위에 표시, ✕로 해제'],[5,'정렬 · 필터 툴바','C04','정렬 5종(등록일 최신순 · 관심도 · 최근 활동 · 상태 · 이름)과 필터 분리, 필터 개수 배지'],[6,'고객 카드','C05','이름 · 상태 · 맥락(AI 요약/메모) · AI 키워드 · 다음 일정 · 주 행동 1개'],[7,'고객 추가','','→ SCR-04 고객 등록'],[8,'하단 탭','','IA 1단계 (홈 · 고객 · 일정 · 멤버 · 메뉴)']]},
- {id:'SCR-02',br:'list',t:'필터',path:'고객 목록 › 필터',entry:'SCR-01 ⑤ 「필터」',
-  frame:`${wsb}${wunder(`<div class="wf3-pad">${wl('고객 관리','h')}<div class="wf2-row wf2-gap mt">${wchip('전체 11,430',1)}${wchip('미지정 296')}${wchip('부재중 2,810')}</div>${wcard(0,'홍길동','미지정','memo',null,'광고 문의',['call','전화'])}</div>`)}
+    <div class="wf3-fab">${wc(6)}${wi('add')}</div></div>${wc(7)}${wtab}`,
+  rows:[[1,'목록 헤더','C01','화면 이름 · 검색 진입 · 더보기'],[2,'기본 상태 요약','C02','기본 상태 6개(미지정 · 부재중 · 방문 예약 · 가계약 · 정계약 · 관심없음)의 고객 수를 한 줄로. 누르면 그 상태만 보기, 다시 누르면 전체'],[3,'전체 · 커스텀 상태','C03','처음에는 접힘 — 「전체」와 「커스텀 상태 n ▾」 버튼만 한 줄. 누르면 커스텀 상태(관리자가 추가한 최대 6개)가 펼쳐짐. 기본 6 + 커스텀 6 = 최대 12개'],[4,'적용 조건 · 필터','C04','건 조건은 칩으로 표시(✕ 해제), 오른쪽에 「필터·정렬」 버튼 하나. 정렬은 기본값이 아닐 때만 칩으로 표시'],[5,'고객 카드','C05','이름 · 상태 · 맥락(AI 요약/메모) · AI 키워드 · 다음 일정 · 주 행동 1개'],[6,'고객 추가','','→ SCR-04 고객 등록'],[7,'하단 탭','','IA 1단계 (홈 · 고객 · 일정 · 멤버 · 메뉴)']]},
+ {id:'SCR-02',br:'list',t:'필터 · 정렬',path:'고객 목록 › 필터 · 정렬',entry:'SCR-01 ④ 「필터·정렬」',
+  frame:`${wsb}${wunder(`<div class="wf3-pad">${wl('고객 관리','h')}<div class="mt">${wTiles('')}</div>${wcard(0,'홍길동','미지정','memo',null,'광고 문의',['call','전화'])}</div>`)}
     <div class="wf3-sheet">${wFilterFull()}</div>`,
-  rows:[[1,'필터 시트 헤더','C06','탭바를 가리고 위로 올라오는 시트 (정렬은 툴바로 분리)'],[2,'담당자','C06','전체 + 「내 고객」 + 실제 담당자 목록'],[3,'관심도','C06','상 · 중 · 하'],[4,'플랫폼','C06','현재 7개 그대로 (메타 · 네이버 · 구글 · 카카오 · 직접 · 내 페이지 · 기타)'],[5,'캠페인(현장)','C06','현재 12개 그대로 + 현장 검색'],[6,'등록일','C06','현재 5개 그대로 (전체 · 오늘 · 최근 7일 · 최근 30일 · 직접설정)'],[7,'결과 보기','C06','적용 전에 결과 수를 미리 표시']]},
+  rows:[[1,'시트 헤더','C06','탭바를 가리고 위로 올라오는 시트'],[2,'정렬','C06','현재 5개 그대로 (등록일 최신순 · 관심도 · 최근 활동 · 상태 · 이름). 현재 앱처럼 필터 시트 안에 둠'],[3,'담당자','C06','전체 + 「내 고객」 + 실제 담당자 목록'],[4,'관심도','C06','상 · 중 · 하'],[5,'플랫폼','C06','현재 7개 그대로 (메타 · 네이버 · 구글 · 카카오 · 직접 · 내 페이지 · 기타)'],[6,'캠페인(현장)','C06','현재 12개 그대로 + 현장 검색'],[7,'등록일','C06','현재 5개 그대로 (전체 · 오늘 · 최근 7일 · 최근 30일 · 직접설정)'],[8,'결과 보기','C06','적용 전에 결과 수를 미리 표시']]},
  {id:'SCR-03',br:'list',t:'검색',path:'고객 목록 › 검색',entry:'SCR-01 ① 검색 아이콘',
   frame:`${wsb}<div class="wf3-pad"><div class="wf2-row wf2-gap">${wc(1)}<div class="wf2-search grow">${wi('search')}${wl('하남','s')}${wi('cancel')}</div>${wl('취소','s')}</div>
     <div class="wf2-row wf2-gap mt">${wc(2)}${wchip('전체',1)}${wchip('이름')}${wchip('전화')}${wchip('메모')}${wchip('통화 내용')}</div>
@@ -2382,7 +2513,7 @@ const SCR=[
     <div class="wf2-empty mt">${wc(5)}${wl('검색 결과 없음 화면 (0건일 때)','s')}</div>
     <div class="mt">${wc(6)}${wl('최근 검색 (검색어 없을 때)','s')}</div></div>`,
   rows:[[1,'검색창 · 취소','C07','전용 화면 · 지우기 · 취소'],[2,'검색 범위','C07','녹음 대화 포함 여부를 칩으로 명시'],[3,'결과 범위','C07','항상 전체 고객 대상임을 표시'],[4,'결과 아이템','C07','어느 필드가 일치했는지 + 하이라이트'],[5,'0건 화면','C21','「검색 결과가 없어요」 전용 빈 화면'],[6,'최근 검색','C07','검색어가 없을 때']]},
- {id:'SCR-04',br:'add',t:'고객 등록',path:'고객 관리 › + 고객 등록',entry:'SCR-01 ⑦ +',
+ {id:'SCR-04',br:'add',t:'고객 등록',path:'고객 관리 › + 고객 등록',entry:'SCR-01 ⑥ +',
   frame:`${wsb}<div class="wf3-pad"><div class="wf2-row wf2-sb">${wc(1)}${wl('고객 등록','h')}<span style="flex:1"></span>${wi('close')}</div>
     <div class="wf3-field mt">${wc(2)}${wl('이름 *','s')}<div class="wf2-input">${w(30)}</div></div>
     <div class="wf3-field">${wl('연락처 *','s')}<div class="wf2-input">${w(45)}</div></div>
@@ -2393,7 +2524,7 @@ const SCR=[
     <div class="wf3-field">${wc(6)}${wl('메모','s')}<div class="wf2-input" style="height:40px"></div></div>
     <div class="wf2-row wf2-gap mt">${wbtn('취소')}<span class="grow"></span>${wc(7)}${wbtn('저장',1)}</div></div>`,
   rows:[[1,'등록 헤더','','시트 형태 · 닫기'],[2,'필수 입력','','이름 · 연락처 · 현장 (라벨은 「현장」 하나로)'],[3,'유입 경로','','직접 등록 고객도 유입 경로를 남김 (N6)'],[4,'단계','C11','공통 영업 단계 · 현장을 먼저 고르지 않아도 선택 (N8)'],[5,'추가 정보','C13','관심도 · 담당자 · 사는 곳 · 희망 타입 (메모 양식에서 승격)'],[6,'메모','C18','첫 메모'],[7,'저장','C19','필수 입력 전 비활성 · 저장 후 상세로 이동']]},
- {id:'SCR-05',br:'detail',t:'고객 상세 (전체 스크롤)',path:'고객 관리 › 고객 상세',entry:'SCR-01 ⑥ 고객 카드',
+ {id:'SCR-05',br:'detail',t:'고객 상세 (전체 스크롤)',path:'고객 관리 › 고객 상세',entry:'SCR-01 ⑤ 고객 카드',
   frame:`${wsb}<div class="wf3-pad">
     <div class="wf2-row wf2-sb">${wc(1)}${wi('arrow_back_ios_new')}<span style="flex:1"></span>${wi('more_horiz')}</div>
     <div class="mt"><div class="wf2-row">${wc(2)}${wl('홍길동','h')}${wchip('계약 진행')}<span style="flex:1"></span>${wbtn('수정')}</div><div class="mt">${wl('●●○ 관심도 중 · A단지 · 담당 김','s')}</div><div>${wl('010-0000-0000 · 유입 메타 광고','s')}</div></div>
@@ -2435,6 +2566,19 @@ const SCR=[
       <div class="wf2-box mt">${wc(4)}${wl('홍길동님을 삭제할까요?','b')}<div class="mt">${wl('기록이 모두 사라져요. 보류를 추천해요.','s')}</div><div class="wf2-row wf2-gap mt">${wbtn('보류로 옮기기')}${wbtn('삭제')}</div></div></div>`,
   rows:[[1,'내페이지 공유','C20','헤더 주 버튼에서 이동'],[2,'보류','C20','연락 중단은 삭제 대신 보류'],[3,'고객 삭제','C20','스크롤 끝에서 이동'],[4,'삭제 확인','C20','보류를 먼저 권함 · 휴지통 보관 기간 안내']]}
 ];
+/* 화면별 현행 캡처와 달라지는 점 (현행 → 개선) */
+const SCR_ASIS={
+ 'SCR-01':{f:[['01_고객메뉴','고객 목록'],['02_상태선택','상태 선택 시트']],diff:[['상태가 가로로 미는 칩 한 줄이라, 고른 상태가 화면 밖으로 밀려 안 보임','기본 상태 6개는 한 줄 타일로 항상 보이고, 커스텀 상태는 접어 둠'],['필터를 걸어도 목록에는 표시가 없음','건 조건을 칩으로 보여 주고 ✕로 바로 해제'],['정렬이 필터 시트 안에만 있음','위치는 그대로 두고, 기본값이 아닐 때만 목록에 표시'],['전화 버튼이 상태 배지 바로 옆에 있음','주 행동 버튼을 카드 아래로 떼고, 다음 일정을 함께 표시']]},
+ 'SCR-02':{f:[['04_필터','필터 (위)'],['04-2_필터_하단','필터 (아래)']],diff:[['항목마다 여러 개를 고를 수 있는지 알 수 없음','섹션 제목 옆에 「여러 개 / 하나 선택」 표기'],['적용을 눌러야 결과를 알 수 있음','버튼에 결과 수를 미리 표시'],['하단 탭바가 시트 아래쪽을 가림','시트가 탭바 위로 올라옴'],['정렬 5 · 플랫폼 7 · 캠페인 12 · 등록일 5','항목 수와 이름은 그대로 유지']]},
+ 'SCR-03':{f:[['05_검색','검색 입력'],['m35_G01_검색_녹음단어','녹음 단어 검색'],['m38_G03_검색_전체결과','검색 결과']],diff:[['무엇이 검색되는지 알 수 없음 (녹음 대화는 검색 안 됨)','검색 범위를 칩으로 표시'],['고른 상태 탭 안에서만 결과가 나옴','항상 전체 고객에서 검색'],['왜 나온 결과인지 알 수 없음','일치한 항목과 글자를 표시'],['결과가 없으면 빈 목록','0건 전용 화면 + 고객 직접 등록']]},
+ 'SCR-04':{f:[['m06_A06_고객추가','고객 등록']],diff:[['현장을 먼저 골라야 담당자 · 상태가 열림','순서와 상관없이 입력'],['직접 등록 고객은 유입 경로가 남지 않음','유입 경로를 함께 기록'],['저장 버튼이 항상 눌림','필수 입력 전에는 비활성']]},
+ 'SCR-05':{f:[['06-5a_상세_가계약_상단','상단'],['06-5b_상세_가계약_중단','메모'],['06-5f_상세_가계약_미팅예약_AI요약','미팅 · AI 요약'],['06-5e_상세_가계약_통화이력_타임라인','통화 · 타임라인']],diff:[['열면 모든 칸이 바로 수정 상태이고 저장 버튼이 없음','보기 모드가 기본, [수정]을 눌렀을 때만 편집'],['핵심 정보가 메모 자유 글에 묻혀 있음','한눈에 보기 8칸으로 꺼냄'],['다음에 무엇을 할지 스스로 판단해야 함','다음 할 일과 빠른 행동 바 제공'],['같은 통화가 요약 · 이력 · 타임라인에 따로 보임','기록 한 곳에서 유형별로 보기'],['고객 삭제가 스크롤 끝에 일반 버튼으로 있음','⋯ 메뉴로 옮기고 보류를 먼저 권함']]},
+ 'SCR-06':{f:[['06-5x2_상세_상태드롭다운','상태 직접 변경']],note:'현행에는 통화 결과 화면이 없습니다. 통화 뒤 상세에서 상태를 직접 바꿉니다.',diff:[['통화 뒤 상태 · 일정 · 메모를 각각 따로 입력','결과 하나만 누르면 상태 · 일정 · 알림이 함께 정리'],['부재 횟수를 메모에 손으로 적음','부재 횟수 자동 +1, 재시도 알림'],['잘못 바꿔도 되돌릴 방법이 없음','되돌리기 제공']]},
+ 'SCR-07':{f:[['06-5b_상세_가계약_중단','메모 (자유 글)']],diff:[['방문일 · 거주지역 · 계약금을 양식 글로 매번 손으로 입력','질문을 하나씩 보여 주고 고르게 함'],['입력한 내용이 검색 · 집계에 쓰이지 않음','저장하면 한눈에 보기 · 계약 정보에 반영'],['입금을 기록해도 상태는 따로 바꿔야 함','저장 뒤 상태 변경을 제안']]},
+ 'SCR-08':{f:[['06-5a_상세_가계약_상단','상세 = 수정 화면']],diff:[['상세 화면이 곧 수정 화면','수정 시트를 따로 열어 편집'],['이름 칸에 실명과 광고 계정명을 함께 적음','유입 계정명 칸을 분리'],['누가 바꿨는지 알 수 없음','저장 뒤 되돌리기 · 수정 이력']]},
+ 'SCR-09':{f:[['06-5i_상세_가계약_하단_삭제','상세 맨 아래']],diff:[['고객 삭제가 스크롤 끝에 일반 카드처럼 있음','⋯ 메뉴 안으로 이동'],['연락을 멈추려면 삭제하거나 그대로 둬야 함','보류 상태 제공'],['삭제 뒤 어떻게 되는지 안내가 없음','휴지통 이동과 보관 기간 안내']]}
+};
+SCR.forEach(s=>{s.asis=SCR_ASIS[s.id];});
 const SCRB={list:{t:'고객 목록',c:'#86efac'},add:{t:'+ 고객 등록',c:'#86efac'},detail:{t:'고객 상세',c:'#16a34a'}};
 let scrBr='전체';
 function renderScr(){
@@ -2443,16 +2587,270 @@ function renderScr(){
   const list=SCR.filter(s=>scrBr==='전체'||s.br===scrBr);
   document.getElementById('scrList').innerHTML=list.map(s=>`<article class="scard" id="scr-${s.id}">
     <div class="scard-h"><span class="scard-id">${s.id}</span><h3>${esc(s.t)}</h3><span class="scard-path">${ic('chevron_right')}${esc(s.path)}</span><span class="scard-entry">진입: ${esc(s.entry)}</span></div>
-    <div class="scard-b"><div class="scard-wf"><div class="wf3-phone">${s.frame}</div></div>
-      <div class="scard-desc"><table class="scr-tab"><tr><th>No</th><th>영역</th><th>컴포넌트</th><th>설명</th></tr>${s.rows.map(([n,a,cid,d])=>`<tr><td><span class="wf2-n">${n}</span></td><td><b>${esc(a)}</b></td><td>${cid?`<button class="scr-cp" data-gocomp="${cid}">${cid}</button>`:'<span class="scr-new">화면 전용</span>'}</td><td>${esc(d)}</td></tr>`).join('')}</table>
+    <div class="scard-b scard-cmp"><div class="scard-asis"><div class="pp-colh"><i>현행</i>실제 앱</div><div id="asis-${s.id}">${cmpBox(s.id,s.asis)}</div></div>
+      <div class="scard-wf"><div class="pp-colh"><i class="new">개선</i>와이어프레임</div><div class="wf3-phone">${s.frame}</div></div>
+      <div class="scard-desc"><div class="scard-diff"><h4>현행과 달라지는 점</h4><table>${s.asis.diff.map(([a,b])=>`<tr><td>${esc(a)}</td><td>→</td><td><b>${esc(b)}</b></td></tr>`).join('')}</table></div><table class="scr-tab"><tr><th>No</th><th>영역</th><th>컴포넌트</th><th>설명</th></tr>${s.rows.map(([n,a,cid,d])=>`<tr><td><span class="wf2-n">${n}</span></td><td><b>${esc(a)}</b></td><td>${cid?`<button class="scr-cp" data-gocomp="${cid}">${cid}</button>`:'<span class="scr-new">화면 전용</span>'}</td><td>${esc(d)}</td></tr>`).join('')}</table>
       <label class="pc-note"><span>${ic('edit')}이 화면에 대한 의견</span><textarea data-pn="${s.id}" rows="2" placeholder="화면 구성 · 컴포넌트 배치에 대한 의견 (자동 저장)">${esc(planNotes[s.id]||'')}</textarea></label></div></div></article>`).join('');
 }
 document.getElementById('tab-plan').addEventListener('click',e=>{
+  const cs=e.target.closest('[data-cmpk]');if(cs){const k=cs.dataset.cmpk,id=k.replace(/^pp-/,'');CMPI[k]=+cs.dataset.cmpi;const el=document.getElementById(k.startsWith('pp-')?'ppAsis':'asis-'+id);if(el)el.innerHTML=cmpBox(k,SCR.find(x=>x.id===id).asis);return;}
   const b=e.target.closest('[data-sb]');if(b){scrBr=b.dataset.sb;renderScr();return;}
   const g=e.target.closest('[data-goscr]');if(g){scrBr='전체';renderScr();const el=document.getElementById('scr-'+g.dataset.goscr);if(el){el.scrollIntoView({block:'start'});el.classList.add('pc-flash');setTimeout(()=>el.classList.remove('pc-flash'),1500);}return;}
   const c=e.target.closest('[data-gocomp]');if(c){planGroup='전체';renderPlan();const el=document.getElementById('pc-'+c.dataset.gocomp);if(el){el.scrollIntoView({block:'start'});el.classList.add('pc-flash');setTimeout(()=>el.classList.remove('pc-flash'),1500);}}
 });
 renderScr();
+
+/* =========================================================
+   ③ 개선 기획 — 눌러 보는 프로토타입 (pp-)
+   흑백 와이어프레임 수준 · 전부 가상 데이터 · SCR-01~09 전 영역이 눌린다
+   ========================================================= */
+const PP_OWN=['담당자1','담당자2','담당자3','담당자4'];
+const PP_PLAT=['메타','네이버','구글','카카오','직접','내 페이지','기타'];
+const PP_SORT=['등록일 최신순','관심도','최근 활동','상태','이름'];
+const PP_DATE=['전체','오늘','최근 7일','최근 30일','직접설정'];
+const PP_SCOPE=['전체','이름','전화','메모','통화 내용'];
+const PP_INFO=['거주 지역','희망 타입','평수','방문 경로','예산','방문 인원','나이대','실거주 · 투자'];
+const PP_STN=[...STG_BASE,...STG_CUSTOM].map(x=>x[0]);
+const PP_SALE=STG_BASE.slice(0,5).map(x=>x[0]);
+const PP_INIT=()=>[
+ {id:1,name:'홍길동',st:'미지정',int:0,own:'담당자1',plat:'메타',camp:CAMP[0],reg:0,act:0,phone:'010-0000-0101',ctx:'memo',tx:'[광고 폼] 계약 조건 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/9 09:06',t:'[광고 폼] 어떤 상담을 원하시나요? : 계약 조건 문의'}]},
+ {id:2,name:'김영희',st:'방문 예약',int:3,own:'담당자1',plat:'네이버',camp:CAMP[1],reg:1,act:0,phone:'010-0000-0102',ctx:'ai',tx:'예산 7억, 신혼집 찾는 중. 11/15 12시 방문하기로 함',kw:['예산 7억','신혼집'],next:'11/15 12:00 방문',info:{'예산':'7억','실거주 · 투자':'실거주','방문 인원':'2명'},recs:[{k:'통화',at:'11/8 21:04',t:'예산 7억, 신혼집 찾는 중. 11/15 12시 방문하기로 함',sug:'방문 전날 위치 안내 문자를 보내 보세요',n:74},{k:'메모',at:'11/8 20:29',t:'[광고 폼] 방문 상담 문의'}]},
+ {id:3,name:'이철수',st:'가계약',int:3,own:'담당자2',plat:'메타',camp:CAMP[1],reg:50,act:2,phone:'010-0000-0103',ctx:'ai',tx:'1차 계약금 입금 확인. 2차는 9/21 예정',kw:['계약금'],next:'2차 계약금 9/21',info:{'희망 타입':'84㎡','평수':'34평','호실':'가상 A동 1001호','1차 계약금':'1,000만원','2차 예정':'9/21'},recs:[{k:'입금',at:'9/16 21:58',t:'1차 계약금 1,000만원 입금 확인'},{k:'통화',at:'9/15 13:03',t:'계약 조건 설명, 가계약 진행하기로 함',n:26},{k:'상담',at:'9/14 15:00',t:'방문 상담 · 2명 · 84㎡ 선호'}]},
+ {id:4,name:'박도윤',st:'정계약',int:3,own:'담당자2',plat:'카카오',camp:CAMP[2],reg:10,act:1,phone:'010-0000-0104',ctx:'memo',tx:'정계약 완료, 서류 전달 예정',kw:[],next:'서류 전달 11/20',info:{'호실':'가상 B동 501호','1차 계약금':'1,000만원','2차 예정':'완납'},recs:[{k:'입금',at:'10/31 17:32',t:'2차 계약금 입금 확인'},{k:'상담',at:'10/31 11:23',t:'계약서 작성 · 도장 날인'}]},
+ {id:5,name:'최수아',st:'부재중',int:1,own:'담당자1',plat:'메타',camp:CAMP[0],reg:2,act:0,miss:2,phone:'010-0000-0105',ctx:'memo',tx:'두 번 전화했지만 받지 않음',kw:[],next:'오늘 다시 전화',info:{},recs:[{k:'메모',at:'11/9 10:42',t:'두 번 전화했지만 받지 않음'}]},
+ {id:6,name:'정하준',st:'부재중',int:0,own:'담당자3',plat:'구글',camp:CAMP[3],reg:5,act:4,miss:1,phone:'010-0000-0106',ctx:'memo',tx:'[광고 폼] 분양가 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/4 14:10',t:'[광고 폼] 분양가 문의'}]},
+ {id:7,name:'한지우',st:'관심없음',int:0,own:'담당자3',plat:'메타',camp:CAMP[4],reg:20,act:12,phone:'010-0000-0107',ctx:'ai',tx:'다른 지역을 알아보는 중이라 관심 없다고 함',kw:[],next:'',info:{},recs:[{k:'통화',at:'10/28 16:20',t:'다른 지역을 알아보는 중이라 관심 없다고 함',n:8}]},
+ {id:8,name:'오민석',st:'재통화',int:2,own:'담당자1',plat:'네이버',camp:CAMP[0],reg:3,act:1,phone:'010-0000-0108',ctx:'ai',tx:'업무 중이라 저녁 7시 이후 통화를 원함',kw:['저녁 통화'],next:'오늘 19:00 전화',info:{},recs:[{k:'통화',at:'11/9 10:39',t:'업무 중이라 저녁 7시 이후 통화를 원함',n:6}]},
+ {id:9,name:'서하늘',st:'타현장',int:2,own:'담당자4',plat:'메타',camp:CAMP[5],reg:15,act:9,phone:'010-0000-0109',ctx:'memo',tx:'다른 현장에 더 관심 있다고 함',kw:[],next:'',info:{},recs:[{k:'메모',at:'10/31 04:20',t:'다른 현장에 더 관심 있다고 함'}]},
+ {id:10,name:'강다은',st:'상',int:3,own:'담당자2',plat:'직접',camp:CAMP[6],reg:7,act:3,phone:'010-0000-0110',ctx:'ai',tx:'실거주 목적, 34평 희망. 주말 방문 검토 중',kw:['실거주','34평'],next:'',info:{'평수':'34평','실거주 · 투자':'실거주'},recs:[{k:'통화',at:'11/7 12:34',t:'실거주 목적, 34평 희망. 주말 방문 검토 중',n:31}]},
+ {id:11,name:'윤태호',st:'중',int:2,own:'담당자4',plat:'내 페이지',camp:CAMP[7],reg:8,act:6,phone:'010-0000-0111',ctx:'memo',tx:'내 페이지에서 자료 요청',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/2 09:30',t:'내 페이지에서 자료 요청'}]},
+ {id:12,name:'임소라',st:'하',int:1,own:'담당자3',plat:'기타',camp:CAMP[8],reg:25,act:20,phone:'010-0000-0112',ctx:'memo',tx:'가격만 문의하고 연락 없음',kw:[],next:'',info:{},recs:[{k:'메모',at:'10/20 11:00',t:'가격만 문의하고 연락 없음'}]},
+ {id:13,name:'배준호',st:'아파트먼트',int:2,own:'담당자1',plat:'메타',camp:CAMP[9],reg:4,act:4,phone:'010-0000-0113',ctx:'memo',tx:'아파트먼트 타입 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/5 13:15',t:'아파트먼트 타입 문의'}]},
+ {id:14,name:'신유리',st:'미지정',int:0,own:'담당자4',plat:'카카오',camp:CAMP[11],reg:0,act:0,phone:'010-0000-0114',ctx:'memo',tx:'[광고 폼] 방문 상담 문의',kw:[],next:'',info:{},recs:[{k:'메모',at:'11/9 08:16',t:'[광고 폼] 방문 상담 문의'}]}
+];
+const PP_NEW=()=>({name:'',phone:'',camp:'',plat:'직접',st:'미지정',int:0,own:PP_OWN[0],memo:''});
+const PP_F0=()=>({own:[],int:[],plat:[],camp:[],date:'전체'});
+let PPD=PP_INIT();
+const PP={scr:'list',st:'전체',cOpen:false,sort:PP_SORT[0],f:PP_F0(),sheet:null,arg:null,cid:null,q:'',scope:'전체',toast:'',undo:null,rec:'전체',rx:{},tech:false,campQ:'',add:PP_NEW(),log:null,when:{},hist:[],seq:0};
+const PP_LOGQ={'방문 상담':[['방문 인원은 몇 명이었나요?',['1명','2명','3명 이상']],['희망 타입은?',['59㎡','74㎡','84㎡','아직 미정']],['반응은 어땠나요?',['긍정적','고민 중','부정적']]],'입금':[['어떤 입금인가요?',['1차 계약금','2차 계약금','잔금']],['금액은?',['1,000만원','2,500만원','직접 입력']]],'메모':[]};
+const ppC=()=>PPD.find(c=>c.id===PP.cid);
+const ppAct=c=>c.st==='방문 예약'?['sms','문자']:['가계약','정계약'].includes(c.st)?['edit_note','기록']:['call','전화'];
+const ppInt=n=>'●'.repeat(n)+'○'.repeat(3-n);
+const ppChip=(t,on,pp)=>`<span class="wf2-chip ${on?'on':''}" data-pp="${pp}">${t}</span>`;
+const ppBtn=(t,p,pp,dis)=>`<span class="wf2-btn ${p?'p':''}${dis?' pp-dis':''}" data-pp="${pp}">${t}</span>`;
+const ppFN=()=>PP.f.own.length+PP.f.int.length+PP.f.plat.length+PP.f.camp.length+(PP.f.date!=='전체'?1:0);
+function ppFiltered(){
+  const f=PP.f,lim={'오늘':0,'최근 7일':7,'최근 30일':30};
+  const l=PPD.filter(c=>!c.gone&&(PP.st==='전체'||c.st===PP.st)&&(!f.own.length||f.own.includes(c.own))&&(!f.int.length||f.int.includes(c.int))&&(!f.plat.length||f.plat.includes(c.plat))&&(!f.camp.length||f.camp.includes(c.camp))&&(!(f.date in lim)||c.reg<=lim[f.date]));
+  const s=PP.sort;
+  return l.sort((a,b)=>s==='관심도'?b.int-a.int:s==='최근 활동'?a.act-b.act:s==='상태'?PP_STN.indexOf(a.st)-PP_STN.indexOf(b.st):s==='이름'?a.name.localeCompare(b.name,'ko'):(a.reg-b.reg||a.id-b.id));
+}
+const ppTab=()=>`<div class="wf3-tabbar pp-tabbar">${[['home','홈'],['group','고객'],['calendar_month','일정'],['groups','멤버'],['menu','메뉴']].map(([i,l],k)=>`<span class="${k===1?'on':''}" data-pp="${k===1?'go:list':'toast:「'+l+'」 탭은 이번 범위(고객 탭) 밖입니다'}">${wi(i)}${l}</span>`).join('')}</div>`;
+const ppCard=c=>{const a=ppAct(c);return `<div class="wf2-box wf3-card pp-card" data-pp="open:${c.id}"><div class="wf2-row"><span class="wf2-av"></span><div class="wf2-col" style="flex:1;min-width:0">${wl(esc(c.name),'b')}<span class="wf2-t s pp-el">${esc(c.camp)} · ${c.own}</span></div>${c.hold?wchip('보류'):''}${wchip(c.st)}</div>
+  <div class="wf2-ctx mt">${wi(c.ctx==='ai'?'wand_stars':'edit_note')}<span class="wf2-t s pp-el">${esc(c.tx)}</span></div>${c.kw.length?`<div class="wf2-row wf2-gap mt">${c.kw.map(k=>wchip('✦ '+esc(k))).join('')}</div>`:''}
+  <div class="wf2-row wf2-sb mt"><span class="wf2-row">${wi('calendar_month')}${wl(esc(c.next||'일정 없음'),'s')}</span><span class="wf2-btn p" data-pp="act:${c.id}">${wi(a[0])} ${a[1]}</span></div></div>`;};
+function ppListHtml(){
+  const l=ppFiltered(),n=ppFN(),cs=STG_CUSTOM.find(x=>x[0]===PP.st),f=PP.f;
+  const chips=[...f.own.map(v=>['담당자 '+v,'fx:own:'+v]),...f.int.map(v=>['관심도 '+['','하','중','상'][v],'fx:int:'+v]),...f.plat.map(v=>['플랫폼 '+v,'fx:plat:'+v]),...f.camp.map(v=>['현장 '+esc(v),'fx:camp:'+esc(v)]),...(f.date!=='전체'?[['등록일 '+f.date,'fx:date:']]:[]),...(PP.sort!==PP_SORT[0]?[['정렬 '+PP.sort,'fx:sort:']]:[])];
+  return `<div class="pp-body">
+    <div class="wf2-row wf2-sb">${wl('고객 관리','h')}<span style="flex:1"></span><span class="pp-ib" data-pp="go:search" title="검색">${wi('search')}</span><span class="pp-ib" data-pp="toast:더보기 — 엑셀 일괄 등록 · 내보내기(소유자)처럼 드물게 쓰는 기능 자리입니다" title="더보기">${wi('more_horiz')}</span></div>
+    <div class="wf3-tiles wf3-t6 mt">${STG_BASE.map(([a,b])=>`<div class="wf2-tile ${PP.st===a?'on':''}" data-pp="st:${a}"><small>${a}</small><b>${b}</b></div>`).join('')}</div>
+    <div class="wf2-row wf2-gap mt">${ppChip('전체 11,430',PP.st==='전체','st:전체')}${cs&&!PP.cOpen?ppChip(cs[0]+' '+cs[1],1,'st:'+cs[0]):''}<span style="flex:1"></span>${ppBtn('커스텀 상태 '+STG_CUSTOM.length+(PP.cOpen?' ▴':' ▾'),0,'copen')}</div>
+    ${PP.cOpen?`<div class="wf2-row wf2-gap mt">${STG_CUSTOM.map(([k,c])=>ppChip(k+' '+c,PP.st===k,'st:'+k)).join('')}</div>`:''}
+    <div class="wf2-row wf2-gap mt">${chips.map(([t,p])=>ppChip(t+' ✕',0,p)).join('')}${chips.length>1?`<span class="wf2-link" data-pp="clear">모두 해제</span>`:''}<span style="flex:1"></span>${ppBtn(wi('tune')+' 필터·정렬'+(n?' '+n:''),n?1:0,'sheet:filter')}</div>
+    <div class="pp-cnt">예시 고객 ${l.length}명 · ${PP.sort}</div>
+    ${l.length?l.map(ppCard).join(''):`<div class="pp-empty">${wi('search')}<b>조건에 맞는 고객이 없어요</b><span>상태나 필터를 바꿔 보세요</span>${ppBtn('조건 모두 해제',0,'clear')}</div>`}
+  </div><span class="pp-fab" data-pp="go:add" title="고객 추가">${wi('add')}</span>${ppTab()}`;
+}
+function ppSheetFilter(){
+  const f=PP.f,tg=(k,v)=>ppChip(esc(v),f[k].includes(v),'f:'+k+':'+esc(v));
+  return `<div class="wf2-row wf2-sb">${wl('필터 · 정렬','b')}<span style="flex:1"></span><span class="pp-ib" data-pp="sheet:">${wi('close')}</span></div>
+  <div class="wf2-sec">${wl('정렬 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${PP_SORT.map(x=>ppChip(x,PP.sort===x,'sort:'+x)).join('')}</div>
+  <div class="wf2-sec">${wl('담당자 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${ppChip('전체',!f.own.length,'fall:own')}${ppChip('★ 내 고객',f.own.length===1&&f.own[0]===PP_OWN[0],'fmine')}${PP_OWN.map(x=>tg('own',x)).join('')}</div>
+  <div class="wf2-sec">${wl('관심도 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${[[3,'●●● 상'],[2,'●●○ 중'],[1,'●○○ 하']].map(([v,t])=>ppChip(t,f.int.includes(v),'f:int:'+v)).join('')}</div>
+  <div class="wf2-sec">${wl('플랫폼 · 여러 개 선택','s')}</div><div class="wf2-row wf2-gap">${PP_PLAT.map(x=>tg('plat',x)).join('')}</div>
+  <div class="wf2-sec">${wl('캠페인(현장) · 여러 개 선택','s')}</div><div class="wf2-search">${wi('search')}<input class="pp-in" id="ppCampQ" placeholder="현장 검색" value="${esc(PP.campQ)}"></div><div class="wf2-row wf2-gap mt" id="ppCamps">${ppCamps()}</div>
+  <div class="wf2-sec">${wl('등록일 · 하나 선택','s')}</div><div class="wf2-row wf2-gap">${PP_DATE.map(x=>ppChip(x,f.date===x,'f:date:'+x)).join('')}</div>
+  <div class="wf2-row wf2-gap mt">${ppBtn('초기화',0,'freset')}<span style="flex:1"></span>${ppBtn(ppFiltered().length+'명 보기',1,'sheet:')}</div>`;
+}
+function ppCamps(){const l=CAMP.filter(x=>!PP.campQ||x.includes(PP.campQ));return l.map(x=>ppChip(esc(x),PP.f.camp.includes(x),'f:camp:'+esc(x))).join('')||wl('일치하는 현장이 없어요','s');}
+function ppSearchRes(){
+  const q=PP.q.trim();
+  if(!q)return `<div class="wf2-sec">${wl('최근 검색','s')}</div>${['신혼집','계약금','010-0000'].map(x=>`<div class="pp-li" data-pp="q:${x}">${wi('history')}${wl(x)}</div>`).join('')}`;
+  const res=[];
+  PPD.filter(c=>!c.gone).forEach(c=>{
+    const fs=[['이름',c.name],['전화',c.phone],['메모',c.recs.filter(r=>r.k!=='통화').map(r=>r.t).join(' / ')],['통화 내용',c.recs.filter(r=>r.k==='통화').map(r=>r.t).join(' / ')+' '+c.kw.join(' ')]];
+    const m=fs.find(([k,v])=>(PP.scope==='전체'||PP.scope===k)&&v.includes(q));if(m)res.push([c,m]);});
+  if(!res.length)return `<div class="pp-empty">${wi('search')}<b>검색 결과가 없어요</b><span>「${esc(q)}」 · 전체 고객 대상 · 범위: ${PP.scope}</span>${ppBtn(wi('person_add')+' 고객 직접 등록',0,'go:add')}</div>`;
+  const hl=v=>{const i=v.indexOf(q),s=Math.max(0,i-8);return (s?'…':'')+esc(v.slice(s,i))+'<mark>'+esc(q)+'</mark>'+esc(v.slice(i+q.length,i+q.length+18));};
+  return `<div class="pp-cnt">전체 고객에서 ${res.length}명 (선택한 상태 · 필터와 무관)</div>`+res.map(([c,[k,v]])=>`<div class="wf2-box pp-card" data-pp="open:${c.id}"><div class="wf2-row">${wl(esc(c.name),'b')}<span style="flex:1"></span>${wchip(c.st)}</div><div class="wf2-row mt"><span class="pp-tag">${k} 일치</span><span class="wf2-t s pp-el">${hl(v)}</span></div></div>`).join('');
+}
+function ppSearchHtml(){return `<div class="pp-body"><div class="wf2-row wf2-gap" style="flex-wrap:nowrap"><div class="wf2-search" style="flex:1;min-width:0">${wi('search')}<input class="pp-in" id="ppQ" placeholder="이름 · 전화 · 현장 · 메모 검색" value="${esc(PP.q)}"><span class="pp-ib" data-pp="q:" title="지우기">${wi('cancel')}</span></div><span class="wf2-t s" data-pp="go:list">취소</span></div>
+  <div class="wf2-row wf2-gap mt">${PP_SCOPE.map(x=>ppChip(x,PP.scope===x,'scope:'+x)).join('')}</div><div class="pp-note">녹음 대화 전문은 검색되지 않습니다. 「통화 내용」은 AI 요약 · 키워드만 찾습니다</div><div id="ppRes">${ppSearchRes()}</div></div>${ppTab()}`;}
+function ppAddHtml(){
+  const a=PP.add,ok=a.name.trim()&&a.phone.trim()&&a.camp;
+  return `<div class="pp-top"><span class="wf2-t b">고객 등록</span><span style="flex:1"></span><span class="pp-ib" data-pp="go:list" title="닫기">${wi('close')}</span></div><div class="pp-body" style="padding-bottom:16px">
+   <label class="pp-fld"><small>이름 *</small><input data-ppa="name" placeholder="고객 이름 입력" value="${esc(a.name)}"></label>
+   <label class="pp-fld"><small>연락처 *</small><input data-ppa="phone" placeholder="010-0000-0000" value="${esc(a.phone)}"></label>
+   <label class="pp-fld"><small>현장 *</small><select data-ppa="camp"><option value="">현장 선택</option>${CAMP.map(x=>`<option ${a.camp===x?'selected':''}>${esc(x)}</option>`).join('')}</select></label>
+   <div class="wf2-sec">${wl('유입 경로','s')}</div><div class="wf2-row wf2-gap">${PP_PLAT.map(x=>ppChip(x,a.plat===x,'a:plat:'+x)).join('')}</div>
+   <div class="wf2-sec">${wl('상태 · 기본 6개','s')}</div><div class="wf2-row wf2-gap">${STG_BASE.map(([x])=>ppChip(x,a.st===x,'a:st:'+x)).join('')}</div>
+   <div class="wf2-sec">${wl('상태 · 커스텀','s')}</div><div class="wf2-row wf2-gap">${STG_CUSTOM.map(([x])=>ppChip(x,a.st===x,'a:st:'+x)).join('')}</div>
+   <div class="wf2-sec">${wl('관심도','s')}</div><div class="wf2-row wf2-gap">${[[0,'선택 안 함'],[3,'●●● 상'],[2,'●●○ 중'],[1,'●○○ 하']].map(([v,t])=>ppChip(t,a.int===v,'a:int:'+v)).join('')}</div>
+   <div class="wf2-sec">${wl('담당자','s')}</div><div class="wf2-row wf2-gap">${PP_OWN.map(x=>ppChip(x,a.own===x,'a:own:'+x)).join('')}</div>
+   <label class="pp-fld"><small>메모 (선택)</small><textarea data-ppa="memo" rows="2" placeholder="첫 메모">${esc(a.memo)}</textarea></label>
+   <div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'go:list')}<span style="flex:1"></span><span class="wf2-btn p${ok?'':' pp-dis'}" id="ppAddSave" data-pp="addsave">저장</span></div></div>`;
+}
+function ppDetailHtml(){
+  const c=ppC();if(!c)return ppListHtml();
+  const a=ppAct(c),si=PP_SALE.indexOf(c.st);
+  const todo={'미지정':['첫 통화하기','전화'],'부재중':['다시 전화하기 · 부재 '+(c.miss||1)+'회','전화'],'재통화':['약속한 시간에 전화하기','전화'],'방문 예약':['방문 전날 안내 문자 보내기','문자'],'가계약':['2차 계약금 확인하기','기록'],'정계약':['계약 서류 전달하기','기록']}[c.st]||['다음 연락 일정 잡기','일정'];
+  const tp={'전화':'call','기록':'sheet:log','일정':'sheet:sched','문자':'toast:문자 작성 화면으로 이동합니다 (가상)'};
+  const recs=c.recs.map((r,i)=>[r,i]).filter(([r])=>PP.rec==='전체'||r.k===PP.rec),cnt=k=>c.recs.filter(r=>r.k===k).length;
+  return `<div class="pp-top"><span class="pp-ib" data-pp="go:list" title="뒤로">${wi('arrow_back_ios_new')}</span>${wl(esc(c.name),'b')}${wchip(c.st)}${c.hold?wchip('보류'):''}<span style="flex:1"></span><span class="pp-ib" data-pp="sheet:more" title="더보기">${wi('more_horiz')}</span></div>
+  <div class="pp-body" style="padding-bottom:20px">
+   <div class="wf2-box"><div class="wf2-row"><span class="wf2-av"></span><div class="wf2-col" style="flex:1;min-width:0">${wl(esc(c.name),'b')}<span class="wf2-t s pp-el">${ppInt(c.int)} · ${esc(c.camp)}</span></div>${ppBtn(wi('edit')+' 수정',0,'sheet:edit')}</div>
+     <div class="pp-kv2 mt"><span>담당자</span><b>${c.own}</b><span>연락처</span><b>${esc(c.phone)}</b><span>유입</span><b>${c.plat}</b><span>등록일</span><b>${c.reg?c.reg+'일 전':'오늘'}</b></div></div>
+   <div class="pp-qa mt">${[['call','전화'],['sms','문자'],['event_available','일정'],['edit_note','기록']].map(([i,t])=>`<span class="wf2-btn ${t===a[1]?'p':''}" data-pp="${tp[t]}">${wi(i)} ${t}</span>`).join('')}</div>
+   <div class="wf2-sec">${wl('상태','s')}<span style="flex:1"></span><span class="wf2-link" data-pp="sheet:stage">전체 상태에서 고르기</span></div>
+   <div class="pp-steps">${PP_SALE.map((s,i)=>`<span class="${i===si?'on':i<si?'done':''}" data-pp="ask:${s}">${s}</span>`).join('')}</div>${si<0?`<div class="pp-note">지금 상태 「${c.st}」는 위 진행 순서에 없는 상태입니다</div>`:''}
+   <div class="wf2-box mt"><div class="wf2-row">${wi('lightbulb')}${wl('다음 할 일','b')}</div><div class="wf2-row wf2-sb mt"><span class="wf2-t">${todo[0]}</span>${ppBtn(todo[1],1,tp[todo[1]])}</div>${c.next?`<div class="wf2-row mt">${wi('calendar_month')}${wl(esc(c.next),'s')}</div>`:''}</div>
+   <div class="wf2-sec">${wl('한눈에 보기','s')}<span class="wf2-t s" style="margin-left:auto">칸을 누르면 그 항목만 수정</span></div>
+   <div class="pp-grid">${PP_INFO.map(k=>`<div class="pp-cell" data-pp="sheet:edit:${k}"><small>${k}</small><b>${esc(c.info[k]||'—')}</b></div>`).join('')}</div>
+   ${['가계약','정계약'].includes(c.st)?`<div class="wf2-box mt"><div class="wf2-row">${wi('contract')}${wl('계약 정보','b')}</div><div class="pp-kv2 mt"><span>호실</span><b>${esc(c.info['호실']||'—')}</b><span>1차 계약금</span><b>${esc(c.info['1차 계약금']||'—')}</b><span>2차</span><b>${esc(c.info['2차 예정']||'—')}</b></div><div class="wf2-t s mt" data-pp="toast:수정 이력 — 누가 언제 무엇을 바꿨는지 보여 줄 자리입니다">수정 이력 보기 ›</div></div>`:''}
+   <div class="wf2-sec">${wl('기록','s')}</div><div class="wf2-row wf2-gap">${['전체','통화','상담','입금','메모'].map(k=>ppChip(k+' '+(k==='전체'?c.recs.length:cnt(k)),PP.rec===k,'rec:'+k)).join('')}</div>
+   ${recs.length?recs.map(([r,i])=>`<div class="wf2-box mt" data-pp="rx:${i}"><div class="wf2-row"><span class="pp-tag">${r.k}</span>${wl(esc(r.at),'s')}<span style="flex:1"></span>${wi(PP.rx[i]?'keyboard_arrow_up':'keyboard_arrow_down')}</div><div class="wf2-t mt ${PP.rx[i]?'':'pp-el'}">${r.k==='통화'?'<b>AI 요약</b> ':''}${esc(r.t)}</div>${PP.rx[i]&&r.k==='통화'?`<div class="pp-sub mt"><b>AI 제안</b> ${esc(r.sug||'다음 통화에서 방문 일정을 제안해 보세요')}</div><div class="pp-sub mt"><b>대화</b> 고객 00:06 · 담당자 00:13 … (가상 대화 ${r.n||12}건)</div><div class="wf2-t s mt">출처: 앱 통화 녹음</div>`:''}</div>`).join(''):`<div class="pp-empty sm">${wl('이 유형의 기록이 없어요','s')}</div>`}
+   <div class="wf2-sec" data-pp="tech">${wl('기술 정보','s')}<span style="flex:1"></span>${wi(PP.tech?'keyboard_arrow_up':'keyboard_arrow_down')}</div>${PP.tech?`<div class="pp-kv2"><span>리드 ID</span><b>0000 0000 0000 ${1000+c.id}</b><span>유입 폼</span><b>인스턴트 폼 (가상)</b></div>`:''}
+  </div>`;
+}
+function ppSheetHtml(){
+  const s=PP.sheet,c=ppC();
+  if(s==='filter')return ppSheetFilter();
+  const head=t=>`<div class="wf2-row wf2-sb">${wl(t,'b')}<span style="flex:1"></span><span class="pp-ib" data-pp="sheet:" title="닫기">${wi('close')}</span></div>`;
+  const opt=(i,t,d,p,x)=>`<div class="pp-opt ${x||''}" data-pp="${p}">${wi(i)}<div class="wf2-col"><b>${t}</b>${d?`<span>${d}</span>`:''}</div>${wi('chevron_right')}</div>`;
+  if(!c)return head('안내');
+  if(s==='call')return head('통화 결과 · '+esc(c.name))+`<div class="pp-note">통화가 끝나면 자동으로 뜨는 시트입니다. 하나만 누르면 상태 · 일정 · 알림이 함께 정리됩니다</div>`
+    +opt('phone_disabled','안 받았어요','상태 → 부재중 · 부재 횟수 +1 · 재시도 알림','res:부재중')+opt('replay','다시 걸기로 했어요','상태 → 재통화 · 언제 걸지 선택','res:재통화')+opt('event_available','방문 약속을 잡았어요','상태 → 방문 예약 · 날짜 · 시간 선택','res:방문 예약')+opt('do_not_disturb_on','관심 없대요','상태 → 관심없음','res:관심없음')+opt('swap_horiz','다른 현장에 관심 있대요','상태 → 타현장','res:타현장')+opt('edit_note','상담 내용 남기기','기록 추가로 이동','sheet:log')+`<div class="wf2-t s mt">상태를 바꾸지 않으려면 닫기를 누르세요</div>`;
+  if(s==='when'||s==='sched'){const v=s==='when'&&PP.arg==='재통화',w=PP.when;
+    const ds=v?['오늘','내일','모레']:['내일','이번 주 토','이번 주 일'],ts=v?['오전','오후','저녁 7시 이후']:['11:00','14:00','16:00'];
+    return head(s==='sched'?'일정 추가':v?'언제 다시 걸까요?':'방문 날짜 · 시간')+`<div class="wf2-sec">${wl('날짜','s')}</div><div class="wf2-row wf2-gap">${ds.map(x=>ppChip(x,w.d===x,'wd:'+x)).join('')}${ppChip('직접 선택',w.d==='직접 선택','wd:직접 선택')}</div><div class="wf2-sec">${wl('시간','s')}</div><div class="wf2-row wf2-gap">${ts.map(x=>ppChip(x,w.t===x,'wt:'+x)).join('')}</div>
+    <div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('저장',1,'whensave',!(w.d&&w.t))}</div>`;}
+  if(s==='stage')return head('상태 바꾸기')+`<div class="wf2-sec">${wl('기본 상태 6개','s')}</div><div class="wf2-row wf2-gap">${STG_BASE.map(([x])=>ppChip(x,c.st===x,'ask:'+x)).join('')}</div><div class="wf2-sec">${wl('커스텀 상태 (관리자가 최대 6개 추가)','s')}</div><div class="wf2-row wf2-gap">${STG_CUSTOM.map(([x])=>ppChip(x,c.st===x,'ask:'+x)).join('')}</div><div class="pp-note">상태 이름 · 순서는 관리자가 설정에서 정한 그대로 보여 줍니다</div>`;
+  if(s==='ask')return head('상태 변경 확인')+`<div class="wf2-t mt">「${esc(c.name)}」 상태를 <b>${c.st}</b> → <b>${PP.arg}</b>(으)로 바꿀까요?</div><div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('바꾸기',1,'setst')}</div>`;
+  if(s==='more')return head('더보기')+opt('share','내페이지 공유','고객에게 내 페이지 링크 보내기','toast:내페이지 공유 화면으로 이동합니다 (가상)')+opt('schedule',c.hold?'보류 해제':'보류','연락을 잠시 멈춤 · 목록에는 남음','hold')+opt('delete','고객 삭제','휴지통으로 이동','sheet:del','pp-danger');
+  if(s==='del')return head('고객 삭제')+`<div class="wf2-t mt">「${esc(c.name)}」을(를) 삭제하면 휴지통으로 이동합니다. 연락만 멈추려면 <b>보류</b>를 권합니다.</div><div class="pp-note">웹 기능표 기준 고객 삭제는 관리자 · 소유자만 가능하고 휴지통에서 복원됩니다. 보관 기간은 확인이 필요합니다</div><div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('보류로 두기',0,'hold')}${ppBtn('삭제',1,'del')}</div>`;
+  if(s==='edit'){const k=PP.arg;
+    return head(k?k+' 수정':'정보 수정')+(k?`<label class="pp-fld"><small>${k}</small><input data-ppf="info:${k}" value="${esc(c.info[k]||'')}" placeholder="입력"></label>`
+      :`<label class="pp-fld"><small>이름</small><input data-ppf="name" value="${esc(c.name)}"></label><label class="pp-fld"><small>유입 계정명 (이름과 따로 적는 칸)</small><input data-ppf="acct" value="${esc(c.acct||'')}" placeholder="예: 광고 폼에 적힌 이름"></label><label class="pp-fld"><small>연락처</small><input data-ppf="phone" value="${esc(c.phone)}"></label><label class="pp-fld"><small>리드 ID · 등록일 (읽기 전용)</small><input readonly value="0000 0000 0000 ${1000+c.id} · ${c.reg?c.reg+'일 전':'오늘'}"></label>`)
+      +`<div class="wf2-row wf2-gap mt">${ppBtn('취소',0,'sheet:')}<span style="flex:1"></span>${ppBtn('저장',1,'editsave')}</div>`;}
+  if(s==='log'){const g=PP.log;
+    if(!g)return head('기록 추가')+`<div class="pp-note">기록 유형을 고르면 질문이 하나씩 나옵니다</div>`+opt('forum','방문 상담','질문 3개','logt:방문 상담')+opt('payments','입금','질문 2개','logt:입금')+opt('edit_note','메모','자유 입력','logt:메모');
+    const qs=PP_LOGQ[g.type];
+    if(g.type==='메모')return head('메모')+`<label class="pp-fld"><small>내용</small><textarea data-ppf="memo" rows="3" placeholder="메모 입력"></textarea></label><div class="wf2-row wf2-gap mt">${ppBtn('이전',0,'logback')}<span style="flex:1"></span>${ppBtn('저장',1,'logsave')}</div>`;
+    if(g.ans.length<qs.length){const [q,as]=qs[g.ans.length];
+      return head(g.type)+`<div class="wf2-t s mt">질문 ${g.ans.length+1} / ${qs.length}</div><div class="pp-prog"><i style="width:${(g.ans.length+1)/qs.length*100}%"></i></div><div class="wf2-t b">${q}</div><div class="wf2-row wf2-gap mt">${as.map(x=>ppChip(x,0,'loga:'+x)).join('')}</div><div class="wf2-row wf2-gap mt">${ppBtn('이전',0,'logback')}</div>`;}
+    return head(g.type+' · 확인')+`<div class="pp-kv2 mt">${qs.map(([q],i)=>`<span>${q}</span><b>${g.ans[i]}</b>`).join('')}</div><div class="pp-note">저장하면 한눈에 보기 · 계약 정보에 반영됩니다</div><div class="wf2-row wf2-gap mt">${ppBtn('이전',0,'logback')}<span style="flex:1"></span>${ppBtn('저장',1,'logsave')}</div>`;}
+  return head('안내');
+}
+const PP_SCRID=()=>PP.sheet==='filter'?['SCR-02','필터 · 정렬']:['call','when'].includes(PP.sheet)?['SCR-06','통화 결과']:PP.sheet==='log'?['SCR-07','기록 추가']:PP.sheet==='edit'?['SCR-08','정보 수정']:['more','del'].includes(PP.sheet)?['SCR-09','더보기 · 삭제']:PP.scr==='search'?['SCR-03','검색']:PP.scr==='add'?['SCR-04','고객 등록']:PP.scr==='detail'?['SCR-05','고객 상세']:['SCR-01','고객 목록'];
+function ppSide(){
+  const [id,t]=PP_SCRID();
+  document.getElementById('ppSide').innerHTML=`<h3><span class="pp-badge">${id}</span>${t}</h3><p>왼쪽 화면의 모든 영역을 눌러 볼 수 있습니다. 누른 결과는 아래에 기록됩니다. 데이터는 전부 가상이며 새로고침하면 처음으로 돌아갑니다.</p>
+   <h4>방금 한 동작</h4>${PP.hist.length?`<ol>${PP.hist.map(h=>`<li>${esc(h)}</li>`).join('')}</ol>`:'<p>아직 없습니다. 상태 타일이나 고객 카드를 눌러 보세요.</p>'}
+   <h4>화면 바로가기</h4><div class="pp-jump">${SCR.map(s=>`<button data-pp="jump:${s.id}" class="${s.id===id?'on':''}"><b>${s.id}</b>${esc(s.t.replace(/ \(.*\)/,''))}</button>`).join('')}</div>
+   <h4>기타</h4><div class="pp-jump"><button data-pp="reset">처음 상태로 되돌리기</button><button data-pp="spec">아래 화면 기획서에서 ${id} 보기</button></div>`;
+}
+function ppAsisSync(){const [id]=PP_SCRID(),el=document.getElementById('ppAsis');if(el&&el.dataset.k!==id){el.dataset.k=id;el.innerHTML=cmpBox('pp-'+id,SCR.find(x=>x.id===id).asis);}}
+function ppRender(){
+  const ph=document.getElementById('ppPhone');if(!ph)return;
+  const b=ph.querySelector('.pp-body'),sh=ph.querySelector('.pp-sheet'),key=PP.scr+'|'+(PP.cid||''),top=b&&ph.dataset.k===key?b.scrollTop:0,stop=sh&&ph.dataset.s===PP.sheet?sh.scrollTop:0;
+  ph.innerHTML=wsb+(PP.scr==='search'?ppSearchHtml():PP.scr==='add'?ppAddHtml():PP.scr==='detail'?ppDetailHtml():ppListHtml())
+    +(PP.sheet?`<div class="pp-dim" data-pp="sheet:"></div><div class="wf3-sheet pp-sheet">${ppSheetHtml()}</div>`:'')
+    +(PP.toast?`<div class="pp-toast" id="ppToast"><span>${esc(PP.toast)}</span>${PP.undo?'<u data-pp="undo">되돌리기</u>':''}</div>`:'');
+  ph.dataset.k=key;ph.dataset.s=PP.sheet||'';
+  const nb=ph.querySelector('.pp-body');if(nb)nb.scrollTop=top;const ns=ph.querySelector('.pp-sheet');if(ns)ns.scrollTop=stop;
+  if(PP.toast){const q=++PP.seq;setTimeout(()=>{if(PP.seq===q){PP.toast='';PP.undo=null;const t=document.getElementById('ppToast');if(t)t.remove();}},4500);}
+  ppSide();ppAsisSync();
+}
+function ppSay(m,undo){PP.toast=m;PP.undo=undo||null;}
+function ppLog(m){PP.hist.unshift(m);PP.hist.length=Math.min(PP.hist.length,7);}
+function ppSetSt(c,st,next){
+  const p={st:c.st,next:c.next,miss:c.miss,act:c.act,recs:c.recs.slice()};
+  c.st=st;c.act=0;if(next!=null)c.next=next;if(st==='부재중'){c.miss=(c.miss||0)+1;c.next='재시도 알림 예약됨';}
+  c.recs.unshift({k:'메모',at:'방금',t:'상태 변경: '+p.st+' → '+st});
+  ppSay('상태를 「'+st+'」(으)로 바꿨어요'+(st==='부재중'?' · 부재 '+c.miss+'회':''),()=>{Object.assign(c,p);});
+}
+function ppDo(act){
+  const i=act.indexOf(':'),cmd=i<0?act:act.slice(0,i),arg=i<0?'':act.slice(i+1),c=ppC();
+  PP.toast='';PP.undo=null;
+  if(cmd==='go'){PP.scr=arg;PP.sheet=null;if(arg==='add')PP.add=PP_NEW();if(arg==='list')PP.cid=null;ppLog({list:'고객 목록으로 이동',search:'검색 화면 열기',add:'고객 등록 열기'}[arg]||arg);}
+  else if(cmd==='tab'||cmd==='toast'){ppSay(arg);ppLog(arg.split(' — ')[0]);}
+  else if(cmd==='st'){PP.st=PP.st===arg&&arg!=='전체'?'전체':arg;ppLog('상태 「'+PP.st+'」 보기');}
+  else if(cmd==='copen'){PP.cOpen=!PP.cOpen;ppLog('커스텀 상태 '+(PP.cOpen?'펼치기':'접기'));}
+  else if(cmd==='sheet'){const j=arg.indexOf(':');PP.sheet=(j<0?arg:arg.slice(0,j))||null;PP.arg=j<0?null:arg.slice(j+1);if(PP.sheet==='log')PP.log=null;if(PP.sheet==='sched')PP.when={};if(PP.sheet)ppLog({filter:'필터 · 정렬 시트 열기',more:'더보기 열기',edit:(PP.arg||'정보')+' 수정 열기',log:'기록 추가 열기',stage:'상태 바꾸기 열기',del:'삭제 확인 열기',sched:'일정 추가 열기'}[PP.sheet]||PP.sheet);else PP.campQ='';}
+  else if(cmd==='sort'){PP.sort=arg;ppLog('정렬: '+arg);}
+  else if(cmd==='f'){const [k,v0]=[arg.slice(0,arg.indexOf(':')),arg.slice(arg.indexOf(':')+1)];if(k==='date')PP.f.date=v0;else{const v=k==='int'?+v0:v0,a=PP.f[k],x=a.indexOf(v);x<0?a.push(v):a.splice(x,1);}ppLog('필터 '+({own:'담당자',int:'관심도',plat:'플랫폼',camp:'현장',date:'등록일'}[k])+' 선택');}
+  else if(cmd==='fall'){PP.f[arg]=[];ppLog('담당자 전체');}
+  else if(cmd==='fmine'){PP.f.own=PP.f.own.length===1&&PP.f.own[0]===PP_OWN[0]?[]:[PP_OWN[0]];ppLog('내 고객만 보기');}
+  else if(cmd==='freset'){PP.f=PP_F0();PP.sort=PP_SORT[0];PP.campQ='';ppLog('필터 · 정렬 초기화');}
+  else if(cmd==='fx'){const [k,v0]=[arg.slice(0,arg.indexOf(':')),arg.slice(arg.indexOf(':')+1)];if(k==='date')PP.f.date='전체';else if(k==='sort')PP.sort=PP_SORT[0];else{const v=k==='int'?+v0:v0;PP.f[k]=PP.f[k].filter(x=>x!==v);}ppLog('조건 칩 해제');}
+  else if(cmd==='clear'){PP.f=PP_F0();PP.sort=PP_SORT[0];PP.st='전체';ppLog('조건 모두 해제');}
+  else if(cmd==='open'){PP.cid=+arg;PP.scr='detail';PP.sheet=null;PP.rec='전체';PP.rx={};PP.tech=false;ppLog('「'+ppC().name+'」 상세 열기');}
+  else if(cmd==='act'){PP.cid=+arg;const a=ppAct(ppC())[1];if(a==='전화'){PP.sheet='call';ppLog('카드에서 전화 → 통화 결과');}else if(a==='기록'){PP.scr='detail';PP.sheet='log';PP.log=null;ppLog('카드에서 기록 추가');}else{ppSay('문자 작성 화면으로 이동합니다 (가상)');ppLog('카드에서 문자');}}
+  else if(cmd==='call'){PP.sheet='call';ppLog('전화 → 통화 결과 시트');}
+  else if(cmd==='res'){if(arg==='재통화'||arg==='방문 예약'){PP.sheet='when';PP.arg=arg;PP.when={};ppLog('통화 결과: '+arg+' → 일정 고르기');}else{ppSetSt(c,arg);PP.sheet=null;ppLog('통화 결과: '+arg);}}
+  else if(cmd==='wd'){PP.when.d=arg;}
+  else if(cmd==='wt'){PP.when.t=arg;}
+  else if(cmd==='whensave'){const w=PP.when;if(!(w.d&&w.t)){ppSay('날짜와 시간을 골라 주세요');}else if(PP.sheet==='sched'){const p=c.next;c.next=w.d+' '+w.t+' 일정';PP.sheet=null;ppSay('일정을 추가했어요',()=>{c.next=p;});ppLog('일정 추가: '+w.d+' '+w.t);}else{ppSetSt(c,PP.arg,w.d+' '+w.t+(PP.arg==='재통화'?' 전화':' 방문'));PP.sheet=null;ppLog(PP.arg+' 저장: '+w.d+' '+w.t);}}
+  else if(cmd==='ask'){if(c.st===arg){ppSay('이미 「'+arg+'」 상태입니다');}else{PP.sheet='ask';PP.arg=arg;ppLog('상태 변경 확인: '+arg);}}
+  else if(cmd==='setst'){ppSetSt(c,PP.arg);PP.sheet=null;ppLog('상태 변경: '+PP.arg);}
+  else if(cmd==='hold'){c.hold=!c.hold;PP.sheet=null;ppSay(c.hold?'보류로 바꿨어요 · 목록에는 남습니다':'보류를 해제했어요',()=>{c.hold=!c.hold;});ppLog(c.hold?'보류':'보류 해제');}
+  else if(cmd==='del'){c.gone=true;PP.sheet=null;PP.scr='list';PP.cid=null;ppSay('휴지통으로 옮겼어요',()=>{c.gone=false;});ppLog('고객 삭제 → 휴지통');}
+  else if(cmd==='rec'){PP.rec=arg;PP.rx={};ppLog('기록 유형: '+arg);}
+  else if(cmd==='rx'){PP.rx[arg]=!PP.rx[arg];ppLog('기록 '+(PP.rx[arg]?'펼치기':'접기'));}
+  else if(cmd==='tech'){PP.tech=!PP.tech;ppLog('기술 정보 '+(PP.tech?'펼치기':'접기'));}
+  else if(cmd==='scope'){PP.scope=arg;ppLog('검색 범위: '+arg);}
+  else if(cmd==='q'){PP.q=arg;ppLog(arg?'최근 검색어 「'+arg+'」':'검색어 지우기');}
+  else if(cmd==='a'){const k=arg.slice(0,arg.indexOf(':')),v=arg.slice(arg.indexOf(':')+1);PP.add[k]=k==='int'?+v:v;}
+  else if(cmd==='addsave'){const a=PP.add;if(!(a.name.trim()&&a.phone.trim()&&a.camp)){ppSay('이름 · 연락처 · 현장을 먼저 입력해 주세요');}else{const n={id:Math.max(...PPD.map(x=>x.id))+1,name:a.name.trim(),st:a.st,int:a.int,own:a.own,plat:a.plat,camp:a.camp,reg:0,act:0,phone:a.phone.trim(),ctx:'memo',tx:a.memo.trim()||'직접 등록',kw:[],next:'',info:{},recs:a.memo.trim()?[{k:'메모',at:'방금',t:a.memo.trim()}]:[]};PPD.unshift(n);PP.cid=n.id;PP.scr='detail';PP.rec='전체';PP.rx={};ppSay('고객을 등록했어요',()=>{PPD=PPD.filter(x=>x!==n);PP.scr='list';PP.cid=null;});ppLog('고객 등록 저장 → 상세');}}
+  else if(cmd==='editsave'){const els=[...document.querySelectorAll('#ppPhone [data-ppf]')],p={name:c.name,phone:c.phone,acct:c.acct,info:{...c.info}};els.forEach(el=>{const k=el.dataset.ppf;if(k.startsWith('info:'))c.info[k.slice(5)]=el.value.trim();else c[k]=el.value.trim()||c[k];});PP.sheet=null;ppSay('저장했어요',()=>{Object.assign(c,p);});ppLog('정보 수정 저장');}
+  else if(cmd==='logt'){PP.log={type:arg,ans:[]};ppLog('기록 유형: '+arg);}
+  else if(cmd==='loga'){PP.log.ans.push(arg);}
+  else if(cmd==='logback'){if(PP.log&&PP.log.ans.length)PP.log.ans.pop();else PP.log=null;}
+  else if(cmd==='logsave'){const g=PP.log,p={recs:c.recs.slice(),info:{...c.info},tx:c.tx};let t;
+    if(g.type==='메모'){const el=document.querySelector('#ppPhone [data-ppf="memo"]');t=(el&&el.value.trim())||'(빈 메모)';c.recs.unshift({k:'메모',at:'방금',t});}
+    else if(g.type==='방문 상담'){t='방문 상담 · '+g.ans.join(' · ');c.recs.unshift({k:'상담',at:'방금',t});c.info['방문 인원']=g.ans[0];if(g.ans[1]!=='아직 미정')c.info['희망 타입']=g.ans[1];}
+    else{t=g.ans[0]+' '+g.ans[1]+' 입금';c.recs.unshift({k:'입금',at:'방금',t});if(g.ans[0]==='1차 계약금')c.info['1차 계약금']=g.ans[1];}
+    PP.scr='detail';PP.log=null;PP.rec='전체';PP.rx={};
+    if(g.type==='입금'&&!['가계약','정계약'].includes(c.st)){PP.sheet='ask';PP.arg='가계약';ppLog('입금 기록 저장 → 상태 변경 제안');}
+    else{PP.sheet=null;ppSay('기록을 저장했어요',()=>{Object.assign(c,p);});ppLog(g.type+' 기록 저장');}}
+  else if(cmd==='undo'){/* 아래에서 처리 */}
+  else if(cmd==='reset'){PPD=PP_INIT();Object.assign(PP,{scr:'list',st:'전체',cOpen:false,sort:PP_SORT[0],f:PP_F0(),sheet:null,arg:null,cid:null,q:'',scope:'전체',rec:'전체',rx:{},tech:false,campQ:'',add:PP_NEW(),log:null,when:{},hist:[]});}
+  else if(cmd==='spec'){const el=document.getElementById('scr-'+PP_SCRID()[0]);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});return;}
+  else if(cmd==='jump'){const d=PPD.find(x=>x.id===3&&!x.gone)||PPD.find(x=>!x.gone);PP.sheet=null;PP.arg=null;PP.log=null;PP.when={};
+    if(arg==='SCR-01'){PP.scr='list';}else if(arg==='SCR-02'){PP.scr='list';PP.sheet='filter';}else if(arg==='SCR-03'){PP.scr='search';}else if(arg==='SCR-04'){PP.scr='add';PP.add=PP_NEW();}
+    else{PP.scr='detail';PP.cid=d.id;PP.rec='전체';PP.rx={};PP.sheet={'SCR-06':'call','SCR-07':'log','SCR-08':'edit','SCR-09':'more'}[arg]||null;}
+    ppLog(arg+' 바로가기');}
+  ppRender();
+}
+(function(){
+  const box=document.getElementById('ppBox');if(!box)return;
+  box.addEventListener('click',e=>{
+    const el=e.target.closest('[data-pp]');if(!el||/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName))return;
+    if(el.dataset.pp==='undo'){const u=PP.undo;PP.toast='';PP.undo=null;if(u)u();ppLog('되돌리기');ppRender();return;}
+    ppDo(el.dataset.pp);
+  });
+  box.addEventListener('input',e=>{
+    const t=e.target;
+    if(t.id==='ppQ'){PP.q=t.value;document.getElementById('ppRes').innerHTML=ppSearchRes();}
+    else if(t.id==='ppCampQ'){PP.campQ=t.value;document.getElementById('ppCamps').innerHTML=ppCamps();}
+    else if(t.dataset.ppa){PP.add[t.dataset.ppa]=t.value;const a=PP.add,b=document.getElementById('ppAddSave');if(b)b.classList.toggle('pp-dis',!(a.name.trim()&&a.phone.trim()&&a.camp));}
+  });
+  ppRender();
+})();
+
+(function(){const sec=document.getElementById('tab-plan'),sw=document.getElementById('cmpSw');const ap=()=>{sec.classList.toggle('cmp-off',!CMP_ON);if(sw)sw.checked=CMP_ON;};ap();
+  if(sw)sw.addEventListener('change',()=>{CMP_ON=sw.checked;try{localStorage.setItem('youngup_cmp_v1',CMP_ON?'1':'0');}catch(e){}ap();});})();
 
 /* =========================================================
    ② 현황 — 실제 캡처 + 줄별 기능 설명 (asx-)
@@ -2612,7 +3010,7 @@ function asxCard(s,ix){
 function asxRender(){
   const root=document.getElementById('asxDoc');if(!root)return;
   const groups=[...new Set(ASX.map(s=>s.g))];
-  root.innerHTML=`<nav class="asx-nav">${groups.map(g=>`<div><b>${esc(g)}</b>${ASX.map((s,ix)=>s.g===g?`<a href="#asx-${s.id}" data-asxgo="${s.id}">${ix+1}. ${esc(s.t.replace(/^고객 상세 /,''))}</a>`:'').join('')}</div>`).join('')}</nav>`+ASX.map(asxCard).join('');
+  root.innerHTML=(CAP_LOCAL?'':'<p class="nx-pub">온라인 버전의 캡처는 고객 이름 · 연락처 · 메모 · 통화 내용을 회색 막대로 가린 사본입니다. 화면 구성과 버튼 이름은 실제 앱 그대로입니다.</p>')+`<nav class="asx-nav">${groups.map(g=>`<div><b>${esc(g)}</b>${ASX.map((s,ix)=>s.g===g?`<a href="#asx-${s.id}" data-asxgo="${s.id}">${ix+1}. ${esc(s.t.replace(/^고객 상세 /,''))}</a>`:'').join('')}</div>`).join('')}</nav>`+ASX.map(asxCard).join('');
   root.querySelectorAll('.asx-shot img').forEach(im=>{if(im.complete)asxLayoutCard(im.closest('.asx-card'));else im.addEventListener('load',()=>asxLayoutCard(im.closest('.asx-card')),{once:true});});
   asxApply();
 }
@@ -2642,14 +3040,11 @@ function asxLayoutAll(){document.querySelectorAll('#asxDoc .asx-card').forEach(a
 function asxApply(){
   const sec=document.getElementById('tab-as');
   sec.classList.toggle('asx-on-iss',ASXS.iss);
-  document.getElementById('asxDoc').hidden=ASXS.mode!=='doc';
-  document.getElementById('asProto').hidden=ASXS.mode!=='proto';
-  sec.querySelectorAll('[data-asxm]').forEach(b=>b.classList.toggle('on',b.dataset.asxm===ASXS.mode));
   const sw=document.getElementById('asxIss');if(sw)sw.checked=ASXS.iss;
   A.mk=ASXS.iss;phAs.classList.toggle('nomk',!A.mk);pnAs.classList.toggle('asx-hide-iss',!ASXS.iss);
   requestAnimationFrame(asxLayoutAll);
 }
-function asxMode(m){ASXS.mode=m;asxSave();asxApply();}
+function asxMode(m){const el=document.getElementById(m==='proto'?'asxProtoTtl':'asxDocTtl');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}   // 두 영역을 함께 보여 주고, 버튼은 바로가기로 쓴다
 document.getElementById('tab-as').addEventListener('click',e=>{
   const m=e.target.closest('[data-asxm]');if(m){asxMode(m.dataset.asxm);return;}
   const go=e.target.closest('[data-asxgo]');if(go){e.preventDefault();document.getElementById('asx-'+go.dataset.asxgo).scrollIntoView({behavior:'smooth',block:'start'});return;}
