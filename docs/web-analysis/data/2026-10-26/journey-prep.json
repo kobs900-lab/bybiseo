@@ -1,0 +1,869 @@
+{
+  "schema_version": 1,
+  "updated_date": "2026-10-26",
+  "purpose": "사용자 여정·서비스 블루프린트 제작 전 조사 자료",
+  "status": "초기 파악. 여정·블루프린트 설계안은 아직 작성하지 않음.",
+  "sources": {
+    "brief": {
+      "path": "../../영업비서 UX·UI 리뉴얼 브리프.pdf",
+      "pages": 3,
+      "read": true
+    },
+    "features": {
+      "path": "feature-reference.json",
+      "url": "https://docs.google.com/spreadsheets/d/1aSov0NMwYqSkhpuyMo-GNIhoY3t70HYP9q-M15l6C2Y/edit",
+      "counts": {
+        "CRM": 139,
+        "app": 15,
+        "admin": 218
+      },
+      "count_meaning": "원문 기능표 항목 수. 화면 수나 실행 검증 수가 아님."
+    },
+    "screens": {
+      "path": "screen-notes.json",
+      "metadata": "inventory.ndjson",
+      "snapshots": "snapshots/",
+      "screenshots": "screenshots/"
+    }
+  },
+  "evidence_levels": {
+    "observed_ui": "접속한 화면에서 구조·문구·항목을 확인. 저장·후속 자동 처리까지 검증했다는 뜻은 아님.",
+    "observed_guide": "서비스 가이드에서 확인. 실제 기능 실행과 구분.",
+    "documented": "브리프·기능표·역할·용어 설명에 적힌 내용.",
+    "unknown": "자료가 없거나 내용이 상충하여 확인 필요.",
+    "hypothesis": "설계·인터뷰를 위한 가설. 사용자 경험이나 불편이 입증된 것은 아님."
+  },
+  "coverage": {
+    "admin": {
+      "states": 33,
+      "role": "중간관리자",
+      "display_name": "디자이너(리뉴얼)",
+      "scope": "주요 메뉴·상세·탭과 보고서 미리보기",
+      "limit": "총관리자·영업직원·제작 역할별 실행 검증 및 저장 후 처리는 미실시"
+    },
+    "crm": {
+      "states": 21,
+      "guide_states": 4,
+      "mobile_web_states": 3,
+      "scope": "목록·폼·설정·가이드와 390×844 모바일 웹",
+      "limit": "워크스페이스·프로필·알림 API에서 404가 반복되어 실제 고객 데이터·역할별 가시성·후속 흐름은 확인하지 못함. 빈 목록을 데이터 0건으로 해석하지 않음."
+    },
+    "native_app": {
+      "tested": false,
+      "source": "앱 기능표와 브리프",
+      "limit": "실제 설치·권한 요청·통화 녹음·푸시·iOS 동작 미검증"
+    },
+    "screenshots": {
+      "limit": "일부 전환 직후 이미지와 텍스트 스냅샷 시점이 다름. 해당 상태는 텍스트를 우선 참조.",
+      "states": [
+        "crm-calendar-register",
+        "crm-mobile-menu",
+        "crm-guide-campaign-team"
+      ]
+    }
+  },
+  "service_boundary": {
+    "primary_products": [
+      "영업비서 CRM 웹·앱",
+      "운영 어드민"
+    ],
+    "external_touchpoints": [
+      "광고 매체",
+      "상담 신청 웹사이트·웹폼",
+      "고객에게 공유한 내 페이지",
+      "전화·문자·카카오톡",
+      "메일 초대·앱 푸시"
+    ],
+    "internal_support": [
+      "슬랙 현장 채널·현황판",
+      "NAS 자료",
+      "광고 매체 데이터 연동",
+      "AI 분석·문구 생성",
+      "세금계산서 발행 연동"
+    ],
+    "design_scope_from_brief": [
+      "CRM 웹·앱 UX/UI",
+      "어드민 UX/UI",
+      "브랜드·디자인 시스템"
+    ],
+    "outside_design_scope_from_brief": [
+      "홍보 웹사이트·홍보물·영상 제작",
+      "코드 구현·배포"
+    ],
+    "note": "디자인 범위 밖인 웹사이트·매체·전화도 서비스 연결을 이해하는 접점으로 기록."
+  },
+  "actor_goal_status": "역할별 목표는 기능·권한 설명에서 정리한 업무 목적이다. 실제 사용자의 우선순위·동기·불편은 인터뷰로 확인해야 한다.",
+  "actors": [
+    {
+      "id": "prospect",
+      "label": "상담 신청자·분양 잠재고객",
+      "goal": "광고·소개 페이지를 보고 문의하고 상담·방문을 진행",
+      "system": "비로그인 웹폼·내 페이지·전화",
+      "basis": [
+        "CRM-113",
+        "CRM-114"
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "advertiser_owner",
+      "label": "광고주 대표·CRM 소유자",
+      "goal": "팀·고객·현장 성과 관리",
+      "system": "CRM",
+      "authority": "전 고객 열람·멤버 권한·워크스페이스 정보·엑셀·영구 삭제",
+      "basis": [
+        "역할!A2:D2"
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "crm_manager",
+      "label": "CRM 관리자·팀장",
+      "goal": "팀 고객·담당자·상담 진척 관리",
+      "system": "CRM",
+      "authority": "본인과 하위 조직 고객. 현장별 역할에 따라 달라짐.",
+      "basis": [
+        "역할!A3:D3",
+        "CRM-081",
+        "CRM-088"
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "counselor",
+      "label": "고객 상담 영업담당자",
+      "goal": "배정 고객 응대·기록·방문·재통화 관리",
+      "system": "CRM 웹·앱",
+      "authority": "기본은 본인 고객. 전체 보기와 담당자 변경 권한은 별도.",
+      "basis": [
+        "역할!A4:D5",
+        "CRM-085",
+        "CRM-086"
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "account_sales",
+      "label": "어드민 영업직원",
+      "goal": "담당 광고주·계약·현장·추가 결제 관리",
+      "system": "어드민",
+      "authority": "담당 광고주만. 결제액과 집행 비용의 공개 범위가 다름.",
+      "basis": [
+        "역할!A9:D9"
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "operator",
+      "label": "마케터·중간관리자",
+      "goal": "현장 운영·광고·분배·성과·제작 요청 관리",
+      "system": "어드민",
+      "authority": "전 광고주 운영. 총관리자 전용 기능 제외.",
+      "basis": [
+        "역할!A8:D8"
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "production",
+      "label": "디자인·웹·영상 제작자",
+      "goal": "제작 요청·자료·마감·결과물 관리",
+      "system": "어드민·NAS 등",
+      "authority": "제한된 메뉴와 개인정보·금액 표시. 일부 정책 미확정.",
+      "basis": [
+        "역할!A10:D10",
+        "어드민-153",
+        "어드민-164"
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "superadmin",
+      "label": "운영 총관리자",
+      "goal": "운영 정책·직원 권한·계정·발행·시스템 상태 관리",
+      "system": "어드민",
+      "authority": "직원 계정·광고 상품·녹취·발행 등 전용 기능 포함",
+      "basis": [
+        "역할!A7:D7"
+      ],
+      "evidence": "documented"
+    }
+  ],
+  "entities": [
+    {
+      "name": "광고주 ↔ 워크스페이스",
+      "relationship": "자료상 1:1. 어드민의 고객사와 CRM의 전용 공간.",
+      "basis": "용어"
+    },
+    {
+      "name": "현장 ↔ 캠페인",
+      "relationship": "현장은 여러 매체 캠페인을 묶는 업무 단위. 공유 캠페인은 여러 광고주가 참여할 수 있어 단순 트리로만 표현하면 안 됨.",
+      "basis": [
+        "용어",
+        "어드민-054",
+        "어드민-087"
+      ]
+    },
+    {
+      "name": "리드 ↔ 고객",
+      "relationship": "어드민과 CRM에서 같은 데이터를 부르는 이름. 신규 문의와 재문의 이벤트를 구분해야 함.",
+      "basis": [
+        "용어",
+        "CRM-034",
+        "어드민-205"
+      ]
+    },
+    {
+      "name": "미배정 리드",
+      "relationship": "광고주·현장이 정해지지 않은 웹폼 유입의 대기 상태. 영업담당자가 없는 고객과 구분.",
+      "basis": [
+        "어드민-108",
+        "어드민-109",
+        "어드민-110"
+      ]
+    },
+    {
+      "name": "CRM 역할 ↔ 현장 팀",
+      "relationship": "동일 인물이 현장마다 다른 역할을 가질 수 있음. 전체 보기·담당자 변경은 추가 권한.",
+      "basis": [
+        "CRM-081",
+        "CRM-085",
+        "CRM-086"
+      ]
+    },
+    {
+      "name": "광고 계약·회차 ↔ 고객 계약 상태",
+      "relationship": "광고주의 결제 회차와 상담 고객의 가계약·정계약은 서로 다른 계약.",
+      "basis": [
+        "어드민-073",
+        "CRM-139"
+      ]
+    },
+    {
+      "name": "통화 기록 ↔ 녹음 ↔ AI 분석",
+      "relationship": "통화 목록·음성 파일·분석 결과는 별도 데이터와 처리 경로.",
+      "basis": [
+        "용어",
+        "앱-009",
+        "앱-011",
+        "어드민-196"
+      ]
+    },
+    {
+      "name": "작업 ↔ 단계",
+      "relationship": "일반 작업은 단일 상태, 제작 작업은 단계별 담당·기간·상태와 최종 확인.",
+      "basis": [
+        "어드민-030",
+        "어드민-033",
+        "어드민-040"
+      ]
+    },
+    {
+      "name": "광고 소재 ↔ 확정 문구",
+      "relationship": "동일한 소재라는 단어가 이미지·영상과 훅·본문·CTA 문구에 사용됨.",
+      "basis": "용어"
+    },
+    {
+      "name": "결제액·운영비·집행액·잔액·수수료",
+      "relationship": "기존 금액 항목과 새 사업 모델의 수수료 관계·산식은 확인 필요.",
+      "basis": [
+        "brief",
+        "어드민-049",
+        "어드민-125"
+      ],
+      "status": "unknown"
+    }
+  ],
+  "feature_groups": [
+    {
+      "id": "onboarding",
+      "label": "가입·팀 구성·권한",
+      "actors": [
+        "advertiser_owner",
+        "crm_manager",
+        "counselor"
+      ],
+      "features": [
+        "인증·로그인",
+        "워크스페이스 생성",
+        "멤버 초대·수락",
+        "현장별 팀·역할",
+        "열람·담당자 변경 권한"
+      ],
+      "basis": [
+        "CRM-002",
+        "CRM-005",
+        "CRM-078",
+        "CRM-079",
+        "CRM-081",
+        "CRM-085",
+        "CRM-086"
+      ],
+      "evidence": "documented",
+      "screens": [
+        "crm-guide-members",
+        "crm-guide-campaign-team"
+      ]
+    },
+    {
+      "id": "commercial_setup",
+      "label": "광고 제안·계약·현장 준비",
+      "actors": [
+        "account_sales",
+        "operator",
+        "advertiser_owner"
+      ],
+      "features": [
+        "제안서·견적서",
+        "현장 등록",
+        "광고주 지정",
+        "결제·회차·기간",
+        "내부 담당 지정"
+      ],
+      "basis": [
+        "어드민-062",
+        "어드민-063",
+        "어드민-065",
+        "어드민-073",
+        "어드민-150",
+        "어드민-152"
+      ],
+      "screens": [
+        "admin-sites",
+        "admin-site-overview",
+        "admin-documents"
+      ]
+    },
+    {
+      "id": "production",
+      "label": "광고·웹 제작",
+      "actors": [
+        "operator",
+        "production"
+      ],
+      "features": [
+        "소구점 확인",
+        "AI 문구 생성·사람 확정",
+        "기획·이미지·영상·웹 작업",
+        "담당·마감",
+        "결과 확인 후 완료"
+      ],
+      "basis": [
+        "어드민-030",
+        "어드민-040",
+        "어드민-166",
+        "어드민-168",
+        "어드민-171"
+      ],
+      "screens": [
+        "admin-jobs",
+        "admin-jobs-timeline",
+        "admin-job-detail",
+        "admin-content",
+        "admin-site-creatives"
+      ],
+      "limit": "AI 생성과 제작 저장·완료까지 실행하지 않음"
+    },
+    {
+      "id": "acquisition",
+      "label": "광고 연결·문의 수집",
+      "actors": [
+        "operator",
+        "prospect"
+      ],
+      "features": [
+        "매체 캠페인·사이트 연결",
+        "웹폼 신청",
+        "유입 경로 추적",
+        "미배정 리드 보관"
+      ],
+      "basis": [
+        "어드민-079",
+        "어드민-085",
+        "어드민-087",
+        "어드민-103",
+        "어드민-108"
+      ],
+      "screens": [
+        "admin-site-integrations",
+        "admin-websites",
+        "admin-lead-detail"
+      ],
+      "limit": "매체 성과 수집과 리드 수집은 채널마다 다름. 구글 연결은 광고비·노출·클릭만 수집한다고 문서에 명시."
+    },
+    {
+      "id": "routing",
+      "label": "광고주 분배·담당자 배정",
+      "actors": [
+        "operator",
+        "advertiser_owner",
+        "crm_manager",
+        "counselor"
+      ],
+      "features": [
+        "광고주별 지분 분배",
+        "사이트 미배정 일괄 처리",
+        "현장 팀 자동 배정",
+        "휴가 제외",
+        "담당자 변경",
+        "재문의 원담당 반환"
+      ],
+      "basis": [
+        "어드민-109",
+        "어드민-199",
+        "어드민-205",
+        "CRM-031",
+        "CRM-053",
+        "CRM-086"
+      ],
+      "screens": [
+        "admin-settings-distribution",
+        "admin-site-distribution",
+        "crm-guide-auto-assignment"
+      ],
+      "limit": "자동 배정 방법은 가이드에서만 확인. 담당자 부재·퇴사와 재문의가 겹칠 때의 우선순위 미확인."
+    },
+    {
+      "id": "consultation",
+      "label": "첫 응대·고객 기록",
+      "actors": [
+        "counselor",
+        "prospect"
+      ],
+      "features": [
+        "배정 알림",
+        "고객 검색·상세",
+        "전화·통화 이력",
+        "메모·상태·관심도",
+        "통화 녹음·AI 요약",
+        "내 페이지 공유"
+      ],
+      "basis": [
+        "CRM-027",
+        "CRM-038",
+        "CRM-040",
+        "CRM-044",
+        "CRM-045",
+        "CRM-122",
+        "앱-009",
+        "앱-011"
+      ],
+      "screens": [
+        "crm-customers",
+        "crm-guide-customer-detail",
+        "crm-settings"
+      ],
+      "limit": "CRM 데이터 API 오류로 실제 고객 상세와 상담 이후 연속 흐름 미검증"
+    },
+    {
+      "id": "followup",
+      "label": "재통화·방문·전환",
+      "actors": [
+        "counselor",
+        "crm_manager",
+        "prospect"
+      ],
+      "features": [
+        "방문 예약",
+        "오늘 할일",
+        "부재중 회신 리마인더",
+        "반복 알림·방해금지",
+        "가계약·정계약 상태",
+        "유효 DB 전환 전송"
+      ],
+      "basis": [
+        "CRM-039",
+        "CRM-060",
+        "CRM-064",
+        "CRM-066",
+        "CRM-123",
+        "CRM-124",
+        "CRM-139",
+        "어드민-090"
+      ],
+      "screens": [
+        "crm-calendar",
+        "crm-calendar-register",
+        "crm-tasks",
+        "admin-site-integrations",
+        "admin-system-records"
+      ]
+    },
+    {
+      "id": "performance_finance",
+      "label": "성과·비용 확인·재계약",
+      "actors": [
+        "advertiser_owner",
+        "operator",
+        "account_sales",
+        "superadmin"
+      ],
+      "features": [
+        "리드·응대·광고 성과",
+        "매체별 비용 입력·수집",
+        "기존 주간·종료 보고서",
+        "세금계산서",
+        "추가 결제"
+      ],
+      "basis": [
+        "어드민-112",
+        "어드민-120",
+        "어드민-121",
+        "어드민-138",
+        "어드민-140",
+        "어드민-142",
+        "어드민-073"
+      ],
+      "screens": [
+        "admin-ad-performance",
+        "admin-ad-spend-input",
+        "admin-ad-report",
+        "admin-advertiser-budget"
+      ],
+      "new_requirement": "광고비·수수료를 광고주에게 공개하는 새 보고 화면",
+      "limit": "정산·환불·잔액 이관·수수료 산식과 승인 흐름은 확인 필요"
+    },
+    {
+      "id": "crosscutting",
+      "label": "공통 협업·운영 지원",
+      "actors": [
+        "advertiser_owner",
+        "crm_manager",
+        "counselor",
+        "operator",
+        "production",
+        "superadmin"
+      ],
+      "features": [
+        "팀 메시지",
+        "자료함",
+        "휴지통·복원",
+        "프로필·알림·AI 동의",
+        "작업 알림",
+        "연동·자동 실행·오류 기록"
+      ],
+      "basis": [
+        "CRM-069",
+        "CRM-089",
+        "CRM-094",
+        "CRM-130",
+        "어드민-042",
+        "어드민-208",
+        "어드민-211",
+        "어드민-214"
+      ]
+    }
+  ],
+  "handoffs_to_verify": [
+    {
+      "from": "광고주",
+      "to": "운영 영업·마케터",
+      "object": "계약·결제·현장 요청",
+      "known": "현장·계약 회차·담당자 입력 기능",
+      "unknown": "실제 의뢰·결제 확인 채널, 입력 담당, 승인·예외 처리"
+    },
+    {
+      "from": "마케터",
+      "to": "제작자",
+      "object": "제작 작업·소구점·자료·마감",
+      "known": "단계별 담당과 최종 요청자 확인",
+      "unknown": "자료가 준비됐다는 기준, 재작업·검수·광고주 승인"
+    },
+    {
+      "from": "광고·웹폼",
+      "to": "광고주 워크스페이스",
+      "object": "문의와 유입 경로",
+      "known": "직접 연결·지분 분배·미배정 대기",
+      "unknown": "유입 실패·중복·지분 변경·지연 처리 기준"
+    },
+    {
+      "from": "워크스페이스·현장 팀",
+      "to": "고객 담당자",
+      "object": "배정 고객·알림",
+      "known": "현장 조직·자동 배정·휴가 제외·변경 권한",
+      "unknown": "배정 후보 없음·퇴사·재문의 충돌 처리"
+    },
+    {
+      "from": "고객 담당자",
+      "to": "팀장·마케터·광고 매체",
+      "object": "상담 상태·메모·계약·유효 DB",
+      "known": "성과 집계·계약 알림·CAPI 전송",
+      "unknown": "상태 변경 책임·응대 완료 기준·잘못된 상태 수정·누락 대응"
+    },
+    {
+      "from": "광고 매체·운영자",
+      "to": "광고주",
+      "object": "성과·비용·수수료 보고",
+      "known": "일부 매체 비용 수기, 기존 보고서 비용 제외",
+      "unknown": "공개 항목·산식·기간·확정 시점·문의·정정·정산"
+    }
+  ],
+  "rules_to_preserve": [
+    {
+      "rule": "광고주별 분배와 현장 내부 영업담당자 배정은 별개 단계",
+      "basis": [
+        "용어",
+        "어드민-199",
+        "CRM-081"
+      ]
+    },
+    {
+      "rule": "조회 범위 확대와 편집·담당자 변경 권한은 별개",
+      "basis": [
+        "CRM-085",
+        "CRM-086",
+        "역할!A5:D5"
+      ]
+    },
+    {
+      "rule": "같은 현장·같은 번호 재문의는 기존 고객 카드에 기록하는 흐름이 있음",
+      "basis": [
+        "CRM-034"
+      ]
+    },
+    {
+      "rule": "휴가 등록은 기간 중 전 캠페인의 배정에서 제외",
+      "basis": [
+        "CRM-053"
+      ]
+    },
+    {
+      "rule": "같은 고객의 새 부재중 등으로 완료한 할일이 다시 열릴 수 있음",
+      "basis": [
+        "CRM-064"
+      ]
+    },
+    {
+      "rule": "제작 단계 완료와 작업 최종 완료는 별개",
+      "basis": [
+        "어드민-040"
+      ]
+    },
+    {
+      "rule": "유효 DB 설정 변경은 소급하지 않고 이후 상태 변경부터 적용, 리드당 1회라는 문서 설명",
+      "basis": [
+        "어드민-090"
+      ]
+    },
+    {
+      "rule": "기간별 리드와 누적 비용·CPL이 한 화면에 섞이고 사이트 방문 통계는 14일 고정",
+      "basis": [
+        "어드민-046",
+        "어드민-058",
+        "어드민-154"
+      ]
+    },
+    {
+      "rule": "AI 분석 동의와 내 화면에서 요약 표시 여부는 별개",
+      "basis": [
+        "CRM-130",
+        "CRM-131"
+      ]
+    },
+    {
+      "rule": "내 페이지 저장은 즉시 공개, 편집 중 브라우저 복원과 발행 전 임시저장을 혼동하면 안 됨",
+      "basis": [
+        "CRM-102",
+        "CRM-104"
+      ]
+    },
+    {
+      "rule": "현장 묶음에서 빼기와 캠페인 연결 끊기는 영향이 다름",
+      "basis": [
+        "어드민-081",
+        "어드민-082"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "finance_rules",
+      "priority": "설계 전",
+      "topic": "새 비용·수수료 모델",
+      "questions": [
+        "결제액·운영비·수수료·집행액·잔액의 관계와 VAT 기준",
+        "회차·누적·선택 기간 중 각 숫자의 집계 기준",
+        "공유 캠페인 비용의 광고주별 배분 기준",
+        "정정·환불·잔액 이관·추가 결제와 보고서 반영 시점",
+        "광고주·영업직원·제작자별 공개 범위"
+      ],
+      "basis": [
+        "brief",
+        "어드민-049",
+        "어드민-140",
+        "어드민-153"
+      ]
+    },
+    {
+      "id": "operational_journey",
+      "priority": "인터뷰",
+      "topic": "실제 업무와 화면 밖 연결",
+      "questions": [
+        "최초 문의·광고 의뢰부터 계약·제작·운영·재결제까지 누가 무엇을 넘기는가",
+        "카톡·전화·슬랙·NAS·엑셀 중 실제 사용하는 채널",
+        "평소 빈도·처리량·대기시간·가장 많은 재작업",
+        "인수인계 완료와 승인 기준"
+      ],
+      "basis": [
+        "brief",
+        "어드민-048",
+        "어드민-070"
+      ]
+    },
+    {
+      "id": "routing_exceptions",
+      "priority": "설계 전",
+      "topic": "분배·배정·재문의",
+      "questions": [
+        "새 리드와 재문의 판정 범위·기간",
+        "재문의 원담당이 휴가·퇴사·권한 변경 상태일 때 우선순위",
+        "배정 가능한 담당자가 없을 때 대기·재시도·알림",
+        "분배 비율 변경의 기존 리드 소급 여부"
+      ],
+      "basis": [
+        "CRM-034",
+        "CRM-053",
+        "어드민-199",
+        "어드민-205"
+      ]
+    },
+    {
+      "id": "crm_recheck",
+      "priority": "실제 흐름 검증",
+      "topic": "CRM 데이터 연결",
+      "questions": [
+        "워크스페이스·프로필 API 404 해소 후 테스트 고객 상세 확인",
+        "대표·관리자·담당자 역할별 노출·수정 범위",
+        "정상·빈 결과·권한 없음·통신 실패 상태 구분"
+      ],
+      "basis": [
+        "screen-notes.json"
+      ],
+      "evidence": "observed_ui"
+    },
+    {
+      "id": "ai_trigger",
+      "priority": "자료 상충",
+      "topic": "녹음 AI 분석 시작 조건",
+      "questions": [
+        "CRM 설명의 자동 요약과 어드민의 수동 분석 요청이 다른 경로인지",
+        "자동·수동·동의 미설정·실패·대기·재분석 상태가 어디에 나타나는지"
+      ],
+      "basis": [
+        "CRM-044",
+        "어드민-196"
+      ]
+    },
+    {
+      "id": "backlog_assignment",
+      "priority": "자료 상충",
+      "topic": "사이트 연결 후 과거 미배정 처리",
+      "questions": [
+        "현장 연동 탭의 연결 시 자동 배정과 웹사이트 창의 별도 배정 버튼 설명 차이",
+        "진입점별 실제 동작과 중복 처리 방지"
+      ],
+      "basis": [
+        "어드민-085",
+        "어드민-159"
+      ]
+    },
+    {
+      "id": "platform_support",
+      "priority": "자료 상충",
+      "topic": "앱·iOS 지원 범위",
+      "questions": [
+        "iOS 실제 배포 상태",
+        "앱 가입 지원 범위",
+        "운영체제별 통화·녹음·푸시·공유 기능과 필요한 권한"
+      ],
+      "basis": [
+        "CRM-007",
+        "앱-007",
+        "앱-008",
+        "역할!A6:D6"
+      ]
+    },
+    {
+      "id": "vacation_visibility",
+      "priority": "자료 상충",
+      "topic": "휴가 처리와 팀 표시",
+      "questions": [
+        "서버 배정 제외·멤버 휴가중 배지·담당자 카드 브라우저 기록의 관계"
+      ],
+      "basis": [
+        "CRM-025",
+        "CRM-053",
+        "CRM-059",
+        "CRM-077"
+      ]
+    },
+    {
+      "id": "role_policy",
+      "priority": "정책 확인",
+      "topic": "역할과 공개 범위",
+      "questions": [
+        "제작 문서 금액 공개 범위",
+        "기능표에 기록된 화면 제한과 서버 권한 차이의 현재 상태",
+        "광고주 비활성화와 서비스 중지의 차이"
+      ],
+      "basis": [
+        "어드민-005",
+        "어드민-129",
+        "어드민-153"
+      ],
+      "limit": "원문에 기록된 이슈이며 직접 권한 우회·서버 허용 여부를 시험하지 않음"
+    },
+    {
+      "id": "metrics",
+      "priority": "설계 전",
+      "topic": "지표 정의",
+      "questions": [
+        "응대·미응대·활동 광고주의 포함 채널·분모·시간 기준",
+        "메모·상태 변경만 응대로 볼지 실제 통화도 포함할지",
+        "광고 데이터 수집과 수기 비용의 누락·확정·지연 표시"
+      ],
+      "basis": [
+        "어드민-013",
+        "어드민-014",
+        "어드민-015",
+        "어드민-120"
+      ]
+    }
+  ],
+  "scenario_candidates": [
+    {
+      "name": "새 문의가 들어와 담당자가 상담하고 방문·계약으로 관리",
+      "focus": "고객 상담 담당자",
+      "status": "설계 전 후보"
+    },
+    {
+      "name": "광고주가 의뢰·결제하고 집행 성과·비용·수수료를 확인",
+      "focus": "광고주 대표",
+      "status": "설계 전 후보"
+    },
+    {
+      "name": "운영자가 현장과 캠페인을 준비하고 제작·분배·성과를 관리",
+      "focus": "운영 영업·마케터·제작자",
+      "status": "설계 전 후보"
+    },
+    {
+      "name": "재문의·미배정·휴가·실패가 생겼을 때 정상 처리로 복귀",
+      "focus": "담당자·운영자",
+      "status": "설계 전 예외 후보"
+    }
+  ],
+  "not_yet_established": [
+    "사용자 감정·만족도",
+    "실제 업무 빈도·처리시간·지연시간",
+    "사용자별 가장 중요한 목표와 불편의 우선순위",
+    "정확한 정산·수수료·환불 정책",
+    "모든 역할·앱의 실제 실행 결과",
+    "새 화면 정보구조·디자인 해결안"
+  ],
+  "next_research_when_needed": [
+    "정해진 4명 인터뷰로 업무 순서·인수인계·예외·실제 불편 확인",
+    "비용·수수료 공개 정책과 숫자 정의 확보",
+    "CRM 데이터 연결 복구 후 테스트 계정별 대표 시나리오 확인",
+    "상충한 자동 처리 규칙 확인 후 여정·블루프린트 제작"
+  ]
+}

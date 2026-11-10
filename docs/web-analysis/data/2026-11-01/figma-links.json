@@ -1,0 +1,176 @@
+{
+  "checked_at": "2026-11-10",
+  "file_key": "NGuWMZPzRryklddGjC0Ihw",
+  "verification": "주요 보드 7개의 존재와 이름을 확인. 세부 보드는 11/01 생성 기록 기준.",
+  "main_boards": [
+    {
+      "name": "전체 통합 플로우",
+      "node_id": "49:843",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=49-843"
+    },
+    {
+      "name": "현재 서비스 지도 00–08",
+      "node_id": "5:13",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=5-13"
+    },
+    {
+      "name": "그래픽 서비스 지도 09–12",
+      "node_id": "9:264",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=9-264"
+    },
+    {
+      "name": "실제 화면 플로우 13–14",
+      "node_id": "13:770",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=13-770"
+    },
+    {
+      "name": "기능별 보드 목차",
+      "node_id": "30:818",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=30-818"
+    },
+    {
+      "name": "CRM PC·모바일 웹 15–24",
+      "node_id": "21:818",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-818"
+    },
+    {
+      "name": "어드민 PC·모바일 웹 25–36",
+      "node_id": "28:818",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-818"
+    }
+  ],
+  "feature_boards": [
+    {
+      "number": "15",
+      "title": "홈·메뉴·알림",
+      "node_id": "21:826",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-826"
+    },
+    {
+      "number": "16",
+      "title": "고객 찾기·등록",
+      "node_id": "21:904",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-904"
+    },
+    {
+      "number": "17",
+      "title": "상담 기록·AI 요약·방문 예약",
+      "node_id": "21:989",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-989"
+    },
+    {
+      "number": "18",
+      "title": "일정·휴가·할 일·활동",
+      "node_id": "21:1086",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-1086"
+    },
+    {
+      "number": "19",
+      "title": "광고 현황·실적",
+      "node_id": "21:1165",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-1165"
+    },
+    {
+      "number": "20",
+      "title": "멤버·팀·리드 배정",
+      "node_id": "21:1206",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-1206"
+    },
+    {
+      "number": "21",
+      "title": "메시지·고객 공유·자료실",
+      "node_id": "21:1303",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-1303"
+    },
+    {
+      "number": "22",
+      "title": "내 페이지·휴지통",
+      "node_id": "21:1381",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-1381"
+    },
+    {
+      "number": "23",
+      "title": "개인·워크스페이스·업무 기준",
+      "node_id": "21:1436",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-1436"
+    },
+    {
+      "number": "24",
+      "title": "알림·통화 보조·AI 설정",
+      "node_id": "21:1532",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=21-1532"
+    },
+    {
+      "number": "25",
+      "title": "작업 요청·진행·일정",
+      "node_id": "28:826",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-826"
+    },
+    {
+      "number": "26",
+      "title": "현장 등록·계약·변경",
+      "node_id": "28:910",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-910"
+    },
+    {
+      "number": "27",
+      "title": "현장 연동·분배·제작 자료",
+      "node_id": "28:1025",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1025"
+    },
+    {
+      "number": "28",
+      "title": "리드 유입·상세·미배정 처리",
+      "node_id": "28:1139",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1139"
+    },
+    {
+      "number": "29",
+      "title": "광고 성과·소재·비용·캠페인",
+      "node_id": "28:1236",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1236"
+    },
+    {
+      "number": "30",
+      "title": "광고주·예산·리드·구성원",
+      "node_id": "28:1332",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1332"
+    },
+    {
+      "number": "31",
+      "title": "문서 목록·제안서·견적서",
+      "node_id": "28:1447",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1447"
+    },
+    {
+      "number": "32",
+      "title": "광고 보고서·세금계산서",
+      "node_id": "28:1525",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1525"
+    },
+    {
+      "number": "33",
+      "title": "웹사이트 등록·연결·성과",
+      "node_id": "28:1604",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1604"
+    },
+    {
+      "number": "34",
+      "title": "컨텐츠 작업대·스크립트",
+      "node_id": "28:1663",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1663"
+    },
+    {
+      "number": "35",
+      "title": "리드 상태·위로 문구·분배 정책",
+      "node_id": "28:1760",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1760"
+    },
+    {
+      "number": "36",
+      "title": "CAPI·컨텐츠 운영 기록",
+      "node_id": "28:1838",
+      "url": "https://www.figma.com/design/NGuWMZPzRryklddGjC0Ihw?node-id=28-1838"
+    }
+  ]
+}

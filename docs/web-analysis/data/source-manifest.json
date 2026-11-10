@@ -1,0 +1,82 @@
+{
+  "published_at": "2026-11-10",
+  "files": [
+    {
+      "path": "data/2026-10-26/feature-reference.json",
+      "original": "research/2026-10-26/feature-reference.json",
+      "source_sha256": "f444e83f1d944ad57154bbf333e0769f5d3f9bbab3f6c80c2d58deaa575d1714",
+      "published_sha256": "f444e83f1d944ad57154bbf333e0769f5d3f9bbab3f6c80c2d58deaa575d1714",
+      "transformation": "개인 식별 예시 치환; 내용 유지"
+    },
+    {
+      "path": "data/2026-10-26/journey-prep.json",
+      "original": "research/2026-10-26/journey-prep.json",
+      "source_sha256": "c5196ea298428f946a90126ef759fd39f4e07865ccff0a4fc835f6efe7c50a55",
+      "published_sha256": "c5196ea298428f946a90126ef759fd39f4e07865ccff0a4fc835f6efe7c50a55",
+      "transformation": "개인 식별 예시 치환; 내용 유지"
+    },
+    {
+      "path": "data/2026-10-26/screen-notes.json",
+      "original": "research/2026-10-26/screen-notes.json",
+      "source_sha256": "5a551d2164f9f83c0437ca11b991f35e92bc3226a0591f53333d7b295bb097e8",
+      "published_sha256": "5a551d2164f9f83c0437ca11b991f35e92bc3226a0591f53333d7b295bb097e8",
+      "transformation": "개인 식별 예시 치환; 내용 유지"
+    },
+    {
+      "path": "data/2026-11-01/map-content-final.json",
+      "original": "research/2026-11-01/map-content-final.json",
+      "source_sha256": "8bc492ed4e7d3363f6c77d9656ed3e34bc8dcba48e4d1cc23915153fac6cc134",
+      "published_sha256": "4845e8fe653b45989d021f71399db7982e0a93f05157a29bc5d5b518c8e891b0",
+      "transformation": "개인 식별 예시 치환; 내용 유지"
+    },
+    {
+      "path": "data/2026-11-01/graphic-content-final.json",
+      "original": "research/2026-11-01/graphic-content-final.json",
+      "source_sha256": "caff916e5d71a78eb0e97b56b643c65e60c8b0e14565e9e419a12de8846af729",
+      "published_sha256": "33420f63eac855b4fcb4795dbe9f1c29a0f32acda124507160b8df624ffed1a6",
+      "transformation": "개인 식별 예시 치환; 내용 유지"
+    },
+    {
+      "path": "data/2026-10-26/screen-index.json",
+      "original": "research/2026-10-26/inventory.ndjson",
+      "source_sha256": "0285c9b031a670ed233eb66911943604a2d2606ed4880ad0d0b8440bc59a65b5",
+      "published_sha256": "38b9a8b6f7cfd9e3277693273919e2ddca6f318986754e45f765e9c88869b28e",
+      "transformation": "screen-notes와 결합; 기록별 식별 쿼리 제거; 캡처 원본 대신 Figma 연결"
+    },
+    {
+      "path": "notes/01-service-map.md",
+      "original": "_workspace/2026-11-01-001-dc8e/final.md",
+      "source_sha256": "30d831dd0565643fe0008df286ea1e137da94640cff28c2b521938bf4e70758d",
+      "published_sha256": "88070c05951077add5c7fb0907ba1a53e99fdc6e62d5caceb9c48cabc5951116",
+      "transformation": "후처리 문체평가 메타데이터 제외; 고객·현장 예시 익명화; 구조 필드명을 Markdown 제목으로 변환"
+    },
+    {
+      "path": "notes/02-graphic-service-map.md",
+      "original": "_workspace/2026-11-01-002-0518/final.md",
+      "source_sha256": "94c537f6c78504bdf748aee9fafbab200eada9838dd7e5756d096a05dedff221",
+      "published_sha256": "06f80ba90a2734253ef28cd6920c862430fb42777d906713ee540b47c5ee583e",
+      "transformation": "후처리 문체평가 메타데이터 제외; 고객·현장 예시 익명화; 구조 필드명을 Markdown 제목으로 변환"
+    },
+    {
+      "path": "notes/03-screen-flow.md",
+      "original": "_workspace/2026-11-01-003-10c9/final.md",
+      "source_sha256": "96b9d5f685470053f00a60bdc04355f06f44008705d9b902034c796bed2eae64",
+      "published_sha256": "1348eeb0c4f0ea6a2cb7dcf2c67bab107db14e1c7c375991e7cdd883d287030b",
+      "transformation": "후처리 문체평가 메타데이터 제외; 고객·현장 예시 익명화; 구조 필드명을 Markdown 제목으로 변환"
+    },
+    {
+      "path": "notes/04-crm-features.md",
+      "original": "_workspace/2026-11-01-004-bc28/final.md",
+      "source_sha256": "cabe8ca1c9a1ffa571799835ff48db05180069ae48f61c451ed56289acaf778c",
+      "published_sha256": "35afdc2759aa05b9ac242c044bc033834c9c3bb1287dbd4f1000d3db7ae2248d",
+      "transformation": "후처리 문체평가 메타데이터 제외; 고객·현장 예시 익명화; 구조 필드명을 Markdown 제목으로 변환"
+    },
+    {
+      "path": "notes/05-admin-features.md",
+      "original": "_workspace/2026-11-01-005-6aa4/final.md",
+      "source_sha256": "0ef33813327cd895a97b460288577b82abd3ef6fdee9371e52279e230be8672d",
+      "published_sha256": "6dc3995c6512e0d68eb5199c10363fd25d26d0833c3ef64b2d75884b8d16dd3e",
+      "transformation": "후처리 문체평가 메타데이터 제외; 고객·현장 예시 익명화; 구조 필드명을 Markdown 제목으로 변환"
+    }
+  ]
+}
