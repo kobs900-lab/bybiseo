@@ -2303,6 +2303,17 @@ document.getElementById('tab-as').addEventListener('mouseover',e=>{const r=e.tar
 window.addEventListener('resize',()=>{clearTimeout(window._asxT);window._asxT=setTimeout(asxLayoutAll,120);});
 asxRender();
 
+// 끼워 넣기용: 주소에 ?embed=as 를 붙이면 현황 와이어프레임의 폰 화면만 보여 준다 (고객목록_디자인에서 현행 비교용으로 사용)
+if(new URLSearchParams(location.search).get('embed')==='as'){
+  showTab('as');
+  A.mk=false;phAs.classList.add('nomk');
+  [...document.body.children].forEach(c=>{if(c.tagName!=='SCRIPT'&&c.tagName!=='svg'&&c.tagName!=='SVG')c.style.display='none';});
+  document.body.appendChild(phAs);
+  document.body.style.cssText='margin:0;overflow:hidden;background:#fff';
+  phAs.style.cssText='position:fixed;inset:0;width:100%;height:100%;max-width:none;border:0;border-radius:0;box-shadow:none';
+  const st=document.createElement('style');st.textContent='#phAs .notch{display:none}';document.head.appendChild(st);
+}
+
 </script>
 </body>
 </html>
