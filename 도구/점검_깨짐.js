@@ -19,28 +19,12 @@ await st('as-status',()=>{A.sheet='status';renderAs();});
 await st('as-filter',()=>{A.sheet='filter';renderAs();});
 await st('as-search',()=>{A.sheet=null;A.scr='search';renderAs();});
 for(const id of [1,2,3,4,5]){await st('as-detail-'+id,()=>{asOpen(id);},1100);}
-await st('to-list',()=>{showTab('tobe');T.scr='list';T.sheet=null;renderTo();});
-await st('to-filter',()=>{T.sheet='filter';renderTo();});
-await st('to-sort',()=>{T.sheet='sort';renderTo();});
-await st('to-search',()=>{T.sheet=null;T.scr='search';T.q='하남';renderTo();});
-for(const id of [1,2,3,4]){await st('to-detail-'+id,()=>{toOpen(id);},900);}
-await st('to-edit',()=>{T.sheet='edit';renderTo();});
-await st('to-rec',()=>{T.sheet='rec';T.rec='입금';renderTo();});
-await st('to-menu',()=>{T.sheet=null;T.menu=true;renderTo();});
-await st('to-dlg',()=>{T.menu=false;T.dlg='del';renderTo();});
-await st('e2-coach',()=>{showTab('easy');Object.assign(E,e2Fresh(),{coach:1});e2Render();});
-await st('e2-today',()=>{E.coach=0;e2Render();});
-await st('e2-all',()=>{E.view='all';e2Render();});
-for(const id of [1,2,3,4,5]){await st('e2-detail-'+id,()=>{E.scr='detail';E.cust=id;e2Render();});}
-await st('e2-call-open',()=>{E.cust=2;E.tlf='통화';E.open['2-0']=true;E.talk['2-0']=true;e2Render();});
-for(const sh of ['result','sms','rec','edit','del','delask']){await st('e2-sheet-'+sh,()=>{E.rc=2;E.sheet=sh;E.sd=sh==='edit'?{f:'area',v:''}:sh==='rec'?{ty:'입금',qi:0}:{};e2Render();});}
-await st('e2-calling',()=>{E.sheet=null;E.calling=true;E.rc=1;e2Render();});
 await st('plan',()=>{showTab('plan');});
+for(const act of ['st:부재중','copen','st:재통화','sheet:filter','sort:관심도','f:own:담당자1','sheet:','clear','go:search','q:신혼집','go:list','open:3','call','res:부재중','sheet:log','logt:방문 상담','sheet:','sheet:edit','sheet:','sheet:more','sheet:del','sheet:','go:add','reset']){await st('pp-'+act,()=>{ppDo(act);},60);}
 await st('plan-group',()=>{document.querySelector('[data-pg="상세"]').click();});
 await st('plan-note',()=>{document.querySelector('[data-pg="전체"]').click();const t=document.querySelector('[data-pn="C05"]');t.value='테스트 의견';t.dispatchEvent(new Event('input',{bubbles:true}));});
 await st('crit-modal',()=>{showTab('list');document.querySelectorAll('#critBox .crit')[1].click();},300);
 await st('crit-goplan',()=>{document.querySelector('#cmBox [data-goplan]').click();},300);
-await st('design-switch',()=>{showTab('tobe');document.querySelector('#tab-tobe [data-dsw="easy"]').click();},200);
-await st('data',()=>{E.calling=false;e2Render();showTab('data');});
+await st('data',()=>{showTab('data');});
 await st('list',()=>{showTab('list');document.querySelectorAll('details.rest').forEach(d=>d.open=true);});
 const extra={navOn:[...document.querySelectorAll('#tabs button.on')].map(b=>b.dataset.tab),planCards:document.querySelectorAll('#planList .pc').length,note:(()=>{try{return JSON.parse(localStorage.getItem('youngup_plan_comments_v1')||'{}').C05}catch(e){return 'ls-error'}})(),cmCaps:document.querySelectorAll('#cmBox .cm-caps img').length,planVisible:document.getElementById('tab-plan').classList.contains('on')};const d=document.createElement('pre');d.textContent='AUDIT:'+JSON.stringify({n:issues.length,issues:issues.slice(0,60),errs,extra});document.body.appendChild(d);})();

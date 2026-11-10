@@ -27,7 +27,6 @@ h1,h2,h3,h4{margin:0;line-height:1.3}
 .tabs button{border:0;background:none;padding:10px 14px;border-bottom:2.5px solid transparent;color:var(--sub);font-weight:600;white-space:nowrap}
 .tabs button.on{color:var(--ink);border-bottom-color:var(--ink)}
 .tabs button .n{display:inline-block;margin-left:6px;font-size:11px;background:var(--wf);color:var(--sub);border-radius:10px;padding:0 7px}
-.tabs button.tobe.on{border-bottom-color:var(--green);color:var(--green)}
 main{max-width:1280px;margin:0 auto;padding:22px 20px 80px}
 .tab{display:none}.tab.on{display:block}
 
@@ -285,124 +284,6 @@ th{color:var(--sub);font-weight:600;background:#fafbfc;white-space:nowrap}
 .lb img{max-height:94vh;max-width:94vw;border-radius:14px}
 .lb p{position:absolute;bottom:10px;left:0;right:0;text-align:center;color:#fff;font-size:13px}
 
-/* ===================== 제안 2 (쉬운 버전) — 모든 클래스 e2- 접두사 ===================== */
-.tabs button.easy.on{border-bottom-color:#0e9f6e;color:#0e9f6e}
-.e2-intro{border-color:#bde5d3 !important}
-.phone.e2{background:#fbf8f3}
-.e2{--e:#0e9f6e;--e-soft:#e3f5ec;--e-ink:#1f2a24;--e-sub:#6b7a72;--e-bg:#fbf8f3;font-size:15px;color:var(--e-ink)}
-.e2 .e2-scr{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding-top:46px;background:var(--e-bg);scrollbar-width:none}
-.e2 .e2-scr::-webkit-scrollbar{display:none}
-.e2-hello{padding:10px 20px 4px}
-.e2-hello small{color:var(--e-sub);font-size:13px}
-.e2-hello h2{font-size:22px;margin-top:2px;letter-spacing:-.4px}
-.e2-prog{display:flex;align-items:center;gap:12px;margin:10px 16px 4px;background:#fff;border-radius:20px;padding:12px 14px;box-shadow:0 2px 10px rgba(60,50,30,.06)}
-.e2-ring{width:46px;height:46px;border-radius:50%;background:conic-gradient(var(--e) calc(var(--p)*1%),#e8e4dc 0);display:flex;align-items:center;justify-content:center;flex:none}
-.e2-ring span{width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800}
-.e2-prog p{margin:0;font-size:13px;color:var(--e-sub)}
-.e2-prog b{color:var(--e-ink);font-size:14.5px;display:block}
-.e2-seg{display:flex;margin:12px 16px 6px;background:#efebe4;border-radius:14px;padding:4px}
-.e2-seg button{flex:1;border:0;background:none;border-radius:11px;padding:9px;font-weight:700;font-size:14px;color:var(--e-sub)}
-.e2-seg button.on{background:#fff;color:var(--e-ink);box-shadow:0 1px 4px rgba(0,0,0,.08)}
-.e2-grp{padding:12px 18px 0;font-weight:800;font-size:15px}
-.e2-grp em{font-style:normal;color:var(--e-sub);font-weight:600;font-size:12.5px;margin-left:4px}
-.e2-card{background:#fff;border-radius:20px;margin:8px 16px;padding:13px 14px;box-shadow:0 2px 10px rgba(60,50,30,.06);display:flex;gap:12px;align-items:center;cursor:pointer}
-.e2-card.e2-done{opacity:.55}
-.e2-av{width:44px;height:44px;border-radius:50%;background:var(--e-soft);color:var(--e);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex:none}
-.e2-tx{flex:1;min-width:0}
-.e2-tx b{display:block;font-size:16px}
-.e2-tx span{display:block;font-size:13px;color:var(--e-sub);margin-top:1px}
-.e2-cta{border:0;background:var(--e);color:#fff;border-radius:14px;padding:10px 13px;font-weight:800;font-size:14px;white-space:nowrap;flex:none}
-.e2-cta.e2-ghost{background:var(--e-soft);color:var(--e)}
-.e2-cta.e2-big{width:100%;padding:15px;font-size:16px;border-radius:16px}
-.e2-search{display:flex;align-items:center;gap:8px;margin:8px 16px;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 2px 10px rgba(60,50,30,.06)}
-.e2-search input{border:0;outline:none;flex:1;min-width:0;font-size:15px;background:none}
-.e2-pre{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 8px;scrollbar-width:none}
-.e2-pre::-webkit-scrollbar{display:none}
-.e2-pre button{flex:none;border:0;background:#fff;border-radius:999px;padding:9px 14px;font-weight:700;font-size:13.5px;box-shadow:0 1px 6px rgba(60,50,30,.07);white-space:nowrap}
-.e2-pre button.on{background:var(--e-ink);color:#fff}
-.e2-pre button small{font-weight:600;opacity:.6;margin-left:4px}
-.e2-nav{position:absolute;left:0;right:0;bottom:0;height:78px;background:#fff;border-top:1px solid #eee8de;display:flex;justify-content:space-around;padding-top:9px;z-index:26;font-size:11px;color:#9aa39d}
-.e2-nav div{display:flex;flex-direction:column;align-items:center;gap:3px}
-.e2-nav div.on{color:var(--e);font-weight:800}
-.e2-nav span{font-size:20px;line-height:1}
-.e2-dim{position:absolute;inset:0;background:rgba(20,24,20,.45);z-index:30}
-.e2-sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:26px 26px 0 0;z-index:31;padding:10px 18px 28px;max-height:88%;overflow-y:auto}
-.e2-grab{width:40px;height:5px;border-radius:3px;background:#e2ded6;margin:0 auto 12px}
-.e2-sheet h3{font-size:20px;margin:0 0 4px;letter-spacing:-.3px}
-.e2-q{color:var(--e-sub);font-size:14px;margin:0 0 14px}
-.e2-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.e2-opt{border:1.5px solid #ece7de;background:#fff;border-radius:18px;padding:14px 12px;text-align:left;font-weight:700;font-size:14.5px;display:flex;flex-direction:column;gap:4px}
-.e2-opt span{font-size:24px}
-.e2-opt small{font-weight:500;color:var(--e-sub);font-size:12px}
-.e2-opt.e2-wide{grid-column:span 2;flex-direction:row;align-items:center;gap:12px}
-.e2-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
-.e2-chips button{border:1.5px solid #ece7de;background:#fff;border-radius:999px;padding:9px 15px;font-weight:700;font-size:14px}
-.e2-chips button.on{border-color:var(--e);background:var(--e-soft);color:var(--e)}
-.e2-step{display:flex;gap:4px;margin-bottom:12px}
-.e2-step i{flex:1;height:5px;border-radius:3px;background:#ece7de}
-.e2-step i.on{background:var(--e)}
-.e2-row2{display:flex;gap:10px;margin-top:16px}
-.e2-row2 button{flex:1}
-.e2-back{border:0;background:#f3f0ea;border-radius:16px;padding:15px;font-weight:700;font-size:15px}
-.e2-top{display:flex;align-items:center;padding:6px 10px}
-.e2-top button{border:0;background:none;font-size:22px;width:40px;height:40px;border-radius:50%}
-.e2-hero{padding:0 20px 14px}
-.e2-name{font-size:26px;font-weight:800;letter-spacing:-.5px}
-.e2-now{margin-top:10px;background:#fff;border-radius:18px;padding:12px 14px;box-shadow:0 2px 10px rgba(60,50,30,.06)}
-.e2-now small{color:var(--e-sub);font-size:12.5px;display:block}
-.e2-now b{font-size:16px}
-.e2-acts{display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-top:12px}
-.e2-journey{display:flex;justify-content:space-between;margin:2px 18px 6px;position:relative}
-.e2-journey::before{content:"";position:absolute;left:24px;right:24px;top:17px;height:3px;background:#e8e4dc}
-.e2-journey div{position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11.5px;color:#a09a90;width:56px;text-align:center}
-.e2-journey div i{width:36px;height:36px;border-radius:50%;background:#efebe4;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:16px}
-.e2-journey div.e2-ok i{background:var(--e-soft);color:var(--e);font-weight:800}
-.e2-journey div.e2-cur{color:var(--e);font-weight:800}
-.e2-journey div.e2-cur i{background:var(--e);box-shadow:0 0 0 4px var(--e-soft)}
-.e2-box{background:#fff;border-radius:20px;margin:12px 16px;padding:14px 16px;box-shadow:0 2px 10px rgba(60,50,30,.06)}
-.e2-box h4{margin:0 0 8px;font-size:16px;display:flex;align-items:center;gap:6px}
-.e2-box h4 small{margin-left:auto;font-weight:700;color:var(--e);font-size:13px;cursor:pointer}
-.e2-todo{display:flex;gap:10px;align-items:center;padding:9px 0;border-top:1px solid #f2eee7}
-.e2-todo:first-of-type{border-top:0}
-.e2-ck{width:24px;height:24px;border-radius:8px;border:2px solid #d8d2c8;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;cursor:pointer;background:#fff}
-.e2-ck.on{background:var(--e);border-color:var(--e)}
-.e2-todo p{margin:0;flex:1;font-size:14px;min-width:0}
-.e2-todo p small{display:block;color:var(--e-sub);font-size:12px}
-.e2-todo.e2-dn p{text-decoration:line-through;color:#a09a90}
-.e2-story{position:relative;padding-left:26px}
-.e2-story::before{content:"";position:absolute;left:10px;top:8px;bottom:8px;border-left:2px dashed #e2ded6}
-.e2-st{position:relative;padding:3px 0 12px}
-.e2-st::before{content:attr(data-i);position:absolute;left:-27px;top:1px;width:22px;height:22px;border-radius:50%;background:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #efebe4}
-.e2-st b{font-size:14px}
-.e2-st small{display:block;color:var(--e-sub);font-size:12px}
-.e2-st p{margin:5px 0 0;font-size:13px;color:#4a554f;background:#f8f6f2;border-radius:12px;padding:8px 10px}
-.e2-info{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid #f2eee7;cursor:pointer;font-size:14px;gap:10px}
-.e2-info:first-of-type{border-top:0}
-.e2-info span{color:var(--e-sub);flex:none}
-.e2-info b{font-weight:700;text-align:right}
-.e2-info b::after{content:" ›";color:#c9c3b8}
-.e2-coach{position:absolute;inset:0;z-index:50;background:rgba(15,20,17,.82);display:flex;flex-direction:column;justify-content:flex-end;padding:0 22px 70px;color:#fff}
-.e2-ill{font-size:60px;text-align:center;margin-bottom:12px}
-.e2-coach h3{font-size:22px;margin:0 0 8px;text-align:center;letter-spacing:-.4px}
-.e2-coach p{text-align:center;color:#d6e4dc;margin:0 0 22px;font-size:15px;line-height:1.6}
-.e2-dots{display:flex;gap:6px;justify-content:center;margin-bottom:18px}
-.e2-dots i{width:7px;height:7px;border-radius:4px;background:#56635c}
-.e2-dots i.on{background:#fff;width:20px}
-.e2-skip{position:absolute;top:56px;right:18px;border:0;background:none;color:#cfdcd5;font-weight:700;font-size:14px}
-.e2-calling{position:absolute;inset:0;z-index:45;background:linear-gradient(#123b2e,#0b2219);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.e2-calling .e2-av{width:92px;height:92px;font-size:36px;background:rgba(255,255,255,.12);color:#fff}
-.e2-calling b{font-size:24px}
-.e2-calling small{color:#9fc5b5;font-size:14px}
-.e2-hang{margin-top:44px;width:68px;height:68px;border-radius:50%;border:0;background:#e5484d;color:#fff;font-size:26px}
-.e2-toast{position:absolute;left:14px;right:14px;bottom:92px;background:var(--e-ink);color:#fff;border-radius:16px;padding:13px 15px;font-size:14px;z-index:60;display:flex;gap:10px;align-items:center}
-.e2-toast u{text-decoration:none;color:#7ee2b8;font-weight:800;margin-left:auto;cursor:pointer;white-space:nowrap}
-.e2-tip{background:#fff7e0;border-radius:14px;padding:10px 12px;font-size:13px;color:#6b5414;margin:8px 16px}
-.e2-sheet .e2-tip{margin:14px 0 0}
-.e2-empty{text-align:center;padding:28px 20px;color:var(--e-sub);font-size:14px}
-.e2-empty span{font-size:40px;display:block;margin-bottom:6px}
-.e2-fld{width:100%;border:1.5px solid #ece7de;border-radius:14px;padding:13px;font-size:16px;margin:4px 0 6px;font-family:inherit}
-.e2-more{width:100%;border:0;background:#f3f0ea;border-radius:14px;padding:11px;font-weight:700;font-size:13.5px;margin-top:4px}
-.e2-del{border:0;background:none;color:#a09a90;font-size:13px;text-decoration:underline}
 .ic{width:1.2em;height:1.2em;fill:currentColor;vertical-align:-.24em;flex:none;display:inline-block}
 .sbi{display:inline-flex;gap:3px;align-items:center}.sbi .ic{width:16px;height:16px}
 .tabbar span .ic{width:20px;height:20px}
@@ -410,78 +291,6 @@ th{color:var(--sub);font-weight:600;background:#fafbfc;white-space:nowrap}
 .ib .ic{width:20px;height:20px}
 .tag.ai::before{content:none}
 .tag.ai .ic{width:12px;height:12px;vertical-align:-1px;margin-right:2px}
-.e2-st::before{display:none}
-.e2 .ic{width:1.2em;height:1.2em}
-.e2-nav .ic{width:22px;height:22px}
-.e2-pipe{display:flex;gap:8px;overflow-x:auto;padding:6px 16px 4px;scrollbar-width:none}
-.e2-pipe::-webkit-scrollbar{display:none}
-.e2-pipe button{flex:none;border:0;background:#fff;border-radius:16px;padding:9px 12px;text-align:left;box-shadow:0 2px 10px rgba(60,50,30,.06);min-width:86px}
-.e2-pipe small{display:flex;align-items:center;gap:5px;color:var(--e-sub);font-size:11.5px;font-weight:700}
-.e2-pipe b{display:block;font-size:17px;letter-spacing:-.3px;margin-top:1px}
-.e2-dot{width:7px;height:7px;border-radius:50%;display:inline-block}
-.e2-ccard{background:#fff;border-radius:20px;margin:8px 16px;padding:13px 14px;box-shadow:0 2px 10px rgba(60,50,30,.06);cursor:pointer}
-.e2-ccard.e2-done{opacity:.55}
-.e2-hd2{display:flex;gap:10px;align-items:center}
-.e2-hd2 .e2-av{width:40px;height:40px;font-size:16px}
-.e2-cn{font-weight:800;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.e2-meta{font-size:12.5px;color:var(--e-sub);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.e2-pill{display:inline-flex;align-items:center;border-radius:8px;padding:2px 8px;font-size:12px;font-weight:800;white-space:nowrap;flex:none}
-.e2-ctx{display:flex;gap:6px;align-items:flex-start;background:#f8f6f2;border-radius:12px;padding:8px 10px;margin-top:9px;font-size:13px;color:#3d4842}
-.e2-ctx .ic{color:#7c6fd6;margin-top:1px;width:16px;height:16px}
-.e2-ctx span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.e2-kw{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
-.e2-kw span{background:#eef7f2;color:#0b7a55;border-radius:8px;padding:3px 8px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:3px}
-.e2-kw span .ic{width:12px;height:12px}
-.e2-foot{display:flex;align-items:center;gap:8px;margin-top:10px}
-.e2-when{font-size:12.5px;color:#a15c00;font-weight:800;display:flex;gap:4px;align-items:center;flex:1;min-width:0}
-.e2-int{display:inline-flex;gap:4px;align-items:center;font-size:11.5px;color:var(--e-sub);white-space:nowrap}
-.e2-donel{color:var(--e);font-weight:800;font-size:14px;display:inline-flex;gap:3px;align-items:center}
-.e2-cta{display:inline-flex;align-items:center;justify-content:center;gap:4px}
-.e2-cta .ic{width:18px;height:18px}
-.e2-sortrow{display:flex;justify-content:space-between;padding:2px 18px 0;font-size:12px;color:var(--e-sub)}
-.e2-sortrow span{display:inline-flex;align-items:center;gap:3px}
-.e2-empty .e2-big-ic{width:40px;height:40px;display:block;margin:0 auto 6px}
-.e2-top button .ic{width:22px;height:22px}
-.e2-acts3{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px;margin-top:12px}
-.e2-btn2{border:0;background:var(--e-soft);color:var(--e);border-radius:16px;padding:12px 6px;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;gap:4px}
-.e2-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.e2-kv{background:#f8f6f2;border-radius:14px;padding:9px 11px;min-width:0}
-.e2-kv[data-e]{cursor:pointer}
-.e2-kv small{display:flex;align-items:center;gap:4px;color:var(--e-sub);font-size:11.5px;font-weight:600}
-.e2-kv small .ic{width:14px;height:14px}
-.e2-kv b{display:block;font-size:13.5px;margin-top:2px;line-height:1.35;word-break:keep-all;overflow-wrap:anywhere}
-.e2-kv.ai small::after{content:"AI";font-size:9.5px;background:#efe9fe;color:#6d28d9;border-radius:4px;padding:0 4px;margin-left:auto;font-weight:800}
-.e2-box h4 .ic{color:var(--e)}
-.e2-tlf{display:flex;gap:6px;overflow-x:auto;margin:0 0 10px;scrollbar-width:none}
-.e2-tlf::-webkit-scrollbar{display:none}
-.e2-tlf button{flex:none;border:1.5px solid #ece7de;background:#fff;border-radius:999px;padding:6px 11px;font-weight:700;font-size:12.5px}
-.e2-tlf button.on{background:var(--e-ink);border-color:var(--e-ink);color:#fff}
-.e2-sti{position:absolute;left:-28px;top:0;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #efebe4;display:flex;align-items:center;justify-content:center;color:var(--e)}
-.e2-sti .ic{width:14px;height:14px}
-.e2-by{font-size:10px;font-weight:800;border-radius:5px;padding:1px 5px;margin-left:5px}
-.e2-by.h{background:#eef0f2;color:#4b5060}.e2-by.ai{background:#efe9fe;color:#6d28d9}.e2-by.sys{background:#e3f5ec;color:#0b7a55}
-.e2-sum{font-size:13px;color:#3d4842;background:#f6f3fe;border-radius:12px;padding:9px 11px;margin-top:6px}
-.e2-sum.sug{background:#fff7e0}
-.e2-sum .lab{font-size:11.5px;font-weight:800;color:#6d28d9;display:flex;gap:4px;align-items:center;margin-bottom:2px}
-.e2-sum .lab .ic{width:14px;height:14px}
-.e2-sum.sug .lab{color:#a15c00}
-.e2-link{border:0;background:none;color:var(--e);font-weight:800;font-size:13px;padding:6px 0 0;display:inline-flex;gap:2px;align-items:center;margin-right:10px}
-.e2-bub{max-width:84%;border-radius:12px;padding:7px 10px;font-size:12.5px;margin:3px 0}
-.e2-bub.c{background:#f1efea}.e2-bub.a{background:var(--e-soft);margin-left:auto}
-.e2-who{font-size:10.5px;color:var(--e-sub);margin-top:6px}.e2-who.a{text-align:right}
-.e2-pay{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid #f2eee7;font-size:13.5px;gap:8px}
-.e2-pay:first-of-type{border-top:0}
-.e2-okc{color:#0b7a55;font-weight:800;font-size:12.5px;display:inline-flex;gap:3px;align-items:center;white-space:nowrap}
-.e2-waitc{color:#a15c00;font-weight:800;font-size:12.5px;display:inline-flex;gap:3px;align-items:center;white-space:nowrap}
-.e2-oi{width:40px;height:40px;border-radius:12px;background:var(--e-soft);color:var(--e);display:flex;align-items:center;justify-content:center;flex:none}
-.e2-oi .ic{width:22px;height:22px}
-.e2-opt span.e2-oi{font-size:inherit}
-.e2-ill .ic{width:64px;height:64px}
-.e2-hang .ic{width:30px;height:30px}
-.e2-tip .ic{width:16px;height:16px}
-.e2-todo p .ic{width:15px;height:15px;color:#7c6fd6;margin-right:2px}
-.e2-ck .ic{width:15px;height:15px}
-.e2-box h4 small .ic{width:15px;height:15px}
 .crit-sec{border-color:#f3c7c8}
 .crit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}
 .crit{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:8px}
@@ -623,10 +432,6 @@ details.rest table{margin:0 0 6px}
 .drw-li-h{display:flex;gap:6px;align-items:center;font-size:13.5px}
 .drw-fix{font-size:12.5px;color:var(--green);margin-top:3px;padding-left:2px}
 .drw-none{color:var(--mute) !important;font-size:13px !important;margin-bottom:18px !important}
-/* 개선 디자인 전환 바 */
-.dsw{display:flex;gap:6px;margin-bottom:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:5px;width:max-content;max-width:100%;flex-wrap:wrap}
-.dsw button{border:0;background:none;border-radius:9px;padding:9px 14px;font-weight:700;font-size:13.5px;color:var(--sub)}
-.dsw button.on{background:var(--ink);color:#fff}
 /* 개선 기획 */
 .plan-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
 .plan-cnt{display:inline-flex;gap:4px;align-items:center;color:var(--sub);font-size:13px;margin-left:auto}
@@ -943,7 +748,6 @@ details.rest table{margin:0 0 6px}
 .tabs .tab-lbl{flex:none;align-self:center;font-size:11px;color:var(--mute);white-space:nowrap;margin-right:2px}
 .tabs button.tab-sub{font-weight:500;font-size:13px;opacity:.72}
 .tabs button.tab-sub.on{opacity:1}
-.tab-hold{background:#fff8e6;border:1px solid #f1dfa9;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px;line-height:1.55;color:#5b4a14}
 .cmp-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 12px;font-size:13px;color:var(--sub)}
 .pp-wrap.pp-cmp{grid-template-columns:auto auto minmax(0,1fr)}
 .pp-asis{width:236px;min-width:0}
@@ -989,7 +793,6 @@ details.rest table{margin:0 0 6px}
     <span class="tab-sep"></span><span class="tab-lbl">참고</span>
     <button data-tab="data" class="tab-sub">데이터 흐름</button>
     <button data-tab="list" class="tab-sub">문제점 목록 <span class="n">핵심 6 · 전체 <span id="issCount"></span></span></button>
-    <button data-tab="tobe" class="tobe tab-sub">개선 디자인 <span class="n">보류</span></button>
   </nav>
 </div></header>
 
@@ -1086,86 +889,6 @@ details.rest table{margin:0 0 6px}
     <div class="plan-top" id="planBar"></div>
   </div>
   <div id="planList"></div>
-</section>
-
-<!-- ===================== ④ TO-BE ===================== -->
-<section class="tab" id="tab-tobe">
-  <div class="tab-hold"><b>보류 중인 탭입니다.</b> 디자인은 구조와 기획을 먼저 확정한 뒤 다시 진행합니다(2026-11-10 결정). 아래 제안 1 · 2는 그 전에 만든 초안이라, 상태를 기본 6개 + 커스텀 최대 6개로 보는 지금 기준과 맞지 않는 부분이 있습니다.</div>
-  <div class="dsw"><button data-dsw="tobe" class="on">제안 1 · 보기·단계 중심</button><button data-dsw="easy" class="">제안 2 · 할 일 중심 (쉬운 버전)</button></div>
-  <div class="sec" style="border-color:#bfe3cb">
-    <h2>개선 제안 1 — "보기 중심 · 단계 중심 · 기록 통합"</h2>
-    <p class="lead" style="margin-bottom:8px">세 가지 원칙으로 ② 탭에서 찾은 문제 39개 대부분을 해결합니다. 아래 휴대폰 화면은 직접 눌러 볼 수 있습니다.</p>
-    <div class="tbl-wrap"><table>
-      <tr><th>원칙</th><th>내용</th><th>해결 문제</th></tr>
-      <tr><td><b>1. 상태를 3축으로 분리</b></td><td>영업 단계 7개(신규→부재→재통화→방문예약→가계약→정계약 / 종료) · 관심도(상·중·하) · 태그(타현장, 아파트먼트 등)</td><td>S2 S3 S5 F2 L2 L3</td></tr>
-      <tr><td><b>2. 상세는 보기 모드가 기본</b></td><td>[수정]을 눌러야 편집, 저장/취소 + 실행 취소. 삭제는 ⋯ 메뉴 + 확인. 전화가 주 버튼</td><td>D1 D2 D9 D10 L6</td></tr>
-      <tr><td><b>3. 기록을 하나의 타임라인으로</b></td><td>통화(+AI 요약)·상담/방문·입금·일정·메모·시스템 이벤트를 유형 아이콘과 작성자 배지로 통합. 양식 입력 제공</td><td>D4 D5 D7 D12 D13 D16</td></tr>
-    </table></div>
-  </div>
-  <div class="proto">
-    <div class="phone-col"><div class="phone" id="phTo"></div></div>
-    <aside class="panel" id="pnTo"></aside>
-  </div>
-  <div class="sec" style="margin-top:18px">
-    <h2>문제 → 개선 대응표</h2>
-    <p class="lead">② 탭의 모든 문제가 제안 1에서 어떻게 처리되는지 정리했습니다.</p>
-    <div class="tbl-wrap"><table class="mapt" id="mapTable"></table></div>
-  </div>
-</section>
-
-<!-- ===================== ④ EASY ===================== -->
-<section class="tab" id="tab-easy">
-  <div class="tab-hold"><b>보류 중인 탭입니다.</b> 디자인은 구조와 기획을 먼저 확정한 뒤 다시 진행합니다(2026-11-10 결정). 아래 제안 1 · 2는 그 전에 만든 초안이라, 상태를 기본 6개 + 커스텀 최대 6개로 보는 지금 기준과 맞지 않는 부분이 있습니다.</div>
-  <div class="dsw"><button data-dsw="tobe" class="">제안 1 · 보기·단계 중심</button><button data-dsw="easy" class="on">제안 2 · 할 일 중심 (쉬운 버전)</button></div>
-  <div class="sec e2-intro">
-    <h2>개선 제안 2 — "할 일을 알려 주는 비서" (처음 쓰는 사람용)</h2>
-    <p class="lead">설명서 없이 처음 열어도 바로 쓸 수 있게 만든 안입니다. <b>v2:</b> 1차 버전에서 "정보가 가려져 안 보인다"는 피드백을 반영해, 버튼과 흐름은 단순하게 두고 판단에 필요한 정보(단계별 숫자, 최근 통화 AI 요약, 다음 일정, 관심도, 예산·타입 등)는 화면에 드러나게 고쳤습니다. 앱이 <b>누구에게 무엇을 할지</b> 먼저 알려 주고, 사용자는 <b>큰 버튼 하나와 결과 선택</b>만 하면 됩니다. 제안 1과 비교할 수 있도록 화면 스타일도 다르게 했습니다(따뜻한 배경, 큰 글씨, 큰 버튼).</p>
-    <div class="tbl-wrap"><table>
-      <tr><th>원칙</th><th>어떻게</th><th>해결 문제</th></tr>
-      <tr><td><b>1. 첫 화면은 목록이 아니라 '오늘 할 일'</b></td><td>새로 들어온 고객 · 방문 약속 · 다시 연락 · 계약 마무리로 묶어서 보여 주고, 진행률을 표시합니다. 상태 12종을 몰라도 시작할 수 있습니다.</td><td>L1 L2 L3 S2</td></tr>
-      <tr><td><b>2. 한 화면에 큰 버튼 하나</b></td><td>카드마다 버튼은 하나(전화 · 문자 · 기록). 상세에서도 가장 큰 버튼은 「전화하기」입니다.</td><td>D9 L6</td></tr>
-      <tr><td><b>3. 상태는 사람이 고르지 않는다</b></td><td>통화가 끝나면 「안 받았어요 / 다시 걸기로 / 방문 약속 / 관심 없대요」 중 하나만 누르면, 단계·일정·알림을 앱이 정리합니다. 입금을 기록하면 계약 단계로 자동으로 넘어갑니다.</td><td>D18 S2 D1</td></tr>
-      <tr><td><b>4. 입력은 질문 하나씩</b></td><td>메모에 양식을 타이핑하는 대신 「어디 사세요?」 → 「어떤 타입?」처럼 질문이 하나씩 나오고, 대부분 고르기만 하면 됩니다.</td><td>D5 D16</td></tr>
-      <tr><td><b>5. 쉬운 말</b></td><td>리드·미지정·가계약 같은 용어 대신 「새 문의 · 연락 중 · 방문 약속 · 계약 진행」 같은 일상어를 씁니다.</td><td>F5 S2</td></tr>
-      <tr><td><b>6. 필터 대신 빠른 선택 칩 + 검색 하나</b></td><td>필터 시트(정렬 5 · 플랫폼 7 · 캠페인 12 …)를 없애고, 인원이 함께 보이는 칩 7개와 검색창 하나로 찾습니다.</td><td>F1~F6 L5 Q1</td></tr>
-    </table></div>
-  </div>
-  <div class="proto">
-    <div class="phone-col"><div class="phone e2" id="phE2"></div></div>
-    <aside class="panel" id="pnE2"></aside>
-  </div>
-  <div class="sec" style="margin-top:18px">
-    <h2>쉬운 말로 바꾸기</h2>
-    <p class="lead">화면에 나오는 말만 바꿔도 처음 쓰는 사람이 덜 헤맵니다.</p>
-    <div class="tbl-wrap"><table>
-      <tr><th>지금</th><th>제안 2</th><th>이유</th></tr>
-      <tr><td>미지정</td><td>새 문의</td><td>"지정"이 무엇인지 알 필요가 없도록</td></tr>
-      <tr><td>부재중 · 재통화</td><td>연락 중</td><td>둘 다 "아직 연결 안 됨"이라는 같은 상황</td></tr>
-      <tr><td>방문 예약</td><td>방문 약속</td><td>고객과 한 약속이라는 느낌</td></tr>
-      <tr><td>가계약 / 정계약</td><td>계약 진행 / 계약 완료</td><td>업계 용어를 처음 쓰는 사람도 이해하도록</td></tr>
-      <tr><td>관심없음</td><td>보류</td><td>언제든 다시 꺼낼 수 있다는 의미</td></tr>
-      <tr><td>상태 상 · 중 · 하</td><td>관심 정도: 많음 🔥 · 보통 🙂 · 조금 🤔</td><td>상태와 섞이지 않는 별도 항목</td></tr>
-      <tr><td>캠페인 / 현장</td><td>현장</td><td>한 가지 말로 통일</td></tr>
-      <tr><td>메모 · 활동 타임라인 · 통화 이력 · AI 통화 요약</td><td>지금까지 이야기</td><td>네 곳에 흩어진 기록을 한 줄씩 하나로</td></tr>
-      <tr><td>필터 · 정렬</td><td>빠른 선택 칩</td><td>시트를 열지 않고 한 번에 고르기</td></tr>
-      <tr><td>내페이지 공유</td><td>문자 → 자료 보내기</td><td>"내페이지"라는 개념 없이 하려는 일로 표현</td></tr>
-    </table></div>
-  </div>
-  <div class="sec">
-    <h2>제안 1 vs 제안 2</h2>
-    <div class="tbl-wrap"><table>
-      <tr><th></th><th>제안 1 · 보기·단계 중심</th><th>제안 2 · 할 일 중심 (쉬운 버전)</th></tr>
-      <tr><td><b>핵심 아이디어</b></td><td>흩어진 정보를 정리해 한눈에 보이게</td><td>할 일을 알려 주고 버튼만 누르게</td></tr>
-      <tr><td><b>첫 화면</b></td><td>단계 탭 + 고객 목록</td><td>오늘 할 일 + 진행률</td></tr>
-      <tr><td><b>상태 변경</b></td><td>스테퍼에서 직접 선택 (확인 후 변경)</td><td>통화 결과 · 입금 기록에 따라 자동</td></tr>
-      <tr><td><b>기록 입력</b></td><td>유형별 양식을 한 화면에</td><td>질문 하나씩 (고르기 위주)</td></tr>
-      <tr><td><b>찾기</b></td><td>필터 시트 + 정렬 + 검색</td><td>빠른 선택 칩 + 검색 하나</td></tr>
-      <tr><td><b>화면 밀도</b></td><td>높음 (정보 많음)</td><td>낮음 (큰 글씨 · 큰 버튼)</td></tr>
-      <tr><td><b>잘 맞는 사용자</b></td><td>고객이 많은 숙련 담당자, 팀장</td><td>처음 쓰는 담당자, 현장 직원, 앱이 익숙하지 않은 사람</td></tr>
-      <tr><td><b>약점</b></td><td>처음에는 배울 것이 많음</td><td>고객 수백 명을 한꺼번에 다루기엔 느림</td></tr>
-    </table></div>
-    <div class="note"><b>추천:</b> 두 안을 합치는 방향입니다. 기본 화면은 제안 2(오늘 할 일 · 통화 결과로 자동 정리)로 하고, '모든 고객' 화면에 제안 1의 필터·정렬·통합 타임라인을 <b>고급 기능</b>으로 넣으면 처음 쓰는 사람과 숙련자를 모두 만족시킬 수 있습니다.</div>
-  </div>
 </section>
 
 <!-- ===================== ⑤ DATA ===================== -->
@@ -1288,47 +1011,47 @@ const CAP = {
   '방문 예약':[['06-4a_상세_방문예약_로딩중','로딩 중'],['06-4b_상세_방문예약_기본정보_미팅','기본·미팅'],['06-4c_상세_방문예약_AI요약','AI 요약'],['06-4d_상세_방문예약_전체대화보기_통화이력','전체 대화'],['06-4e_상세_방문예약_타임라인_하단','하단']]
 };
 
-/* issues: id, scr, sev(3 high/2 mid/1 low), t, d, ev(capture keys), fix, to(where in TO-BE) */
+/* issues: id, scr, sev(3 high/2 mid/1 low), t, d, ev(capture keys), fix */
 const ISS = [
- {id:'L1',scr:'list',sev:3,t:'목록 카드 메타가 실제 데이터와 다름',d:'카드 하단이 모든 고객에게 「📝1 · 예약 없음 · 최근통화 없음」으로 표시됩니다. 메모 6건·방문 일정·AI 통화가 있는 가계약·정계약·방문예약 고객도 같습니다.',ev:['03-2_목록_가계약','03-4_목록_정계약','03-5_목록_방문예약'],fix:'다음 일정 · 최근 통화 · 기록 수를 실제 값으로 표시하고, 값이 없을 때만 생략',to:'목록 카드'},
- {id:'L2',scr:'list',sev:2,t:'「전체 13개」와 「전체 11428」이 헷갈림',d:'첫 칩의 13은 상태 개수(전체 포함), 둘째 칩의 11428은 고객 수입니다. 같은 「전체」가 두 의미로 쓰입니다.',ev:['01_고객메뉴'],fix:'상태 드롭다운을 없애고 단계 탭 하나로 통합',to:'목록 단계 탭'},
- {id:'L3',scr:'list',sev:2,t:'상태 탭 13개 가로 스크롤 + 드롭다운과 기능 중복',d:'모두 보려면 3~4번 밀어야 합니다. 스크롤된다는 단서가 없고, 밀면 드롭다운도 화면 밖으로 사라집니다.',ev:['03_상태탭'],fix:'단계 8개로 축소 + 오른쪽 페이드',to:'목록 단계 탭'},
- {id:'L4',scr:'list',sev:2,t:'카드의 파란 칩이 AI 키워드인데 설명이 없음',d:'통화에서 뽑은 키워드가 사용자가 붙인 태그처럼 보이고, 음성 인식 오류(예: 「준공된」→「중공된」)가 그대로 노출됩니다.',ev:['03-5_목록_방문예약'],fix:'AI 칩에 ✦ 표시, 최대 2개',to:'목록 카드'},
- {id:'L5',scr:'list',sev:2,t:'적용된 필터가 목록에 보이지 않음',d:'필터를 적용한 뒤 어떤 조건이 걸려 있는지 목록에서 확인할 방법이 없습니다.',ev:['01_고객메뉴'],fix:'필터 버튼에 적용 개수 배지 + 목록 위에 해제 가능한 칩',to:'목록 툴바'},
- {id:'L6',scr:'list',sev:2,t:'상태 배지와 📞가 붙어 있어 오조작 위험',d:'카드 오른쪽에 상태 배지와 전화 버튼이 나란히 있어, 상세를 열려다 실제 전화가 걸릴 수 있습니다.',ev:['01_고객메뉴'],fix:'카드에서 전화 버튼 분리 → 상세 빠른 액션의 주 버튼',to:'목록 카드 / 상세 빠른 액션'},
- {id:'S1',scr:'status',sev:3,t:'마지막 항목(중 761)이 하단 탭바에 가려짐',d:'바텀시트가 플로팅 탭바 아래 깔려 13번째 항목을 볼 수 없습니다. 필터 시트도 같은 문제가 있습니다.',ev:['02_상태선택'],fix:'시트를 탭바보다 위 레이어로 띄우고 탭바 숨김',to:'모든 시트'},
- {id:'S2',scr:'status',sev:3,t:'성격이 다른 분류가 하나의 상태에 섞임',d:'영업 단계, 결과(관심없음), 할 일(재통화), 현장(타현장), 등급(상·중·하), 상품(아파트먼트)이 단일 선택 목록 하나에 있습니다. 「상」 등급이면서 「재통화」 대상인 고객을 표현할 수 없습니다.',ev:['02_상태선택','03_상태탭'],fix:'단계 / 관심도 / 태그 3축으로 분리',to:'단계 탭 · 필터 · 상세 스테퍼'},
- {id:'S3',scr:'status',sev:2,t:'상태 색이 서로 겹침',d:'부재중=상(핑크), 방문예약≈아파트먼트(주황), 가계약≈재통화(보라), 정계약≈중(초록). 색만으로 상태를 구분할 수 없습니다.',ev:['02_상태선택'],fix:'색은 단계에만 쓰고, 관심도는 점 미터, 태그는 회색',to:'전체'},
- {id:'S4',scr:'status',sev:1,t:'전체·미지정만 체크박스 모양',d:'여러 개를 고를 수 있어 보이지만 실제로는 하나만 선택됩니다(✓).',ev:['02_상태선택'],fix:'선택 표시 방식 통일',to:'-'},
- {id:'S5',scr:'status',sev:1,t:'등급 순서가 상 · 하 · (아파트먼트) · 중',d:'만든 순서대로 나열된 것으로 보이며, 순서를 관리하는 기능이 없습니다.',ev:['03_상태탭'],fix:'관심도 필드로 옮기며 상·중·하 고정 순서',to:'필터 관심도'},
- {id:'F1',scr:'filter',sev:2,t:'정렬이 필터 시트 안에 섞여 있음',d:'「등록일 최신순」처럼 기준과 방향이 칩 하나에 있어, 오래된순으로 바꾸는 방법이 드러나지 않습니다.',ev:['04_필터'],fix:'목록 툴바의 정렬 드롭다운으로 분리',to:'목록 툴바'},
- {id:'F2',scr:'filter',sev:3,t:'관심도 필터와 상태 상·중·하가 중복',d:'같은 개념이 필드(관심도)와 상태 값 두 곳에 있고 색도 다릅니다. 실제 가계약 고객도 관심도는 「-」로 비어 있습니다.',ev:['04-2_필터_하단','06-5a_상세_가계약_상단'],fix:'관심도 필드로 일원화',to:'필터 · 프로필'},
- {id:'F3',scr:'filter',sev:3,t:'담당자 필터에 「전체」만 있음',d:'상세 화면에서는 서로 다른 담당자가 최소 4명 확인되는데, 필터에서는 담당자를 고를 수 없습니다.',ev:['04-2_필터_하단'],fix:'실제 담당자 목록 + 「내 고객」',to:'필터 담당자'},
- {id:'F4',scr:'filter',sev:2,t:'선택 방식과 결과 수를 알 수 없음',d:'섹션마다 「전체」 칩이 있기도 하고 없기도 합니다. 하나만/여러 개 선택 표시가 없고, 칩에 건수가 없어 0건 결과를 미리 알 수 없습니다.',ev:['04_필터'],fix:'「여러 개 선택」 표기 + 칩 건수 + 「n명 보기」 버튼',to:'필터 시트'},
- {id:'F5',scr:'filter',sev:2,t:'「캠페인」과 「현장」 용어 혼용, 표기 불일치',d:'필터는 캠페인, 검색 안내는 현장이라고 부릅니다. 같은 현장이 카드·필터·메모에서 「A단지_한강뷰 / A단지 한강뷰 / 한강뷰」처럼 다르게 쓰이고, 코드형 이름(PH…)과 단지명이 섞여 있습니다.',ev:['04_필터','06-5a_상세_가계약_상단'],fix:'「현장」으로 통일, 표시명 관리 + 현장 검색',to:'필터 현장'},
- {id:'F6',scr:'filter',sev:2,t:'시트 아래 섹션이 고정 버튼·탭바에 가려짐',d:'등록일 아래 담당자·관심도 섹션이 첫 화면에서 잘려서 있는지조차 알기 어렵습니다.',ev:['04_필터'],fix:'탭바 숨김, 섹션 순서 재배치',to:'필터 시트'},
- {id:'Q1',scr:'search',sev:2,t:'검색 전용 화면이 없음',d:'검색창을 누르면 테두리만 바뀌고, 최근 검색어·취소·지우기·범위 선택이 없습니다.',ev:['05_검색'],fix:'전체 화면 검색 + 최근 검색 + 범위 칩',to:'검색 화면'},
- {id:'Q2',scr:'search',sev:1,t:'「통화 내용」 검색이 안내 문구에만 숨어 있음',d:'입력을 시작하면 안내가 사라져 차별 기능을 알 수 없고, 어느 필드가 일치했는지도 표시되지 않습니다.',ev:['05_검색'],fix:'결과에 일치 필드 라벨 + 하이라이트',to:'검색 결과'},
- {id:'Q3',scr:'search',sev:2,t:'검색 범위가 모호함',d:'상태 탭이나 필터가 걸린 상태에서 검색하면 그 안에서 찾는지, 전체에서 찾는지 표시가 없습니다.',ev:['05_검색'],fix:'검색은 항상 전체 대상, 결과 상단에 범위 표시',to:'검색 화면'},
- {id:'Q4',scr:'search',sev:1,t:'웹뷰 입력 보조 바, 실행 키 「→」',d:'키보드 위에 ↑↓✓ 시스템 바가 뜹니다. 하이브리드(웹뷰) 구조로 추정됩니다.',ev:['05_검색'],fix:'inputmode·enterkeyhint="search", 보조 바 숨김',to:'개발 가이드'},
- {id:'D1',scr:'detail',sev:3,t:'보기와 수정이 분리되지 않음',d:'상세를 열면 모든 필드가 바로 입력 가능하고 저장 버튼이나 저장 피드백이 없습니다. 스크롤하다 터치하면 고객 데이터가 바뀔 수 있고, 녹화에서도 관심도·상태 드롭다운이 의도치 않게 열렸습니다.',ev:['06-5x1_상세_관심도드롭다운','06-5x2_상세_상태드롭다운'],fix:'보기 모드가 기본, [수정] → 시트에서 저장/취소 + 실행 취소',to:'상세 프로필 · 수정 시트'},
- {id:'D2',scr:'detail',sev:3,t:'고객 삭제가 스크롤 끝에 일반 카드처럼 있음',d:'되돌릴 수 없는 동작이 다른 섹션과 같은 모양으로, 스크롤만 하면 닿는 곳에 있습니다.',ev:['06-1c_상세_미지정_하단','06-5i_상세_가계약_하단_삭제'],fix:'⋯ 메뉴 안으로 + 확인 대화상자',to:'⋯ 메뉴'},
- {id:'D3',scr:'detail',sev:3,t:'로딩 중에 「없음」 빈 상태가 먼저 보임',d:'상세 진입 직후 「등록된 메모가 없습니다」, 「방문 일정이 없습니다」가 보였다가 약 1초 뒤 실제 데이터로 바뀝니다. 데이터가 없다고 오인할 수 있습니다. 목록은 스켈레톤을 쓰는데 상세는 쓰지 않습니다.',ev:['06-5-2a_상세_가계약2_로딩중빈상태','06-6a_상세_정계약_로딩중','06-4a_상세_방문예약_로딩중'],fix:'섹션 스켈레톤',to:'상세 로딩'},
- {id:'D4',scr:'detail',sev:3,t:'AI 통화 요약엔 통화가 있는데 통화 이력은 「없어요」',d:'확인한 4명 모두 통화 이력이 비어 있습니다. 데이터 출처(앱 발신 vs 녹음 업로드)가 달라서 생기는 것으로 추정됩니다.',ev:['06-5e_상세_가계약_통화이력_타임라인','06-4d_상세_방문예약_전체대화보기_통화이력'],fix:'하나의 「통화」 기록으로 합치고 출처 라벨 표시',to:'통합 타임라인'},
- {id:'D5',scr:'detail',sev:3,t:'메모를 양식처럼 직접 타이핑',d:'「◆상담내용◆」, 「■입금보고■」 양식을 매번 입력합니다. 방문 정보·동호수·입금액·계약금 일정이 자유 텍스트에 묻혀 검색과 집계가 안 되고, 번호·호실이 메모마다 다르게 적혀 있습니다.',ev:['06-5b_상세_가계약_중단'],fix:'기록 유형별 입력 양식(상담·방문 / 입금) + 계약 정보 섹션',to:'기록 추가 시트 · 계약 정보'},
- {id:'D6',scr:'detail',sev:2,t:'상태와 관계없이 같은 화면 구조',d:'미지정·가계약·정계약·방문예약 모두 같은 9개 섹션입니다. 신규 고객은 5개 섹션이 비어 있고, 계약 고객에게는 계약 정보 섹션이 없습니다.',ev:['06-1b_상세_미지정_중단','06-6b_상세_정계약_기본정보_메모'],fix:'단계별 「다음 할 일」 + 계약 단계에서만 계약 정보 노출',to:'다음 할 일 · 계약 정보'},
- {id:'D7',scr:'detail',sev:2,t:'같은 정보가 반복해서 나옴',d:'이름·상태가 헤더/요약 카드/폼에 3번, AI 요약이 메모/AI 통화 요약/타임라인에 3번 나옵니다.',ev:['06-5a_상세_가계약_상단','06-5e_상세_가계약_통화이력_타임라인'],fix:'프로필 한 곳 + 통합 타임라인',to:'상세 전체'},
- {id:'D8',scr:'detail',sev:2,t:'AI 제안(다음 행동)이 화면 중간에 묻힘',d:'「주소와 안내 문자를 즉시 발송하세요」 같은 바로 실행할 수 있는 제안이 통화 카드 안쪽에 있어 스크롤해야 보입니다.',ev:['06-5g_상세_가계약_AI요약_AI제안','06-6c_상세_정계약_미팅_AI요약'],fix:'상단 「다음 할 일」 카드로 올림',to:'다음 할 일'},
- {id:'D9',scr:'detail',sev:2,t:'가장 눈에 띄는 버튼이 「내페이지 공유」',d:'파란 주 버튼이 공유이고, 그 결과(내페이지 활동)는 맨 아래에 있습니다. 영업 담당자의 핵심 행동인 전화는 작은 아이콘입니다.',ev:['06-1a_상세_미지정_상단'],fix:'빠른 액션: 전화(주) · 문자 · 일정 · 기록 / 공유는 ⋯ 메뉴',to:'빠른 액션 · ⋯ 메뉴'},
- {id:'D10',scr:'detail',sev:1,t:'뒤로(<)와 닫기(X)가 함께 있음',d:'둘 다 화면을 떠나는 버튼입니다.',ev:['06-1a_상세_미지정_상단'],fix:'< 하나만 남김',to:'헤더'},
- {id:'D11',scr:'detail',sev:1,t:'라벨 없는 정보',d:'16자리 리드 ID가 라벨 없이 보이고, 요약 카드의 ●●● 관심도 미터에도 라벨이 없습니다.',ev:['06-1a_상세_미지정_상단'],fix:'리드 ID는 「기술 정보」로 접고, 미터 옆에 「관심도 상」 표기',to:'프로필'},
- {id:'D12',scr:'detail',sev:2,t:'타임라인 항목 형식 불일치·빈 항목',d:'리드 등록은 제목이 있는데 메모는 본문만 있고, 「11:09 · 회사계정」처럼 내용이 없는 항목도 있습니다. 점 색의 의미도 설명이 없습니다.',ev:['06-5e_상세_가계약_통화이력_타임라인'],fix:'유형 아이콘 + 제목 + 요약 한 줄로 통일',to:'통합 타임라인'},
- {id:'D13',scr:'detail',sev:2,t:'작성자가 회사 계정명으로 표시됨',d:'자동 등록(AI 요약·폼 응답)과 사람이 직접 쓴 메모가 모두 같은 회사 계정명으로 표시됩니다. 심층 분석에서 이 계정으로 담당자가 직접 쓴 상담 메모도 확인되어, 실제 작성자를 추적할 수 없습니다.',ev:['06-5b_상세_가계약_중단'],fix:'작성자 배지: 사람 / AI / 시스템',to:'통합 타임라인'},
- {id:'D14',scr:'detail',sev:1,t:'이름 칸에 두 이름을 같이 적음',d:'「영문명 - 한글명」처럼 메타 계정명과 실명을 한 칸에 씁니다.',ev:['03-5_목록_방문예약'],fix:'이름 + 유입 계정명(별칭) 분리',to:'수정 시트'},
- {id:'D15',scr:'detail',sev:1,t:'한국어 줄바꿈 오류',d:'「요약합니/다」, 「계/약자」처럼 단어 중간에서 줄이 바뀝니다.',ev:['06-1b_상세_미지정_중단'],fix:'word-break: keep-all',to:'전체'},
- {id:'D16',scr:'detail',sev:3,t:'입금 기록도 메모처럼 바로 수정·삭제 가능',d:'금융 정보가 담긴 메모 옆에도 🗑가 항상 보이고, 수정 이력이 남지 않습니다.',ev:['06-5b_상세_가계약_중단'],fix:'입금·계약 기록은 따로 보관, 수정 이력, 삭제 권한 제한',to:'계약 정보 · 타임라인'},
- {id:'D17',scr:'detail',sev:1,t:'일정 빈 상태가 실제 카드처럼 보이고 용어가 3가지',d:'「- / 방문 일정이 없습니다 / 시간 미정」 카드가 진짜 일정처럼 보입니다. 섹션은 미팅 예약, 문구는 방문 일정, 버튼은 일정 추가라고 부릅니다.',ev:['06-1a_상세_미지정_상단'],fix:'「방문 일정」으로 통일, 빈 상태는 한 줄 안내',to:'다음 할 일'},
- {id:'D18',scr:'detail',sev:2,t:'단계가 실제 진행보다 늦게 반영될 수 있음',d:'계약서 날인 기록이 있는데 상태는 「가계약」입니다. 상태를 사람이 직접 바꿔야 해서 실제 진행과 어긋날 수 있습니다(업무 기준 확인 필요).',ev:['06-5b_상세_가계약_중단'],fix:'입금·계약 기록을 저장할 때 단계 변경 제안',to:'기록 추가 → 단계 제안'}
+ {id:'L1',scr:'list',sev:3,t:'목록 카드 메타가 실제 데이터와 다름',d:'카드 하단이 모든 고객에게 「📝1 · 예약 없음 · 최근통화 없음」으로 표시됩니다. 메모 6건·방문 일정·AI 통화가 있는 가계약·정계약·방문예약 고객도 같습니다.',ev:['03-2_목록_가계약','03-4_목록_정계약','03-5_목록_방문예약'],fix:'다음 일정 · 최근 통화 · 기록 수를 실제 값으로 표시하고, 값이 없을 때만 생략'},
+ {id:'L2',scr:'list',sev:2,t:'「전체 13개」와 「전체 11428」이 헷갈림',d:'첫 칩의 13은 상태 개수(전체 포함), 둘째 칩의 11428은 고객 수입니다. 같은 「전체」가 두 의미로 쓰입니다.',ev:['01_고객메뉴'],fix:'상태 드롭다운을 없애고 단계 탭 하나로 통합'},
+ {id:'L3',scr:'list',sev:2,t:'상태 탭 13개 가로 스크롤 + 드롭다운과 기능 중복',d:'모두 보려면 3~4번 밀어야 합니다. 스크롤된다는 단서가 없고, 밀면 드롭다운도 화면 밖으로 사라집니다.',ev:['03_상태탭'],fix:'단계 8개로 축소 + 오른쪽 페이드'},
+ {id:'L4',scr:'list',sev:2,t:'카드의 파란 칩이 AI 키워드인데 설명이 없음',d:'통화에서 뽑은 키워드가 사용자가 붙인 태그처럼 보이고, 음성 인식 오류(예: 「준공된」→「중공된」)가 그대로 노출됩니다.',ev:['03-5_목록_방문예약'],fix:'AI 칩에 ✦ 표시, 최대 2개'},
+ {id:'L5',scr:'list',sev:2,t:'적용된 필터가 목록에 보이지 않음',d:'필터를 적용한 뒤 어떤 조건이 걸려 있는지 목록에서 확인할 방법이 없습니다.',ev:['01_고객메뉴'],fix:'필터 버튼에 적용 개수 배지 + 목록 위에 해제 가능한 칩'},
+ {id:'L6',scr:'list',sev:2,t:'상태 배지와 📞가 붙어 있어 오조작 위험',d:'카드 오른쪽에 상태 배지와 전화 버튼이 나란히 있어, 상세를 열려다 실제 전화가 걸릴 수 있습니다.',ev:['01_고객메뉴'],fix:'카드에서 전화 버튼 분리 → 상세 빠른 액션의 주 버튼'},
+ {id:'S1',scr:'status',sev:3,t:'마지막 항목(중 761)이 하단 탭바에 가려짐',d:'바텀시트가 플로팅 탭바 아래 깔려 13번째 항목을 볼 수 없습니다. 필터 시트도 같은 문제가 있습니다.',ev:['02_상태선택'],fix:'시트를 탭바보다 위 레이어로 띄우고 탭바 숨김'},
+ {id:'S2',scr:'status',sev:3,t:'성격이 다른 분류가 하나의 상태에 섞임',d:'영업 단계, 결과(관심없음), 할 일(재통화), 현장(타현장), 등급(상·중·하), 상품(아파트먼트)이 단일 선택 목록 하나에 있습니다. 「상」 등급이면서 「재통화」 대상인 고객을 표현할 수 없습니다.',ev:['02_상태선택','03_상태탭'],fix:'단계 / 관심도 / 태그 3축으로 분리'},
+ {id:'S3',scr:'status',sev:2,t:'상태 색이 서로 겹침',d:'부재중=상(핑크), 방문예약≈아파트먼트(주황), 가계약≈재통화(보라), 정계약≈중(초록). 색만으로 상태를 구분할 수 없습니다.',ev:['02_상태선택'],fix:'색은 단계에만 쓰고, 관심도는 점 미터, 태그는 회색'},
+ {id:'S4',scr:'status',sev:1,t:'전체·미지정만 체크박스 모양',d:'여러 개를 고를 수 있어 보이지만 실제로는 하나만 선택됩니다(✓).',ev:['02_상태선택'],fix:'선택 표시 방식 통일'},
+ {id:'S5',scr:'status',sev:1,t:'등급 순서가 상 · 하 · (아파트먼트) · 중',d:'만든 순서대로 나열된 것으로 보이며, 순서를 관리하는 기능이 없습니다.',ev:['03_상태탭'],fix:'관심도 필드로 옮기며 상·중·하 고정 순서'},
+ {id:'F1',scr:'filter',sev:2,t:'정렬이 필터 시트 안에 섞여 있음',d:'「등록일 최신순」처럼 기준과 방향이 칩 하나에 있어, 오래된순으로 바꾸는 방법이 드러나지 않습니다.',ev:['04_필터'],fix:'목록 툴바의 정렬 드롭다운으로 분리'},
+ {id:'F2',scr:'filter',sev:3,t:'관심도 필터와 상태 상·중·하가 중복',d:'같은 개념이 필드(관심도)와 상태 값 두 곳에 있고 색도 다릅니다. 실제 가계약 고객도 관심도는 「-」로 비어 있습니다.',ev:['04-2_필터_하단','06-5a_상세_가계약_상단'],fix:'관심도 필드로 일원화'},
+ {id:'F3',scr:'filter',sev:3,t:'담당자 필터에 「전체」만 있음',d:'상세 화면에서는 서로 다른 담당자가 최소 4명 확인되는데, 필터에서는 담당자를 고를 수 없습니다.',ev:['04-2_필터_하단'],fix:'실제 담당자 목록 + 「내 고객」'},
+ {id:'F4',scr:'filter',sev:2,t:'선택 방식과 결과 수를 알 수 없음',d:'섹션마다 「전체」 칩이 있기도 하고 없기도 합니다. 하나만/여러 개 선택 표시가 없고, 칩에 건수가 없어 0건 결과를 미리 알 수 없습니다.',ev:['04_필터'],fix:'「여러 개 선택」 표기 + 칩 건수 + 「n명 보기」 버튼'},
+ {id:'F5',scr:'filter',sev:2,t:'「캠페인」과 「현장」 용어 혼용, 표기 불일치',d:'필터는 캠페인, 검색 안내는 현장이라고 부릅니다. 같은 현장이 카드·필터·메모에서 「A단지_한강뷰 / A단지 한강뷰 / 한강뷰」처럼 다르게 쓰이고, 코드형 이름(PH…)과 단지명이 섞여 있습니다.',ev:['04_필터','06-5a_상세_가계약_상단'],fix:'「현장」으로 통일, 표시명 관리 + 현장 검색'},
+ {id:'F6',scr:'filter',sev:2,t:'시트 아래 섹션이 고정 버튼·탭바에 가려짐',d:'등록일 아래 담당자·관심도 섹션이 첫 화면에서 잘려서 있는지조차 알기 어렵습니다.',ev:['04_필터'],fix:'탭바 숨김, 섹션 순서 재배치'},
+ {id:'Q1',scr:'search',sev:2,t:'검색 전용 화면이 없음',d:'검색창을 누르면 테두리만 바뀌고, 최근 검색어·취소·지우기·범위 선택이 없습니다.',ev:['05_검색'],fix:'전체 화면 검색 + 최근 검색 + 범위 칩'},
+ {id:'Q2',scr:'search',sev:1,t:'「통화 내용」 검색이 안내 문구에만 숨어 있음',d:'입력을 시작하면 안내가 사라져 차별 기능을 알 수 없고, 어느 필드가 일치했는지도 표시되지 않습니다.',ev:['05_검색'],fix:'결과에 일치 필드 라벨 + 하이라이트'},
+ {id:'Q3',scr:'search',sev:2,t:'검색 범위가 모호함',d:'상태 탭이나 필터가 걸린 상태에서 검색하면 그 안에서 찾는지, 전체에서 찾는지 표시가 없습니다.',ev:['05_검색'],fix:'검색은 항상 전체 대상, 결과 상단에 범위 표시'},
+ {id:'Q4',scr:'search',sev:1,t:'웹뷰 입력 보조 바, 실행 키 「→」',d:'키보드 위에 ↑↓✓ 시스템 바가 뜹니다. 하이브리드(웹뷰) 구조로 추정됩니다.',ev:['05_검색'],fix:'inputmode·enterkeyhint="search", 보조 바 숨김'},
+ {id:'D1',scr:'detail',sev:3,t:'보기와 수정이 분리되지 않음',d:'상세를 열면 모든 필드가 바로 입력 가능하고 저장 버튼이나 저장 피드백이 없습니다. 스크롤하다 터치하면 고객 데이터가 바뀔 수 있고, 녹화에서도 관심도·상태 드롭다운이 의도치 않게 열렸습니다.',ev:['06-5x1_상세_관심도드롭다운','06-5x2_상세_상태드롭다운'],fix:'보기 모드가 기본, [수정] → 시트에서 저장/취소 + 실행 취소'},
+ {id:'D2',scr:'detail',sev:3,t:'고객 삭제가 스크롤 끝에 일반 카드처럼 있음',d:'되돌릴 수 없는 동작이 다른 섹션과 같은 모양으로, 스크롤만 하면 닿는 곳에 있습니다.',ev:['06-1c_상세_미지정_하단','06-5i_상세_가계약_하단_삭제'],fix:'⋯ 메뉴 안으로 + 확인 대화상자'},
+ {id:'D3',scr:'detail',sev:3,t:'로딩 중에 「없음」 빈 상태가 먼저 보임',d:'상세 진입 직후 「등록된 메모가 없습니다」, 「방문 일정이 없습니다」가 보였다가 약 1초 뒤 실제 데이터로 바뀝니다. 데이터가 없다고 오인할 수 있습니다. 목록은 스켈레톤을 쓰는데 상세는 쓰지 않습니다.',ev:['06-5-2a_상세_가계약2_로딩중빈상태','06-6a_상세_정계약_로딩중','06-4a_상세_방문예약_로딩중'],fix:'섹션 스켈레톤'},
+ {id:'D4',scr:'detail',sev:3,t:'AI 통화 요약엔 통화가 있는데 통화 이력은 「없어요」',d:'확인한 4명 모두 통화 이력이 비어 있습니다. 데이터 출처(앱 발신 vs 녹음 업로드)가 달라서 생기는 것으로 추정됩니다.',ev:['06-5e_상세_가계약_통화이력_타임라인','06-4d_상세_방문예약_전체대화보기_통화이력'],fix:'하나의 「통화」 기록으로 합치고 출처 라벨 표시'},
+ {id:'D5',scr:'detail',sev:3,t:'메모를 양식처럼 직접 타이핑',d:'「◆상담내용◆」, 「■입금보고■」 양식을 매번 입력합니다. 방문 정보·동호수·입금액·계약금 일정이 자유 텍스트에 묻혀 검색과 집계가 안 되고, 번호·호실이 메모마다 다르게 적혀 있습니다.',ev:['06-5b_상세_가계약_중단'],fix:'기록 유형별 입력 양식(상담·방문 / 입금) + 계약 정보 섹션'},
+ {id:'D6',scr:'detail',sev:2,t:'상태와 관계없이 같은 화면 구조',d:'미지정·가계약·정계약·방문예약 모두 같은 9개 섹션입니다. 신규 고객은 5개 섹션이 비어 있고, 계약 고객에게는 계약 정보 섹션이 없습니다.',ev:['06-1b_상세_미지정_중단','06-6b_상세_정계약_기본정보_메모'],fix:'단계별 「다음 할 일」 + 계약 단계에서만 계약 정보 노출'},
+ {id:'D7',scr:'detail',sev:2,t:'같은 정보가 반복해서 나옴',d:'이름·상태가 헤더/요약 카드/폼에 3번, AI 요약이 메모/AI 통화 요약/타임라인에 3번 나옵니다.',ev:['06-5a_상세_가계약_상단','06-5e_상세_가계약_통화이력_타임라인'],fix:'프로필 한 곳 + 통합 타임라인'},
+ {id:'D8',scr:'detail',sev:2,t:'AI 제안(다음 행동)이 화면 중간에 묻힘',d:'「주소와 안내 문자를 즉시 발송하세요」 같은 바로 실행할 수 있는 제안이 통화 카드 안쪽에 있어 스크롤해야 보입니다.',ev:['06-5g_상세_가계약_AI요약_AI제안','06-6c_상세_정계약_미팅_AI요약'],fix:'상단 「다음 할 일」 카드로 올림'},
+ {id:'D9',scr:'detail',sev:2,t:'가장 눈에 띄는 버튼이 「내페이지 공유」',d:'파란 주 버튼이 공유이고, 그 결과(내페이지 활동)는 맨 아래에 있습니다. 영업 담당자의 핵심 행동인 전화는 작은 아이콘입니다.',ev:['06-1a_상세_미지정_상단'],fix:'빠른 액션: 전화(주) · 문자 · 일정 · 기록 / 공유는 ⋯ 메뉴'},
+ {id:'D10',scr:'detail',sev:1,t:'뒤로(<)와 닫기(X)가 함께 있음',d:'둘 다 화면을 떠나는 버튼입니다.',ev:['06-1a_상세_미지정_상단'],fix:'< 하나만 남김'},
+ {id:'D11',scr:'detail',sev:1,t:'라벨 없는 정보',d:'16자리 리드 ID가 라벨 없이 보이고, 요약 카드의 ●●● 관심도 미터에도 라벨이 없습니다.',ev:['06-1a_상세_미지정_상단'],fix:'리드 ID는 「기술 정보」로 접고, 미터 옆에 「관심도 상」 표기'},
+ {id:'D12',scr:'detail',sev:2,t:'타임라인 항목 형식 불일치·빈 항목',d:'리드 등록은 제목이 있는데 메모는 본문만 있고, 「11:09 · 회사계정」처럼 내용이 없는 항목도 있습니다. 점 색의 의미도 설명이 없습니다.',ev:['06-5e_상세_가계약_통화이력_타임라인'],fix:'유형 아이콘 + 제목 + 요약 한 줄로 통일'},
+ {id:'D13',scr:'detail',sev:2,t:'작성자가 회사 계정명으로 표시됨',d:'자동 등록(AI 요약·폼 응답)과 사람이 직접 쓴 메모가 모두 같은 회사 계정명으로 표시됩니다. 심층 분석에서 이 계정으로 담당자가 직접 쓴 상담 메모도 확인되어, 실제 작성자를 추적할 수 없습니다.',ev:['06-5b_상세_가계약_중단'],fix:'작성자 배지: 사람 / AI / 시스템'},
+ {id:'D14',scr:'detail',sev:1,t:'이름 칸에 두 이름을 같이 적음',d:'「영문명 - 한글명」처럼 메타 계정명과 실명을 한 칸에 씁니다.',ev:['03-5_목록_방문예약'],fix:'이름 + 유입 계정명(별칭) 분리'},
+ {id:'D15',scr:'detail',sev:1,t:'한국어 줄바꿈 오류',d:'「요약합니/다」, 「계/약자」처럼 단어 중간에서 줄이 바뀝니다.',ev:['06-1b_상세_미지정_중단'],fix:'word-break: keep-all'},
+ {id:'D16',scr:'detail',sev:3,t:'입금 기록도 메모처럼 바로 수정·삭제 가능',d:'금융 정보가 담긴 메모 옆에도 🗑가 항상 보이고, 수정 이력이 남지 않습니다.',ev:['06-5b_상세_가계약_중단'],fix:'입금·계약 기록은 따로 보관, 수정 이력, 삭제 권한 제한'},
+ {id:'D17',scr:'detail',sev:1,t:'일정 빈 상태가 실제 카드처럼 보이고 용어가 3가지',d:'「- / 방문 일정이 없습니다 / 시간 미정」 카드가 진짜 일정처럼 보입니다. 섹션은 미팅 예약, 문구는 방문 일정, 버튼은 일정 추가라고 부릅니다.',ev:['06-1a_상세_미지정_상단'],fix:'「방문 일정」으로 통일, 빈 상태는 한 줄 안내'},
+ {id:'D18',scr:'detail',sev:2,t:'단계가 실제 진행보다 늦게 반영될 수 있음',d:'계약서 날인 기록이 있는데 상태는 「가계약」입니다. 상태를 사람이 직접 바꿔야 해서 실제 진행과 어긋날 수 있습니다(업무 기준 확인 필요).',ev:['06-5b_상세_가계약_중단'],fix:'입금·계약 기록을 저장할 때 단계 변경 제안'}
 ];
 const GOOD = {
   list:['목록 로딩에 스켈레톤을 씁니다 (03-3).','카드에 현장·담당자·최근 메모가 한눈에 보입니다.'],
@@ -1340,17 +1063,17 @@ const GOOD = {
 const SEVL = {3:'높음',2:'중간',1:'낮음'};
 /* 심층 분석(미러링 탐색)에서 추가로 확인한 데이터 문제 */
 ISS.push(
- {id:'N1',scr:'data',sev:3,t:'같은 통화가 화면마다 다르게 나옴',d:'AI 통화 요약·타임라인에는 통화가 있는데 통화 이력과 목록 카드 「최근통화」는 "없음". 카드의 파란 칩에는 그 통화의 키워드가 동시에 보입니다. 녹음 업로드와 앱 발신 기록이 분리된 구조로 추정.',ev:['m13_C02_상세_재통화_2','m15_C02_상세_재통화_4','m11_C01_목록_재통화'],fix:'통화 데이터 출처 통합, 카드 메타는 통합 통화 기준',to:'통합 타임라인 · 목록 카드'},
- {id:'N2',scr:'data',sev:3,t:'통화 기록이 전화번호로 묶여 다른 현장·담당자 통화까지 노출',d:'11/9 신규 등록 고객 상세에 8월에 다른 현장·다른 담당자가 한 통화 2건(요약·대화 포함)이 함께 보입니다. 권한 범위와 개인정보 관점에서 검토가 필요합니다.',ev:['m21_D02_상세_관심없음_4','m22_D02_상세_관심없음_5'],fix:'현장·담당자 권한 기준으로 노출 범위 정의, 이전 이력은 「다른 현장 이력」으로 구분 표시',to:'통합 타임라인'},
- {id:'N3',scr:'data',sev:2,t:'재통화 상태에 「언제」가 없음',d:'다시 걸 날짜·시간을 넣을 곳이 없어 메모(「내일전화드릴께요」)나 AI 키워드(「내일 전화」)에만 남습니다. 일정·알림과 연결되지 않습니다.',ev:['m11_C01_목록_재통화'],fix:'재통화 선택 시 날짜·시간 필수 + 알림',to:'제안 2 통화 결과 시트'},
- {id:'N4',scr:'data',sev:2,t:'부재중 시도 횟수·시각이 없음',d:'통화 이력이 비어 있어 몇 번, 언제 걸었는지 알 수 없고 메모에 은어(「밀어버림」)로 남깁니다.',ev:['m07_B01_목록_부재중','m08_B02_상세_부재중_1'],fix:'부재 시도 자동 기록 + 횟수 표시',to:'제안 2 「안 받았어요」'},
- {id:'N5',scr:'data',sev:2,t:'통화 결과를 메모로 한 번 더 입력',d:'AI 요약이 자동으로 생기는데도 담당자가 1분 뒤 같은 내용을 메모에 다시 적습니다.',ev:['m12_C02_상세_재통화_1'],fix:'통화 결과 버튼 1회 선택으로 대체',to:'제안 2 통화 결과 시트'},
- {id:'N6',scr:'data',sev:2,t:'플랫폼(유입 경로)을 보거나 고칠 곳이 없음',d:'카드의 작은 아이콘과 필터에만 있고, 상세·고객 등록 폼에는 항목이 없습니다.',ev:['m06_A06_고객추가'],fix:'상세·등록 폼에 유입 경로 항목',to:'제안 1 프로필'},
- {id:'N7',scr:'data',sev:1,t:'리드 ID 형식이 2가지',d:'16자리 숫자와 「unified_」+UUID 형식이 섞여 있고, 둘 다 라벨 없이 노출됩니다.',ev:['m32_F02_상세_상_1'],fix:'「기술 정보」로 접고 출처 표기',to:'제안 1 기술 정보'},
- {id:'N8',scr:'data',sev:2,t:'상태 목록이 현장에 따라 달라짐',d:'고객 등록에서 현장을 먼저 골라야 담당자·상태를 고를 수 있습니다. 현장마다 상태 세트가 달라 전체 화면의 상태 12종이 섞이는 원인으로 보입니다.',ev:['m06_A06_고객추가'],fix:'공통 단계 + 현장별 태그로 분리',to:'제안 1·2 단계 체계'},
- {id:'N9',scr:'data',sev:2,t:'검색 결과가 숨은 탭 안에서만 나옴 + 잘못된 빈 화면',d:'칩은 「전체 15」인데 목록은 이전에 고른 탭 기준 1명. 0건일 때 「등록된 고객이 없습니다 · 광고 리드가 유입되면…」이 나옵니다. 녹음 대화는 검색되지 않습니다.',ev:['m37_G02_검색_AI요약단어','m35_G01_검색_녹음단어'],fix:'검색은 항상 전체 대상 + 「검색 결과 없음」 전용 빈 화면 + 일치 필드 표시',to:'제안 1 검색'},
- {id:'N10',scr:'data',sev:2,t:'선택된 상태 탭이 화면 밖에 숨고 앱을 다시 열어도 유지',d:'방문 예약 탭이 선택된 채로 칩 줄 밖에 있어, 목록이 걸러져 있다는 사실을 알 수 없습니다.',ev:['m01_A01_목록_전체'],fix:'선택 탭 자동 스크롤 + 목록 위 「방문 예약만 보는 중 ✕」 표시',to:'제안 1 적용 칩'},
- {id:'N11',scr:'data',sev:1,t:'연락처 상태를 남길 곳이 없음',d:'「서비스를 제공할 수 없는 번호」 같은 무효 번호를 메모로 기록합니다.',ev:['m17_D01_목록_관심없음'],fix:'연락처 상태(정상/무효/수신거부) 항목',to:'제안 1 프로필'}
+ {id:'N1',scr:'data',sev:3,t:'같은 통화가 화면마다 다르게 나옴',d:'AI 통화 요약·타임라인에는 통화가 있는데 통화 이력과 목록 카드 「최근통화」는 "없음". 카드의 파란 칩에는 그 통화의 키워드가 동시에 보입니다. 녹음 업로드와 앱 발신 기록이 분리된 구조로 추정.',ev:['m13_C02_상세_재통화_2','m15_C02_상세_재통화_4','m11_C01_목록_재통화'],fix:'통화 데이터 출처 통합, 카드 메타는 통합 통화 기준'},
+ {id:'N2',scr:'data',sev:3,t:'통화 기록이 전화번호로 묶여 다른 현장·담당자 통화까지 노출',d:'11/9 신규 등록 고객 상세에 8월에 다른 현장·다른 담당자가 한 통화 2건(요약·대화 포함)이 함께 보입니다. 권한 범위와 개인정보 관점에서 검토가 필요합니다.',ev:['m21_D02_상세_관심없음_4','m22_D02_상세_관심없음_5'],fix:'현장·담당자 권한 기준으로 노출 범위 정의, 이전 이력은 「다른 현장 이력」으로 구분 표시'},
+ {id:'N3',scr:'data',sev:2,t:'재통화 상태에 「언제」가 없음',d:'다시 걸 날짜·시간을 넣을 곳이 없어 메모(「내일전화드릴께요」)나 AI 키워드(「내일 전화」)에만 남습니다. 일정·알림과 연결되지 않습니다.',ev:['m11_C01_목록_재통화'],fix:'재통화 선택 시 날짜·시간 필수 + 알림'},
+ {id:'N4',scr:'data',sev:2,t:'부재중 시도 횟수·시각이 없음',d:'통화 이력이 비어 있어 몇 번, 언제 걸었는지 알 수 없고 메모에 은어(「밀어버림」)로 남깁니다.',ev:['m07_B01_목록_부재중','m08_B02_상세_부재중_1'],fix:'부재 시도 자동 기록 + 횟수 표시'},
+ {id:'N5',scr:'data',sev:2,t:'통화 결과를 메모로 한 번 더 입력',d:'AI 요약이 자동으로 생기는데도 담당자가 1분 뒤 같은 내용을 메모에 다시 적습니다.',ev:['m12_C02_상세_재통화_1'],fix:'통화 결과 버튼 1회 선택으로 대체'},
+ {id:'N6',scr:'data',sev:2,t:'플랫폼(유입 경로)을 보거나 고칠 곳이 없음',d:'카드의 작은 아이콘과 필터에만 있고, 상세·고객 등록 폼에는 항목이 없습니다.',ev:['m06_A06_고객추가'],fix:'상세·등록 폼에 유입 경로 항목'},
+ {id:'N7',scr:'data',sev:1,t:'리드 ID 형식이 2가지',d:'16자리 숫자와 「unified_」+UUID 형식이 섞여 있고, 둘 다 라벨 없이 노출됩니다.',ev:['m32_F02_상세_상_1'],fix:'「기술 정보」로 접고 출처 표기'},
+ {id:'N8',scr:'data',sev:2,t:'상태 목록이 현장에 따라 달라짐',d:'고객 등록에서 현장을 먼저 골라야 담당자·상태를 고를 수 있습니다. 현장마다 상태 세트가 달라 전체 화면의 상태 12종이 섞이는 원인으로 보입니다.',ev:['m06_A06_고객추가'],fix:'공통 단계 + 현장별 태그로 분리'},
+ {id:'N9',scr:'data',sev:2,t:'검색 결과가 숨은 탭 안에서만 나옴 + 잘못된 빈 화면',d:'칩은 「전체 15」인데 목록은 이전에 고른 탭 기준 1명. 0건일 때 「등록된 고객이 없습니다 · 광고 리드가 유입되면…」이 나옵니다. 녹음 대화는 검색되지 않습니다.',ev:['m37_G02_검색_AI요약단어','m35_G01_검색_녹음단어'],fix:'검색은 항상 전체 대상 + 「검색 결과 없음」 전용 빈 화면 + 일치 필드 표시'},
+ {id:'N10',scr:'data',sev:2,t:'선택된 상태 탭이 화면 밖에 숨고 앱을 다시 열어도 유지',d:'방문 예약 탭이 선택된 채로 칩 줄 밖에 있어, 목록이 걸러져 있다는 사실을 알 수 없습니다.',ev:['m01_A01_목록_전체'],fix:'선택 탭 자동 스크롤 + 목록 위 「방문 예약만 보는 중 ✕」 표시'},
+ {id:'N11',scr:'data',sev:1,t:'연락처 상태를 남길 곳이 없음',d:'「서비스를 제공할 수 없는 번호」 같은 무효 번호를 메모로 기록합니다.',ev:['m17_D01_목록_관심없음'],fix:'연락처 상태(정상/무효/수신거부) 항목'}
 );
 
 /* ---------- dummy customers (가상) ---------- */
@@ -1442,9 +1165,10 @@ function nxNote(){
 
 /* tabs */
 const tabsEl=document.getElementById('tabs');
-function showTab(t){tabsEl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.tab===(t==='easy'?'tobe':t)));document.querySelectorAll('.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+t));try{history.replaceState(null,'','#'+t)}catch(e){}if(t==='as'&&typeof asxLayoutAll==='function')requestAnimationFrame(asxLayoutAll);}
+function showTab(t){tabsEl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));document.querySelectorAll('.tab').forEach(s=>s.classList.toggle('on',s.id==='tab-'+t));try{history.replaceState(null,'','#'+t)}catch(e){}if(t==='as'&&typeof asxLayoutAll==='function')requestAnimationFrame(asxLayoutAll);}
 tabsEl.addEventListener('click',e=>{const b=e.target.closest('button');if(b)showTab(b.dataset.tab);});
-if(['ia','as','plan','tobe','easy','data','list'].includes(location.hash.slice(1)))showTab(location.hash.slice(1));
+if(['ia','as','plan','data','list'].includes(location.hash.slice(1)))showTab(location.hash.slice(1));
+else if(['tobe','easy'].includes(location.hash.slice(1)))showTab('plan');   // 개선 디자인 탭은 삭제됨(D-13) — 예전 주소는 개선 기획으로
 
 /* =========================================================
    ① static tables
@@ -1651,238 +1375,6 @@ function highlight(ph,id,before){
 renderAs();
 
 /* =========================================================
-   ③ TO-BE PROTOTYPE
-   ========================================================= */
-const STG=[{k:'신규',from:['미지정'],n:303,c:'#64748b'},{k:'부재',from:['부재중'],n:2807,c:'#ec4899'},{k:'재통화',from:['재통화'],n:770,c:'#c026d3'},{k:'방문예약',from:['방문 예약'],n:422,c:'#f59e0b'},{k:'가계약',from:['가계약'],n:48,c:'#7c3aed'},{k:'정계약',from:['정계약'],n:15,c:'#10b981'},{k:'종료',from:['관심없음'],n:2742,c:'#9ca3af'}];
-const toStage=c=>{const s=STG.find(s=>s.from.includes(c.st));return s?s.k:'신규';};
-const toTags=c=>(['타현장','아파트먼트'].includes(c.st)?[c.st]:[]);
-const toInt=c=>c.int||({'상':3,'중':2,'하':1}[c.st]||0);
-const stgC=k=>(STG.find(s=>s.k===k)||{c:'#64748b'}).c;
-const pillTo=k=>`<span class="pill" style="background:${stgC(k)}1f;color:${stgC(k)}">${k}</span>`;
-const OWN=['담당자1','담당자2','담당자3','담당자4'];
-const T={scr:'list',stage:'전체',sort:'최근 활동순',f:{camp:[],plat:[],owner:[],int:[],tag:[]},sheet:null,cust:null,loading:false,menu:false,dlg:null,toast:'',q:'',scope:'전체',tlf:'전체',open:{},talk:{},edit:null,rec:'상담·방문',extra:{},stageOv:{}};
-let tToastT;
-function tToast(t){T.toast=t;clearTimeout(tToastT);tToastT=setTimeout(()=>{T.toast='';keepScroll(phTo,()=>phTo.innerHTML=toPhone());},2800);}
-const phTo=document.getElementById('phTo'),pnTo=document.getElementById('pnTo');
-const stageOf=c=>T.stageOv[c.id]||toStage(c);
-function fCount(){const f=T.f;return f.camp.length+f.plat.length+f.owner.length+f.int.length+f.tag.length;}
-function toFiltered(){
-  return CUST.filter(c=>{const f=T.f;
-    if(T.stage!=='전체'&&stageOf(c)!==T.stage)return false;
-    if(f.camp.length&&!f.camp.includes(c.camp))return false;
-    if(f.owner.length&&!f.owner.includes(c.owner))return false;
-    if(f.int.length&&!f.int.includes(['','하','중','상'][toInt(c)]))return false;
-    if(f.tag.length&&!toTags(c).some(t=>f.tag.includes(t)))return false;
-    return true;});
-}
-function nextOf(c){
-  const s=stageOf(c);
-  if(c.mtg.length)return {i:'<svg class="ic"><use href="#i-calendar_month"></use></svg>',t:`${c.mtg[0].m} ${c.mtg[0].d}일 방문`,s:c.mtg[0].time};
-  if(s==='신규')return {i:'<svg class="ic"><use href="#i-call"></use></svg>',t:'첫 통화 하기',s:'리드 등록 후 아직 통화 기록이 없어요'};
-  if(s==='부재')return {i:'<svg class="ic"><use href="#i-call"></use></svg>',t:'재시도 통화',s:'부재 1회 · 오후 시간대 연결률이 높아요'};
-  if(s==='재통화')return {i:'<svg class="ic"><use href="#i-schedule"></use></svg>',t:'재통화 예정',s:'다음 주 화요일 오후'};
-  return {i:'<svg class="ic"><use href="#i-edit"></use></svg>',t:'기록 남기기',s:'최근 활동이 없어요'};
-}
-function toCards(){
-  const arr=toFiltered();
-  if(!arr.length)return '<div class="empty"><b>조건에 맞는 고객이 없어요</b>필터를 해제해 보세요</div>';
-  return arr.map(c=>{const st=stageOf(c),it=toInt(c),nx=nextOf(c),cl=c.calls[0];
-   return `<div class="card" data-t="open" data-v="${c.id}">
-    <div class="r2" style="margin-top:0"><b>${esc(c.name.split(' - ').pop())}</b>${it?`${meter(it)}<span style="font-size:11px;color:#8b919e">${['','하','중','상'][it]}</span>`:''}${pillTo(st)}</div>
-    <div style="color:#5d6371;font-size:12px">${esc(c.camp.replace('_',' '))} · ${esc(c.owner)} · 등록 ${c.date}</div>
-    <div class="cmeta" style="color:#3b3f48"><span>${nx.i} ${esc(nx.t)}</span>${cl?`<span><svg class="ic"><use href="#i-call"></use></svg> ${cl.at.split(' ')[0]} · ${cl.dur}</span>`:''}<span><svg class="ic"><use href="#i-edit_note"></use></svg> ${c.memos.length+(T.extra[c.id]||[]).length}</span></div>
-    ${(c.calls[0]?c.calls[0].kw.slice(0,2):[]).length?`<div class="tags" style="margin:6px 0 0">${c.calls[0].kw.slice(0,2).map(k=>`<span class="tag ai">${ic('wand_stars')}${esc(k)}</span>`).join('')}${toTags(c).map(t=>`<span class="tag g">${t}</span>`).join('')}</div>`:(toTags(c).length?`<div class="tags" style="margin:6px 0 0">${toTags(c).map(t=>`<span class="tag g">${t}</span>`).join('')}</div>`:'')}
-   </div>`;}).join('');
-}
-function toList(){
-  const fc=fCount();const f=T.f;
-  const applied=[...f.camp.map(v=>['camp',v,'현장 '+v]),...f.owner.map(v=>['owner',v,v]),...f.int.map(v=>['int',v,'관심도 '+v]),...f.tag.map(v=>['tag',v,'#'+v])];
-  return `<div class="scr wf"><div class="hd"><div class="t">고객</div><button class="ib" data-t="search"><svg class="ic"><use href="#i-search"></use></svg></button><button class="ib" data-t="toast" data-v="더보기 메뉴"><svg class="ic"><use href="#i-menu"></use></svg></button></div>
-   <div class="fade-r"><div class="chips"><button class="chip ${T.stage==='전체'?'on':''}" data-t="stage" data-v="전체">전체 11,428</button>${STG.map(s=>`<button class="chip ${T.stage===s.k?'on':''}" data-t="stage" data-v="${s.k}"><i class="d" style="background:${s.c}"></i>${s.k} ${s.n.toLocaleString()}</button>`).join('')}</div></div>
-   <div class="row"><button class="btn o" data-t="sheet" data-v="sort"><svg class="ic"><use href="#i-swap_vert"></use></svg> ${T.sort} <svg class="ic"><use href="#i-keyboard_arrow_down"></use></svg></button><span style="flex:1"></span><button class="btn ${fc?'p':'o'}" data-t="sheet" data-v="filter"><svg class="ic"><use href="#i-tune"></use></svg> 필터${fc?` ${fc}`:''}</button></div>
-   ${applied.length?`<div class="applied">${applied.map(([g,v,l])=>`<span data-t="unf" data-g="${g}" data-v="${esc(v)}">${esc(l)} <svg class="ic"><use href="#i-close"></use></svg></span>`).join('')}<span data-t="fclear" style="background:#fff;color:#5d6371;border:1px solid #dfe2e7">모두 해제</span></div>`:''}
-   <div class="list">${toCards()}</div></div>
-   <button class="fab" data-t="toast" data-v="+ 고객 추가 (프로토타입)"><svg class="ic"><use href="#i-add"></use></svg></button>${tabbar('고객')}`;
-}
-function toSortSheet(){
-  return `<div class="dim" data-t="close"></div><div class="sheet ov"><div class="grab"></div><div class="sh"><b>정렬</b></div><div class="sb2">${['최근 활동순','다음 일정 빠른순','등록 최신순','등록 오래된순','관심도 높은순','이름순'].map(s=>`<div class="opt ${T.sort===s?'on':''}" data-t="sort" data-v="${s}">${s}${T.sort===s?'<span style="margin-left:auto"><svg class="ic"><use href="#i-check"></use></svg></span>':''}</div>`).join('')}</div></div>`;
-}
-function toFilterSheet(){
-  const f=T.f;const camps=[...new Set(CUST.map(c=>c.camp))];
-  const cnt=(g,v)=>CUST.filter(c=>g==='camp'?c.camp===v:g==='owner'?c.owner===v:g==='int'?['','하','중','상'][toInt(c)]===v:toTags(c).includes(v)).length;
-  const ch=(g,v,l)=>`<button class="chip o ${f[g].includes(v)?'on':''}" data-t="fchip" data-g="${g}" data-v="${esc(v)}">${l||esc(v)} <span style="color:#8b919e;font-weight:500">${cnt(g,v)}</span></button>`;
-  const n=toFiltered().length;
-  return `<div class="dim" data-t="close"></div><div class="sheet ov" style="max-height:90%"><div class="grab"></div>
-   <div class="sh"><b>필터</b><button class="ib" data-t="close"><svg class="ic"><use href="#i-close"></use></svg></button></div>
-   <div class="sb2">
-    <div class="fsec">담당자 <span>여러 개 선택</span></div><div class="fchips"><button class="chip o" data-t="mine"><svg class="ic"><use href="#i-star"></use></svg> 내 고객</button>${OWN.map(o=>ch('owner',o)).join('')}</div>
-    <div class="fsec">관심도 <span>여러 개 선택</span></div><div class="fchips">${[[3,'상'],[2,'중'],[1,'하']].map(([k,l])=>ch('int',l,meter(k)+' '+l)).join('')}</div>
-    <div class="fsec">현장 <span>여러 개 선택</span></div><div class="srch" style="margin-bottom:6px"><svg class="ic"><use href="#i-search"></use></svg> <input placeholder="현장 이름 검색" disabled></div><div class="fchips">${camps.map(v=>ch('camp',v,esc(v.replace('_',' ')))).join('')}</div>
-    <div class="fsec">태그 <span>여러 개 선택</span></div><div class="fchips">${['타현장','아파트먼트'].map(v=>ch('tag',v,'#'+v)).join('')}</div>
-    <div class="fsec">유입 경로 · 등록일</div><div style="color:#8b919e;font-size:12px">(현행과 동일, 칩에 건수 표시)</div>
-   </div>
-   <div class="sf"><button class="btn o" data-t="fclear">초기화</button><button class="btn p full" data-t="close">${n}명 보기 <span style="opacity:.7;font-weight:500">(가상 데이터 기준)</span></button></div></div>`;
-}
-function toSearch(){
-  const q=T.q;const fields=[['이름',c=>c.name],['전화',c=>c.phone],['현장',c=>c.camp],['메모',c=>c.memos.map(m=>m.t).join(' ')],['통화 내용',c=>c.calls.map(k=>k.talk.map(t=>t[2]).join(' ')+' '+k.sum).join(' ')]];
-  let res='';
-  if(q){const hits=[];CUST.forEach(c=>{fields.forEach(([fn,get])=>{if(T.scope!=='전체'&&T.scope!==fn)return;const txt=get(c);const i=txt.indexOf(q);if(i>=0&&!hits.find(h=>h.c===c))hits.push({c,fn,snip:txt.slice(Math.max(0,i-12),i+q.length+18),i:Math.min(12,i)});});});
-    res=hits.length?`<div style="padding:0 16px 6px;color:#8b919e;font-size:12px">전체 고객에서 ${hits.length}명 · 단계·필터와 무관</div><div class="sres">${hits.map(h=>`<div class="hit" data-t="open" data-v="${h.c.id}"><b>${esc(h.c.name)}</b> ${pillTo(stageOf(h.c))}<br><small>${h.fn} 일치 · </small><small>${esc(h.snip.slice(0,h.i))}<mark>${esc(q)}</mark>${esc(h.snip.slice(h.i+q.length))}</small></div>`).join('')}</div>`:'<div class="empty"><b>결과가 없어요</b>범위를 「전체」로 바꿔 보세요</div>';}
-  else res=`<div class="recent"><div style="color:#8b919e;font-size:12px;border:0">최근 검색</div>${['하남','1501','방문'].map(r=>`<div data-t="qset" data-v="${r}" style="cursor:pointer"><svg class="ic"><use href="#i-history"></use></svg> ${r}<span style="color:#c3c8cf"><svg class="ic"><use href="#i-close"></use></svg></span></div>`).join('')}</div>`;
-  return `<div class="scr wf" style="background:#fff"><div class="row" style="padding-top:8px"><label class="srch focus"><svg class="ic"><use href="#i-search"></use></svg> <input id="toQ" placeholder="이름, 전화, 현장, 메모, 통화 내용" value="${esc(q)}" enterkeyhint="search" inputmode="search" autocomplete="off">${q?'<span data-t="qset" data-v="" style="cursor:pointer"><svg class="ic"><use href="#i-cancel"></use></svg></span>':''}</label><button class="btn" style="background:none" data-t="home">취소</button></div>
-   <div class="chips">${['전체','이름','전화','현장','메모','통화 내용'].map(s=>`<button class="chip o ${T.scope===s?'on':''}" data-t="scope" data-v="${s}">${s}</button>`).join('')}</div>${res}</div>`;
-}
-function tlItems(c){
-  const it=[];const st=stageOf(c);
-  (T.extra[c.id]||[]).forEach(x=>it.push(x));
-  c.mtg.forEach(m=>it.push({ty:'일정',ic:'<svg class="ic"><use href="#i-calendar_month"></use></svg>',at:`${m.m.replace('월','')}/${m.d}`,ti:`방문 일정 · ${m.time}`,by:m.who,bt:'h'}));
-  c.calls.forEach((k,ix)=>it.push({ty:'통화',ic:'<svg class="ic"><use href="#i-call"></use></svg>',at:k.at,ti:`통화 ${k.dur}`,by:'AI 요약',bt:'ai',call:ix}));
-  c.memos.forEach(m=>{let ty='메모',ic='<svg class="ic"><use href="#i-edit"></use></svg>',ti=m.t.slice(0,30)+(m.t.length>30?'…':''),body=null,bt=m.by==='회사계정'?'sys':'h',by=m.by==='회사계정'?'자동 등록':m.by;
-    if(m.t.startsWith('◆')){ty='상담·방문';ic='<svg class="ic"><use href="#i-apartment"></use></svg>';const g=k=>{const r=new RegExp(k+'\\s*:\\s*([^:]*?)\\s+(?:[가-힣]+\\s*:|$)');const x=m.t.match(r);return x?x[1].replace(/^-/,'').trim():'';};ti='상담·방문 기록';body=[['방문일자',g('방문일자')],['방문경로',g('방문경로')],['거주지역',g('거주지역')],['희망 타입',g('원하는타입')||'-'],['동호수',g('동호수')||'-']];by='담당자';bt='h';}
-    else if(m.t.startsWith('■입금')){ty='입금';ic='<svg class="ic"><use href="#i-payments"></use></svg>';ti='입금 1,000만 원 · 102-2004';body=[['구분','1차 계약금'],['입금일','9/16'],['다음','2차 2,500만 원 · 9/21']];by='담당자';bt='h';}
-    else if(m.t.startsWith('[인스턴트')){ty='시스템';ic='<svg class="ic"><use href="#i-flag"></use></svg>';ti='리드 등록 · 메타 인스턴트 폼';body=[['문의',m.t.split(': ').pop()]];bt='sys';by='시스템';}
-    else if(/통화로|안내됨|응답함/.test(m.t)){return;}
-    it.push({ty,ic,at:m.at.slice(5,16).replace('.','/'),ti,body,by,bt});});
-  if(st==='가계약'&&c.id===2)it.push({ty:'시스템',ic:'<svg class="ic"><use href="#i-swap_horiz"></use></svg>',at:'10/07 11:09',ti:'단계 변경: 방문예약 → 가계약',by:'담당자2',bt:'h'});
-  return it;
-}
-function toDetail(){
-  const c=byId(T.cust),st=stageOf(c),it=toInt(c),L=T.loading;
-  const nx=nextOf(c);const sug=c.calls[0]?c.calls[0].sug:null;
-  const stIdx=STG.findIndex(s=>s.k===st);
-  const tl=tlItems(c).filter(x=>T.tlf==='전체'||x.ty===T.tlf);
-  const contract=(st==='가계약'||st==='정계약')?`<div class="box"><h5>계약 정보 <span class="by-b h" style="margin-left:6px">${st}</span><button class="r" data-t="toast" data-v="계약 정보 수정 (수정 이력이 남습니다)">수정</button></h5>
-    <dl class="kv"><dt>동호수</dt><dd>${c.id===2?'가동 1204호 → 1501호 <span style="color:#a16207;font-size:11px">변경 1회</span>':'나동 903호'}</dd><dt>타입</dt><dd>${c.id===2?'74A':'-'}</dd><dt>계약일</dt><dd>${c.id===2?'2026.10.07 (계약서 날인)':'2026.10.31'}</dd></dl>
-    <div class="pay"><span>1차 계약금 1,000만 원</span><span class="st-ok">입금 완료 · ${c.id===2?'9/16':'10/31'}</span></div>
-    <div class="pay"><span>2차 계약금 ${c.id===2?'2,500만 원':'미정'}</span><span class="st-wait">${c.id===2?'예정 9/21 · 확인 필요':'예정 11/15'}</span></div></div>`:'';
-  const tlHtml=L?'<div class="skel" style="height:56px;margin-bottom:8px"></div><div class="skel" style="height:56px"></div>':(tl.length?`<div class="tl tl2">${tl.map(x=>{let inner='';
-     if(x.call!=null){const k=c.calls[x.call];const key=c.id+'-'+x.call;const op=T.open[key];const tk=T.talk[key];
-       inner=`<div class="card2"><div style="font-size:12.5px">${esc(k.sum)}</div><div class="tags" style="margin:6px 0 0">${k.kw.slice(0,3).map(t=>`<span class="tag ai">${ic('wand_stars')}${esc(t)}</span>`).join('')}</div>
-        ${op?`<div style="margin-top:8px">${k.det.map(([t,s])=>`<div class="tsum"><i>${t}</i>${esc(s)}</div>`).join('')}${tk?k.talk.map(([w,t,s])=>`<div class="who ${w}">${w==='c'?'고객':'담당자'} ${t}</div><div class="bub ${w}">${esc(s)}</div>`).join(''):''}<button class="more" data-t="talk" data-v="${key}">${tk?'대화 접기':`전체 대화 보기 (${k.total}건)`}</button></div>`:''}
-        <button class="more" style="border:0;background:none;margin-top:2px;padding:4px" data-t="callt" data-v="${key}">${op?'요약 접기 <svg class="ic"><use href="#i-keyboard_arrow_up"></use></svg>':'시간대별 요약 · 대화 보기 <svg class="ic"><use href="#i-keyboard_arrow_down"></use></svg>'}</button></div>`;}
-     else if(x.body)inner=`<div class="card2"><dl class="kv" style="grid-template-columns:70px 1fr">${x.body.filter(b=>b[1]).map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></div>`;
-     return `<div class="it" style="--c:${{통화:'#7c3aed',일정:'#f59e0b',입금:'#10b981','상담·방문':'#2563eb',시스템:'#9ca3af',메모:'#64748b'}[x.ty]}"><div class="ti"><span class="ty">${x.ic}</span>${esc(x.ti)}</div><div class="at">${x.at} · ${esc(x.by)}<span class="by-b ${x.bt}">${{h:'사람',ai:'AI',sys:'시스템'}[x.bt]}</span></div>${inner}</div>`;}).join('')}</div>`:'<div class="empty">해당 유형의 기록이 없어요</div>');
-  return `<div class="scr wf" style="background:#f4f5f7"><div class="hd" style="background:#fff"><button class="ib" data-t="home"><svg class="ic"><use href="#i-arrow_back_ios_new"></use></svg></button><div class="t"></div><button class="ib" data-t="menu"><svg class="ic"><use href="#i-more_horiz"></use></svg></button></div>
-   <div class="prof">${L?'<div class="skel" style="height:26px;width:60%"></div><div class="skel" style="height:14px;width:80%;margin-top:8px"></div>':`
-    <div class="nm2">${esc(c.name.split(' - ').pop())} ${pillTo(st)}<button class="btn o" style="margin-left:auto;padding:6px 10px" data-t="edit">수정</button></div>
-    <div class="sub2">${it?`${meter(it,1)} 관심도 ${['','하','중','상'][it]} · `:'관심도 미입력 · '}${esc(c.camp.replace('_',' '))} · ${esc(c.owner)}</div>
-    <div class="sub2">${c.phone}${c.name.includes(' - ')?` · 유입 계정명 ${esc(c.name.split(' - ')[0])}`:''}</div>`}
-    <div class="qa"><button class="p" data-t="toast" data-v="전화 걸기 (프로토타입: 실제 발신 없음)"><span><svg class="ic"><use href="#i-call"></use></svg></span>전화</button><button data-t="toast" data-v="문자 보내기"><span><svg class="ic"><use href="#i-sms"></use></svg></span>문자</button><button data-t="toast" data-v="일정 추가"><span><svg class="ic"><use href="#i-calendar_month"></use></svg></span>일정</button><button data-t="rec"><span><svg class="ic"><use href="#i-edit"></use></svg></span>기록</button></div>
-    <div class="stepper">${STG.slice(0,6).map((s,ix)=>`<button class="${ix<stIdx?'done':ix===stIdx?'cur':''}" data-t="step" data-v="${s.k}"><i></i>${s.k}</button>`).join('')}</div>
-   </div>
-   <div class="box next" style="margin-top:10px"><h5>다음 할 일</h5>
-    ${L?'<div class="skel" style="height:40px"></div>':`<div class="nx"><span class="ico">${nx.i}</span><p><b>${esc(nx.t)}</b>${esc(nx.s)}</p></div>${sug?`<div class="nx"><span class="ico" style="color:#a16207"><svg class="ic"><use href="#i-lightbulb"></use></svg></span><p><b>AI 제안</b>${esc(sug)}</p></div>`:''}`}</div>
-   ${L?'':contract}
-   <div class="box"><h5>기록 <button class="r" data-t="rec">+ 기록 추가</button></h5>
-    <div class="chips" style="padding:0 0 8px">${['전체','통화','상담·방문','입금','일정','메모','시스템'].map(f=>`<button class="chip o ${T.tlf===f?'on':''}" data-t="tlf" data-v="${f}">${f}</button>`).join('')}</div>${tlHtml}</div>
-   <div class="box"><h5 style="margin:0;color:#8b919e;font-size:12.5px;font-weight:600">기술 정보 · 리드 ID ${c.lead}</h5></div>
-   <div style="height:30px"></div></div>`;
-}
-function toEditSheet(){
-  const c=byId(T.cust);const it=toInt(c);
-  return `<div class="dim" data-t="close"></div><div class="sheet ov" style="max-height:90%"><div class="grab"></div><div class="sh"><b>고객 정보 수정</b></div>
-   <div class="sb2"><div class="fieldset">
-    <div class="fld"><label>이름</label><input value="${esc(c.name.split(' - ').pop())}"></div>
-    <div class="fld"><label>유입 계정명 (별칭)</label><input value="${esc(c.name.includes(' - ')?c.name.split(' - ')[0]:'')}" placeholder="예: 메타 계정 이름"></div>
-    <div class="grid2"><div class="fld"><label>연락처</label><input value="${c.phone}"></div><div class="fld"><label>나이</label><input></div>
-    <div class="fld"><label>성별</label><select><option>${c.gender||'선택'}</option><option>남</option><option>여</option></select></div><div class="fld"><label>관심도</label><select><option>${it?['','하','중','상'][it]:'선택'}</option><option>상</option><option>중</option><option>하</option></select></div>
-    <div class="fld"><label>거주지역</label><input placeholder="예: 하남"></div><div class="fld"><label>희망 타입</label><input placeholder="예: 74A"></div>
-    <div class="fld"><label>담당자</label><select>${OWN.map(o=>`<option ${o===c.owner?'selected':''}>${o}</option>`).join('')}</select></div><div class="fld"><label>현장</label><select><option>${esc(c.camp.replace('_',' '))}</option></select></div></div>
-    <div class="fld"><label>태그</label><input placeholder="#타현장 #아파트먼트"></div>
-    <div style="color:#8b919e;font-size:12px">등록일 ${c.reg} · 리드 ID는 수정할 수 없어요</div>
-   </div></div><div class="sf"><button class="btn o full" data-t="close">취소</button><button class="btn p full" data-t="save">저장</button></div></div>`;
-}
-function toRecSheet(){
-  const forms={
-   '상담·방문':[['방문일시','2026-11-15 12:00'],['방문경로','선택: 계약자 / 비서방 / 광고 / 지인'],['방문인원','1'],['거주지역','하남'],['희망 타입','74A'],['관심 동호수','1501'],['상담 내용','고층 희망, 실거주 검토…']],
-   '입금':[['호실','가동 1204호'],['입금 구분','선택: 1차 계약금 / 2차 계약금 / 중도금'],['입금액','10,000,000'],['입금자','계약자와 동일'],['입금일','2026-09-16'],['비고','']],
-   '메모':[['내용','자유롭게 적어 주세요']]
-  };
-  return `<div class="dim" data-t="close"></div><div class="sheet ov" style="max-height:90%"><div class="grab"></div><div class="sh"><b>기록 추가</b></div>
-   <div class="sb2"><div class="seg" style="margin-bottom:10px;display:flex">${Object.keys(forms).map(k=>`<button class="${T.rec===k?'on':''}" style="flex:1" data-t="rectype" data-v="${k}">${k}</button>`).join('')}</div>
-    <div class="fieldset">${forms[T.rec].map(([l,p])=>`<div class="fld"><label>${l}</label><input placeholder="${esc(p)}"></div>`).join('')}</div>
-    ${T.rec==='입금'?'<div class="note" style="margin-top:10px">입금 기록은 수정 이력이 남고, 삭제는 관리자만 할 수 있어요.</div>':''}
-    ${T.rec!=='메모'?'<div style="color:#8b919e;font-size:12px;margin-top:8px">고객명·연락처·담당자는 자동으로 들어갑니다.</div>':''}
-   </div><div class="sf"><button class="btn o full" data-t="close">취소</button><button class="btn p full" data-t="recsave">저장</button></div></div>`;
-}
-function toMenu(){return `<div class="dim" data-t="close" style="background:transparent"></div><div class="menu"><button data-t="toast" data-v="내페이지 공유 링크를 복사했어요">내페이지 공유</button><button data-t="toast" data-v="내페이지 활동: 아직 없음">내페이지 활동 보기</button><button data-t="dlg" data-v="del">고객 삭제</button></div>`;}
-function toDlg(){
-  if(T.dlg==='del')return `<div class="dim" data-t="close"></div><div class="dlg"><b>고객을 삭제할까요?</b><p>메모·통화·입금 기록이 함께 사라지고 되돌릴 수 없어요.</p><div class="rowb"><button class="btn o" data-t="close">취소</button><button class="btn" style="background:var(--red);color:#fff" data-t="close" data-x="삭제되지 않음 (프로토타입)">삭제</button></div></div>`;
-  if(T.dlg&&T.dlg.startsWith('stage:')){const s=T.dlg.slice(6);return `<div class="dim" data-t="close"></div><div class="dlg"><b>단계를 「${s}」(으)로 바꿀까요?</b><p>변경 내역이 기록에 남아요.</p><div class="rowb"><button class="btn o" data-t="close">취소</button><button class="btn p" data-t="stageok" data-v="${s}">변경</button></div></div>`;}
-  return '';
-}
-function toPhone(){
-  let h=statusbar();
-  if(T.scr==='detail'){h+=toDetail();if(T.menu)h+=toMenu();if(T.sheet==='edit')h+=toEditSheet();if(T.sheet==='rec')h+=toRecSheet();h+=toDlg();}
-  else if(T.scr==='search')h+=toSearch();
-  else{h+=toList();if(T.sheet==='sort')h+=toSortSheet();if(T.sheet==='filter')h+=toFilterSheet();}
-  return h+toastHtml(T.toast);
-}
-const CHG={
- list:[['단계 탭 8개 (상태 12종 → 단계 7 + 전체)','S2 L2 L3'],['정렬을 목록 툴바로 분리','F1'],['필터 버튼에 적용 개수, 목록 위 해제 가능한 칩','L5'],['카드 메타가 실제 다음 일정·최근 통화·기록 수를 표시','L1'],['AI 키워드는 ✦ 표시 + 최대 2개, 태그는 회색','L4 S3'],['카드에서 전화 버튼 제거 → 상세의 주 버튼','L6'],['관심도는 점 미터 + 텍스트','S5 D11']],
- filter:[['담당자 실제 목록 + 내 고객','F3'],['칩마다 건수, 「여러 개 선택」 표기, 「n명 보기」','F4'],['용어를 「현장」으로 통일, 현장 검색','F5'],['관심도·태그 섹션 신설 (상태에서 분리)','F2 S2'],['시트가 탭바 위로 올라옴','S1 F6']],
- sort:[['기준과 방향을 한 목록에서 선택','F1']],
- search:[['전체 화면 검색 + 취소 + 지우기 + 최근 검색','Q1'],['범위 칩 (이름·전화·현장·메모·통화 내용)','Q2'],['항상 전체 고객 대상, 결과 상단에 범위 표시','Q3'],['일치 필드 라벨 + 하이라이트','Q2'],['enterkeyhint="search" (실행 키 「검색」)','Q4']],
- detail:[['보기 모드 기본 · [수정] → 저장/취소 + 실행 취소','D1'],['빠른 액션: 전화(주) · 문자 · 일정 · 기록','D9 L6'],['단계 스테퍼 (바꿀 때 확인)','S2 D18'],['「다음 할 일」 카드에 일정 + AI 제안','D6 D8 D17'],['계약 정보 섹션 (가계약·정계약만)','D5 D6 D16'],['통합 기록 타임라인 + 유형 필터 + 작성자 배지','D4 D7 D12 D13'],['메모 양식 → 구조화된 기록 카드','D5'],['로딩 스켈레톤','D3'],['삭제·공유는 ⋯ 메뉴 + 확인','D2 D9 D10'],['리드 ID는 맨 아래 「기술 정보」','D11']],
- edit:[['저장/취소가 분명한 수정 시트','D1'],['이름과 유입 계정명 분리','D14'],['거주지역·희망 타입 필드 추가 (메모 양식에서 승격)','D5'],['등록일·리드 ID는 읽기 전용','D11']],
- rec:[['기록 유형 선택: 상담·방문 / 입금 / 메모','D5'],['양식 필드로 입력, 고객명·담당자 자동','D5'],['입금 기록은 수정 이력, 삭제 권한 제한','D16'],['저장하면 단계 변경 제안','D18']]
-};
-function toPanel(){
-  const key=T.scr==='detail'?(T.sheet==='edit'?'edit':T.sheet==='rec'?'rec':'detail'):T.scr==='search'?'search':(T.sheet||'list');
-  const meta={list:['고객 목록 (제안)','단계 탭 · 정렬 · 필터 · 적용 칩 · 정확한 카드 메타'],filter:['필터 (제안)','정렬을 빼고 담당자·관심도·현장·태그 중심으로 재구성'],sort:['정렬 (제안)','목록 툴바에서 바로 바꾸는 정렬'],search:['검색 (제안)','전용 화면 · 범위 칩 · 일치 필드 표시'],detail:['고객 상세 (제안)','보기 모드 · 빠른 액션 · 다음 할 일 · 계약 정보 · 통합 기록'],edit:['고객 정보 수정 (제안)','편집은 시트에서만, 저장/취소가 명확'],rec:['기록 추가 (제안)','메모 양식을 입력 양식으로 바꿈']}[key];
-  const hints={list:['단계 탭 → 목록이 바뀝니다','필터 → 칩 선택 → 「n명 보기」 → 적용 칩 확인','정렬 드롭다운','검색 → 검색 화면','카드 → 상세'],filter:['칩 옆 숫자가 건수입니다','「n명 보기」로 적용'],sort:['기준을 고르면 툴바에 반영'],search:['「하남」을 입력하면 통화 내용에서 찾습니다','범위 칩을 바꿔 보세요','최근 검색어를 눌러 보세요'],detail:['「수정」 → 수정 시트','단계 스테퍼 → 확인 대화상자','「+ 기록 추가」 → 상담·방문 / 입금 / 메모 양식','기록 필터 칩 · 통화 요약 펼치기','⋯ → 공유 / 삭제(확인)'],edit:['저장하면 실행 취소 토스트가 뜹니다'],rec:['유형을 바꿔 보세요','저장하면 기록에 추가됩니다']}[key];
-  return `<h3>${meta[0]}</h3><p class="desc">${meta[1]}</p>
-   <div class="tools">${T.scr==='detail'?`<div class="seg">${[[1,'신규'],[2,'가계약'],[3,'정계약'],[4,'방문예약']].map(([id,l])=>`<button data-pt="cust" data-v="${id}" class="${T.cust===id?'on':''}">${l}</button>`).join('')}</div>`:''}${T.scr!=='list'||T.sheet?'<button class="btn o" data-pt="home">목록으로</button>':''}<button class="btn o" data-pt="as">같은 화면 AS-IS 보기</button></div>
-   <h4>바뀐 점</h4><ul class="iss">${(CHG[key]||[]).map(([t,ids])=>`<li class="chg"><div class="h"><span class="idb g">✓</span>${esc(t)}</div><div class="fx" style="color:var(--sub)">해결: ${ids.split(' ').map(i=>`<span class="idb" style="font-size:10px">${i}</span>`).join('')}</div></li>`).join('')}</ul>
-   <h4>조작해 보기</h4><ul class="hint">${hints.map(h=>`<li>${h}</li>`).join('')}</ul>`;
-}
-function renderTo(keep){
-  const run=()=>{phTo.innerHTML=toPhone();};keep?keepScroll(phTo,run):run();pnTo.innerHTML=toPanel();
-  if(T.scr==='search'){const q=document.getElementById('toQ');if(q&&document.activeElement!==q){q.focus();q.setSelectionRange(q.value.length,q.value.length);}}
-}
-function toOpen(id){T.scr='detail';T.cust=id;T.sheet=null;T.menu=false;T.dlg=null;T.tlf='전체';T.loading=true;renderTo();setTimeout(()=>{if(T.cust===id){T.loading=false;renderTo(true);}},700);}
-phTo.addEventListener('click',e=>{
-  const el=e.target.closest('[data-t]');if(!el)return;const a=el.dataset.t,v=el.dataset.v;
-  switch(a){
-   case 'stage':T.stage=v;break;
-   case 'sheet':T.sheet=v;break;
-   case 'close':T.sheet=null;T.menu=false;T.dlg=null;if(el.dataset.x)tToast(el.dataset.x);renderTo(true);return;
-   case 'sort':T.sort=v;T.sheet=null;break;
-   case 'fchip':{const arr=T.f[el.dataset.g];const i=arr.indexOf(v);i>=0?arr.splice(i,1):arr.push(v);renderTo(true);return;}
-   case 'mine':T.f.owner=['담당자1'];renderTo(true);return;
-   case 'unf':{const arr=T.f[el.dataset.g];arr.splice(arr.indexOf(v),1);break;}
-   case 'fclear':T.f={camp:[],plat:[],owner:[],int:[],tag:[]};renderTo(true);return;
-   case 'search':T.scr='search';T.sheet=null;break;
-   case 'scope':T.scope=v;break;
-   case 'qset':T.q=v;break;
-   case 'home':T.scr='list';T.cust=null;T.sheet=null;T.menu=false;T.dlg=null;break;
-   case 'open':toOpen(+v);return;
-   case 'menu':T.menu=true;renderTo(true);return;
-   case 'dlg':T.menu=false;T.dlg=v;renderTo(true);return;
-   case 'edit':T.sheet='edit';renderTo(true);return;
-   case 'save':T.sheet=null;tToast('저장했어요 <u data-t="toast" data-v="되돌렸어요">실행 취소</u>');renderTo(true);return;
-   case 'rec':T.sheet='rec';renderTo(true);return;
-   case 'rectype':T.rec=v;renderTo(true);return;
-   case 'recsave':{const c=T.cust;(T.extra[c]=T.extra[c]||[]).unshift({ty:T.rec==='입금'?'입금':T.rec,ic:T.rec==='입금'?'<svg class="ic"><use href="#i-payments"></use></svg>':T.rec==='메모'?'<svg class="ic"><use href="#i-edit"></use></svg>':'<svg class="ic"><use href="#i-apartment"></use></svg>',at:'방금',ti:T.rec+' 기록 (새로 추가)',by:'나',bt:'h'});T.sheet=null;T.tlf='전체';
-     const st=stageOf(byId(c));tToast(T.rec==='입금'&&st!=='정계약'?'입금 기록 저장 · 단계를 「정계약」으로 바꿀까요? <u data-t="stageok" data-v="정계약">바꾸기</u>':'기록을 저장했어요');renderTo(true);return;}
-   case 'step':if(v!==stageOf(byId(T.cust))){T.dlg='stage:'+v;renderTo(true);}return;
-   case 'stageok':T.stageOv[T.cust]=v;T.dlg=null;(T.extra[T.cust]=T.extra[T.cust]||[]).unshift({ty:'시스템',ic:'<svg class="ic"><use href="#i-swap_horiz"></use></svg>',at:'방금',ti:'단계 변경: → '+v,by:'나',bt:'h'});tToast('단계를 「'+v+'」(으)로 바꿨어요');renderTo(true);return;
-   case 'tlf':T.tlf=v;renderTo(true);return;
-   case 'callt':T.open[v]=!T.open[v];renderTo(true);return;
-   case 'talk':T.talk[v]=!T.talk[v];renderTo(true);return;
-   case 'toast':tToast(v);renderTo(true);return;
-  }
-  renderTo();
-});
-phTo.addEventListener('input',e=>{if(e.target.id==='toQ'){T.q=e.target.value.trim();const pos=e.target.selectionStart;renderTo();const q=document.getElementById('toQ');q.focus();q.setSelectionRange(pos,pos);}});
-pnTo.addEventListener('click',e=>{const p=e.target.closest('[data-pt]');if(!p)return;const a=p.dataset.pt;
-  if(a==='home'){T.scr='list';T.sheet=null;T.cust=null;T.menu=false;T.dlg=null;renderTo();}
-  else if(a==='cust')toOpen(+p.dataset.v);
-  else if(a==='as'){const map={list:'list',search:'search',detail:'detail'};A.sheet=null;A.scr=map[T.scr]||'list';if(T.sheet==='filter'){A.scr='list';A.sheet='filter';}if(A.scr==='detail')A.cust=T.cust;ASXS.mode='proto';asxApply();showTab('as');window.scrollTo(0,0);if(A.scr==='detail')asOpen(A.cust);else renderAs();}
-});
-renderTo();
-
-/* =========================================================
    ① 정보 구조도 v3 — 메뉴별/전체 보기 + 클릭 시 사이드 패널
    ========================================================= */
 const STLV=['미지정','부재중','방문 예약','가계약','정계약','관심없음','재통화','타현장','상','중','하','아파트먼트'];
@@ -1999,310 +1491,7 @@ iaRender();
 /* 데이터 탭 근거 캡처 */
 document.querySelectorAll('[data-caps]').forEach(el=>{el.innerHTML=thumbs(el.dataset.caps.split('|').map(x=>x.split('::')));});
 
-/* mapping table */
-document.getElementById('mapTable').innerHTML='<tr><th>ID</th><th>심각도</th><th>문제</th><th>제안 1의 해결</th><th>반영 위치</th></tr>'+
-  ISS.slice().sort((a,b)=>b.sev-a.sev).map(i=>`<tr><td><span class="idb">${i.id}</span></td><td><span class="sev s${i.sev}">${SEVL[i.sev]}</span></td><td>${esc(i.t)}</td><td>${esc(i.fix)}</td><td style="color:var(--sub)">${esc(i.to)}</td></tr>`).join('');
 
-/* =========================================================
-   ④ 제안 2 — 쉬운 버전 v2 (할 일 중심 + 정보 보강)
-   ========================================================= */
-const phE2=document.getElementById('phE2'),pnE2=document.getElementById('pnE2');
-const E2ST={'미지정':'새 문의','부재중':'연락 중','재통화':'연락 중','방문 예약':'방문 약속','가계약':'계약 진행','정계약':'계약 완료','관심없음':'보류'};
-const E2C={'새 문의':'#64748b','연락 중':'#db2777','방문 약속':'#d97706','계약 진행':'#7c3aed','계약 완료':'#059669','보류':'#9ca3af'};
-const E2N={'새 문의':ST[0].n,'연락 중':ST[1].n+ST[6].n,'방문 약속':ST[2].n,'계약 진행':ST[3].n,'계약 완료':ST[4].n,'보류':ST[5].n};
-const E2J=[['forum','문의'],['call','통화'],['apartment','방문'],['contract','가계약'],['task_alt','계약']];
-const E2JI={'새 문의':0,'연락 중':1,'방문 약속':2,'계약 진행':3,'계약 완료':4,'보류':1};
-const E2INT={3:'많음',2:'보통',1:'조금',0:'아직 몰라요'};
-const E2REC={
- '방문 상담':[['어디에 사세요?','chips',['하남','미사','서울','기타']],['어떤 타입을 원하세요?','chips',['59','74A','84','아직 몰라요']],['관심은 어느 정도로 보였나요?','chips',['많음','보통','조금']],['기억할 내용이 있나요? (선택)','text','예: 고층 희망, 실거주']],
- '입금':[['어떤 돈이 들어왔나요?','chips',['1차 계약금','2차 계약금','중도금']],['얼마인가요?','chips',['1,000만 원','2,500만 원','직접 입력']],['몇 동 몇 호인가요?','text','예: 가동 1204호']],
- '메모':[['무엇을 남길까요?','text','자유롭게 적어 주세요']]
-};
-const E2COACH=[['task_alt','오늘 할 일을 먼저 보여 드려요','누구에게 먼저 연락할지 고민하지 마세요.<br>위에서부터 하나씩 누르면 돼요.'],['call','버튼 하나로 전화하고','통화가 끝나면 결과만 골라 주세요.<br>단계와 일정은 앱이 알아서 바꿔요.'],['edit_note','기록은 질문에 답하듯','양식을 외울 필요 없어요.<br>질문이 하나씩 나오고, 고르기만 하면 돼요.']];
-const e2Fresh=()=>({view:'today',scr:'home',coach:0,cust:null,sheet:null,sd:{},calling:false,toast:null,q:'',pre:'전체',done:{},ov:{},mtg:{},todo:{},story:{},info:{},storyAll:false,tlf:'전체',open:{},talk:{},rc:null,sk:null,prev:null,base:null,ct:null});
-const E=Object.assign(e2Fresh(),{coach:1});
-const e2S=c=>E.ov[c.id]||E2ST[c.st]||'연락 중';
-const e2N=c=>c.name.split(' - ').pop();
-const e2Mtg=c=>E.mtg[c.id]||(c.mtg[0]?`${c.mtg[0].m} ${c.mtg[0].d}일 ${c.mtg[0].time.split(' - ')[0]}`:'');
-const e2Pill=s=>`<span class="e2-pill" style="background:${E2C[s]}1a;color:${E2C[s]}">${esc(s)}</span>`;
-const e2IntOf=c=>{const i=(E.info[c.id]||{}).int;if(i)return {'많음':3,'보통':2,'조금':1}[i]||0;return toInt(c);};
-const e2Int=c=>{const n=e2IntOf(c);return n?`<span class="e2-int">${meter(n)} 관심 ${E2INT[n]}</span>`:'<span class="e2-int">관심도 미입력</span>';};
-const e2Memo=(c,key)=>{for(const m of c.memos){const x=m.t.match(new RegExp(key+'\\s*:\\s*([^:]*?)\\s+(?:[가-힣]+\\s*:|$)'));if(x&&x[1].replace(/^-/,'').trim())return x[1].replace(/^-/,'').trim();}return '';};
-function e2Facts(c){
-  const inf=E.info[c.id]||{},k=c.calls[0],kw=k?k.kw:c.tags;
-  const budget=(kw||[]).find(t=>/억|만 원/.test(t));
-  const form=c.memos.find(m=>m.t.startsWith('[인스턴트'));
-  return [
-    ['phone','call','연락처',inf.phone||c.phone,0],
-    ['int','star','관심 정도',inf.int||E2INT[toInt(c)],0],
-    ['area','location_on','사는 곳',inf.area||e2Memo(c,'거주지역')||'아직 몰라요',0],
-    ['type','apartment','원하는 타입',inf.type||e2Memo(c,'원하는타입')||'아직 몰라요',0],
-    ['','payments','예산',budget||'아직 몰라요',budget?1:0],
-    ['','flag','유입',form?'광고 문의 · '+form.t.split(': ').pop():'직접 등록',0],
-    ['','history','최근 통화',k?`${k.at} · ${k.dur}`:'없음',0],
-    ['','calendar_month','다음 일정',e2Mtg(c)||'없음',0]
-  ];
-}
-let e2TT;
-function e2Toast(t,undo){E.toast={t,undo:!!undo};clearTimeout(e2TT);e2TT=setTimeout(()=>{E.toast=null;e2Render(true);},3400);}
-function e2Sentence(c){
-  const s=e2S(c);
-  return {'새 문의':'아직 통화 전이에요','연락 중':c.st==='재통화'&&!E.ov[c.id]?'다시 전화하기로 했어요':'연락이 닿기를 기다리는 중이에요','방문 약속':`${e2Mtg(c)} 방문 예정이에요`,'계약 진행':'가계약을 했어요 · 2차 계약금 확인이 필요해요','계약 완료':'계약을 마쳤어요','보류':'지금은 관심이 없대요'}[s];
-}
-function e2Groups(){
-  const g=[];const add=(k,t,em,l)=>{if(l.length)g.push({k,t,em,l});};
-  add('new','새로 들어온 고객','지금 걸면 잘 받아요',CUST.filter(c=>e2S(c)==='새 문의').map(c=>({c,act:'전화',a:'call'})));
-  add('visit','방문 약속','',CUST.filter(c=>e2S(c)==='방문 약속').map(c=>({c,act:'문자',a:'sms'})));
-  add('again','다시 연락할 고객','',CUST.filter(c=>e2S(c)==='연락 중').slice(0,3).map(c=>({c,act:'전화',a:'call'})));
-  add('ct','계약 마무리','',CUST.filter(c=>e2S(c)==='계약 진행').map(c=>({c,act:'기록',a:'rec'})));
-  return g;
-}
-const e2AIco={call:'call',sms:'sms',rec:'edit_note'};
-function e2Ctx(c){
-  const st=(E.story[c.id]||[])[0];
-  if(st)return [st.i,`${st.t}${st.p?' · '+st.p:''}`];
-  if(c.calls[0])return ['wand_stars',`AI 요약 · ${c.calls[0].sum}`];
-  if(c.memos[0])return ['edit_note',c.memos[0].t];
-  return ['info','아직 기록이 없어요'];
-}
-function e2Card(c,a,act){
-  const s=e2S(c),[ci,ct]=e2Ctx(c),kw=(c.calls[0]?c.calls[0].kw:c.tags).slice(0,3),m=e2Mtg(c),dn=E.done[c.id];
-  return `<div class="e2-ccard ${dn?'e2-done':''}" data-e="open" data-v="${c.id}">
-    <div class="e2-hd2"><div class="e2-av">${esc(e2N(c)[0])}</div><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:6px"><span class="e2-cn">${esc(e2N(c))}</span>${e2Pill(s)}</div><div class="e2-meta">${esc(c.camp.replace('_',' '))} · ${esc(c.owner)} · 등록 ${c.date}</div></div></div>
-    <div class="e2-ctx">${ic(ci)}<span>${esc(ct)}</span></div>
-    ${kw.length?`<div class="e2-kw">${kw.map(k=>`<span>${c.calls[0]?ic('wand_stars'):''}${esc(k)}</span>`).join('')}</div>`:''}
-    <div class="e2-foot"><span class="e2-when">${m?ic('calendar_month')+esc(m):''}</span>${e2Int(c)}
-    ${a?(dn?`<span class="e2-donel">${ic('check_circle')}완료</span>`:`<button class="e2-cta" data-e="${a}" data-v="${c.id}">${ic(e2AIco[a])}${act}</button>`):`<button class="e2-cta e2-ghost" data-e="call" data-v="${c.id}" aria-label="전화">${ic('call')}</button>`}</div>
-  </div>`;
-}
-function e2Home(){
-  if(!E.base)E.base=e2Groups().flatMap(g=>g.l.map(x=>x.c.id));
-  const tot=E.base.length,dn=E.base.filter(id=>E.done[id]).length,p=tot?Math.round(dn/tot*100):0;
-  const pipe=`<div class="e2-pipe">${Object.keys(E2N).map(k=>`<button data-e="pipe" data-v="${k}"><small><i class="e2-dot" style="background:${E2C[k]}"></i>${k}</small><b>${E2N[k].toLocaleString()}</b></button>`).join('')}</div>`;
-  let body;
-  if(E.view==='today'){
-    body=pipe+`<div class="e2-prog"><div class="e2-ring" style="--p:${p}"><span>${p}%</span></div><div><b>오늘 할 일 ${tot}개 중 ${dn}개 끝냈어요</b><p>위에서부터 하나씩 누르면 돼요</p></div></div>`+
-      e2Groups().map(g=>`<div class="e2-grp">${g.t}<em>${g.l.length}명${g.em?' · '+g.em:''}</em></div>${g.l.map(x=>e2Card(x.c,x.a,x.act)).join('')}`).join('');
-  }else{
-    body=`<label class="e2-search">${ic('search')}<input id="e2Q" placeholder="이름, 전화번호, 메모로 찾기" value="${esc(E.q)}" autocomplete="off" enterkeyhint="search" inputmode="search"></label>
-      <div class="e2-pre">${['전체','새 문의','연락 중','방문 약속','계약 진행','계약 완료','보류'].map(k=>`<button class="${E.pre===k?'on':''}" data-e="pre" data-v="${k}">${k}<small>${k==='전체'?'11,430':E2N[k].toLocaleString()}</small></button>`).join('')}</div>
-      <div class="e2-sortrow"><span>가상 데이터 ${CUST.length}명 표시</span><span>${ic('swap_vert')}최근 활동순</span></div>
-      <div id="e2List">${e2AllList()}</div>`;
-  }
-  return `<div class="e2-scr"><div class="e2-hello"><small>11월 9일 일요일</small><h2>${E.view==='today'?(tot-dn?`오늘 연락할 고객이 ${tot-dn}명 남았어요`:'오늘 할 일을 다 끝냈어요'):'모든 고객'}</h2></div>
-    <div class="e2-seg"><button class="${E.view==='today'?'on':''}" data-e="view" data-v="today">오늘 할 일</button><button class="${E.view==='all'?'on':''}" data-e="view" data-v="all">모든 고객</button></div>
-    ${body}<div style="height:100px"></div></div>
-    <div class="e2-nav"><div>${ic('home')}홈</div><div class="on">${ic('group')}고객</div><div>${ic('calendar_month')}일정</div><div>${ic('menu')}메뉴</div></div>`;
-}
-function e2AllList(){
-  const q=E.q.replace(/-/g,'');
-  const l=CUST.filter(c=>(E.pre==='전체'||e2S(c)===E.pre)&&(!q||(c.name+c.phone.replace(/-/g,'')+c.memos.map(m=>m.t).join(' ')).includes(q)));
-  if(!l.length)return `<div class="e2-empty">${ic('search','e2-big-ic')}<b>검색 결과가 없어요</b><br><small>이름 일부, 전화번호 뒷자리, 메모 내용으로도 찾을 수 있어요</small></div>`;
-  return l.map(c=>e2Card(c,null,null)).join('');
-}
-function e2Todos(c){
-  const s=e2S(c),sug=c.calls[0]?c.calls[0].sug:null,t=[];
-  if(s==='새 문의'){t.push(['첫 전화 걸기','문의한 지 얼마 안 됐어요. 지금 걸면 받을 확률이 높아요','call']);t.push(['인사 문자 남기기','전화를 못 받았을 때 보내면 좋아요','sms']);}
-  if(s==='연락 중')t.push(['다시 전화하기',c.st==='재통화'&&!E.ov[c.id]?'다음 주 화요일 오후로 약속했어요':'지난번 연결이 안 됐어요','call']);
-  if(s==='방문 약속')t.push(['방문 하루 전 확인 문자',`${e2Mtg(c)} 방문 예정`,'sms']);
-  if(s==='계약 진행'){t.push(['2차 계약금 입금 확인','들어오면 「기록」에서 입금을 남겨 주세요','rec']);t.push(['계약 서류 챙기기','본인서명사실확인서','']);}
-  if(s==='계약 완료')t.push(['감사 문자 보내기','계약 축하 인사를 남겨 보세요','sms']);
-  if(s==='보류')t.push(['한 달 뒤 다시 연락해 보기','12월 9일에 알려 드릴게요','']);
-  if(sug&&s!=='보류')t.push(['AI 추천',sug,'sms']);
-  return t;
-}
-function e2Story(c){
-  const it=[...(E.story[c.id]||[])];
-  if(e2Mtg(c))it.push({i:'calendar_month',ty:'일정',t:'방문 약속',d:e2Mtg(c),p:'',by:c.owner,bt:'h'});
-  c.calls.forEach((k,ix)=>it.push({i:'call',ty:'통화',t:`통화 ${k.dur}`,d:k.at,by:k.who,bt:'ai',call:ix}));
-  c.memos.forEach(m=>{const d=m.at.slice(5,16).replace('.','/');const hum=m.by!=='회사계정';
-    if(m.t.startsWith('◆')){const x=m.t.split('상담내용 :')[1]||'';it.push({i:'forum',ty:'상담',t:'방문 상담',d,p:x.replace(/^\s*-/,'').trim().slice(0,90),by:'담당자',bt:'h'});}
-    else if(m.t.startsWith('■입금'))it.push({i:'payments',ty:'입금',t:'1차 계약금 입금',d,p:'1,000만 원 · 가동 1204호 · 2차 2,500만 원은 9/21 예정',by:'담당자',bt:'h'});
-    else if(m.t.startsWith('[인스턴트'))it.push({i:'flag',ty:'문의',t:'광고를 보고 문의',d,p:'"'+m.t.split(': ').pop()+'"',by:'시스템',bt:'sys'});
-    else if(/통화로|응답함/.test(m.t))return;
-    else it.push({i:'edit_note',ty:'메모',t:'메모',d,p:m.t,by:hum?m.by:'회사 계정',bt:hum?'h':'sys'});});
-  return it;
-}
-function e2CallBody(c,ix){
-  const k=c.calls[ix],key=c.id+'-'+ix,op=E.open[key],tk=E.talk[key];
-  return `<div class="e2-sum"><div class="lab">${ic('wand_stars')}AI 요약</div>${esc(k.sum)}</div>
-    ${op?`<div class="e2-sum sug"><div class="lab">${ic('lightbulb')}AI 제안</div>${esc(k.sug)}</div>
-      <div class="e2-kw">${k.kw.map(t=>`<span>${esc(t)}</span>`).join('')}</div>
-      <div style="margin-top:8px">${k.det.map(([t,s])=>`<div class="tsum"><i>${t}</i>${esc(s)}</div>`).join('')}</div>
-      ${(tk?k.talk:k.talk.slice(0,2)).map(([w,t,s])=>`<div class="e2-who ${w}">${w==='c'?'고객':'담당자'} ${t}</div><div class="e2-bub ${w}">${esc(s)}</div>`).join('')}
-      <button class="e2-link" data-e="talk" data-v="${key}">${tk?'대화 접기':`대화 전체 보기 (${k.total}건)`}${ic(tk?'keyboard_arrow_up':'keyboard_arrow_down')}</button>`:''}
-    <button class="e2-link" data-e="callopen" data-v="${key}">${op?'접기':'AI 제안 · 시간대 요약 · 대화 보기'}${ic(op?'keyboard_arrow_up':'keyboard_arrow_down')}</button>`;
-}
-function e2Detail(){
-  const c=byId(E.cust),s=e2S(c),ji=E2JI[s],hold=s==='보류';
-  const todos=e2Todos(c),all=e2Story(c),st=all.filter(x=>E.tlf==='전체'||x.ty===E.tlf),show=E.storyAll?st:st.slice(0,5);
-  const contract=(s==='계약 진행'||s==='계약 완료')&&(c.id===2||c.id===3)?`<div class="e2-box"><h4>${ic('contract')}계약 정보</h4>
-    <div class="e2-pay"><span>호실</span><b>${c.id===2?'가동 1204호 → 1501호':'나동 903호'}</b></div>
-    <div class="e2-pay"><span>1차 계약금 · ${c.id===2?'1,000만 원':'1,000만 원'}</span><span class="e2-okc">${ic('check_circle')}입금 완료</span></div>
-    <div class="e2-pay"><span>2차 계약금 · ${c.id===2?'2,500만 원':'미정'}</span>${s==='계약 완료'&&c.id===2?`<span class="e2-okc">${ic('check_circle')}입금 완료</span>`:`<span class="e2-waitc">${ic('schedule')}${c.id===2?'9/21 예정':'11/15 예정'}</span>`}</div></div>`:'';
-  return `<div class="e2-scr"><div class="e2-top"><button data-e="home" aria-label="뒤로">${ic('arrow_back_ios_new')}</button><span style="flex:1"></span><button data-e="help" aria-label="도움말">${ic('info')}</button><button data-e="del" aria-label="더보기">${ic('more_horiz')}</button></div>
-   <div class="e2-hero"><div style="display:flex;align-items:center;gap:8px"><div class="e2-name">${esc(e2N(c))}</div>${e2Pill(s)}</div>
-    <div style="color:var(--e-sub);font-size:13.5px">${esc(c.camp.replace('_',' '))} · 담당 ${esc((E.info[c.id]||{}).owner||c.owner)} · 등록 ${c.reg}</div>
-    <div class="e2-now"><small>지금 상태</small><b>${esc(e2Sentence(c))}</b></div>
-    <div class="e2-acts3"><button class="e2-cta e2-big" data-e="call" data-v="${c.id}">${ic('call')}전화하기</button><button class="e2-btn2" data-e="sms" data-v="${c.id}">${ic('sms')}문자</button><button class="e2-btn2" data-e="rec" data-v="${c.id}">${ic('edit_note')}기록</button></div></div>
-   <div class="e2-journey">${E2J.map(([i,l],ix)=>`<div class="${hold?'':ix<ji?'e2-ok':ix===ji?'e2-cur':''}"><i>${ic(!hold&&ix<ji?'check':i)}</i>${l}</div>`).join('')}</div>
-   ${hold?'<div class="e2-tip">지금은 보류 중이에요. 다시 통화하면 단계가 자동으로 이어져요.</div>':''}
-   <div class="e2-box"><h4>${ic('visibility')}한눈에 보기 <small style="color:var(--e-sub);font-weight:500;cursor:default">칸을 누르면 바꿀 수 있어요</small></h4>
-    <div class="e2-grid">${e2Facts(c).map(([k,i,l,v,ai])=>`<div class="e2-kv ${ai?'ai':''}" ${k?`data-e="edit" data-v="${k}"`:''}><small>${ic(i)}${l}</small><b>${esc(v)}</b></div>`).join('')}</div></div>
-   <div class="e2-box"><h4>${ic('task_alt')}지금 할 일</h4>${todos.map((t,ix)=>{const k=c.id+'-'+ix,dn=E.todo[k];return `<div class="e2-todo ${dn?'e2-dn':''}"><span class="e2-ck ${dn?'on':''}" data-e="todo" data-v="${k}">${dn?ic('check'):''}</span><p>${t[0]==='AI 추천'?ic('wand_stars'):''}${esc(t[0])}<small>${esc(t[1])}</small></p>${t[2]&&!dn?`<button class="e2-cta e2-ghost" style="padding:8px 11px;font-size:13px" data-e="${t[2]}" data-v="${c.id}" data-k="${k}">${{call:'걸기',sms:'보내기',rec:'기록'}[t[2]]}</button>`:''}</div>`;}).join('')}</div>
-   ${contract}
-   <div class="e2-box"><h4>${ic('history')}지금까지 이야기 <small data-e="rec" data-v="${c.id}">${ic('add')}기록하기</small></h4>
-    <div class="e2-tlf">${['전체','통화','상담','입금','메모'].map(f=>`<button class="${E.tlf===f?'on':''}" data-e="tlf" data-v="${f}">${f} ${f==='전체'?all.length:all.filter(x=>x.ty===f).length}</button>`).join('')}</div>
-    ${st.length?`<div class="e2-story">${show.map(x=>`<div class="e2-st"><span class="e2-sti">${ic(x.i)}</span><b>${esc(x.t)}</b><small>${esc(x.d)} · ${esc(x.by||'')}${x.bt?`<span class="e2-by ${x.bt}">${{h:'사람',ai:'AI 요약',sys:'자동'}[x.bt]}</span>`:''}</small>${x.call!=null?e2CallBody(c,x.call):(x.p?`<p>${esc(x.p)}</p>`:'')}</div>`).join('')}</div>${st.length>5?`<button class="e2-more" data-e="storyall">${E.storyAll?'접기':`이야기 ${st.length-5}개 더 보기`}</button>`:''}`:'<div class="e2-empty" style="padding:10px">이 유형의 기록이 없어요</div>'}</div>
-   <div style="height:40px"></div></div>`;
-}
-function e2SheetBody(){
-  const c=byId(E.rc||E.cust),S=E.sheet;
-  const opt=(e,v,i,t,s,wide)=>`<button class="e2-opt ${wide?'e2-wide':''}" data-e="${e}" ${v?`data-v="${v}"`:''}><span class="e2-oi">${ic(i)}</span>${wide?`<div>${t}<br><small>${s}</small></div>`:`${t}<small>${s}</small>`}</button>`;
-  if(S==='result'){
-    const r=E.sd.rs;
-    if(!r)return `<h3>${esc(e2N(c))}님과 통화 어땠나요?</h3><p class="e2-q">결과만 골라 주세요. 다음 할 일과 일정은 앱이 정리해요.</p>
-      <div class="e2-opts">${opt('res','noans','phone_disabled','안 받았어요','내일 다시 알려 드려요')}${opt('res','later','replay','다시 걸기로 했어요','언제 걸지 골라요')}${opt('res','visit','apartment','방문 약속을 잡았어요','날짜만 고르면 끝')}${opt('res','no','do_not_disturb_on','관심 없대요','보류로 옮겨 둘게요')}${opt('res','rec','edit_note','상담 내용도 남길래요','질문에 답하듯 하나씩 적어요',1)}</div>
-      <div class="e2-tip">${ic('mic')} 통화 녹음은 AI가 요약해서 '지금까지 이야기'에 자동으로 넣어 드려요.</div>`;
-    const ok=r==='later'?!!E.sd.when:r==='visit'?!!(E.sd.day&&E.sd.time):true;
-    const nav=`<div class="e2-row2"><button class="e2-back" data-e="rsback">이전</button><button class="e2-cta e2-big" data-e="rsdone" ${ok?'':'disabled style="opacity:.4"'}>${r==='visit'?'약속 저장':'완료'}</button></div>`;
-    const chips=(k,arr)=>`<div class="e2-chips">${arr.map(v=>`<button class="${E.sd[k]===v?'on':''}" data-e="sd" data-k="${k}" data-v="${v}">${v}</button>`).join('')}</div>`;
-    if(r==='later')return `<div class="e2-step"><i class="on"></i><i class="on"></i></div><h3>언제 다시 걸까요?</h3><p class="e2-q">그때 알림으로 알려 드릴게요.</p>${chips('when',['오늘 저녁','내일 오전','이번 주 금요일','다음 주'])}${nav}`;
-    if(r==='visit')return `<div class="e2-step"><i class="on"></i><i class="on"></i></div><h3>언제 방문하나요?</h3><p class="e2-q">날짜와 시간을 골라 주세요.</p><b style="font-size:14px">날짜</b>${chips('day',['내일 (월)','모레 (화)','토요일','일요일'])}<b style="font-size:14px">시간</b>${chips('time',['오전 11시','오후 1시','오후 3시','오후 5시'])}${nav}`;
-    if(r==='no')return `<h3>보류로 옮겨 둘게요</h3><p class="e2-q">목록에서는 안 보이지만 「모든 고객 → 보류」에서 언제든 다시 꺼낼 수 있어요. 한 달 뒤에 한 번 알려 드릴까요?</p>${chips('remind',['네, 알려 주세요','괜찮아요'])}${nav}`;
-  }
-  if(S==='sms')return `<h3>어떤 문자를 보낼까요?</h3><p class="e2-q">고르면 내용이 채워져요. 보내기 전에 고칠 수 있어요.</p><div class="e2-opts">${opt('smssend','자료 보내기','description','자료 보내기','브로셔 · 분양가표')}${opt('smssend','오시는 길','location_on','오시는 길','주소 · 주차 안내')}${opt('smssend','방문 확인','schedule','방문 확인','하루 전 확인')}${opt('smssend','직접 쓰기','edit','직접 쓰기','빈 문자')}</div>`;
-  if(S==='rec'){
-    const ty=E.sd.ty;
-    if(!ty)return `<h3>무엇을 기록할까요?</h3><p class="e2-q">고르면 질문이 하나씩 나와요.</p><div class="e2-opts"><button class="e2-opt" data-e="sd" data-k="ty" data-v="방문 상담"><span class="e2-oi">${ic('forum')}</span>방문 상담<small>상담하고 나서</small></button><button class="e2-opt" data-e="sd" data-k="ty" data-v="입금"><span class="e2-oi">${ic('payments')}</span>입금<small>계약금 · 중도금</small></button><button class="e2-opt e2-wide" data-e="sd" data-k="ty" data-v="메모"><span class="e2-oi">${ic('edit_note')}</span><div>메모<br><small>짧게 적기</small></div></button></div>`;
-    const qs=E2REC[ty],i=E.sd.qi||0,q=qs[i],v=E.sd['a'+i];
-    return `<div class="e2-step">${qs.map((_,k)=>`<i class="${k<=i?'on':''}"></i>`).join('')}</div><small style="color:var(--e-sub)">${ty} · ${i+1}/${qs.length}</small><h3 style="margin-top:4px">${q[0]}</h3>
-      ${q[1]==='chips'?`<div class="e2-chips">${q[2].map(o=>`<button class="${v===o?'on':''}" data-e="sd" data-k="a${i}" data-v="${o}">${o}</button>`).join('')}</div>`:`<input class="e2-fld" id="e2In" placeholder="${esc(q[2])}" value="${esc(v||'')}">`}
-      <div class="e2-row2"><button class="e2-back" data-e="qprev">${i?'이전':'처음으로'}</button><button class="e2-cta e2-big" data-e="qnext">${i===qs.length-1?'저장':'다음'}</button></div>`;
-  }
-  if(S==='edit'){
-    const k=E.sd.f,lab={phone:'연락처',int:'관심 정도',area:'사는 곳',type:'원하는 타입',owner:'담당자'}[k];
-    const opts=k==='int'?['많음','보통','조금']:k==='owner'?OWN:null;
-    return `<h3>${lab} 바꾸기</h3><p class="e2-q">한 번에 하나만 바꿔요. 저장하기 전에는 바뀌지 않아요.</p>${opts?`<div class="e2-chips">${opts.map(o=>`<button class="${E.sd.v===o?'on':''}" data-e="sd" data-k="v" data-v="${o}">${o}</button>`).join('')}</div>`:`<input class="e2-fld" id="e2In" value="${esc(E.sd.v||'')}">`}<div class="e2-row2"><button class="e2-back" data-e="close">취소</button><button class="e2-cta e2-big" data-e="editsave">저장</button></div>`;
-  }
-  if(S==='del')return `<h3>더보기</h3><p class="e2-q">자주 쓰지 않는 기능은 여기에 모아 두었어요.</p>
-    <div class="e2-opts">${opt('toast','내페이지 공유 링크를 복사했어요','share','내페이지 공유','고객에게 보낼 링크',1)}${opt('tohold','','do_not_disturb_on','보류로 옮기기','나중에 다시 꺼낼 수 있어요',1)}${opt('delask','','delete','고객 삭제','기록이 모두 사라져요',1)}</div>
-    <div class="e2-row2"><button class="e2-back" data-e="close">닫기</button></div>`;
-  if(S==='delask')return `<h3>${esc(e2N(c))}님을 삭제할까요?</h3><p class="e2-q">통화 · 상담 · 입금 기록이 모두 사라지고 되돌릴 수 없어요. 연락을 그만하려면 삭제 대신 「보류」를 추천해요.</p>
-    <div class="e2-opts">${opt('tohold','','do_not_disturb_on','보류로 옮기기','나중에 다시 꺼낼 수 있어요',1)}<button class="e2-opt e2-wide" data-e="close" data-x="삭제되지 않았어요 (프로토타입)" style="color:#d14343"><span class="e2-oi" style="background:#fdeceb;color:#d14343">${ic('delete')}</span><div>그래도 삭제하기<br><small>되돌릴 수 없어요</small></div></button></div>
-    <div class="e2-row2"><button class="e2-back" data-e="close">취소</button></div>`;
-  return '';
-}
-function e2Phone(){
-  let h=statusbar()+(E.scr==='detail'?e2Detail():e2Home());
-  if(E.sheet)h+=`<div class="e2-dim" data-e="close"></div><div class="e2-sheet"><div class="e2-grab"></div>${e2SheetBody()}</div>`;
-  if(E.calling){const c=byId(E.rc);h+=`<div class="e2-calling"><div class="e2-av">${esc(e2N(c)[0])}</div><b>${esc(e2N(c))}</b><small>통화 중…</small><small style="font-size:12px;opacity:.7">프로토타입 · 실제로 전화가 걸리지 않아요</small><button class="e2-hang" data-e="hang" aria-label="통화 종료">${ic('call_end')}</button></div>`;}
-  if(E.coach){const [i,t,d]=E2COACH[E.coach-1];h+=`<div class="e2-coach"><button class="e2-skip" data-e="coachskip">건너뛰기</button><div class="e2-ill">${ic(i)}</div><h3>${t}</h3><p>${d}</p><div class="e2-dots">${E2COACH.map((_,k)=>`<i class="${k===E.coach-1?'on':''}"></i>`).join('')}</div><button class="e2-cta e2-big" data-e="coachnext">${E.coach===3?'시작하기':'다음'}</button></div>`;}
-  if(E.toast)h+=`<div class="e2-toast">${esc(E.toast.t)}${E.toast.undo?'<u data-e="undo">되돌리기</u>':''}</div>`;
-  return h;
-}
-const E2CHG={
-  coach:[['처음 열면 3장짜리 안내가 나오고, 언제든 건너뛸 수 있어요','']],
-  today:[['맨 위에 단계별 고객 수(새 문의 · 연락 중 · 방문 약속 · 계약)를 항상 표시 — 누르면 해당 고객 목록','S2 L2 L3'],['카드에 현장 · 담당자 · 등록일 · 관심도 · 최근 통화 AI 요약 · 다음 일정 · AI 키워드까지 표시','L1 L4 N1'],['버튼은 카드마다 하나 (전화 · 문자 · 기록)','D9 L6'],['진행률로 오늘 얼마나 했는지 보여요','']],
-  all:[['필터 시트 없이 단계 칩 7개 + 인원 수','F1 F2 F3 F4 F6 L5'],['검색창 하나로 이름 · 전화 뒷자리 · 메모까지','Q1 Q3'],['결과 0건이면 「검색 결과가 없어요」 전용 안내','N9'],['목록 카드도 오늘 할 일과 같은 정보량','L1']],
-  detail:[['「한눈에 보기」 8칸: 연락처 · 관심도 · 사는 곳 · 희망 타입 · 예산(AI) · 유입 · 최근 통화 · 다음 일정','D5 D11 N6'],['가장 큰 버튼은 「전화하기」, 공유 · 삭제는 ⋯ 안으로','D9 D2 D10'],['진행 단계를 그림으로 보여 주고, 직접 바꾸지 않아요','S2 D18'],['AI 추천이 할 일 체크리스트로','D8 D6'],['이야기를 유형별로 거르고, 통화는 AI 요약이 바로 보임','D4 D7 D12 N1'],['작성자 배지: 사람 · AI 요약 · 자동','D13'],['계약 고객에게만 계약 정보 카드 (호실 · 계약금)','D5 D16'],['정보는 보기 전용 → 칸을 누르면 하나씩 수정','D1']],
-  call:[['통화가 끝나면 결과 시트가 자동으로 떠요','']],
-  result:[['결과만 누르면 단계 · 일정 · 알림이 자동으로','D18 S2 N3 N4'],['방문 약속은 날짜 · 시간 칩 두 번이면 끝','D17'],['잘못 눌러도 「되돌리기」','D1']],
-  sms:[['상황별 문자 템플릿','D8 D9']],
-  rec:[['양식 대신 질문 하나씩, 고르기 위주','D5 N5'],['입금을 기록하면 계약 단계로 자동 이동','D16 D18'],['사는 곳 · 타입이 「한눈에 보기」로 들어가요','D5']],
-  edit:[['한 번에 한 항목, 저장 전에는 그대로','D1']],
-  del:[['공유 · 보류 · 삭제를 ⋯ 안에 모음, 삭제보다 보류를 먼저 권함','D2 D9']],
-  delask:[['삭제 전 한 번 더 확인 + 보류 권유','D2']]
-};
-function e2Panel(){
-  const key=E.coach?'coach':E.calling?'call':E.sheet||(E.scr==='detail'?'detail':E.view);
-  const meta={coach:['처음 사용 안내','처음 열었을 때 한 번만 나오는 3장짜리 안내입니다.'],today:['오늘 할 일 (첫 화면)','할 일 중심은 그대로 두고, 판단에 필요한 정보는 카드에 모두 드러나게 했습니다.'],all:['모든 고객','필터 시트 대신 단계 칩과 검색창 하나. 카드 정보량은 오늘 할 일과 같습니다.'],detail:['고객 카드','지금 상태 → 큰 전화 버튼 → 한눈에 보기 → 할 일 → 계약 정보 → 이야기 순서입니다.'],call:['통화 중','실제 앱에서는 전화 앱으로 넘어갔다가, 돌아오면 결과 시트가 뜹니다.'],result:['통화 결과','결과 버튼 하나로 단계 · 일정 · 알림이 정리됩니다.'],sms:['문자 보내기','상황별 문자 템플릿입니다.'],rec:['기록하기','메모에 타이핑하던 ◆상담내용◆ · ■입금보고■ 양식을 질문으로 바꿨습니다.'],edit:['정보 바꾸기','한 번에 한 항목만, 저장 전에는 바뀌지 않습니다.'],del:['더보기','자주 쓰지 않는 기능을 모았습니다.'],delask:['삭제 확인','삭제 대신 보류를 먼저 권합니다.']}[key];
-  return `<h3>${meta[0]}</h3><p class="desc">${meta[1]}</p>
-   <div class="tools"><button class="btn o" data-pe="coach">처음 사용 안내 다시 보기</button><button class="btn o" data-pe="reset">처음 상태로</button>
-    ${E.scr==='detail'?`<div class="seg">${[[1,'새 문의'],[5,'연락 중'],[4,'방문 약속'],[2,'계약 진행'],[3,'계약 완료']].map(([id,l])=>`<button data-pe="cust" data-v="${id}" class="${E.cust===id?'on':''}">${l}</button>`).join('')}</div>`:''}</div>
-   <h4>v1 피드백 반영: 쉬운 흐름은 그대로, 정보는 더 많이</h4>
-   <ul class="iss">${(E2CHG[key]||[]).map(([t,ids])=>`<li class="chg"><div class="h"><span class="idb g">${ic('check')}</span>${esc(t)}</div>${ids?`<div class="fx" style="color:var(--sub)">해결: ${ids.split(' ').map(i=>`<span class="idb" style="font-size:10px">${i}</span>`).join('')}</div>`:''}</li>`).join('')}</ul>
-   <h4>처음 쓰는 사람처럼 따라 해 보기</h4><ol class="hint">
-    <li>안내 3장을 넘기거나 「건너뛰기」</li>
-    <li>맨 위 단계 숫자 → 「방문 약속」을 누르면 해당 고객만 보기</li>
-    <li>「새로 들어온 고객」 카드의 <b>전화</b> → 통화 화면의 빨간 버튼 → <b>방문 약속을 잡았어요</b> → 날짜 · 시간</li>
-    <li>고객 카드를 눌러 「한눈에 보기」 · 「지금 할 일」 확인</li>
-    <li>「계약 마무리」 고객 → 계약 정보 카드 → <b>기록</b> → 입금 → 2차 계약금 → 저장 (계약 완료로 자동 이동)</li>
-    <li>이야기에서 「통화」만 거르고 AI 요약 펼쳐 보기</li></ol>`;
-}
-function e2Render(keep){
-  const s=phE2.querySelector('.e2-scr'),top=s?s.scrollTop:0,sh=phE2.querySelector('.e2-sheet'),stop=sh?sh.scrollTop:0;
-  phE2.innerHTML=e2Phone();
-  if(keep){const n=phE2.querySelector('.e2-scr');if(n)n.scrollTop=top;const n2=phE2.querySelector('.e2-sheet');if(n2)n2.scrollTop=stop;}
-  pnE2.innerHTML=e2Panel();
-}
-function e2SaveIn(key){const inp=document.getElementById('e2In');if(inp)E.sd[key||('a'+(E.sd.qi||0))]=inp.value.trim();}
-function e2Snap(){E.prev=JSON.stringify({ov:E.ov,mtg:E.mtg,done:E.done,story:E.story,info:E.info,todo:E.todo});}
-function e2Push(id,x){(E.story[id]=E.story[id]||[]).unshift(Object.assign({by:'나',bt:'h'},x));}
-function e2Finish(c,msg){E.done[c.id]=true;if(E.sk)E.todo[E.sk]=true;E.sheet=null;E.sd={};e2Toast(msg,true);}
-function e2Apply(){
-  const c=byId(E.rc),r=E.sd.rs;let m='';
-  if(r==='noans'){E.ov[c.id]='연락 중';m='내일 오전에 다시 알려 드릴게요';e2Push(c.id,{i:'phone_disabled',ty:'통화',t:'전화를 안 받았어요',d:'방금',p:'부재 1회 · 내일 오전 재시도 알림'});}
-  if(r==='later'){E.ov[c.id]='연락 중';m=`${E.sd.when}에 다시 알려 드릴게요`;e2Push(c.id,{i:'replay',ty:'통화',t:'다시 걸기로 했어요',d:'방금',p:E.sd.when+' 알림 예약'});}
-  if(r==='visit'){E.ov[c.id]='방문 약속';E.mtg[c.id]=`${E.sd.day} ${E.sd.time}`;m="'방문 약속'으로 옮겼어요 · 하루 전에 알려 드릴게요";e2Push(c.id,{i:'call',ty:'통화',t:'통화 · 방문 약속',d:'방금',p:'AI 요약 준비 중'});}
-  if(r==='no'){E.ov[c.id]='보류';m="'보류'로 옮겼어요"+(E.sd.remind!=='괜찮아요'?' · 한 달 뒤 알려 드릴게요':'');}
-  e2Finish(c,m);
-}
-function e2SaveRec(){
-  const c=byId(E.rc),ty=E.sd.ty,s=e2S(c),inf=(E.info[c.id]=E.info[c.id]||{});let m='기록을 저장했어요';
-  if(ty==='방문 상담'){if(E.sd.a0)inf.area=E.sd.a0;if(E.sd.a1)inf.type=E.sd.a1;if(E.sd.a2)inf.int=E.sd.a2;
-    e2Push(c.id,{i:'forum',ty:'상담',t:'방문 상담',d:'방금',p:[E.sd.a0&&('사는 곳 '+E.sd.a0),E.sd.a1&&('타입 '+E.sd.a1),E.sd.a3].filter(Boolean).join(' · ')});m='저장했어요 · 사는 곳과 타입을 「한눈에 보기」에 넣었어요';}
-  if(ty==='입금'){e2Push(c.id,{i:'payments',ty:'입금',t:`${E.sd.a0||'입금'} 입금`,d:'방금',p:[E.sd.a1,E.sd.a2].filter(Boolean).join(' · ')});
-    if(E.sd.a0==='2차 계약금'&&s==='계약 진행'){E.ov[c.id]='계약 완료';m="입금 기록 · '계약 완료'로 옮겼어요";}
-    else if(['새 문의','연락 중','방문 약속'].includes(s)){E.ov[c.id]='계약 진행';m="입금 기록 · '계약 진행'으로 옮겼어요";}}
-  if(ty==='메모')e2Push(c.id,{i:'edit_note',ty:'메모',t:'메모',d:'방금',p:E.sd.a0||''});
-  e2Finish(c,m);
-}
-phE2.addEventListener('click',e=>{
-  const el=e.target.closest('[data-e]');if(!el)return;const a=el.dataset.e,v=el.dataset.v;
-  switch(a){
-    case 'coachnext':E.coach=E.coach>=3?0:E.coach+1;break;
-    case 'coachskip':E.coach=0;break;
-    case 'view':E.view=v;E.scr='home';break;
-    case 'pre':E.pre=v;break;
-    case 'pipe':E.view='all';E.pre=v;E.scr='home';e2Render();return;
-    case 'open':E.scr='detail';E.cust=+v;E.storyAll=false;E.tlf='전체';e2Render();return;
-    case 'home':E.scr='home';E.cust=null;e2Render();return;
-    case 'call':E.rc=+v;E.sk=el.dataset.k||null;E.sheet=null;E.calling=true;e2Render(true);clearTimeout(E.ct);E.ct=setTimeout(()=>{if(E.calling){E.calling=false;E.sheet='result';E.sd={};e2Render(true);}},2200);return;
-    case 'hang':clearTimeout(E.ct);E.calling=false;E.sheet='result';E.sd={};break;
-    case 'res':if(v==='noans'){e2Snap();E.sd={rs:'noans'};e2Apply();}else if(v==='rec'){E.sheet='rec';E.sd={};}else E.sd={rs:v};break;
-    case 'rsback':E.sd={};break;
-    case 'rsdone':e2Snap();e2Apply();break;
-    case 'sd':E.sd[el.dataset.k]=v;if(el.dataset.k==='ty')E.sd.qi=0;break;
-    case 'sms':E.rc=+v;E.sk=el.dataset.k||null;E.sheet='sms';E.sd={};break;
-    case 'smssend':{e2Snap();const c=byId(E.rc);e2Push(c.id,{i:'sms',ty:'메모',t:`문자 · ${v}`,d:'방금',p:''});e2Finish(c,`'${v}' 문자를 보냈어요 (프로토타입)`);break;}
-    case 'rec':E.rc=+v;E.sk=el.dataset.k||null;E.sheet='rec';E.sd={};break;
-    case 'qprev':{e2SaveIn();const i=E.sd.qi||0;if(i)E.sd.qi=i-1;else E.sd={};break;}
-    case 'qnext':{e2SaveIn();const qs=E2REC[E.sd.ty],i=E.sd.qi||0;if(i<qs.length-1)E.sd.qi=i+1;else{e2Snap();e2SaveRec();}break;}
-    case 'todo':E.todo[v]=!E.todo[v];break;
-    case 'storyall':E.storyAll=!E.storyAll;break;
-    case 'tlf':E.tlf=v;E.storyAll=false;break;
-    case 'callopen':E.open[v]=!E.open[v];break;
-    case 'talk':E.talk[v]=!E.talk[v];break;
-    case 'edit':{const c=byId(E.cust),inf=E.info[c.id]||{};E.rc=c.id;E.sheet='edit';E.sd={f:v,v:inf[v]||(v==='phone'?c.phone:v==='owner'?c.owner:v==='int'?(E2INT[toInt(c)]==='아직 몰라요'?'':E2INT[toInt(c)]):'')};break;}
-    case 'editsave':{e2SaveIn('v');e2Snap();const c=byId(E.rc);(E.info[c.id]=E.info[c.id]||{})[E.sd.f]=E.sd.v;E.sheet=null;E.sd={};e2Toast('저장했어요',true);break;}
-    case 'del':E.rc=E.cust;E.sheet='del';break;
-    case 'delask':E.sheet='delask';break;
-    case 'tohold':e2Snap();E.ov[E.rc]='보류';E.sheet=null;e2Toast("'보류'로 옮겼어요",true);break;
-    case 'close':E.sheet=null;E.sd={};if(el.dataset.x)e2Toast(el.dataset.x);break;
-    case 'undo':if(E.prev){Object.assign(E,JSON.parse(E.prev));E.prev=null;}E.toast=null;break;
-    case 'help':e2Toast('단계는 통화 결과나 입금 기록을 남기면 자동으로 바뀌어요');break;
-    case 'toast':E.sheet=null;e2Toast(v);break;
-  }
-  e2Render(true);
-});
-phE2.addEventListener('input',e=>{if(e.target.id==='e2Q'){E.q=e.target.value.trim();document.getElementById('e2List').innerHTML=e2AllList();}});
-pnE2.addEventListener('click',e=>{const p=e.target.closest('[data-pe]');if(!p)return;const a=p.dataset.pe;
-  if(a==='coach'){E.coach=1;e2Render(true);}
-  else if(a==='reset'){clearTimeout(E.ct);Object.assign(E,e2Fresh());e2Render();}
-  else if(a==='cust'){E.scr='detail';E.cust=+p.dataset.v;E.sheet=null;E.calling=false;E.coach=0;E.storyAll=false;E.tlf='전체';e2Render();}
-});
-e2Render();
 /* =========================================================
    ③ 개선 기획 — 컴포넌트 단위 흑백 와이어프레임 + 의견
    ========================================================= */
@@ -2474,7 +1663,6 @@ document.getElementById('cmBox').addEventListener('click',e=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')critClose();});
 
-document.addEventListener('click',e=>{const d=e.target.closest('[data-dsw]');if(d){showTab(d.dataset.dsw);window.scrollTo(0,0);}});
 /* =========================================================
    ③ 개선 기획 — 화면 기획서 (IA 구조 순서)
    ========================================================= */
