@@ -848,6 +848,22 @@ details.rest table{margin:0 0 6px}
 .asx-narrow .asx-ann{padding-left:0}
 .asx-narrow .asx-row{position:static;margin-bottom:4px}
 .asx-narrow .asx-svg{display:none}
+/* nx- : 캡처 PNG가 없을 때(온라인 배포본) 깨진 이미지 대신 보이는 자리표시 */
+.nx-cap{box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;line-height:1.45;color:var(--mute);background:repeating-linear-gradient(135deg,#f5f6f8 0 10px,#eceef2 10px 20px);border:1px dashed #c9ced8;border-radius:8px;padding:8px;overflow:hidden}
+.nx-cap .ic{width:22px;height:22px;opacity:.65}
+.nx-cap b{font-size:13.5px;color:#4b5563;font-weight:700}
+.nx-cap span{font-size:11.5px}
+.asx-shot .nx-cap{width:100%;aspect-ratio:1260/2736;border:0;border-radius:0}
+.asx-shot .nx-cap.nx-m{aspect-ratio:928/2038}
+.thumbs .nx-cap{width:92px;height:200px}
+.crit .thumbs .nx-cap{width:88px;height:150px}
+.thumbs .nx-cap b{font-size:10.5px}
+.thumbs .nx-cap span{display:none}
+.cm-caps .nx-cap{width:180px;height:390px;border-radius:12px}
+.nx-note{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff8e6;border:1px solid #f1dfa9;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px;line-height:1.5;color:#5b4a14}
+.nx-note .ic{width:18px;height:18px;flex:none}
+.nx-note p{margin:0;flex:1;min-width:220px}
+.nx-note button{flex:none;border:1px solid #d9c27a;background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:12.5px;font-weight:700;color:#5b4a14;cursor:pointer}
 #pnAs.asx-hide-iss .asx-pi{display:none}
 @media(max-width:720px){.asx-bar{position:static}.asx-b{grid-template-columns:1fr}}
 </style>
@@ -1275,6 +1291,29 @@ document.addEventListener('click',e=>{
   if(e.target.closest('#lb'))lb.classList.remove('on');
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on');});
+
+/* 캡처 PNG 누락 대체 — 온라인 배포본에는 실제 캡처(고객 개인정보 포함)를 올리지 않는다.
+   이미지를 못 불러오면 깨진 아이콘 대신 같은 비율의 자리표시를 넣어 배치(연결선·영역 띠)를 유지한다. */
+document.addEventListener('error',e=>{
+  const im=e.target;
+  if(!im||im.tagName!=='IMG'||!/\.png$/i.test(im.getAttribute('src')||''))return;
+  if(im.closest('#lb')){lb.classList.remove('on');return;}
+  const host=im.closest('[data-lb]'),name=host?host.dataset.lb:'';
+  const ph=document.createElement('div');
+  ph.className='nx-cap'+(/^m\d/.test(name)?' nx-m':'');
+  ph.setAttribute('role','img');
+  ph.setAttribute('aria-label',(im.alt||'실제 화면 캡처')+' (온라인 버전 비공개)');
+  ph.innerHTML=ic('info')+'<b>실제 화면 캡처 비공개</b><span>고객 개인정보 보호를 위해<br>온라인 버전에는 넣지 않았습니다</span>';
+  if(host&&host!==im){host.removeAttribute('data-lb');host.style.cursor='default';}
+  im.replaceWith(ph);
+  const card=ph.closest('.asx-card');
+  if(card){nxNote();requestAnimationFrame(()=>asxLayoutCard(card));}
+},true);
+function nxNote(){
+  const root=document.getElementById('asxDoc');
+  if(!root||root.querySelector('.nx-note'))return;
+  root.insertAdjacentHTML('afterbegin','<div class="nx-note">'+ic('info')+'<p>온라인 버전에는 <b>실제 화면 캡처</b>를 넣지 않았습니다(고객 개인정보 포함). 영역 번호와 기능 설명은 그대로이고, 화면 모양은 가상 데이터로 그린 와이어프레임에서 볼 수 있습니다.</p><button type="button" data-asxm="proto">인터랙티브 와이어프레임으로 보기</button></div>');
+}
 
 /* tabs */
 const tabsEl=document.getElementById('tabs');
@@ -2578,8 +2617,8 @@ function asxRender(){
   asxApply();
 }
 function asxLayoutCard(card){
-  const img=card.querySelector('.asx-shot img'),ann=card.querySelector('.asx-ann'),svg=card.querySelector('.asx-svg');
-  const H=img.clientHeight;if(!H)return;
+  const shot=card.querySelector('.asx-shot'),ann=card.querySelector('.asx-ann'),svg=card.querySelector('.asx-svg');
+  const H=shot.clientHeight;if(!H)return;
   const rows=[...ann.querySelectorAll('.asx-row')];
   ann.style.height=H+'px';
   const narrow=ann.clientWidth<260||window.innerWidth<720;
