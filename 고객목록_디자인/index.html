@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>영업비서 · 고객 목록 디자인 시안 v3</title>
+<title>영업비서 · 고객 목록 디자인 시안 v4</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
@@ -417,6 +417,132 @@ body.pg-cards #cards{display:block}
 .ka-m .cl-next{margin:0}
 .ka-m .cl-sub{margin:0}
 .ka-m .cl-next + .cl-sub{margin-top:3px}
+/* 인터뷰 의견 표식과 설명 패널 */
+.fbm{display:inline-grid;place-items:center;flex:none;width:18px;height:18px;margin:0 4px;border-radius:50%;background:#FF5A1F;color:#fff;font-size:11px;font-weight:800;font-style:normal;line-height:1;vertical-align:1px;letter-spacing:0}
+.cl-col.fb{width:340px}
+.cl-col.fb[hidden]{display:none}
+.fb-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.fb-list li{display:flex;gap:10px;background:#fff;border-radius:14px;padding:14px 16px 14px 12px}
+.fb-list .fbm{margin:2px 0 0}
+.fb-list h3{margin:0 0 4px;font-size:15px;font-weight:800;letter-spacing:-.2px}
+.fb-list p{margin:0;font-size:13px;line-height:1.5}
+.fb-q{color:var(--cl-ink3)}
+.fb-q span{font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fb-a{margin-top:6px !important;color:var(--cl-ink);font-weight:600}
+.fb-etc{margin-top:12px;padding:0 4px;font-size:12px;line-height:1.5;color:var(--cl-ink3)}
+.fb-etc b{display:block;color:var(--cl-ink2)}
+@media (max-width:1240px){.cl-left{flex-wrap:wrap;justify-content:center}}
+@media (max-width:900px){.cl-col.fb{display:none}}
+/* v4 고객 상세: 회색 바탕 위 흰 카드, 안쪽 여백 16 · 카드 간격 12 로 통일 */
+.r-det{position:absolute;inset:0;z-index:9;background:var(--cl-bg);display:none;flex-direction:column;padding-top:44px}
+.cl-app.det .r-det{display:flex}
+@media (max-width:860px){.r-det{padding-top:0}}
+.d-top{padding-right:12px}
+.d-top > b{flex:1;font-size:16px;font-weight:700}
+.d-share{height:34px;padding:0 12px;border-radius:17px;background:var(--cl-surface);font-size:13px;font-weight:700;color:var(--cl-ink2)}
+.d-body{flex:1;min-height:0;overflow-y:auto;padding:4px 16px 40px;display:flex;flex-direction:column;gap:12px;scrollbar-width:none}
+.d-card{flex:none;background:var(--cl-surface);border-radius:16px;padding:16px}
+.d-h{display:flex;align-items:center;justify-content:space-between;min-height:28px;margin-bottom:12px}
+.d-h h2{display:flex;align-items:center;margin:0;font-size:16px;font-weight:700;letter-spacing:-.2px}
+.d-h h2 em{margin-left:6px;font-style:normal;font-weight:700;color:var(--cl-ink3)}
+.d-add{display:inline-flex;align-items:center;gap:2px;height:28px;font-size:14px;font-weight:700;color:var(--cl-brand)}
+.d-add .cl-ic{font-size:18px}
+.d-none{margin:0;padding:12px 0;text-align:center;font-size:14px;color:var(--cl-ink3)}
+.d-txt{margin:0;font-size:15px;line-height:1.55;color:var(--cl-ink)}
+/* 기본 정보 */
+.d-1{display:flex;align-items:center;gap:8px}
+.d-1 h1{margin:0;font-size:22px;font-weight:700;letter-spacing:-.4px}
+.d-edit{margin-left:auto;height:32px;padding:0 12px;border-radius:16px;background:var(--cl-bg);font-size:13px;font-weight:700;color:var(--cl-ink2)}
+.d-ph{margin-top:2px;font-size:16px;color:var(--cl-ink2);font-variant-numeric:tabular-nums}
+.d-act{display:flex;gap:8px;margin-top:16px}
+.d-st{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:48px;padding:0 12px 0 14px;border-radius:12px;background:var(--cl-bg);font-size:15px;text-align:left}
+.d-st span{color:var(--cl-ink3);font-size:13px;font-weight:600;margin-right:2px}
+.d-st i{flex:none;width:8px;height:8px;border-radius:50%}
+.d-st b{flex:1;font-weight:700;color:var(--cl-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.d-st .cl-ic{font-size:20px;color:var(--cl-ink3)}
+.d-callbtn{flex:none;display:inline-flex;align-items:center;gap:6px;height:48px;padding:0 18px;border-radius:12px;background:var(--cl-brand);color:#fff;font-size:15px;font-weight:700}
+.d-callbtn .cl-ic{font-size:18px}
+.d-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 0;padding-top:16px;border-top:1px solid var(--cl-line)}
+.d-meta dt{font-size:12px;color:var(--cl-ink3)}
+.d-meta dd{margin:2px 0 0;font-size:14px;font-weight:600;color:var(--cl-ink);font-variant-numeric:tabular-nums}
+/* 다른 현장 문의 */
+.d-dup{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.d-dup li{padding:12px;border-radius:12px;background:#FFF8EA}
+.d-dup li > div{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.d-dup b{font-size:15px;font-weight:700}
+.d-dup time{font-size:13px;font-weight:700;color:#A85D00;font-variant-numeric:tabular-nums;white-space:nowrap}
+.d-dup p{margin:6px 0 0;font-size:14px;line-height:1.5;color:var(--cl-ink)}
+.d-dup small{display:block;margin-top:6px;font-size:12px;color:var(--cl-ink3)}
+.d-more{margin-top:8px;height:44px;width:100%;border-radius:12px;background:var(--cl-bg);font-size:14px;font-weight:700;color:var(--cl-ink2)}
+/* 통화 이력 */
+.d-calls{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.d-call{border:1px solid var(--cl-line);border-radius:12px}
+.d-call-h{display:flex;align-items:center;gap:10px;width:100%;padding:12px;text-align:left}
+.d-call-h > .cl-ic{font-size:22px;color:var(--cl-ink3)}
+.d-call-ic{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--cl-brand-soft);color:var(--cl-brand);font-size:16px}
+.d-call.miss .d-call-ic{background:var(--cl-bg);color:var(--cl-ink3)}
+.d-call-t{flex:1;min-width:0}
+.d-call-t b{display:block;font-size:15px;font-weight:700;color:var(--cl-ink)}
+.d-call-t small{display:block;margin-top:1px;font-size:13px;color:var(--cl-ink3)}
+.d-call-b{padding:0 12px 12px;display:flex;flex-direction:column;gap:8px}
+.d-ai{padding:12px;border-radius:10px;background:var(--cl-brand-soft)}
+.d-ai h3{display:flex;align-items:center;gap:4px;margin:0 0 4px;font-size:13px;font-weight:700;color:var(--cl-brand)}
+.d-ai h3 .cl-ic{font-size:15px}
+.d-ai p{margin:0;font-size:14px;line-height:1.55;color:var(--cl-ink)}
+.d-ai.sug{background:#FFF8EA}
+.d-ai.sug h3{color:#A85D00}
+.d-kw{margin:0}
+.d-call-f{display:flex;gap:8px}
+.d-call-f button{flex:1;height:40px;border-radius:10px;background:var(--cl-bg);font-size:13px;font-weight:700;color:var(--cl-ink2)}
+/* 메모 */
+.d-memos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.d-memos li{padding:12px;border-radius:12px;background:var(--cl-bg)}
+.d-memos p{margin:0;font-size:15px;line-height:1.55;color:var(--cl-ink);white-space:pre-wrap}
+.d-memos li > div{display:flex;align-items:center;gap:2px;margin-top:6px}
+.d-memos span{flex:1;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.d-memos button{display:grid;place-items:center;width:32px;height:32px;margin:-4px 0;border-radius:50%;font-size:18px;color:var(--cl-ink3)}
+.d-comp{margin-bottom:12px;padding:12px;border-radius:12px;background:var(--cl-bg)}
+.d-comp textarea{display:block;width:100%;border:0;background:none;resize:none;font:inherit;font-size:15px;line-height:1.55;color:var(--cl-ink);outline:0}
+.d-comp-g{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.d-comp-g button{height:30px;padding:0 10px;border-radius:15px;background:var(--cl-surface);font-size:13px;font-weight:600;color:var(--cl-ink2)}
+.d-comp-f{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.d-comp-f button{height:36px;padding:0 16px;border-radius:10px;font-size:14px;font-weight:700;color:var(--cl-ink2)}
+.d-comp-f .pri{background:var(--cl-ink);color:#fff}
+.d-memos + .d-none,.d-comp + .d-none{display:none}
+/* 미팅 예약 */
+.d-meet{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;background:var(--cl-bg);font-size:15px;font-weight:600;color:var(--cl-ink)}
+.d-meet .cl-ic{font-size:18px;color:var(--cl-ink3)}
+/* 활동 타임라인: 날짜 머리말 아래 시각 · 점 · 내용 */
+.d-tl{list-style:none;margin:0;padding:0}
+.d-tl .d-day{padding:12px 0 4px;font-size:12px;font-weight:700;color:var(--cl-ink3)}
+.d-tl .d-day:first-child{padding-top:0}
+.d-tl li:not(.d-day){position:relative;display:flex;gap:10px;padding:6px 0}
+.d-tl time{flex:none;width:38px;padding-top:1px;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.d-tl i{flex:none;width:8px;height:8px;margin-top:6px;border-radius:50%;background:var(--cl-ink3)}
+.d-tl li:not(.d-day)::before{content:'';position:absolute;left:51.5px;top:22px;bottom:-10px;width:1px;background:var(--cl-line)}
+.d-tl li:last-child::before,.d-tl li:has(+ .d-day)::before{display:none}
+.d-tl .call i{background:var(--cl-brand)}.d-tl .memo i{background:#F08C00}.d-tl .st i{background:#7C4DFF}.d-tl .plan i{background:none;box-shadow:inset 0 0 0 2px var(--cl-brand)}
+.d-tl div{flex:1;min-width:0}
+.d-tl b{font-size:14px;font-weight:700;color:var(--cl-ink)}
+.d-tl p{margin:1px 0 0;font-size:14px;line-height:1.5;color:var(--cl-ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.kv-dup em{font-style:normal;color:#A85D00;font-weight:700;font-variant-numeric:tabular-nums}
+.fb-list .fb-sep{background:none;padding:10px 4px 0;font-size:13px;font-weight:800;color:var(--cl-ink2)}
+.e-form label,.e-f{display:block;margin-bottom:16px}
+.e-form label > span,.e-f > span{display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:var(--cl-ink3)}
+.e-form input{width:100%;height:50px;padding:0 14px;border:0;border-radius:12px;background:var(--cl-bg);font:inherit;font-size:16px;color:var(--cl-ink)}
+.e-form input:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
+.e-pick{display:flex;flex-wrap:wrap;gap:8px}
+.e-pick button{height:40px;padding:0 16px;border-radius:20px;background:var(--cl-bg);font-size:15px;font-weight:600;color:var(--cl-ink2)}
+.e-pick button.on{background:var(--cl-ink);color:#fff}
+.e-note{margin:0;font-size:13px;color:var(--cl-ink3)}
+/* v4 카드: 인터뷰 반영 */
+.kv-2{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.kv-ph{font-size:14px;color:var(--cl-ink2)}
+.kv-dup{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--cl-ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kv-dup b{flex:none;height:20px;line-height:20px;padding:0 7px;border-radius:6px;background:#FFF3DC;color:#A85D00;font-weight:700}
+.kv-3{display:flex;align-items:center;gap:10px;margin-top:8px;min-height:36px}
+.kv-3 .cl-sub{flex:1;min-width:0}
+.c2-call.kv-call{width:36px;height:36px;font-size:18px;background:var(--cl-bg);color:var(--cl-ink2)}
 /* B 현행 정보 유지 */
 .kb{background:var(--cl-surface);border-radius:16px;padding:14px 16px 12px}
 .kb-top{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--cl-ink3);white-space:nowrap}
@@ -520,26 +646,24 @@ body.pg-spec .sp-page{display:block}
 </style>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-add" viewBox="0 -960 960 960"><path d="M450-450H230q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h220v-220q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v220h220q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H510v220q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-220Z"/></symbol><symbol id="i-calendar_month" viewBox="0 -960 960 960"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-check" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></symbol><symbol id="i-swap_vert" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></symbol><symbol id="i-close" viewBox="0 -960 960 960"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M349-250h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5Zm0-170h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.44 0 23.72 5T599-862l183 183q8 8 13 19.28 5 11.28 5 23.72v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.37-8.63Q551-651.25 551-664ZM220-820v186-186 680-680Z"/></symbol><symbol id="i-edit_note" viewBox="0 -960 960 960"><path d="M190-410q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h240q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm330 550v-81q0-5.57 2-10.78 2-5.22 7-10.22l211.61-210.77q9.11-9.12 20.25-13.18Q772-520 783-520q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5t-13.58 20.62L652-169q-5 5-10.22 7-5.21 2-10.78 2h-81q-12.75 0-21.37-8.63Q520-177.25 520-190Zm300-233-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></symbol><symbol id="i-keyboard_arrow_down" viewBox="0 -960 960 960"><path d="M469-358q-5-2-10-7L261-563q-9-9-8.5-21.5T262-606q9-9 21.5-9t21.5 9l175 176 176-176q9-9 21-8.5t21 9.5q9 9 9 21.5t-9 21.5L501-365q-5 5-10 7t-11 2q-6 0-11-2Z"/></symbol><symbol id="i-keyboard_arrow_up" viewBox="0 -960 960 960"><path d="M480-554 304-378q-9 9-21 8.5t-21-9.5q-9-9-9-21.5t9-21.5l197-197q9-9 21-9t21 9l198 198q9 9 9 21t-9 21q-9 9-21.5 9t-21.5-9L480-554Z"/></symbol><symbol id="i-home" viewBox="0 -960 960 960"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></symbol><symbol id="i-group" viewBox="0 -960 960 960"><path d="M38-254q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v34q0 25-17.5 42.5T618-160H98q-25 0-42.5-17.5T38-220v-34Zm824 94H724q5-15 9.5-29.5T738-220v-34q0-63-29-101.5T622-420q69 8 130 22t99 34q33 19 52 47t19 63v34q0 25-17.5 42.5T862-160ZM250-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42Zm426 0q-42 42-108 42-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108q0 66-42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm324.5-346.5Q448-592 448-631t-25.5-64.5Q397-721 358-721t-64.5 25.5Q268-670 268-631t25.5 64.5Q319-541 358-541t64.5-25.5ZM358-220Zm0-411Z"/></symbol><symbol id="i-groups" viewBox="0 -960 960 960"><path d="M30-240q-12.75 0-21.37-8.63Q0-257.25 0-270v-23q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H30Zm240 0q-12.75 0-21.37-8.63Q240-257.25 240-270v-35q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v35q0 12.75-8.62 21.37Q702.75-240 690-240H270Zm510 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v23q0 12.75-8.62 21.37Q942.75-240 930-240H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z"/></symbol><symbol id="i-menu" viewBox="0 -960 960 960"><path d="M150-240q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-more_horiz" viewBox="0 -960 960 960"><path d="M207.86-432Q188-432 174-446.14t-14-34Q160-500 174.14-514t34-14Q228-528 242-513.86t14 34Q256-460 241.86-446t-34 14Zm272 0Q460-432 446-446.14t-14-34Q432-500 446.14-514t34-14Q500-528 514-513.86t14 34Q528-460 513.86-446t-34 14Zm272 0Q732-432 718-446.14t-14-34Q704-500 718.14-514t34-14Q772-528 786-513.86t14 34Q800-460 785.86-446t-34 14Z"/></symbol><symbol id="i-search" viewBox="0 -960 960 960"><path d="M378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l242 240q9 8.56 9 21.78T818-143q-9 9-22.22 9-13.22 0-21.78-9L533-384q-30 26-69.96 40.5Q423.08-329 378-329Zm-1-60q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></symbol><symbol id="i-sms" viewBox="0 -960 960 960"><path d="M240-240 131-131q-14 14-32.5 6.34Q80-132.31 80-152v-668q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240Zm-26-60h606v-520H140v600l74-80Zm-74 0v-520 520Zm194.5-234.5Q346-546 346-563t-11.5-28.5Q323-603 306-603t-28.5 11.5Q266-580 266-563t11.5 28.5Q289-523 306-523t28.5-11.5Zm177 0Q523-546 523-563t-11.5-28.5Q500-603 483-603t-28.5 11.5Q443-580 443-563t11.5 28.5Q466-523 483-523t28.5-11.5Zm170 0Q693-546 693-563t-11.5-28.5Q670-603 653-603t-28.5 11.5Q613-580 613-563t11.5 28.5Q636-523 653-523t28.5-11.5Z"/></symbol><symbol id="i-tune" viewBox="0 -960 960 960"><path d="M435.5-128.63Q427-137.25 427-150v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v53h323q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H487v52q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-202q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h187q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm165.5-174.63Q307-385.25 307-398v-52H150q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h157v-54q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v166q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM457-450q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H457Zm144.5-173.63Q593-632.25 593-645v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v52h157q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H653v53q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-698q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-wand_stars" viewBox="0 -960 960 960"><path d="m654-454-91 147q-8 13-22.5 10T522-314l-33-133-306 305q-9 9-21 9t-21-9q-9-9-9-21t9-21l305-305-133-33q-14-4-17-18.5t10-22.5l147-92-12-172q-1-15 12.5-22t24.5 3l132 111 160-64q14-5 24 5t5 24l-65 160 111 132q10 11 3.5 24.5T827-441l-173-13ZM131-721q-5-5-5-11t5-11l46-46q5-5 11-5t11 5l45 45q5 5 5 11t-5 11l-46 46q-5 5-11 5t-11-5l-45-45Zm428 307 63-102 120 9-78-92 45-111-111 45-92-78 9 120-102 64 117 29 29 116Zm163 283-46-46q-5-5-4.5-11t5.5-11l45-45q5-5 11-5t11 5l46 46q5 5 4.5 11t-5.5 11l-45 45q-5 5-11 5t-11-5ZM578-579Z"/></symbol><symbol id="i-signal_cellular_alt" viewBox="0 -960 960 960"><path d="M214.5-174.58Q200-189.17 200-210v-140q0-20.83 14.62-35.42Q229.24-400 250.12-400q20.88 0 35.38 14.58Q300-370.83 300-350v140q0 20.83-14.62 35.42Q270.76-160 249.88-160q-20.88 0-35.38-14.58Zm250 0Q450-189.17 450-210v-340q0-20.83 14.62-35.42Q479.24-600 500.12-600q20.88 0 35.38 14.58Q550-570.83 550-550v340q0 20.83-14.62 35.42Q520.76-160 499.88-160q-20.88 0-35.38-14.58Zm250 0Q700-189.17 700-210v-540q0-20.83 14.62-35.42Q729.24-800 750.12-800q20.88 0 35.38 14.58Q800-770.83 800-750v540q0 20.83-14.62 35.42Q770.76-160 749.88-160q-20.88 0-35.38-14.58Z"/></symbol><symbol id="i-wifi" viewBox="0 -960 960 960"><path d="M417-154q-27-27-27-63t27-63q27-27 63-27t63 27q27 27 27 63t-27 63q-27 27-63 27t-63-27Zm209-378.5Q694-505 757-451q14 12 15 30.5T759-388q-14 14-32 13t-33-13q-53-44-106.5-63T480-470q-54 0-107.5 19T266-388q-15 12-33 13t-32-13q-14-14-13-32.5t15-30.5q63-54 131-81.5T480-560q78 0 146 27.5Zm95.5-219Q835-703 926-622q14 13 15.5 31.5T929-558q-14 14-33.5 13.5T861-558q-83-70-178-111t-203-41q-108 0-203 41T99-558q-15 13-34 13.5T32-558q-14-14-13-32.5T34-622q91-81 204.5-129.5T480-800q128 0 241.5 48.5Z"/></symbol><symbol id="i-battery_full" viewBox="0 -960 960 960"><path d="M310-80q-12.75 0-21.37-8.63Q280-97.25 280-110v-676q0-12.75 8.63-21.38Q297.25-816 310-816h90v-34q0-12.75 8.63-21.38Q417.25-880 430-880h100q12.75 0 21.38 8.62Q560-862.75 560-850v34h90q12.75 0 21.38 8.62Q680-798.75 680-786v676q0 12.75-8.62 21.37Q662.75-80 650-80H310Z"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-add" viewBox="0 -960 960 960"><path d="M450-450H230q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h220v-220q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v220h220q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H510v220q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-220Z"/></symbol><symbol id="i-calendar_month" viewBox="0 -960 960 960"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><!-- Lucide phone (ISC), shadcn/ui 기본 아이콘 세트. 채움형으로 사용 --><path fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-check" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></symbol><symbol id="i-swap_vert" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></symbol><symbol id="i-close" viewBox="0 -960 960 960"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M349-250h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5Zm0-170h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.44 0 23.72 5T599-862l183 183q8 8 13 19.28 5 11.28 5 23.72v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.37-8.63Q551-651.25 551-664ZM220-820v186-186 680-680Z"/></symbol><symbol id="i-edit_note" viewBox="0 -960 960 960"><path d="M190-410q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h240q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm330 550v-81q0-5.57 2-10.78 2-5.22 7-10.22l211.61-210.77q9.11-9.12 20.25-13.18Q772-520 783-520q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5t-13.58 20.62L652-169q-5 5-10.22 7-5.21 2-10.78 2h-81q-12.75 0-21.37-8.63Q520-177.25 520-190Zm300-233-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></symbol><symbol id="i-keyboard_arrow_down" viewBox="0 -960 960 960"><path d="M469-358q-5-2-10-7L261-563q-9-9-8.5-21.5T262-606q9-9 21.5-9t21.5 9l175 176 176-176q9-9 21-8.5t21 9.5q9 9 9 21.5t-9 21.5L501-365q-5 5-10 7t-11 2q-6 0-11-2Z"/></symbol><symbol id="i-keyboard_arrow_up" viewBox="0 -960 960 960"><path d="M480-554 304-378q-9 9-21 8.5t-21-9.5q-9-9-9-21.5t9-21.5l197-197q9-9 21-9t21 9l198 198q9 9 9 21t-9 21q-9 9-21.5 9t-21.5-9L480-554Z"/></symbol><symbol id="i-home" viewBox="0 -960 960 960"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></symbol><symbol id="i-group" viewBox="0 -960 960 960"><path d="M38-254q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v34q0 25-17.5 42.5T618-160H98q-25 0-42.5-17.5T38-220v-34Zm824 94H724q5-15 9.5-29.5T738-220v-34q0-63-29-101.5T622-420q69 8 130 22t99 34q33 19 52 47t19 63v34q0 25-17.5 42.5T862-160ZM250-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42Zm426 0q-42 42-108 42-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108q0 66-42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm324.5-346.5Q448-592 448-631t-25.5-64.5Q397-721 358-721t-64.5 25.5Q268-670 268-631t25.5 64.5Q319-541 358-541t64.5-25.5ZM358-220Zm0-411Z"/></symbol><symbol id="i-groups" viewBox="0 -960 960 960"><path d="M30-240q-12.75 0-21.37-8.63Q0-257.25 0-270v-23q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H30Zm240 0q-12.75 0-21.37-8.63Q240-257.25 240-270v-35q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v35q0 12.75-8.62 21.37Q702.75-240 690-240H270Zm510 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v23q0 12.75-8.62 21.37Q942.75-240 930-240H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z"/></symbol><symbol id="i-menu" viewBox="0 -960 960 960"><path d="M150-240q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-more_horiz" viewBox="0 -960 960 960"><path d="M207.86-432Q188-432 174-446.14t-14-34Q160-500 174.14-514t34-14Q228-528 242-513.86t14 34Q256-460 241.86-446t-34 14Zm272 0Q460-432 446-446.14t-14-34Q432-500 446.14-514t34-14Q500-528 514-513.86t14 34Q528-460 513.86-446t-34 14Zm272 0Q732-432 718-446.14t-14-34Q704-500 718.14-514t34-14Q772-528 786-513.86t14 34Q800-460 785.86-446t-34 14Z"/></symbol><symbol id="i-search" viewBox="0 -960 960 960"><path d="M378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l242 240q9 8.56 9 21.78T818-143q-9 9-22.22 9-13.22 0-21.78-9L533-384q-30 26-69.96 40.5Q423.08-329 378-329Zm-1-60q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></symbol><symbol id="i-sms" viewBox="0 -960 960 960"><path d="M240-240 131-131q-14 14-32.5 6.34Q80-132.31 80-152v-668q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240Zm-26-60h606v-520H140v600l74-80Zm-74 0v-520 520Zm194.5-234.5Q346-546 346-563t-11.5-28.5Q323-603 306-603t-28.5 11.5Q266-580 266-563t11.5 28.5Q289-523 306-523t28.5-11.5Zm177 0Q523-546 523-563t-11.5-28.5Q500-603 483-603t-28.5 11.5Q443-580 443-563t11.5 28.5Q466-523 483-523t28.5-11.5Zm170 0Q693-546 693-563t-11.5-28.5Q670-603 653-603t-28.5 11.5Q613-580 613-563t11.5 28.5Q636-523 653-523t28.5-11.5Z"/></symbol><symbol id="i-tune" viewBox="0 -960 960 960"><path d="M435.5-128.63Q427-137.25 427-150v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v53h323q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H487v52q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-202q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h187q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm165.5-174.63Q307-385.25 307-398v-52H150q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h157v-54q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v166q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM457-450q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H457Zm144.5-173.63Q593-632.25 593-645v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v52h157q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H653v53q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-698q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-wand_stars" viewBox="0 -960 960 960"><path d="m654-454-91 147q-8 13-22.5 10T522-314l-33-133-306 305q-9 9-21 9t-21-9q-9-9-9-21t9-21l305-305-133-33q-14-4-17-18.5t10-22.5l147-92-12-172q-1-15 12.5-22t24.5 3l132 111 160-64q14-5 24 5t5 24l-65 160 111 132q10 11 3.5 24.5T827-441l-173-13ZM131-721q-5-5-5-11t5-11l46-46q5-5 11-5t11 5l45 45q5 5 5 11t-5 11l-46 46q-5 5-11 5t-11-5l-45-45Zm428 307 63-102 120 9-78-92 45-111-111 45-92-78 9 120-102 64 117 29 29 116Zm163 283-46-46q-5-5-4.5-11t5.5-11l45-45q5-5 11-5t11 5l46 46q5 5 4.5 11t-5.5 11l-45 45q-5 5-11 5t-11-5ZM578-579Z"/></symbol><symbol id="i-signal_cellular_alt" viewBox="0 -960 960 960"><path d="M214.5-174.58Q200-189.17 200-210v-140q0-20.83 14.62-35.42Q229.24-400 250.12-400q20.88 0 35.38 14.58Q300-370.83 300-350v140q0 20.83-14.62 35.42Q270.76-160 249.88-160q-20.88 0-35.38-14.58Zm250 0Q450-189.17 450-210v-340q0-20.83 14.62-35.42Q479.24-600 500.12-600q20.88 0 35.38 14.58Q550-570.83 550-550v340q0 20.83-14.62 35.42Q520.76-160 499.88-160q-20.88 0-35.38-14.58Zm250 0Q700-189.17 700-210v-540q0-20.83 14.62-35.42Q729.24-800 750.12-800q20.88 0 35.38 14.58Q800-770.83 800-750v540q0 20.83-14.62 35.42Q770.76-160 749.88-160q-20.88 0-35.38-14.58Z"/></symbol><symbol id="i-wifi" viewBox="0 -960 960 960"><path d="M417-154q-27-27-27-63t27-63q27-27 63-27t63 27q27 27 27 63t-27 63q-27 27-63 27t-63-27Zm209-378.5Q694-505 757-451q14 12 15 30.5T759-388q-14 14-32 13t-33-13q-53-44-106.5-63T480-470q-54 0-107.5 19T266-388q-15 12-33 13t-32-13q-14-14-13-32.5t15-30.5q63-54 131-81.5T480-560q78 0 146 27.5Zm95.5-219Q835-703 926-622q14 13 15.5 31.5T929-558q-14 14-33.5 13.5T861-558q-83-70-178-111t-203-41q-108 0-203 41T99-558q-15 13-34 13.5T32-558q-14-14-13-32.5T34-622q91-81 204.5-129.5T480-800q128 0 241.5 48.5Z"/></symbol><symbol id="i-battery_full" viewBox="0 -960 960 960"><path d="M310-80q-12.75 0-21.37-8.63Q280-97.25 280-110v-676q0-12.75 8.63-21.38Q297.25-816 310-816h90v-34q0-12.75 8.63-21.38Q417.25-880 430-880h100q12.75 0 21.38 8.62Q560-862.75 560-850v34h90q12.75 0 21.38 8.62Q680-798.75 680-786v676q0 12.75-8.62 21.37Q662.75-80 650-80H310Z"/></symbol></svg>
 
-<nav class="pg-tabs" id="pgTabs"><button data-pg="design" class="on">디자인 시안</button><button data-pg="cards">카드 시안</button><button data-pg="spec">상단 기능 기획서</button></nav>
+<nav class="pg-tabs" id="pgTabs"><button data-pg="design" class="on">인터뷰 반영안 v4</button><button data-pg="v3">기존 시안 v3</button><button data-pg="spec">상단 기능 기획서</button></nav>
 
 <div class="sp-page" id="spec"></div>
-<div class="sp-page" id="cards"></div>
 
 <div class="cl-page">
   <div class="cl-left">
     <div class="cl-col asis">
       <div class="cl-cap">현행 <small>가상 데이터로 다시 그린 와이어프레임 · 직접 눌러 볼 수 있음</small></div>
-      <div class="kd-switch" style="visibility:hidden" aria-hidden="true"><button tabindex="-1">A</button></div>
       <div class="cl-frame"><div class="cl-app"><iframe src="../고객메뉴_분석/영업비서_고객메뉴_분석.html?embed=as" title="현행 고객 메뉴 와이어프레임" loading="lazy" style="width:100%;height:100%;border:0;display:block;background:#fff"></iframe></div></div>
     </div>
     <div class="cl-col new">
-      <div class="cl-cap">시안 v3 <small>직접 눌러 볼 수 있음 · 가상 데이터</small></div>
-      <div class="kd-switch" id="kdSw"><span>카드</span><button data-card="A" class="on" aria-label="카드 A 요약 중심">A</button><button data-card="B" aria-label="카드 B 현행 정보 유지">B</button><button data-card="C" aria-label="카드 C 한 줄 압축">C</button><button data-card="D" aria-label="카드 D 다음 할 일 중심">D</button></div>
-      <div class="cl-banner"><span><b>고객 목록 시안 v3</b> · 가상 데이터</span></div>
+      <div class="cl-cap" id="capNew"></div>
+      <div class="cl-banner"><span><b id="banNew">고객 목록 시안 v4</b> · 가상 데이터</span></div>
       <div class="cl-frame"><div class="cl-app" id="app"></div></div>
     </div>
+    <aside class="cl-col fb" id="fbPanel"></aside>
   </div>
 
 </div>
@@ -620,6 +744,14 @@ const C = [
 ];
 
 C.forEach((c, i) => { c.phone = '010-0000-' + (1001 + i * 7); });   // 가상 번호
+// v4(인터뷰 반영): 등록 시각과 다른 현장 문의 이력 (모두 가상)
+const DUP = {
+  '이서연':[{site:'파크사이드',date:'2026-09-12',own:'담당자1',st:'관심없음',note:'분양가가 예산보다 높다고 함. 방문 없이 종료'}],
+  '정하늘':[{site:'윤슬자이',date:'2026-08-03',own:'담당자2',st:'방문 예약',note:'모델하우스를 한 번 방문함. 대출 한도를 물어봄'},{site:'PH1603',date:'2026-10-21',own:'담당자1',st:'부재중',note:'세 번 걸었으나 받지 않음'}],
+  '한소희':[{site:'소요한남',date:'2026-10-02',own:'담당자3',st:'재통화',note:'가족과 상의 후 다시 연락하기로 함'}],
+  '노은우':[{site:'카시아 속초',date:'2026-07-19',own:'담당자1',st:'하',note:'투자 목적 문의. 수익률 자료만 받아 감'}]
+};
+C.forEach((c, i) => { c.time = String(9 + (i * 3) % 11).padStart(2, '0') + ':' + String((i * 17) % 60).padStart(2, '0'); c.dup = DUP[c.name] || []; });
 // 캠페인별 고객 수(가상). 캠페인을 바꾸면 상태별 수도 같은 비율로 줄여 보여 준다
 const CAMP_N = Object.fromEntries(CAMPS.map((k, i) => [k, [1840,1520,1310,1180,960,890,820,760,690,610,540,310][i]]));
 const num = t => +String(t).replace(/,/g, ''), fmt = n => n.toLocaleString('en-US');
@@ -629,7 +761,7 @@ const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':
 
 /* ── 상태 ── */
 const F0 = () => ({own:[],int:[],plat:[],camp:[],date:'전체'});
-const S = {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
+const S = {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',ver:'v4',detail:null,fold:{},memoOpen:false,memoDraft:'',sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
 const app = document.getElementById('app');
 const fmtReg = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
 const daysAgo = d => Math.floor((TODAY - new Date(d + 'T00:00:00')) / 864e5);
@@ -686,43 +818,120 @@ const KCARD = {
       <div class="ka-m">${c.next ? `<div class="cl-next ${c.next[1]}">${ic('calendar_month')}${c.next[0]}</div>` : ''}<div class="cl-sub">${[c.camp, c.own, c.last].filter(Boolean).join(' · ')}</div></div>
       ${kCall(c, i)}
     </div>
-  </div>`,
-  B:(c, i) => `<div class="kb"${kOpen(i)}>
-    <div class="kb-top"><span>${c.plat} · ${c.camp}</span><span>${c.own} · ${fmtReg(c.reg)} 등록</span></div>
-    <div class="kb-main"><span class="cl-nm">${c.name}</span>${kInt(c)}${badge(c.st)}${kCall(c, i)}</div>
-    ${c.kw.length ? `<div class="cl-kw">${c.kw.map(k => `<span>${ic('wand_stars')}${k}</span>`).join('')}</div>` : ''}
-    <div class="kb-memo ${c.ctx[0]}">${kCtxIc(c)}<p>${c.ctx[1]}</p></div>
-    <div class="kb-meta"><span>${ic('edit_note')}기록 ${c.rec}</span><span class="${c.next ? c.next[1] : ''}">${ic('calendar_month')}${c.next ? c.next[0] : '예약 없음'}</span><span>${c.last || '통화 없음'}</span></div>
-  </div>`,
-  C:(c, i) => `<div class="kc"${kOpen(i)}>
-    <div class="kc-m">
-      <div class="kc-1"><b>${c.name}</b><span class="kc-st"><i style="background:${stOf(c.st).c}"></i>${c.st}</span>${c.next ? `<em class="${c.next[1]}">${c.next[0]}</em>` : ''}</div>
-      <p class="kc-2">${c.ctx[1]}</p>
-    </div>${kCall(c, i)}
-  </div>`,
-  D:(c, i) => `<div class="kdd"${kOpen(i)}>
-    <div class="kd-todo ${c.next ? c.next[1] : 'none'}">${ic('calendar_month')}${c.next ? c.next[0] : '다음 일정 없음'}<span>${c.last || '통화 기록 없음'}</span></div>
-    <div class="kdd-b">
-      <div class="kdd-m">
-        <div class="kdd-1"><span class="cl-nm">${c.name}</span>${kInt(c)}${badge(c.st)}</div>
-        <p class="kdd-2">${c.ctx[1]}</p>
-        <div class="cl-sub">${c.camp} · ${c.own}</div>
-      </div>${kCall(c, i)}
-    </div>
   </div>`
 };
-const KNAME = {A:'요약 중심', B:'현행 정보 유지', C:'한 줄 압축', D:'다음 할 일 중심'};
-function card(c, i){ return KCARD[S.card](c, i); }
+// v4 카드(인터뷰 반영): 전화번호 뒷자리 · 등록 일시 · 다른 현장 문의를 올리고, 예약 · 최근 통화 줄은 뺐다. 전화 버튼은 작게.
+// 인터뷰 의견 번호 표식: 목록에서 처음 나오는 카드에만 한 번씩 붙인다
+let FB_USED = {};
+const fb = n => S.ver === 'v4' && !FB_USED[n] ? (FB_USED[n] = 1, `<i class="fbm" aria-label="인터뷰 의견 ${n}">${n}</i>`) : '';
+const FB = [
+  ['캠페인 · 담당자 기억', '앱을 켜면 무조건 필터부터 연다. 캠페인을 먼저, 그다음 담당자를 고르는데 켤 때마다 초기화된다.', '22:30', '캠페인을 제목 옆에 두고, 마지막에 고른 캠페인과 담당자를 기억해 다시 열 때 그대로 적용합니다.'],
+  ['전화번호', '고객을 뒷자리로 확인하는데 카드에 번호가 없어 상세에 들어갔다 나와야 한다.', '00:53', '카드 이름 아래에 전화번호를 넣었습니다.'],
+  ['등록 시각', '등록 날짜만 있고 시간이 없다. 그날 몇 건 들어왔는지, 고객이 언제 활동하는지 보려면 시간이 필요하다.', '03:23', '등록 날짜 옆에 시각을 함께 보여 줍니다.'],
+  ['다른 현장 문의', '예전에 다른 현장에 문의한 고객인지 알고 싶다. 매번 뒷번호를 검색해 볼 수는 없다.', '15:34', '카드에 「다른 현장 문의」와 현장 이름 · 문의한 날짜를 표시합니다. 상세에서는 당시 상태 · 담당자 · 상담 내용까지 보여 줍니다.'],
+  ['덜 쓰는 정보 정리', '예약은 일정 화면에서 보는 게 편해 목록에서는 안 본다. 목록의 전화 버튼도 잘 안 쓰지만 있는 건 좋다.', '02:55', '예약 · 최근 통화 줄을 빼고, 전화 버튼은 남기되 작게 낮췄습니다.'],
+  ['상세 기본 정보 줄임', '나이 · 성별은 통화로 추측해 적다가 틀린다. 상세에서 실제로 고치는 것은 상태 하나뿐이다.', '05:09', '상세 맨 위에 이름 · 전화번호 · 담당자 · 등록 일시만 두고, 상태는 바로 바꿀 수 있는 큰 버튼으로 뒀습니다. 나이 · 성별은 뺐습니다. 이름 · 전화번호 · 담당자 · 관심도는 「정보 수정」에서 고치고 저장을 눌러야 바뀝니다.'],
+  ['문의 내용 · 통화 이력을 위로', '상세에 들어가면 고객이 남긴 내용을 먼저 보고, 그다음 예전 통화 이력을 본다.', '04:42', '기본 정보 바로 아래에 문의 내용, 통화 이력 순서로 올렸습니다. 통화 이력은 펼친 상태로 열리고 통화마다 AI 요약과 AI 제안이 함께 보입니다.'],
+  ['메모 작성 안내', '무엇을 적어야 하는지 안내가 있으면 좋겠다. 말로 부탁해도 잘 적지 않는다.', '06:25', '「메모 추가」를 누르면 나오는 입력 칸에 무엇을 적을지 알려 주는 안내 문구와 항목 버튼을 넣었습니다.']
+];
+function fbPanelHTML(){
+  return `<div class="cl-cap">인터뷰 의견이 반영된 곳 <small>시안의 번호와 짝을 이룹니다 · 2026.11.11 인터뷰</small></div>
+  <ol class="fb-list">${FB.map((f, i) => `${i === 5 ? '<li class="fb-sep">고객 상세 · 카드를 누르면 열립니다</li>' : ''}<li><i class="fbm">${i + 1}</i><div><h3>${f[0]}</h3><p class="fb-q">${f[1]} <span>${f[2]}</span></p><p class="fb-a">${f[3]}</p></div></li>`).join('')}</ol>
+  <div class="fb-etc"><b>아직 반영하지 않은 것</b>관심도 표시(숨길지 결론이 안 남) · 다른 현장 문의를 누구에게까지 보일지(개발자 정리 대기)</div>`;
+}
+function cardV4(c, i){
+  return `<div class="ka kv"${kOpen(i)}>
+    <div class="ka-1"><span class="cl-nm">${c.name}</span>${kInt(c)}${badge(c.st)}</div>
+    <div class="kv-2"><span class="kv-ph">${c.phone}${fb(2)}</span><span>${fmtReg(c.reg)} ${c.time} 등록${fb(3)}</span></div>
+    <div class="cl-ctx ${c.ctx[0]}">${kCtxIc(c)}<p>${c.ctx[1]}</p></div>
+    ${c.dup.length ? `<div class="kv-dup"><b>다른 현장 문의</b>${c.dup.map(d => `${d.site} <em>${fmtReg(d.date)}</em>`).join(' · ')}${fb(4)}</div>` : ''}
+    <div class="kv-3"><span class="cl-sub">${S.camp === '전체' ? c.camp + ' · ' : ''}${c.own}</span>${fb(5)}<button class="c2-call kv-call" data-a="act" data-i="${i}" aria-label="${c.name}에게 전화">${ic('call')}</button></div>
+  </div>`;
+}
+const fbm = n => `<i class="fbm" aria-label="인터뷰 의견 ${n}">${n}</i>`;
+const fmtFull = d => { const [y, m, dd] = d.split('-'); return `${y}.${+m}.${+dd}`; };
+const pad2 = n => String(n).padStart(2, '0');
+const dAt = n => { const d = new Date(TODAY - n * 864e5); return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`; };
+const fmtDay = d => { const [, m, dd] = d.split('-'); return `${+m}월 ${+dd}일`; };
+const SUG = {'방문 예약':'방문 전날 문자로 시간과 주차 안내를 다시 보내세요.','가계약':'2차 계약금 일정과 필요한 서류를 문자로 정리해 보내세요.','정계약':'잔금 일정과 서류 수령일을 한 번 더 확인하세요.','재통화':'약속한 시간에 다시 전화하고, 지난 통화에서 물어본 내용을 먼저 답하세요.'};
+const MEMO_T = ['분양가와 평형 자료를 문자로 보냄','가족과 상의한 뒤 연락 주기로 함','대출 한도를 궁금해함. 은행 상담 연결을 안내','주말 방문을 선호함. 오전 시간대 희망'];
+// 상세용 가상 기록(통화 · 메모)을 고객마다 한 번 만든다
+function detData(c, i){
+  if(c.calls) return;
+  const m = c.last.match(/(\d+)(일|주) 전/), ago = /오늘/.test(c.last) ? 0 : /어제/.test(c.last) ? 1 : m ? m[1] * (m[2] === '주' ? 7 : 1) : 0;
+  c.calls = [];
+  if(c.last){
+    const miss = c.last.includes('부재');
+    c.calls.push({date:dAt(ago), time:pad2(10 + i % 8) + ':' + pad2((i * 13) % 60), dur:miss ? '받지 않음' : c.last.split(' · ')[1], miss, own:c.own,
+      sum:c.ctx[0] === 'ai' ? c.ctx[1] : '조건을 다시 안내했고, 자료를 보내 주기로 함.', sug:SUG[c.st] || '이틀 안에 다시 연락해 방문 의사를 확인하세요.', kw:c.kw, n:8 + i * 3});
+    if(c.rec >= 3) c.calls.push({date:c.reg, time:pad2(+c.time.slice(0, 2) + 1) + ':' + c.time.slice(3), dur:'48초', miss:false, own:c.own,
+      sum:'첫 통화. 광고를 보고 문의했고, 평형과 분양가 자료를 문자로 요청함.', sug:'자료를 보낸 뒤 이틀 안에 다시 연락해 방문 의사를 확인하세요.', kw:['첫 통화','자료 요청'], n:6});
+  }
+  c.memos = Array.from({length:Math.min(c.rec, 3)}, (_, k) => ({t:MEMO_T[(i + k) % MEMO_T.length], by:k === 1 ? '담당자2' : c.own, date:k === 0 && c.calls[0] ? c.calls[0].date : c.reg, time:pad2(11 + k * 2) + ':' + pad2((i * 7 + k * 11) % 60)}));
+}
+function timelineHTML(c){
+  const ev = [{date:c.reg, time:c.time, k:'in', l:'유입', t:`${c.plat} · ${c.camp}`}];
+  c.calls.forEach(x => ev.push({date:x.date, time:x.time, k:'call', l:x.miss ? '부재중' : '통화', t:x.miss ? '받지 않음' : `${x.dur} · ${x.own}`}));
+  c.memos.forEach(x => ev.push({date:x.date, time:x.time, k:'memo', l:'메모', t:x.t}));
+  if(c.calls[0]) ev.push({date:c.calls[0].date, time:c.calls[0].time, k:'st', l:'상태 변경', t:c.st});
+  ev.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+  let day = '';
+  return `<ol class="d-tl">${c.next ? `<li class="d-day">예정</li><li class="plan"><time>—</time><i></i><div><b>${c.st === '방문 예약' ? '방문 일정' : '다음 할 일'}</b><p>${c.next[0]}</p></div></li>` : ''}${ev.map(e => `${e.date !== day ? `<li class="d-day">${fmtDay(day = e.date)}</li>` : ''}<li class="${e.k}"><time>${e.time}</time><i></i><div><b>${e.l}</b><p>${esc(e.t)}</p></div></li>`).join('')}</ol>`;
+}
+function detailHTML(){
+  const i = S.detail, c = C[i]; if(!c) return '';
+  detData(c, i);
+  const st = stOf(c.st);
+  const ask = c.ctx[0] === 'memo' ? c.ctx[1] : `${c.plat} 광고를 보고 상담을 신청함. 남긴 내용 없음`;
+  const sec = (t, body, o = {}) => `<section class="d-card"><div class="d-h"><h2>${t}${o.n != null ? `<em>${o.n}</em>` : ''}${o.mark || ''}</h2>${o.act || ''}</div>${body}</section>`;
+  const call = (x, k) => { const fold = S.fold[i + '-' + k];
+    return `<li class="d-call ${x.miss ? 'miss' : ''} ${fold ? 'fold' : ''}">
+      <button class="d-call-h" data-a="cfold" data-k="${k}" ${x.miss ? 'disabled' : `aria-expanded="${!fold}"`}><span class="d-call-ic">${ic('call')}</span><span class="d-call-t"><b>${fmtReg(x.date)} ${x.time} ${x.miss ? '부재중' : '통화'}</b><small>${x.dur} · ${x.own}</small></span>${x.miss ? '' : ic(fold ? 'keyboard_arrow_down' : 'keyboard_arrow_up')}</button>
+      ${x.miss || fold ? '' : `<div class="d-call-b">
+        <div class="d-ai"><h3>${ic('wand_stars')}AI 요약</h3><p>${x.sum}</p></div>
+        <div class="d-ai sug"><h3>${ic('wand_stars')}AI 제안</h3><p>${x.sug}</p></div>
+        ${x.kw.length ? `<div class="cl-kw d-kw">${x.kw.map(v => `<span>${v}</span>`).join('')}</div>` : ''}
+        <div class="d-call-f"><button data-a="soon" data-t="녹음 듣기는 이번 범위 밖입니다">녹음 듣기</button><button data-a="soon" data-t="전체 대화 보기는 이번 범위 밖입니다">전체 대화 보기 (${x.n}건)</button></div>
+      </div>`}</li>`; };
+  const memo = (x, k) => `<li><p>${esc(x.t)}</p><div><span>${x.by} · ${fmtFull(x.date)} ${x.time}</span><button data-a="soon" data-t="메모 고치기는 이번 범위 밖입니다" aria-label="메모 고치기">${ic('edit_note')}</button><button data-a="memo-del" data-k="${k}" aria-label="메모 지우기">${ic('close')}</button></div></li>`;
+  const composer = S.memoOpen ? `<div class="d-comp"><textarea id="memoIn" rows="3" placeholder="통화 내용 · 고객 성향 · 다음에 할 일을 적어 주세요">${esc(S.memoDraft)}</textarea>
+      <div class="d-comp-g">${['통화 내용','고객 성향','다음 할 일','대신 통화'].map(t => `<button data-a="memo-chip" data-v="${t}">+ ${t}</button>`).join('')}</div>
+      <div class="d-comp-f"><button data-a="memo-cancel">취소</button><button class="pri" data-a="memo-save">저장</button></div></div>` : '';
+  return `<div class="r-stop d-top"><button class="cl-ibtn" data-a="det-x" aria-label="목록으로 돌아가기">${ic('arrow_back')}</button><b>고객 상세</b><button class="d-share" data-a="soon" data-t="내페이지 공유는 이번 범위 밖입니다">내페이지 공유</button></div>
+  <div class="d-body">
+    <section class="d-card d-head">
+      <div class="d-1"><h1>${esc(c.name)}</h1>${kInt(c)}${fbm(6)}<button class="d-edit" data-a="dedit">정보 수정</button></div>
+      <div class="d-ph">${esc(c.phone)}</div>
+      <div class="d-act"><button class="d-st" data-a="dst" aria-label="상태 바꾸기, 지금 ${c.st}"><span>상태</span><i style="background:${st.c}"></i><b>${c.st}</b>${ic('keyboard_arrow_down')}</button><button class="d-callbtn" data-a="act" data-i="${i}" aria-label="${esc(c.name)}에게 전화">${ic('call')}전화</button></div>
+      <dl class="d-meta"><div><dt>등록</dt><dd>${fmtFull(c.reg)} ${c.time}</dd></div><div><dt>담당자</dt><dd>${c.own}</dd></div><div><dt>캠페인</dt><dd>${c.camp}</dd></div><div><dt>유입</dt><dd>${c.plat}</dd></div></dl>
+    </section>
+    ${c.dup.length ? sec('다른 현장 문의', `<ul class="d-dup">${c.dup.map(d => `<li><div><b>${d.site}</b><time>${fmtFull(d.date)} 문의</time></div><p>${d.note}</p><small>당시 ${d.st} · ${d.own}</small></li>`).join('')}</ul><button class="d-more" data-a="soon" data-t="그 현장의 상담 기록 열기는 이번 범위 밖입니다">그 현장 상담 기록 보기</button>`, {n:c.dup.length, mark:fbm(4)}) : ''}
+    ${sec('문의 내용', `<p class="d-txt">${ask}</p>`, {mark:fbm(7)})}
+    ${sec('통화 이력', c.calls.length ? `<ul class="d-calls">${c.calls.map(call).join('')}</ul>` : `<p class="d-none">아직 통화 기록이 없습니다</p>`, {n:c.calls.length})}
+    ${sec('메모', composer + (c.memos.length ? `<ul class="d-memos">${c.memos.map(memo).join('')}</ul>` : (S.memoOpen ? '' : `<p class="d-none">등록된 메모가 없습니다</p>`)), {n:c.memos.length, mark:fbm(8), act:S.memoOpen ? '' : `<button class="d-add" data-a="memo-open">${ic('add')}메모 추가</button>`})}
+    ${sec('미팅 예약', c.next ? `<div class="d-meet">${ic('calendar_month')}<span>${c.next[0]}</span></div>` : `<p class="d-none">방문 일정이 없습니다</p>`, {act:`<button class="d-add" data-a="soon" data-t="일정 추가는 이번 범위 밖입니다">${ic('add')}일정 추가</button>`})}
+    ${sec('활동 타임라인', timelineHTML(c))}
+  </div>`;
+}
+function drawDetail(reset){
+  const on = S.ver === 'v4' && S.detail != null;
+  const q = () => document.querySelector ? document.querySelector('#det .d-body') : null;
+  const old = q(), y = old && !reset ? old.scrollTop : 0;
+  app.classList.toggle('det', on);
+  $('det').innerHTML = on ? detailHTML() : '';
+  const nb = q(); if(nb) nb.scrollTop = y;
+}
+function card(c, i){ return S.ver === 'v4' ? cardV4(c, i) : KCARD.A(c, i); }
 function listHTML(){
   if(S.loading) return `<div class="cl-list">${[0,1,2,3].map(() => `<div class="cl-sk"><u style="width:38%"></u><u style="width:62%;height:11px"></u><u style="width:100%"></u><u style="width:80%"></u></div>`).join('')}</div>`;
-  const r = rows();
+  const r = rows(); FB_USED = {};
   if(!r.length) return `<div class="cl-empty"><b>조건에 맞는 고객이 없습니다</b>${S.q ? '검색어를 바꾸거나 ' : ''}조건을 줄여 보세요.<br><button data-a="clear">조건 모두 지우기</button></div>`;
-  return `<div class="cl-list k${S.card}">${r.map(c => card(c, C.indexOf(c))).join('')}</div>`;
+  return `<div class="cl-list kA">${r.map(c => card(c, C.indexOf(c))).join('')}</div>`;
 }
 const tHead = (t, sub, right) => `<i class="c2-grip"></i><div class="t-head"><h2>${t}</h2>${right || ''}</div>${sub ? `<p class="t-sub">${sub}</p>` : ''}`;
 const FLABEL = {sort:'정렬',own:'담당자',int:'관심도',plat:'플랫폼',camp:'캠페인',date:'등록일'};
 function topHTML(){
-  return `<div class="c2-head"><h1>고객 관리</h1><button class="r-campchip" data-a="campsheet" aria-label="캠페인 바꾸기"><span>${S.camp === '전체' ? '전체 캠페인' : S.camp}</span>${ic('keyboard_arrow_down')}</button><button class="r-sbtn" data-a="search-on" aria-label="고객 검색">${ic('search')}검색</button><button class="cl-ibtn" data-a="soon" data-t="메뉴는 이번 범위 밖입니다" aria-label="메뉴">${ic('menu')}</button></div>`;
+  return `<div class="c2-head"><h1>고객 관리</h1><button class="r-campchip" data-a="campsheet" aria-label="캠페인 바꾸기"><span>${S.camp === '전체' ? '전체 캠페인' : S.camp}</span>${ic('keyboard_arrow_down')}</button>${S.ver === 'v4' ? '<i class="fbm" aria-label="인터뷰 의견 1">1</i>' : ''}<button class="r-sbtn" data-a="search-on" aria-label="고객 검색">${ic('search')}검색</button><button class="cl-ibtn" data-a="soon" data-t="메뉴는 이번 범위 밖입니다" aria-label="메뉴">${ic('menu')}</button></div>`;
 }
 // 상태: 밑줄 탭 한 줄 (필터 칩과 모양을 달리해 역할을 구분)
 function stHTML(){
@@ -753,6 +962,23 @@ function sheetHTML(){
     const opt = (k, n, c, w) => `<button class="c2-sopt ${w || ''} ${S.st === k ? 'on' : ''}" data-a="st" data-k="${k}">${c ? `<i style="background:${c}"></i>` : ''}${k}<b>${n}</b></button>`;
     return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>상태</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
     <div class="cl-sh-body"><div class="c2-sgrid">${opt('전체', cnt(TOTAL), null, 'wide')}${ALL.map(s => opt(s.k, cnt(s.n), s.c)).join('')}</div></div>`;
+  }
+  if(S.sheet === 'dedit'){
+    const d = S.edit, pick = (key, vals) => `<div class="e-pick">${vals.map(([v, l]) => `<button class="${d[key] === v ? 'on' : ''}" data-a="epick" data-key="${key}" data-v="${v}">${l}</button>`).join('')}</div>`;
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>기본 정보 수정</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body e-form">
+      <label><span>이름</span><input data-ef="name" value="${esc(d.name)}" autocomplete="off"></label>
+      <label><span>전화번호</span><input data-ef="phone" value="${esc(d.phone)}" inputmode="tel" autocomplete="off"></label>
+      <div class="e-f"><span>담당자</span>${pick('own', OWNERS.slice(1).map(o => [o, o]))}</div>
+      <div class="e-f"><span>관심도</span>${pick('int', [['', '없음'], ...INTS.map(v => [v, v])])}</div>
+      <p class="e-note">저장을 눌러야 바뀝니다. 닫으면 바꾼 내용은 버려집니다.</p>
+    </div>
+    <div class="t-foot"><button class="cl-apply" data-a="esave">저장</button></div>`;
+  }
+  if(S.sheet === 'dstatus'){
+    const c = C[S.detail];
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>상태 바꾸기</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body"><div class="c2-sgrid">${ALL.map(x => `<button class="c2-sopt ${c.st === x.k ? 'on' : ''}" data-a="dst-pick" data-k="${x.k}"><i style="background:${x.c}"></i>${x.k}</button>`).join('')}</div></div>`;
   }
   if(S.sheet === 'camp'){
     const opt = (k, label, n) => `<button class="c2-sopt wide ${S.camp === k ? 'on' : ''}" data-a="camp" data-k="${k}">${label}<b>${n}</b></button>`;
@@ -826,7 +1052,7 @@ function build(){
   <div class="cl-scroll" id="scroll"><div id="top"></div><div class="r-sticky"><div class="c2-st" id="strow"></div><div class="r-fbar" id="fbar"></div></div><div class="c2-cond" id="cond"></div><div id="list"></div></div>
   <button class="cl-fab" data-a="soon" data-t="고객 등록은 이번 범위 밖입니다" aria-label="고객 등록">${ic('add')}</button>
   <nav class="cl-tab">${[['home','홈'],['group','고객'],['calendar_month','일정'],['groups','멤버'],['menu','메뉴']].map(([i, l]) => `<button class="${l === '고객' ? 'on' : ''}" data-a="soon" data-t="하단 탭 이동은 이번 범위 밖입니다">${ic(i)}${l}</button>`).join('')}</nav>
-  <div class="r-srch" id="srch"></div>
+  <div class="r-srch" id="srch"></div><div class="r-det" id="det"></div>
   <div class="cl-dim" data-a="sheet-x"></div><div class="cl-sheet" id="sheet"></div><div class="cl-toast" id="toast"></div>`;
   draw();
   let y0 = 0; const sc = document.getElementById('scroll'), fab = app.querySelector('.cl-fab');
@@ -844,6 +1070,8 @@ function draw(){
   const sc = app.querySelector('.c2-st-scroll'), on = sc.querySelector('.on');   // 고른 상태가 화면 밖으로 밀리지 않게
   if(on) sc.scrollLeft = on.offsetLeft - (sc.clientWidth - on.offsetWidth) / 2;
   drawSearch(true);
+  drawDetail();
+  remember();
 }
 let tt; function toast(m){ const t = $('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2000); }
 function reload(){ S.loading = true; draw(); setTimeout(() => { S.loading = false; draw(); }, 450); }
@@ -876,16 +1104,30 @@ app.addEventListener('click', e => {
   else if(a === 'rc-rm'){ S.recent = S.recent.filter(x => x !== v); drawSearch(); }
   else if(a === 'rc-clear'){ S.recent = []; drawSearch(); }
   else if(a === 'act'){ e.stopPropagation(); const c = C[+b.dataset.i]; toast(`${c.name} · 전화 (시안에서는 걸리지 않습니다)`); }
-  else if(a === 'open'){ if(S.search) addRecent(); toast(`${C[+b.dataset.i].name} 고객 상세는 이번 범위 밖입니다`); }
+  else if(a === 'open'){ if(S.search) addRecent(); if(S.ver === 'v4'){ S.detail = +b.dataset.i; S.memoOpen = false; S.memoDraft = ''; drawDetail(true); } else toast(`${C[+b.dataset.i].name} 고객 상세는 v4에서 볼 수 있습니다`); }
+  else if(a === 'det-x'){ S.detail = null; draw(); }
+  else if(a === 'cfold'){ const k = S.detail + '-' + b.dataset.k; S.fold[k] = !S.fold[k]; drawDetail(); }
+  else if(a === 'memo-open'){ S.memoOpen = true; S.memoDraft = ''; drawDetail(); const t = $('memoIn'); if(t && t.focus) t.focus(); }
+  else if(a === 'memo-cancel'){ S.memoOpen = false; S.memoDraft = ''; drawDetail(); }
+  else if(a === 'memo-chip'){ S.memoDraft += (S.memoDraft && !S.memoDraft.endsWith('\n') ? '\n' : '') + v + ': '; drawDetail(); const t = $('memoIn'); if(t && t.focus){ t.focus(); if(t.setSelectionRange) t.setSelectionRange(t.value.length, t.value.length); } }
+  else if(a === 'memo-save'){ const t = S.memoDraft.trim(); if(!t){ toast('메모 내용을 적어 주세요'); return; }
+    C[S.detail].memos.unshift({t, by:ME, date:dAt(0), time:'12:00'}); S.memoOpen = false; S.memoDraft = ''; drawDetail(); toast('메모를 추가했습니다'); }
+  else if(a === 'memo-del'){ C[S.detail].memos.splice(+b.dataset.k, 1); drawDetail(); toast('메모를 지웠습니다'); }
+  else if(a === 'dst'){ S.sheet = 'dstatus'; draw(); }
+  else if(a === 'dedit'){ const c = C[S.detail]; S.edit = {name:c.name, phone:c.phone, own:c.own, int:c.int}; S.sheet = 'dedit'; draw(); }
+  else if(a === 'epick'){ S.edit[b.dataset.key] = v; $('sheet').innerHTML = sheetHTML(); }
+  else if(a === 'esave'){ const c = C[S.detail], d = S.edit; if(!d.name.trim() || d.phone.replace(/\D/g, '').length < 9){ toast('이름과 전화번호를 확인해 주세요'); return; }
+    Object.assign(c, {name:d.name.trim(), phone:d.phone.trim(), own:d.own, int:d.int}); S.sheet = false; S.edit = null; draw(); toast('기본 정보를 저장했습니다'); }
+  else if(a === 'dst-pick'){ const c = C[S.detail]; c.st = b.dataset.k; S.sheet = false; draw(); toast(`상태를 「${c.st}」(으)로 바꿨습니다`); }
   else if(a === 'soon'){ toast(b.dataset.t); }
 });
 app.addEventListener('keydown', e => { if((e.key === 'Enter' || e.key === ' ') && e.target.dataset.a === 'open'){ e.preventDefault(); e.target.click(); }
   else if(e.key === 'Enter' && e.target.id === 'sq'){ addRecent(); e.target.blur(); } });
-app.addEventListener('input', e => { if(e.target.id === 'sq'){ S.sq = e.target.value; drawSearch(); } });
+app.addEventListener('input', e => { if(e.target.id === 'sq'){ S.sq = e.target.value; drawSearch(); } else if(e.target.dataset.ef && S.edit){ S.edit[e.target.dataset.ef] = e.target.value; } else if(e.target.id === 'memoIn'){ S.memoDraft = e.target.value; } });
 
 function clDemo(k){
   document.body.classList.remove('nt-open');
-  Object.assign(S, {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',sq:'',scope:'전체'});
+  Object.assign(S, {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',sq:'',scope:'전체',detail:null});
   if(k === 'loading'){ S.loading = true; draw(); setTimeout(() => { S.loading = false; draw(); }, 2500); return; }
   if(k === 'empty'){ S.st = '정계약'; S.f.int = ['하']; }
   if(k === 'status'){ S.sheet = 'status'; }
@@ -1057,38 +1299,28 @@ function specHTML(){
 }
 document.getElementById('spec').innerHTML = specHTML();
 
-/* ── 카드 시안 4가지 (같은 가상 고객 5명을 네 가지 모양으로) ── */
-function cardsHTML(){
-  const pick = ['이서연','박지훈','최유진','김민수','정하늘'].map(n => C.find(c => c.name === n));
-  const DESC = {
-    A:['한 화면 약 4명','지금 시안의 카드. 메모나 AI 요약 두 줄과 다음 일정을 보여 주고, 전화 버튼은 오른쪽 아래 같은 자리에 둡니다. AI 키워드와 기록 수는 없습니다.'],
-    B:['한 화면 약 3~4명','현행 카드의 정보를 모두 남깁니다. 유입 매체 · 현장 · 담당자 · 등록일, AI 키워드, 메모 한 줄, 기록 수 · 예약 · 최근 통화가 실제 값으로 나옵니다.'],
-    C:['한 화면 약 7명','이름 · 상태 · 다음 일정과 메모 한 줄만 남긴 낮은 카드. 고객마다 카드는 나뉘어 있습니다. 많은 고객을 빠르게 훑고 전화를 걸 때 유리합니다.'],
-    D:['한 화면 약 4명','카드 맨 위에 다음 일정(오늘은 파랑, 지난 것은 주황)과 최근 통화를 둡니다. 오늘 누구에게 무엇을 해야 하는지가 먼저 보입니다.']
-  };
-  const col = l => `<section class="kd-col"><div class="kd-h"><i>${l}</i><h2>${KNAME[l]}</h2><span>${DESC[l][0]}</span></div><p class="kd-desc">${DESC[l][1]}</p>
-    <div class="cl-list k${l}">${pick.map(c => KCARD[l](c)).join('')}</div>
-    <button class="kd-apply" data-apply="${l}">디자인 시안에 ${l}안 적용해서 보기</button></section>`;
-  return `<div class="nt-eyebrow">영업비서 · 고객 관리 › 고객 목록 › 고객 카드</div>
-  <h1>카드 시안 4가지</h1>
-  <p class="sp-lead">같은 가상 고객 5명을 네 가지 카드로 그렸습니다. A~D를 가리키며 어느 쪽이 일하기 편한지, 빠지면 곤란한 정보가 무엇인지 물어보기 위한 화면입니다. 각 안 아래 버튼을 누르면 디자인 시안의 목록이 그 카드로 바뀝니다.</p>
-  <div class="kd-grid">${['A','B','C','D'].map(col).join('')}</div>`;
+// v4: 마지막에 고른 캠페인 · 담당자를 기억했다가 다음에 그대로 연다 (이 브라우저에만 저장)
+const MEM = 'bybiseo-cl-v4';
+function remember(){ if(S.ver !== 'v4') return; try { localStorage.setItem(MEM, JSON.stringify({camp:S.camp, own:S.f.own})); } catch(e){} }
+function setVer(v){
+  S.ver = v; S.sheet = false; S.draft = null; S.detail = null; S.camp = '전체'; S.f.own = [];
+  let msg = '';
+  if(v === 'v4'){
+    try { const m = JSON.parse(localStorage.getItem(MEM) || 'null');
+      if(m){ if(m.camp === '전체' || CAMPS.includes(m.camp)) S.camp = m.camp; if(Array.isArray(m.own)) S.f.own = m.own;
+        const t = [S.camp !== '전체' ? S.camp : '', ...S.f.own].filter(Boolean); if(t.length) msg = '지난번 조건으로 열었습니다 · ' + t.join(' · '); } } catch(e){}
+  }
+  $('capNew').innerHTML = v === 'v4'
+    ? '시안 v4 · 인터뷰 반영 <small>전화번호 · 등록 시각 · 다른 현장 문의 표시 · 캠페인과 담당자 기억</small>'
+    : '시안 v3 · 기존 <small>직접 눌러 볼 수 있음 · 가상 데이터</small>';
+  $('banNew').textContent = '고객 목록 시안 ' + v;
+  $('fbPanel').innerHTML = v === 'v4' ? fbPanelHTML() : ''; $('fbPanel').hidden = v !== 'v4';
+  draw(); $('scroll').scrollTop = 0; if(msg) toast(msg);
 }
-function setCard(k){
-  S.card = k;
-  document.querySelectorAll('#kdSw button').forEach(b => b.classList.toggle('on', b.dataset.card === k));
-  draw(); $('scroll').scrollTop = 0;
-}
-document.getElementById('kdSw').addEventListener('click', e => { const b = e.target.closest('button'); if(b) setCard(b.dataset.card); });
-document.getElementById('cards').addEventListener('click', e => {
-  const b = e.target.closest('[data-apply]'); if(!b) return;
-  setCard(b.dataset.apply); pgShow('design'); history.replaceState(null, '', location.pathname + location.search);
-});
-document.getElementById('cards').innerHTML = cardsHTML();
 function pgShow(k){
-  document.body.classList.toggle('pg-cards', k === 'cards');
   document.body.classList.toggle('pg-spec', k === 'spec');
   document.querySelectorAll('#pgTabs button').forEach(b => b.classList.toggle('on', b.dataset.pg === k));
+  if(k !== 'spec') setVer(k === 'v3' ? 'v3' : 'v4');
   window.scrollTo(0, 0);
 }
 document.getElementById('pgTabs').addEventListener('click', e => {
@@ -1096,10 +1328,12 @@ document.getElementById('pgTabs').addEventListener('click', e => {
   pgShow(b.dataset.pg); history.replaceState(null, '', b.dataset.pg === 'design' ? location.pathname + location.search : '#' + b.dataset.pg);
 });
 build();
+setVer('v4');
 // 주소 끝에 #filtered · #empty · #loading · #sheet · #status · #search 를 붙이면 그 상태로 열립니다.
 (h => {
   if(h === 'spec' || /^TOP-\d+$/.test(h)) pgShow('spec');
-  else if(h === 'cards') pgShow('cards');
+  else if(h === 'v3') pgShow('v3');
+  else if(h === 'detail'){ S.detail = C.findIndex(c => c.dup.length > 1); draw(); }
   else if(['filtered','empty','loading','status','search','fchip','camp','sort'].includes(h)) clDemo(h);
   else if(h === 'sheet'){ S.fsec = null; S.draft = {f:F0(), sort:S.sort}; S.sheet = true; draw(); }
 })(location.hash.slice(1));
