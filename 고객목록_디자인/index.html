@@ -526,6 +526,20 @@ body.pg-cards #cards{display:block}
 .d-ai.sug h3{color:#A85D00}
 .d-kw{margin:0}
 .d-call-f{display:flex;gap:8px}
+/* 전체 대화: 상세 요약(시각 + 한 줄) · 녹음 내용(말풍선) */
+.d-talk h4{display:flex;align-items:center;gap:5px;margin:0 0 8px;font-size:14px;font-weight:700;color:var(--cl-ink)}
+.d-talk h4 svg{width:15px;height:15px;color:var(--cl-brand)}
+.d-tsum{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:6px}
+.d-tsum li{display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.5;color:var(--cl-ink2)}
+.d-tsum time{flex:none;padding:1px 7px;border-radius:6px;background:var(--cl-brand-soft);color:var(--cl-brand);font-size:13px;font-variant-numeric:tabular-nums}
+.d-chat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.d-chat li{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.d-chat li.me{align-items:flex-end}
+.d-chat small{font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.d-chat small b{margin-right:5px;font-weight:600;color:var(--cl-ink3)}
+.d-chat li.me small b{color:var(--cl-brand)}
+.d-chat p{max-width:84%;margin:0;padding:9px 13px;border-radius:14px;background:var(--cl-bg);font-size:14px;line-height:1.5;color:var(--cl-ink)}
+.d-chat li.me p{background:var(--cl-brand-soft)}
 .d-call-f button{width:100%;height:38px;border-radius:10px;border:1px solid var(--cl-line);background:#fff;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-size:13px;font-weight:700;color:var(--cl-brand)}
 .d-mypage-empty{margin:0;font-size:14px;color:var(--cl-ink3)}
 .d-mypage-on b{display:block;font-size:14px;font-weight:600;color:var(--cl-ink)}
@@ -832,7 +846,7 @@ const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':
 
 /* ── 상태 ── */
 const F0 = () => ({own:[],int:[],plat:[],camp:[],date:'전체'});
-const S = {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',ver:'v4',detail:null,dupView:'data',fbShow:false,fold:{},memoOpen:false,memoDraft:'',sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
+const S = {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',ver:'v4',detail:null,dupView:'data',fbShow:false,fold:{},talk:{},memoOpen:false,memoDraft:'',sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
 const app = document.getElementById('app');
 const fmtReg = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
 const daysAgo = d => Math.floor((TODAY - new Date(d + 'T00:00:00')) / 864e5);
@@ -996,6 +1010,21 @@ function stampNow(c){
   const [h, m] = ts.split(':').map(Number), tot = Math.min(23 * 60 + 59, h * 60 + m + 1);
   return {date, time:pad2(Math.floor(tot / 60)) + ':' + pad2(tot % 60)};
 }
+// 전체 대화 보기: 통화 요약을 시각별 한 줄로 나누고, 가상 대화를 말풍선으로 그린다
+const TALK = [[1,'안녕하세요, {camp} 분양 상담 {own}입니다. 문의 남겨 주셔서 연락드렸습니다.'],[0,'네, 안녕하세요.'],[1,'지금 통화 괜찮으실까요?'],[0,'네, 잠깐은 괜찮아요.'],[1,'어떤 부분이 가장 궁금하셨어요?'],[0,'{kw} 쪽으로 좀 알아보고 있어요.'],[1,'네, 그 부분은 자료로 정리해서 안내드리겠습니다.'],[0,'문자로도 보내 주실 수 있나요?'],[1,'그럼요, 통화 끝나고 바로 보내 드리겠습니다.'],[0,'방문은 예약하고 가야 하나요?'],[1,'네, 예약하시면 기다리지 않고 바로 상담받으실 수 있습니다.'],[0,'주차는 가능한가요?'],[1,'네, 모델하우스 앞에 주차장이 있습니다.'],[0,'알겠습니다. 가족이랑 상의해 볼게요.'],[1,'네, 편하실 때 다시 연락드리겠습니다.'],[0,'네, 감사합니다.'],[1,'감사합니다. 좋은 하루 보내세요.']];
+function talkHTML(c, x){
+  const m = /(?:(\d+)분)?\s*(?:(\d+)초)?/.exec(x.dur) || [], tot = Math.max(20, (+m[1] || 0) * 60 + (+m[2] || 0));
+  const mmss = t => pad2(Math.floor(t / 60)) + ':' + pad2(Math.floor(t % 60));
+  const pts = x.sum.split(/(?<=\.)\s+/).flatMap(t => t.length > 34 && t.includes(', ') ? t.split(', ') : [t]).map(t => t.trim().replace(/\.$/, '')).filter(Boolean);
+  const n = Math.max(2, Math.min(TALK.length, x.n)), lines = n >= TALK.length ? TALK : [...TALK.slice(0, n - 2), ...TALK.slice(-2)];
+  const fill = t => t.replace('{camp}', c.camp).replace('{own}', ownLbl(x.own)).replace('{kw}', x.kw[0] || '분양가와 일정');
+  return `<div class="d-talk">
+    <h4>상세 요약</h4>
+    <ul class="d-tsum">${pts.map((t, j) => `<li><time>${mmss(tot * (j + .6) / (pts.length + .4))}</time><span>${esc(t)}.</span></li>`).join('')}</ul>
+    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/><path d="M12 18v4"/></svg>녹음 내용</h4>
+    <ol class="d-chat">${lines.map(([me, t], j) => `<li class="${me ? 'me' : ''}"><small><b>${me ? '담당자' : '고객'}</b>${mmss((tot - 3) * j / (lines.length - 1))}</small><p>${esc(fill(t))}</p></li>`).join('')}</ol>
+  </div>`;
+}
 function timelineHTML(c){
   const ask = c.memos.find(x => x.auto), nxt = c.v4Next !== undefined ? c.v4Next : c.next;
   const ev = [{date:c.reg, time:c.time, k:'in', l:'유입', t:`${c.plat} · ${c.camp}${ask ? ' · ' + ask.t : ''}`}];
@@ -1040,7 +1069,8 @@ function detailHTML(){
         <div class="d-ai"><h3>${ic('wand_stars')}AI 요약</h3><p>${x.sum}</p></div>
         <div class="d-ai sug"><h3>${ic('wand_stars')}AI 제안</h3><p>${x.sug}</p></div>
         ${x.kw.length ? `<div class="cl-kw d-kw">${x.kw.map(v => `<span>${v}</span>`).join('')}</div>` : ''}
-        <div class="d-call-f"><button data-a="soon" data-t="전체 대화 보기는 이번 범위 밖입니다">전체 대화 보기 (${x.n}건) ${ic('keyboard_arrow_down')}</button></div>
+        ${S.talk[i + '-' + k] ? talkHTML(c, x) : ''}
+        <div class="d-call-f"><button data-a="ctalk" data-k="${k}" aria-expanded="${!!S.talk[i + '-' + k]}">${S.talk[i + '-' + k] ? '대화 접기' : `전체 대화 보기 (${x.n}건)`} ${ic(S.talk[i + '-' + k] ? 'keyboard_arrow_up' : 'keyboard_arrow_down')}</button></div>
       </div>`}</li>`; };
   const memo = (x, k) => `<li data-a="memo-edit" data-k="${k}" role="button" tabindex="0" aria-label="메모 수정·삭제 열기"><p>${esc(x.t)}</p><small>${x.auto ? '<em>인스턴트 폼</em>' : `<span>${ownLbl(x.by)}</span>`}<time>${fmtFull(x.date)} ${x.time}</time></small></li>`;
   const dups = dupOf(c);
@@ -1286,6 +1316,7 @@ app.addEventListener('click', e => {
   else if(a === 'act'){ e.stopPropagation(); const c = C[+b.dataset.i]; toast(`${c.name} · 전화 (시안에서는 걸리지 않습니다)`); }
   else if(a === 'open'){ if(S.search) addRecent(); if(S.ver === 'v4'){ S.detail = +b.dataset.i; S.dtab = 'info'; S.dTarget = null; S.dlock = 0; S.memoDraft = ''; drawDetail(true); } else toast(`${C[+b.dataset.i].name} 고객 상세는 v4에서 볼 수 있습니다`); }
   else if(a === 'det-x'){ S.detail = null; draw(); }
+  else if(a === 'ctalk'){ const k = S.detail + '-' + b.dataset.k; S.talk[k] = !S.talk[k]; drawDetail(); }
   else if(a === 'cfold'){ const k = S.detail + '-' + b.dataset.k; S.fold[k] = !S.fold[k]; drawDetail(); }
   else if(a === 'memo-open' || a === 'memo-edit'){ S.memoEdit = a === 'memo-edit' ? +b.dataset.k : null; S.memoDraft = S.memoEdit != null ? C[S.detail].memos[S.memoEdit].t : ''; S.sheet = 'memo'; draw(); const t = $('memoIn'); if(t && t.focus) setTimeout(() => t.focus(), 280); }
   else if(a === 'memo-chip'){ S.memoDraft += (S.memoDraft && !S.memoDraft.endsWith('\n') ? '\n' : '') + v + ': '; $('sheet').innerHTML = sheetHTML(); const t = $('memoIn'); if(t && t.focus){ t.focus(); if(t.setSelectionRange) t.setSelectionRange(t.value.length, t.value.length); } }
