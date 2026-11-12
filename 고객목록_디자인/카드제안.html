@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>시안 비교 — 목록 카드 레이아웃 5종 · AI 제안 위치 · 메모</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --cl-bg:#F2F4F7;--cl-surface:#fff;--cl-ink:#111418;--cl-ink2:#4A5160;--cl-ink3:#6B7280;--cl-line:#E6E9EE;
+  --cl-brand:#2B6FF3;--cl-brand-soft:#EAF1FF;--cl-warn:#E5484D;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#E5E8EF;color:var(--cl-ink);font:15px/1.5 "Pretendard Variable",Pretendard,-apple-system,sans-serif;word-break:keep-all}
+button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer}
+.cl-ic{width:1em;height:1em;fill:currentColor;flex:none;display:block}
+
+.top-bar{position:sticky;top:0;z-index:20;background:rgba(17,20,24,.95);backdrop-filter:blur(10px);color:#fff;padding:14px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.top-bar h1{margin:0;font-size:16px;font-weight:800}
+.top-nav{display:flex;gap:8px;margin-left:auto}
+.top-nav a{color:#D1D5DB;text-decoration:none;font-size:13px;font-weight:700;padding:6px 12px;border-radius:8px;background:rgba(255,255,255,.1)}
+.top-nav a:hover{background:#fff;color:#111418}
+
+.wrap{max-width:1620px;margin:0 auto;padding:28px 24px 80px}
+.sec-block{margin-bottom:48px}
+.sec-title{margin:0 0 6px;font-size:20px;font-weight:800;letter-spacing:-.4px;display:flex;align-items:center;gap:8px}
+.sec-pill{font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;background:var(--cl-brand);color:#fff}
+.sec-sub{margin:0 0 18px;font-size:13.5px;color:var(--cl-ink2)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,372px);gap:20px;align-items:start}
+.col{background:var(--cl-bg);border-radius:22px;padding:16px 14px;box-shadow:0 8px 24px rgba(17,20,24,.06),inset 0 0 0 1.5px #D8DCE5;cursor:pointer;transition:box-shadow .15s,transform .15s}
+.col:hover{transform:translateY(-2px)}
+.col.sel{box-shadow:0 12px 28px rgba(43,111,243,.2),inset 0 0 0 2.5px var(--cl-brand)}
+.col-h{padding:0 4px 12px;border-bottom:1px solid var(--cl-line);margin-bottom:12px}
+.col-tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;padding:3px 8px;border-radius:6px;background:#111418;color:#fff;margin-bottom:6px}
+.col.sel .col-tag{background:var(--cl-brand)}
+.col-tag em{font-style:normal;color:#93C5FD}
+.col-h h2{margin:0;font-size:15.5px;font-weight:800;letter-spacing:-.3px}
+.col-h p{margin:4px 0 0;font-size:12.5px;color:var(--cl-ink3);line-height:1.45}
+
+/* 공통 상세 카드 부품 */
+.stack{display:flex;flex-direction:column;gap:10px}
+.d-card{background:var(--cl-surface);border-radius:16px;padding:15px}
+.d-h{display:flex;align-items:center;justify-content:space-between;min-height:26px;margin-bottom:10px}
+.d-h h3{margin:0;font-size:15px;font-weight:700;letter-spacing:-.2px}
+.d-h h3 em{margin-left:5px;font-style:normal;color:var(--cl-ink3)}
+.d-add{font-size:13px;font-weight:700;color:var(--cl-brand)}
+
+/* 미니 상단 기본정보 카드 */
+.mini-info{padding:14px 15px}
+.kicker{display:flex;justify-content:space-between;font-size:12px;color:var(--cl-ink3);margin-bottom:6px}
+.kicker b{color:var(--cl-ink2)}
+.who-row{display:flex;align-items:center;justify-content:space-between}
+.who-row strong{font-size:19px;font-weight:800}
+.who-ph{font-size:14px;color:var(--cl-ink2);margin-top:1px}
+.act-row{display:flex;align-items:flex-end;gap:8px;margin-top:10px}
+.st-box{flex:1}
+.flbl{display:block;font-size:11px;font-weight:600;color:var(--cl-ink3);margin:0 0 4px 2px}
+.st-btn{width:100%;height:38px;padding:0 10px;border-radius:9px;border:1px solid var(--cl-line);display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700}
+.st-dot{width:7px;height:7px;border-radius:50%;background:#F08C00}
+.call-btn{height:38px;padding:0 14px;border-radius:9px;background:var(--cl-brand);color:#fff;font-size:13.5px;font-weight:700;display:inline-flex;align-items:center;gap:5px}
+
+/* 통화 이력 카드 (AI 요약만 깔끔하게 남긴 상태) */
+.call-box{border:1px solid var(--cl-line);border-radius:12px;padding:11px}
+.call-head{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.call-ic{width:30px;height:30px;border-radius:50%;background:var(--cl-brand-soft);color:var(--cl-brand);display:grid;place-items:center;font-size:14px}
+.call-t b{display:block;font-size:13.5px}
+.call-t small{font-size:11.5px;color:var(--cl-ink3)}
+.ai-sum{padding:10px 11px;border-radius:9px;background:var(--cl-brand-soft)}
+.ai-sum h4{margin:0 0 3px;font-size:12px;font-weight:800;color:var(--cl-brand);display:flex;align-items:center;gap:4px}
+.ai-sum p{margin:0;font-size:13px;line-height:1.5;color:var(--cl-ink)}
+.kw-row{display:flex;gap:5px;margin-top:8px}
+.kw-row span{font-size:11.5px;font-weight:600;padding:2px 7px;border-radius:6px;background:var(--cl-bg);color:var(--cl-ink2)}
+.full-chat{width:100%;height:34px;margin-top:8px;border-radius:8px;border:1px solid var(--cl-line);font-size:12.5px;font-weight:700;color:var(--cl-brand);display:flex;align-items:center;justify-content:center;gap:4px}
+
+/* ═════════ [파트 A] AI 제안 위치 대안 4종 ═════════ */
+/* A-1: 상단 기본 정보 바로 아래 '다음 할 일(AI 제안)' 코칭 배너로 분리! (통화 이력에는 요약만 남김) */
+.sug-top-banner{background:#FFF8EA;border:1px solid #FDE3B0;border-radius:14px;padding:11px 13px;display:flex;align-items:flex-start;gap:8px}
+.sug-top-banner i{flex:none;width:22px;height:22px;border-radius:6px;background:#FFE8BA;color:#A85D00;display:grid;place-items:center;font-size:13px;margin-top:1px}
+.sug-top-banner b{display:block;font-size:12px;font-weight:800;color:#A85D00;margin-bottom:2px}
+.sug-top-banner p{margin:0;font-size:13px;line-height:1.45;color:var(--cl-ink)}
+
+/* A-2: 통화 카드 내부에서 [AI 요약 | AI 제안] 탭 전환 (한 번에 하나만 보여 시선 분산 제로) */
+.ai-tabs{display:inline-flex;background:var(--cl-bg);padding:2px;border-radius:8px;margin-bottom:8px;width:100%}
+.ai-tabs button{flex:1;height:28px;border-radius:6px;font-size:12px;font-weight:700;color:var(--cl-ink3)}
+.ai-tabs button.on{background:#fff;color:var(--cl-ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.ai-sug-pane{padding:10px 11px;border-radius:9px;background:#FFF8EA}
+.ai-sug-pane p{margin:0;font-size:13px;line-height:1.5;color:var(--cl-ink)}
+
+/* A-3: 미팅 예약 / 다음 일정 섹션과 통합 ('다음 액션 & 미팅 예약' 카드에 배치) */
+.meet-box{display:flex;align-items:center;gap:8px;padding:10px 11px;border-radius:10px;background:var(--cl-bg);font-size:13.5px;font-weight:600}
+.meet-sug{margin-top:8px;padding:9px 11px;border-radius:10px;background:#FFF8EA;font-size:12.5px;line-height:1.45;color:var(--cl-ink)}
+.meet-sug b{color:#A85D00;margin-right:4px}
+
+/* A-4: 통화 카드 내에서는 한 줄 접기('💡 AI 제안 보기 ⌄')로 숨겨두고 요약만 먼저 읽히게 */
+.sug-fold{width:100%;margin-top:7px;padding:8px 10px;border-radius:8px;background:#FFF8EA;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;font-weight:700;color:#A85D00}
+.sug-fold-body{margin-top:6px;padding:10px 11px;border-radius:9px;background:#FFF8EA;font-size:13px;line-height:1.5;color:var(--cl-ink)}
+
+/* ═════════ [파트 B] 메모 수정/삭제 대안 4종 ═════════ */
+.m-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.m-item{position:relative;padding:12px 14px;border-radius:12px;background:var(--cl-bg)}
+.m-item.m3-tap{cursor:pointer;transition:background .15s,box-shadow .15s}
+.m-item.m3-tap:hover{background:#E7EBF2}
+.m-item.m3-tap.active{background:#fff;box-shadow:inset 0 0 0 1.5px var(--cl-brand)}
+.m-txt{margin:0;font-size:14px;line-height:1.55;color:var(--cl-ink);word-break:break-word}
+.m-meta{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.m-badge{font-style:normal;padding:2px 6px;border-radius:6px;background:var(--cl-brand-soft);color:var(--cl-brand);font-weight:700}
+.m1-act{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--cl-ink3)}
+.m2-more{margin-left:auto;width:24px;height:22px;margin-right:-4px;border-radius:6px;display:grid;place-items:center;font-size:16px;color:var(--cl-ink3)}
+.m2-pop{position:absolute;right:12px;bottom:34px;z-index:5;background:#fff;border:1px solid var(--cl-line);border-radius:10px;box-shadow:0 8px 20px rgba(17,20,24,.12);padding:4px;display:flex;flex-direction:column;min-width:88px}
+.m2-pop button{display:flex;align-items:center;gap:6px;height:30px;padding:0 10px;border-radius:7px;font-size:12.5px;font-weight:600}
+.m2-pop button:hover{background:var(--cl-bg)}
+.m2-pop .del{color:var(--cl-warn)}
+.m3-hint{margin-top:8px;padding:8px 10px;border-radius:9px;background:#F8FAFC;border:1px dashed #D5DCE6;font-size:12px;color:var(--cl-ink3);display:flex;justify-content:space-between}
+.m3-hint b{color:var(--cl-brand)}
+.m4-ic{margin-left:auto;display:inline-flex;gap:2px;margin-right:-4px}
+.m4-ic button{width:25px;height:23px;border-radius:6px;display:grid;place-items:center;font-size:13.5px;color:#8A94A6}
+
+/* M-3 바텀시트 미리보기 */
+.col-phone{position:relative;overflow:hidden;border-radius:16px}
+.m3-dim{position:absolute;inset:0;z-index:8;background:rgba(17,20,24,.42);display:flex;align-items:flex-end;border-radius:16px;animation:fadeIn .15s ease}
+.m3-sheet{width:100%;background:#fff;border-radius:20px 20px 16px 16px;padding:10px 16px 16px;box-shadow:0 -8px 24px rgba(17,20,24,.16)}
+.m3-grip{display:block;width:36px;height:4px;border-radius:2px;background:#D5D9E0;margin:0 auto 10px}
+.m3-sh-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.m3-sh-h b{font-size:15.5px;font-weight:800}
+.m3-sh-x{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px;color:var(--cl-ink3);background:var(--cl-bg)}
+.m3-ta{width:100%;min-height:84px;padding:11px 12px;border:0;border-radius:11px;background:var(--cl-bg);font:inherit;font-size:13.5px;line-height:1.5;color:var(--cl-ink);resize:none}
+.m3-ta:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
+.m3-sh-foot{display:flex;gap:8px;margin-top:10px}
+.m3-del{flex:none;height:42px;padding:0 15px;border-radius:11px;background:#FFF0F0;color:var(--cl-warn);font-size:13.5px;font-weight:700;display:inline-flex;align-items:center;gap:5px}
+.m3-save{flex:1;height:42px;border-radius:11px;background:var(--cl-brand);color:#fff;font-size:14px;font-weight:700}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+</style>
+
+<style>
+/* ===== 주제 3: 목록 카드 레이아웃 (kc-) ===== */
+.kc-list{display:flex;flex-direction:column;gap:8px}
+.kc{position:relative;background:#fff;border-radius:16px;padding:12px 16px;overflow:hidden}
+.kc-row{display:flex;align-items:center;gap:8px;min-width:0}
+.kc-nm{flex:none;font-size:18px;font-weight:800;letter-spacing:-.4px}
+.kc-src{display:inline-flex;align-items:center;gap:4px;min-width:0;font-size:12px;color:var(--cl-ink3);white-space:nowrap}
+.kc-src span{overflow:hidden;text-overflow:ellipsis}
+.kc-pic{flex:none;width:16px;height:16px;border-radius:4px;display:inline-grid;place-items:center;font-style:normal;font-size:10px;font-weight:800;color:#fff}
+.kc-r{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:6px}
+.kc-int{display:inline-flex;gap:3px}
+.kc-int i{width:7px;height:7px;border-radius:50%;background:#D5D9E0}
+.kc-badge{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:6px;font-size:12px;font-weight:700;white-space:nowrap}
+.kc-meta{margin-top:7px;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kc-meta b{font-weight:600;color:var(--cl-ink2)}
+.kc-bar{flex:none;width:1px;height:10px;background:#D5D9E0}
+.kc-ph{font-size:13.5px;font-weight:600;color:var(--cl-ink2);font-variant-numeric:tabular-nums}
+.kc-memo{margin-top:8px;padding:9px 10px;border-radius:10px;background:var(--cl-bg);font-size:13.5px;line-height:1.45;color:var(--cl-ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.kc-dup{display:flex;align-items:center;gap:6px;margin-top:7px;font-size:12px;color:var(--cl-ink2);white-space:nowrap}
+.kc-dup b{flex:none;height:20px;line-height:20px;padding:0 7px;border-radius:6px;background:#FFF3DC;color:#A85D00;font-weight:700}
+.kc-dup em{font-style:normal;color:#A85D00;font-weight:700}
+.kc-call{width:100%;height:35px;margin-top:8px;border-radius:10px;border:1px solid var(--cl-line);background:#fff;display:flex;align-items:center;justify-content:center;gap:5.5px;font-size:13px;font-weight:700}
+/* K-1 원형 전화 버튼 */
+.kc-round{flex:none;margin-left:auto;width:38px;height:38px;border-radius:50%;background:var(--cl-brand-soft);color:var(--cl-brand);display:grid;place-items:center;font-size:17px}
+.k1 .kc-ph{font-size:15px;font-weight:700;color:var(--cl-ink)}
+.k1 .kc-sub{margin-top:1px;font-size:12.5px;color:var(--cl-ink3);display:flex;align-items:center;gap:6px;white-space:nowrap}
+/* K-2 번호가 곧 전화 버튼 */
+.k2 .kc-foot{margin-top:10px;padding-top:10px;border-top:1px solid var(--cl-line);justify-content:space-between}
+.k2 .kc-foot small{font-size:12.5px;color:var(--cl-ink3);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.kc-phbtn{flex:none;height:34px;padding:0 12px;border-radius:17px;background:var(--cl-brand-soft);color:var(--cl-brand);display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}
+.k2 .kc-memo{background:none;padding:0;margin-top:6px;font-size:14px;color:var(--cl-ink)}
+/* K-3 상태 색 띠 + 현장 머리말 */
+.k3{padding-left:19px}
+.k3::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--stc)}
+.k3 .kc-kick{justify-content:space-between;font-size:12px;color:var(--cl-ink3);margin-bottom:3px}
+.k3 .kc-st{font-size:12.5px;font-weight:800;color:var(--stf)}
+.k3 .kc-inline{margin-top:8px;gap:8px}
+.k3 .kc-call{flex:none;width:auto;height:34px;margin:0 0 0 auto;padding:0 14px}
+/* K-4 촘촘한 2줄 */
+.k4{padding:10px 14px}
+.k4 .kc-nm{font-size:16px}
+.k4 .kc-memo{margin-top:6px;padding:0;background:none;-webkit-line-clamp:1;font-size:13px}
+.k4 .kc-sub{margin-top:5px;font-size:12px;color:var(--cl-ink3);gap:6px;white-space:nowrap}
+.k4 .kc-round{width:32px;height:32px;font-size:15px}
+.k4 .kc-badge{height:22px}
+.kc-note{margin:12px 4px 0;padding:0;list-style:none;font-size:12.5px;line-height:1.5;color:var(--cl-ink2)}
+.kc-note li{padding-left:16px;position:relative;margin-top:3px}
+.kc-note li::before{position:absolute;left:0;font-weight:800}
+.kc-note .p::before{content:'+';color:#1F9D55}
+.kc-note .m::before{content:'−';color:var(--cl-warn)}
+</style>
+</head>
+<body>
+
+<svg hidden aria-hidden="true">
+  <symbol id="i-spark" viewBox="0 -960 960 960"><path d="m480-120-92-268-268-92 268-92 92-268 92 268 268 92-268 92-92 268Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5a5 5 0 0 1 6 6"/><path d="M14.5 7.5a1.5 1.5 0 0 1 2 2"/><path d="M22 16.92v2.6a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 3.8 2 2 0 0 1 4.11 1.8h2.6a2 2 0 0 1 2 1.72c.12.9.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L7.8 9.4a16 16 0 0 0 6.8 6.8l1.12-1.14a2 2 0 0 1 2.11-.45c.85.33 1.75.56 2.65.68A2 2 0 0 1 22 16.92z"/></g></symbol>
+  <symbol id="i-more" viewBox="0 -960 960 960"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></g></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></g></symbol>
+</svg>
+
+<div class="top-bar">
+  <h1>시안 비교</h1>
+  <div class="top-nav">
+    <a href="#sec-card">★ 목록 카드 레이아웃 (K-0 ~ K-4)</a>
+    <a href="#sec-ai">1. AI 제안 위치 시안 (A-1 ~ A-4)</a>
+    <a href="#sec-memo">2. 메모 수정·삭제 시안 (M-1 ~ M-4)</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- 섹션 0: 목록 카드 레이아웃 -->
+  <div class="sec-block" id="sec-card">
+    <h2 class="sec-title"><span class="sec-pill">새 주제</span> 목록 카드 레이아웃 시안 5종</h2>
+    <p class="sec-sub">같은 고객 3명을 같은 정보로 그렸습니다. K-0이 지금 본 시안이고, K-1~K-4가 제안입니다. 마음에 드는 칸을 눌러 표시해 두세요.</p>
+    <div class="grid" id="gridCard"></div>
+  </div>
+  <!-- 섹션 1: AI 제안 위치 -->
+  <div class="sec-block" id="sec-ai">
+    <h2 class="sec-title"><span class="sec-pill">주제 1</span> AI 요약과 겹치지 않는 「AI 제안」 위치 시안 4종</h2>
+    <p class="sec-sub">통화마다 파란 박스와 노란 박스가 연달아 나와 시선이 분산되던 문제를 해결하기 위해, 「과거 기록(AI 요약)」과 「앞으로 할 일(AI 제안)」을 분리한 4가지 방법입니다.</p>
+    <div class="grid" id="gridAI"></div>
+  </div>
+
+  <!-- 섹션 2: 메모 수정/삭제 -->
+  <div class="sec-block" id="sec-memo">
+    <h2 class="sec-title"><span class="sec-pill">주제 2</span> 메모 본문 가로 100% 확보 · 수정/삭제 시안 4종</h2>
+    <p class="sec-sub">오른쪽 위에서 메모 글자 영역을 깎아먹던 연필·휴지통 아이콘을 치운 4가지 방법입니다.</p>
+    <div class="grid" id="gridMemo"></div>
+  </div>
+</div>
+
+<script>
+const ic = n => `<svg class="cl-ic"><use href="#i-${n}"/></svg>`;
+
+let selAI = 'A1';
+let selMemo = 'M3';
+let tabMode = 'sum'; // A2 탭 전환 체험용
+let foldOpen = false; // A4 접기/펼치기 체험용
+let m2MenuIdx = 0; // M2 더보기 팝오버 체험용
+let m3OpenIdx = null; // M3 클릭 시 열리는 바텀시트 인덱스
+
+const miniHeader = `
+  <div class="d-card mini-info">
+    <div class="kicker"><b>윤슬자이</b><span>김태윤 · 11/10 09:48</span></div>
+    <div class="who-row"><div><strong>이서연</strong><div class="who-ph">010-9214-5038</div></div><span style="color:#6B7280">•••</span></div>
+    <div class="act-row">
+      <div class="st-box"><span class="flbl">상태</span><div class="st-btn"><i class="st-dot"></i>방문 예약 <span style="margin-left:auto;color:#8A94A6">⌄</span></div></div>
+      <div class="call-btn">${ic('phone')}전화</div>
+    </div>
+  </div>`;
+
+const cleanCallCard = (extraInside = '') => `
+  <div class="d-card">
+    <div class="d-h"><h3>통화 이력<em>1</em></h3></div>
+    <div class="call-box">
+      <div class="call-head"><span class="call-ic">${ic('phone')}</span><div class="call-t"><b>11/10 10:15 통화</b><small>2분 10초 · 김태윤</small></div></div>
+      ${extraInside || `<div class="ai-sum"><h4>${ic('spark')}AI 요약</h4><p>오늘 14시 방문 확정. 신혼집 예산 7억 안팎이며 주차 안내 요청함.</p></div>`}
+      <div class="kw-row"><span>오늘 방문</span><span>예산 7억</span></div>
+      <button class="full-chat">전체 대화 보기 (11건) ⌄</button>
+    </div>
+  </div>`;
+
+function renderAICard(v){
+  if(v === 'A1'){
+    return `<div class="stack">
+      ${miniHeader}
+      <div class="sug-top-banner">
+        <i>${ic('spark')}</i>
+        <div><b>AI 다음 행동 제안</b><p>오늘 오후 방문 전 문자로 모델하우스 위치와 주차 안내를 보내세요.</p></div>
+      </div>
+      ${cleanCallCard()}
+    </div>`;
+  }
+  if(v === 'A2'){
+    const inside = `
+      <div class="ai-tabs">
+        <button class="${tabMode==='sum'?'on':''}" data-aitab="sum">AI 요약</button>
+        <button class="${tabMode==='sug'?'on':''}" data-aitab="sug">✨ AI 제안</button>
+      </div>
+      ${tabMode === 'sum'
+        ? `<div class="ai-sum"><p>오늘 14시 방문 확정. 신혼집 예산 7억 안팎이며 주차 안내 요청함.</p></div>`
+        : `<div class="ai-sug-pane"><p>오늘 오후 방문 전 문자로 모델하우스 위치와 주차 안내를 보내세요.</p></div>`}`;
+    return `<div class="stack">${miniHeader}${cleanCallCard(inside)}</div>`;
+  }
+  if(v === 'A3'){
+    return `<div class="stack">
+      ${cleanCallCard()}
+      <div class="d-card">
+        <div class="d-h"><h3>미팅 · 다음 할 일</h3><span class="d-add">+ 일정 추가</span></div>
+        <div class="meet-box">📅 11/10(화) 14:00 모델하우스 방문</div>
+        <div class="meet-sug"><b>✨ AI 제안</b>방문 전 문자로 모델하우스 위치와 주차 안내를 보내세요.</div>
+      </div>
+    </div>`;
+  }
+  const inside4 = `
+    <div class="ai-sum"><h4>${ic('spark')}AI 요약</h4><p>오늘 14시 방문 확정. 신혼집 예산 7억 안팎이며 주차 안내 요청함.</p></div>
+    <button class="sug-fold" data-fold="1"><span>✨ AI 제안 ${foldOpen ? '접기' : '보기'}</span><span>${foldOpen ? '⌃' : '⌄'}</span></button>
+    ${foldOpen ? `<div class="sug-fold-body">오늘 오후 방문 전 문자로 모델하우스 위치와 주차 안내를 보내세요.</div>` : ''}`;
+  return `<div class="stack">${cleanCallCard(inside4)}</div>`;
+}
+
+const AI_OPTS = [
+  ['A1','추천 · 역할 분리','A-1 · 상단 전화 버튼 바로 아래 배너로 분리','통화 이력에는 깔끔하게 [AI 요약]만 남기고, 최신 [AI 제안]은 상세 맨 위(전화 버튼 바로 밑)에 1개만 딱 보여줘서 다음에 뭘 할지 즉시 파악'],
+  ['A2','공간 절약','A-2 · 통화 카드 내 [AI 요약 | AI 제안] 탭 전환','평소엔 요약만 보이다가 탭을 누르면 제안으로 바뀌어 두 박스가 연달아 쌓이지 않음 (탭을 직접 눌러보세요)'],
+  ['A3','맥락 연결','A-3 · [미팅 예약] 섹션으로 AI 제안 이동','AI 제안은 결국 앞으로 할 행동이므로, 통화 기록에서 빼서 아래 [미팅 · 다음 할 일] 카드 안에 합침'],
+  ['A4','시선 집중','A-4 · 요약만 펼치고 AI 제안은 한 줄 접기','기본은 파란 요약만 읽히고, 노란 AI 제안은 한 줄 버튼으로 접어두어 필요할 때만 펼쳐 봄 (직접 눌러보세요)']
+];
+
+let MEMOS = [
+  {txt:'오늘 14시 모델하우스 방문 확정. 신혼집 예산 7억 안팎이며 주차 2대 가능 여부를 문자로 안내함.', date:'2026.11.10 10:20', by:'김태윤', auto:false},
+  {txt:'[인스턴트 폼] 어떤 상담을 원하시나요? : 모델하우스 방문 예약 및 84타입 상담 희망', date:'2026.11.10 09:48', by:'', auto:true}
+];
+
+function renderMemoCard(v){
+  const items = MEMOS.map((m, idx) => {
+    const left = `<span>${m.date}</span>${m.auto ? '<em class="m-badge">인스턴트 폼</em>' : `<span>· ${m.by}</span>`}`;
+    if(v === 'M1') return `<li class="m-item"><p class="m-txt">${m.txt}</p><div class="m-meta">${left}<span class="m1-act"><button data-m3open="${idx}">수정</button>·<button style="color:#E5484D" data-mdel="${idx}">삭제</button></span></div></li>`;
+    if(v === 'M2') return `<li class="m-item"><p class="m-txt">${m.txt}</p><div class="m-meta">${left}<button class="m2-more" data-m2toggle="${idx}">${ic('more')}</button></div>${m2MenuIdx===idx?`<div class="m2-pop"><button data-m3open="${idx}">${ic('pencil')}수정</button><button class="del" data-mdel="${idx}">${ic('trash')}삭제</button></div>`:''}</li>`;
+    if(v === 'M3') return `<li class="m-item m3-tap ${m3OpenIdx===idx?'active':''}" data-m3tap="${idx}"><p class="m-txt">${m.txt}</p><div class="m-meta">${left}</div></li>`;
+    return `<li class="m-item"><p class="m-txt">${m.txt}</p><div class="m-meta">${left}<span class="m4-ic"><button data-m3open="${idx}">${ic('pencil')}</button><button data-mdel="${idx}">${ic('trash')}</button></span></div></li>`;
+  }).join('');
+
+  const sheet = (v === 'M3' && m3OpenIdx != null && MEMOS[m3OpenIdx]) ? `
+    <div class="m3-dim" data-m3close="1">
+      <div class="m3-sheet" onclick="event.stopPropagation()">
+        <i class="m3-grip"></i>
+        <div class="m3-sh-h"><b>메모 수정</b><button class="m3-sh-x" data-m3close="1">✕</button></div>
+        <textarea class="m3-ta" id="m3Ta">${MEMOS[m3OpenIdx].txt}</textarea>
+        <div class="m3-sh-foot">
+          <button class="m3-del" data-m3del="${m3OpenIdx}">${ic('trash')}삭제</button>
+          <button class="m3-save" data-m3save="${m3OpenIdx}">저장</button>
+        </div>
+      </div>
+    </div>` : '';
+
+  return `<div class="col-phone">
+    <div class="d-card" style="${v==='M3' && m3OpenIdx!=null ? 'min-height:310px' : ''}">
+      <div class="d-h"><h3>메모<em>${MEMOS.length}</em></h3><span class="d-add">+ 메모 추가</span></div>
+      <ul class="m-list">${items}</ul>
+      ${v==='M3' ? `<div class="m3-hint"><span>👆 위 회색 메모 박스를 직접 눌러보세요!</span><b>시트 열림</b></div>` : ''}
+    </div>
+    ${sheet}
+  </div>`;
+}
+
+const MEMO_OPTS = [
+  ['M1','직관적','M-1 · 하단 날짜 줄 우측에 [수정 · 삭제] 텍스트','본문은 100% 넓게 쓰고 하단 날짜 줄 오른쪽 빈 공간을 활용'],
+  ['M2','깔끔함','M-2 · 하단 우측에 작은 [⋯] 더보기 하나만','평소엔 점 세 개만 두어 조용하고, 누르면 수정/삭제 미니 메뉴 표시'],
+  ['M3','가장 깨끗함','M-3 · 버튼 완전 제거 (메모 탭해서 수정·삭제)','목록엔 아무 버튼도 두지 않고 메모 박스를 탭하면 아래에서 수정·삭제 시트가 올라옴'],
+  ['M4','익숙함','M-4 · 미니 아이콘을 하단 날짜 줄 우측으로 이동','연필·휴지통 아이콘을 작게 줄여 하단 줄 오른쪽 끝으로 내림']
+];
+
+function draw(){
+  document.getElementById('gridAI').innerHTML = AI_OPTS.map(([v, tag, title, desc]) => `
+    <div class="col ${selAI === v ? 'sel' : ''}" data-ai="${v}">
+      <div class="col-h"><span class="col-tag">${v} <em>· ${tag}</em></span><h2>${title}</h2><p>${desc}</p></div>
+      ${renderAICard(v)}
+    </div>`).join('');
+
+  document.getElementById('gridMemo').innerHTML = MEMO_OPTS.map(([v, tag, title, desc]) => `
+    <div class="col ${selMemo === v ? 'sel' : ''}" data-mm="${v}">
+      <div class="col-h"><span class="col-tag">${v} <em>· ${tag}</em></span><h2>${title}</h2><p>${desc}</p></div>
+      ${renderMemoCard(v)}
+    </div>`).join('');
+}
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-aitab]');
+  if(t){ e.stopPropagation(); tabMode = t.dataset.aitab; selAI = 'A2'; draw(); return; }
+  const f = e.target.closest('[data-fold]');
+  if(f){ e.stopPropagation(); foldOpen = !foldOpen; selAI = 'A4'; draw(); return; }
+
+  const m3tap = e.target.closest('[data-m3tap]');
+  if(m3tap){ e.stopPropagation(); selMemo = 'M3'; m3OpenIdx = +m3tap.dataset.m3tap; draw(); return; }
+  const m3close = e.target.closest('[data-m3close]');
+  if(m3close){ e.stopPropagation(); m3OpenIdx = null; draw(); return; }
+  const m3save = e.target.closest('[data-m3save]');
+  if(m3save){ e.stopPropagation(); const ta = document.getElementById('m3Ta'); if(ta) MEMOS[+m3save.dataset.m3save].txt = ta.value; m3OpenIdx = null; draw(); return; }
+  const m3del = e.target.closest('[data-m3del]');
+  if(m3del){ e.stopPropagation(); if(MEMOS.length > 1) MEMOS.splice(+m3del.dataset.m3del, 1); m3OpenIdx = null; draw(); return; }
+  const m2tog = e.target.closest('[data-m2toggle]');
+  if(m2tog){ e.stopPropagation(); selMemo = 'M2'; const idx = +m2tog.dataset.m2toggle; m2MenuIdx = m2MenuIdx === idx ? null : idx; draw(); return; }
+
+  const a = e.target.closest('[data-ai]');
+  if(a){ selAI = a.dataset.ai; draw(); return; }
+  const m = e.target.closest('[data-mm]');
+  if(m){ selMemo = m.dataset.mm; draw(); return; }
+});
+
+draw();
+</script>
+
+<script>
+(() => {
+const pc = `<svg class="cl-ic"><use href="#i-phone"/></svg>`;
+const P = {'네이버':['#03C75A','N'],'메타':['#1877F2','M'],'직접':['#8A94A6','직']};
+const CS = [
+  {n:'이서연',st:'방문 예약',c:'#F08C00',bg:'#FFF3DC',fg:'#A85D00',site:'윤슬자이',pl:'네이버',reg:'11/10 09:48',own:'김태윤',ph:'010-9214-5038',it:3,ic:'#E5484D',memo:'오늘 14시 방문 확정. 모델하우스 위치와 주차 안내 문자를 보냄'},
+  {n:'박지훈',st:'부재중',c:'#E5484D',bg:'#FDECEC',fg:'#C22B31',site:'파크사이드',pl:'메타',reg:'11/10 09:31',own:'박성훈',ph:'010-4729-8316',it:0,memo:'두 번 걸었는데 받지 않음. 저녁 시간에 다시 걸어 보기',dup:'윤슬자이 <em>11/2</em>'},
+  {n:'최유진',st:'가계약',c:'#7C4DFF',bg:'#F0EAFF',fg:'#5B33D6',site:'소요한남',pl:'직접',reg:'11/9 13:20',own:'이수진',ph:'010-6581-2947',it:3,ic:'#E5484D',memo:'대출 한도 확인 완료. 2차 계약금 11/15(일) 입금 예정'}
+];
+const pic = x => `<i class="kc-pic" style="background:${P[x.pl][0]}">${P[x.pl][1]}</i>`;
+const src = x => `<span class="kc-src">${pic(x)}<span>${x.site}</span></span>`;
+const int = x => x.it ? `<span class="kc-int">${[1,2,3].map(k => `<i style="${k <= x.it ? 'background:' + x.ic : ''}"></i>`).join('')}</span>` : '';
+const badge = x => `<span class="kc-badge" style="background:${x.bg};color:${x.fg}">${x.st}</span>`;
+const dup = x => x.dup ? `<div class="kc-dup"><b>다른 현장 문의</b><span>${x.dup}</span></div>` : '';
+const bar = '<i class="kc-bar"></i>';
+const R = {
+  K0: x => `<div class="kc"><div class="kc-row"><span class="kc-nm">${x.n}</span>${src(x)}<span class="kc-r">${int(x)}${badge(x)}</span></div>
+    <div class="kc-row kc-meta"><span>${x.reg}</span>${bar}<b>${x.own}</b><span class="kc-ph" style="margin-left:auto">${x.ph}</span></div>
+    <div class="kc-memo">${x.memo}</div>${dup(x)}<button class="kc-call">${pc}전화</button></div>`,
+  K1: x => `<div class="kc k1"><div class="kc-row"><span class="kc-nm">${x.n}</span>${int(x)}<span class="kc-r">${badge(x)}</span></div>
+    <div class="kc-row" style="margin-top:4px"><div style="min-width:0"><div class="kc-ph">${x.ph}</div><div class="kc-sub">${src(x)}${bar}<span>${x.own}</span>${bar}<span>${x.reg}</span></div></div><button class="kc-round" aria-label="전화">${pc}</button></div>
+    <div class="kc-memo">${x.memo}</div>${dup(x)}</div>`,
+  K2: x => `<div class="kc k2"><div class="kc-row"><span class="kc-nm">${x.n}</span>${src(x)}<span class="kc-r">${int(x)}${badge(x)}</span></div>
+    <div class="kc-memo">${x.memo}</div>${dup(x)}
+    <div class="kc-row kc-foot"><small><span>${x.reg}</span>${bar}<b style="font-weight:600;color:var(--cl-ink2)">${x.own}</b></small><button class="kc-phbtn">${pc}${x.ph}</button></div></div>`,
+  K3: x => `<div class="kc k3" style="--stc:${x.c};--stf:${x.fg}"><div class="kc-row kc-kick">${src(x)}<span>${x.own} · ${x.reg}</span></div>
+    <div class="kc-row"><span class="kc-nm">${x.n}</span>${int(x)}<span class="kc-r kc-st">${x.st}</span></div>
+    <div class="kc-memo">${x.memo}</div>${dup(x)}
+    <div class="kc-row kc-inline"><span class="kc-ph">${x.ph}</span><button class="kc-call">${pc}전화</button></div></div>`,
+  K4: x => `<div class="kc k4"><div class="kc-row"><span class="kc-nm">${x.n}</span><span class="kc-ph">${x.ph}</span><span class="kc-r">${int(x)}${badge(x)}</span></div>
+    <div class="kc-row" style="align-items:flex-end"><div style="min-width:0;flex:1"><div class="kc-memo">${x.memo}</div><div class="kc-row kc-sub">${src(x)}${bar}<span>${x.own}</span>${bar}<span>${x.reg}</span>${x.dup ? `${bar}<b style="color:#A85D00">다른 현장 1</b>` : ''}</div></div><button class="kc-round" aria-label="전화">${pc}</button></div></div>`
+};
+const OPTS = [
+  ['K0','현재','K-0 · 지금 본 시안','이름줄 → 정보줄 → 메모 → 풀폭 전화 버튼',['p|전화 버튼이 커서 누르기 쉬움'],['m|버튼이 카드마다 한 줄을 차지해 한 화면에 보이는 고객 수가 적음']],
+  ['K1','추천','K-1 · 전화번호 크게 + 오른쪽 원형 전화 버튼','번호를 둘째 줄 주인공으로 올리고, 전화 버튼은 번호 옆 동그라미로 옮김',['p|번호와 전화 버튼이 한눈에 묶임','p|카드 높이가 줄어 목록이 빨리 훑어짐'],['m|현장·담당자·등록일시가 작은 글씨 한 줄로 내려감']],
+  ['K2','간결','K-2 · 메모 먼저 + 번호가 곧 전화 버튼','이름 바로 아래 메모를 박스 없이 본문처럼, 맨 아래 줄에 번호 버튼',['p|번호와 전화 버튼 중복이 사라짐','p|메모가 가장 잘 읽힘'],['m|번호가 카드 맨 아래로 내려가 위에서 바로 안 보임']],
+  ['K3','상태 강조','K-3 · 왼쪽 상태 색 띠 + 현장 머리말','현장·담당자·일시를 맨 위 작은 머리말로 올리고, 상태는 색 띠와 글자로',['p|스크롤하면서 색만으로 상태를 구분','p|이름 줄이 한산해짐'],['m|상태 12종 색이 비슷한 것끼리 헷갈릴 수 있음','m|기존 앱의 상태 태그 모양과 달라짐']],
+  ['K4','촘촘','K-4 · 촘촘한 3줄 (고객이 많을 때)','이름 옆에 번호, 메모는 한 줄만, 전화는 작은 동그라미',['p|한 화면에 가장 많은 고객이 보임'],['m|메모가 한 줄에서 잘림','m|글자가 작아 여유가 없음']]
+];
+let sel = 'K1';
+const g = document.getElementById('gridCard');
+const paint = () => { g.innerHTML = OPTS.map(([v, tag, title, desc, pros, cons]) => `
+  <div class="col ${sel === v ? 'sel' : ''}" data-kc="${v}">
+    <div class="col-h"><span class="col-tag">${v} <em>· ${tag}</em></span><h2>${title}</h2><p>${desc}</p></div>
+    <div class="kc-list">${CS.map(R[v]).join('')}</div>
+    <ul class="kc-note">${[...pros, ...cons].map(t => `<li class="${t[0]}">${t.slice(2)}</li>`).join('')}</ul>
+  </div>`).join(''); };
+g.addEventListener('click', e => { const c = e.target.closest('[data-kc]'); if(c){ sel = c.dataset.kc; paint(); } });
+paint();
+})();
+</script>
+</body>
+</html>

@@ -30,7 +30,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .cl-scroll::-webkit-scrollbar{display:none}
 .cl-head{display:flex;align-items:center;gap:4px;padding:8px 8px 10px 16px;min-height:56px}
 .cl-head h1{margin:0;font-size:24px;font-weight:800;letter-spacing:-.6px;flex:1}
-.cl-ibtn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:24px;color:var(--cl-ink)}
+.cl-ibtn{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:24px;color:var(--cl-ink)}
 .cl-ibtn:active{background:rgba(17,20,24,.07)}
 .cl-search{flex:1;display:flex;align-items:center;gap:8px;height:44px;background:var(--cl-surface);border-radius:12px;padding:0 12px;font-size:20px;color:var(--cl-ink3);box-shadow:inset 0 0 0 1.5px var(--cl-brand)}
 .cl-search input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:16px;color:var(--cl-ink)}
@@ -333,12 +333,16 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .r-tab.on{background:var(--cl-ink);color:#fff;font-weight:700}
 .r-tab.on b{color:rgba(255,255,255,.78)}
 .r-tab.on::after{display:none}
+.r-tabs.v4 .r-tab b{font-size:10px;gap:4px}
+.r-tabs.v4 .r-tab i{flex:none;width:8px;height:8px;border-radius:50%}
+.r-tabs.v4 .r-tab.on i{box-shadow:0 0 0 1px rgba(255,255,255,.45)}
 .c2-st .c2-all{height:48px;width:36px;margin:0 12px 0 2px}
 .r-sort{padding-left:10px}
 
 /* 캠페인: 제목 옆 작은 전환 버튼 */
 .c2-head h1{flex:none;white-space:nowrap}
-.r-campchip{flex:0 1 auto;min-width:0;display:inline-flex;align-items:center;gap:1px;height:34px;padding:0 6px 0 12px;border-radius:17px;background:var(--cl-surface);box-shadow:inset 0 0 0 1px var(--cl-line);font-size:13px;font-weight:700;color:var(--cl-ink)}
+.r-campchip{position:relative;flex:0 1 auto;min-width:0;display:inline-flex;align-items:center;gap:1px;height:34px;padding:0 6px 0 12px;border-radius:17px;background:var(--cl-surface);box-shadow:inset 0 0 0 1px var(--cl-line);font-size:13px;font-weight:700;color:var(--cl-ink)}
+.r-campchip > .fbm{top:-6px;right:-6px}
 .r-campchip span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .r-campchip .cl-ic{font-size:18px;color:var(--cl-ink2)}
 .r-campchip:active{filter:brightness(.96)}
@@ -418,12 +422,14 @@ body.pg-cards #cards{display:block}
 .ka-m .cl-sub{margin:0}
 .ka-m .cl-next + .cl-sub{margin-top:3px}
 /* 인터뷰 의견 표식과 설명 패널 */
-.fbm{display:inline-grid;place-items:center;flex:none;width:18px;height:18px;margin:0 4px;border-radius:50%;background:#FF5A1F;color:#fff;font-size:11px;font-weight:800;font-style:normal;line-height:1;vertical-align:1px;letter-spacing:0}
+.fbm{position:absolute;top:-6px;right:-10px;z-index:3;display:inline-grid;place-items:center;width:16px;height:16px;margin:0;border-radius:50%;background:#FF5A1F;color:#fff;font-size:10px;font-weight:800;font-style:normal;line-height:1;letter-spacing:0;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.cl-app.hide-fb .fbm{display:none}
 .cl-col.fb{width:340px}
-.cl-col.fb[hidden]{display:none}
+.cl-col.fb[hidden],#fbBody[hidden]{display:none}
+#fbBody{margin-top:16px}
 .fb-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .fb-list li{display:flex;gap:10px;background:#fff;border-radius:14px;padding:14px 16px 14px 12px}
-.fb-list .fbm{margin:2px 0 0}
+.fb-list .fbm{position:static;flex:none;width:18px;height:18px;margin:2px 0 0;font-size:11px;pointer-events:auto;box-shadow:none}
 .fb-list h3{margin:0 0 4px;font-size:15px;font-weight:800;letter-spacing:-.2px}
 .fb-list p{margin:0;font-size:13px;line-height:1.5}
 .fb-q{color:var(--cl-ink3)}
@@ -440,21 +446,42 @@ body.pg-cards #cards{display:block}
 .d-top{padding-right:12px}
 .d-top > b{flex:1;font-size:16px;font-weight:700}
 .d-share{height:34px;padding:0 12px;border-radius:17px;background:var(--cl-surface);font-size:13px;font-weight:700;color:var(--cl-ink2)}
-.d-body{flex:1;min-height:0;overflow-y:auto;padding:4px 16px 40px;display:flex;flex-direction:column;gap:12px;scrollbar-width:none}
+.d-body{flex:1;min-height:0;overflow-y:auto;padding:12px 16px 40px;display:flex;flex-direction:column;gap:12px;scrollbar-width:none}
 .d-card{flex:none;background:var(--cl-surface);border-radius:16px;padding:16px}
 .d-h{display:flex;align-items:center;justify-content:space-between;min-height:28px;margin-bottom:12px}
-.d-h h2{display:flex;align-items:center;margin:0;font-size:16px;font-weight:700;letter-spacing:-.2px}
+.d-h h2{position:relative;display:flex;align-items:center;margin:0;font-size:16px;font-weight:700;letter-spacing:-.2px}
+.d-h h2 .fbm{right:-12px}
+.d-h h2 .fbm + .fbm{right:-30px}
 .d-h h2 em{margin-left:6px;font-style:normal;font-weight:700;color:var(--cl-ink3)}
 .d-add{display:inline-flex;align-items:center;gap:2px;height:28px;font-size:14px;font-weight:700;color:var(--cl-brand)}
 .d-add .cl-ic{font-size:18px}
 .d-none{margin:0;padding:12px 0;text-align:center;font-size:14px;color:var(--cl-ink3)}
 .d-txt{margin:0;font-size:15px;line-height:1.55;color:var(--cl-ink)}
 /* 기본 정보 */
-.d-1{display:flex;align-items:center;gap:8px}
-.d-1 h1{margin:0;font-size:22px;font-weight:700;letter-spacing:-.4px}
+.d-kicker{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.d-kicker-l{display:inline-flex;align-items:center;gap:5px;min-width:0;font-weight:600;color:var(--cl-ink2)}
+.d-morebtn{width:36px;height:36px;margin:-4px -6px 0 0;font-size:20px;color:var(--cl-ink3)}
+.d-toprow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.d-who{min-width:0;flex:1}
+.d-1{position:relative;display:flex;align-items:center;gap:8px}
+.d-1 > .fbm{position:static;flex:none}
 .d-edit{margin-left:auto;height:32px;padding:0 12px;border-radius:16px;background:var(--cl-bg);font-size:13px;font-weight:700;color:var(--cl-ink2)}
+.d-1 h1{margin:0;font-size:22px;font-weight:700;letter-spacing:-.4px}
+.k-int{flex:none;display:inline-flex;align-items:center;gap:3px}
+.k-int i{width:7px;height:7px;border-radius:50%;background:#D5D9E0}
+.k-int b{margin-left:3px;font-size:12px;font-weight:700;color:var(--cl-ink2)}
+.k-int.l3 i.on{background:#E5484D}.k-int.l2 i.on{background:#F08C00}.k-int.l1 i.on{background:#8A94A6}
+.d-tabs{flex:none;display:flex;gap:2px;padding:0 12px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--cl-line)}
+.d-tabs::-webkit-scrollbar{display:none}
+.d-tabs button{flex:none;display:inline-flex;align-items:center;gap:4px;height:42px;padding:0 10px;font-size:14px;font-weight:600;color:var(--cl-ink3);border-bottom:2px solid transparent;white-space:nowrap}
+.d-tabs button em{font-style:normal;font-size:12px;font-weight:700}
+.d-tabs button.on{color:var(--cl-ink);font-weight:700;border-bottom-color:var(--cl-ink)}
+.e-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.e-row label{min-width:0}
 .d-ph{margin-top:2px;font-size:16px;color:var(--cl-ink2);font-variant-numeric:tabular-nums}
 .d-act{display:flex;gap:8px;margin-top:16px}
+.d-st-box{flex:1;min-width:0}
+.d-flbl{display:block;margin:0 0 5px 2px;font-size:12px;font-weight:600;color:var(--cl-ink3)}
 .d-st{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:48px;padding:0 12px 0 14px;border-radius:12px;background:var(--cl-bg);font-size:15px;text-align:left}
 .d-st span{color:var(--cl-ink3);font-size:13px;font-weight:600;margin-right:2px}
 .d-st i{flex:none;width:8px;height:8px;border-radius:50%}
@@ -462,9 +489,15 @@ body.pg-cards #cards{display:block}
 .d-st .cl-ic{font-size:20px;color:var(--cl-ink3)}
 .d-callbtn{flex:none;display:inline-flex;align-items:center;gap:6px;height:48px;padding:0 18px;border-radius:12px;background:var(--cl-brand);color:#fff;font-size:15px;font-weight:700}
 .d-callbtn .cl-ic{font-size:18px}
-.d-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 0;padding-top:16px;border-top:1px solid var(--cl-line)}
+.d-mmenu{display:flex;flex-direction:column;padding:4px 0 12px}
+.d-mitem{display:flex;align-items:center;gap:12px;height:52px;padding:0 8px;font-size:16px;font-weight:600;color:var(--cl-ink)}
+.d-mitem .cl-ic{font-size:19px;color:var(--cl-ink2)}
+.d-mitem.del{color:var(--cl-warn)}
+.d-mitem.del .cl-ic{color:var(--cl-warn)}
+.d-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--cl-line)}
 .d-meta dt{font-size:12px;color:var(--cl-ink3)}
 .d-meta dd{margin:2px 0 0;font-size:14px;font-weight:600;color:var(--cl-ink);font-variant-numeric:tabular-nums}
+.d-meta dd.d-plat{display:inline-flex;align-items:center;gap:5px}
 /* 다른 현장 문의 */
 .d-dup{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .d-dup li{padding:12px;border-radius:12px;background:#FFF8EA}
@@ -493,29 +526,41 @@ body.pg-cards #cards{display:block}
 .d-ai.sug h3{color:#A85D00}
 .d-kw{margin:0}
 .d-call-f{display:flex;gap:8px}
-.d-call-f button{flex:1;height:40px;border-radius:10px;background:var(--cl-bg);font-size:13px;font-weight:700;color:var(--cl-ink2)}
+.d-call-f button{width:100%;height:38px;border-radius:10px;border:1px solid var(--cl-line);background:#fff;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-size:13px;font-weight:700;color:var(--cl-brand)}
+.d-mypage-empty{margin:0;font-size:14px;color:var(--cl-ink3)}
+.d-mypage-on b{display:block;font-size:14px;font-weight:600;color:var(--cl-ink)}
+.d-mypage-on small{display:block;margin-top:4px;font-size:12.5px;color:var(--cl-ink3)}
 /* 메모 */
 .d-memos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-.d-memos li{padding:12px;border-radius:12px;background:var(--cl-bg)}
-.d-memos p{margin:0;font-size:15px;line-height:1.55;color:var(--cl-ink);white-space:pre-wrap}
-.d-memos li > div{display:flex;align-items:center;gap:2px;margin-top:6px}
-.d-memos span{flex:1;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
-.d-memos button{display:grid;place-items:center;width:32px;height:32px;margin:-4px 0;border-radius:50%;font-size:18px;color:var(--cl-ink3)}
-.d-comp{margin-bottom:12px;padding:12px;border-radius:12px;background:var(--cl-bg)}
-.d-comp textarea{display:block;width:100%;border:0;background:none;resize:none;font:inherit;font-size:15px;line-height:1.55;color:var(--cl-ink);outline:0}
-.d-comp-g{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.d-comp-g button{height:30px;padding:0 10px;border-radius:15px;background:var(--cl-surface);font-size:13px;font-weight:600;color:var(--cl-ink2)}
-.d-comp-f{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
-.d-comp-f button{height:36px;padding:0 16px;border-radius:10px;font-size:14px;font-weight:700;color:var(--cl-ink2)}
-.d-comp-f .pri{background:var(--cl-ink);color:#fff}
-.d-memos + .d-none,.d-comp + .d-none{display:none}
+.d-memos li{padding:12px 14px;border-radius:12px;background:var(--cl-bg);cursor:pointer;transition:background .15s}
+.d-memos li:hover{background:#E7EBF2}
+.d-memos li:active{background:#DFE4EC}
+.d-memos li p{margin:0;font-size:15px;line-height:1.55;color:var(--cl-ink);white-space:pre-wrap;word-break:break-word}
+.t-foot.m-foot{display:flex;gap:8px}
+.t-foot.m-foot .cl-apply{flex:1;width:auto}
+.m-del{flex:none;height:54px;padding:0 18px;border-radius:16px;background:#FFF0F0;color:var(--cl-warn);font-size:16px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.d-memos small{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.d-memos small time{margin-left:auto}
+.d-memos small em{font-style:normal;padding:2px 6px;border-radius:6px;background:var(--cl-brand-soft);color:var(--cl-brand);font-weight:700}
+.m-form textarea{display:block;width:100%;min-height:132px;padding:14px;border:0;border-radius:12px;background:var(--cl-bg);resize:none;font:inherit;font-size:16px;line-height:1.55;color:var(--cl-ink)}
+.m-form textarea:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
+.m-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.m-chips button{height:34px;padding:0 12px;border-radius:17px;background:var(--cl-bg);font-size:14px;font-weight:600;color:var(--cl-ink2)}
+/* 사이드 보기 옵션 */
+.fb-opt{margin-bottom:10px;padding:14px 16px;border-radius:14px;background:var(--cl-surface)}
+.fb-opt:last-child{margin-bottom:0}
+.fb-opt b{display:block;font-size:14px;font-weight:700}
+.fb-opt span{display:block;margin-top:2px;font-size:12px;line-height:1.45;color:var(--cl-ink3)}
+.fb-seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;margin-top:10px;padding:4px;border-radius:10px;background:var(--cl-bg)}
+.fb-seg button{height:32px;border-radius:8px;font-size:13px;font-weight:600;color:var(--cl-ink2)}
+.fb-seg button.on{background:var(--cl-ink);color:#fff;font-weight:700}
 /* 미팅 예약 */
 .d-meet{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;background:var(--cl-bg);font-size:15px;font-weight:600;color:var(--cl-ink)}
 .d-meet .cl-ic{font-size:18px;color:var(--cl-ink3)}
 /* 활동 타임라인: 날짜 머리말 아래 시각 · 점 · 내용 */
 .d-tl{list-style:none;margin:0;padding:0}
-.d-tl .d-day{padding:12px 0 4px;font-size:12px;font-weight:700;color:var(--cl-ink3)}
-.d-tl .d-day:first-child{padding-top:0}
+.d-tl .d-day{margin-top:10px;padding:12px 0 4px;border-top:1px solid var(--cl-line);font-size:12px;font-weight:700;color:var(--cl-ink3)}
+.d-tl .d-day:first-child{margin-top:0;padding-top:0;border-top:0}
 .d-tl li:not(.d-day){position:relative;display:flex;gap:10px;padding:6px 0}
 .d-tl time{flex:none;width:38px;padding-top:1px;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
 .d-tl i{flex:none;width:8px;height:8px;margin-top:6px;border-radius:50%;background:var(--cl-ink3)}
@@ -536,13 +581,31 @@ body.pg-cards #cards{display:block}
 .e-pick button.on{background:var(--cl-ink);color:#fff}
 .e-note{margin:0;font-size:13px;color:var(--cl-ink3)}
 /* v4 카드: 인터뷰 반영 */
-.kv-2{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
-.kv-ph{font-size:14px;color:var(--cl-ink2)}
-.kv-dup{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--cl-ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.kv-dup b{flex:none;height:20px;line-height:20px;padding:0 7px;border-radius:6px;background:#FFF3DC;color:#A85D00;font-weight:700}
-.kv-3{display:flex;align-items:center;gap:10px;margin-top:8px;min-height:36px}
-.kv-3 .cl-sub{flex:1;min-width:0}
-.c2-call.kv-call{width:36px;height:36px;font-size:18px;background:var(--cl-bg);color:var(--cl-ink2)}
+.ka.kv{padding:12px 16px}
+.kv .ka-1 .cl-nm{font-size:18px;font-weight:800;letter-spacing:-.4px;flex:none}
+.kv-src{display:inline-flex;align-items:center;gap:4px;min-width:0;font-size:12px;color:var(--cl-ink3)}
+.kv-src > span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kv-pic{flex:none;width:16px;height:16px;border-radius:4px;display:inline-grid;place-items:center;font-style:normal}
+.kv-r{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:6px}
+.kv-r .c2-badge{margin-left:0}
+.kv-badge{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:6px;font-size:12px;font-weight:700;white-space:nowrap}
+.kv-r .k-int b{display:none}
+.kv-2{display:flex;align-items:center;gap:8px;margin-top:7px}
+.kv-meta{display:flex;align-items:center;gap:8px;min-width:0;flex:1;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kv-meta > span{position:relative}
+.kv-own{color:var(--cl-ink2);font-weight:600}
+.kv-ph{margin-left:auto;font-size:13.5px;font-weight:600;color:var(--cl-ink2)}
+.kv-dot{flex:none;width:1px;height:10px;background:#D5D9E0}
+.kv .cl-ctx{margin-top:8px}
+.kv .cl-ctx.kv-memo p{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.45;font-size:13.5px;color:var(--cl-ink2)}
+.kv-dup{display:flex;align-items:center;gap:6px;margin-top:7px;font-size:12px;color:var(--cl-ink2);white-space:nowrap}
+.kv-dup > span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.kv-dup b{position:relative;flex:none;height:20px;line-height:20px;padding:0 7px;border-radius:6px;background:#FFF3DC;color:#A85D00;font-weight:700}
+.kv-dup b .fbm{top:-6px;right:-7px}
+.kv-callbtn{position:relative;width:100%;height:35px;margin-top:8px;border-radius:10px;border:1px solid var(--cl-line);background:#fff;display:flex;align-items:center;justify-content:center;gap:5.5px;font-size:13px;font-weight:700;color:var(--cl-ink)}
+.kv-callbtn .cl-ic{font-size:14.5px;color:var(--cl-brand)}
+.kv-callbtn:active{background:var(--cl-bg)}
+.kv-callbtn .fbm{top:50%;right:10px;transform:translateY(-50%)}
 /* B 현행 정보 유지 */
 .kb{background:var(--cl-surface);border-radius:16px;padding:14px 16px 12px}
 .kb-top{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--cl-ink3);white-space:nowrap}
@@ -604,6 +667,7 @@ body.pg-cards #cards{display:block}
 .pg-tabs{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:6px;height:48px;padding:0 24px;background:rgba(255,255,255,.94);border-bottom:1px solid var(--cl-line)}
 .pg-tabs button{height:34px;padding:0 14px;border-radius:17px;font-size:14px;font-weight:700;color:var(--cl-ink2);white-space:nowrap}
 .pg-tabs button.on{background:var(--cl-ink);color:#fff}
+.pg-link{flex:none;display:inline-flex;align-items:center;height:34px;margin-left:auto;padding:0 14px;border-radius:17px;background:var(--cl-brand-soft);color:var(--cl-brand);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
 .cl-left{top:72px}
 .sp-page{display:none;max-width:1120px;margin:0 auto;padding:32px 24px 80px}
 body.pg-spec .cl-page{display:none}
@@ -634,7 +698,10 @@ body.pg-spec .sp-page{display:block}
 .sp-v2{margin-top:14px;padding:10px 12px;border-radius:12px;background:var(--cl-bg);font-size:13px;color:var(--cl-ink2)}
 .sp-v2 b{color:var(--cl-ink)}
 @media (max-width:860px){
-  .pg-tabs{padding:0 12px}
+  .pg-tabs{padding:0 12px;overflow-x:auto;scrollbar-width:none}
+  .pg-tabs::-webkit-scrollbar{display:none}
+  .cl-left{flex-wrap:nowrap;justify-content:flex-start}
+  .cl-col.new,.cl-frame,.cl-app{min-width:0;width:100%}
   .cl-page{height:calc(100dvh - 48px)}
   .sp-page{height:calc(100dvh - 48px);overflow-y:auto;padding:20px 16px 48px}
   .sp-page h1{font-size:22px}
@@ -646,9 +713,9 @@ body.pg-spec .sp-page{display:block}
 </style>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-add" viewBox="0 -960 960 960"><path d="M450-450H230q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h220v-220q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v220h220q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H510v220q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-220Z"/></symbol><symbol id="i-calendar_month" viewBox="0 -960 960 960"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><!-- Lucide phone (ISC), shadcn/ui 기본 아이콘 세트. 채움형으로 사용 --><path fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-check" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></symbol><symbol id="i-swap_vert" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></symbol><symbol id="i-close" viewBox="0 -960 960 960"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M349-250h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5Zm0-170h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.44 0 23.72 5T599-862l183 183q8 8 13 19.28 5 11.28 5 23.72v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.37-8.63Q551-651.25 551-664ZM220-820v186-186 680-680Z"/></symbol><symbol id="i-edit_note" viewBox="0 -960 960 960"><path d="M190-410q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h240q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm330 550v-81q0-5.57 2-10.78 2-5.22 7-10.22l211.61-210.77q9.11-9.12 20.25-13.18Q772-520 783-520q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5t-13.58 20.62L652-169q-5 5-10.22 7-5.21 2-10.78 2h-81q-12.75 0-21.37-8.63Q520-177.25 520-190Zm300-233-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></symbol><symbol id="i-keyboard_arrow_down" viewBox="0 -960 960 960"><path d="M469-358q-5-2-10-7L261-563q-9-9-8.5-21.5T262-606q9-9 21.5-9t21.5 9l175 176 176-176q9-9 21-8.5t21 9.5q9 9 9 21.5t-9 21.5L501-365q-5 5-10 7t-11 2q-6 0-11-2Z"/></symbol><symbol id="i-keyboard_arrow_up" viewBox="0 -960 960 960"><path d="M480-554 304-378q-9 9-21 8.5t-21-9.5q-9-9-9-21.5t9-21.5l197-197q9-9 21-9t21 9l198 198q9 9 9 21t-9 21q-9 9-21.5 9t-21.5-9L480-554Z"/></symbol><symbol id="i-home" viewBox="0 -960 960 960"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></symbol><symbol id="i-group" viewBox="0 -960 960 960"><path d="M38-254q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v34q0 25-17.5 42.5T618-160H98q-25 0-42.5-17.5T38-220v-34Zm824 94H724q5-15 9.5-29.5T738-220v-34q0-63-29-101.5T622-420q69 8 130 22t99 34q33 19 52 47t19 63v34q0 25-17.5 42.5T862-160ZM250-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42Zm426 0q-42 42-108 42-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108q0 66-42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm324.5-346.5Q448-592 448-631t-25.5-64.5Q397-721 358-721t-64.5 25.5Q268-670 268-631t25.5 64.5Q319-541 358-541t64.5-25.5ZM358-220Zm0-411Z"/></symbol><symbol id="i-groups" viewBox="0 -960 960 960"><path d="M30-240q-12.75 0-21.37-8.63Q0-257.25 0-270v-23q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H30Zm240 0q-12.75 0-21.37-8.63Q240-257.25 240-270v-35q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v35q0 12.75-8.62 21.37Q702.75-240 690-240H270Zm510 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v23q0 12.75-8.62 21.37Q942.75-240 930-240H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z"/></symbol><symbol id="i-menu" viewBox="0 -960 960 960"><path d="M150-240q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-more_horiz" viewBox="0 -960 960 960"><path d="M207.86-432Q188-432 174-446.14t-14-34Q160-500 174.14-514t34-14Q228-528 242-513.86t14 34Q256-460 241.86-446t-34 14Zm272 0Q460-432 446-446.14t-14-34Q432-500 446.14-514t34-14Q500-528 514-513.86t14 34Q528-460 513.86-446t-34 14Zm272 0Q732-432 718-446.14t-14-34Q704-500 718.14-514t34-14Q772-528 786-513.86t14 34Q800-460 785.86-446t-34 14Z"/></symbol><symbol id="i-search" viewBox="0 -960 960 960"><path d="M378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l242 240q9 8.56 9 21.78T818-143q-9 9-22.22 9-13.22 0-21.78-9L533-384q-30 26-69.96 40.5Q423.08-329 378-329Zm-1-60q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></symbol><symbol id="i-sms" viewBox="0 -960 960 960"><path d="M240-240 131-131q-14 14-32.5 6.34Q80-132.31 80-152v-668q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240Zm-26-60h606v-520H140v600l74-80Zm-74 0v-520 520Zm194.5-234.5Q346-546 346-563t-11.5-28.5Q323-603 306-603t-28.5 11.5Q266-580 266-563t11.5 28.5Q289-523 306-523t28.5-11.5Zm177 0Q523-546 523-563t-11.5-28.5Q500-603 483-603t-28.5 11.5Q443-580 443-563t11.5 28.5Q466-523 483-523t28.5-11.5Zm170 0Q693-546 693-563t-11.5-28.5Q670-603 653-603t-28.5 11.5Q613-580 613-563t11.5 28.5Q636-523 653-523t28.5-11.5Z"/></symbol><symbol id="i-tune" viewBox="0 -960 960 960"><path d="M435.5-128.63Q427-137.25 427-150v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v53h323q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H487v52q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-202q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h187q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm165.5-174.63Q307-385.25 307-398v-52H150q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h157v-54q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v166q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM457-450q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H457Zm144.5-173.63Q593-632.25 593-645v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v52h157q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H653v53q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-698q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-wand_stars" viewBox="0 -960 960 960"><path d="m654-454-91 147q-8 13-22.5 10T522-314l-33-133-306 305q-9 9-21 9t-21-9q-9-9-9-21t9-21l305-305-133-33q-14-4-17-18.5t10-22.5l147-92-12-172q-1-15 12.5-22t24.5 3l132 111 160-64q14-5 24 5t5 24l-65 160 111 132q10 11 3.5 24.5T827-441l-173-13ZM131-721q-5-5-5-11t5-11l46-46q5-5 11-5t11 5l45 45q5 5 5 11t-5 11l-46 46q-5 5-11 5t-11-5l-45-45Zm428 307 63-102 120 9-78-92 45-111-111 45-92-78 9 120-102 64 117 29 29 116Zm163 283-46-46q-5-5-4.5-11t5.5-11l45-45q5-5 11-5t11 5l46 46q5 5 4.5 11t-5.5 11l-45 45q-5 5-11 5t-11-5ZM578-579Z"/></symbol><symbol id="i-signal_cellular_alt" viewBox="0 -960 960 960"><path d="M214.5-174.58Q200-189.17 200-210v-140q0-20.83 14.62-35.42Q229.24-400 250.12-400q20.88 0 35.38 14.58Q300-370.83 300-350v140q0 20.83-14.62 35.42Q270.76-160 249.88-160q-20.88 0-35.38-14.58Zm250 0Q450-189.17 450-210v-340q0-20.83 14.62-35.42Q479.24-600 500.12-600q20.88 0 35.38 14.58Q550-570.83 550-550v340q0 20.83-14.62 35.42Q520.76-160 499.88-160q-20.88 0-35.38-14.58Zm250 0Q700-189.17 700-210v-540q0-20.83 14.62-35.42Q729.24-800 750.12-800q20.88 0 35.38 14.58Q800-770.83 800-750v540q0 20.83-14.62 35.42Q770.76-160 749.88-160q-20.88 0-35.38-14.58Z"/></symbol><symbol id="i-wifi" viewBox="0 -960 960 960"><path d="M417-154q-27-27-27-63t27-63q27-27 63-27t63 27q27 27 27 63t-27 63q-27 27-63 27t-63-27Zm209-378.5Q694-505 757-451q14 12 15 30.5T759-388q-14 14-32 13t-33-13q-53-44-106.5-63T480-470q-54 0-107.5 19T266-388q-15 12-33 13t-32-13q-14-14-13-32.5t15-30.5q63-54 131-81.5T480-560q78 0 146 27.5Zm95.5-219Q835-703 926-622q14 13 15.5 31.5T929-558q-14 14-33.5 13.5T861-558q-83-70-178-111t-203-41q-108 0-203 41T99-558q-15 13-34 13.5T32-558q-14-14-13-32.5T34-622q91-81 204.5-129.5T480-800q128 0 241.5 48.5Z"/></symbol><symbol id="i-battery_full" viewBox="0 -960 960 960"><path d="M310-80q-12.75 0-21.37-8.63Q280-97.25 280-110v-676q0-12.75 8.63-21.38Q297.25-816 310-816h90v-34q0-12.75 8.63-21.38Q417.25-880 430-880h100q12.75 0 21.38 8.62Q560-862.75 560-850v34h90q12.75 0 21.38 8.62Q680-798.75 680-786v676q0 12.75-8.62 21.37Q662.75-80 650-80H310Z"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-phone-call" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5a5 5 0 0 1 6 6"/><path d="M14.5 7.5a1.5 1.5 0 0 1 2 2"/><path d="M22 16.92v2.6a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 3.8 2 2 0 0 1 4.11 1.8h2.6a2 2 0 0 1 2 1.72c.12.9.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L7.8 9.4a16 16 0 0 0 6.8 6.8l1.12-1.14a2 2 0 0 1 2.11-.45c.85.33 1.75.56 2.65.68A2 2 0 0 1 22 16.92z"/></g></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></g></symbol><symbol id="i-trash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></g></symbol><symbol id="i-add" viewBox="0 -960 960 960"><path d="M450-450H230q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h220v-220q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v220h220q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H510v220q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-220Z"/></symbol><symbol id="i-calendar_month" viewBox="0 -960 960 960"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><!-- Lucide phone (ISC), shadcn/ui 기본 아이콘 세트. 채움형으로 사용 --><path fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-check" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></symbol><symbol id="i-swap_vert" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></symbol><symbol id="i-close" viewBox="0 -960 960 960"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M349-250h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5Zm0-170h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.44 0 23.72 5T599-862l183 183q8 8 13 19.28 5 11.28 5 23.72v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.37-8.63Q551-651.25 551-664ZM220-820v186-186 680-680Z"/></symbol><symbol id="i-edit_note" viewBox="0 -960 960 960"><path d="M190-410q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h240q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm330 550v-81q0-5.57 2-10.78 2-5.22 7-10.22l211.61-210.77q9.11-9.12 20.25-13.18Q772-520 783-520q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5t-13.58 20.62L652-169q-5 5-10.22 7-5.21 2-10.78 2h-81q-12.75 0-21.37-8.63Q520-177.25 520-190Zm300-233-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></symbol><symbol id="i-keyboard_arrow_down" viewBox="0 -960 960 960"><path d="M469-358q-5-2-10-7L261-563q-9-9-8.5-21.5T262-606q9-9 21.5-9t21.5 9l175 176 176-176q9-9 21-8.5t21 9.5q9 9 9 21.5t-9 21.5L501-365q-5 5-10 7t-11 2q-6 0-11-2Z"/></symbol><symbol id="i-keyboard_arrow_up" viewBox="0 -960 960 960"><path d="M480-554 304-378q-9 9-21 8.5t-21-9.5q-9-9-9-21.5t9-21.5l197-197q9-9 21-9t21 9l198 198q9 9 9 21t-9 21q-9 9-21.5 9t-21.5-9L480-554Z"/></symbol><symbol id="i-home" viewBox="0 -960 960 960"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></symbol><symbol id="i-group" viewBox="0 -960 960 960"><path d="M38-254q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v34q0 25-17.5 42.5T618-160H98q-25 0-42.5-17.5T38-220v-34Zm824 94H724q5-15 9.5-29.5T738-220v-34q0-63-29-101.5T622-420q69 8 130 22t99 34q33 19 52 47t19 63v34q0 25-17.5 42.5T862-160ZM250-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42Zm426 0q-42 42-108 42-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108q0 66-42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm324.5-346.5Q448-592 448-631t-25.5-64.5Q397-721 358-721t-64.5 25.5Q268-670 268-631t25.5 64.5Q319-541 358-541t64.5-25.5ZM358-220Zm0-411Z"/></symbol><symbol id="i-groups" viewBox="0 -960 960 960"><path d="M30-240q-12.75 0-21.37-8.63Q0-257.25 0-270v-23q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H30Zm240 0q-12.75 0-21.37-8.63Q240-257.25 240-270v-35q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v35q0 12.75-8.62 21.37Q702.75-240 690-240H270Zm510 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v23q0 12.75-8.62 21.37Q942.75-240 930-240H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z"/></symbol><symbol id="i-menu" viewBox="0 -960 960 960"><path d="M150-240q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-more_horiz" viewBox="0 -960 960 960"><path d="M207.86-432Q188-432 174-446.14t-14-34Q160-500 174.14-514t34-14Q228-528 242-513.86t14 34Q256-460 241.86-446t-34 14Zm272 0Q460-432 446-446.14t-14-34Q432-500 446.14-514t34-14Q500-528 514-513.86t14 34Q528-460 513.86-446t-34 14Zm272 0Q732-432 718-446.14t-14-34Q704-500 718.14-514t34-14Q772-528 786-513.86t14 34Q800-460 785.86-446t-34 14Z"/></symbol><symbol id="i-search" viewBox="0 -960 960 960"><path d="M378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l242 240q9 8.56 9 21.78T818-143q-9 9-22.22 9-13.22 0-21.78-9L533-384q-30 26-69.96 40.5Q423.08-329 378-329Zm-1-60q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></symbol><symbol id="i-sms" viewBox="0 -960 960 960"><path d="M240-240 131-131q-14 14-32.5 6.34Q80-132.31 80-152v-668q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240Zm-26-60h606v-520H140v600l74-80Zm-74 0v-520 520Zm194.5-234.5Q346-546 346-563t-11.5-28.5Q323-603 306-603t-28.5 11.5Q266-580 266-563t11.5 28.5Q289-523 306-523t28.5-11.5Zm177 0Q523-546 523-563t-11.5-28.5Q500-603 483-603t-28.5 11.5Q443-580 443-563t11.5 28.5Q466-523 483-523t28.5-11.5Zm170 0Q693-546 693-563t-11.5-28.5Q670-603 653-603t-28.5 11.5Q613-580 613-563t11.5 28.5Q636-523 653-523t28.5-11.5Z"/></symbol><symbol id="i-tune" viewBox="0 -960 960 960"><path d="M435.5-128.63Q427-137.25 427-150v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v53h323q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H487v52q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-202q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h187q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm165.5-174.63Q307-385.25 307-398v-52H150q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h157v-54q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v166q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM457-450q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H457Zm144.5-173.63Q593-632.25 593-645v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v52h157q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H653v53q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-698q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-wand_stars" viewBox="0 -960 960 960"><path d="m654-454-91 147q-8 13-22.5 10T522-314l-33-133-306 305q-9 9-21 9t-21-9q-9-9-9-21t9-21l305-305-133-33q-14-4-17-18.5t10-22.5l147-92-12-172q-1-15 12.5-22t24.5 3l132 111 160-64q14-5 24 5t5 24l-65 160 111 132q10 11 3.5 24.5T827-441l-173-13ZM131-721q-5-5-5-11t5-11l46-46q5-5 11-5t11 5l45 45q5 5 5 11t-5 11l-46 46q-5 5-11 5t-11-5l-45-45Zm428 307 63-102 120 9-78-92 45-111-111 45-92-78 9 120-102 64 117 29 29 116Zm163 283-46-46q-5-5-4.5-11t5.5-11l45-45q5-5 11-5t11 5l46 46q5 5 4.5 11t-5.5 11l-45 45q-5 5-11 5t-11-5ZM578-579Z"/></symbol><symbol id="i-signal_cellular_alt" viewBox="0 -960 960 960"><path d="M214.5-174.58Q200-189.17 200-210v-140q0-20.83 14.62-35.42Q229.24-400 250.12-400q20.88 0 35.38 14.58Q300-370.83 300-350v140q0 20.83-14.62 35.42Q270.76-160 249.88-160q-20.88 0-35.38-14.58Zm250 0Q450-189.17 450-210v-340q0-20.83 14.62-35.42Q479.24-600 500.12-600q20.88 0 35.38 14.58Q550-570.83 550-550v340q0 20.83-14.62 35.42Q520.76-160 499.88-160q-20.88 0-35.38-14.58Zm250 0Q700-189.17 700-210v-540q0-20.83 14.62-35.42Q729.24-800 750.12-800q20.88 0 35.38 14.58Q800-770.83 800-750v540q0 20.83-14.62 35.42Q770.76-160 749.88-160q-20.88 0-35.38-14.58Z"/></symbol><symbol id="i-wifi" viewBox="0 -960 960 960"><path d="M417-154q-27-27-27-63t27-63q27-27 63-27t63 27q27 27 27 63t-27 63q-27 27-63 27t-63-27Zm209-378.5Q694-505 757-451q14 12 15 30.5T759-388q-14 14-32 13t-33-13q-53-44-106.5-63T480-470q-54 0-107.5 19T266-388q-15 12-33 13t-32-13q-14-14-13-32.5t15-30.5q63-54 131-81.5T480-560q78 0 146 27.5Zm95.5-219Q835-703 926-622q14 13 15.5 31.5T929-558q-14 14-33.5 13.5T861-558q-83-70-178-111t-203-41q-108 0-203 41T99-558q-15 13-34 13.5T32-558q-14-14-13-32.5T34-622q91-81 204.5-129.5T480-800q128 0 241.5 48.5Z"/></symbol><symbol id="i-battery_full" viewBox="0 -960 960 960"><path d="M310-80q-12.75 0-21.37-8.63Q280-97.25 280-110v-676q0-12.75 8.63-21.38Q297.25-816 310-816h90v-34q0-12.75 8.63-21.38Q417.25-880 430-880h100q12.75 0 21.38 8.62Q560-862.75 560-850v34h90q12.75 0 21.38 8.62Q680-798.75 680-786v676q0 12.75-8.62 21.37Q662.75-80 650-80H310Z"/></symbol></svg>
 
-<nav class="pg-tabs" id="pgTabs"><button data-pg="design" class="on">인터뷰 반영안 v4</button><button data-pg="v3">기존 시안 v3</button><button data-pg="spec">상단 기능 기획서</button></nav>
+<nav class="pg-tabs" id="pgTabs"><button data-pg="design" class="on">인터뷰 반영안 v4</button><button data-pg="v3">기존 시안 v3</button><button data-pg="spec">상단 기능 기획서</button><a class="pg-link" href="카드제안.html" target="_blank" rel="noopener">카드 레이아웃 제안 ↗</a></nav>
 
 <div class="sp-page" id="spec"></div>
 
@@ -681,8 +748,8 @@ const BASE = [
   {k:'관심없음',n:'2,743',c:'#B4BAC5',bg:'#F0F2F5',fg:'#8A91A0'}
 ];
 const CUSTOM = [
-  {k:'재통화',n:'771',c:'#C026D3'},{k:'타현장',n:'253',c:'#6366F1'},{k:'상',n:'564',c:'#EC4899'},
-  {k:'중',n:'761',c:'#14B8A6'},{k:'하',n:'2,166',c:'#06B6D4'},{k:'아파트먼트',n:'580',c:'#F97316'}
+  {k:'재통화',n:'771',c:'#C026D3',bg:'#FAE8FF',fg:'#9319A8'},{k:'타현장',n:'253',c:'#6366F1',bg:'#EEF0FF',fg:'#4338CA'},{k:'상',n:'564',c:'#EC4899',bg:'#FCE7F3',fg:'#BE185D'},
+  {k:'중',n:'761',c:'#14B8A6',bg:'#E0F7F4',fg:'#0F766E'},{k:'하',n:'2,166',c:'#06B6D4',bg:'#E0F7FA',fg:'#0E7490'},{k:'아파트먼트',n:'580',c:'#F97316',bg:'#FFF0E5',fg:'#C2410C'}
 ];
 const TOTAL = '11,430';
 const ORDER = [...BASE, ...CUSTOM].map(s => s.k);
@@ -692,6 +759,8 @@ const isBase = k => BASE.some(s => s.k === k);
 const SORTS = ['등록일 최신순','등록일 오래된순','관심도 높은순','관심도 낮은순','최근 활동순','상태순','이름순'];
 const OWNERS = ['내 고객','담당자1','담당자2','담당자3','담당자4'];
 const ME = '담당자1';
+const OWN_V4 = {'담당자1':'박성훈','담당자2':'김태윤','담당자3':'이수진','담당자4':'정현우'};
+const ownLbl = o => S.ver === 'v4' ? (OWN_V4[o] || o) : o;
 const INTS = ['상','중','하'];
 const PLATS = ['메타','네이버','구글','카카오','직접','내 페이지','기타'];
 const CAMPS = ['PH1603','덕소역 더블뷰한강','북오산자이 드포레','윤슬자이','카시아 속초','코르디아서울드래곤시티','디애스턴 한남','르엘 어퍼하우스','소요한남','에테르노 용산','파크사이드','기본 캠페인'];
@@ -743,15 +812,17 @@ const C = [
   ctx:['memo','내 페이지에서 상담 신청. 남긴 내용 없음'],kw:[],next:null,last:'',lastTs:0,rec:0,act:A_CALL}
 ];
 
-C.forEach((c, i) => { c.phone = '010-0000-' + (1001 + i * 7); });   // 가상 번호
+const PHONES = ['010-3842-7190','010-9214-5038','010-4729-8316','010-6581-2947','010-2395-6481','010-8147-3925','010-5463-9182','010-7628-4519','010-3194-8265','010-8952-1734','010-4276-5893','010-6839-2471','010-5712-9604','010-9483-6152'];
+C.forEach((c, i) => { c.phone = PHONES[i]; });   // 가상 번호
 // v4(인터뷰 반영): 등록 시각과 다른 현장 문의 이력 (모두 가상)
 const DUP = {
   '이서연':[{site:'파크사이드',date:'2026-09-12',own:'담당자1',st:'관심없음',note:'분양가가 예산보다 높다고 함. 방문 없이 종료'}],
-  '정하늘':[{site:'윤슬자이',date:'2026-08-03',own:'담당자2',st:'방문 예약',note:'모델하우스를 한 번 방문함. 대출 한도를 물어봄'},{site:'PH1603',date:'2026-10-21',own:'담당자1',st:'부재중',note:'세 번 걸었으나 받지 않음'}],
+  '정하늘':[{site:'PH1603',date:'2026-10-21',own:'담당자1',st:'부재중',note:'세 번 걸었으나 받지 않음'},{site:'윤슬자이',date:'2026-08-03',own:'담당자2',st:'방문 예약',note:'모델하우스를 한 번 방문함. 대출 한도를 물어봄'}],
   '한소희':[{site:'소요한남',date:'2026-10-02',own:'담당자3',st:'재통화',note:'가족과 상의 후 다시 연락하기로 함'}],
   '노은우':[{site:'카시아 속초',date:'2026-07-19',own:'담당자1',st:'하',note:'투자 목적 문의. 수익률 자료만 받아 감'}]
 };
-C.forEach((c, i) => { c.time = String(9 + (i * 3) % 11).padStart(2, '0') + ':' + String((i * 17) % 60).padStart(2, '0'); c.dup = DUP[c.name] || []; });
+const TIMES = ['09:12','09:48','09:15','14:10','10:08','13:25','16:42','15:20','11:16','14:33','17:50','09:07','12:24','15:41'];
+C.forEach((c, i) => { c.time = TIMES[i]; c.dup = DUP[c.name] || []; });
 // 캠페인별 고객 수(가상). 캠페인을 바꾸면 상태별 수도 같은 비율로 줄여 보여 준다
 const CAMP_N = Object.fromEntries(CAMPS.map((k, i) => [k, [1840,1520,1310,1180,960,890,820,760,690,610,540,310][i]]));
 const num = t => +String(t).replace(/,/g, ''), fmt = n => n.toLocaleString('en-US');
@@ -761,7 +832,7 @@ const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':
 
 /* ── 상태 ── */
 const F0 = () => ({own:[],int:[],plat:[],camp:[],date:'전체'});
-const S = {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',ver:'v4',detail:null,fold:{},memoOpen:false,memoDraft:'',sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
+const S = {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',ver:'v4',detail:null,dupView:'data',fbShow:false,fold:{},memoOpen:false,memoDraft:'',sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
 const app = document.getElementById('app');
 const fmtReg = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
 const daysAgo = d => Math.floor((TODAY - new Date(d + 'T00:00:00')) / 864e5);
@@ -780,20 +851,20 @@ function match(c, f, sort, st, q){
   return true;
 }
 function sorted(list, sort){
-  const a = [...list], iv = {'상':3,'중':2,'하':1,'':0};
-  if(sort === '등록일 오래된순') a.sort((x, y) => x.reg.localeCompare(y.reg));
+  const a = [...list], iv = {'상':3,'중':2,'하':1,'':0}, rk = c => S.ver === 'v4' ? c.reg + c.time : c.reg;
+  if(sort === '등록일 오래된순') a.sort((x, y) => rk(x).localeCompare(rk(y)));
   else if(sort === '관심도 높은순') a.sort((x, y) => iv[y.int] - iv[x.int]);
   else if(sort === '관심도 낮은순') a.sort((x, y) => iv[x.int] - iv[y.int]);
   else if(sort === '최근 활동순') a.sort((x, y) => y.lastTs - x.lastTs);
   else if(sort === '상태순') a.sort((x, y) => ORDER.indexOf(x.st) - ORDER.indexOf(y.st));
   else if(sort === '이름순') a.sort((x, y) => x.name.localeCompare(y.name, 'ko'));
-  else a.sort((x, y) => y.reg.localeCompare(x.reg));
+  else a.sort((x, y) => rk(y).localeCompare(rk(x)));
   return a;
 }
 const rows = (f = S.f, sort = S.sort) => sorted(C.filter(c => match(c, f, sort, S.st, S.q.trim())), sort);
 const conds = () => {
   const o = [];
-  S.f.own.forEach(v => o.push(['own', v, v === '내 고객' ? v : '담당자 ' + v.replace('담당자','')]));
+  S.f.own.forEach(v => o.push(['own', v, v === '내 고객' ? v : (S.ver === 'v4' ? '담당자 ' + ownLbl(v) : '담당자 ' + v.replace('담당자',''))]));
   S.f.int.forEach(v => o.push(['int', v, '관심도 ' + v]));
   S.f.plat.forEach(v => o.push(['plat', v, v]));
   S.f.camp.forEach(v => o.push(['camp', v, v]));
@@ -808,7 +879,11 @@ function badge(k){ const s = stOf(k); return `<span class="c2-badge"><i style="b
 // 카드 4가지. i 가 있으면 프로토타입용(누를 수 있음), 없으면 카드 시안 탭의 보기용
 const kOpen = i => i == null ? '' : ` role="button" tabindex="0" data-a="open" data-i="${i}"`;
 const kCall = (c, i) => i == null ? `<span class="c2-call" role="img" aria-label="전화">${ic('call')}</span>` : `<button class="c2-call" data-a="act" data-i="${i}" aria-label="${c.name}에게 전화">${ic('call')}</button>`;
-const kInt = c => c.int ? `<span class="cl-int">관심도 ${c.int}</span>` : '';
+// v4: 관심도를 현행처럼 점 세 개로 보여 준다 (상 3 · 중 2 · 하 1, 없으면 빈 점)
+const INT_N = {'상':3,'중':2,'하':1};
+const kInt = c => S.ver === 'v4'
+  ? `<span class="k-int ${c.int ? 'l' + INT_N[c.int] : 'l0'}" role="img" aria-label="관심도 ${c.int || '없음'}">${[1,2,3].map(n => `<i class="${n <= (INT_N[c.int] || 0) ? 'on' : ''}"></i>`).join('')}${c.int ? `<b>${c.int}</b>` : ''}</span>`
+  : c.int ? `<span class="cl-int">관심도 ${c.int}</span>` : '';
 const kCtxIc = c => ic(c.ctx[0] === 'ai' ? 'wand_stars' : 'description');
 const KCARD = {
   A:(c, i) => `<div class="ka"${kOpen(i)}>
@@ -830,87 +905,160 @@ const FB = [
   ['등록 시각', '등록 날짜만 있고 시간이 없다. 그날 몇 건 들어왔는지, 고객이 언제 활동하는지 보려면 시간이 필요하다.', '03:23', '등록 날짜 옆에 시각을 함께 보여 줍니다.'],
   ['다른 현장 문의', '예전에 다른 현장에 문의한 고객인지 알고 싶다. 매번 뒷번호를 검색해 볼 수는 없다.', '15:34', '카드에 「다른 현장 문의」와 현장 이름 · 문의한 날짜를 표시합니다. 상세에서는 당시 상태 · 담당자 · 상담 내용까지 보여 줍니다.'],
   ['덜 쓰는 정보 정리', '예약은 일정 화면에서 보는 게 편해 목록에서는 안 본다. 목록의 전화 버튼도 잘 안 쓰지만 있는 건 좋다.', '02:55', '예약 · 최근 통화 줄을 빼고, 전화 버튼은 남기되 작게 낮췄습니다.'],
-  ['상세 기본 정보 줄임', '나이 · 성별은 통화로 추측해 적다가 틀린다. 상세에서 실제로 고치는 것은 상태 하나뿐이다.', '05:09', '상세 맨 위에 이름 · 전화번호 · 담당자 · 등록 일시만 두고, 상태는 바로 바꿀 수 있는 큰 버튼으로 뒀습니다. 나이 · 성별은 뺐습니다. 이름 · 전화번호 · 담당자 · 관심도는 「정보 수정」에서 고치고 저장을 눌러야 바뀝니다.'],
-  ['문의 내용 · 통화 이력을 위로', '상세에 들어가면 고객이 남긴 내용을 먼저 보고, 그다음 예전 통화 이력을 본다.', '04:42', '기본 정보 바로 아래에 문의 내용, 통화 이력 순서로 올렸습니다. 통화 이력은 펼친 상태로 열리고 통화마다 AI 요약과 AI 제안이 함께 보입니다.'],
-  ['메모 작성 안내', '무엇을 적어야 하는지 안내가 있으면 좋겠다. 말로 부탁해도 잘 적지 않는다.', '06:25', '「메모 추가」를 누르면 나오는 입력 칸에 무엇을 적을지 알려 주는 안내 문구와 항목 버튼을 넣었습니다.']
+  ['상세 기본 정보 줄임', '나이 · 성별은 통화로 추측해 적다가 틀린다. 상세에서 실제로 고치는 것은 상태 하나뿐이다.', '05:09', '상세 맨 위에 이름 · 전화번호 · 담당자 · 등록 일시만 두고, 상태는 바로 바꿀 수 있는 큰 버튼으로 뒀습니다. 나이 · 성별은 화면에서 빼고 수정 화면에만 남겼습니다. 카드 아래 「기본 정보 수정」에서는 기존 항목(이름 · 전화번호 · 나이 · 성별 · 관심도 · 담당자 · 등록일 · 상태)을 모두 고칠 수 있고, 저장을 눌러야 바뀝니다.'],
+  ['메모(인스턴트 폼) · 통화 이력을 위로', '상세에 들어가면 고객이 남긴 내용을 먼저 보고, 그다음 예전 통화 이력을 본다.', '04:42', '고객이 설문에 적은 인스턴트 폼 내용은 따로 두지 않고 메모로 합쳤습니다. 메모 목록에 「인스턴트 폼」 표시와 함께 나옵니다. 기본 정보(다른 현장 문의) 바로 아래에 메모, 그다음 통화 이력 순서입니다. 통화 이력은 펼친 상태로 열리고 통화마다 AI 요약과 AI 제안이 함께 보입니다.'],
+  ['메모 작성 안내', '무엇을 적어야 하는지 안내가 있으면 좋겠다. 말로 부탁해도 잘 적지 않는다.', '06:25', '「메모 추가」를 누르면 아래에서 올라오는 입력 화면에 무엇을 적을지 알려 주는 안내 문구와 항목 버튼을 넣었습니다.']
 ];
 function fbPanelHTML(){
-  return `<div class="cl-cap">인터뷰 의견이 반영된 곳 <small>시안의 번호와 짝을 이룹니다 · 2026.11.11 인터뷰</small></div>
+  return `<div class="cl-cap">보기 옵션 <small>목록과 상세 화면을 경우별로 확인합니다</small></div><div id="fbOpt"></div>
+  <div id="fbBody"><div class="cl-cap">인터뷰 의견이 반영된 곳 <small>시안의 번호와 짝을 이룹니다 · 2026.11.11 인터뷰</small></div>
   <ol class="fb-list">${FB.map((f, i) => `${i === 5 ? '<li class="fb-sep">고객 상세 · 카드를 누르면 열립니다</li>' : ''}<li><i class="fbm">${i + 1}</i><div><h3>${f[0]}</h3><p class="fb-q">${f[1]} <span>${f[2]}</span></p><p class="fb-a">${f[3]}</p></div></li>`).join('')}</ol>
-  <div class="fb-etc"><b>아직 반영하지 않은 것</b>관심도 표시(숨길지 결론이 안 남) · 다른 현장 문의를 누구에게까지 보일지(개발자 정리 대기)</div>`;
+  <div class="fb-etc"><b>아직 반영하지 않은 것</b>관심도 표시(숨길지 결론이 안 남) · 다른 현장 문의를 누구에게까지 보일지(개발자 정리 대기)</div></div>`;
 }
+// 사이드 보기 옵션: 목록과 상세에서 「다른 현장 문의」 표시 방식을 바꿔 본다
+const dupOf = c => S.dupView === 'none' ? [] : S.dupView === 'all' && !c.dup.length ? C.flatMap(x => x.dup).filter(d => d.site !== c.camp).slice(0, 1) : c.dup;
+function drawOpt(){
+  app.classList.toggle('hide-fb', !S.fbShow);
+  const bd = $('fbBody'); if(bd) bd.hidden = !S.fbShow;
+  const el = $('fbOpt'); if(!el) return;
+  el.innerHTML = `<div class="fb-opt"><b>인터뷰 의견 표시</b><span>번호 표식과 오른쪽 설명을 켜거나 끕니다</span><div class="fb-seg" role="group" aria-label="인터뷰 의견 표시">${[['on','표시',true],['off','숨김',false]].map(([k, l, v]) => `<button class="${S.fbShow === v ? 'on' : ''}" aria-pressed="${S.fbShow === v}" data-fb="${k}">${l}</button>`).join('')}</div></div><div class="fb-opt"><b>다른 현장 문의 있음</b><span>목록과 상세에 함께 적용됩니다</span><div class="fb-seg" role="group" aria-label="다른 현장 문의 있음">${[['data','데이터대로'],['all','모두 있음'],['none','모두 없음']].map(([k, l]) => `<button class="${S.dupView === k ? 'on' : ''}" aria-pressed="${S.dupView === k}" data-opt="${k}">${l}</button>`).join('')}</div></div>`;
+}
+const PLAT_IC = {
+  '메타':['#1877F2',`<svg width="11" height="8" viewBox="0 0 16 11" fill="none" aria-hidden="true"><path d="M4.6 1.6C2.7 1.6 1.4 3.3 1.4 5.6c0 2 1.1 3.7 2.6 3.7 1.3 0 2.3-.9 3.7-2.9l.3-.5.3.5c1.4 2 2.4 2.9 3.7 2.9 1.5 0 2.6-1.7 2.6-3.7 0-2.3-1.3-4-3.2-4-1.4 0-2.4.9-3.4 2.3C7 2.5 6 1.6 4.6 1.6Z" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`],
+  '네이버':['#03C75A',`<svg width="8" height="8" viewBox="0 0 10 10" aria-hidden="true"><path fill="#fff" d="M1.5 1.5h2.2l2.6 3.9V1.5h2.2v7H6.3L3.7 4.6v3.9H1.5z"/></svg>`],
+  '구글':['#fff;box-shadow:inset 0 0 0 1px #DFE3EB',`<svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path fill="#4285F4" d="M10.6 6.1c0-.4 0-.7-.1-1H6v1.9h2.6c-.1.6-.5 1.1-1 1.5v1.2h1.6c1-.9 1.4-2.2 1.4-3.6Z"/><path fill="#34A853" d="M6 10.8c1.3 0 2.4-.4 3.2-1.1L7.6 8.5c-.4.3-1 .5-1.6.5-1.2 0-2.3-.8-2.7-2H1.6v1.3C2.4 9.9 4.1 10.8 6 10.8Z"/><path fill="#FBBC05" d="M3.3 7a2.9 2.9 0 0 1 0-2V3.7H1.6a4.8 4.8 0 0 0 0 4.6L3.3 7Z"/><path fill="#EA4335" d="M6 3c.7 0 1.3.3 1.8.7l1.4-1.4C8.4 1.6 7.3 1.2 6 1.2 4.1 1.2 2.4 2.1 1.6 3.7L3.3 5c.4-1.2 1.5-2 2.7-2Z"/></svg>`],
+  '카카오':['#FEE500',`<svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path fill="#191919" d="M6 1.8c-2.7 0-4.8 1.7-4.8 3.8 0 1.4.9 2.6 2.3 3.2l-.5 1.8c-.1.2.1.3.3.2l2.1-1.4c.2 0 .4.1.6.1 2.7 0 4.8-1.7 4.8-3.9S8.7 1.8 6 1.8Z"/></svg>`],
+  '직접':['#EEF1F5;color:#5A6272',`<svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="4.2" r="1.9"/><path d="M2.6 9.8c.6-1.7 1.9-2.5 3.4-2.5s2.8.8 3.4 2.5"/></svg>`],
+  '내 페이지':['#EAF0FA;color:#3B5BDB',`<svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="8" height="8" rx="1.8"/><path d="M2 4.8h8"/></svg>`]
+};
+function platIc(p){
+  const [bg, svg] = PLAT_IC[p] || ['#EEF1F5;color:#6B7280',`<svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><circle cx="3" cy="6" r="1"/><circle cx="6" cy="6" r="1"/><circle cx="9" cy="6" r="1"/></svg>`];
+  return `<i class="kv-pic" style="background:${bg}" title="${esc(p)}" role="img" aria-label="${esc(p)}">${svg}</i>`;
+}
+function badgeV4(k){ const s = stOf(k); return `<span class="kv-badge" style="background:${s.bg};color:${s.fg}">${k}</span>`; }
 function cardV4(c, i){
+  detData(c, i);
+  const dups = dupOf(c), memo = c.memos && c.memos[0];
   return `<div class="ka kv"${kOpen(i)}>
-    <div class="ka-1"><span class="cl-nm">${c.name}</span>${kInt(c)}${badge(c.st)}</div>
-    <div class="kv-2"><span class="kv-ph">${c.phone}${fb(2)}</span><span>${fmtReg(c.reg)} ${c.time} 등록${fb(3)}</span></div>
-    <div class="cl-ctx ${c.ctx[0]}">${kCtxIc(c)}<p>${c.ctx[1]}</p></div>
-    ${c.dup.length ? `<div class="kv-dup"><b>다른 현장 문의</b>${c.dup.map(d => `${d.site} <em>${fmtReg(d.date)}</em>`).join(' · ')}${fb(4)}</div>` : ''}
-    <div class="kv-3"><span class="cl-sub">${S.camp === '전체' ? c.camp + ' · ' : ''}${c.own}</span>${fb(5)}<button class="c2-call kv-call" data-a="act" data-i="${i}" aria-label="${c.name}에게 전화">${ic('call')}</button></div>
+    <div class="ka-1"><span class="cl-nm">${c.name}</span><span class="kv-src">${platIc(c.plat)}<span>${c.camp}</span></span><span class="kv-r">${kInt(c)}${badgeV4(c.st)}</span></div>
+    <div class="kv-2"><div class="kv-meta"><span>${fmtReg(c.reg)} ${c.time}${fb(3)}</span><i class="kv-dot"></i><span class="kv-own">${ownLbl(c.own)}</span><span class="kv-ph">${c.phone}${fb(2)}</span></div></div>
+    ${memo ? `<div class="cl-ctx memo kv-memo"><p>${esc(memo.t)}</p></div>` : ''}
+    ${dups.length ? `<div class="kv-dup"><b>다른 현장 문의${fb(4)}</b><span>${dups.map(d => `${d.site} <em>${fmtReg(d.date)}</em>`).join(' · ')}</span></div>` : ''}
+    <button class="kv-callbtn" data-a="act" data-i="${i}" aria-label="${c.name}에게 전화">${ic('phone-call')}전화${fb(5)}</button>
   </div>`;
 }
 const fbm = n => `<i class="fbm" aria-label="인터뷰 의견 ${n}">${n}</i>`;
 const fmtFull = d => { const [y, m, dd] = d.split('-'); return `${y}.${+m}.${+dd}`; };
 const pad2 = n => String(n).padStart(2, '0');
 const dAt = n => { const d = new Date(TODAY - n * 864e5); return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`; };
-const fmtDay = d => { const [, m, dd] = d.split('-'); return `${+m}월 ${+dd}일`; };
+const fmtDay = d => { const [y, m, dd] = d.split('-'); return `${+m}월 ${+dd}일 (${'일월화수목금토'[new Date(+y, m - 1, +dd).getDay()]})`; };
 const SUG = {'방문 예약':'방문 전날 문자로 시간과 주차 안내를 다시 보내세요.','가계약':'2차 계약금 일정과 필요한 서류를 문자로 정리해 보내세요.','정계약':'잔금 일정과 서류 수령일을 한 번 더 확인하세요.','재통화':'약속한 시간에 다시 전화하고, 지난 통화에서 물어본 내용을 먼저 답하세요.'};
-const MEMO_T = ['분양가와 평형 자료를 문자로 보냄','가족과 상의한 뒤 연락 주기로 함','대출 한도를 궁금해함. 은행 상담 연결을 안내','주말 방문을 선호함. 오전 시간대 희망'];
-// 상세용 가상 기록(통화 · 메모)을 고객마다 한 번 만든다
+// 상세용 가상 기록(통화 · 메모)을 고객마다 한 번 만든다 (날짜 · 시각 순서 및 상태와 일치)
 function detData(c, i){
   if(c.calls) return;
-  const m = c.last.match(/(\d+)(일|주) 전/), ago = /오늘/.test(c.last) ? 0 : /어제/.test(c.last) ? 1 : m ? m[1] * (m[2] === '주' ? 7 : 1) : 0;
-  c.calls = [];
-  if(c.last){
-    const miss = c.last.includes('부재');
-    c.calls.push({date:dAt(ago), time:pad2(10 + i % 8) + ':' + pad2((i * 13) % 60), dur:miss ? '받지 않음' : c.last.split(' · ')[1], miss, own:c.own,
-      sum:c.ctx[0] === 'ai' ? c.ctx[1] : '조건을 다시 안내했고, 자료를 보내 주기로 함.', sug:SUG[c.st] || '이틀 안에 다시 연락해 방문 의사를 확인하세요.', kw:c.kw, n:8 + i * 3});
-    if(c.rec >= 3) c.calls.push({date:c.reg, time:pad2(+c.time.slice(0, 2) + 1) + ':' + c.time.slice(3), dur:'48초', miss:false, own:c.own,
-      sum:'첫 통화. 광고를 보고 문의했고, 평형과 분양가 자료를 문자로 요청함.', sug:'자료를 보낸 뒤 이틀 안에 다시 연락해 방문 의사를 확인하세요.', kw:['첫 통화','자료 요청'], n:6});
-  }
-  c.memos = Array.from({length:Math.min(c.rec, 3)}, (_, k) => ({t:MEMO_T[(i + k) % MEMO_T.length], by:k === 1 ? '담당자2' : c.own, date:k === 0 && c.calls[0] ? c.calls[0].date : c.reg, time:pad2(11 + k * 2) + ':' + pad2((i * 7 + k * 11) % 60)}));
+  const ask = t => ({t, by:'', date:c.reg, time:c.time, auto:true});
+  const D = [
+    {calls:[], memos:[ask(c.ctx[1])]},
+    {calls:[{date:'2026-11-10',time:'10:15',dur:'2분 10초',miss:false,own:'담당자2',sum:c.ctx[1],sug:'오늘 오후 방문 전 문자로 모델하우스 위치와 주차 안내를 보내세요.',kw:c.kw,n:11}],
+     memos:[{t:'오늘 14시 방문 확정. 모델하우스 위치와 주차 안내 문자를 보냄',by:'담당자2',date:'2026-11-10',time:'10:42'},{t:'분양가와 평형 자료를 문자로 보냄',by:'담당자2',date:'2026-11-10',time:'10:22'},ask('신혼집으로 알아보고 있습니다. 분양가와 방문 예약 문의드립니다')]},
+    {v4Next:['오늘 19:00 재연락','today'],
+     calls:[{date:'2026-11-10',time:'11:10',dur:'받지 않음',miss:true,own:'담당자1',sum:'',sug:'',kw:[],n:0},{date:'2026-11-10',time:'09:50',dur:'받지 않음',miss:true,own:'담당자1',sum:'',sug:'',kw:[],n:0}],
+     memos:[{t:c.ctx[1],by:'담당자1',date:'2026-11-10',time:'11:12'}]},
+    {stAt:{date:'2026-11-09',time:'17:20'},
+     calls:[{date:'2026-11-10',time:'10:05',dur:'1분 24초',miss:false,own:'담당자3',sum:'은행 대출 한도 확인 결과를 전해 왔고, 2차 계약금은 11/15(일)에 입금하기로 함.',sug:SUG['가계약'],kw:['대출 한도','2차 계약금'],n:9},{date:'2026-11-09',time:'17:20',dur:'4분 2초',miss:false,own:'담당자3',sum:c.ctx[1],sug:SUG['가계약'],kw:c.kw,n:17},{date:'2026-11-09',time:'14:45',dur:'1분 15초',miss:false,own:'담당자3',sum:'첫 통화. 모델하우스 방문 뒤 고층 잔여 호실과 가계약 절차를 문의함.',sug:'잔여 호실표를 보낸 뒤 가계약 입금 계좌를 안내하세요.',kw:['첫 통화','잔여 호실'],n:8}],
+     memos:[{t:'대출 한도 확인 완료. 2차 계약금 11/15(일) 입금 예정',by:'담당자3',date:'2026-11-10',time:'10:12'},{t:'1차 가계약금 입금 확인. 대출 상담 은행 안내함',by:'담당자3',date:'2026-11-09',time:'17:35'},{t:'고층 잔여 호실표와 분양가 자료를 문자로 보냄',by:'담당자3',date:'2026-11-09',time:'15:00'}]},
+    {calls:[{date:'2026-11-10',time:'10:52',dur:'38초',miss:false,own:'담당자1',sum:c.ctx[1],sug:SUG['재통화'],kw:c.kw,n:11},{date:'2026-11-08',time:'11:08',dur:'48초',miss:false,own:'담당자1',sum:'첫 통화. 광고를 보고 문의했고, 평형과 분양가 자료를 문자로 요청함.',sug:'자료를 보낸 뒤 이틀 안에 다시 연락해 방문 의사를 확인하세요.',kw:['첫 통화','자료 요청'],n:6}],
+     memos:[{t:'회의 중이라 내일(11/11) 오전 10시에 다시 전화하기로 함',by:'담당자1',date:'2026-11-10',time:'10:55'},{t:'분양가와 평형 자료를 문자로 보냄',by:'담당자1',date:'2026-11-08',time:'11:20'},ask('분양 일정과 평형 자료 부탁드립니다')]},
+    {calls:[{date:'2026-11-09',time:'15:10',dur:'1분 3초',miss:false,own:'담당자2',sum:'정계약 진행 일정과 준비 서류를 안내했고, 인감증명서는 다음 주에 제출하기로 함.',sug:SUG['정계약'],kw:['정계약','서류 안내'],n:14},{date:'2026-11-08',time:'14:15',dur:'2분 20초',miss:false,own:'담당자2',sum:'첫 통화. 방문 일정을 잡고 계약 절차와 준비 서류를 문의함.',sug:'방문 일정과 준비 서류 목록을 문자로 보내세요.',kw:['첫 통화','방문 일정'],n:9}],
+     memos:[{t:c.ctx[1],by:'담당자2',date:'2026-11-09',time:'15:25'},{t:'계약 준비 서류 목록을 문자로 안내함',by:'담당자2',date:'2026-11-08',time:'14:30'}]},
+    {calls:[{date:'2026-11-04',time:'11:15',dur:'25초',miss:false,own:'담당자4',sum:c.ctx[1],sug:'추가 연락을 원하지 않으므로 안내 문자 발송 대상에서 제외하세요.',kw:c.kw,n:5}],
+     memos:[{t:'타 단지 계약 완료로 추가 연락 원치 않음',by:'담당자4',date:'2026-11-04',time:'11:18'}]},
+    {calls:[{date:'2026-11-08',time:'14:30',dur:'3분 15초',miss:false,own:'담당자3',sum:c.ctx[1],sug:'보낸 수익률 자료 확인 여부를 묻고 방문 가능한 일정을 제안하세요.',kw:c.kw,n:16},{date:'2026-11-07',time:'16:05',dur:'52초',miss:false,own:'담당자3',sum:'첫 통화. 투자 목적으로 전용 면적별 분양가와 임대 수요를 문의함.',sug:'수익률 비교 자료와 분양가표를 먼저 문자로 보내세요.',kw:['첫 통화','분양가표'],n:7}],
+     memos:[{t:'수익률 비교표와 분양가 자료를 문자로 보냄',by:'담당자3',date:'2026-11-08',time:'14:42'},{t:'법인 명의 계약 가능 여부도 함께 확인 요청함',by:'담당자3',date:'2026-11-07',time:'16:15'}]},
+    {calls:[{date:'2026-11-09',time:'16:10',dur:'1분 20초',miss:false,own:'담당자2',sum:c.ctx[1],sug:'분양가와 옵션 비용표를 먼저 문자로 보내고 주말 전 다시 연락하세요.',kw:c.kw,n:9}],
+     memos:[{t:'분양가표와 유상 옵션 안내문을 문자로 발송함',by:'담당자2',date:'2026-11-09',time:'16:20'},{t:'가족과 상의한 뒤 방문 여부를 정하기로 함',by:'담당자2',date:'2026-11-09',time:'16:14'}]},
+    {calls:[{date:'2026-11-04',time:'15:20',dur:'1분 40초',miss:false,own:'담당자4',sum:'문의한 현장이 다른 단지로 확인되어 해당 현장 담당자에게 연결하기로 함.',sug:'이관받은 담당자가 고객에게 안내했는지 확인하세요.',kw:['타현장 문의','담당자 전달'],n:7}],
+     memos:[{t:'이관받은 담당자가 고객과 통화한 것을 확인함',by:'담당자4',date:'2026-11-05',time:'10:30'},{t:c.ctx[1],by:'담당자4',date:'2026-11-04',time:'15:28'}]},
+    {calls:[{date:'2026-11-06',time:'18:30',dur:'2분 48초',miss:false,own:'담당자1',sum:c.ctx[1],sug:SUG['방문 예약'],kw:c.kw,n:12}],
+     memos:[{t:'방문 전날 보낼 시간 · 주차 안내 문자를 예약해 둠',by:'담당자1',date:'2026-11-09',time:'11:05'},{t:'11/13(금) 18:30 부모님 동반 방문 예약. 주차 2대 안내함',by:'담당자1',date:'2026-11-06',time:'18:40'},{t:'남향 저층 평면도 자료를 문자로 보냄',by:'담당자1',date:'2026-11-06',time:'18:35'}]},
+    {calls:[{date:'2026-11-03',time:'10:40',dur:'55초',miss:false,own:'담당자3',sum:c.ctx[1],sug:'분양 조건이나 금융 혜택이 바뀔 때 다시 안내할 고객으로 분류해 두세요.',kw:c.kw,n:6}],
+     memos:[{t:'예산 차이로 보류. 중도금 조건 변경 시 재안내 희망',by:'담당자3',date:'2026-11-03',time:'10:46'}]},
+    {calls:[{date:'2026-11-07',time:'14:15',dur:'1분 52초',miss:false,own:'담당자2',sum:'84타입 입주 예정 시기와 중도금 무이자 여부를 안내했고, 내일 추가 조건을 다시 안내하기로 함.',sug:'약속한 일자에 중도금 대출 조건표를 정리해 다시 안내하세요.',kw:['84타입','중도금 조건'],n:10},{date:'2026-11-05',time:'13:10',dur:'50초',miss:false,own:'담당자2',sum:'첫 통화. 84타입 평면과 모델하우스 위치를 문의함.',sug:'평면도 자료를 문자로 보낸 뒤 다시 연락하세요.',kw:['첫 통화','평면 문의'],n:6}],
+     memos:[{t:'중도금 대출 조건표 확인 후 11/11(수) 다시 안내 예정',by:'담당자2',date:'2026-11-07',time:'14:24'},{t:'84타입 평면도와 분양 일정표를 문자로 보냄',by:'담당자2',date:'2026-11-05',time:'13:20'},ask(c.ctx[1])]},
+    {calls:[], memos:[]}
+  ][i];
+  Object.assign(c, D);
+}
+function stampNow(c){
+  const date = c.reg > dAt(0) ? c.reg : dAt(0);
+  const ts = [c.reg === date ? c.time : '', ...(c.calls || []).filter(x => x.date === date).map(x => x.time), ...(c.memos || []).filter(x => x.date === date).map(x => x.time), c.stAt && c.stAt.date === date ? c.stAt.time : ''].filter(Boolean).sort().pop();
+  if(!ts || ts < '12:00') return {date, time:'12:00'};
+  const [h, m] = ts.split(':').map(Number), tot = Math.min(23 * 60 + 59, h * 60 + m + 1);
+  return {date, time:pad2(Math.floor(tot / 60)) + ':' + pad2(tot % 60)};
 }
 function timelineHTML(c){
-  const ev = [{date:c.reg, time:c.time, k:'in', l:'유입', t:`${c.plat} · ${c.camp}`}];
-  c.calls.forEach(x => ev.push({date:x.date, time:x.time, k:'call', l:x.miss ? '부재중' : '통화', t:x.miss ? '받지 않음' : `${x.dur} · ${x.own}`}));
-  c.memos.forEach(x => ev.push({date:x.date, time:x.time, k:'memo', l:'메모', t:x.t}));
-  if(c.calls[0]) ev.push({date:c.calls[0].date, time:c.calls[0].time, k:'st', l:'상태 변경', t:c.st});
+  const ask = c.memos.find(x => x.auto), nxt = c.v4Next !== undefined ? c.v4Next : c.next;
+  const ev = [{date:c.reg, time:c.time, k:'in', l:'유입', t:`${c.plat} · ${c.camp}${ask ? ' · ' + ask.t : ''}`}];
+  c.calls.forEach(x => ev.push({date:x.date, time:x.time, k:'call', l:x.miss ? '부재중' : `통화 (${x.dur})`, t:x.miss ? '받지 않음' : (x.sum || ownLbl(x.own))}));
+  c.memos.forEach(x => { if(!x.auto) ev.push({date:x.date, time:x.time, k:'memo', l:'메모', t:x.t}); });
+  const stEv = c.stAt || c.calls[0];
+  if(stEv) ev.push({date:stEv.date, time:stEv.time, k:'st', l:'상태 변경', t:c.st});
   ev.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
   let day = '';
-  return `<ol class="d-tl">${c.next ? `<li class="d-day">예정</li><li class="plan"><time>—</time><i></i><div><b>${c.st === '방문 예약' ? '방문 일정' : '다음 할 일'}</b><p>${c.next[0]}</p></div></li>` : ''}${ev.map(e => `${e.date !== day ? `<li class="d-day">${fmtDay(day = e.date)}</li>` : ''}<li class="${e.k}"><time>${e.time}</time><i></i><div><b>${e.l}</b><p>${esc(e.t)}</p></div></li>`).join('')}</ol>`;
+  return `<ol class="d-tl">${nxt ? `<li class="d-day">예정</li><li class="plan"><time>—</time><i></i><div><b>${c.st === '방문 예약' ? '방문 일정' : '다음 할 일'}</b><p>${nxt[0]}</p></div></li>` : ''}${ev.map(e => `${e.date !== day ? `<li class="d-day">${fmtDay(day = e.date)}</li>` : ''}<li class="${e.k}"><time>${e.time}</time><i></i><div><b>${e.l}</b><p>${esc(e.t)}</p></div></li>`).join('')}</ol>`;
+}
+const DTABS = [['info','기본 정보'],['memo','메모','memos'],['call','통화 이력','calls'],['meet','미팅 예약'],['tl','타임라인']];
+const detBody = () => document.querySelector ? document.querySelector('#det .d-body') : null;
+function markTab(){
+  const nav = document.querySelector && document.querySelector('#det .d-tabs'); if(!nav) return;
+  nav.querySelectorAll('button').forEach(x => {
+    const on = x.dataset.k === S.dtab; x.classList.toggle('on', on);
+    if(on) nav.scrollLeft = Math.max(0, x.offsetLeft - (nav.clientWidth - x.offsetWidth) / 2);
+  });
+}
+function spyTab(bd){
+  if(S.dlock && Date.now() < S.dlock){
+    if(S.dTarget != null && Math.abs(bd.scrollTop - S.dTarget) <= 2) S.dlock = 0;
+    return;
+  }
+  if(S.dTarget != null && Math.abs(bd.scrollTop - S.dTarget) <= 2) return;
+  S.dTarget = null;
+  let k = DTABS[0][0]; const y = bd.scrollTop + Math.min(96, bd.clientHeight * 0.2);
+  for(const [id] of DTABS){ const el = $('ds-' + id); if(el && el.offsetTop - bd.offsetTop <= y) k = id; }
+  if(bd.scrollTop > 0 && bd.scrollTop + bd.clientHeight >= bd.scrollHeight - 2) k = 'tl';
+  if(k !== S.dtab){ S.dtab = k; markTab(); }
 }
 function detailHTML(){
   const i = S.detail, c = C[i]; if(!c) return '';
   detData(c, i);
-  const st = stOf(c.st);
-  const ask = c.ctx[0] === 'memo' ? c.ctx[1] : `${c.plat} 광고를 보고 상담을 신청함. 남긴 내용 없음`;
-  const sec = (t, body, o = {}) => `<section class="d-card"><div class="d-h"><h2>${t}${o.n != null ? `<em>${o.n}</em>` : ''}${o.mark || ''}</h2>${o.act || ''}</div>${body}</section>`;
+  const st = stOf(c.st), nxt = c.v4Next !== undefined ? c.v4Next : c.next;
+  const sec = (t, body, o = {}) => `<section class="d-card"${o.id ? ` id="ds-${o.id}"` : ''}><div class="d-h"><h2>${t}${o.n != null ? `<em>${o.n}</em>` : ''}${o.mark || ''}</h2>${o.act || ''}</div>${body}</section>`;
   const call = (x, k) => { const fold = S.fold[i + '-' + k];
     return `<li class="d-call ${x.miss ? 'miss' : ''} ${fold ? 'fold' : ''}">
-      <button class="d-call-h" data-a="cfold" data-k="${k}" ${x.miss ? 'disabled' : `aria-expanded="${!fold}"`}><span class="d-call-ic">${ic('call')}</span><span class="d-call-t"><b>${fmtReg(x.date)} ${x.time} ${x.miss ? '부재중' : '통화'}</b><small>${x.dur} · ${x.own}</small></span>${x.miss ? '' : ic(fold ? 'keyboard_arrow_down' : 'keyboard_arrow_up')}</button>
+      <button class="d-call-h" data-a="cfold" data-k="${k}" ${x.miss ? 'disabled' : `aria-expanded="${!fold}"`}><span class="d-call-ic">${ic('phone-call')}</span><span class="d-call-t"><b>${fmtReg(x.date)} ${x.time} ${x.miss ? '부재중' : '통화'}</b><small>${x.dur} · ${ownLbl(x.own)}</small></span>${x.miss ? '' : ic(fold ? 'keyboard_arrow_down' : 'keyboard_arrow_up')}</button>
       ${x.miss || fold ? '' : `<div class="d-call-b">
         <div class="d-ai"><h3>${ic('wand_stars')}AI 요약</h3><p>${x.sum}</p></div>
         <div class="d-ai sug"><h3>${ic('wand_stars')}AI 제안</h3><p>${x.sug}</p></div>
         ${x.kw.length ? `<div class="cl-kw d-kw">${x.kw.map(v => `<span>${v}</span>`).join('')}</div>` : ''}
-        <div class="d-call-f"><button data-a="soon" data-t="녹음 듣기는 이번 범위 밖입니다">녹음 듣기</button><button data-a="soon" data-t="전체 대화 보기는 이번 범위 밖입니다">전체 대화 보기 (${x.n}건)</button></div>
+        <div class="d-call-f"><button data-a="soon" data-t="전체 대화 보기는 이번 범위 밖입니다">전체 대화 보기 (${x.n}건) ${ic('keyboard_arrow_down')}</button></div>
       </div>`}</li>`; };
-  const memo = (x, k) => `<li><p>${esc(x.t)}</p><div><span>${x.by} · ${fmtFull(x.date)} ${x.time}</span><button data-a="soon" data-t="메모 고치기는 이번 범위 밖입니다" aria-label="메모 고치기">${ic('edit_note')}</button><button data-a="memo-del" data-k="${k}" aria-label="메모 지우기">${ic('close')}</button></div></li>`;
-  const composer = S.memoOpen ? `<div class="d-comp"><textarea id="memoIn" rows="3" placeholder="통화 내용 · 고객 성향 · 다음에 할 일을 적어 주세요">${esc(S.memoDraft)}</textarea>
-      <div class="d-comp-g">${['통화 내용','고객 성향','다음 할 일','대신 통화'].map(t => `<button data-a="memo-chip" data-v="${t}">+ ${t}</button>`).join('')}</div>
-      <div class="d-comp-f"><button data-a="memo-cancel">취소</button><button class="pri" data-a="memo-save">저장</button></div></div>` : '';
+  const memo = (x, k) => `<li data-a="memo-edit" data-k="${k}" role="button" tabindex="0" aria-label="메모 수정·삭제 열기"><p>${esc(x.t)}</p><small>${x.auto ? '<em>인스턴트 폼</em>' : `<span>${ownLbl(x.by)}</span>`}<time>${fmtFull(x.date)} ${x.time}</time></small></li>`;
+  const dups = dupOf(c);
   return `<div class="r-stop d-top"><button class="cl-ibtn" data-a="det-x" aria-label="목록으로 돌아가기">${ic('arrow_back')}</button><b>고객 상세</b><button class="d-share" data-a="soon" data-t="내페이지 공유는 이번 범위 밖입니다">내페이지 공유</button></div>
+  <nav class="d-tabs" aria-label="상세 구역 바로 가기">${DTABS.map(([k, l, n]) => `<button class="${S.dtab === k ? 'on' : ''}" data-a="dtab" data-k="${k}">${l}${n && c[n].length ? `<em>${c[n].length}</em>` : ''}</button>`).join('')}</nav>
   <div class="d-body">
-    <section class="d-card d-head">
+    <section class="d-card d-head" id="ds-info">
       <div class="d-1"><h1>${esc(c.name)}</h1>${kInt(c)}${fbm(6)}<button class="d-edit" data-a="dedit">정보 수정</button></div>
       <div class="d-ph">${esc(c.phone)}</div>
-      <div class="d-act"><button class="d-st" data-a="dst" aria-label="상태 바꾸기, 지금 ${c.st}"><span>상태</span><i style="background:${st.c}"></i><b>${c.st}</b>${ic('keyboard_arrow_down')}</button><button class="d-callbtn" data-a="act" data-i="${i}" aria-label="${esc(c.name)}에게 전화">${ic('call')}전화</button></div>
-      <dl class="d-meta"><div><dt>등록</dt><dd>${fmtFull(c.reg)} ${c.time}</dd></div><div><dt>담당자</dt><dd>${c.own}</dd></div><div><dt>캠페인</dt><dd>${c.camp}</dd></div><div><dt>유입</dt><dd>${c.plat}</dd></div></dl>
+      <div class="d-act"><button class="d-st" data-a="dst" aria-label="상태 바꾸기, 지금 ${c.st}"><span>상태</span><i style="background:${st.c}"></i><b>${c.st}</b>${ic('keyboard_arrow_down')}</button><button class="d-callbtn" data-a="act" data-i="${i}" aria-label="${esc(c.name)}에게 전화">${ic('phone-call')}전화</button></div>
+      <dl class="d-meta"><div><dt>등록</dt><dd>${fmtFull(c.reg)} ${c.time}</dd></div><div><dt>담당자</dt><dd>${ownLbl(c.own)}</dd></div><div><dt>캠페인</dt><dd>${esc(c.camp)}</dd></div><div><dt>유입</dt><dd class="d-plat">${platIc(c.plat)}<span>${c.plat}</span></dd></div>${c.age ? `<div><dt>나이</dt><dd>${esc(c.age)}</dd></div>` : ''}${c.sex ? `<div><dt>성별</dt><dd>${c.sex}</dd></div>` : ''}</dl>
     </section>
-    ${c.dup.length ? sec('다른 현장 문의', `<ul class="d-dup">${c.dup.map(d => `<li><div><b>${d.site}</b><time>${fmtFull(d.date)} 문의</time></div><p>${d.note}</p><small>당시 ${d.st} · ${d.own}</small></li>`).join('')}</ul><button class="d-more" data-a="soon" data-t="그 현장의 상담 기록 열기는 이번 범위 밖입니다">그 현장 상담 기록 보기</button>`, {n:c.dup.length, mark:fbm(4)}) : ''}
-    ${sec('문의 내용', `<p class="d-txt">${ask}</p>`, {mark:fbm(7)})}
-    ${sec('통화 이력', c.calls.length ? `<ul class="d-calls">${c.calls.map(call).join('')}</ul>` : `<p class="d-none">아직 통화 기록이 없습니다</p>`, {n:c.calls.length})}
-    ${sec('메모', composer + (c.memos.length ? `<ul class="d-memos">${c.memos.map(memo).join('')}</ul>` : (S.memoOpen ? '' : `<p class="d-none">등록된 메모가 없습니다</p>`)), {n:c.memos.length, mark:fbm(8), act:S.memoOpen ? '' : `<button class="d-add" data-a="memo-open">${ic('add')}메모 추가</button>`})}
-    ${sec('미팅 예약', c.next ? `<div class="d-meet">${ic('calendar_month')}<span>${c.next[0]}</span></div>` : `<p class="d-none">방문 일정이 없습니다</p>`, {act:`<button class="d-add" data-a="soon" data-t="일정 추가는 이번 범위 밖입니다">${ic('add')}일정 추가</button>`})}
-    ${sec('활동 타임라인', timelineHTML(c))}
+    ${dups.length ? sec('다른 현장 문의', `<ul class="d-dup">${dups.map(d => `<li><div><b>${d.site}</b><time>${fmtFull(d.date)} 문의</time></div><p>${d.note}</p><small>당시 ${d.st} · ${ownLbl(d.own)}</small></li>`).join('')}</ul><button class="d-more" data-a="soon" data-t="그 현장의 상담 기록 열기는 이번 범위 밖입니다">그 현장 상담 기록 보기</button>`, {n:dups.length, mark:fbm(4)}) : ''}
+    ${sec('메모', c.memos.length ? `<ul class="d-memos">${c.memos.map(memo).join('')}</ul>` : `<p class="d-none">등록된 메모가 없습니다</p>`, {n:c.memos.length, mark:fbm(7) + fbm(8), id:'memo', act:`<button class="d-add" data-a="memo-open">${ic('add')}메모 추가</button>`})}
+    ${sec('통화 이력', c.calls.length ? `<ul class="d-calls">${c.calls.map(call).join('')}</ul>` : `<p class="d-none">아직 통화 기록이 없습니다</p>`, {n:c.calls.length, id:'call'})}
+    ${sec('미팅 예약', nxt ? `<div class="d-meet">${ic('calendar_month')}<span>${nxt[0]}</span></div>` : `<p class="d-none">방문 일정이 없습니다</p>`, {act:`<button class="d-add" data-a="soon" data-t="일정 추가는 이번 범위 밖입니다">${ic('add')}일정 추가</button>`, id:'meet'})}
+    ${sec('활동 타임라인', timelineHTML(c), {id:'tl'})}
+    ${sec('내페이지 활동', c.plat === '내 페이지' ? `<div class="d-mypage-on"><b>분양 안내 내페이지를 열람하고 상담을 신청했습니다</b><small>${fmtFull(c.reg)} ${c.time} · 평면도 · 분양가 안내 확인</small></div>` : `<p class="d-mypage-empty">아직 활동이 없습니다. 내페이지를 공유해보세요.</p>`, {id:'mypage'})}
   </div>`;
 }
 function drawDetail(reset){
@@ -920,6 +1068,7 @@ function drawDetail(reset){
   app.classList.toggle('det', on);
   $('det').innerHTML = on ? detailHTML() : '';
   const nb = q(); if(nb) nb.scrollTop = y;
+  drawOpt();
 }
 function card(c, i){ return S.ver === 'v4' ? cardV4(c, i) : KCARD.A(c, i); }
 function listHTML(){
@@ -931,19 +1080,19 @@ function listHTML(){
 const tHead = (t, sub, right) => `<i class="c2-grip"></i><div class="t-head"><h2>${t}</h2>${right || ''}</div>${sub ? `<p class="t-sub">${sub}</p>` : ''}`;
 const FLABEL = {sort:'정렬',own:'담당자',int:'관심도',plat:'플랫폼',camp:'캠페인',date:'등록일'};
 function topHTML(){
-  return `<div class="c2-head"><h1>고객 관리</h1><button class="r-campchip" data-a="campsheet" aria-label="캠페인 바꾸기"><span>${S.camp === '전체' ? '전체 캠페인' : S.camp}</span>${ic('keyboard_arrow_down')}</button>${S.ver === 'v4' ? '<i class="fbm" aria-label="인터뷰 의견 1">1</i>' : ''}<button class="r-sbtn" data-a="search-on" aria-label="고객 검색">${ic('search')}검색</button><button class="cl-ibtn" data-a="soon" data-t="메뉴는 이번 범위 밖입니다" aria-label="메뉴">${ic('menu')}</button></div>`;
+  return `<div class="c2-head"><h1>고객 관리</h1><button class="r-campchip" data-a="campsheet" aria-label="캠페인 바꾸기"><span>${S.camp === '전체' ? '전체 캠페인' : S.camp}</span>${ic('keyboard_arrow_down')}${S.ver === 'v4' ? fbm(1) : ''}</button><button class="r-sbtn" data-a="search-on" aria-label="고객 검색">${ic('search')}검색</button><button class="cl-ibtn" data-a="soon" data-t="메뉴는 이번 범위 밖입니다" aria-label="메뉴">${ic('menu')}</button></div>`;
 }
 // 상태: 밑줄 탭 한 줄 (필터 칩과 모양을 달리해 역할을 구분)
 function stHTML(){
   const tab = (k, n, c) => `<button class="r-tab ${S.st === k ? 'on' : ''}" data-a="st" data-k="${k}"><span>${k}</span><b>${c ? `<i style="background:${c}"></i>` : ''}${n}</b></button>`;
-  return `<div class="c2-st-scroll r-tabs">${tab('전체', cnt(TOTAL))}${ALL.map(s => tab(s.k, cnt(s.n), s.c)).join('')}</div><button class="c2-all" data-a="stsheet" aria-label="상태 모두 보기">${ic('keyboard_arrow_down')}</button>`;
+  return `<div class="c2-st-scroll r-tabs${S.ver === 'v4' ? ' v4' : ''}">${tab('전체', cnt(TOTAL))}${ALL.map(s => tab(s.k, cnt(s.n), s.c)).join('')}</div><button class="c2-all" data-a="stsheet" aria-label="상태 모두 보기">${ic('keyboard_arrow_down')}</button>`;
 }
 // 필터: 항목별 칩. 걸린 칩은 값이 보이게 바뀐다
 function fchipLabel(key){
   if(key === 'date') return S.f.date === '전체' ? '' : '등록 ' + S.f.date;
   const a = S.f[key]; if(!a.length) return '';
   if(key === 'int') return '관심도 ' + a.join(' · ');
-  return a.length === 1 ? a[0] : `${FLABEL[key]} ${a.length}`;
+  return a.length === 1 ? (key === 'own' ? ownLbl(a[0]) : a[0]) : `${FLABEL[key]} ${a.length}`;
 }
 function fbarHTML(){
   const n = conds().length, dn = ic('keyboard_arrow_down');
@@ -958,6 +1107,13 @@ function condHTML(){
   return left + `<button class="r-sortbtn" data-a="sortsheet" aria-label="정렬 바꾸기, 지금 ${S.sort}">${ic('swap_vert')}${S.sort}</button>`;
 }
 function sheetHTML(){
+  if(S.sheet === 'dmore'){
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>고객 관리</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body d-mmenu">
+      <button class="d-mitem" data-a="dedit">${ic('pencil')}기본 정보 수정</button>
+      <button class="d-mitem del" data-a="cdel">${ic('trash')}고객 삭제</button>
+    </div>`;
+  }
   if(S.sheet === 'status'){
     const opt = (k, n, c, w) => `<button class="c2-sopt ${w || ''} ${S.st === k ? 'on' : ''}" data-a="st" data-k="${k}">${c ? `<i style="background:${c}"></i>` : ''}${k}<b>${n}</b></button>`;
     return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>상태</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
@@ -967,13 +1123,25 @@ function sheetHTML(){
     const d = S.edit, pick = (key, vals) => `<div class="e-pick">${vals.map(([v, l]) => `<button class="${d[key] === v ? 'on' : ''}" data-a="epick" data-key="${key}" data-v="${v}">${l}</button>`).join('')}</div>`;
     return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>기본 정보 수정</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
     <div class="cl-sh-body e-form">
-      <label><span>이름</span><input data-ef="name" value="${esc(d.name)}" autocomplete="off"></label>
-      <label><span>전화번호</span><input data-ef="phone" value="${esc(d.phone)}" inputmode="tel" autocomplete="off"></label>
-      <div class="e-f"><span>담당자</span>${pick('own', OWNERS.slice(1).map(o => [o, o]))}</div>
+      <div class="e-row"><label><span>이름</span><input data-ef="name" value="${esc(d.name)}" autocomplete="off"></label>
+      <label><span>전화번호</span><input data-ef="phone" value="${esc(d.phone)}" inputmode="tel" autocomplete="off"></label></div>
+      <div class="e-row"><label><span>나이</span><input data-ef="age" value="${esc(d.age)}" inputmode="numeric" placeholder="입력 안 함" autocomplete="off"></label>
+      <label><span>등록일</span><input data-ef="reg" type="date" value="${d.reg}"></label></div>
+      <div class="e-f"><span>성별</span>${pick('sex', [['', '선택 안 함'], ['남', '남'], ['여', '여']])}</div>
       <div class="e-f"><span>관심도</span>${pick('int', [['', '없음'], ...INTS.map(v => [v, v])])}</div>
+      <div class="e-f"><span>담당자</span>${pick('own', OWNERS.slice(1).map(o => [o, ownLbl(o)]))}</div>
+      <div class="e-f"><span>상태</span>${pick('st', ALL.map(x => [x.k, x.k]))}</div>
       <p class="e-note">저장을 눌러야 바뀝니다. 닫으면 바꾼 내용은 버려집니다.</p>
     </div>
     <div class="t-foot"><button class="cl-apply" data-a="esave">저장</button></div>`;
+  }
+  if(S.sheet === 'memo'){
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>${S.memoEdit != null ? '메모 수정' : '메모 추가'}</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body m-form">
+      <textarea id="memoIn" rows="5" placeholder="통화 내용 · 고객 성향 · 다음에 할 일을 적어 주세요">${esc(S.memoDraft)}</textarea>
+      <div class="m-chips">${['통화 내용','고객 성향','다음 할 일','대신 통화'].map(t => `<button data-a="memo-chip" data-v="${t}">+ ${t}</button>`).join('')}</div>
+    </div>
+    <div class="t-foot${S.memoEdit != null ? ' m-foot' : ''}">${S.memoEdit != null ? `<button class="m-del" data-a="memo-del">${ic('trash')}삭제</button>` : ''}<button class="cl-apply" data-a="memo-save">저장</button></div>`;
   }
   if(S.sheet === 'dstatus'){
     const c = C[S.detail];
@@ -994,7 +1162,7 @@ function sheetHTML(){
   const foot = `<div class="t-foot"><button class="cl-apply" data-a="sheet-apply">${n ? n + '명 보기' : '결과 없음 · 그래도 적용'}</button></div>`;
   // 필터 전체: 네 항목을 한 화면에서 고름
   if(!k){
-    const sec = (key, arr, multi) => `<div class="t-sec"><h3>${FLABEL[key]}${multi ? '<small>여러 개 선택</small>' : ''}</h3><div class="t-pills">${arr.map(v => { const on = multi ? d.f[key].includes(v) : d.f.date === v; return `<button class="t-pill ${on ? 'on' : ''}" aria-pressed="${on}" data-a="${multi ? 'opt' : 'date'}" data-key="${key}" data-v="${v}">${v}</button>`; }).join('')}</div></div>`;
+    const sec = (key, arr, multi) => `<div class="t-sec"><h3>${FLABEL[key]}${multi ? '<small>여러 개 선택</small>' : ''}</h3><div class="t-pills">${arr.map(v => { const on = multi ? d.f[key].includes(v) : d.f.date === v; return `<button class="t-pill ${on ? 'on' : ''}" aria-pressed="${on}" data-a="${multi ? 'opt' : 'date'}" data-key="${key}" data-v="${v}">${key === 'own' ? ownLbl(v) : v}</button>`; }).join('')}</div></div>`;
     return `${tHead('필터', '', `<button class="t-reset" data-a="sheet-reset">초기화</button>`)}
     <div class="cl-sh-body">${sec('own', OWNERS, 1)}${sec('int', INTS, 1)}${sec('plat', PLATS, 1)}${sec('date', DATES, 0)}</div>${foot}`;
   }
@@ -1004,29 +1172,40 @@ function sheetHTML(){
   // 여러 개 고르는 항목: 체크한 뒤 아래 버튼으로 적용
   const arr = {own:OWNERS, int:INTS, plat:PLATS}[k];
   return `${tHead(FLABEL[k], '여러 개 고를 수 있습니다', d.f[k].length ? `<button class="t-reset" data-a="sheet-reset">선택 해제</button>` : '')}
-  <div class="cl-sh-body"><div class="t-list">${arr.map(v => { const on = d.f[k].includes(v); return `<button class="t-row ${on ? 'on' : ''}" role="checkbox" aria-checked="${on}" data-a="opt" data-key="${k}" data-v="${v}"><i class="t-chk">${ic('check')}</i>${v}</button>`; }).join('')}</div></div>${foot}`;
+  <div class="cl-sh-body"><div class="t-list">${arr.map(v => { const on = d.f[k].includes(v); return `<button class="t-row ${on ? 'on' : ''}" role="checkbox" aria-checked="${on}" data-a="opt" data-key="${k}" data-v="${v}"><i class="t-chk">${ic('check')}</i>${k === 'own' ? ownLbl(v) : v}</button>`; }).join('')}</div></div>${foot}`;
 }
 
 /* ── 검색 화면 (목록과 분리, 모든 고객에서 찾음) ── */
-function sMatch(c, q, scope){
+function sMatch(c, q, scope, i){
   const dq = q.replace(/\D/g, ''), ai = [c.ctx[1], ...c.kw].join(' · ');
+  let memoTxt = c.ctx[1], memoHit = c.ctx[0] === 'memo' && c.ctx[1].includes(q);
+  let callTxt = ai, callHit = c.ctx[0] === 'ai' && ai.includes(q);
+  if(S.ver === 'v4'){
+    detData(c, i);
+    const mm = c.memos.find(x => x.t.includes(q));
+    if(mm){ memoTxt = mm.t; memoHit = true; }
+    const cm = c.calls.filter(x => !x.miss).map(x => [x.sum, ...(x.kw || [])].join(' · ')).find(t => t.includes(q));
+    if(cm){ callTxt = cm; callHit = true; }
+  }
+  const ownTxt = ownLbl(c.own);
   return [
     ['이름', c.name, c.name.includes(q)],
     ['전화', c.phone, dq.length >= 2 && c.phone.replace(/\D/g, '').includes(dq)],
     ['현장', c.camp, c.camp.includes(q)],
-    ['메모', c.ctx[1], c.ctx[0] === 'memo' && c.ctx[1].includes(q)],
-    ['통화 내용', ai, c.ctx[0] === 'ai' && ai.includes(q)]
+    ...(S.ver === 'v4' ? [['담당자', ownTxt, ownTxt.includes(q)]] : []),
+    ['메모', memoTxt, memoHit],
+    ['통화 내용', callTxt, callHit]
   ].filter(f => f[2] && (scope === '전체' || scope === f[0]));
 }
 function sRow(c, i, q, m){
   const body = m.find(f => f[0] === '메모' || f[0] === '통화 내용');
   return `<div class="c2-card" role="button" tabindex="0" data-a="open" data-i="${i}">
     <div class="c2-main">
-      <div class="c2-l1"><span class="cl-nm">${hl(c.name, q)}</span>${c.int ? `<span class="cl-int">관심도 ${c.int}</span>` : ''}</div>
+      <div class="c2-l1"><span class="cl-nm">${hl(c.name, q)}</span>${kInt(c)}</div>
       <div class="r-hit">${m.map(f => `<span>${f[0]}</span>`).join('')}<p>${hl(body ? body[1] : c.ctx[1], q)}</p></div>
-      <div class="cl-sub">${hl(c.camp, q)} · ${c.own} · ${c.phone}</div>
+      <div class="cl-sub">${hl(c.camp, q)} · ${hl(ownLbl(c.own), q)} · ${c.phone}</div>
     </div>
-    <div class="c2-side">${badge(c.st)}<button class="c2-call" data-a="act" data-i="${i}" aria-label="${c.name}에게 전화">${ic('call')}</button></div>
+    <div class="c2-side">${S.ver === 'v4' ? badgeV4(c.st) : badge(c.st)}<button class="c2-call" data-a="act" data-i="${i}" aria-label="${c.name}에게 전화">${S.ver === 'v4' ? ic('phone-call') : ic('call')}</button></div>
   </div>`;
 }
 function sBodyHTML(){
@@ -1034,7 +1213,7 @@ function sBodyHTML(){
   if(!q) return `<div class="r-sec"><div class="r-sec-h">최근 검색${S.recent.length ? `<button data-a="rc-clear">전체 삭제</button>` : ''}</div>
     ${S.recent.length ? S.recent.map(v => `<div class="r-rcrow"><button class="r-rc" data-a="rc" data-v="${esc(v)}">${ic('search')}${esc(v)}</button><button class="r-rcx" data-a="rc-rm" data-v="${esc(v)}" aria-label="${esc(v)} 지우기">${ic('close')}</button></div>`).join('') : `<p class="r-none">최근 검색어가 없습니다</p>`}</div>
     <p class="r-tip">고른 캠페인 · 상태 · 필터와 상관없이 모든 고객에서 찾습니다. 「통화 내용」은 AI 요약과 키워드에서 찾습니다.</p>`;
-  const res = C.map((c, i) => [c, i, sMatch(c, q, S.scope)]).filter(x => x[2].length);
+  const res = C.map((c, i) => [c, i, sMatch(c, q, S.scope, i)]).filter(x => x[2].length);
   if(!res.length) return `<div class="cl-empty"><b>‘${esc(q)}’에 맞는 고객이 없습니다</b>${S.scope !== '전체' ? `찾는 범위가 「${S.scope}」로 좁혀져 있습니다.<br><button data-a="scope" data-v="전체">전체 범위에서 찾기</button>` : '철자를 확인하거나 다른 단어로 찾아 보세요.'}</div>`;
   return `<div class="r-cnt"><b>${res.length}</b>명 · 모든 상태에서 찾음</div><div class="cl-list">${res.map(([c, i, m]) => sRow(c, i, q, m)).join('')}</div>`;
 }
@@ -1067,6 +1246,7 @@ function draw(){
   $('list').innerHTML = listHTML();
   $('sheet').innerHTML = sheetHTML();
   app.classList.toggle('sheet', !!S.sheet);
+  app.classList.toggle('hide-fb', !S.fbShow);
   const sc = app.querySelector('.c2-st-scroll'), on = sc.querySelector('.on');   // 고른 상태가 화면 밖으로 밀리지 않게
   if(on) sc.scrollLeft = on.offsetLeft - (sc.clientWidth - on.offsetWidth) / 2;
   drawSearch(true);
@@ -1086,7 +1266,7 @@ app.addEventListener('click', e => {
   else if(a === 'camp'){ S.camp = b.dataset.k; S.sheet = false; S.draft = null; $('scroll').scrollTop = 0; reload(); }
   else if(a === 'clr'){ e.preventDefault(); S.q = ''; draw(); }
   else if(a === 'sheet' || a === 'fsheet'){ S.fsec = a === 'fsheet' ? b.dataset.key : null; S.draft = {f:JSON.parse(JSON.stringify(S.f)), sort:S.sort}; S.sheet = true; draw(); }
-  else if(a === 'sheet-x'){ S.sheet = false; S.draft = null; app.classList.remove('sheet'); }
+  else if(a === 'sheet-x'){ S.sheet = false; S.draft = null; S.memoEdit = null; S.edit = null; app.classList.remove('sheet'); }
   else if(a === 'datepick'){ S.f.date = v; S.sheet = false; S.draft = null; if(v === '직접설정') toast('날짜 고르기는 이번 범위 밖이라 전체로 계산합니다'); $('scroll').scrollTop = 0; draw(); }
   else if(a === 'sortsheet'){ S.sheet = 'sort'; draw(); }
   else if(a === 'sortpick'){ S.sort = v; S.sheet = false; S.draft = null; $('scroll').scrollTop = 0; draw(); }
@@ -1104,26 +1284,57 @@ app.addEventListener('click', e => {
   else if(a === 'rc-rm'){ S.recent = S.recent.filter(x => x !== v); drawSearch(); }
   else if(a === 'rc-clear'){ S.recent = []; drawSearch(); }
   else if(a === 'act'){ e.stopPropagation(); const c = C[+b.dataset.i]; toast(`${c.name} · 전화 (시안에서는 걸리지 않습니다)`); }
-  else if(a === 'open'){ if(S.search) addRecent(); if(S.ver === 'v4'){ S.detail = +b.dataset.i; S.memoOpen = false; S.memoDraft = ''; drawDetail(true); } else toast(`${C[+b.dataset.i].name} 고객 상세는 v4에서 볼 수 있습니다`); }
+  else if(a === 'open'){ if(S.search) addRecent(); if(S.ver === 'v4'){ S.detail = +b.dataset.i; S.dtab = 'info'; S.dTarget = null; S.dlock = 0; S.memoDraft = ''; drawDetail(true); } else toast(`${C[+b.dataset.i].name} 고객 상세는 v4에서 볼 수 있습니다`); }
   else if(a === 'det-x'){ S.detail = null; draw(); }
   else if(a === 'cfold'){ const k = S.detail + '-' + b.dataset.k; S.fold[k] = !S.fold[k]; drawDetail(); }
-  else if(a === 'memo-open'){ S.memoOpen = true; S.memoDraft = ''; drawDetail(); const t = $('memoIn'); if(t && t.focus) t.focus(); }
-  else if(a === 'memo-cancel'){ S.memoOpen = false; S.memoDraft = ''; drawDetail(); }
-  else if(a === 'memo-chip'){ S.memoDraft += (S.memoDraft && !S.memoDraft.endsWith('\n') ? '\n' : '') + v + ': '; drawDetail(); const t = $('memoIn'); if(t && t.focus){ t.focus(); if(t.setSelectionRange) t.setSelectionRange(t.value.length, t.value.length); } }
+  else if(a === 'memo-open' || a === 'memo-edit'){ S.memoEdit = a === 'memo-edit' ? +b.dataset.k : null; S.memoDraft = S.memoEdit != null ? C[S.detail].memos[S.memoEdit].t : ''; S.sheet = 'memo'; draw(); const t = $('memoIn'); if(t && t.focus) setTimeout(() => t.focus(), 280); }
+  else if(a === 'memo-chip'){ S.memoDraft += (S.memoDraft && !S.memoDraft.endsWith('\n') ? '\n' : '') + v + ': '; $('sheet').innerHTML = sheetHTML(); const t = $('memoIn'); if(t && t.focus){ t.focus(); if(t.setSelectionRange) t.setSelectionRange(t.value.length, t.value.length); } }
   else if(a === 'memo-save'){ const t = S.memoDraft.trim(); if(!t){ toast('메모 내용을 적어 주세요'); return; }
-    C[S.detail].memos.unshift({t, by:ME, date:dAt(0), time:'12:00'}); S.memoOpen = false; S.memoDraft = ''; drawDetail(); toast('메모를 추가했습니다'); }
-  else if(a === 'memo-del'){ C[S.detail].memos.splice(+b.dataset.k, 1); drawDetail(); toast('메모를 지웠습니다'); }
+    const c = C[S.detail], m = c.memos, ed = S.memoEdit != null;
+    if(ed){ if(c.ctx[0] === 'memo' && c.ctx[1] === m[S.memoEdit].t) c.ctx[1] = t; m[S.memoEdit].t = t; }
+    else { const st = stampNow(c); m.unshift({t, by:ME, date:st.date, time:st.time}); }
+    S.sheet = false; S.memoEdit = null; S.memoDraft = ''; draw(); toast(ed ? '메모를 고쳤습니다' : '메모를 추가했습니다'); }
+  else if(a === 'memo-del'){ if(S.memoEdit == null) return; C[S.detail].memos.splice(S.memoEdit, 1); S.sheet = false; S.memoEdit = null; S.memoDraft = ''; draw(); toast('메모를 지웠습니다'); }
+  else if(a === 'dtab'){ const bd = detBody(), el = $('ds-' + b.dataset.k); if(bd && el){ const max = Math.max(0, bd.scrollHeight - bd.clientHeight), top = b.dataset.k === 'info' ? 0 : Math.min(max, Math.max(0, el.offsetTop - bd.offsetTop - 12)); S.dtab = b.dataset.k; S.dTarget = top; S.dlock = Date.now() + 900; if(bd.scrollTo) bd.scrollTo({top, behavior:'smooth'}); else bd.scrollTop = top; markTab(); } }
+  else if(a === 'dmore'){ S.sheet = 'dmore'; draw(); }
+  else if(a === 'cdel'){
+    if(C.length > 1){
+      const nm = C[S.detail].name;
+      C.splice(S.detail, 1);
+      S.sheet = false;
+      S.detail = null;
+      draw();
+      toast(nm + ' 고객을 삭제했습니다');
+    } else {
+      toast('마지막 고객은 삭제할 수 없습니다');
+    }
+  }
   else if(a === 'dst'){ S.sheet = 'dstatus'; draw(); }
-  else if(a === 'dedit'){ const c = C[S.detail]; S.edit = {name:c.name, phone:c.phone, own:c.own, int:c.int}; S.sheet = 'dedit'; draw(); }
+  else if(a === 'dedit'){ const c = C[S.detail]; S.edit = {name:c.name, phone:c.phone, age:c.age || '', sex:c.sex || '', reg:c.reg, own:c.own, int:c.int, st:c.st}; S.sheet = 'dedit'; draw(); }
   else if(a === 'epick'){ S.edit[b.dataset.key] = v; $('sheet').innerHTML = sheetHTML(); }
-  else if(a === 'esave'){ const c = C[S.detail], d = S.edit; if(!d.name.trim() || d.phone.replace(/\D/g, '').length < 9){ toast('이름과 전화번호를 확인해 주세요'); return; }
-    Object.assign(c, {name:d.name.trim(), phone:d.phone.trim(), own:d.own, int:d.int}); S.sheet = false; S.edit = null; draw(); toast('기본 정보를 저장했습니다'); }
-  else if(a === 'dst-pick'){ const c = C[S.detail]; c.st = b.dataset.k; S.sheet = false; draw(); toast(`상태를 「${c.st}」(으)로 바꿨습니다`); }
+  else if(a === 'esave'){ const c = C[S.detail], d = S.edit, age = String(d.age).trim(); if(!d.name.trim() || d.phone.replace(/\D/g, '').length < 9){ toast('이름과 전화번호를 확인해 주세요'); return; }
+    if(age && !/^\d{1,3}$/.test(age)){ toast('나이는 숫자로 적어 주세요'); return; }
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(d.reg)){ toast('등록일을 확인해 주세요'); return; }
+    const stChg = c.st !== d.st, regChg = c.reg !== d.reg;
+    Object.assign(c, {name:d.name.trim(), phone:d.phone.trim(), age, sex:d.sex, reg:d.reg, own:d.own, int:d.int, st:d.st});
+    if(regChg && c.memos) c.memos.forEach(m => { if(m.auto) m.date = c.reg; });
+    if(stChg) c.stAt = stampNow(c);
+    S.sheet = false; S.edit = null; draw(); toast('기본 정보를 저장했습니다'); }
+  else if(a === 'dst-pick'){ const c = C[S.detail]; if(c.st !== b.dataset.k){ c.st = b.dataset.k; c.stAt = stampNow(c); } S.sheet = false; draw(); toast(`상태를 「${c.st}」(으)로 바꿨습니다`); }
   else if(a === 'soon'){ toast(b.dataset.t); }
 });
 app.addEventListener('keydown', e => { if((e.key === 'Enter' || e.key === ' ') && e.target.dataset.a === 'open'){ e.preventDefault(); e.target.click(); }
   else if(e.key === 'Enter' && e.target.id === 'sq'){ addRecent(); e.target.blur(); } });
-app.addEventListener('input', e => { if(e.target.id === 'sq'){ S.sq = e.target.value; drawSearch(); } else if(e.target.dataset.ef && S.edit){ S.edit[e.target.dataset.ef] = e.target.value; } else if(e.target.id === 'memoIn'){ S.memoDraft = e.target.value; } });
+$('fbPanel').addEventListener('click', e => {
+  const fbBtn = e.target.closest('[data-fb]');
+  if(fbBtn){ S.fbShow = fbBtn.dataset.fb === 'on'; drawOpt(); return; }
+  const b = e.target.closest('[data-opt]'); if(!b) return;
+  S.dupView = b.dataset.opt; $('list').innerHTML = listHTML(); drawDetail();
+});
+app.addEventListener('scroll', e => { const t = e.target; if(t && t.classList && t.classList.contains('d-body')) spyTab(t); }, true);
+const onField = e => { if(e.target.id === 'sq'){ S.sq = e.target.value; drawSearch(); } else if(e.target.dataset.ef && S.edit){ S.edit[e.target.dataset.ef] = e.target.value; } else if(e.target.id === 'memoIn'){ S.memoDraft = e.target.value; } };
+app.addEventListener('input', onField);
+app.addEventListener('change', e => { if(e.target.dataset.ef && S.edit) S.edit[e.target.dataset.ef] = e.target.value; });
 
 function clDemo(k){
   document.body.classList.remove('nt-open');
@@ -1308,7 +1519,7 @@ function setVer(v){
   if(v === 'v4'){
     try { const m = JSON.parse(localStorage.getItem(MEM) || 'null');
       if(m){ if(m.camp === '전체' || CAMPS.includes(m.camp)) S.camp = m.camp; if(Array.isArray(m.own)) S.f.own = m.own;
-        const t = [S.camp !== '전체' ? S.camp : '', ...S.f.own].filter(Boolean); if(t.length) msg = '지난번 조건으로 열었습니다 · ' + t.join(' · '); } } catch(e){}
+        const t = [S.camp !== '전체' ? S.camp : '', ...S.f.own.map(ownLbl)].filter(Boolean); if(t.length) msg = '지난번 조건으로 열었습니다 · ' + t.join(' · '); } } catch(e){}
   }
   $('capNew').innerHTML = v === 'v4'
     ? '시안 v4 · 인터뷰 반영 <small>전화번호 · 등록 시각 · 다른 현장 문의 표시 · 캠페인과 담당자 기억</small>'
@@ -1333,10 +1544,11 @@ setVer('v4');
 (h => {
   if(h === 'spec' || /^TOP-\d+$/.test(h)) pgShow('spec');
   else if(h === 'v3') pgShow('v3');
-  else if(h === 'detail'){ S.detail = C.findIndex(c => c.dup.length > 1); draw(); }
+  else if(h === 'detail'){ S.detail = C.findIndex(c => c.dup.length > 1); S.dtab = 'info'; S.dTarget = null; S.dlock = 0; drawDetail(true); }
   else if(['filtered','empty','loading','status','search','fchip','camp','sort'].includes(h)) clDemo(h);
   else if(h === 'sheet'){ S.fsec = null; S.draft = {f:F0(), sort:S.sort}; S.sheet = true; draw(); }
 })(location.hash.slice(1));
 </script>
+<script>/* 요소 선택 도구는 내 컴퓨터에서 열 때만 불러온다 */if(location.protocol === 'file:' || /^(localhost|127\.)/.test(location.hostname)){ const s = document.createElement('script'); s.src = 'pick.js'; document.body.appendChild(s); }</script>
 </body>
 </html>
