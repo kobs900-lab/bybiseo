@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>시안 비교 — 목록 카드 레이아웃 5종 · AI 제안 위치 · 메모</title>
+<title>시안 비교 — 목록 카드 · 메모 · 추가 버튼</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
@@ -162,10 +162,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .k2 .kc-foot{margin-top:10px;padding-top:10px;border-top:1px solid var(--cl-line);justify-content:space-between}
 .k2 .kc-foot small{font-size:12.5px;color:var(--cl-ink3);display:flex;align-items:center;gap:6px;white-space:nowrap}
 .kc-phbtn{flex:none;height:34px;padding:0 12px;border-radius:17px;background:var(--cl-brand-soft);color:var(--cl-brand);display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}
-.k2 .kc-memo{background:none;padding:0;margin-top:6px;font-size:14px;color:var(--cl-ink)}
-/* K-3 상태 색 띠 + 현장 머리말 */
-.k3{padding-left:19px}
-.k3::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--stc)}
+/* K-3 현장 머리말 (색 띠 없음) */
 .k3 .kc-kick{justify-content:space-between;font-size:12px;color:var(--cl-ink3);margin-bottom:3px}
 .k3 .kc-st{font-size:12.5px;font-weight:800;color:var(--stf)}
 .k3 .kc-inline{margin-top:8px;gap:8px}
@@ -183,10 +180,41 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .kc-note .p::before{content:'+';color:#1F9D55}
 .kc-note .m::before{content:'−';color:var(--cl-warn)}
 </style>
+<style>
+/* ===== 주제 3: 긴 메모 가독성 (rm-) ===== */
+.rm-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.rm{padding:12px 14px;border-radius:12px;background:var(--cl-bg)}
+.rm-txt{margin:0;font-size:14px;line-height:1.55;color:var(--cl-ink);word-break:break-word}
+.rm-txt.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rm-meta{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.rm-meta time{margin-left:auto}
+.rm-more{display:inline-flex;align-items:center;height:26px;margin-top:4px;font-size:12.5px;font-weight:700;color:var(--cl-brand)}
+.rm-kind{display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:6px;font-size:11.5px;font-weight:800;white-space:nowrap}
+.rm-kind.k-visit{background:#EAF1FF;color:#2B6FF3}.rm-kind.k-pay{background:#E6F6EC;color:#1F7A45}.rm-kind.k-call{background:#F0EAFF;color:#5B33D6}.rm-kind.k-note{background:#E6E9EE;color:#4A5160}
+.rm-head{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.rm-head b{font-size:13.5px;font-weight:800}
+.rm-kv{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13.5px;line-height:1.45}
+.rm-kv dt{color:var(--cl-ink3);white-space:nowrap}
+.rm-kv dd{margin:0;color:var(--cl-ink);font-weight:500;min-width:0;word-break:break-word}
+.rm-kv dd ul{margin:0;padding:0;list-style:none}
+.rm-kv dd li{padding-left:10px;position:relative}
+.rm-kv dd li::before{content:'';position:absolute;left:0;top:.62em;width:4px;height:4px;border-radius:50%;background:#9AA3B2}
+.rm-row{display:flex;align-items:center;gap:7px;width:100%;text-align:left}
+.rm-row p{flex:1;min-width:0;margin:0;font-size:13.5px;color:var(--cl-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rm-row time{flex:none;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.rm-row i{flex:none;font-style:normal;font-size:11px;color:var(--cl-ink3);transition:transform .15s}
+.rm.open .rm-row i{transform:rotate(180deg)}
+.rm.r3{padding:10px 12px}
+.rm-body{margin-top:9px;padding-top:9px;border-top:1px solid #DDE1E8}
+.rm-chips{display:flex;gap:6px;margin-bottom:10px;overflow-x:auto;scrollbar-width:none}
+.rm-chips button{flex:none;height:30px;padding:0 11px;border-radius:15px;background:var(--cl-bg);font-size:12.5px;font-weight:700;color:var(--cl-ink2)}
+.rm-chips button.on{background:#111418;color:#fff}
+.rm-chips button em{font-style:normal;margin-left:4px;opacity:.6}
+</style>
 </head>
 <body>
 
-<svg hidden aria-hidden="true">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <symbol id="i-spark" viewBox="0 -960 960 960"><path d="m480-120-92-268-268-92 268-92 92-268 92 268 268 92-268 92-92 268Z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5a5 5 0 0 1 6 6"/><path d="M14.5 7.5a1.5 1.5 0 0 1 2 2"/><path d="M22 16.92v2.6a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 3.8 2 2 0 0 1 4.11 1.8h2.6a2 2 0 0 1 2 1.72c.12.9.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L7.8 9.4a16 16 0 0 0 6.8 6.8l1.12-1.14a2 2 0 0 1 2.11-.45c.85.33 1.75.56 2.65.68A2 2 0 0 1 22 16.92z"/></g></symbol>
   <symbol id="i-more" viewBox="0 -960 960 960"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></symbol>
@@ -198,8 +226,8 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
   <h1>시안 비교</h1>
   <div class="top-nav">
     <a href="#sec-card">★ 목록 카드 레이아웃 (K-0 ~ K-4)</a>
-    <a href="#sec-ai">1. AI 제안 위치 시안 (A-1 ~ A-4)</a>
     <a href="#sec-memo">2. 메모 수정·삭제 시안 (M-1 ~ M-4)</a>
+    <a href="#sec-read">3. 긴 메모 가독성 (R-1 ~ R-4)</a>
   </div>
 </div>
 
@@ -207,21 +235,21 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
   <!-- 섹션 0: 목록 카드 레이아웃 -->
   <div class="sec-block" id="sec-card">
     <h2 class="sec-title"><span class="sec-pill">새 주제</span> 목록 카드 레이아웃 시안 5종</h2>
-    <p class="sec-sub">같은 고객 3명을 같은 정보로 그렸습니다. K-0이 지금 본 시안이고, K-1~K-4가 제안입니다. 마음에 드는 칸을 눌러 표시해 두세요.</p>
+    <p class="sec-sub">같은 고객 3명을 같은 정보로 그렸습니다. K-2(회색 메모 박스)를 채택해 본 시안에 반영했습니다. K-0은 이전 본 시안입니다. 마음에 드는 칸을 눌러 표시해 두세요.</p>
     <div class="grid" id="gridCard"></div>
   </div>
-  <!-- 섹션 1: AI 제안 위치 -->
-  <div class="sec-block" id="sec-ai">
-    <h2 class="sec-title"><span class="sec-pill">주제 1</span> AI 요약과 겹치지 않는 「AI 제안」 위치 시안 4종</h2>
-    <p class="sec-sub">통화마다 파란 박스와 노란 박스가 연달아 나와 시선이 분산되던 문제를 해결하기 위해, 「과거 기록(AI 요약)」과 「앞으로 할 일(AI 제안)」을 분리한 4가지 방법입니다.</p>
-    <div class="grid" id="gridAI"></div>
-  </div>
-
   <!-- 섹션 2: 메모 수정/삭제 -->
   <div class="sec-block" id="sec-memo">
     <h2 class="sec-title"><span class="sec-pill">주제 2</span> 메모 본문 가로 100% 확보 · 수정/삭제 시안 4종</h2>
     <p class="sec-sub">오른쪽 위에서 메모 글자 영역을 깎아먹던 연필·휴지통 아이콘을 치운 4가지 방법입니다.</p>
     <div class="grid" id="gridMemo"></div>
+  </div>
+
+  <!-- 섹션 3: 긴 메모 가독성 -->
+  <div class="sec-block" id="sec-read">
+    <h2 class="sec-title"><span class="sec-pill">주제 3</span> 긴 메모 가독성 시안 4종</h2>
+    <p class="sec-sub">최유진 고객의 메모 6건(상담내용 · 입금보고 양식 포함)을 같은 내용으로 그렸습니다. 「더 보기」 · 줄 · 칩을 직접 눌러 보세요. 메모 박스를 눌러 수정·삭제하는 방식(M-3)은 네 시안 모두 그대로 쓸 수 있습니다.</p>
+    <div class="grid" id="gridRead"></div>
   </div>
 </div>
 
@@ -342,12 +370,13 @@ function renderMemoCard(v){
 const MEMO_OPTS = [
   ['M1','직관적','M-1 · 하단 날짜 줄 우측에 [수정 · 삭제] 텍스트','본문은 100% 넓게 쓰고 하단 날짜 줄 오른쪽 빈 공간을 활용'],
   ['M2','깔끔함','M-2 · 하단 우측에 작은 [⋯] 더보기 하나만','평소엔 점 세 개만 두어 조용하고, 누르면 수정/삭제 미니 메뉴 표시'],
-  ['M3','가장 깨끗함','M-3 · 버튼 완전 제거 (메모 탭해서 수정·삭제)','목록엔 아무 버튼도 두지 않고 메모 박스를 탭하면 아래에서 수정·삭제 시트가 올라옴'],
+  ['M3','채택 · 본 시안 반영','M-3 · 버튼 완전 제거 (메모 탭해서 수정·삭제)','목록엔 아무 버튼도 두지 않고 메모 박스를 탭하면 아래에서 수정·삭제 시트가 올라옴'],
   ['M4','익숙함','M-4 · 미니 아이콘을 하단 날짜 줄 우측으로 이동','연필·휴지통 아이콘을 작게 줄여 하단 줄 오른쪽 끝으로 내림']
 ];
 
 function draw(){
-  document.getElementById('gridAI').innerHTML = AI_OPTS.map(([v, tag, title, desc]) => `
+  const gAI = document.getElementById('gridAI');   // 주제 1(AI 제안 위치)은 비교 화면에서 뺐다
+  if(gAI) gAI.innerHTML = AI_OPTS.map(([v, tag, title, desc]) => `
     <div class="col ${selAI === v ? 'sel' : ''}" data-ai="${v}">
       <div class="col-h"><span class="col-tag">${v} <em>· ${tag}</em></span><h2>${title}</h2><p>${desc}</p></div>
       ${renderAICard(v)}
@@ -411,18 +440,18 @@ const R = {
   K2: x => `<div class="kc k2"><div class="kc-row"><span class="kc-nm">${x.n}</span>${src(x)}<span class="kc-r">${int(x)}${badge(x)}</span></div>
     <div class="kc-memo">${x.memo}</div>${dup(x)}
     <div class="kc-row kc-foot"><small><span>${x.reg}</span>${bar}<b style="font-weight:600;color:var(--cl-ink2)">${x.own}</b></small><button class="kc-phbtn">${pc}${x.ph}</button></div></div>`,
-  K3: x => `<div class="kc k3" style="--stc:${x.c};--stf:${x.fg}"><div class="kc-row kc-kick">${src(x)}<span>${x.own} · ${x.reg}</span></div>
-    <div class="kc-row"><span class="kc-nm">${x.n}</span>${int(x)}<span class="kc-r kc-st">${x.st}</span></div>
+  K3: x => `<div class="kc k3"><div class="kc-row kc-kick">${src(x)}<span>${x.own} · ${x.reg}</span></div>
+    <div class="kc-row"><span class="kc-nm">${x.n}</span>${int(x)}<span class="kc-r">${badge(x)}</span></div>
     <div class="kc-memo">${x.memo}</div>${dup(x)}
     <div class="kc-row kc-inline"><span class="kc-ph">${x.ph}</span><button class="kc-call">${pc}전화</button></div></div>`,
   K4: x => `<div class="kc k4"><div class="kc-row"><span class="kc-nm">${x.n}</span><span class="kc-ph">${x.ph}</span><span class="kc-r">${int(x)}${badge(x)}</span></div>
     <div class="kc-row" style="align-items:flex-end"><div style="min-width:0;flex:1"><div class="kc-memo">${x.memo}</div><div class="kc-row kc-sub">${src(x)}${bar}<span>${x.own}</span>${bar}<span>${x.reg}</span>${x.dup ? `${bar}<b style="color:#A85D00">다른 현장 1</b>` : ''}</div></div><button class="kc-round" aria-label="전화">${pc}</button></div></div>`
 };
 const OPTS = [
-  ['K0','현재','K-0 · 지금 본 시안','이름줄 → 정보줄 → 메모 → 풀폭 전화 버튼',['p|전화 버튼이 커서 누르기 쉬움'],['m|버튼이 카드마다 한 줄을 차지해 한 화면에 보이는 고객 수가 적음']],
+  ['K0','이전','K-0 · 이전 본 시안','이름줄 → 정보줄 → 메모 → 풀폭 전화 버튼',['p|전화 버튼이 커서 누르기 쉬움'],['m|버튼이 카드마다 한 줄을 차지해 한 화면에 보이는 고객 수가 적음']],
   ['K1','추천','K-1 · 전화번호 크게 + 오른쪽 원형 전화 버튼','번호를 둘째 줄 주인공으로 올리고, 전화 버튼은 번호 옆 동그라미로 옮김',['p|번호와 전화 버튼이 한눈에 묶임','p|카드 높이가 줄어 목록이 빨리 훑어짐'],['m|현장·담당자·등록일시가 작은 글씨 한 줄로 내려감']],
-  ['K2','간결','K-2 · 메모 먼저 + 번호가 곧 전화 버튼','이름 바로 아래 메모를 박스 없이 본문처럼, 맨 아래 줄에 번호 버튼',['p|번호와 전화 버튼 중복이 사라짐','p|메모가 가장 잘 읽힘'],['m|번호가 카드 맨 아래로 내려가 위에서 바로 안 보임']],
-  ['K3','상태 강조','K-3 · 왼쪽 상태 색 띠 + 현장 머리말','현장·담당자·일시를 맨 위 작은 머리말로 올리고, 상태는 색 띠와 글자로',['p|스크롤하면서 색만으로 상태를 구분','p|이름 줄이 한산해짐'],['m|상태 12종 색이 비슷한 것끼리 헷갈릴 수 있음','m|기존 앱의 상태 태그 모양과 달라짐']],
+  ['K2','채택 · 본 시안 반영','K-2 · 메모 먼저 + 번호가 곧 전화 버튼','이름 바로 아래 회색 메모 박스, 맨 아래 줄에 번호 버튼',['p|번호와 전화 버튼 중복이 사라짐','p|메모가 가장 잘 읽힘'],['m|번호가 카드 맨 아래로 내려가 위에서 바로 안 보임']],
+  ['K3','머리말','K-3 · 현장 머리말 (색 띠 없음, 상태 태그 유지)','현장·담당자·일시를 맨 위 작은 머리말로 올리고, 상태는 기존 태그 그대로',['p|이름 줄이 한산해짐','p|기존 앱의 상태 태그 모양 유지'],['m|번호와 전화 버튼이 카드 맨 아래 줄로 내려감']],
   ['K4','촘촘','K-4 · 촘촘한 3줄 (고객이 많을 때)','이름 옆에 번호, 메모는 한 줄만, 전화는 작은 동그라미',['p|한 화면에 가장 많은 고객이 보임'],['m|메모가 한 줄에서 잘림','m|글자가 작아 여유가 없음']]
 ];
 let sel = 'K1';
@@ -434,6 +463,72 @@ const paint = () => { g.innerHTML = OPTS.map(([v, tag, title, desc, pros, cons])
     <ul class="kc-note">${[...pros, ...cons].map(t => `<li class="${t[0]}">${t.slice(2)}</li>`).join('')}</ul>
   </div>`).join(''); };
 g.addEventListener('click', e => { const c = e.target.closest('[data-kc]'); if(c){ sel = c.dataset.kc; paint(); } });
+paint();
+})();
+</script>
+<script>
+(() => {
+const MM = [
+  {t:'소요한남 계약 관련 확인 통화로, 고객은 은행에서 대출 한도 확인을 마쳤다고 알려 옴. 2차 계약금은 11월 15일 일요일에 입금하기로 했고, 정계약 때 필요한 서류 목록을 문자로 다시 보내 달라고 요청함. 고층 잔여 호실 중 1204호를 그대로 유지하기를 원함.',by:'회사계정',at:'11.10 10:20'},
+  {t:'대출 한도 확인 완료. 2차 계약금 11/15(일) 입금 예정',by:'이수진',at:'11.10 10:12'},
+  {t:'1차 가계약금 입금 확인. 대출 상담 은행 안내함',by:'이수진',at:'11.9 17:35'},
+  {t:'■입금보고■ *입금호실 : 101-1204 *계약자명 : 최유진 *입금자명 : 최유진 *입금구분 : 가계약금 *입금금액 : 10,000,000원 *1차 계약금 : 11/9 1000만원 *2차 계약금: 11/15 2500만원 *비 고 : 대출 한도 확인 후 2차 입금',by:'회사계정',at:'11.9 17:28'},
+  {t:'고층 잔여 호실표와 분양가 자료를 문자로 보냄',by:'이수진',at:'11.9 15:00'},
+  {t:'◆ 소요한남 상담내용 ◆ 방문일자 : 11월9일 13시30분방문 고객명 : 최유진 번호 : 00-0062 방문경로 : 지인소개 방문인원 : 1 거주지역 : 용산 담당자 : 이수진 상담지원 : 팀장 원하는타입 : 74A 상담내용 : -고층 희망 -한강뷰가 좋아서 오심 -1204호 가계약 의사 있음 -대출 한도 확인 후 진행하기로 함',by:'회사계정',at:'11.9 14:20'}
+];
+const VKEYS = ['방문일자','고객명','번호','방문경로','방문인원','거주지역','담당자','상담지원','원하는타입','동호수','상담내용'];
+// 양식 메모(◆제목◆ / ■제목■)를 제목과 「항목 : 값」 목록으로 나눈다
+function parse(t){
+  const h = /^([◆■])\s*(.+?)\s*[◆■]\s*/.exec(t);
+  if(!h) return {kind: t.length > 70 ? 'call' : 'note', title: t.length > 70 ? '통화 요약' : '메모', rows:null};
+  const rest = t.slice(h[0].length);
+  let rows;
+  if(h[1] === '■') rows = rest.split('*').map(x => x.trim()).filter(Boolean).map(x => { const i = x.indexOf(':'); return [x.slice(0, i).replace(/\s+/g, ' ').trim().replace('비 고', '비고'), x.slice(i + 1).trim()]; });
+  else { const re = new RegExp('(' + VKEYS.join('|') + ')\\s*:', 'g'); const ps = rest.split(re).map(x => x.trim()); rows = []; for(let i = 1; i < ps.length; i += 2) rows.push([ps[i], ps[i + 1] || '']); }
+  return {kind: h[1] === '■' ? 'pay' : 'visit', title: h[2], rows};
+}
+MM.forEach(m => Object.assign(m, parse(m.t)));
+const KL = {visit:'상담', pay:'입금', call:'통화', note:'메모'};
+const chip = m => `<span class="rm-kind k-${m.kind}">${KL[m.kind]}</span>`;
+const meta = m => `<div class="rm-meta"><span>${m.by}</span><time>2026.${m.at}</time></div>`;
+const val = v => v.startsWith('-') ? `<ul>${v.split(/\s+-|^-/).map(x => x.trim()).filter(Boolean).map(x => `<li>${x}</li>`).join('')}</ul>` : v;
+const kv = (rows, n) => `<dl class="rm-kv">${rows.slice(0, n).map(([k, v]) => `<dt>${k}</dt><dd>${val(v)}</dd>`).join('')}</dl>`;
+// 양식 메모에서 먼저 보여 줄 핵심 항목
+const KEY = {visit:['방문일자','원하는타입','동호수','상담내용'], pay:['입금호실','입금구분','입금금액','비고']};
+const pick = m => m.rows.filter(r => KEY[m.kind].includes(r[0]));
+const first = m => m.rows ? pick(m).map(r => r[1].replace(/^-/, '').split(' -')[0]).join(' · ') : m.t;
+let sel = 'R2', open = {R1:{}, R2:{}, R3:{0:1}, R4:{}}, flt = 'all';
+const R = {
+  R1: (m, i) => { const long = m.t.length > 60, o = open.R1[i]; return `<li class="rm"><p class="rm-txt ${long && !o ? 'clamp' : ''}">${m.t}</p>${long ? `<button class="rm-more" data-rt="R1" data-i="${i}">${o ? '접기' : '더 보기'}</button>` : ''}${meta(m)}</li>`; },
+  R2: (m, i) => { const o = open.R2[i];
+    if(m.rows) return `<li class="rm"><div class="rm-head">${chip(m)}<b>${m.title}</b></div>${kv(o ? m.rows : pick(m), 99)}<button class="rm-more" data-rt="R2" data-i="${i}">${o ? '핵심만 보기' : `전체 항목 보기 (${m.rows.length})`}</button>${meta(m)}</li>`;
+    const long = m.t.length > 60; return `<li class="rm"><p class="rm-txt ${long && !o ? 'clamp' : ''}">${m.t}</p>${long ? `<button class="rm-more" data-rt="R2" data-i="${i}">${o ? '접기' : '더 보기'}</button>` : ''}${meta(m)}</li>`; },
+  R3: (m, i) => { const o = open.R3[i]; return `<li class="rm r3 ${o ? 'open' : ''}"><button class="rm-row" data-rt="R3" data-i="${i}">${chip(m)}<p>${first(m)}</p><time>${m.at.split(' ')[0]}</time><i>▾</i></button>${o ? `<div class="rm-body">${m.rows ? kv(m.rows, 99) : `<p class="rm-txt">${m.t}</p>`}${meta(m)}</div>` : ''}</li>`; },
+  R4: (m, i) => { if(flt !== 'all' && m.kind !== flt) return ''; const long = m.t.length > 60, o = open.R4[i]; return `<li class="rm"><p class="rm-txt ${long && !o ? 'clamp' : ''}">${m.t}</p>${long ? `<button class="rm-more" data-rt="R4" data-i="${i}">${o ? '접기' : '더 보기'}</button>` : ''}${meta(m)}</li>`; }
+};
+const OPTS = [
+  ['R1','가장 단순','R-1 · 3줄까지만 보이고 「더 보기」','긴 메모는 3줄에서 자르고 「더 보기」로 그 자리에서 펼침',['p|지금 화면에서 바꾸는 것이 가장 적음','p|메모 6건이 한 화면에 거의 들어옴'],['m|양식 메모는 펼쳐도 여전히 한 덩어리 글']],
+  ['R2','채택 · R-4와 합쳐 반영','R-2 · 양식 메모는 항목별로 정리 + 긴 글은 접기','「◆상담내용◆」「■입금보고■」를 제목 + 항목 · 값 표로 바꿔 핵심 4줄만 먼저 보여 줌',['p|금액 · 호실 · 방문일을 바로 찾을 수 있음','p|입력은 지금처럼 그대로 붙여 넣으면 됨'],['m|양식을 벗어나 적은 메모는 정리되지 않고 글 그대로 나옴','m|항목 이름 목록을 개발에서 관리해야 함']],
+  ['R3','촘촘','R-3 · 한 줄 목록, 눌러서 펼침','메모마다 종류 · 첫 줄 · 날짜만 한 줄로 두고, 누른 것만 펼침 (최신 1건은 펼쳐 둠)',['p|메모가 수십 건이어도 훑기 쉬움'],['m|내용을 보려면 한 번씩 눌러야 함','m|줄을 누르면 펼쳐지므로 수정 · 삭제 진입 방식을 다시 정해야 함']],
+  ['R4','채택 · R-2와 합쳐 반영','R-4 · 종류 칩으로 걸러 보기 + 접기','위에 상담 · 입금 · 통화 · 메모 칩을 두고 원하는 종류만 봄',['p|입금 내역만, 상담 내용만 따로 볼 수 있음'],['m|칩 한 줄이 더 생김','m|메모가 적은 고객에게는 과함']]
+];
+const g = document.getElementById('gridRead');
+const paint = () => { g.innerHTML = OPTS.map(([v, tag, title, desc, pros, cons]) => `
+  <div class="col ${sel === v ? 'sel' : ''}" data-rd="${v}">
+    <div class="col-h"><span class="col-tag">${v} <em>· ${tag}</em></span><h2>${title}</h2><p>${desc}</p></div>
+    <div class="d-card"><div class="d-h"><h3>메모<em>${MM.length}</em></h3><span class="d-add">+ 메모 추가</span></div>
+      ${v === 'R4' ? `<div class="rm-chips">${[['all','전체'],['visit','상담'],['pay','입금'],['call','통화'],['note','메모']].map(([k, l]) => `<button class="${flt === k ? 'on' : ''}" data-rf="${k}">${l}<em>${k === 'all' ? MM.length : MM.filter(m => m.kind === k).length}</em></button>`).join('')}</div>` : ''}
+      <ul class="rm-list">${MM.map(R[v]).join('')}</ul></div>
+    <ul class="kc-note">${[...pros, ...cons].map(t => `<li class="${t[0]}">${t.slice(2)}</li>`).join('')}</ul>
+  </div>`).join(''); };
+g.addEventListener('click', e => {
+  const t = e.target.closest('[data-rt]'), f = e.target.closest('[data-rf]'), c = e.target.closest('[data-rd]');
+  if(t){ const o = open[t.dataset.rt]; o[t.dataset.i] = !o[t.dataset.i]; sel = t.dataset.rt; }
+  else if(f){ flt = f.dataset.rf; sel = 'R4'; }
+  else if(c) sel = c.dataset.rd;
+  else return;
+  paint();
+});
 paint();
 })();
 </script>

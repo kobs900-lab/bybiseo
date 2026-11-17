@@ -276,6 +276,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .r-tab.on{color:var(--cl-ink);font-weight:700}
 .r-tab.on::after{content:"";position:absolute;left:9px;right:9px;bottom:0;height:2.5px;border-radius:2px;background:var(--cl-ink)}
 .c2-st .c2-all{height:36px;margin:0 12px 0 2px}
+.r-fbar:empty{display:none}
 .r-fbar{display:flex;align-items:center;gap:6px;padding:10px 16px;overflow-x:auto;scrollbar-width:none}
 .r-fbar::-webkit-scrollbar{display:none}
 .r-fall{position:relative;flex:none;width:36px;height:36px;border-radius:18px;background:var(--cl-surface);display:grid;place-items:center;font-size:19px;box-shadow:inset 0 0 0 1px var(--cl-line)}
@@ -425,7 +426,7 @@ body.pg-cards #cards{display:block}
 .fbm{position:absolute;top:-6px;right:-10px;z-index:3;display:inline-grid;place-items:center;width:16px;height:16px;margin:0;border-radius:50%;background:#FF5A1F;color:#fff;font-size:10px;font-weight:800;font-style:normal;line-height:1;letter-spacing:0;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.18)}
 .cl-app.hide-fb .fbm{display:none}
 .cl-col.fb{width:340px}
-.cl-col.fb[hidden],#fbBody[hidden]{display:none}
+.cl-col[hidden],.cl-col.fb[hidden],#fbBody[hidden]{display:none}
 #fbBody{margin-top:16px}
 .fb-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .fb-list li{display:flex;gap:10px;background:#fff;border-radius:14px;padding:14px 16px 14px 12px}
@@ -453,8 +454,8 @@ body.pg-cards #cards{display:block}
 .d-h h2 .fbm{right:-12px}
 .d-h h2 .fbm + .fbm{right:-30px}
 .d-h h2 em{margin-left:6px;font-style:normal;font-weight:700;color:var(--cl-ink3)}
-.d-add{display:inline-flex;align-items:center;gap:2px;height:28px;font-size:14px;font-weight:700;color:var(--cl-brand)}
-.d-add .cl-ic{font-size:18px}
+.d-add{display:inline-flex;align-items:center;height:32px;padding:0 13px;border-radius:16px;background:var(--cl-brand-soft);font-size:13.5px;font-weight:700;color:var(--cl-brand)}
+.d-add:active{background:#D6E2FB}
 .d-none{margin:0;padding:12px 0;text-align:center;font-size:14px;color:var(--cl-ink3)}
 .d-txt{margin:0;font-size:15px;line-height:1.55;color:var(--cl-ink)}
 /* 기본 정보 */
@@ -489,11 +490,6 @@ body.pg-cards #cards{display:block}
 .d-st .cl-ic{font-size:20px;color:var(--cl-ink3)}
 .d-callbtn{flex:none;display:inline-flex;align-items:center;gap:6px;height:48px;padding:0 18px;border-radius:12px;background:var(--cl-brand);color:#fff;font-size:15px;font-weight:700}
 .d-callbtn .cl-ic{font-size:18px}
-.d-mmenu{display:flex;flex-direction:column;padding:4px 0 12px}
-.d-mitem{display:flex;align-items:center;gap:12px;height:52px;padding:0 8px;font-size:16px;font-weight:600;color:var(--cl-ink)}
-.d-mitem .cl-ic{font-size:19px;color:var(--cl-ink2)}
-.d-mitem.del{color:var(--cl-warn)}
-.d-mitem.del .cl-ic{color:var(--cl-warn)}
 .d-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--cl-line)}
 .d-meta dt{font-size:12px;color:var(--cl-ink3)}
 .d-meta dd{margin:2px 0 0;font-size:14px;font-weight:600;color:var(--cl-ink);font-variant-numeric:tabular-nums}
@@ -528,7 +524,6 @@ body.pg-cards #cards{display:block}
 .d-call-f{display:flex;gap:8px}
 /* 전체 대화: 상세 요약(시각 + 한 줄) · 녹음 내용(말풍선) */
 .d-talk h4{display:flex;align-items:center;gap:5px;margin:0 0 8px;font-size:14px;font-weight:700;color:var(--cl-ink)}
-.d-talk h4 svg{width:15px;height:15px;color:var(--cl-brand)}
 .d-tsum{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:6px}
 .d-tsum li{display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.5;color:var(--cl-ink2)}
 .d-tsum time{flex:none;padding:1px 7px;border-radius:6px;background:var(--cl-brand-soft);color:var(--cl-brand);font-size:13px;font-variant-numeric:tabular-nums}
@@ -541,9 +536,48 @@ body.pg-cards #cards{display:block}
 .d-chat p{max-width:84%;margin:0;padding:9px 13px;border-radius:14px;background:var(--cl-bg);font-size:14px;line-height:1.5;color:var(--cl-ink)}
 .d-chat li.me p{background:var(--cl-brand-soft)}
 .d-call-f button{width:100%;height:38px;border-radius:10px;border:1px solid var(--cl-line);background:#fff;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-size:13px;font-weight:700;color:var(--cl-brand)}
-.d-mypage-empty{margin:0;font-size:14px;color:var(--cl-ink3)}
-.d-mypage-on b{display:block;font-size:14px;font-weight:600;color:var(--cl-ink)}
-.d-mypage-on small{display:block;margin-top:4px;font-size:12.5px;color:var(--cl-ink3)}
+/* 내페이지 활동: 고객이 공유받은 내 페이지에서 한 일 (최신순) */
+.d-pg-sum{display:flex;align-items:center;justify-content:space-between;margin:0 0 14px;padding:10px 14px;border-radius:12px;background:var(--cl-bg);font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums}
+.d-pg-sum b{font-size:14px;font-weight:700;color:var(--cl-ink)}
+.d-pg{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.d-pg li{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px solid var(--cl-line)}
+.d-pg li:first-child{border-top:0;padding-top:0}
+.d-pg i{flex:none;width:8px;height:8px;margin-top:6px;border-radius:50%;background:#9AA3B2}
+.d-pg .ask i{background:#E5484D}.d-pg .file i,.d-pg .video i,.d-pg .img i{background:var(--cl-brand)}.d-pg .link i{background:#7C4DFF}
+.d-pg div{flex:1;min-width:0}
+.d-pg b{display:block;font-size:14px;font-weight:700;color:var(--cl-ink)}
+.d-pg .ask b{color:#C22B31}
+.d-pg p{margin:1px 0 0;font-size:13.5px;line-height:1.45;color:var(--cl-ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.d-pg time{flex:none;padding-top:1px;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.d-pg-none{margin:0;padding:12px 0;text-align:center;font-size:14px;line-height:1.55;color:var(--cl-ink3)}
+.d-pg-none b{display:block;margin-bottom:2px;font-weight:700;color:var(--cl-ink2)}
+/* 고객 등록 시트: 필수 3칸 먼저 · 현장을 고르면 담당자 · 상태 · 나머지는 접어 둠 */
+.a-form label > span em,.a-form .e-f > span em{font-style:normal;color:var(--cl-warn);margin-left:2px}
+.a-form label{margin-bottom:14px}
+.a-form select:invalid,.a-form select.none{color:var(--cl-ink3);font-weight:500}
+.a-err{display:block;margin-top:6px;font-size:12.5px;color:var(--cl-warn)}
+.a-dup{margin:-4px 0 14px;padding:14px;border-radius:14px;background:#FFF8EA}
+.a-dup b{display:block;font-size:14.5px;font-weight:800;color:var(--cl-ink)}
+.a-dup p{margin:3px 0 12px;font-size:13px;line-height:1.5;color:var(--cl-ink2)}
+.a-dup div{display:flex;gap:8px}
+.a-dup button{flex:1;height:42px;border-radius:12px;background:#fff;font-size:14px;font-weight:700;color:var(--cl-ink)}
+.a-dup button.pri{background:var(--cl-ink);color:#fff}
+.a-lock{margin:0 0 16px;padding:12px 14px;border-radius:12px;background:var(--cl-bg);font-size:13.5px;color:var(--cl-ink3)}
+.a-more{display:flex;align-items:center;justify-content:space-between;width:100%;height:48px;margin-bottom:14px;padding:0 2px;border-top:1px solid var(--cl-line);font-size:15px;font-weight:700;color:var(--cl-ink)}
+.a-more small{font-size:12.5px;font-weight:500;color:var(--cl-ink3);margin-left:6px}
+.a-more .cl-ic{font-size:20px;color:var(--cl-ink3)}
+.a-form textarea{display:block;width:100%;min-height:92px;padding:14px;border:0;border-radius:12px;background:var(--cl-bg);resize:none;font:inherit;font-size:16px;line-height:1.55;color:var(--cl-ink)}
+.a-form textarea:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
+/* 내페이지 공유 시트 */
+.s-share > p{margin:0 0 12px;font-size:14px;color:var(--cl-ink2)}
+.s-link{display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:12px;background:var(--cl-bg)}
+.s-link span{flex:1;min-width:0;font-size:14px;color:var(--cl-ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-variant-numeric:tabular-nums}
+.s-link button{flex:none;height:38px;padding:0 14px;border-radius:10px;background:var(--cl-ink);color:#fff;font-size:14px;font-weight:700}
+.s-link button.done{background:var(--cl-brand)}
+.s-send{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.s-send button{height:48px;border-radius:12px;background:var(--cl-bg);font-size:14px;font-weight:700;color:var(--cl-ink)}
+.s-send button:active{background:#E7EBF2}
+.s-share .e-note{margin-top:14px;text-align:center}
 /* 메모 */
 .d-memos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .d-memos li{padding:12px 14px;border-radius:12px;background:var(--cl-bg);cursor:pointer;transition:background .15s}
@@ -559,6 +593,76 @@ body.pg-cards #cards{display:block}
 .m-form textarea{display:block;width:100%;min-height:132px;padding:14px;border:0;border-radius:12px;background:var(--cl-bg);resize:none;font:inherit;font-size:16px;line-height:1.55;color:var(--cl-ink)}
 .m-form textarea:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
 .m-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+/* 메모: 종류 칩 · 양식 메모(항목별 표시) · 긴 글 접기 */
+.d-mchips{display:flex;gap:6px;margin:0 0 10px;overflow-x:auto;scrollbar-width:none}
+.d-mchips::-webkit-scrollbar{display:none}
+.d-mchips button{flex:none;height:32px;padding:0 12px;border-radius:16px;background:var(--cl-bg);font-size:13px;font-weight:700;color:var(--cl-ink2)}
+.d-mchips button.on{background:var(--cl-ink);color:#fff}
+.d-mchips button span{margin-left:4px;opacity:.6;font-variant-numeric:tabular-nums}
+.d-memos li p.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.d-mh{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.d-mh b{min-width:0;font-size:14px;font-weight:800;color:var(--cl-ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.d-mk{flex:none;display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:6px;font-style:normal;font-size:11.5px;font-weight:800;white-space:nowrap}
+.d-mk.visit{background:#EAF1FF;color:#2B6FF3}.d-mk.pay{background:#E6F6EC;color:#1F7A45}
+.d-mkv{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font-size:14.5px;line-height:1.5}
+.d-mkv dt{color:var(--cl-ink3);white-space:nowrap}
+.d-mkv dd{margin:0;color:var(--cl-ink);word-break:break-word}
+.d-mi{display:block;position:relative;padding-left:10px}
+.d-mi::before{content:'';position:absolute;left:0;top:.66em;width:4px;height:4px;border-radius:50%;background:#9AA3B2}
+.d-mmore{display:inline-flex;align-items:center;height:28px;margin-top:4px;font-size:13px;font-weight:700;color:var(--cl-brand)}
+/* 방문 예약 시트: 날짜 띠 · 시간 칩 · 소요 시간 · 담당자 · 메모 */
+.v-who{display:flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;background:var(--cl-bg);font-size:14px;color:var(--cl-ink2);white-space:nowrap}
+.v-who b{font-size:15px;font-weight:800;color:var(--cl-ink)}
+.v-who span:last-child{margin-left:auto;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--cl-ink3);font-size:13px}
+.v-form .t-sec{padding:16px 0 2px}
+.v-form .t-sec h3 em{font-style:normal;color:var(--cl-warn)}
+.v-form .t-sec h3 small{margin-left:auto;font-size:13px;font-weight:700;color:var(--cl-brand);font-variant-numeric:tabular-nums}
+.v-days{display:flex;gap:6px;margin:0 -20px;padding:0 20px 2px;overflow-x:auto;scrollbar-width:none}
+.v-days::-webkit-scrollbar{display:none}
+.v-day{position:relative;flex:none;width:50px;height:62px;border-radius:14px;background:var(--cl-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:var(--cl-ink)}
+.v-day span{font-size:11.5px;font-weight:600;color:var(--cl-ink3)}
+.v-day b{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+.v-day.sat b{color:#2B6FF3}.v-day.sun b{color:#E5484D}
+.v-day.on{background:var(--cl-ink)}
+.v-day.on span,.v-day.on b{color:#fff}
+.v-day.v-cal{width:64px}
+.v-day.v-cal b{font-size:14px}
+.v-day.v-cal .cl-ic{font-size:19px;color:var(--cl-ink2)}
+.v-day.v-cal input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.v-time{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.v-time label > span{display:block;margin-bottom:8px;font-size:15px;font-weight:700}
+.v-time select,.a-form select{width:100%;height:50px;padding:0 38px 0 14px;border:0;border-radius:12px;background:var(--cl-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236B7280' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;font:inherit;font-size:16px;font-weight:600;color:var(--cl-ink);font-variant-numeric:tabular-nums;appearance:none;-webkit-appearance:none;cursor:pointer}
+.v-time select:focus,.a-form select:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
+.v-owns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.v-own{height:46px;padding:0 12px;border-radius:12px;background:var(--cl-bg);display:flex;align-items:center;justify-content:center;gap:6px;font-size:15px;font-weight:600;color:var(--cl-ink2)}
+.v-own small{font-size:11px;font-weight:700;padding:2px 6px;border-radius:6px;background:#fff;color:var(--cl-ink3)}
+.v-own.on{background:var(--cl-brand-soft);color:var(--cl-brand);font-weight:800;box-shadow:inset 0 0 0 1.5px var(--cl-brand)}
+.v-form textarea{min-height:84px}
+.v-sum{margin:0 0 8px;text-align:center;font-size:13.5px;font-weight:600;color:var(--cl-ink2);font-variant-numeric:tabular-nums}
+.v-sum.none{color:var(--cl-ink3);font-weight:500}
+.v-err{margin:6px 0 0;font-size:12.5px;color:var(--cl-warn)}
+.t-foot.v-foot > div{display:flex;gap:8px}
+.t-foot.v-foot .cl-apply{flex:1;width:auto}
+/* 상세 · 미팅 예약 카드: 등록한 방문 일정 (눌러서 수정 · 삭제) */
+.d-meet.v{align-items:flex-start;cursor:pointer;transition:background .15s}
+.d-meet.v:hover{background:#E7EBF2}
+.d-meet.v > .cl-ic{margin-top:2px;color:var(--cl-brand)}
+.d-meet.v div{flex:1;min-width:0}
+.d-meet.v b{display:block;font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.d-meet.v small{display:block;margin-top:2px;font-size:12.5px;font-weight:500;color:var(--cl-ink3)}
+.d-meet.v p{margin:6px 0 0;font-size:14px;font-weight:400;line-height:1.5;color:var(--cl-ink2);white-space:pre-wrap;word-break:break-word}
+/* 메모 작성: 양식 고르기 · 항목 입력 */
+/* 양식을 바꿔도 시트 높이가 변하지 않게, 메모 시트는 늘 최대 높이(화면의 88%)로 연다. 내용이 넘치면 안에서 스크롤 */
+.cl-sh-body.m-form{height:1200px;min-height:0;display:flex;flex-direction:column}
+.cl-sh-body.m-form > *{flex:none}
+.cl-sh-body.m-form > textarea{flex:1 1 132px}
+.cl-sh-body.m-form > .m-chips{margin:0 0 12px}
+.m-form .m-seg{margin:0 0 14px}
+.m-form .m-seg button{height:38px;font-size:14px}
+.m-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 12px}
+.m-fields > .wide{grid-column:1 / -1}
+.m-fields textarea{min-height:104px}
+.m-form .e-note{margin:0 0 14px}
 .m-chips button{height:34px;padding:0 12px;border-radius:17px;background:var(--cl-bg);font-size:14px;font-weight:600;color:var(--cl-ink2)}
 /* 사이드 보기 옵션 */
 .fb-opt{margin-bottom:10px;padding:14px 16px;border-radius:14px;background:var(--cl-surface)}
@@ -589,11 +693,25 @@ body.pg-cards #cards{display:block}
 .e-form label,.e-f{display:block;margin-bottom:16px}
 .e-form label > span,.e-f > span{display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:var(--cl-ink3)}
 .e-form input{width:100%;height:50px;padding:0 14px;border:0;border-radius:12px;background:var(--cl-bg);font:inherit;font-size:16px;color:var(--cl-ink)}
-.e-form input:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
+.e-form textarea{display:block;width:100%;min-height:96px;padding:12px 14px;border:0;border-radius:12px;background:var(--cl-bg);resize:none;font:inherit;font-size:15px;line-height:1.55;color:var(--cl-ink)}
+.e-form input:focus,.e-form textarea:focus{outline:2px solid var(--cl-brand);outline-offset:-2px}
 .e-pick{display:flex;flex-wrap:wrap;gap:8px}
 .e-pick button{height:40px;padding:0 16px;border-radius:20px;background:var(--cl-bg);font-size:15px;font-weight:600;color:var(--cl-ink2)}
 .e-pick button.on{background:var(--cl-ink);color:#fff}
 .e-note{margin:0;font-size:13px;color:var(--cl-ink3)}
+/* 기본 정보 수정 맨 아래: 고객 삭제 (한 번 더 확인) */
+.e-del{margin-top:24px;padding-top:18px;border-top:1px solid var(--cl-line);text-align:center}
+.e-del-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;height:48px;border-radius:14px;background:var(--cl-warn-soft);font-size:15px;font-weight:700;color:var(--cl-warn);transition:background .15s}
+.e-del-btn:active{background:#FFE3D0}
+.e-del-btn .cl-ic{font-size:17px}
+.e-del-hint{margin:8px 0 0;font-size:12.5px;color:var(--cl-ink3)}
+.e-del-ask{padding:20px 16px 16px;border-radius:18px;background:var(--cl-warn-soft);text-align:center}
+.e-del-ic{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 10px;border-radius:50%;background:#fff;color:var(--cl-warn);font-size:20px;box-shadow:0 2px 8px rgba(194,65,12,.12)}
+.e-del-ask b{display:block;font-size:16px;font-weight:800;letter-spacing:-.2px;color:var(--cl-ink)}
+.e-del-ask p{margin:6px 0 16px;font-size:13.5px;line-height:1.5;color:var(--cl-ink2)}
+.e-del-ask div{display:flex;gap:8px}
+.e-del-ask button{flex:1;height:48px;border-radius:14px;background:#fff;font-size:15.5px;font-weight:700;color:var(--cl-ink)}
+.e-del-ask button.del{background:var(--cl-warn);color:#fff}
 /* v4 카드: 인터뷰 반영 */
 .ka.kv{padding:12px 16px}
 .kv .ka-1 .cl-nm{font-size:18px;font-weight:800;letter-spacing:-.4px;flex:none}
@@ -604,11 +722,11 @@ body.pg-cards #cards{display:block}
 .kv-r .c2-badge{margin-left:0}
 .kv-badge{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:6px;font-size:12px;font-weight:700;white-space:nowrap}
 .kv-r .k-int b{display:none}
-.kv-2{display:flex;align-items:center;gap:8px;margin-top:7px}
-.kv-meta{display:flex;align-items:center;gap:8px;min-width:0;flex:1;font-size:13px;color:var(--cl-ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kv .ka-1 .k-int b{display:none}
+.kv-2{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--cl-line)}
+.kv-meta{display:flex;align-items:center;gap:6px;min-width:0;font-size:12.5px;color:var(--cl-ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
 .kv-meta > span{position:relative}
 .kv-own{color:var(--cl-ink2);font-weight:600}
-.kv-ph{margin-left:auto;font-size:13.5px;font-weight:600;color:var(--cl-ink2)}
 .kv-dot{flex:none;width:1px;height:10px;background:#D5D9E0}
 .kv .cl-ctx{margin-top:8px}
 .kv .cl-ctx.kv-memo p{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.45;font-size:13.5px;color:var(--cl-ink2)}
@@ -616,10 +734,45 @@ body.pg-cards #cards{display:block}
 .kv-dup > span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .kv-dup b{position:relative;flex:none;height:20px;line-height:20px;padding:0 7px;border-radius:6px;background:#FFF3DC;color:#A85D00;font-weight:700}
 .kv-dup b .fbm{top:-6px;right:-7px}
-.kv-callbtn{position:relative;width:100%;height:35px;margin-top:8px;border-radius:10px;border:1px solid var(--cl-line);background:#fff;display:flex;align-items:center;justify-content:center;gap:5.5px;font-size:13px;font-weight:700;color:var(--cl-ink)}
-.kv-callbtn .cl-ic{font-size:14.5px;color:var(--cl-brand)}
-.kv-callbtn:active{background:var(--cl-bg)}
-.kv-callbtn .fbm{top:50%;right:10px;transform:translateY(-50%)}
+.kv-callbtn{position:relative;flex:none;height:34px;padding:0 12px;border-radius:17px;background:var(--cl-brand-soft);color:var(--cl-brand);display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}
+.kv-callbtn .cl-ic{font-size:14.5px}
+.kv-callbtn:active{background:#D6E2FB}
+.kv-callbtn .fbm{top:-6px;right:-4px}
+.kv-callbtn .fbm + .fbm{right:14px}
+/* v4 카드 시안별 배치 (보기 옵션에서 고름). K-2는 위 기본 규칙 그대로 */
+.kx-2{display:flex;align-items:center;gap:8px;margin-top:7px}
+.kx-ph{position:relative;font-size:13.5px;font-weight:600;color:var(--cl-ink2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kx-main{min-width:0;flex:1}
+.kx-sub{display:flex;align-items:center;gap:6px;margin-top:1px;min-width:0;font-size:12.5px;color:var(--cl-ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kx-sub > span{position:relative;flex:none}
+.kx-sub > .kv-src{flex:0 1 auto}
+.kx-sub .kv-own{font-weight:500;color:inherit}
+.kx-kick{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:3px;font-size:12px;color:var(--cl-ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kx-kick > span{position:relative;flex:none}
+.kx-kick > .kv-src{flex:0 1 auto}
+.kx-full{position:relative;width:100%;height:35px;margin-top:8px;border-radius:10px;border:1px solid var(--cl-line);background:#fff;display:flex;align-items:center;justify-content:center;gap:5.5px;font-size:13px;font-weight:700;color:var(--cl-ink)}
+.kx-full .cl-ic{font-size:14.5px;color:var(--cl-brand)}
+.kx-full:active{background:var(--cl-bg)}
+.kx-full .fbm{top:50%;right:10px;transform:translateY(-50%)}
+.kx-full.kx-sm{flex:none;width:auto;height:34px;margin:0 0 0 auto;padding:0 14px}
+.kx-sm .fbm{top:-6px;right:-6px;transform:none}
+.kx-round{position:relative;flex:none;margin-left:auto;width:38px;height:38px;border-radius:50%;background:var(--cl-brand-soft);color:var(--cl-brand);display:grid;place-items:center}
+.kx-round .cl-ic{font-size:17px}
+.kx-round:active{background:#D6E2FB}
+.kx-round .fbm{top:-4px;right:-4px}
+.k1 .kx-2{margin-top:4px}
+.k1 .kx-ph{display:inline-block;font-size:15px;font-weight:700;color:var(--cl-ink)}
+.k3 .kx-2{margin-top:8px}
+.ka.kv.k4{padding:10px 14px}
+.k4 .ka-1 .cl-nm{font-size:16px}
+.k4 .kv-badge{height:22px}
+.k4 .kx-2{align-items:flex-end;margin-top:6px}
+.k4 .cl-ctx{margin-top:0;padding:0;background:none}
+.k4 .cl-ctx.kv-memo p{-webkit-line-clamp:1;font-size:13px}
+.k4 .kx-sub{margin-top:5px;font-size:12px}
+.k4 .kx-round{width:32px;height:32px}
+.k4 .kx-round .cl-ic{font-size:15px}
+.kx-dupn{position:relative;font-weight:700;color:#A85D00}
 /* B 현행 정보 유지 */
 .kb{background:var(--cl-surface);border-radius:16px;padding:14px 16px 12px}
 .kb-top{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--cl-ink3);white-space:nowrap}
@@ -727,7 +880,7 @@ body.pg-spec .sp-page{display:block}
 </style>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-phone-call" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5a5 5 0 0 1 6 6"/><path d="M14.5 7.5a1.5 1.5 0 0 1 2 2"/><path d="M22 16.92v2.6a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 3.8 2 2 0 0 1 4.11 1.8h2.6a2 2 0 0 1 2 1.72c.12.9.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L7.8 9.4a16 16 0 0 0 6.8 6.8l1.12-1.14a2 2 0 0 1 2.11-.45c.85.33 1.75.56 2.65.68A2 2 0 0 1 22 16.92z"/></g></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></g></symbol><symbol id="i-trash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></g></symbol><symbol id="i-add" viewBox="0 -960 960 960"><path d="M450-450H230q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h220v-220q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v220h220q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H510v220q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-220Z"/></symbol><symbol id="i-calendar_month" viewBox="0 -960 960 960"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><!-- Lucide phone (ISC), shadcn/ui 기본 아이콘 세트. 채움형으로 사용 --><path fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-check" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></symbol><symbol id="i-swap_vert" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></symbol><symbol id="i-close" viewBox="0 -960 960 960"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M349-250h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5Zm0-170h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.44 0 23.72 5T599-862l183 183q8 8 13 19.28 5 11.28 5 23.72v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.37-8.63Q551-651.25 551-664ZM220-820v186-186 680-680Z"/></symbol><symbol id="i-edit_note" viewBox="0 -960 960 960"><path d="M190-410q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h240q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm330 550v-81q0-5.57 2-10.78 2-5.22 7-10.22l211.61-210.77q9.11-9.12 20.25-13.18Q772-520 783-520q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5t-13.58 20.62L652-169q-5 5-10.22 7-5.21 2-10.78 2h-81q-12.75 0-21.37-8.63Q520-177.25 520-190Zm300-233-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></symbol><symbol id="i-keyboard_arrow_down" viewBox="0 -960 960 960"><path d="M469-358q-5-2-10-7L261-563q-9-9-8.5-21.5T262-606q9-9 21.5-9t21.5 9l175 176 176-176q9-9 21-8.5t21 9.5q9 9 9 21.5t-9 21.5L501-365q-5 5-10 7t-11 2q-6 0-11-2Z"/></symbol><symbol id="i-keyboard_arrow_up" viewBox="0 -960 960 960"><path d="M480-554 304-378q-9 9-21 8.5t-21-9.5q-9-9-9-21.5t9-21.5l197-197q9-9 21-9t21 9l198 198q9 9 9 21t-9 21q-9 9-21.5 9t-21.5-9L480-554Z"/></symbol><symbol id="i-home" viewBox="0 -960 960 960"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></symbol><symbol id="i-group" viewBox="0 -960 960 960"><path d="M38-254q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v34q0 25-17.5 42.5T618-160H98q-25 0-42.5-17.5T38-220v-34Zm824 94H724q5-15 9.5-29.5T738-220v-34q0-63-29-101.5T622-420q69 8 130 22t99 34q33 19 52 47t19 63v34q0 25-17.5 42.5T862-160ZM250-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42Zm426 0q-42 42-108 42-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108q0 66-42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm324.5-346.5Q448-592 448-631t-25.5-64.5Q397-721 358-721t-64.5 25.5Q268-670 268-631t25.5 64.5Q319-541 358-541t64.5-25.5ZM358-220Zm0-411Z"/></symbol><symbol id="i-groups" viewBox="0 -960 960 960"><path d="M30-240q-12.75 0-21.37-8.63Q0-257.25 0-270v-23q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H30Zm240 0q-12.75 0-21.37-8.63Q240-257.25 240-270v-35q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v35q0 12.75-8.62 21.37Q702.75-240 690-240H270Zm510 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v23q0 12.75-8.62 21.37Q942.75-240 930-240H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z"/></symbol><symbol id="i-menu" viewBox="0 -960 960 960"><path d="M150-240q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-more_horiz" viewBox="0 -960 960 960"><path d="M207.86-432Q188-432 174-446.14t-14-34Q160-500 174.14-514t34-14Q228-528 242-513.86t14 34Q256-460 241.86-446t-34 14Zm272 0Q460-432 446-446.14t-14-34Q432-500 446.14-514t34-14Q500-528 514-513.86t14 34Q528-460 513.86-446t-34 14Zm272 0Q732-432 718-446.14t-14-34Q704-500 718.14-514t34-14Q772-528 786-513.86t14 34Q800-460 785.86-446t-34 14Z"/></symbol><symbol id="i-search" viewBox="0 -960 960 960"><path d="M378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l242 240q9 8.56 9 21.78T818-143q-9 9-22.22 9-13.22 0-21.78-9L533-384q-30 26-69.96 40.5Q423.08-329 378-329Zm-1-60q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></symbol><symbol id="i-sms" viewBox="0 -960 960 960"><path d="M240-240 131-131q-14 14-32.5 6.34Q80-132.31 80-152v-668q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240Zm-26-60h606v-520H140v600l74-80Zm-74 0v-520 520Zm194.5-234.5Q346-546 346-563t-11.5-28.5Q323-603 306-603t-28.5 11.5Q266-580 266-563t11.5 28.5Q289-523 306-523t28.5-11.5Zm177 0Q523-546 523-563t-11.5-28.5Q500-603 483-603t-28.5 11.5Q443-580 443-563t11.5 28.5Q466-523 483-523t28.5-11.5Zm170 0Q693-546 693-563t-11.5-28.5Q670-603 653-603t-28.5 11.5Q613-580 613-563t11.5 28.5Q636-523 653-523t28.5-11.5Z"/></symbol><symbol id="i-tune" viewBox="0 -960 960 960"><path d="M435.5-128.63Q427-137.25 427-150v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v53h323q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H487v52q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-202q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h187q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm165.5-174.63Q307-385.25 307-398v-52H150q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h157v-54q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v166q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM457-450q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H457Zm144.5-173.63Q593-632.25 593-645v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v52h157q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H653v53q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-698q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-wand_stars" viewBox="0 -960 960 960"><path d="m654-454-91 147q-8 13-22.5 10T522-314l-33-133-306 305q-9 9-21 9t-21-9q-9-9-9-21t9-21l305-305-133-33q-14-4-17-18.5t10-22.5l147-92-12-172q-1-15 12.5-22t24.5 3l132 111 160-64q14-5 24 5t5 24l-65 160 111 132q10 11 3.5 24.5T827-441l-173-13ZM131-721q-5-5-5-11t5-11l46-46q5-5 11-5t11 5l45 45q5 5 5 11t-5 11l-46 46q-5 5-11 5t-11-5l-45-45Zm428 307 63-102 120 9-78-92 45-111-111 45-92-78 9 120-102 64 117 29 29 116Zm163 283-46-46q-5-5-4.5-11t5.5-11l45-45q5-5 11-5t11 5l46 46q5 5 4.5 11t-5.5 11l-45 45q-5 5-11 5t-11-5ZM578-579Z"/></symbol><symbol id="i-signal_cellular_alt" viewBox="0 -960 960 960"><path d="M214.5-174.58Q200-189.17 200-210v-140q0-20.83 14.62-35.42Q229.24-400 250.12-400q20.88 0 35.38 14.58Q300-370.83 300-350v140q0 20.83-14.62 35.42Q270.76-160 249.88-160q-20.88 0-35.38-14.58Zm250 0Q450-189.17 450-210v-340q0-20.83 14.62-35.42Q479.24-600 500.12-600q20.88 0 35.38 14.58Q550-570.83 550-550v340q0 20.83-14.62 35.42Q520.76-160 499.88-160q-20.88 0-35.38-14.58Zm250 0Q700-189.17 700-210v-540q0-20.83 14.62-35.42Q729.24-800 750.12-800q20.88 0 35.38 14.58Q800-770.83 800-750v540q0 20.83-14.62 35.42Q770.76-160 749.88-160q-20.88 0-35.38-14.58Z"/></symbol><symbol id="i-wifi" viewBox="0 -960 960 960"><path d="M417-154q-27-27-27-63t27-63q27-27 63-27t63 27q27 27 27 63t-27 63q-27 27-63 27t-63-27Zm209-378.5Q694-505 757-451q14 12 15 30.5T759-388q-14 14-32 13t-33-13q-53-44-106.5-63T480-470q-54 0-107.5 19T266-388q-15 12-33 13t-32-13q-14-14-13-32.5t15-30.5q63-54 131-81.5T480-560q78 0 146 27.5Zm95.5-219Q835-703 926-622q14 13 15.5 31.5T929-558q-14 14-33.5 13.5T861-558q-83-70-178-111t-203-41q-108 0-203 41T99-558q-15 13-34 13.5T32-558q-14-14-13-32.5T34-622q91-81 204.5-129.5T480-800q128 0 241.5 48.5Z"/></symbol><symbol id="i-battery_full" viewBox="0 -960 960 960"><path d="M310-80q-12.75 0-21.37-8.63Q280-97.25 280-110v-676q0-12.75 8.63-21.38Q297.25-816 310-816h90v-34q0-12.75 8.63-21.38Q417.25-880 430-880h100q12.75 0 21.38 8.62Q560-862.75 560-850v34h90q12.75 0 21.38 8.62Q680-798.75 680-786v676q0 12.75-8.62 21.37Q662.75-80 650-80H310Z"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="i-phone-call" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5a5 5 0 0 1 6 6"/><path d="M14.5 7.5a1.5 1.5 0 0 1 2 2"/><path d="M22 16.92v2.6a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 3.8 2 2 0 0 1 4.11 1.8h2.6a2 2 0 0 1 2 1.72c.12.9.35 1.8.68 2.65a2 2 0 0 1-.45 2.11L7.8 9.4a16 16 0 0 0 6.8 6.8l1.12-1.14a2 2 0 0 1 2.11-.45c.85.33 1.75.56 2.65.68A2 2 0 0 1 22 16.92z"/></g></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></g></symbol><symbol id="i-trash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></g></symbol><symbol id="i-add" viewBox="0 -960 960 960"><path d="M450-450H230q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h220v-220q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v220h220q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H510v220q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-220Z"/></symbol><symbol id="i-calendar_month" viewBox="0 -960 960 960"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></symbol><symbol id="i-call" viewBox="0 0 24 24"><!-- Lucide phone (ISC), shadcn/ui 기본 아이콘 세트. 채움형으로 사용 --><path fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol><symbol id="i-arrow_back" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-check" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></symbol><symbol id="i-swap_vert" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></symbol><symbol id="i-close" viewBox="0 -960 960 960"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M349-250h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5Zm0-170h262q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H349q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h336q12.44 0 23.72 5T599-862l183 183q8 8 13 19.28 5 11.28 5 23.72v496q0 24-18 42t-42 18H220Zm331-584v-156H220v680h520v-494H581q-12.75 0-21.37-8.63Q551-651.25 551-664ZM220-820v186-186 680-680Z"/></symbol><symbol id="i-edit_note" viewBox="0 -960 960 960"><path d="M190-410q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h240q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm0-165q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h410q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H190Zm330 550v-81q0-5.57 2-10.78 2-5.22 7-10.22l211.61-210.77q9.11-9.12 20.25-13.18Q772-520 783-520q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5t-13.58 20.62L652-169q-5 5-10.22 7-5.21 2-10.78 2h-81q-12.75 0-21.37-8.63Q520-177.25 520-190Zm300-233-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></symbol><symbol id="i-keyboard_arrow_down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-keyboard_arrow_up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-chevron_left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-chevron_right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-home" viewBox="0 -960 960 960"><path d="M220-180h150v-220q0-12.75 8.63-21.38Q387.25-430 400-430h160q12.75 0 21.38 8.62Q590-412.75 590-400v220h150v-390L480-765 220-570v390Zm-60 0v-390q0-14.25 6.38-27 6.37-12.75 17.62-21l260-195q15.68-12 35.84-12Q500-825 516-813l260 195q11.25 8.25 17.63 21 6.37 12.75 6.37 27v390q0 24.75-17.62 42.37Q764.75-120 740-120H560q-12.75 0-21.37-8.63Q530-137.25 530-150v-220H430v220q0 12.75-8.62 21.37Q412.75-120 400-120H220q-24.75 0-42.37-17.63Q160-155.25 160-180Zm320-293Z"/></symbol><symbol id="i-group" viewBox="0 -960 960 960"><path d="M38-254q0-35 18-63.5t50-42.5q73-32 131.5-46T358-420q62 0 120 14t131 46q32 14 50.5 42.5T678-254v34q0 25-17.5 42.5T618-160H98q-25 0-42.5-17.5T38-220v-34Zm824 94H724q5-15 9.5-29.5T738-220v-34q0-63-29-101.5T622-420q69 8 130 22t99 34q33 19 52 47t19 63v34q0 25-17.5 42.5T862-160ZM250-523q-42-42-42-108t42-108q42-42 108-42t108 42q42 42 42 108t-42 108q-42 42-108 42t-108-42Zm426 0q-42 42-108 42-11 0-24.5-1.5T519-488q24-25 36.5-61.5T568-631q0-45-12.5-79.5T519-774q11-3 24.5-5t24.5-2q66 0 108 42t42 108q0 66-42 108ZM98-220h520v-34q0-16-9.5-31T585-306q-72-32-121-43t-106-11q-57 0-106.5 11T130-306q-14 6-23 21t-9 31v34Zm324.5-346.5Q448-592 448-631t-25.5-64.5Q397-721 358-721t-64.5 25.5Q268-670 268-631t25.5 64.5Q319-541 358-541t64.5-25.5ZM358-220Zm0-411Z"/></symbol><symbol id="i-groups" viewBox="0 -960 960 960"><path d="M30-240q-12.75 0-21.37-8.63Q0-257.25 0-270v-23q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H30Zm240 0q-12.75 0-21.37-8.63Q240-257.25 240-270v-35q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v35q0 12.75-8.62 21.37Q702.75-240 690-240H270Zm510 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v23q0 12.75-8.62 21.37Q942.75-240 930-240H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z"/></symbol><symbol id="i-menu" viewBox="0 -960 960 960"><path d="M150-240q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm0-210q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h660q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-more_horiz" viewBox="0 -960 960 960"><path d="M207.86-432Q188-432 174-446.14t-14-34Q160-500 174.14-514t34-14Q228-528 242-513.86t14 34Q256-460 241.86-446t-34 14Zm272 0Q460-432 446-446.14t-14-34Q432-500 446.14-514t34-14Q500-528 514-513.86t14 34Q528-460 513.86-446t-34 14Zm272 0Q732-432 718-446.14t-14-34Q704-500 718.14-514t34-14Q772-528 786-513.86t14 34Q800-460 785.86-446t-34 14Z"/></symbol><symbol id="i-search" viewBox="0 -960 960 960"><path d="M378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l242 240q9 8.56 9 21.78T818-143q-9 9-22.22 9-13.22 0-21.78-9L533-384q-30 26-69.96 40.5Q423.08-329 378-329Zm-1-60q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></symbol><symbol id="i-sms" viewBox="0 -960 960 960"><path d="M240-240 131-131q-14 14-32.5 6.34Q80-132.31 80-152v-668q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H240Zm-26-60h606v-520H140v600l74-80Zm-74 0v-520 520Zm194.5-234.5Q346-546 346-563t-11.5-28.5Q323-603 306-603t-28.5 11.5Q266-580 266-563t11.5 28.5Q289-523 306-523t28.5-11.5Zm177 0Q523-546 523-563t-11.5-28.5Q500-603 483-603t-28.5 11.5Q443-580 443-563t11.5 28.5Q466-523 483-523t28.5-11.5Zm170 0Q693-546 693-563t-11.5-28.5Q670-603 653-603t-28.5 11.5Q613-580 613-563t11.5 28.5Q636-523 653-523t28.5-11.5Z"/></symbol><symbol id="i-tune" viewBox="0 -960 960 960"><path d="M435.5-128.63Q427-137.25 427-150v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v53h323q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H487v52q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-202q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h187q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Zm165.5-174.63Q307-385.25 307-398v-52H150q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h157v-54q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v166q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM457-450q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H457Zm144.5-173.63Q593-632.25 593-645v-165q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62 12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v52h157q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H653v53q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63ZM150-698q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h353q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H150Z"/></symbol><symbol id="i-wand_stars" viewBox="0 -960 960 960"><path d="m654-454-91 147q-8 13-22.5 10T522-314l-33-133-306 305q-9 9-21 9t-21-9q-9-9-9-21t9-21l305-305-133-33q-14-4-17-18.5t10-22.5l147-92-12-172q-1-15 12.5-22t24.5 3l132 111 160-64q14-5 24 5t5 24l-65 160 111 132q10 11 3.5 24.5T827-441l-173-13ZM131-721q-5-5-5-11t5-11l46-46q5-5 11-5t11 5l45 45q5 5 5 11t-5 11l-46 46q-5 5-11 5t-11-5l-45-45Zm428 307 63-102 120 9-78-92 45-111-111 45-92-78 9 120-102 64 117 29 29 116Zm163 283-46-46q-5-5-4.5-11t5.5-11l45-45q5-5 11-5t11 5l46 46q5 5 4.5 11t-5.5 11l-45 45q-5 5-11 5t-11-5ZM578-579Z"/></symbol><symbol id="i-signal_cellular_alt" viewBox="0 -960 960 960"><path d="M214.5-174.58Q200-189.17 200-210v-140q0-20.83 14.62-35.42Q229.24-400 250.12-400q20.88 0 35.38 14.58Q300-370.83 300-350v140q0 20.83-14.62 35.42Q270.76-160 249.88-160q-20.88 0-35.38-14.58Zm250 0Q450-189.17 450-210v-340q0-20.83 14.62-35.42Q479.24-600 500.12-600q20.88 0 35.38 14.58Q550-570.83 550-550v340q0 20.83-14.62 35.42Q520.76-160 499.88-160q-20.88 0-35.38-14.58Zm250 0Q700-189.17 700-210v-540q0-20.83 14.62-35.42Q729.24-800 750.12-800q20.88 0 35.38 14.58Q800-770.83 800-750v540q0 20.83-14.62 35.42Q770.76-160 749.88-160q-20.88 0-35.38-14.58Z"/></symbol><symbol id="i-wifi" viewBox="0 -960 960 960"><path d="M417-154q-27-27-27-63t27-63q27-27 63-27t63 27q27 27 27 63t-27 63q-27 27-63 27t-63-27Zm209-378.5Q694-505 757-451q14 12 15 30.5T759-388q-14 14-32 13t-33-13q-53-44-106.5-63T480-470q-54 0-107.5 19T266-388q-15 12-33 13t-32-13q-14-14-13-32.5t15-30.5q63-54 131-81.5T480-560q78 0 146 27.5Zm95.5-219Q835-703 926-622q14 13 15.5 31.5T929-558q-14 14-33.5 13.5T861-558q-83-70-178-111t-203-41q-108 0-203 41T99-558q-15 13-34 13.5T32-558q-14-14-13-32.5T34-622q91-81 204.5-129.5T480-800q128 0 241.5 48.5Z"/></symbol><symbol id="i-battery_full" viewBox="0 -960 960 960"><path d="M310-80q-12.75 0-21.37-8.63Q280-97.25 280-110v-676q0-12.75 8.63-21.38Q297.25-816 310-816h90v-34q0-12.75 8.63-21.38Q417.25-880 430-880h100q12.75 0 21.38 8.62Q560-862.75 560-850v34h90q12.75 0 21.38 8.62Q680-798.75 680-786v676q0 12.75-8.62 21.37Q662.75-80 650-80H310Z"/></symbol></svg>
 
 <nav class="pg-tabs" id="pgTabs"><button data-pg="design" class="on">인터뷰 반영안 v4</button><button data-pg="v3">기존 시안 v3</button><button data-pg="spec">상단 기능 기획서</button><a class="pg-link" href="카드제안.html" target="_blank" rel="noopener">카드 레이아웃 제안 ↗</a></nav>
 
@@ -739,10 +892,14 @@ body.pg-spec .sp-page{display:block}
       <div class="cl-cap">현행 <small>가상 데이터로 다시 그린 와이어프레임 · 직접 눌러 볼 수 있음</small></div>
       <div class="cl-frame"><div class="cl-app"><iframe src="../고객메뉴_분석/영업비서_고객메뉴_분석.html?embed=as" title="현행 고객 메뉴 와이어프레임" loading="lazy" style="width:100%;height:100%;border:0;display:block;background:#fff"></iframe></div></div>
     </div>
-    <div class="cl-col new">
+    <div class="cl-col new" id="colNew">
       <div class="cl-cap" id="capNew"></div>
       <div class="cl-banner"><span><b id="banNew">고객 목록 시안 v4</b> · 가상 데이터</span></div>
       <div class="cl-frame"><div class="cl-app" id="app"></div></div>
+    </div>
+    <div class="cl-col new" id="colCalB" hidden>
+      <div class="cl-cap">시안 B (캘린더 내 텍스트 표기형) <small>달력 셀 안에 고객명을 직접 표시 · 날짜 클릭 시 하단 요약</small></div>
+      <div class="cl-frame"><div class="cl-app" id="appCalB"></div></div>
     </div>
     <aside class="cl-col fb" id="fbPanel"></aside>
   </div>
@@ -846,8 +1003,15 @@ const esc = t => String(t).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':
 
 /* ── 상태 ── */
 const F0 = () => ({own:[],int:[],plat:[],camp:[],date:'전체'});
-const S = {st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',ver:'v4',detail:null,dupView:'data',fbShow:false,fold:{},talk:{},memoOpen:false,memoDraft:'',sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
+const S = {navTab:'일정',st:'전체',cOpen:false,sort:SORTS[0],f:F0(),sheet:false,draft:null,q:'',search:false,loading:false,fsec:null,camp:'전체',card:'A',ver:'v4',detail:null,dupView:'data',fbShow:false,fold:{},talk:{},memoOpen:false,memoDraft:'',memoKind:'free',memoForm:{},pgOpen:null,copied:false,add:null,kcard:'K2',visit:null,visitEdit:false,memoTitle:'',memoFlt:'all',mOpen:{},sq:'',scope:'전체',recent:['방문','윤슬자이','대출']};
 const app = document.getElementById('app');
+const OV = () => S.host === 'B' && $('appCalB') ? $('appCalB') : app;
+function placeOv(){
+  const h = OV(), o = h === app ? $('appCalB') : app; if(!h || !o) return;
+  const dim = document.querySelector('.cl-dim');
+  [$('srch'), $('det'), dim, $('sheet'), $('toast')].forEach(n => { if(n && n.parentNode !== h) h.appendChild(n); });
+  o.classList.remove('sheet', 'det', 'srch');
+}
 const fmtReg = d => { const [, m, dd] = d.split('-'); return `${+m}/${+dd}`; };
 const daysAgo = d => Math.floor((TODAY - new Date(d + 'T00:00:00')) / 864e5);
 
@@ -933,9 +1097,14 @@ function fbPanelHTML(){
 const dupOf = c => S.dupView === 'none' ? [] : S.dupView === 'all' && !c.dup.length ? C.flatMap(x => x.dup).filter(d => d.site !== c.camp).slice(0, 1) : c.dup;
 function drawOpt(){
   app.classList.toggle('hide-fb', !S.fbShow);
-  const bd = $('fbBody'); if(bd) bd.hidden = !S.fbShow;
+  const bd = $('fbBody'); if(bd) bd.hidden = !S.fbShow || S.navTab === '일정';
   const el = $('fbOpt'); if(!el) return;
-  el.innerHTML = `<div class="fb-opt"><b>인터뷰 의견 표시</b><span>번호 표식과 오른쪽 설명을 켜거나 끕니다</span><div class="fb-seg" role="group" aria-label="인터뷰 의견 표시">${[['on','표시',true],['off','숨김',false]].map(([k, l, v]) => `<button class="${S.fbShow === v ? 'on' : ''}" aria-pressed="${S.fbShow === v}" data-fb="${k}">${l}</button>`).join('')}</div></div><div class="fb-opt"><b>다른 현장 문의 있음</b><span>목록과 상세에 함께 적용됩니다</span><div class="fb-seg" role="group" aria-label="다른 현장 문의 있음">${[['data','데이터대로'],['all','모두 있음'],['none','모두 없음']].map(([k, l]) => `<button class="${S.dupView === k ? 'on' : ''}" aria-pressed="${S.dupView === k}" data-opt="${k}">${l}</button>`).join('')}</div></div>`;
+  if(S.navTab === '일정'){
+    const cv = S.calVer === 'B' ? 'B' : 'A';
+    el.innerHTML = `<div class="fb-opt"><b>일정 시안</b><span>${cv === 'A' ? '시안 A · 달력은 작게, 아래에 일정 카드' : '시안 B · 달력 칸 안에 고객명 표시'}</span><div class="fb-seg" role="group" aria-label="일정 시안">${[['A','시안 A'],['B','시안 B']].map(([k, l]) => `<button class="${cv === k ? 'on' : ''}" aria-pressed="${cv === k}" data-cv="${k}">${l}</button>`).join('')}</div></div>`;
+    return;
+  }
+  el.innerHTML = `<div class="fb-opt"><b>목록 카드 시안</b><span>${KCARDS.find(k => k[0] === S.kcard)[2]}</span><div class="fb-seg" role="group" aria-label="목록 카드 시안">${KCARDS.map(([k, l]) => `<button class="${S.kcard === k ? 'on' : ''}" aria-pressed="${S.kcard === k}" data-kc="${k}">${l}</button>`).join('')}</div></div><div class="fb-opt"><b>인터뷰 의견 표시</b><span>번호 표식과 오른쪽 설명을 켜거나 끕니다</span><div class="fb-seg" role="group" aria-label="인터뷰 의견 표시">${[['on','표시',true],['off','숨김',false]].map(([k, l, v]) => `<button class="${S.fbShow === v ? 'on' : ''}" aria-pressed="${S.fbShow === v}" data-fb="${k}">${l}</button>`).join('')}</div></div><div class="fb-opt"><b>다른 현장 문의 있음</b><span>목록과 상세에 함께 적용됩니다</span><div class="fb-seg" role="group" aria-label="다른 현장 문의 있음">${[['data','데이터대로'],['all','모두 있음'],['none','모두 없음']].map(([k, l]) => `<button class="${S.dupView === k ? 'on' : ''}" aria-pressed="${S.dupView === k}" data-opt="${k}">${l}</button>`).join('')}</div></div>`;
 }
 const PLAT_IC = {
   '메타':['#1877F2',`<svg width="11" height="8" viewBox="0 0 16 11" fill="none" aria-hidden="true"><path d="M4.6 1.6C2.7 1.6 1.4 3.3 1.4 5.6c0 2 1.1 3.7 2.6 3.7 1.3 0 2.3-.9 3.7-2.9l.3-.5.3.5c1.4 2 2.4 2.9 3.7 2.9 1.5 0 2.6-1.7 2.6-3.7 0-2.3-1.3-4-3.2-4-1.4 0-2.4.9-3.4 2.3C7 2.5 6 1.6 4.6 1.6Z" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`],
@@ -949,17 +1118,96 @@ function platIc(p){
   const [bg, svg] = PLAT_IC[p] || ['#EEF1F5;color:#6B7280',`<svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><circle cx="3" cy="6" r="1"/><circle cx="6" cy="6" r="1"/><circle cx="9" cy="6" r="1"/></svg>`];
   return `<i class="kv-pic" style="background:${bg}" title="${esc(p)}" role="img" aria-label="${esc(p)}">${svg}</i>`;
 }
+// 메모 양식: 자주 쓰는 메모(상담내용 · 입금보고)는 항목별로 쓰고, 상세에서도 항목별로 보여 준다
+// f = [항목, 안내 문구, 1(긴 글) 또는 선택지 배열], core = 접힌 상태에서 먼저 보이는 항목
+const MFORM = {
+  visit:{l:'상담내용', chip:'상담', keys:['방문일자','상담일자','고객명','번호','방문경로','유입경로','방문인원','거주지역','담당자','상담지원','원하는타입','동호수','상담내용'], core:['방문일자','상담일자','원하는타입','동호수','상담내용'], auto:['고객명','담당자'],
+    f:[['방문일자','예: 11월 9일 13시 30분'],['방문경로','예: 지인 소개'],['방문인원','예: 2명'],['거주지역','예: 용산'],['원하는타입','예: 74A'],['동호수','예: 101-1204'],['상담지원','예: 팀장',0,1],['상담내용','한 줄에 한 가지씩 적어 주세요',1]]},
+  pay:{l:'입금보고', chip:'입금', keys:['입금호실','계약자명','입금자명','입금구분','입금금액','1차 계약금','2차 계약금','비고'], core:['입금호실','입금구분','입금금액','비고'], auto:['계약자명'],
+    f:[['입금구분','',['가계약금','계약금','중도금','잔금']],['입금호실','예: 101-1204'],['입금금액','예: 10,000,000원'],['계약자명',''],['입금자명',''],['1차 계약금','예: 11/9 1000만원'],['2차 계약금','예: 11/15 2500만원'],['비고','특이 사항을 적어 주세요',1]]}
+};
+const memoItems = v => v.split(/(?:^|\s+)-/).map(t => t.trim()).filter(Boolean);
+// 메모 글이 양식(◆제목◆ · ■제목■)이면 제목과 [항목, 값] 목록으로 나눈다. 아니면 일반 메모
+function memoInfo(x){
+  const h = /^([◆■])\s*(.+?)\s*[◆■]\s*/.exec(x.t);
+  if(!h) return {kind:'note'};
+  const kind = h[1] === '■' ? 'pay' : 'visit', rest = x.t.slice(h[0].length), rows = [];
+  if(kind === 'pay') rest.split('*').map(t => t.trim()).filter(Boolean).forEach(t => { const j = t.indexOf(':'); rows.push(j < 0 ? ['비고', t] : [t.slice(0, j).replace(/\s+/g, ' ').trim().replace('비 고', '비고'), t.slice(j + 1).trim()]); });
+  else { const ps = rest.split(new RegExp('(' + MFORM.visit.keys.join('|') + ')\\s*:')).map(t => t.trim()); for(let j = 1; j < ps.length; j += 2) rows.push([ps[j], ps[j + 1] || '']); }
+  return rows.length ? {kind, title:h[2], rows} : {kind:'note'};
+}
+// 목록 카드 · 타임라인에 쓰는 한 줄 요약
+function memoLine(x){
+  const o = memoInfo(x); if(!o.rows) return x.t;
+  const F = MFORM[o.kind], core = o.rows.filter(r => F.core.includes(r[0]) && r[1]);
+  return `[${F.l}] ` + (core.length ? core : o.rows).map(r => r[1].startsWith('-') ? memoItems(r[1]).join(', ') : r[1]).join(' · ');
+}
+// 작성 화면에서 채운 항목을 양식 글로 만든다. 직접 적은 항목이 하나도 없으면 빈 글
+function memoBuild(c){
+  const F = MFORM[S.memoKind], f = {...S.memoForm};
+  if(!F.keys.some(k => !F.auto.includes(k) && (f[k] || '').trim())) return '';
+  if(S.memoKind === 'visit'){ f['고객명'] = f['고객명'] || c.name; f['담당자'] = f['담당자'] || ownLbl(c.own); }
+  const val = (k, v) => F.f.some(d => d[0] === k && d[2] === 1) && S.memoKind === 'visit' ? v.split('\n').map(t => t.trim().replace(/^-\s*/, '')).filter(Boolean).map(t => '-' + t).join(' ') : v.replace(/\s*\n\s*/g, ' ');
+  const rows = F.keys.filter(k => (f[k] || '').trim()).map(k => [k, val(k, f[k].trim())]);
+  return S.memoKind === 'pay' ? `■${S.memoTitle || '입금보고'}■ ` + rows.map(([k, v]) => `*${k} : ${v}`).join(' ') : `◆ ${S.memoTitle || c.camp + ' 상담내용'} ◆ ` + rows.map(([k, v]) => `${k} : ${v}`).join(' ');
+}
+// 방문 예약: 날짜 · 시작 시각(분) · 소요 시간(분) · 담당자 · 메모. 종료는 시작 + 소요 시간으로 계산한다
+// 고를 수 있는 시각: 오전 9:00 ~ 오후 9:00, 30분 간격. 종료는 시작보다 늦은 시각만 보여 준다
+const V_END = 21 * 60, V_TIMES = Array.from({length:25}, (_, n) => 540 + n * 30);
+const V_MEMO = ['동반 인원','주차','관심 타입','준비 서류'];
+const vIso = d => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+const vDay = n => vIso(new Date(TODAY.getTime() + n * 864e5));
+const vDow = iso => { const [y, m, d] = iso.split('-'); return new Date(+y, m - 1, +d).getDay(); };
+const vT = m => `${m < 720 ? '오전' : '오후'} ${(Math.floor(m / 60) + 11) % 12 + 1}:${pad2(m % 60)}`;
+const vDate = iso => iso === vDay(0) ? '오늘' : iso === vDay(1) ? '내일' : `${fmtReg(iso)}(${'일월화수목금토'[vDow(iso)]})`;
+const vRange = v => `${vDate(v.date)} ${vT(v.start)} ~ ${vT(v.start + v.dur)}`;
+// 고객의 방문 일정. 기존 가상 데이터의 「오늘 14:00 방문」 같은 글은 한 번만 일정으로 바꿔 둔다
+function visitOf(c){
+  if(c.visit !== undefined) return c.visit;
+  const nxt = c.v4Next !== undefined ? c.v4Next : c.next, m = nxt && /^(오늘|내일|(\d+)\/(\d+)\([일월화수목금토]\))\s*(\d{1,2}):(\d{2})\s*방문$/.exec(nxt[0]);
+  return c.visit = m ? {date:m[1] === '오늘' ? vDay(0) : m[1] === '내일' ? vDay(1) : `2026-${pad2(m[2])}-${pad2(m[3])}`, start:+m[4] * 60 + +m[5], dur:60, own:c.own, memo:''} : null;
+}
+function visitSheetHTML(){
+  const c = C[S.calVisitCi != null ? S.calVisitCi : S.detail], v = S.visit, days = Array.from({length:14}, (_, n) => vDay(n)), out = v.date && !days.includes(v.date);
+  const owns = [c.own, ...Object.keys(OWN_V4).filter(o => o !== c.own)];
+  return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>${S.visitEdit ? '방문 일정 수정' : '방문 예약'}</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body v-form">
+      <div class="v-who"><b>${c.name}</b><span>${c.phone}</span><span>${c.camp}</span></div>
+      <div class="t-sec"><h3>날짜<em>*</em>${v.date ? `<small>${vDate(v.date)}</small>` : ''}</h3>
+        <div class="v-days">${days.map((d, n) => { const w = vDow(d); return `<button class="v-day ${w === 6 ? 'sat' : w === 0 ? 'sun' : ''} ${v.date === d ? 'on' : ''}" aria-pressed="${v.date === d}" data-a="visit-day" data-v="${d}"><span>${n === 0 ? '오늘' : n === 1 ? '내일' : '일월화수목금토'[w]}</span><b>${+d.slice(8)}</b></button>`; }).join('')}
+          <label class="v-day v-cal ${out ? 'on' : ''}"><span>다른 날</span>${out ? `<b>${fmtReg(v.date)}</b>` : ic('calendar_month')}<input type="date" data-a="visit-cal" data-vf="date" min="${vDay(0)}" value="${v.date || ''}" aria-label="달력에서 날짜 고르기"></label></div></div>
+      <div class="t-sec"><div class="v-time">
+        <label><span>시작</span><select data-vf="start" aria-label="시작 시간">${V_TIMES.filter(t => t < V_END).map(t => `<option value="${t}"${v.start === t ? ' selected' : ''}>${vT(t)}</option>`).join('')}</select></label>
+        <label><span>종료</span><select data-vf="end" aria-label="종료 시간">${V_TIMES.filter(t => t > v.start).map(t => `<option value="${t}"${v.start + v.dur === t ? ' selected' : ''}>${vT(t)}</option>`).join('')}</select></label></div></div>
+      <div class="t-sec"><h3>담당자 지정</h3>
+        <div class="v-owns">${owns.map(o => `<button class="v-own ${v.own === o ? 'on' : ''}" aria-pressed="${v.own === o}" data-a="visit-own" data-v="${o}">${ownLbl(o)}${o === c.own ? '<small>현재 담당</small>' : ''}</button>`).join('')}</div></div>
+      <div class="t-sec m-form"><h3>예약 참고 메모<small style="color:var(--cl-ink3);font-weight:500">선택</small></h3>
+        <textarea id="visitMemo" rows="3" placeholder="방문 시 참고할 내용">${esc(v.memo)}</textarea>
+        <div class="m-chips">${V_MEMO.map(t => `<button data-a="visit-chip" data-v="${t}">+ ${t}</button>`).join('')}</div></div>
+    </div>
+    <div class="t-foot v-foot"><p class="v-sum ${v.date ? '' : 'none'}">${v.date ? `${vRange(v)} · ${ownLbl(v.own)}` : '날짜를 골라 주세요'}</p>
+      <div>${S.visitEdit ? `<button class="m-del" data-a="visit-del">${ic('trash')}삭제</button>` : ''}<button class="cl-apply" data-a="visit-save"${v.date ? '' : ' disabled'}>저장</button></div></div>`;
+}
+// 고객마다 다른 공유 링크(가상 주소)
+const shareUrl = c => `mypage.example/s/${(C.indexOf(c) * 7919 + 4099).toString(36)}`;
 function badgeV4(k){ const s = stOf(k); return `<span class="kv-badge" style="background:${s.bg};color:${s.fg}">${k}</span>`; }
+// v4 목록 카드. 보기 옵션에서 시안(K-0 ~ K-4)을 바꿔 볼 수 있다. 정보는 같고 배치만 다르다
+const KCARDS = [['K0','K-0','이전 본 시안 · 풀폭 전화 버튼'],['K1','K-1','전화번호 크게 + 원형 전화 버튼'],['K2','K-2','번호가 곧 전화 버튼 (채택)'],['K3','K-3','현장 머리말 + 아래 전화 줄'],['K4','K-4','촘촘한 3줄']];
 function cardV4(c, i){
   detData(c, i);
-  const dups = dupOf(c), memo = c.memos && c.memos[0];
-  return `<div class="ka kv"${kOpen(i)}>
-    <div class="ka-1"><span class="cl-nm">${c.name}</span><span class="kv-src">${platIc(c.plat)}<span>${c.camp}</span></span><span class="kv-r">${kInt(c)}${badgeV4(c.st)}</span></div>
-    <div class="kv-2"><div class="kv-meta"><span>${fmtReg(c.reg)} ${c.time}${fb(3)}</span><i class="kv-dot"></i><span class="kv-own">${ownLbl(c.own)}</span><span class="kv-ph">${c.phone}${fb(2)}</span></div></div>
-    ${memo ? `<div class="cl-ctx memo kv-memo"><p>${esc(memo.t)}</p></div>` : ''}
-    ${dups.length ? `<div class="kv-dup"><b>다른 현장 문의${fb(4)}</b><span>${dups.map(d => `${d.site} <em>${fmtReg(d.date)}</em>`).join(' · ')}</span></div>` : ''}
-    <button class="kv-callbtn" data-a="act" data-i="${i}" aria-label="${c.name}에게 전화">${ic('phone-call')}전화${fb(5)}</button>
-  </div>`;
+  const dups = dupOf(c), m0 = c.memos && c.memos[0], v = S.kcard, call = `data-a="act" data-i="${i}" aria-label="${c.name}에게 전화"`, dot = '<i class="kv-dot"></i>';
+  const src = `<span class="kv-src">${platIc(c.plat)}<span>${c.camp}</span></span>`, reg = `<span>${fmtReg(c.reg)} ${c.time}${fb(3)}</span>`, own = `<span class="kv-own">${ownLbl(c.own)}</span>`;
+  const memo = m0 ? `<div class="cl-ctx memo kv-memo"><p>${esc(memoLine(m0))}</p></div>` : '';
+  const dup = dups.length ? `<div class="kv-dup"><b>다른 현장 문의${fb(4)}</b><span>${dups.map(d => `${d.site} <em>${fmtReg(d.date)}</em>`).join(' · ')}</span></div>` : '';
+  const head = (a, r) => `<div class="ka-1"><span class="cl-nm">${c.name}</span>${a}<span class="kv-r">${r}${badgeV4(c.st)}</span></div>`;
+  const body = {
+    K0: () => `${head(src, kInt(c))}<div class="kx-2 kv-meta">${reg}${dot}${own}<span class="kx-ph" style="margin-left:auto">${c.phone}${fb(2)}</span></div>${memo}${dup}<button class="kx-full" ${call}>${ic('phone-call')}전화${fb(5)}</button>`,
+    K1: () => `${head(kInt(c), '')}<div class="kx-2"><div class="kx-main"><span class="kx-ph">${c.phone}${fb(2)}</span><div class="kx-sub">${src}${dot}${own}${dot}${reg}</div></div><button class="kx-round" ${call}>${ic('phone-call')}${fb(5)}</button></div>${memo}${dup}`,
+    K2: () => `${head(src, kInt(c))}${memo}${dup}<div class="kv-2"><div class="kv-meta">${reg}${dot}${own}</div><button class="kv-callbtn" ${call.replace('에게 전화', '에게 전화 ' + c.phone)}>${ic('phone-call')}${c.phone}${fb(2)}${fb(5)}</button></div>`,
+    K3: () => `<div class="kx-kick">${src}<span>${ownLbl(c.own)} · ${fmtReg(c.reg)} ${c.time}${fb(3)}</span></div>${head(kInt(c), '')}${memo}${dup}<div class="kx-2"><span class="kx-ph">${c.phone}${fb(2)}</span><button class="kx-full kx-sm" ${call}>${ic('phone-call')}전화${fb(5)}</button></div>`,
+    K4: () => `${head(`<span class="kx-ph">${c.phone}${fb(2)}</span>`, kInt(c))}<div class="kx-2"><div class="kx-main">${memo}<div class="kx-sub">${src}${dot}${own}${dot}${reg}${dups.length ? `${dot}<b class="kx-dupn">다른 현장 ${dups.length}${fb(4)}</b>` : ''}</div></div><button class="kx-round" ${call}>${ic('phone-call')}${fb(5)}</button></div>`
+  };
+  return `<div class="ka kv ${v.toLowerCase()}"${kOpen(i)}>${(body[v] || body.K2)()}</div>`;
 }
 const fbm = n => `<i class="fbm" aria-label="인터뷰 의견 ${n}">${n}</i>`;
 const fmtFull = d => { const [y, m, dd] = d.split('-'); return `${y}.${+m}.${+dd}`; };
@@ -968,23 +1216,54 @@ const dAt = n => { const d = new Date(TODAY - n * 864e5); return `${d.getFullYea
 const fmtDay = d => { const [y, m, dd] = d.split('-'); return `${+m}월 ${+dd}일 (${'일월화수목금토'[new Date(+y, m - 1, +dd).getDay()]})`; };
 const SUG = {'방문 예약':'방문 전날 문자로 시간과 주차 안내를 다시 보내세요.','가계약':'2차 계약금 일정과 필요한 서류를 문자로 정리해 보내세요.','정계약':'잔금 일정과 서류 수령일을 한 번 더 확인하세요.','재통화':'약속한 시간에 다시 전화하고, 지난 통화에서 물어본 내용을 먼저 답하세요.'};
 // 상세용 가상 기록(통화 · 메모)을 고객마다 한 번 만든다 (날짜 · 시각 순서 및 상태와 일치)
+// 내페이지 활동(가상): 공유받은 내 페이지에서 고객이 한 일. 종류 = 접속 · 링크 · 자료 · 이미지 · 영상 · 상담 신청
+const PG = {visit:'페이지 접속', link:'링크 열람', file:'자료 열람', img:'이미지 열람', video:'영상 시청', ask:'상담 신청'};
+const tAdd = (t, n) => { const [h, m] = t.split(':').map(Number), v = Math.max(0, Math.min(1439, h * 60 + m + n)); return pad2(Math.floor(v / 60)) + ':' + pad2(v % 60); };
+function pageData(c){
+  const e = (date, time, k, t) => ({date, time, k, t});
+  if(c.name === '강도윤') return [e('2026-11-09','21:14','file','계약 준비 서류 안내.pdf'), e('2026-11-09','21:11','visit','윤슬자이 분양 안내 · 3분 체류'), e(c.reg,c.time,'ask','84B 타입 방문 상담 신청'), e(c.reg,tAdd(c.time,-2),'video','단지 소개 영상 · 1분 40초 시청'), e(c.reg,tAdd(c.time,-4),'img','84B 평면도'), e(c.reg,tAdd(c.time,-6),'file','분양가 안내.pdf'), e(c.reg,tAdd(c.time,-9),'visit','윤슬자이 분양 안내 · 9분 체류')];
+  if(c.name === '노은우') return [e(c.reg,c.time,'ask','상담 신청 · 남긴 내용 없음'), e(c.reg,tAdd(c.time,-1),'link','모델하우스 오시는 길'), e(c.reg,tAdd(c.time,-3),'visit','코르디아서울드래곤시티 안내 · 3분 체류')];
+  if(c.name === '이서연'){ c.shared = '2026-11-10'; return [e('2026-11-10','10:31','link','모델하우스 오시는 길'), e('2026-11-10','10:29','file','분양가 안내.pdf'), e('2026-11-10','10:27','visit','윤슬자이 분양 안내 · 5분 체류')]; }
+  // 나머지 고객: 통화 뒤에 공유한 내 페이지를 고객이 열어 본 기록. [날짜, 시각, 종류, 내용]
+  const P = c.camp + ' 분양 안내', M = {
+    '최유진':[['2026-11-10','10:26','file','정계약 준비 서류 안내.pdf'],['2026-11-10','10:24','visit',P + ' · 4분 체류'],['2026-11-09','15:12','img','74A 평면도'],['2026-11-09','15:09','file','고층 잔여 호실표.pdf'],['2026-11-09','15:06','visit',P + ' · 7분 체류']],
+    '정하늘':[['2026-11-09','20:41','video','단지 소개 영상 · 52초 시청'],['2026-11-09','20:38','visit',P + ' · 4분 체류'],['2026-11-08','11:34','file','분양가 · 평형 안내.pdf'],['2026-11-08','11:31','visit',P + ' · 2분 체류']],
+    '윤채원':[['2026-11-03','19:05','visit',P + ' · 1분 체류']],
+    '임준호':[['2026-11-09','22:17','file','수익률 비교표.pdf'],['2026-11-09','22:13','visit',P + ' · 6분 체류'],['2026-11-08','14:58','link','주변 임대 시세 보기'],['2026-11-08','14:55','file','분양가표.pdf'],['2026-11-08','14:51','visit',P + ' · 8분 체류']],
+    '한소희':[['2026-11-09','21:30','img','유상 옵션 안내 이미지'],['2026-11-09','21:27','file','분양가표.pdf'],['2026-11-09','21:25','visit',P + ' · 5분 체류']],
+    '오세훈':[['2026-11-05','12:10','link','모델하우스 오시는 길'],['2026-11-05','12:08','visit',P + ' · 2분 체류']],
+    '서지안':[['2026-11-09','11:40','link','모델하우스 오시는 길'],['2026-11-09','11:38','visit',P + ' · 3분 체류'],['2026-11-06','19:22','video','단지 소개 영상 · 2분 5초 시청'],['2026-11-06','19:18','img','남향 저층 평면도'],['2026-11-06','19:15','visit',P + ' · 9분 체류']],
+    '문태오':[['2026-11-03','10:58','file','분양가 안내.pdf'],['2026-11-03','10:56','visit',P + ' · 2분 체류']],
+    '배수아':[['2026-11-07','20:12','file','중도금 대출 조건표.pdf'],['2026-11-07','20:09','visit',P + ' · 5분 체류'],['2026-11-05','13:31','img','84타입 평면도'],['2026-11-05','13:28','file','분양 일정표.pdf'],['2026-11-05','13:26','visit',P + ' · 4분 체류']]
+  }[c.name];
+  if(M){ c.shared = M[M.length - 1][0]; return M.map(x => e(...x)); }
+  if(c.name === '박지훈') c.shared = '2026-11-10';   // 부재중이라 문자로 링크만 보냄 · 아직 열어 보지 않음
+  return [];
+}
+function pageHTML(c, i){
+  const ev = c.page, op = S.pgOpen === i, at = x => `${fmtReg(x.date)} ${x.time}`;
+  if(!ev.length) return c.shared ? `<p class="d-pg-none"><b>${fmtReg(c.shared)}에 공유했습니다</b>고객이 아직 열어 보지 않았습니다.</p>` : `<p class="d-pg-none">아직 활동이 없습니다. 내페이지를 공유해보세요.</p>`;
+  return `<p class="d-pg-sum"><span>마지막 활동</span><b>${at(ev[0])}</b></p>
+    <ol class="d-pg">${(op ? ev : ev.slice(0, 4)).map(x => `<li class="${x.k}"><i></i><div><b>${PG[x.k]}</b><p>${esc(x.t)}</p></div><time>${at(x)}</time></li>`).join('')}</ol>
+    ${ev.length > 4 ? `<button class="d-mmore" data-a="pg-more" aria-expanded="${op}">${op ? '접기' : `전체 보기 (${ev.length})`}</button>` : ''}`;
+}
 function detData(c, i){
   if(c.calls) return;
   const ask = t => ({t, by:'', date:c.reg, time:c.time, auto:true});
   const D = [
     {calls:[], memos:[ask(c.ctx[1])]},
     {calls:[{date:'2026-11-10',time:'10:15',dur:'2분 10초',miss:false,own:'담당자2',sum:c.ctx[1],sug:'오늘 오후 방문 전 문자로 모델하우스 위치와 주차 안내를 보내세요.',kw:c.kw,n:11}],
-     memos:[{t:'오늘 14시 방문 확정. 모델하우스 위치와 주차 안내 문자를 보냄',by:'담당자2',date:'2026-11-10',time:'10:42'},{t:'분양가와 평형 자료를 문자로 보냄',by:'담당자2',date:'2026-11-10',time:'10:22'},ask('신혼집으로 알아보고 있습니다. 분양가와 방문 예약 문의드립니다')]},
+     memos:[{t:'오늘 14시 방문 확정. 모델하우스 위치와 주차 안내 문자를 보냄',by:'담당자2',date:'2026-11-10',time:'10:42'},{t:'분양가와 평형 자료를 문자로 보냄',by:'담당자2',date:'2026-11-10',time:'10:22'},{t:'◆ 윤슬자이 전화상담 ◆ 상담일자 : 11월10일 10시15분 고객명 : 이서연 번호 : 00-0118 유입경로 : 네이버 광고 거주지역 : 하남 담당자 : 김태윤 원하는타입 : 59A 상담내용 : -신혼집 실거주 목적 -분양가와 중도금 조건 문의 -남향 중층 이상 희망 -오늘 14시 모델하우스 방문 예약, 배우자 동반 예정',by:'회사계정',date:'2026-11-10',time:'10:19'},ask('신혼집으로 알아보고 있습니다. 분양가와 방문 예약 문의드립니다')]},
     {v4Next:['오늘 19:00 재연락','today'],
      calls:[{date:'2026-11-10',time:'11:10',dur:'받지 않음',miss:true,own:'담당자1',sum:'',sug:'',kw:[],n:0},{date:'2026-11-10',time:'09:50',dur:'받지 않음',miss:true,own:'담당자1',sum:'',sug:'',kw:[],n:0}],
      memos:[{t:c.ctx[1],by:'담당자1',date:'2026-11-10',time:'11:12'}]},
     {stAt:{date:'2026-11-09',time:'17:20'},
      calls:[{date:'2026-11-10',time:'10:05',dur:'1분 24초',miss:false,own:'담당자3',sum:'은행 대출 한도 확인 결과를 전해 왔고, 2차 계약금은 11/15(일)에 입금하기로 함.',sug:SUG['가계약'],kw:['대출 한도','2차 계약금'],n:9},{date:'2026-11-09',time:'17:20',dur:'4분 2초',miss:false,own:'담당자3',sum:c.ctx[1],sug:SUG['가계약'],kw:c.kw,n:17},{date:'2026-11-09',time:'14:45',dur:'1분 15초',miss:false,own:'담당자3',sum:'첫 통화. 모델하우스 방문 뒤 고층 잔여 호실과 가계약 절차를 문의함.',sug:'잔여 호실표를 보낸 뒤 가계약 입금 계좌를 안내하세요.',kw:['첫 통화','잔여 호실'],n:8}],
-     memos:[{t:'대출 한도 확인 완료. 2차 계약금 11/15(일) 입금 예정',by:'담당자3',date:'2026-11-10',time:'10:12'},{t:'1차 가계약금 입금 확인. 대출 상담 은행 안내함',by:'담당자3',date:'2026-11-09',time:'17:35'},{t:'고층 잔여 호실표와 분양가 자료를 문자로 보냄',by:'담당자3',date:'2026-11-09',time:'15:00'}]},
+     memos:[{t:'소요한남 계약 관련 확인 통화로, 고객은 은행에서 대출 한도 확인을 마쳤다고 알려 옴. 2차 계약금은 11월 15일 일요일에 입금하기로 했고, 정계약 때 필요한 서류 목록을 문자로 다시 보내 달라고 요청함. 고층 잔여 호실 중 1204호를 그대로 유지하기를 원함.',by:'회사계정',date:'2026-11-10',time:'10:20'},{t:'대출 한도 확인 완료. 2차 계약금 11/15(일) 입금 예정',by:'담당자3',date:'2026-11-10',time:'10:12'},{t:'1차 가계약금 입금 확인. 대출 상담 은행 안내함',by:'담당자3',date:'2026-11-09',time:'17:35'},{t:'■입금보고■ *입금호실 : 101-1204 *계약자명 : 최유진 *입금자명 : 최유진 *입금구분 : 가계약금 *입금금액 : 10,000,000원 *1차 계약금 : 11/9 1000만원 *2차 계약금: 11/15 2500만원 *비 고 : 대출 한도 확인 후 2차 입금',by:'회사계정',date:'2026-11-09',time:'17:28'},{t:'고층 잔여 호실표와 분양가 자료를 문자로 보냄',by:'담당자3',date:'2026-11-09',time:'15:00'},{t:'◆ 소요한남 상담내용 ◆ 방문일자 : 11월9일 13시30분방문 고객명 : 최유진 번호 : 00-0062 방문경로 : 지인소개 방문인원 : 1 거주지역 : 용산 담당자 : 이수진 상담지원 : 팀장 원하는타입 : 74A 상담내용 : -고층 희망 -한강뷰가 좋아서 오심 -1204호 가계약 의사 있음 -대출 한도 확인 후 진행하기로 함',by:'회사계정',date:'2026-11-09',time:'14:20'}]},
     {calls:[{date:'2026-11-10',time:'10:52',dur:'38초',miss:false,own:'담당자1',sum:c.ctx[1],sug:SUG['재통화'],kw:c.kw,n:11},{date:'2026-11-08',time:'11:08',dur:'48초',miss:false,own:'담당자1',sum:'첫 통화. 광고를 보고 문의했고, 평형과 분양가 자료를 문자로 요청함.',sug:'자료를 보낸 뒤 이틀 안에 다시 연락해 방문 의사를 확인하세요.',kw:['첫 통화','자료 요청'],n:6}],
      memos:[{t:'회의 중이라 내일(11/11) 오전 10시에 다시 전화하기로 함',by:'담당자1',date:'2026-11-10',time:'10:55'},{t:'분양가와 평형 자료를 문자로 보냄',by:'담당자1',date:'2026-11-08',time:'11:20'},ask('분양 일정과 평형 자료 부탁드립니다')]},
     {calls:[{date:'2026-11-09',time:'15:10',dur:'1분 3초',miss:false,own:'담당자2',sum:'정계약 진행 일정과 준비 서류를 안내했고, 인감증명서는 다음 주에 제출하기로 함.',sug:SUG['정계약'],kw:['정계약','서류 안내'],n:14},{date:'2026-11-08',time:'14:15',dur:'2분 20초',miss:false,own:'담당자2',sum:'첫 통화. 방문 일정을 잡고 계약 절차와 준비 서류를 문의함.',sug:'방문 일정과 준비 서류 목록을 문자로 보내세요.',kw:['첫 통화','방문 일정'],n:9}],
-     memos:[{t:c.ctx[1],by:'담당자2',date:'2026-11-09',time:'15:25'},{t:'계약 준비 서류 목록을 문자로 안내함',by:'담당자2',date:'2026-11-08',time:'14:30'}]},
+     memos:[{t:c.ctx[1],by:'담당자2',date:'2026-11-09',time:'15:25'},{t:'■입금보고■ *입금호실 : 102-2004 *계약자명 : 강도윤 *입금자명 : 강도윤 *입금구분 : 계약금 *입금금액 : 35,000,000원 *1차 계약금 : 11/8 1000만원 *2차 계약금: 11/9 2500만원 *비 고 : 인감증명서 다음 주 제출 예정',by:'회사계정',date:'2026-11-09',time:'15:18'},{t:'◆ 윤슬자이 상담내용 ◆ 방문일자 :11월9일 11시 고객명 : 강도윤 번호 : 00-0002 방문경로 : 내 페이지 방문인원 : 2명 거주지역 : 미사 담당자 : 김태윤 상담지원 : 팀장 원하는타입 : 84B 동호수 : 102-2004 상담내용 : -2004호 계약서 도장날인, 확정분양가 도장날인 -실거주 -입주 시기와 잔금 일정 안내함',by:'회사계정',date:'2026-11-09',time:'12:51'},{t:'계약 준비 서류 목록을 문자로 안내함',by:'담당자2',date:'2026-11-08',time:'14:30'}]},
     {calls:[{date:'2026-11-04',time:'11:15',dur:'25초',miss:false,own:'담당자4',sum:c.ctx[1],sug:'추가 연락을 원하지 않으므로 안내 문자 발송 대상에서 제외하세요.',kw:c.kw,n:5}],
      memos:[{t:'타 단지 계약 완료로 추가 연락 원치 않음',by:'담당자4',date:'2026-11-04',time:'11:18'}]},
     {calls:[{date:'2026-11-08',time:'14:30',dur:'3분 15초',miss:false,own:'담당자3',sum:c.ctx[1],sug:'보낸 수익률 자료 확인 여부를 묻고 방문 가능한 일정을 제안하세요.',kw:c.kw,n:16},{date:'2026-11-07',time:'16:05',dur:'52초',miss:false,own:'담당자3',sum:'첫 통화. 투자 목적으로 전용 면적별 분양가와 임대 수요를 문의함.',sug:'수익률 비교 자료와 분양가표를 먼저 문자로 보내세요.',kw:['첫 통화','분양가표'],n:7}],
@@ -994,14 +1273,15 @@ function detData(c, i){
     {calls:[{date:'2026-11-04',time:'15:20',dur:'1분 40초',miss:false,own:'담당자4',sum:'문의한 현장이 다른 단지로 확인되어 해당 현장 담당자에게 연결하기로 함.',sug:'이관받은 담당자가 고객에게 안내했는지 확인하세요.',kw:['타현장 문의','담당자 전달'],n:7}],
      memos:[{t:'이관받은 담당자가 고객과 통화한 것을 확인함',by:'담당자4',date:'2026-11-05',time:'10:30'},{t:c.ctx[1],by:'담당자4',date:'2026-11-04',time:'15:28'}]},
     {calls:[{date:'2026-11-06',time:'18:30',dur:'2분 48초',miss:false,own:'담당자1',sum:c.ctx[1],sug:SUG['방문 예약'],kw:c.kw,n:12}],
-     memos:[{t:'방문 전날 보낼 시간 · 주차 안내 문자를 예약해 둠',by:'담당자1',date:'2026-11-09',time:'11:05'},{t:'11/13(금) 18:30 부모님 동반 방문 예약. 주차 2대 안내함',by:'담당자1',date:'2026-11-06',time:'18:40'},{t:'남향 저층 평면도 자료를 문자로 보냄',by:'담당자1',date:'2026-11-06',time:'18:35'}]},
+     memos:[{t:'방문 전날 보낼 시간 · 주차 안내 문자를 예약해 둠',by:'담당자1',date:'2026-11-09',time:'11:05'},{t:'르엘 어퍼하우스 분양 관련 안내 통화로, 남향 저층 세대는 일부 잔여가 있고 고층은 대부분 분양 완료 상태로 안내됨. 고객은 부모님과 함께 거주할 집을 찾고 있어 저층을 선호하며, 우선 평면도 자료 전송을 요청했고 11월 13일 금요일 저녁에 부모님과 함께 방문하겠다고 응답함.',by:'회사계정',date:'2026-11-06',time:'18:52'},{t:'11/13(금) 18:30 부모님 동반 방문 예약. 주차 2대 안내함',by:'담당자1',date:'2026-11-06',time:'18:40'},{t:'남향 저층 평면도 자료를 문자로 보냄',by:'담당자1',date:'2026-11-06',time:'18:35'}]},
     {calls:[{date:'2026-11-03',time:'10:40',dur:'55초',miss:false,own:'담당자3',sum:c.ctx[1],sug:'분양 조건이나 금융 혜택이 바뀔 때 다시 안내할 고객으로 분류해 두세요.',kw:c.kw,n:6}],
      memos:[{t:'예산 차이로 보류. 중도금 조건 변경 시 재안내 희망',by:'담당자3',date:'2026-11-03',time:'10:46'}]},
     {calls:[{date:'2026-11-07',time:'14:15',dur:'1분 52초',miss:false,own:'담당자2',sum:'84타입 입주 예정 시기와 중도금 무이자 여부를 안내했고, 내일 추가 조건을 다시 안내하기로 함.',sug:'약속한 일자에 중도금 대출 조건표를 정리해 다시 안내하세요.',kw:['84타입','중도금 조건'],n:10},{date:'2026-11-05',time:'13:10',dur:'50초',miss:false,own:'담당자2',sum:'첫 통화. 84타입 평면과 모델하우스 위치를 문의함.',sug:'평면도 자료를 문자로 보낸 뒤 다시 연락하세요.',kw:['첫 통화','평면 문의'],n:6}],
-     memos:[{t:'중도금 대출 조건표 확인 후 11/11(수) 다시 안내 예정',by:'담당자2',date:'2026-11-07',time:'14:24'},{t:'84타입 평면도와 분양 일정표를 문자로 보냄',by:'담당자2',date:'2026-11-05',time:'13:20'},ask(c.ctx[1])]},
+     memos:[{t:'덕소역 더블뷰한강 분양 관련 안내 통화로, 84타입은 한강뷰 세대가 대부분 분양 완료 상태이고 일부 중층만 남아 있다고 안내됨. 입주 예정 시기와 중도금 무이자 여부를 설명했으며, 고객은 대출 조건표를 먼저 받아 본 뒤 가족과 상의해 방문 일정을 정하겠다고 응답함.',by:'회사계정',date:'2026-11-07',time:'14:31'},{t:'중도금 대출 조건표 확인 후 11/11(수) 다시 안내 예정',by:'담당자2',date:'2026-11-07',time:'14:24'},{t:'84타입 평면도와 분양 일정표를 문자로 보냄',by:'담당자2',date:'2026-11-05',time:'13:20'},ask(c.ctx[1])]},
     {calls:[], memos:[]}
   ][i];
   Object.assign(c, D);
+  c.page = pageData(c);
 }
 function stampNow(c){
   const date = c.reg > dAt(0) ? c.reg : dAt(0);
@@ -1021,7 +1301,6 @@ function talkHTML(c, x){
   return `<div class="d-talk">
     <h4>상세 요약</h4>
     <ul class="d-tsum">${pts.map((t, j) => `<li><time>${mmss(tot * (j + .6) / (pts.length + .4))}</time><span>${esc(t)}.</span></li>`).join('')}</ul>
-    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/><path d="M12 18v4"/></svg>녹음 내용</h4>
     <ol class="d-chat">${lines.map(([me, t], j) => `<li class="${me ? 'me' : ''}"><small><b>${me ? '담당자' : '고객'}</b>${mmss((tot - 3) * j / (lines.length - 1))}</small><p>${esc(fill(t))}</p></li>`).join('')}</ol>
   </div>`;
 }
@@ -1029,14 +1308,16 @@ function timelineHTML(c){
   const ask = c.memos.find(x => x.auto), nxt = c.v4Next !== undefined ? c.v4Next : c.next;
   const ev = [{date:c.reg, time:c.time, k:'in', l:'유입', t:`${c.plat} · ${c.camp}${ask ? ' · ' + ask.t : ''}`}];
   c.calls.forEach(x => ev.push({date:x.date, time:x.time, k:'call', l:x.miss ? '부재중' : `통화 (${x.dur})`, t:x.miss ? '받지 않음' : (x.sum || ownLbl(x.own))}));
-  c.memos.forEach(x => { if(!x.auto) ev.push({date:x.date, time:x.time, k:'memo', l:'메모', t:x.t}); });
+  c.memos.forEach(x => { if(!x.auto){ const o = memoInfo(x); ev.push({date:x.date, time:x.time, k:'memo', l:o.rows ? MFORM[o.kind].l : '메모', t:o.rows ? memoLine(x).replace(/^\[.+?\]\s*/, '') : x.t}); } });
   const stEv = c.stAt || c.calls[0];
   if(stEv) ev.push({date:stEv.date, time:stEv.time, k:'st', l:'상태 변경', t:c.st});
   ev.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
   let day = '';
-  return `<ol class="d-tl">${nxt ? `<li class="d-day">예정</li><li class="plan"><time>—</time><i></i><div><b>${c.st === '방문 예약' ? '방문 일정' : '다음 할 일'}</b><p>${nxt[0]}</p></div></li>` : ''}${ev.map(e => `${e.date !== day ? `<li class="d-day">${fmtDay(day = e.date)}</li>` : ''}<li class="${e.k}"><time>${e.time}</time><i></i><div><b>${e.l}</b><p>${esc(e.t)}</p></div></li>`).join('')}</ol>`;
+  // 예정 글을 날짜 · 시각 · 할 일로 나눈다 (예: '11/15(일) 2차 계약금', '오늘 14:00 방문')
+  const pl = nxt && /^(오늘|내일|\d+\/\d+\([일월화수목금토]\))\s*(\d{1,2}:\d{2})?\s*(.+)$/.exec(nxt[0]);
+  return `<ol class="d-tl">${nxt ? `<li class="d-day">예정</li><li class="plan"><time>${pl ? pl[1].replace(/\(.\)/, '') : ''}</time><i></i><div><b>${pl ? pl[3] : (c.st === '방문 예약' ? '방문 일정' : '다음 할 일')}</b><p>${pl ? `${pl[1]} ${pl[2] || '· 시간 미정'}` : nxt[0]}</p></div></li>` : ''}${ev.map(e => `${e.date !== day ? `<li class="d-day">${fmtDay(day = e.date)}</li>` : ''}<li class="${e.k}"><time>${e.time}</time><i></i><div><b>${e.l}</b><p>${esc(e.t)}</p></div></li>`).join('')}</ol>`;
 }
-const DTABS = [['info','기본 정보'],['memo','메모','memos'],['call','통화 이력','calls'],['meet','미팅 예약'],['tl','타임라인']];
+const DTABS = [['info','기본 정보'],['memo','메모','memos'],['call','통화 이력','calls'],['meet','미팅 예약'],['tl','타임라인'],['mypage','내페이지','page']];
 const detBody = () => document.querySelector ? document.querySelector('#det .d-body') : null;
 function markTab(){
   const nav = document.querySelector && document.querySelector('#det .d-tabs'); if(!nav) return;
@@ -1060,7 +1341,7 @@ function spyTab(bd){
 function detailHTML(){
   const i = S.detail, c = C[i]; if(!c) return '';
   detData(c, i);
-  const st = stOf(c.st), nxt = c.v4Next !== undefined ? c.v4Next : c.next;
+  const st = stOf(c.st), vis = visitOf(c), nxt = c.v4Next !== undefined ? c.v4Next : c.next;
   const sec = (t, body, o = {}) => `<section class="d-card"${o.id ? ` id="ds-${o.id}"` : ''}><div class="d-h"><h2>${t}${o.n != null ? `<em>${o.n}</em>` : ''}${o.mark || ''}</h2>${o.act || ''}</div>${body}</section>`;
   const call = (x, k) => { const fold = S.fold[i + '-' + k];
     return `<li class="d-call ${x.miss ? 'miss' : ''} ${fold ? 'fold' : ''}">
@@ -1072,9 +1353,18 @@ function detailHTML(){
         ${S.talk[i + '-' + k] ? talkHTML(c, x) : ''}
         <div class="d-call-f"><button data-a="ctalk" data-k="${k}" aria-expanded="${!!S.talk[i + '-' + k]}">${S.talk[i + '-' + k] ? '대화 접기' : `전체 대화 보기 (${x.n}건)`} ${ic(S.talk[i + '-' + k] ? 'keyboard_arrow_up' : 'keyboard_arrow_down')}</button></div>
       </div>`}</li>`; };
-  const memo = (x, k) => `<li data-a="memo-edit" data-k="${k}" role="button" tabindex="0" aria-label="메모 수정·삭제 열기"><p>${esc(x.t)}</p><small>${x.auto ? '<em>인스턴트 폼</em>' : `<span>${ownLbl(x.by)}</span>`}<time>${fmtFull(x.date)} ${x.time}</time></small></li>`;
+  const mK = c.memos.map(memoInfo), mKinds = ['visit','pay','note'].filter(k => mK.some(o => o.kind === k)), mFlt = mKinds.includes(S.memoFlt) ? S.memoFlt : 'all';
+  const mChips = mKinds.length > 1 ? `<div class="d-mchips" role="group" aria-label="메모 종류">${[['all','전체'], ...mKinds.map(k => [k, k === 'note' ? '일반' : MFORM[k].chip])].map(([k, l]) => `<button class="${mFlt === k ? 'on' : ''}" aria-pressed="${mFlt === k}" data-a="memo-flt" data-v="${k}">${l}<span>${k === 'all' ? mK.length : mK.filter(o => o.kind === k).length}</span></button>`).join('')}</div>` : '';
+  const memo = (x, k) => { const o = mK[k]; if(mFlt !== 'all' && o.kind !== mFlt) return '';
+    const op = S.mOpen[i + '-' + k], li = `<li data-a="memo-edit" data-k="${k}" role="button" tabindex="0" aria-label="메모 수정·삭제 열기">`;
+    const foot = `<small>${x.auto ? '<em>인스턴트 폼</em>' : `<span>${ownLbl(x.by)}</span>`}<time>${fmtFull(x.date)} ${x.time}</time></small></li>`;
+    const more = (a, z) => `<button class="d-mmore" data-a="memo-more" data-k="${k}" aria-expanded="${!!op}">${op ? z : a}</button>`;
+    if(o.rows){ const core = o.rows.filter(r => MFORM[o.kind].core.includes(r[0])), part = core.length && core.length < o.rows.length;
+      return `${li}<div class="d-mh"><i class="d-mk ${o.kind}">${MFORM[o.kind].chip}</i><b>${esc(o.title)}</b></div><dl class="d-mkv">${(part && !op ? core : o.rows).map(([a, v]) => `<dt>${esc(a)}</dt><dd>${v.startsWith('-') ? memoItems(v).map(t => `<span class="d-mi">${esc(t)}</span>`).join('') : esc(v)}</dd>`).join('')}</dl>${part ? more(`전체 항목 보기 (${o.rows.length})`, '핵심만 보기') : ''}${foot}`; }
+    const long = x.t.length > 72 || x.t.split('\n').length > 3;
+    return `${li}<p class="${long && !op ? 'clamp' : ''}">${esc(x.t)}</p>${long ? more('더 보기', '접기') : ''}${foot}`; };
   const dups = dupOf(c);
-  return `<div class="r-stop d-top"><button class="cl-ibtn" data-a="det-x" aria-label="목록으로 돌아가기">${ic('arrow_back')}</button><b>고객 상세</b><button class="d-share" data-a="soon" data-t="내페이지 공유는 이번 범위 밖입니다">내페이지 공유</button></div>
+  return `<div class="r-stop d-top"><button class="cl-ibtn" data-a="det-x" aria-label="목록으로 돌아가기">${ic('arrow_back')}</button><b>고객 상세</b><button class="d-share" data-a="share-open">내페이지 공유</button></div>
   <nav class="d-tabs" aria-label="상세 구역 바로 가기">${DTABS.map(([k, l, n]) => `<button class="${S.dtab === k ? 'on' : ''}" data-a="dtab" data-k="${k}">${l}${n && c[n].length ? `<em>${c[n].length}</em>` : ''}</button>`).join('')}</nav>
   <div class="d-body">
     <section class="d-card d-head" id="ds-info">
@@ -1084,18 +1374,18 @@ function detailHTML(){
       <dl class="d-meta"><div><dt>등록</dt><dd>${fmtFull(c.reg)} ${c.time}</dd></div><div><dt>담당자</dt><dd>${ownLbl(c.own)}</dd></div><div><dt>캠페인</dt><dd>${esc(c.camp)}</dd></div><div><dt>유입</dt><dd class="d-plat">${platIc(c.plat)}<span>${c.plat}</span></dd></div>${c.age ? `<div><dt>나이</dt><dd>${esc(c.age)}</dd></div>` : ''}${c.sex ? `<div><dt>성별</dt><dd>${c.sex}</dd></div>` : ''}</dl>
     </section>
     ${dups.length ? sec('다른 현장 문의', `<ul class="d-dup">${dups.map(d => `<li><div><b>${d.site}</b><time>${fmtFull(d.date)} 문의</time></div><p>${d.note}</p><small>당시 ${d.st} · ${ownLbl(d.own)}</small></li>`).join('')}</ul><button class="d-more" data-a="soon" data-t="그 현장의 상담 기록 열기는 이번 범위 밖입니다">그 현장 상담 기록 보기</button>`, {n:dups.length, mark:fbm(4)}) : ''}
-    ${sec('메모', c.memos.length ? `<ul class="d-memos">${c.memos.map(memo).join('')}</ul>` : `<p class="d-none">등록된 메모가 없습니다</p>`, {n:c.memos.length, mark:fbm(7) + fbm(8), id:'memo', act:`<button class="d-add" data-a="memo-open">${ic('add')}메모 추가</button>`})}
+    ${sec('메모', c.memos.length ? `${mChips}<ul class="d-memos">${c.memos.map(memo).join('')}</ul>` : `<p class="d-none">등록된 메모가 없습니다</p>`, {n:c.memos.length, mark:fbm(7) + fbm(8), id:'memo', act:`<button class="d-add" data-a="memo-open" aria-label="메모 추가">추가</button>`})}
     ${sec('통화 이력', c.calls.length ? `<ul class="d-calls">${c.calls.map(call).join('')}</ul>` : `<p class="d-none">아직 통화 기록이 없습니다</p>`, {n:c.calls.length, id:'call'})}
-    ${sec('미팅 예약', nxt ? `<div class="d-meet">${ic('calendar_month')}<span>${nxt[0]}</span></div>` : `<p class="d-none">방문 일정이 없습니다</p>`, {act:`<button class="d-add" data-a="soon" data-t="일정 추가는 이번 범위 밖입니다">${ic('add')}일정 추가</button>`, id:'meet'})}
+    ${sec('미팅 예약', vis ? `<div class="d-meet v" data-a="visit-edit" role="button" tabindex="0" aria-label="방문 일정 수정·삭제 열기">${ic('calendar_month')}<div><b>${vRange(vis)}</b><small>방문 · 담당 ${ownLbl(vis.own)}</small>${vis.memo ? `<p>${esc(vis.memo)}</p>` : ''}</div></div>` : nxt ? `<div class="d-meet">${ic('calendar_month')}<span>${nxt[0]}</span></div>` : `<p class="d-none">방문 일정이 없습니다</p>`, {act:`<button class="d-add" data-a="${vis ? 'visit-edit' : 'visit-open'}" aria-label="${vis ? '일정 수정' : '일정 추가'}">${vis ? '수정' : '추가'}</button>`, id:'meet'})}
     ${sec('활동 타임라인', timelineHTML(c), {id:'tl'})}
-    ${sec('내페이지 활동', c.plat === '내 페이지' ? `<div class="d-mypage-on"><b>분양 안내 내페이지를 열람하고 상담을 신청했습니다</b><small>${fmtFull(c.reg)} ${c.time} · 평면도 · 분양가 안내 확인</small></div>` : `<p class="d-mypage-empty">아직 활동이 없습니다. 내페이지를 공유해보세요.</p>`, {id:'mypage'})}
+    ${sec('내페이지 활동', pageHTML(c, i), {n:c.page.length || null, id:'mypage'})}
   </div>`;
 }
 function drawDetail(reset){
   const on = S.ver === 'v4' && S.detail != null;
   const q = () => document.querySelector ? document.querySelector('#det .d-body') : null;
   const old = q(), y = old && !reset ? old.scrollTop : 0;
-  app.classList.toggle('det', on);
+  OV().classList.toggle('det', on);
   $('det').innerHTML = on ? detailHTML() : '';
   const nb = q(); if(nb) nb.scrollTop = y;
   drawOpt();
@@ -1136,14 +1426,49 @@ function condHTML(){
     : `<span class="cl-count">${S.st} <b>${cnt(S.st === '전체' ? TOTAL : stOf(S.st).n)}</b>명</span>`;
   return left + `<button class="r-sortbtn" data-a="sortsheet" aria-label="정렬 바꾸기, 지금 ${S.sort}">${ic('swap_vert')}${S.sort}</button>`;
 }
+// 고객 등록: 저장할 수 있는지(이름 · 연락처 숫자 10 ~ 11자리 · 현장), 같은 번호의 기존 고객
+const addDigits = () => (S.add.phone || '').replace(/\D/g, '');
+const addOk = () => !!(S.add.name.trim() && /^\d{10,11}$/.test(addDigits()) && S.add.camp);
+const addDup = () => { const d = addDigits(); return d.length >= 10 ? C.find(c => c.phone.replace(/\D/g, '') === d) : null; };
+function addDupHTML(){
+  const c = addDup(); if(!c) return '';
+  return `<div class="a-dup" role="alert"><b>이미 등록된 번호입니다</b><p>${esc(c.name)} · ${c.camp} · ${c.st} · 담당 ${ownLbl(c.own)}</p><div><button data-a="add-dup-memo">재문의로 기록</button><button class="pri" data-a="add-dup-open">기존 고객 열기</button></div></div>`;
+}
+function addSheetHTML(){
+  const d = S.add, pick = (key, vals) => `<div class="e-pick">${vals.map(([v, l]) => `<button class="${d[key] === v ? 'on' : ''}" aria-pressed="${d[key] === v}" data-a="add-pick" data-key="${key}" data-v="${v}">${l}</button>`).join('')}</div>`;
+  return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>고객 등록</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body e-form a-form">
+      <label><span>이름<em>*</em></span><input data-af="name" value="${esc(d.name)}" placeholder="고객 이름 입력" autocomplete="off"></label>
+      <label><span>연락처<em>*</em></span><input data-af="phone" value="${esc(d.phone)}" placeholder="010-0000-0000" inputmode="tel" autocomplete="off"></label>
+      <div id="addDup">${addDupHTML()}</div>
+      <label><span>캠페인(현장)<em>*</em></span><select data-af="camp" class="${d.camp ? '' : 'none'}" aria-label="캠페인(현장)"><option value="">현장 선택</option>${CAMPS.map(k => `<option${d.camp === k ? ' selected' : ''}>${k}</option>`).join('')}</select></label>
+      ${d.camp ? `<div class="e-f"><span>담당자</span>${pick('own', OWNERS.slice(1).map(o => [o, ownLbl(o)]))}</div>
+      <div class="e-f"><span>상태</span>${pick('st', ALL.map(x => [x.k, x.k]))}</div>`
+      : `<p class="a-lock">현장을 고르면 담당자와 상태를 정할 수 있습니다.</p>`}
+      <button class="a-more" data-a="add-more" aria-expanded="${d.more}"><span>추가 정보<small>나이 · 성별 · 관심도 · 메모</small></span>${ic(d.more ? 'keyboard_arrow_up' : 'keyboard_arrow_down')}</button>
+      ${d.more ? `<div class="e-row"><label><span>나이</span><input data-af="age" value="${esc(d.age)}" inputmode="numeric" maxlength="3" placeholder="입력 안 함" autocomplete="off"></label><div></div></div>
+      <div class="e-f"><span>성별</span>${pick('sex', [['남', '남'], ['여', '여']])}</div>
+      <div class="e-f"><span>관심도</span>${pick('int', INTS.map(v => [v, v]))}</div>
+      <label><span>메모</span><textarea data-af="memo" rows="3" placeholder="메모 입력 (선택)">${esc(d.memo)}</textarea></label>` : ''}
+    </div>
+    <div class="t-foot"><button class="cl-apply" id="addSave" data-a="add-save"${addOk() && !addDup() ? '' : ' disabled'}>저장</button></div>`;
+}
+function addRedraw(){
+  const q = () => document.querySelector('#sheet .cl-sh-body'), bd = q(), y = bd ? bd.scrollTop : 0;
+  $('sheet').innerHTML = sheetHTML(); const nb = q(); if(nb) nb.scrollTop = y;
+}
 function sheetHTML(){
-  if(S.sheet === 'dmore'){
-    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>고객 관리</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
-    <div class="cl-sh-body d-mmenu">
-      <button class="d-mitem" data-a="dedit">${ic('pencil')}기본 정보 수정</button>
-      <button class="d-mitem del" data-a="cdel">${ic('trash')}고객 삭제</button>
+  if(S.sheet === 'add') return addSheetHTML();
+  if(S.sheet === 'share'){ const c = C[S.detail];
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>내페이지 공유</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body s-share">
+      <p><b>${esc(c.name)}</b> 고객에게 보낼 링크입니다.</p>
+      <div class="s-link"><span>${shareUrl(c)}</span><button class="${S.copied ? 'done' : ''}" data-a="share-copy">${S.copied ? '복사됨' : '복사'}</button></div>
+      <div class="s-send">${['카카오톡','문자','다른 앱'].map(t => `<button data-a="share-send" data-v="${t}">${t}</button>`).join('')}</div>
+      <p class="e-note">이 고객이 언제 열어봤는지 기록이 남습니다.</p>
     </div>`;
   }
+  if(S.sheet === 'visit') return visitSheetHTML();
   if(S.sheet === 'status'){
     const opt = (k, n, c, w) => `<button class="c2-sopt ${w || ''} ${S.st === k ? 'on' : ''}" data-a="st" data-k="${k}">${c ? `<i style="background:${c}"></i>` : ''}${k}<b>${n}</b></button>`;
     return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>상태</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
@@ -1162,14 +1487,21 @@ function sheetHTML(){
       <div class="e-f"><span>담당자</span>${pick('own', OWNERS.slice(1).map(o => [o, ownLbl(o)]))}</div>
       <div class="e-f"><span>상태</span>${pick('st', ALL.map(x => [x.k, x.k]))}</div>
       <p class="e-note">저장을 눌러야 바뀝니다. 닫으면 바꾼 내용은 버려집니다.</p>
+      <div class="e-del">${S.delAsk ? `<div class="e-del-ask" role="alertdialog" aria-label="고객 삭제 확인"><i class="e-del-ic">${ic('trash')}</i><b>${esc(C[S.detail].name)} 고객을 삭제할까요?</b><p>휴지통으로 옮겨지며,<br>휴지통에서 다시 복원할 수 있습니다.</p><div><button data-a="cdel-no">취소</button><button class="del" data-a="cdel">삭제</button></div></div>` : `<button class="e-del-btn" data-a="cdel-ask">${ic('trash')}고객 삭제</button><p class="e-del-hint">삭제한 고객은 휴지통에서 복원할 수 있습니다</p>`}</div>
     </div>
     <div class="t-foot"><button class="cl-apply" data-a="esave">저장</button></div>`;
   }
   if(S.sheet === 'memo'){
     return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>${S.memoEdit != null ? '메모 수정' : '메모 추가'}</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
     <div class="cl-sh-body m-form">
-      <textarea id="memoIn" rows="5" placeholder="통화 내용 · 고객 성향 · 다음에 할 일을 적어 주세요">${esc(S.memoDraft)}</textarea>
-      <div class="m-chips">${['통화 내용','고객 성향','다음 할 일','대신 통화'].map(t => `<button data-a="memo-chip" data-v="${t}">+ ${t}</button>`).join('')}</div>
+      ${S.memoEdit == null ? `<div class="fb-seg m-seg" role="group" aria-label="메모 양식">${[['free','자유 메모'],['visit','상담내용'],['pay','입금보고']].map(([k, l]) => `<button class="${S.memoKind === k ? 'on' : ''}" aria-pressed="${S.memoKind === k}" data-a="memo-kind" data-v="${k}">${l}</button>`).join('')}</div>` : ''}
+      ${S.memoKind === 'free' ? `<div class="m-chips">${['통화 내용','고객 성향','다음 할 일','대신 통화'].map(t => `<button data-a="memo-chip" data-v="${t}">+ ${t}</button>`).join('')}</div>
+      <textarea id="memoIn" rows="5" placeholder="예) 84타입에 관심. 주말 방문을 원해서&#10;금요일 오후에 다시 연락하기로 함">${esc(S.memoDraft)}</textarea>`
+      : `<p class="e-note">${S.memoKind === 'visit' ? '고객명 · 담당자는 자동으로 들어갑니다. 아는 항목만 적어도 됩니다.' : '아는 항목만 적어도 됩니다. 비워 둔 항목은 메모에 나오지 않습니다.'}</p>
+      <div class="m-fields e-form">${MFORM[S.memoKind].f.map(([k, ph, t, w]) => { const v = S.memoForm[k] || '';
+        return Array.isArray(t) ? `<div class="e-f wide"><span>${k}</span><div class="e-pick">${t.map(o => `<button class="${v === o ? 'on' : ''}" aria-pressed="${v === o}" data-a="memo-fset" data-k="${k}" data-v="${o}">${o}</button>`).join('')}</div></div>`
+          : t === 1 ? `<label class="wide"><span>${k}</span><textarea data-mf="${k}" rows="4" placeholder="${ph}">${esc(v)}</textarea></label>`
+          : `<label${w ? ' class="wide"' : ''}><span>${k}</span><input data-mf="${k}" value="${esc(v)}" placeholder="${ph}" autocomplete="off"></label>`; }).join('')}</div>`}
     </div>
     <div class="t-foot${S.memoEdit != null ? ' m-foot' : ''}">${S.memoEdit != null ? `<button class="m-del" data-a="memo-del">${ic('trash')}삭제</button>` : ''}<button class="cl-apply" data-a="memo-save">저장</button></div>`;
   }
@@ -1182,6 +1514,47 @@ function sheetHTML(){
     const opt = (k, label, n) => `<button class="c2-sopt wide ${S.camp === k ? 'on' : ''}" data-a="camp" data-k="${k}">${label}<b>${n}</b></button>`;
     return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>캠페인</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
     <div class="cl-sh-body"><div class="c2-sgrid">${opt('전체', '전체 캠페인', TOTAL)}${CAMPS.map(k => opt(k, k, fmt(CAMP_N[k]))).join('')}</div></div>`;
+  }
+  if(S.sheet === 'cal-vac'){
+    const m = S.calMonth || 11, d = S.calDay || calDay0(m), vr = S.vacReason || '휴가', vm = S.vacMemo || '';
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>휴가/부재 등록</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body e-form a-form m-fields">
+      <label class="wide"><span>매니저<em>*</em></span><select aria-label="매니저">${OWNERS.slice(1).map(o => `<option${o===ME?' selected':''}>${o}</option>`).join('')}</select></label>
+      <label><span>시작일<em>*</em></span><input value="2026-${pad2(m)}-${pad2(d)}"></label>
+      <label><span>종료일<em>*</em></span><input value="2026-${pad2(m)}-${pad2(d)}"></label>
+      <div class="e-f wide"><span>사유<em>*</em></span><div class="e-pick">${['휴가','병가','외근','퇴사'].map(s => `<button class="${vr===s?'on':''}" data-a="vac-reason" data-v="${s}" type="button">${s}</button>`).join('')}</div></div>
+      <div class="e-f wide" style="margin-bottom:14px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;font-weight:600;color:var(--cl-ink3)">메모 <small style="font-weight:500;color:#9ca3af">(선택 · 인계사항)</small></span></div>
+        <div class="m-chips" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">${['대체 담당자','인계 메모','오전 반차','오후 반차'].map(t => `<button type="button" data-a="vac-chip" data-v="${t}" style="height:30px;padding:0 10px;border-radius:15px;background:var(--cl-bg);font-size:12.5px;font-weight:600;color:var(--cl-ink2)">+ ${t}</button>`).join('')}</div>
+        <textarea id="vacMemo" rows="3" placeholder="예) 대체 담당자: 김태윤 · 예약 고객 2건 사전 안내 완료">${esc(vm)}</textarea>
+      </div>
+      <p class="e-note wide" style="background:var(--cl-brand-soft);color:var(--cl-brand);padding:11px 13px;border-radius:12px;margin:0;font-size:12.5px;line-height:1.45;font-weight:600">등록 즉시 해당 매니저의 배정 가중치가 자동 0 처리됩니다. 종료일이 지나면 자동 복원됩니다.</p>
+    </div>
+    <div class="t-foot"><button class="cl-apply" data-a="cal-vac-save">등록</button></div>`;
+  }
+  if(S.sheet === 'cal-add'){
+    const m = S.calMonth || 11, d = S.calDay || calDay0(m);
+    const ev = S.calEdit, tm = x => { const g = /(오전|오후) (\d+):(\d+)/.exec(x || ''); return g ? ((+g[2] % 12) + (g[1] === '오후' ? 12 : 0)) * 60 + +g[3] : 0; };
+    const t0 = ev ? tm(ev.t.split(' - ')[0]) : 840, t1 = ev ? tm(ev.t.split(' - ')[1]) : 900;
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>${ev ? '방문 예약 수정' : '방문 예약 등록'}</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body e-form a-form m-fields">
+      <label class="wide"><span>고객<em>*</em></span><input placeholder="이름 또는 전화번호 검색" value="${ev ? esc(ev.memo.split(' — ')[0]) : ''}"></label>
+      <label class="wide"><span>날짜<em>*</em></span><input value="2026-${pad2(m)}-${pad2(d)}"></label>
+      <label><span>시작</span><select aria-label="시작 시간">${V_TIMES.filter(t => t < V_END).map(t => `<option value="${t}"${t===t0?' selected':''}>${vT(t)}</option>`).join('')}</select></label>
+      <label><span>종료</span><select aria-label="종료 시간">${V_TIMES.filter(t => t > 540).map(t => `<option value="${t}"${t===t1?' selected':''}>${vT(t)}</option>`).join('')}</select></label>
+      <div class="e-f wide"><span>담당자</span><div class="e-pick">${OWNERS.map((o,i) => `<button class="${i===0?'on':''}" type="button">${ownLbl(o)}</button>`).join('')}</div></div>
+      <label class="wide"><span>예약 참고 메모</span><textarea rows="3" placeholder="방문 시 참고할 내용">${ev ? esc(ev.note || '') : ''}</textarea></label>
+    </div>
+    <div class="t-foot"><button class="cl-apply" data-a="cal-add-save">저장</button></div>`;
+  }
+  if(S.sheet === 'cal-month'){
+    const cur = S.calMonth || 11;
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>2026년</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body"><div class="c2-sgrid" style="grid-template-columns:repeat(3,1fr)">${Array.from({length:12}, (_, i) => `<button class="c2-sopt ${cur === i + 1 ? 'on' : ''}" data-a="cal-m" data-v="${i + 1}" style="justify-content:center">${i + 1}월</button>`).join('')}</div></div>`;
+  }
+  if(S.sheet === 'cal-del'){
+    const ev = S.calDel;
+    return `<i class="c2-grip"></i><div class="cl-sh-body"><div class="e-del-ask" role="alertdialog" aria-label="일정 삭제 확인" style="margin:8px 0 4px"><i class="e-del-ic">${ic('trash')}</i><b>${esc(ev.memo.split(' — ')[0])} 고객의 방문 일정을 삭제할까요?</b><p>삭제한 일정은 되돌릴 수 없습니다.</p><div><button data-a="sheet-x">취소</button><button class="del" data-a="cal-del-ok">삭제</button></div></div></div>`;
   }
   if(S.sheet === 'sort'){
     return `${tHead('정렬')}
@@ -1248,7 +1621,7 @@ function sBodyHTML(){
   return `<div class="r-cnt"><b>${res.length}</b>명 · 모든 상태에서 찾음</div><div class="cl-list">${res.map(([c, i, m]) => sRow(c, i, q, m)).join('')}</div>`;
 }
 function drawSearch(full){
-  app.classList.toggle('srch', S.search);
+  OV().classList.toggle('srch', S.search);
   if(!S.search) return;
   if(full) $('srch').innerHTML = `<div class="r-stop"><button class="cl-ibtn" data-a="search-off" aria-label="목록으로 돌아가기">${ic('arrow_back')}</button><label class="c2-search">${ic('search')}<input id="sq" value="${esc(S.sq)}" placeholder="이름 · 전화 · 현장 · 메모 · 통화 내용" enterkeyhint="search" autocomplete="off"><button class="c2-clr" data-a="sq-clr" aria-label="검색어 지우기">${ic('close')}</button></label></div><div class="r-scopes" id="sscope"></div><div class="r-sbody" id="sbody"></div>`;
   $('sscope').innerHTML = SCOPES.map(v => `<button class="r-scope ${S.scope === v ? 'on' : ''}" data-a="scope" data-v="${v}">${v}</button>`).join('');
@@ -1259,23 +1632,228 @@ function addRecent(){ const q = S.sq.trim(); if(q) S.recent = [q, ...S.recent.fi
 function build(){
   app.innerHTML = `<div class="cl-sb"><span>9:41</span><span>${ic('signal_cellular_alt')}${ic('wifi')}${ic('battery_full')}</span></div>
   <div class="cl-scroll" id="scroll"><div id="top"></div><div class="r-sticky"><div class="c2-st" id="strow"></div><div class="r-fbar" id="fbar"></div></div><div class="c2-cond" id="cond"></div><div id="list"></div></div>
-  <button class="cl-fab" data-a="soon" data-t="고객 등록은 이번 범위 밖입니다" aria-label="고객 등록">${ic('add')}</button>
-  <nav class="cl-tab">${[['home','홈'],['group','고객'],['calendar_month','일정'],['groups','멤버'],['menu','메뉴']].map(([i, l]) => `<button class="${l === '고객' ? 'on' : ''}" data-a="soon" data-t="하단 탭 이동은 이번 범위 밖입니다">${ic(i)}${l}</button>`).join('')}</nav>
+  <button class="cl-fab" data-a="add-open" aria-label="고객 등록">${ic('add')}</button>
+  <nav class="cl-tab">${[['home','홈'],['group','고객'],['calendar_month','일정'],['groups','멤버'],['menu','메뉴']].map(([i, l]) => `<button class="${(S.navTab||'고객') === l ? 'on' : ''}" ${(l==='고객'||l==='일정')?`data-a="nav-tab" data-v="${l}"`:`data-a="soon" data-t="하단 탭 이동은 이번 범위 밖입니다"`}>${ic(i)}${l}</button>`).join('')}</nav>
   <div class="r-srch" id="srch"></div><div class="r-det" id="det"></div>
   <div class="cl-dim" data-a="sheet-x"></div><div class="cl-sheet" id="sheet"></div><div class="cl-toast" id="toast"></div>`;
   draw();
   let y0 = 0; const sc = document.getElementById('scroll'), fab = app.querySelector('.cl-fab');
-  sc.addEventListener('scroll', () => { const y = sc.scrollTop; fab.classList.toggle('hide', y > y0 && y > 40); y0 = y; }, {passive:true});
+  // v4에서는 스크롤해도 등록 버튼을 그대로 둔다 (v3는 내려갈 때 숨김)
+  sc.addEventListener('scroll', () => { const y = sc.scrollTop; fab.classList.toggle('hide', S.ver !== 'v4' && y > y0 && y > 40); y0 = y; }, {passive:true});
 }
 const $ = id => document.getElementById(id);
+const CAL_K = [
+  {dot:'rgb(236,178,46)', badge:'#ECB22E', bg:'#FEF3C7', fg:'#92400E', bd:'#F59E0B'},
+  {dot:'rgb(14,165,233)', badge:'#0EA5E9', bg:'#E0F2FE', fg:'#075985', bd:'#0EA5E9'},
+  {dot:'rgb(139,92,246)', badge:'#8B5CF6', bg:'#F3E8FF', fg:'#6B21A8', bd:'#8B5CF6'},
+  {dot:'rgb(34,197,94)',  badge:'#22C55E', bg:'#DCFCE7', fg:'#166534', bd:'#22C55E'}
+];
+const CAL_NAMES = ['윤아름','남궁민','홍다인','위하준','박정훈','노은채','허준영','김민서','이준호','정유나','최도현','강지훈','한소희','송민호','유재석','서예지','장동건','오세린','문태준','배소율'];
+const CAL_TOPICS = [['대출 상담',0],['법인/세무 상담',1],['입주 일정 상담',0],['주말 방문 상담',0],['투자 상담',1],['계약서 작성',3],['2차 방문 상담',0],['가계약 상담',2],['청약 상담',0],['정계약 작성',2],['모델하우스 방문',1],['잔금 일정 협의',3]];
+const CAL_SITES = ['윤슬자이','코르디아서울드래곤시티','파크사이드','PH1603','한강뷰 센트럴'];
+const CAL_MEMOS = ['시간 확인 필요, 방문 전날 문자 안내','84B 타입 위주로 보고 싶어 함 · 주차 안내 필요','배우자와 함께 방문 예정','','중도금 대출 조건 먼저 설명','계약금 준비 여부 확인','',  '지난 통화에서 고층 선호 · 남향 문의'];
+const CAL_WHO = ['담당자 1','담당자 2','담당자 3'];
+const CAL_SLOTS = [[10,0],[11,0],[13,0],[14,0],[15,30],[16,0],[17,0]];
+const calT = (h, mi) => `${h < 12 ? '오전' : '오후'} ${(h + 11) % 12 + 1}:${pad2(mi)}`;
+const calRange = e => { const eh = e.h + Math.floor((e.mi + e.dur) / 60), em = (e.mi + e.dur) % 60; return `${calT(e.h, e.mi)} - ${calT(eh, em)}`; };
+function calEvData(m){
+  const out = {}, dim = new Date(2026, m, 0).getDate();
+  const fixed = {1:[[11,0,0,0,0],[16,0,1,1,1],[13,0,2,2,1],[11,0,3,3,1]]};
+  for(let d = 1; d <= dim; d++){
+    if(m === 11 && d <= 4){
+      const f = [[11,0,0,0,0],[16,0,1,1,1],[13,0,2,2,1],[11,0,3,3,1]][d-1];
+      const [h, mi, ni, ti, wi] = [f[0], f[1], [0,1,2,3][d-1], [0,1,2,3][d-1], f[4]];
+      const who = d === 1 ? 0 : 1;
+      const ci = (d * 3 + m) % C.length;
+      out[d] = [{h, mi, dur:60, ci, name:C[ci].name, title:CAL_TOPICS[ti][0], who:CAL_WHO[who], k:[0,1,0,0][d-1], p:3, site:CAL_SITES[d % 5], memo:CAL_MEMOS[d % CAL_MEMOS.length]}];
+      continue;
+    }
+    const r = (m * 37 + d * 17) % 11, n = r < 4 ? 1 : r < 7 ? 2 : r === 7 ? 3 : 0;
+    if(!n) continue;
+    out[d] = Array.from({length:n}, (_, i) => {
+      const q = m * 53 + d * 7 + i * 5, sl = CAL_SLOTS[(q + i * 2) % CAL_SLOTS.length], tp = CAL_TOPICS[q % CAL_TOPICS.length];
+      const ci = (q * 3) % C.length;
+      return {h:sl[0], mi:sl[1], dur:60, ci, name:C[ci].name, title:tp[0], who:CAL_WHO[q % 3], k:tp[1], p:1 + q % 3, site:CAL_SITES[q % 5], memo:CAL_MEMOS[(q + 3) % CAL_MEMOS.length]};
+    }).sort((a, b) => a.h * 60 + a.mi - b.h * 60 - b.mi);
+  }
+  return out;
+}
+function calGrid(m){
+  const first = new Date(2026, m - 1, 1).getDay(), dim = new Date(2026, m, 0).getDate(), prev = new Date(2026, m - 1, 0).getDate();
+  const total = Math.ceil((first + dim) / 7) * 7, days = [], other = [];
+  for(let i = 0; i < total; i++){ const n = i - first + 1; if(n < 1){ days.push(prev + n); other.push(true); } else if(n > dim){ days.push(n - dim); other.push(true); } else { days.push(n); other.push(false); } }
+  return {days, other};
+}
+const calDow = (m, d) => ['일','월','화','수','목','금','토'][new Date(2026, m - 1, d).getDay()];
+const calDay0 = m => m === 10 ? 28 : 1;
+function calHead(m){
+  const ar = (v, ico, lb) => `<button type="button" ${v < 1 || v > 12 ? 'disabled' : `data-a="cal-m" data-v="${v}"`} aria-label="${lb}" style="flex:none;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--cl-line);border-radius:15px;background:#fff;color:${v < 1 || v > 12 ? '#d1d5db' : '#4b5563'};cursor:pointer;padding:0"><svg class="cl-ic" style="font-size:18px;color:inherit"><use href="#i-${ico}"/></svg></button>`;
+  const L = 'chevron_left', R = 'chevron_right';
+  const title = `<button type="button" data-a="cal-month-open" aria-label="월 선택" style="display:inline-flex;align-items:center;gap:5px;padding:0 4px 0 2px;border:0;background:transparent;font-size:19px;font-weight:800;letter-spacing:-.4px;color:#111418;cursor:pointer;white-space:nowrap">2026. ${pad2(m)}.<svg class="cl-ic" style="font-size:18px;color:#4b5563"><use href="#i-keyboard_arrow_down"/></svg></button>`;
+  const today = `<button type="button" data-a="cal-today" style="flex:none;height:30px;padding:0 11px;margin-left:2px;border-radius:15px;border:1px solid var(--cl-line);background:#fff;color:var(--cl-ink);font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap">오늘</button>`;
+  return `<div class="c2-head" style="background:#fff;gap:4px">${title}${ar(m - 1, L, '이전 달')}${ar(m + 1, R, '다음 달')}${today}<span style="flex:1"></span><button class="cl-ibtn" style="width:36px" data-a="search-on" aria-label="일정·고객 검색">${ic('search')}</button><button class="cl-ibtn" style="width:36px" data-a="soon" data-t="메뉴는 이번 범위 밖입니다" aria-label="메뉴">${ic('menu')}</button></div>`;
+}
+function calTools(){
+  const b = 'height:32px;padding:0 13px;border-radius:16px;border:1px solid var(--cl-line);background:#fff;color:var(--cl-ink);font-size:12.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:2px', ownV = fchipLabel('own'), on = ';border-color:var(--cl-brand);color:var(--cl-brand)';
+  return `<div style="display:flex;align-items:center;gap:6px;padding:4px 6px 8px"><button type="button" data-a="campsheet" style="${b}${S.camp !== '전체' ? on : ''}">${S.camp === '전체' ? '캠페인' : S.camp}${ic('keyboard_arrow_down')}</button><button type="button" data-a="fsheet" data-key="own" style="${b}${ownV ? on : ''}">${ownV || '담당자'}${ic('keyboard_arrow_down')}</button><span style="flex:1"></span>${calVac()}</div>`;
+}
+const calVac = () => `<button type="button" data-a="cal-vac" style="height:32px;padding:0 4px;border:0;background:transparent;color:var(--cl-brand);font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap">휴가 등록</button>`;
+function drawCalendar(){
+  const m = S.calMonth || 11;
+  const d = S.calDay || calDay0(m);
+  const ED = calEvData(m), dots = {};
+  Object.keys(ED).forEach(k => dots[k] = [...new Set(ED[k].map(e => CAL_K[e.k].dot))]);
+  const evs = (ED[d] || []).map(e => ({t:calRange(e), title:e.title, p:e.p, memo:`${e.name} — ${e.title}`, nm:e.name, ci:e.ci, ttl:e.title, date:`2026-${pad2(m)}-${pad2(d)}`, h:e.h, mi:e.mi, dur:e.dur, site:e.site, note:e.memo, who:e.who, camp:'기본 캠페인', badge:CAL_K[e.k].badge}));
+  S.calEvs = evs;
+  const G = calGrid(m), gridDays = G.days;
+  const weeks = Array.from({length:gridDays.length/7}, (_, w) => w).map(w => {
+    const row = gridDays.slice(w*7, w*7+7).map((n, dow) => {
+      const idx = w*7 + dow;
+      const other = G.other[idx];
+      const isToday = m === 11 && !other && n === 17;
+      const sel = !other && n === d;
+      const ds = !other && dots[n] ? dots[n] : [];
+      const col = other ? '#c4c9d4' : isToday ? '#ffffff' : sel ? '#111418' : dow === 0 ? '#e5484d' : dow === 6 ? '#2563eb' : '#111418';
+      const circleBg = isToday ? '#111418' : sel ? '#e5e7eb' : 'transparent';
+      const fw = isToday || sel ? 700 : 500;
+      return `<button type="button" ${other?'disabled':`data-a="cal-day" data-v="${n}"`} style="height:46px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:3px;gap:3px;border:0;background:transparent;cursor:${other?'default':'pointer'}"><span style="display:flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:9999px;font-size:15px;font-weight:${fw};color:${col};background:${circleBg}">${n}</span>${ds.length?`<div style="display:flex;align-items:center;gap:3px">${ds.map(c=>`<span style="width:4.5px;height:4.5px;border-radius:999px;background:${c}"></span>`).join('')}</div>`:`<span style="height:4.5px"></span>`}</button>`;
+    }).join('');
+    return `<div style="display:grid;grid-template-columns:repeat(7,1fr)">${row}</div>`;
+  }).join('');
+  const dowName = calDow(m, d);
+  const editSvg = `<svg width="15" height="15" viewBox="0 0 256 256"><path fill="currentColor" d="m227.31 73.37l-44.68-44.69a16 16 0 0 0-22.63 0L36.69 152A15.86 15.86 0 0 0 32 163.31V208a16 16 0 0 0 16 16h44.69a15.86 15.86 0 0 0 11.31-4.69L227.31 96a16 16 0 0 0 0-22.63M92.69 208H48v-44.69l88-88L180.69 120ZM192 108.68L147.31 64l24-24L216 84.68Z"/></svg>`;
+  const delSvg = `<svg width="15" height="15" viewBox="0 0 256 256"><path fill="currentColor" d="M216 48h-40v-8a24 24 0 0 0-24-24h-48a24 24 0 0 0-24 24v8H40a8 8 0 0 0 0 16h8v144a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16V64h8a8 8 0 0 0 0-16M96 40a8 8 0 0 1 8-8h48a8 8 0 0 1 8 8v8H96Zm96 168H64V64h128Zm-80-104v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0m48 0v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0"/></svg>`;
+  const dn = ic('keyboard_arrow_down'), ownV = fchipLabel('own');
+  $('top').innerHTML = calHead(m);
+  $('strow').innerHTML = '';
+  $('fbar').innerHTML = '';
+  $('cond').innerHTML = '';
+  $('list').innerHTML = `<div style="background:#fff;padding:0 10px 10px">
+    ${calTools()}
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:2px">
+      <div style="padding:6px 0;text-align:center;font-size:12px;font-weight:600;color:#e5484d">일</div>
+      <div style="padding:6px 0;text-align:center;font-size:12px;font-weight:600;color:#6b7280">월</div>
+      <div style="padding:6px 0;text-align:center;font-size:12px;font-weight:600;color:#6b7280">화</div>
+      <div style="padding:6px 0;text-align:center;font-size:12px;font-weight:600;color:#6b7280">수</div>
+      <div style="padding:6px 0;text-align:center;font-size:12px;font-weight:600;color:#6b7280">목</div>
+      <div style="padding:6px 0;text-align:center;font-size:12px;font-weight:600;color:#6b7280">금</div>
+      <div style="padding:6px 0;text-align:center;font-size:12px;font-weight:600;color:#2563eb">토</div>
+    </div>
+    ${weeks}
+  </div>
+  <section style="background:var(--cl-bg);border-top:1px solid #e5e7eb;padding:16px 12px 110px;min-height:320px">
+    <header style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+      <div style="display:flex;align-items:baseline;gap:8px"><h2 style="margin:0;font-size:16px;font-weight:800;color:#111418">${m}월 ${d}일 ${dowName}요일</h2>${(() => { const f = [S.camp !== '전체' ? S.camp : '', fchipLabel('own')].filter(Boolean).join(' · '); return f ? `<span style="font-size:12px;color:#9ca3af;font-weight:500">${esc(f)}</span>` : ''; })()}</div>
+      <span style="font-size:12.5px;font-weight:700;color:#6b7280">${evs.length}건</span>
+    </header>
+    ${evs.length ? `<div style="display:flex;flex-direction:column;gap:10px">${evs.map((e,i)=>`<div class="ka kv k2" style="background:#fff"${kOpen(e.ci)}>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px"><span style="font-size:12.5px;font-weight:600;color:#6b7280;font-variant-numeric:tabular-nums">${e.t}</span><button type="button" data-a="cal-ev-edit" data-i="${i}" style="height:34px;padding:0 14px;margin:-4px -4px -4px 0;border:0;border-radius:10px;background:var(--cl-bg);color:var(--cl-ink);font-size:13.5px;font-weight:700;cursor:pointer">수정</button></div>
+      <div class="ka-1"><span class="cl-nm">${esc(e.nm)}</span><span class="kv-src"><svg width="12" height="12" viewBox="0 0 256 256" aria-hidden="true"><path fill="#E5484D" d="M128 16a88.1 88.1 0 0 0-88 88c0 75.3 80 132.17 83.41 134.55a8 8 0 0 0 9.18 0C136 236.17 216 179.3 216 104a88.1 88.1 0 0 0-88-88m0 56a32 32 0 1 1-32 32a32 32 0 0 1 32-32"/></svg><span>${esc(e.site)}</span></span><span class="kv-r" style="gap:2px">${'<i style="width:5px;height:5px;border-radius:3px;background:#ef4444"></i>'.repeat(e.p)}</span></div>
+      <div class="cl-ctx memo kv-memo"><p${e.note ? '' : ' style="color:#9ca3af"'}>${e.note ? esc(e.note) : '최근 메모가 없습니다'}</p></div>
+      <div class="kv-2"><div class="kv-meta"><span class="kv-own">${esc(e.who)}</span></div></div>
+    </div>`).join('')}</div>` : `<div style="padding:32px 16px;text-align:center">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#6b7280">등록된 일정이 없습니다</p>
+      <p style="margin:4px 0 0;font-size:12px;color:#9ca3af">우측 하단 + 버튼을 눌러 방문 예약을 추가하세요</p>
+    </div>`}
+  </section>`;
+}
+function drawCalendarB(){
+  const host = $('appCalB'); if(!host) return;
+  const keepOv = [$('srch'), $('det'), document.querySelector('.cl-dim'), $('sheet'), $('toast')].filter(n => n && n.parentNode === host);
+  keepOv.forEach(n => n.remove());
+  const m = S.calMonth || 11, d = S.calDay || calDay0(m);
+  const ED = calEvData(m), cellMap = {};
+  Object.keys(ED).forEach(k => cellMap[k] = ED[k].map(e => { const c = CAL_K[e.k]; return {l:e.name, t:calT(e.h, e.mi), bg:c.bg, fg:c.fg, bd:c.bd, full:`${calT(e.h, e.mi)} · ${e.name} — ${e.title} (${e.who})`}; }));
+  const G = calGrid(m), gridDays = G.days;
+  const weeks = Array.from({length:gridDays.length/7}, (_, w) => w).map(w => {
+    const row = gridDays.slice(w*7, w*7+7).map((n, dow) => {
+      const idx = w*7 + dow;
+      const other = G.other[idx];
+      const isToday = m === 11 && !other && n === 17;
+      const sel = !other && n === d;
+      const items = !other && cellMap[n] ? cellMap[n] : [];
+      const col = other ? '#b0b6c1' : isToday ? '#fff' : dow === 0 ? '#e5484d' : dow === 6 ? '#0284c7' : '#111418';
+      return `<button type="button" ${other?'disabled':`data-a="cal-day" data-v="${n}"`} style="min-height:74px;min-width:0;display:flex;flex-direction:column;align-items:stretch;padding:4px 2px 3px;border:0;${dow<6?'border-right:1px solid #f1f5f9;':''}background:${sel?'#f1f2f5':'transparent'};cursor:${other?'default':'pointer'};text-align:left">
+        <div style="display:flex;justify-content:center;margin-bottom:3px"><span style="width:20px;height:20px;border-radius:999px;display:grid;place-items:center;font-size:11.5px;font-weight:${isToday||sel?700:500};color:${col};background:${isToday?'var(--cl-brand)':'transparent'}">${n}</span></div>
+        <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+          ${items.slice(0, 2).map(it => `<span style="display:flex;align-items:center;gap:3px;min-width:0;font-size:10px;font-weight:600;line-height:1.2;color:#374151;white-space:nowrap;overflow:hidden"><i style="flex:none;width:5px;height:5px;border-radius:3px;background:${it.bd}"></i><span style="overflow:hidden;text-overflow:ellipsis">${it.l}</span></span>`).join('')}
+          ${items.length > 2 ? `<span style="font-size:9.5px;font-weight:700;color:#6b7280;padding-left:3px">+${items.length - 2}건</span>` : ''}
+        </div>
+      </button>`;
+    }).join('');
+    return `<div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));${w<gridDays.length/7-1?'border-bottom:1px solid #f1f5f9':''}">${row}</div>`;
+  }).join('');
+  const dowName = calDow(m, d);
+  const selItems = cellMap[d] || [];
+  const dn = ic('keyboard_arrow_down'), ownV = fchipLabel('own');
+  host.innerHTML = `<div class="cl-sb" style="background:#fff"><span>9:41</span><span>${ic('signal_cellular_alt')}${ic('wifi')}${ic('battery_full')}</span></div>
+  <div class="cl-scroll" style="padding-bottom:96px">
+    ${calHead(m)}
+    <section style="padding:2px 12px 16px">
+      <div style="padding:2px 0 0">${calTools()}</div>
+      <div style="border-radius:8px;border:1px solid #eceef2;background:#fff;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 3px rgba(17,20,24,.03)">
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);border-bottom:1px solid #f1f5f9">
+          <div style="padding:4px 0;text-align:center;font-size:11px;font-weight:600;color:#e5484d">일</div>
+          <div style="padding:4px 0;text-align:center;font-size:11px;font-weight:600;color:#525252">월</div>
+          <div style="padding:4px 0;text-align:center;font-size:11px;font-weight:600;color:#525252">화</div>
+          <div style="padding:4px 0;text-align:center;font-size:11px;font-weight:600;color:#525252">수</div>
+          <div style="padding:4px 0;text-align:center;font-size:11px;font-weight:600;color:#525252">목</div>
+          <div style="padding:4px 0;text-align:center;font-size:11px;font-weight:600;color:#525252">금</div>
+          <div style="padding:4px 0;text-align:center;font-size:11px;font-weight:600;color:#0284c7">토</div>
+        </div>
+        ${weeks}
+      </div>
+      <div style="background:#fff;border-radius:8px;border:1px solid #eceef2;padding:11px 13px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:${selItems.length?'8px':'0'}">
+          <b style="font-size:13.5px;color:#111418">${m}월 ${d}일 ${dowName}요일</b>
+          <span style="font-size:12px;font-weight:700;color:${selItems.length?'var(--cl-brand)':'#9ca3af'}">${selItems.length ? selItems.length + '건' : '일정 없음'}</span>
+        </div>
+        ${selItems.map(it => `<div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid #f1f5f9;font-size:12px;color:#374151"><i style="width:6px;height:6px;border-radius:3px;background:${it.bd};flex:none"></i><span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600">${it.full}</span></div>`).join('')}
+      </div>
+    </section>
+  </div>
+  <button class="cl-fab" data-a="add-open" aria-label="일정 등록">${ic('add')}</button>
+  <nav class="cl-tab">${[['home','홈'],['group','고객'],['calendar_month','일정'],['groups','멤버'],['menu','메뉴']].map(([i, l]) => `<button class="${l === '일정' ? 'on' : ''}" ${(l==='고객'||l==='일정')?`data-a="nav-tab" data-v="${l}"`:`data-a="soon" data-t="하단 탭 이동은 이번 범위 밖입니다"`}>${ic(i)}${l}</button>`).join('')}</nav>`;
+  keepOv.forEach(n => host.appendChild(n));
+}
 function draw(){
+  if(S.navTab !== '일정') S.host = 'A';
+  placeOv();
+  const fab = app.querySelector('.cl-fab'), strow = $('strow'), fbp = $('fbPanel'), colB = $('colCalB');
+  if(fab) fab.setAttribute('aria-label', S.navTab === '일정' ? '일정 등록' : '고객 등록');
+  if(strow) strow.style.display = S.navTab === '일정' ? 'none' : '';
+  if(fbp) fbp.hidden = S.ver !== 'v4';
+  const colA = $('colNew'), calB = S.navTab === '일정' && S.calVer === 'B';
+  if(colB) colB.hidden = !calB;
+  if(colA) colA.hidden = calB;
+  if(S.navTab === '일정') S.host = calB ? 'B' : (S.host || 'A');
+  placeOv();
+  drawOpt();
+  app.querySelectorAll('.cl-tab button').forEach(btn => {
+    const l = btn.textContent.trim();
+    btn.classList.toggle('on', (S.navTab || '고객') === l);
+  });
+  if(S.navTab === '일정'){
+    $('capNew').innerHTML = `시안 A (상단 초슬림 선택 + 하단 카드형) <small>달력은 날짜 선택 역할로 최소화하고 하단 상세 카드를 넓게 표시</small>`;
+    drawCalendar();
+    drawCalendarB();
+    { const sb = app.querySelector('.cl-sb'); if(sb) sb.style.background = '#fff'; }
+    $('sheet').innerHTML = sheetHTML();
+    OV().classList.toggle('sheet', !!S.sheet);
+    app.classList.toggle('hide-fb', !S.fbShow);
+    drawSearch(true);
+    drawDetail();
+    return;
+  }
+  $('capNew').innerHTML = S.ver === 'v4' ? `인터뷰 반영안 v4 <small>전화번호 · 등록 시각 · 다른 현장 문의 표시 · 캠페인과 담당자 기억</small>` : `기존 시안 v3 <small>가상 데이터 · 직접 눌러 볼 수 있음</small>`;
+  { const sb = app.querySelector('.cl-sb'); if(sb) sb.style.background = ''; }
   $('top').innerHTML = topHTML();
   $('strow').innerHTML = stHTML();
   $('fbar').innerHTML = fbarHTML();
   $('cond').innerHTML = condHTML();
   $('list').innerHTML = listHTML();
   $('sheet').innerHTML = sheetHTML();
-  app.classList.toggle('sheet', !!S.sheet);
+  OV().classList.toggle('sheet', !!S.sheet);
   app.classList.toggle('hide-fb', !S.fbShow);
   const sc = app.querySelector('.c2-st-scroll'), on = sc.querySelector('.on');   // 고른 상태가 화면 밖으로 밀리지 않게
   if(on) sc.scrollLeft = on.offsetLeft - (sc.clientWidth - on.offsetWidth) / 2;
@@ -1287,7 +1865,8 @@ let tt; function toast(m){ const t = $('toast'); t.textContent = m; t.classList.
 function reload(){ S.loading = true; draw(); setTimeout(() => { S.loading = false; draw(); }, 450); }
 
 /* ── 동작 ── */
-app.addEventListener('click', e => {
+const both = (t, f, c) => { app.addEventListener(t, f, c); const bh = $('appCalB'); if(bh) bh.addEventListener(t, f, c); };
+const onAppClick = e => {
   const b = e.target.closest('[data-a]'); if(!b) return;
   const a = b.dataset.a, v = b.dataset.v;
   if(a === 'st'){ S.st = b.dataset.k; S.sheet = false; S.draft = null; $('scroll').scrollTop = 0; reload(); }
@@ -1296,7 +1875,7 @@ app.addEventListener('click', e => {
   else if(a === 'camp'){ S.camp = b.dataset.k; S.sheet = false; S.draft = null; $('scroll').scrollTop = 0; reload(); }
   else if(a === 'clr'){ e.preventDefault(); S.q = ''; draw(); }
   else if(a === 'sheet' || a === 'fsheet'){ S.fsec = a === 'fsheet' ? b.dataset.key : null; S.draft = {f:JSON.parse(JSON.stringify(S.f)), sort:S.sort}; S.sheet = true; draw(); }
-  else if(a === 'sheet-x'){ S.sheet = false; S.draft = null; S.memoEdit = null; S.edit = null; app.classList.remove('sheet'); }
+  else if(a === 'sheet-x'){ S.sheet = false; S.add = null; S.delAsk = false; S.draft = null; S.memoEdit = null; S.edit = null; S.calEdit = null; S.calDel = null; S.calVisitCi = null; OV().classList.remove('sheet'); }
   else if(a === 'datepick'){ S.f.date = v; S.sheet = false; S.draft = null; if(v === '직접설정') toast('날짜 고르기는 이번 범위 밖이라 전체로 계산합니다'); $('scroll').scrollTop = 0; draw(); }
   else if(a === 'sortsheet'){ S.sheet = 'sort'; draw(); }
   else if(a === 'sortpick'){ S.sort = v; S.sheet = false; S.draft = null; $('scroll').scrollTop = 0; draw(); }
@@ -1314,25 +1893,63 @@ app.addEventListener('click', e => {
   else if(a === 'rc-rm'){ S.recent = S.recent.filter(x => x !== v); drawSearch(); }
   else if(a === 'rc-clear'){ S.recent = []; drawSearch(); }
   else if(a === 'act'){ e.stopPropagation(); const c = C[+b.dataset.i]; toast(`${c.name} · 전화 (시안에서는 걸리지 않습니다)`); }
-  else if(a === 'open'){ if(S.search) addRecent(); if(S.ver === 'v4'){ S.detail = +b.dataset.i; S.dtab = 'info'; S.dTarget = null; S.dlock = 0; S.memoDraft = ''; drawDetail(true); } else toast(`${C[+b.dataset.i].name} 고객 상세는 v4에서 볼 수 있습니다`); }
+  else if(a === 'open'){ if(S.search) addRecent(); if(S.ver === 'v4'){ S.detail = +b.dataset.i; S.dtab = 'info'; S.dTarget = null; S.dlock = 0; S.memoDraft = ''; S.memoFlt = 'all'; drawDetail(true); } else toast(`${C[+b.dataset.i].name} 고객 상세는 v4에서 볼 수 있습니다`); }
   else if(a === 'det-x'){ S.detail = null; draw(); }
   else if(a === 'ctalk'){ const k = S.detail + '-' + b.dataset.k; S.talk[k] = !S.talk[k]; drawDetail(); }
   else if(a === 'cfold'){ const k = S.detail + '-' + b.dataset.k; S.fold[k] = !S.fold[k]; drawDetail(); }
-  else if(a === 'memo-open' || a === 'memo-edit'){ S.memoEdit = a === 'memo-edit' ? +b.dataset.k : null; S.memoDraft = S.memoEdit != null ? C[S.detail].memos[S.memoEdit].t : ''; S.sheet = 'memo'; draw(); const t = $('memoIn'); if(t && t.focus) setTimeout(() => t.focus(), 280); }
+  else if(a === 'memo-open' || a === 'memo-edit'){ const c = C[S.detail]; S.memoEdit = a === 'memo-edit' ? +b.dataset.k : null;
+    const x = S.memoEdit != null ? c.memos[S.memoEdit] : null, o = x ? memoInfo(x) : {kind:'note'};
+    S.memoKind = o.rows ? o.kind : 'free'; S.memoTitle = o.title || ''; S.memoForm = o.rows ? Object.fromEntries(o.rows.map(([k, v]) => [k, v.startsWith('-') ? memoItems(v).join('\n') : v])) : {};
+    S.memoDraft = x && !o.rows ? x.t : ''; S.sheet = 'memo'; draw(); const t = $('memoIn'); if(t && t.focus) setTimeout(() => t.focus(), 280); }
+  else if(a === 'memo-kind'){ S.memoKind = b.dataset.v; if(S.memoKind === 'pay' && S.memoForm['계약자명'] == null) S.memoForm['계약자명'] = C[S.detail].name; $('sheet').innerHTML = sheetHTML(); }
+  else if(a === 'memo-fset'){ const k = b.dataset.k, bd = document.querySelector('#sheet .cl-sh-body'), y = bd ? bd.scrollTop : 0; S.memoForm[k] = S.memoForm[k] === b.dataset.v ? '' : b.dataset.v; $('sheet').innerHTML = sheetHTML(); const nb = document.querySelector('#sheet .cl-sh-body'); if(nb) nb.scrollTop = y; }
+  else if(a === 'visit-open' || a === 'visit-edit'){ const c = C[S.detail], cur = visitOf(c); S.visitEdit = a === 'visit-edit' && !!cur;
+    S.visit = S.visitEdit ? {...cur} : {date:'', start:14 * 60, dur:60, own:c.own, memo:''}; S.sheet = 'visit'; draw(); visitCenter(); }
+  else if(a === 'visit-cal'){ try{ if(b.showPicker) b.showPicker(); }catch(err){} }
+  else if(a === 'visit-day' || a === 'visit-own'){ const v = S.visit, x = b.dataset.v;
+    if(a === 'visit-day') v.date = x; else v.own = x;
+    visitRedraw(); }
+  else if(a === 'visit-chip'){ const v = S.visit; v.memo += (v.memo && !v.memo.endsWith('\n') ? '\n' : '') + b.dataset.v + ': '; visitRedraw(); const t = $('visitMemo'); if(t && t.focus){ t.focus(); if(t.setSelectionRange) t.setSelectionRange(t.value.length, t.value.length); } }
+  else if(a === 'visit-save'){ const c = C[S.calVisitCi != null ? S.calVisitCi : S.detail], v = S.visit; if(!v.date){ toast('날짜를 골라 주세요'); return; }
+    c.visit = {...v, memo:v.memo.trim()}; c.v4Next = [`${vDate(v.date)} ${pad2(Math.floor(v.start / 60))}:${pad2(v.start % 60)} 방문`, v.date === vDay(0) ? 'today' : ''];
+    const ed = S.visitEdit; S.calVisitCi = null; S.sheet = false; S.visit = null; S.visitEdit = false; draw(); toast(ed ? '방문 일정이 수정되었습니다.' : '방문 일정이 등록되었습니다.'); }
+  else if(a === 'visit-del'){ const c = C[S.calVisitCi != null ? S.calVisitCi : S.detail]; S.calVisitCi = null; c.visit = null; c.v4Next = null; S.sheet = false; S.visit = null; S.visitEdit = false; draw(); toast('방문 일정이 삭제되었습니다.'); }
+  else if(a === 'add-open'){
+    if(S.navTab === '일정'){ S.sheet = 'cal-add'; draw(); return; }
+    if(S.ver !== 'v4'){ toast('고객 등록은 v4에서 볼 수 있습니다'); return; }
+    S.add = {name:'', phone:'', camp:S.camp !== '전체' && CAMPS.includes(S.camp) ? S.camp : '', own:ME, st:'미지정', age:'', sex:'', int:'', memo:'', more:true}; S.sheet = 'add'; draw(); }
+  else if(a === 'add-pick'){ const k = b.dataset.key, x = b.dataset.v; S.add[k] = (k === 'sex' || k === 'int') && S.add[k] === x ? '' : x; addRedraw(); }
+  else if(a === 'add-more'){ S.add.more = !S.add.more; addRedraw(); }
+  else if(a === 'add-save'){ const d = S.add; if(!addOk() || addDup()) return;
+    const date = dAt(0), time = `${pad2(TODAY.getHours())}:${pad2(TODAY.getMinutes() + 30)}`, memo = d.memo.trim();
+    C.push({name:d.name.trim(), st:d.st || '미지정', camp:d.camp, own:d.own, plat:'직접', reg:date, int:d.int, age:d.age, sex:d.sex, phone:d.phone, time, dup:[],
+      ctx:['memo', memo], kw:[], next:null, last:'', lastTs:0, rec:0, act:A_CALL, calls:[], memos:memo ? [{t:memo, by:ME, date, time}] : [], page:[]});
+    S.sheet = false; S.add = null; draw(); toast('고객이 등록되었습니다.'); }
+  else if(a === 'add-dup-open'){ const i = C.indexOf(addDup()); S.sheet = false; S.add = null; S.detail = i; S.dtab = 'info'; S.dTarget = null; S.dlock = 0; S.memoFlt = 'all'; draw(); drawDetail(true); }
+  else if(a === 'add-dup-memo'){ const c = addDup(), d = S.add, st = stampNow(c), ex = [d.age && d.age + '세', d.sex, d.int && '관심도 ' + d.int].filter(Boolean).join(' · ');
+    c.memos.unshift({t:['재문의' + (d.name.trim() && d.name.trim() !== c.name ? ` (접수명 ${d.name.trim()})` : ''), ex, d.memo.trim()].filter(Boolean).join('\n'), by:ME, date:st.date, time:st.time});
+    S.sheet = false; S.add = null; draw(); toast('재문의가 기록되었습니다.'); }
+  else if(a === 'share-open'){ S.copied = false; S.sheet = 'share'; draw(); }
+  else if(a === 'share-copy' || a === 'share-send'){ const c = C[S.detail]; c.shared = vDay(0);
+    if(a === 'share-copy'){ S.copied = true; $('sheet').innerHTML = sheetHTML(); drawDetail(); toast('링크가 복사되었습니다'); }
+    else { S.sheet = false; draw(); toast(`${b.dataset.v}${b.dataset.v === '다른 앱' ? '으로' : '로'} 보낼 화면이 열립니다`); } }
+  else if(a === 'pg-more'){ S.pgOpen = S.pgOpen === S.detail ? null : S.detail; drawDetail(); }
+  else if(a === 'memo-flt'){ S.memoFlt = b.dataset.v; drawDetail(); }
+  else if(a === 'memo-more'){ const k = S.detail + '-' + b.dataset.k; S.mOpen[k] = !S.mOpen[k]; drawDetail(); }
   else if(a === 'memo-chip'){ S.memoDraft += (S.memoDraft && !S.memoDraft.endsWith('\n') ? '\n' : '') + v + ': '; $('sheet').innerHTML = sheetHTML(); const t = $('memoIn'); if(t && t.focus){ t.focus(); if(t.setSelectionRange) t.setSelectionRange(t.value.length, t.value.length); } }
-  else if(a === 'memo-save'){ const t = S.memoDraft.trim(); if(!t){ toast('메모 내용을 적어 주세요'); return; }
-    const c = C[S.detail], m = c.memos, ed = S.memoEdit != null;
+  else if(a === 'memo-save'){ const c = C[S.detail], m = c.memos, ed = S.memoEdit != null, free = S.memoKind === 'free';
+    const t = (free ? S.memoDraft : memoBuild(c)).trim(); if(!t){ toast(free ? '메모 내용을 적어 주세요' : '항목을 한 가지 이상 적어 주세요'); return; }
     if(ed){ if(c.ctx[0] === 'memo' && c.ctx[1] === m[S.memoEdit].t) c.ctx[1] = t; m[S.memoEdit].t = t; }
     else { const st = stampNow(c); m.unshift({t, by:ME, date:st.date, time:st.time}); }
-    S.sheet = false; S.memoEdit = null; S.memoDraft = ''; draw(); toast(ed ? '메모를 고쳤습니다' : '메모를 추가했습니다'); }
-  else if(a === 'memo-del'){ if(S.memoEdit == null) return; C[S.detail].memos.splice(S.memoEdit, 1); S.sheet = false; S.memoEdit = null; S.memoDraft = ''; draw(); toast('메모를 지웠습니다'); }
+    S.sheet = false; S.memoEdit = null; S.memoDraft = ''; S.memoKind = 'free'; S.memoForm = {}; S.mOpen = {}; if(!ed) S.memoFlt = 'all'; draw(); toast(ed ? '메모를 고쳤습니다' : '메모를 추가했습니다'); }
+  else if(a === 'memo-del'){ if(S.memoEdit == null) return; C[S.detail].memos.splice(S.memoEdit, 1); S.sheet = false; S.memoEdit = null; S.memoDraft = ''; S.memoKind = 'free'; S.memoForm = {}; S.mOpen = {}; draw(); toast('메모를 지웠습니다'); }
   else if(a === 'dtab'){ const bd = detBody(), el = $('ds-' + b.dataset.k); if(bd && el){ const max = Math.max(0, bd.scrollHeight - bd.clientHeight), top = b.dataset.k === 'info' ? 0 : Math.min(max, Math.max(0, el.offsetTop - bd.offsetTop - 12)); S.dtab = b.dataset.k; S.dTarget = top; S.dlock = Date.now() + 900; if(bd.scrollTo) bd.scrollTo({top, behavior:'smooth'}); else bd.scrollTop = top; markTab(); } }
-  else if(a === 'dmore'){ S.sheet = 'dmore'; draw(); }
+  else if(a === 'cdel-ask' || a === 'cdel-no'){ S.delAsk = a === 'cdel-ask'; $('sheet').innerHTML = sheetHTML(); const bd = document.querySelector('#sheet .cl-sh-body'); if(bd) bd.scrollTop = bd.scrollHeight; }
   else if(a === 'cdel'){
     if(C.length > 1){
       const nm = C[S.detail].name;
       C.splice(S.detail, 1);
-      S.sheet = false;
+      S.sheet = false; S.edit = null; S.delAsk = false;
       S.detail = null;
       draw();
       toast(nm + ' 고객을 삭제했습니다');
@@ -1341,7 +1958,7 @@ app.addEventListener('click', e => {
     }
   }
   else if(a === 'dst'){ S.sheet = 'dstatus'; draw(); }
-  else if(a === 'dedit'){ const c = C[S.detail]; S.edit = {name:c.name, phone:c.phone, age:c.age || '', sex:c.sex || '', reg:c.reg, own:c.own, int:c.int, st:c.st}; S.sheet = 'dedit'; draw(); }
+  else if(a === 'dedit'){ const c = C[S.detail]; S.edit = {name:c.name, phone:c.phone, age:c.age || '', sex:c.sex || '', reg:c.reg, own:c.own, int:c.int, st:c.st}; S.delAsk = false; S.sheet = 'dedit'; draw(); }
   else if(a === 'epick'){ S.edit[b.dataset.key] = v; $('sheet').innerHTML = sheetHTML(); }
   else if(a === 'esave'){ const c = C[S.detail], d = S.edit, age = String(d.age).trim(); if(!d.name.trim() || d.phone.replace(/\D/g, '').length < 9){ toast('이름과 전화번호를 확인해 주세요'); return; }
     if(age && !/^\d{1,3}$/.test(age)){ toast('나이는 숫자로 적어 주세요'); return; }
@@ -1352,20 +1969,75 @@ app.addEventListener('click', e => {
     if(stChg) c.stAt = stampNow(c);
     S.sheet = false; S.edit = null; draw(); toast('기본 정보를 저장했습니다'); }
   else if(a === 'dst-pick'){ const c = C[S.detail]; if(c.st !== b.dataset.k){ c.st = b.dataset.k; c.stAt = stampNow(c); } S.sheet = false; draw(); toast(`상태를 「${c.st}」(으)로 바꿨습니다`); }
+  else if(a === 'nav-tab'){ S.navTab = b.dataset.v; draw(); }
+  else if(a === 'cal-day'){ S.calDay = +b.dataset.v; draw(); }
+  else if(a === 'cal-m'){ S.calMonth = +b.dataset.v; S.calDay = calDay0(+b.dataset.v); S.sheet = false; draw(); }
+  else if(a === 'cal-month-open'){ S.sheet = 'cal-month'; draw(); }
+  else if(a === 'cal-today'){ S.calMonth = 11; S.calDay = 17; draw(); }
+  else if(a === 'cal-vac'){ S.sheet = 'cal-vac'; draw(); }
+  else if(a === 'cal-add'){ S.calEdit = null; S.sheet = 'cal-add'; draw(); }
+  else if(a === 'cal-ev-edit'){ const ev = (S.calEvs || [])[+b.dataset.i]; S.calVisitCi = ev.ci; S.visitEdit = true; S.visit = {date:ev.date, start:ev.h * 60 + ev.mi, dur:ev.dur, own:C[ev.ci].own, memo:ev.note || ''}; S.sheet = 'visit'; draw(); visitCenter(); }
+  else if(a === 'cal-ev-del'){ S.calDel = (S.calEvs || [])[+b.dataset.i]; S.sheet = 'cal-del'; draw(); }
+  else if(a === 'cal-del-ok'){ S.sheet = false; S.calDel = null; draw(); toast('방문 일정이 삭제되었습니다.'); }
+  else if(a === 'vac-reason'){ S.vacReason = b.dataset.v; $('sheet').innerHTML = sheetHTML(); }
+  else if(a === 'vac-chip'){ const ta = $('vacMemo'); if(ta) S.vacMemo = ta.value; S.vacMemo = (S.vacMemo ? S.vacMemo.replace(/\s+$/, '') + '\n' : '') + b.dataset.v + ': '; $('sheet').innerHTML = sheetHTML(); const nta = $('vacMemo'); if(nta) nta.focus(); }
+  else if(a === 'cal-vac-save'){ S.sheet = false; S.vacMemo = ''; draw(); toast('휴가/부재가 등록되었습니다.'); }
+  else if(a === 'cal-add-save'){ S.sheet = false; draw(); toast(S.calEdit ? '방문 예약이 수정되었습니다.' : '방문 예약이 등록되었습니다.'); S.calEdit = null; }
   else if(a === 'soon'){ toast(b.dataset.t); }
+};
+app.addEventListener('click', e => { if(e.isTrusted){ S.host = 'A'; placeOv(); } onAppClick(e); });
+$('appCalB').addEventListener('click', e => {
+  if(e.target.closest('#sheet,#det,#srch,.cl-dim,#toast')) return onAppClick(e);
+  const b = e.target.closest('[data-a]'); if(!b) return;
+  S.host = 'B'; placeOv();
+  const clone = app.querySelector(`[data-a="${b.dataset.a}"]${b.dataset.v ? `[data-v="${b.dataset.v}"]` : ''}${b.dataset.key ? `[data-key="${b.dataset.key}"]` : ''}`);
+  if(clone) clone.click();
+  else {
+    const a = b.dataset.a;
+    if(a === 'cal-day'){ S.calDay = +b.dataset.v; draw(); }
+    else if(a === 'cal-m'){ S.calMonth = +b.dataset.v; S.calDay = calDay0(+b.dataset.v); S.sheet = false; draw(); }
+    else if(a === 'cal-month-open'){ S.sheet = 'cal-month'; draw(); }
+  else if(a === 'cal-today'){ S.calMonth = 11; S.calDay = 17; draw(); }
+    else if(a === 'nav-tab'){ S.navTab = b.dataset.v; draw(); }
+  }
 });
-app.addEventListener('keydown', e => { if((e.key === 'Enter' || e.key === ' ') && e.target.dataset.a === 'open'){ e.preventDefault(); e.target.click(); }
+both('keydown', e => { if((e.key === 'Enter' || e.key === ' ') && e.target.dataset.a === 'open'){ e.preventDefault(); e.target.click(); }
   else if(e.key === 'Enter' && e.target.id === 'sq'){ addRecent(); e.target.blur(); } });
 $('fbPanel').addEventListener('click', e => {
   const fbBtn = e.target.closest('[data-fb]');
   if(fbBtn){ S.fbShow = fbBtn.dataset.fb === 'on'; drawOpt(); return; }
+  const cvb = e.target.closest('[data-cv]');
+  if(cvb){ S.calVer = cvb.dataset.cv; S.host = S.calVer === 'B' ? 'B' : 'A'; S.sheet = false; S.search = false; S.detail = null; draw(); return; }
+  const kc = e.target.closest('[data-kc]');
+  if(kc){ S.kcard = kc.dataset.kc; $('list').innerHTML = listHTML(); drawSearch(true); drawOpt(); return; }
   const b = e.target.closest('[data-opt]'); if(!b) return;
   S.dupView = b.dataset.opt; $('list').innerHTML = listHTML(); drawDetail();
 });
-app.addEventListener('scroll', e => { const t = e.target; if(t && t.classList && t.classList.contains('d-body')) spyTab(t); }, true);
-const onField = e => { if(e.target.id === 'sq'){ S.sq = e.target.value; drawSearch(); } else if(e.target.dataset.ef && S.edit){ S.edit[e.target.dataset.ef] = e.target.value; } else if(e.target.id === 'memoIn'){ S.memoDraft = e.target.value; } };
-app.addEventListener('input', onField);
-app.addEventListener('change', e => { if(e.target.dataset.ef && S.edit) S.edit[e.target.dataset.ef] = e.target.value; });
+both('scroll', e => { const t = e.target; if(t && t.classList && t.classList.contains('d-body')) spyTab(t); }, true);
+// 방문 예약 시트만 다시 그린다 (스크롤 위치와 날짜 띠 위치는 그대로)
+function visitRedraw(){
+  const q = k => document.querySelector('#sheet ' + k), bd = q('.cl-sh-body'), ks = ['.v-days'], xs = ks.map(k => { const el = q(k); return el ? el.scrollLeft : 0; }), y = bd ? bd.scrollTop : 0;
+  $('sheet').innerHTML = sheetHTML();
+  const nb = q('.cl-sh-body'); if(nb) nb.scrollTop = y;
+  ks.forEach((k, j) => { const el = q(k); if(el) el.scrollLeft = xs[j]; });
+}
+// 시트를 열 때 고른 날짜 · 시각이 띠 가운데에 오게 한다
+function visitCenter(){
+  document.querySelectorAll('#sheet .v-days').forEach(sc => { const on = sc.querySelector('.on'); if(on) sc.scrollLeft = on.offsetLeft - sc.offsetLeft - (sc.clientWidth - on.offsetWidth) / 2; });
+}
+const onField = e => { if(e.target.id === 'sq'){ S.sq = e.target.value; drawSearch(); } else if(e.target.dataset.ef && S.edit){ S.edit[e.target.dataset.ef] = e.target.value; } else if(e.target.id === 'memoIn'){ S.memoDraft = e.target.value; } else if(e.target.dataset.mf){ S.memoForm[e.target.dataset.mf] = e.target.value; }
+  // 고객 등록: 치는 동안에는 다시 그리지 않고 값만 담는다. 연락처는 010-0000-0000 모양으로 정리하고, 같은 번호 안내와 저장 버튼만 바꾼다
+  else if(e.target.dataset.af && S.add){ const k = e.target.dataset.af, t = e.target;
+    if(k === 'phone'){ const n = t.value.replace(/\D/g, '').slice(0, 11); t.value = n.length < 4 ? n : n.length < 8 ? n.slice(0, 3) + '-' + n.slice(3) : n.slice(0, 3) + '-' + n.slice(3, n.length - 4) + '-' + n.slice(-4); }
+    else if(k === 'age') t.value = t.value.replace(/\D/g, '').slice(0, 3);
+    S.add[k] = t.value;
+    if(k === 'camp'){ addRedraw(); return; }
+    const dp = $('addDup'), sv = $('addSave'); if(dp && k === 'phone') dp.innerHTML = addDupHTML(); if(sv) sv.disabled = !(addOk() && !addDup()); } else if(e.target.id === 'visitMemo' && S.visit){ S.visit.memo = e.target.value; } else if(e.target.dataset.vf === 'date' && S.visit && e.target.value){ S.visit.date = e.target.value; visitRedraw(); }
+  // 시작을 바꾸면 걸리는 시간은 그대로 두고 종료를 따라 옮긴다(마지막 시각을 넘으면 거기서 멈춤). 종료를 바꾸면 걸리는 시간만 바뀐다
+  else if(e.target.dataset.vf === 'start' && S.visit){ const v = S.visit; v.start = +e.target.value; v.dur = Math.min(v.dur, V_END - v.start); visitRedraw(); }
+  else if(e.target.dataset.vf === 'end' && S.visit){ S.visit.dur = +e.target.value - S.visit.start; visitRedraw(); } };
+both('input', onField);
+both('change', e => { if(e.target.dataset.ef && S.edit) S.edit[e.target.dataset.ef] = e.target.value; });
 
 function clDemo(k){
   document.body.classList.remove('nt-open');
@@ -1556,7 +2228,7 @@ function setVer(v){
     ? '시안 v4 · 인터뷰 반영 <small>전화번호 · 등록 시각 · 다른 현장 문의 표시 · 캠페인과 담당자 기억</small>'
     : '시안 v3 · 기존 <small>직접 눌러 볼 수 있음 · 가상 데이터</small>';
   $('banNew').textContent = '고객 목록 시안 ' + v;
-  $('fbPanel').innerHTML = v === 'v4' ? fbPanelHTML() : ''; $('fbPanel').hidden = v !== 'v4';
+  $('fbPanel').innerHTML = v === 'v4' ? fbPanelHTML() : ''; $('fbPanel').hidden = v !== 'v4' || S.navTab === '일정';
   draw(); $('scroll').scrollTop = 0; if(msg) toast(msg);
 }
 function pgShow(k){
