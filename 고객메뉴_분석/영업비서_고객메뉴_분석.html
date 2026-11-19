@@ -227,6 +227,45 @@ th{color:var(--sub);font-weight:600;background:#fafbfc;white-space:nowrap}
 .skel{background:linear-gradient(90deg,#eef0f2 25%,#f6f7f8 50%,#eef0f2 75%);background-size:200% 100%;animation:sk 1.2s infinite;border-radius:8px}
 @keyframes sk{to{background-position:-200% 0}}
 .toast{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);background:#1c1e23;color:#fff;border-radius:12px;padding:10px 14px;font-size:12.5px;z-index:60;width:max-content;max-width:86%;display:flex;gap:12px;align-items:center}
+/* 현행 · 멤버 관리 */
+.mm-pg{padding:6px 12px 110px}
+.mm-inv{width:100%;border:0;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;font-size:14px;padding:12px;display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:10px}
+.mm-seg{display:flex;gap:3px;background:#e9ebee;border-radius:10px;padding:3px;margin-bottom:10px}.mm-seg button{flex:1;border:0;background:none;border-radius:8px;padding:9px;font-size:13px;font-weight:700;color:#8b919e}.mm-seg button.on{background:#fff;color:#16181d;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.mm-srch{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e3e5e9;border-radius:10px;padding:0 12px;height:40px;margin-bottom:12px;color:#a3a9b5}.mm-srch input{border:0;outline:0;flex:1;font-size:13px;background:none;min-width:0}
+.mm-card{position:relative;display:flex;flex-wrap:wrap;gap:0 10px;align-items:flex-start;background:#fff;border-radius:14px;padding:12px;margin-bottom:8px;cursor:pointer}
+.mm-av{flex:none;width:44px;height:44px;border-radius:12px;background:#eef0f2;color:#8b919e;font-style:normal;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}.mm-av.sm{width:34px;height:34px;font-size:13px}
+.mm-b{flex:1;min-width:0}.mm-nm{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.mm-nm b{font-size:15px}.mm-nm span{font-size:12.5px;color:#8b919e}.mm-nm em{font-style:normal;background:#16181d;color:#fff;border-radius:6px;padding:2px 7px;font-size:11.5px;font-weight:700}
+.mm-em{font-size:12.5px;color:#9aa0ab;margin-top:1px;word-break:break-all}
+.mm-more{margin-left:auto}.mm-chips{flex-basis:100%;display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}.mm-chips span{background:#f1f2f4;color:#5a6070;border-radius:7px;padding:4px 8px;font-size:12px}.mm-chips span.a{background:#eaf1fe;color:#2f6fe4}
+.mm-own{flex-basis:100%;margin-top:8px;font-size:12.5px;color:#9aa0ab}.mm-empty{padding:26px 0;text-align:center;font-size:12.5px;color:#9aa0ab}
+.mm-camp{width:100%;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e3e5e9;border-radius:12px;padding:9px 12px;margin-bottom:10px;font-size:15px;text-align:left}.mm-camp i,.mm-ci{font-style:normal;width:28px;height:28px;border-radius:7px;background:#16181d;color:#fff;font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center;flex:none}.mm-camp b{flex:1}
+.mm-chn{font-size:12.5px;color:#8b919e;margin:2px 2px 10px}.mm-chn span{background:#fff;color:#16181d;border-radius:12px;padding:4px 11px;margin-left:4px;font-size:13px}
+.mm-tree{background:#fff;border-radius:14px;overflow:hidden}.mm-th{display:flex;align-items:center;gap:6px;padding:12px 14px;border-bottom:1px solid #eef0f2;flex-wrap:wrap}.mm-th b{font-size:16px}.mm-th small{color:#9aa0ab;font-size:12.5px}.mm-th span{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:12px;color:#5a6070}.mm-th u{text-decoration:none;cursor:pointer}.mm-th u:first-child{color:var(--accent);font-weight:700}.mm-th i{width:1px;height:11px;background:#d6d9de}
+.mm-scope{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #eef0f2;font-size:12.5px;color:#5a6070}.mm-scope span{flex:1}.mm-scope b{color:#16181d}.mm-scope u{color:#16181d;cursor:pointer;font-weight:600}
+.mm-nds{padding:8px 8px 12px}.mm-nd{position:relative;display:flex;gap:6px;align-items:flex-start;padding:8px 8px 8px 10px;border-radius:10px}.mm-nd.root{cursor:pointer}.mm-nd.root.sel{background:#eaf1fe}.mm-nd.root.sel b{color:#2f6fe4}
+.mm-fold{width:24px;height:24px;margin-left:-6px}.mm-pen{margin-left:auto;color:#8b919e}.mm-tg{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.mm-tg span{border-radius:12px;padding:3px 9px;font-size:12px;font-weight:600;background:#f1f2f4;color:#5a6070}
+.mm-tg .mm-g{background:#f1f2f4;border:1px solid #e0e3e8}.mm-tg .mm-bl{background:#3b82f6;color:#fff;border-radius:7px}.mm-tg .mm-pc{background:#3b82f6;color:#fff}.mm-tg .mm-rl{border-radius:7px}.mm-tg .mm-rl.k{background:#16181d;color:#fff}.mm-tg .mm-o{background:#fff;border:1px solid #e0e3e8;font-weight:500}
+.mm-ch{margin-left:16px;border-left:2px solid #16181d;padding-left:0}.mm-ch .mm-nd{padding-left:22px}.mm-ch .mm-nd::before{content:'';position:absolute;left:0;top:18px;width:14px;height:2px;background:#16181d}
+.mm-bar{position:absolute;left:12px;right:12px;bottom:84px;z-index:27;border:0;border-radius:18px;background:#3b82f6;color:#fff;display:flex;align-items:center;gap:10px;padding:11px 14px;text-align:left}.mm-bar div{flex:1}.mm-bar b{display:block;font-size:14px}.mm-bar small{font-size:12px;opacity:.85}
+.mm-sub{font-size:12.5px;color:#8b919e;margin-top:1px}
+.mm-pf,.mm-bx{background:#fff;border-radius:14px;padding:14px;margin-bottom:10px}.mm-pt{display:flex;gap:12px;align-items:center}.mm-pt .mm-av{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#f6c7c0,#e8573a);color:transparent}.mm-pt .mm-av.sm{color:#8b919e}
+.mm-on{color:#12a150;font-weight:700;font-size:13px;margin-top:4px}.mm-st{display:flex;justify-content:space-around;text-align:center;margin-top:14px}.mm-st small{display:block;color:#8b919e;font-size:12px}.mm-st b{font-size:20px}.mm-st b i{font-style:normal;font-size:12px;color:#9aa0ab;margin-left:2px}.mm-st .bl{color:#3b82f6}.mm-st .gr{color:#12a150}
+.mm-bh{display:flex;align-items:center;margin-bottom:8px}.mm-bh b{font-size:15px;flex:1}.mm-bh b small{color:#9aa0ab;font-weight:500;font-size:12.5px;margin-left:4px}.mm-bh u{text-decoration:none;color:var(--accent);font-size:12.5px;font-weight:700;cursor:pointer}
+.mm-tw{overflow-x:auto;margin:0 -14px;padding:0 14px}.mm-tb{border-collapse:collapse;min-width:430px;width:100%;font-size:12.5px}.mm-tb th{color:#9aa0ab;font-weight:500;text-align:right;padding:8px 6px;white-space:nowrap}.mm-tb th:first-child,.mm-tb td:first-child{text-align:left;padding-left:0;white-space:nowrap}.mm-tb td{text-align:right;padding:9px 6px;color:#3a3f4b}.mm-tb td.z{color:#c3c8cf}.mm-tb tr.tt td{font-weight:800;color:#16181d}
+.mm-act>div{position:relative;padding:4px 0 10px 18px}.mm-act i{position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:#3b82f6}.mm-act b{font-size:14px}.mm-act em{font-style:normal;background:#eaf1fe;color:#2f6fe4;border-radius:6px;padding:2px 7px;font-size:12px;margin-left:4px}.mm-act p{margin:3px 0 0;font-size:13px;color:#4a5060}.mm-act small{color:#9aa0ab;font-size:12px}
+.mm-cl{display:flex;align-items:center;padding:10px 0;border-top:1px solid #eef0f2}.mm-cl div{flex:1}.mm-cl b{display:block;font-size:14px}.mm-cl small{color:#9aa0ab;font-size:12.5px}.mm-cl span{background:#eceef1;color:#4a5060;border-radius:12px;padding:4px 11px;font-size:12px;font-weight:700}
+.mm-lb{margin:14px 0 8px;font-size:13px}.mm-lb small{color:#9aa0ab}.mm-lb2{font-size:12.5px;color:#8b919e;margin:6px 0 10px}
+.mm-pl{display:flex;flex-wrap:wrap;gap:6px}.mm-pl button{border:1px solid #e0e3e8;background:#fff;border-radius:18px;padding:8px 13px;font-size:13px;font-weight:600}.mm-pl button.on{background:#16181d;color:#fff;border-color:#16181d}
+.mm-mrow{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12.5px;color:#8b919e;flex-wrap:wrap}.mm-seg2{display:flex;background:#eef0f2;border-radius:10px;padding:3px}.mm-seg2 button{border:0;background:none;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;color:#8b919e}.mm-seg2 button.on{background:#fff;color:#16181d;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.mm-lead{width:64px;border:1px solid #dfe2e7;border-radius:9px;padding:7px;text-align:right;font-size:13px}
+.mm-sl{margin-bottom:14px}.mm-sl>div{display:flex;align-items:baseline;gap:6px}.mm-sl b{font-size:14px}.mm-sl small{color:#9aa0ab;font-size:12px}.mm-sl>div>span{margin-left:auto}.mm-sl strong{font-size:16px}.mm-sl input[type=range]{width:100%;accent-color:#16181d;margin:6px 0 0}
+.mm-rad{display:flex;gap:12px;align-items:flex-start;border:1px solid #e3e5e9;border-radius:12px;padding:14px;margin-bottom:10px;cursor:pointer}.mm-rad.on{border-color:#16181d}.mm-rad i{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #d6d9de;margin-top:2px;position:relative}.mm-rad.on i{border-color:#16181d}.mm-rad.on i::after{content:'';position:absolute;inset:3px;border-radius:50%;background:#16181d}.mm-rad b{font-size:14.5px}.mm-rad p{margin:3px 0 0;font-size:12.5px;color:#8b919e}
+.mm-fm{flex:1;font-size:12px;color:#8b919e;align-self:center}
+.mm-rolesg{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e3e5e9;border-radius:12px;overflow:hidden}.mm-rolesg button{border:0;background:#fff;padding:12px;text-align:center}.mm-rolesg button b{display:block;font-size:14px}.mm-rolesg button small{color:#9aa0ab;font-size:12px}.mm-rolesg button.on{background:#16181d;color:#fff}.mm-rolesg button.on small{color:#c9ccd2}
+.mm-up{display:flex;align-items:center;gap:8px;border:1px solid #e3e5e9;border-radius:12px;padding:10px 12px;cursor:pointer}.mm-up b{flex:1;font-weight:700}.mm-up small{color:#9aa0ab}.mm-uplist{border:1px solid #e3e5e9;border-radius:12px;margin-top:6px;padding:4px}
+.mm-tg2{border:1px solid #e3e5e9;border-radius:12px;padding:4px 12px}.mm-tg2>div{display:flex;align-items:center;gap:10px;padding:10px 0}.mm-tg2>div>div{flex:1}.mm-tg2 b{font-size:14px}.mm-tg2 p{margin:2px 0 0;font-size:12px;color:#8b919e}.mm-tg2 .sub{padding-left:14px;border-left:1px solid #d6d9de;margin-left:6px}
+.mm-sw{flex:none;width:44px;height:26px;border-radius:13px;background:#d6d9de;position:relative;cursor:pointer;transition:.15s}.mm-sw::after{content:'';position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.15s}.mm-sw.on{background:#3b82f6}.mm-sw.on::after{left:21px}.mm-sw.dis{opacity:.45;cursor:default}
+.mm-ex{border:0;background:none;color:var(--red);font-weight:700;font-size:14px}
 .toast u{color:#93c5fd;text-decoration:none;font-weight:700;cursor:pointer}
 
 /* TO-BE specific */
@@ -1462,11 +1501,164 @@ function asCalendar(){
     </section>
   </div>${modal}${tabbar('일정')}`;
 }
+/* ===== 현행 · 멤버 관리 (실제 앱 캡처를 가상 데이터로 다시 그림) ===== */
+const MM_SITES=['PH1603','덕소역 더블뷰한강','북오산자이 드포레','윤슬자이','카시아 속초','코르디아서울드래곤시티','디애스턴 한남','르엘 어퍼하우스'];
+const MM=[
+ {id:0,n:'소유자 1',e:'owner@example.com',r:'owner',sites:null},
+ {id:1,n:'관리자 1',e:'manager1@example.com',r:'admin',sites:[0,1,2,3,4,5,6,7]},
+ {id:2,n:'관리자 2',e:'manager2@example.com',r:'admin',sites:[1,2,3,4,5]},
+ {id:3,n:'담당자 1',e:'staff1@example.com',r:'staff',sites:[]},
+ {id:4,n:'담당자 2',e:'staff2@example.com',r:'staff',sites:[0,6,1]},
+ {id:5,n:'담당자 3',e:'staff3@example.com',r:'staff',sites:[0,6]},
+ {id:6,n:'담당자 4',e:'staff4@example.com',r:'staff',sites:[0,1,2,4]},
+ {id:7,n:'담당자 5',e:'staff5@example.com',r:'staff',sites:[0,1,2]},
+ {id:8,n:'담당자 6',e:'staff6@example.com',r:'staff',sites:[0,1,2]},
+ {id:9,n:'담당자 7',e:'staff7@example.com',r:'staff',sites:[1,2]},
+ {id:10,n:'담당자 8',e:'staff8@example.com',r:'staff',sites:[1,2,3]},
+ {id:11,n:'담당자 9',e:'staff9@example.com',r:'staff',sites:[1]}
+];
+const MM_RANKS=['관리자','담당자','팀장','사원'];
+function mmS(){return A.mm||(A.mm={tab:'all',camp:0,q:'',q2:'',sel:false,fold:{},info:null,perc:false,sheet:null,inv:{name:'',email:'',rank:'관리자',sites:[]},rat:{},draft:null,roles:{},rd:null,pick:null});}
+const mmIc=n=>`<svg class="ic"><use href="#i-${n}"></use></svg>`;
+const mmRnd=n=>((n*9301+49297)%233280)/233280;
+const mmAva=m=>`<i class="mm-av">${esc(m.n[0])}</i>`;
+const mmKids=c=>MM.filter(m=>m.r!=='owner'&&m.sites.includes(c));
+function mmRole(m,c){const o=mmS().roles[m.id+'_'+c];return o?o.role:m.r;}
+function mmRoleLbl(r){return r==='admin'?'관리자':r==='owner'?'소유자':'담당자';}
+function mmRatDef(c){const k=mmKids(c),v={0:0};if(!k.length)return {mode:'rate',lead:100,vals:v,auto:'least'};
+ const adm=k.filter(m=>mmRole(m,c)==='admin');let left=100;
+ if(adm.length){v[adm[0].id]=50;left=50;adm.slice(1).forEach(m=>v[m.id]=0);}
+ const rest=k.filter(m=>!(adm.length&&m.id===adm[0].id)&&!adm.includes(m)),n=rest.length||1,b=Math.floor(left/n/5)*5;
+ rest.forEach(m=>v[m.id]=b);let sum=Object.values(v).reduce((a,x)=>a+x,0);
+ if(rest.length)v[rest[0].id]+=100-sum;else if(adm.length)v[adm[0].id]+=100-sum;
+ return {mode:'rate',lead:100,vals:v,auto:'least'};}
+function mmRat(c){const s=mmS();return s.rat[c]||(s.rat[c]=mmRatDef(c));}
+function mmShow(m,q){q=(q||'').trim();return !q||m.n.includes(q)||m.e.includes(q);}
+/* 멤버 전체 */
+function mmCard(m){
+ const chips=m.r==='owner'?'<div class="mm-own">전체 현장 열람</div>':(m.sites.length?`<div class="mm-chips">${m.sites.map(i=>`<span class="${m.r==='admin'?'a':''}">${esc(MM_SITES[i].split(' ')[0])} · ${m.r==='admin'?'관리자':'담당자'}</span>`).join('')}</div>`:'<div class="mm-own">배정된 현장 없음</div>');
+ return `<div class="mm-card" data-a="mm-info" data-v="${m.id}">${mmAva(m)}<div class="mm-b"><div class="mm-nm"><b>${esc(m.n)}</b><span>${mmRoleLbl(m.r)}</span>${m.r==='owner'?'<em>소유자</em>':''}</div><div class="mm-em">${m.e}</div></div>${m.r==='owner'?'':`<button class="ib mm-more" data-a="mm-menu" data-v="${m.id}">${mmIc('more_horiz')}</button>`}${chips}</div>`;
+}
+function mmAllList(){const s=mmS();const l=MM.filter(m=>mmShow(m,s.q));return l.length?l.map(mmCard).join(''):'<div class="mm-empty">검색 결과가 없습니다</div>';}
+/* 캠페인별 팀 */
+function mmNode(m,c,root){
+ const s=mmS(),R=mmRat(c),pct=R.vals[m.id]||0,sel=root&&s.sel,rl=mmRole(m,c),ro=s.roles[m.id+'_'+c]||{};
+ const view=ro.view!=null?ro.view:(m.r==='admin'),chg=ro.chg!=null?ro.chg:(m.r==='admin');
+ let chips='';
+ if(root)chips=`<span class="mm-g">통과 ${R.lead}</span><span class="mm-bl">소유주</span>`;
+ else chips=`<span class="mm-pc">처리 ${Math.round(pct*R.lead/100)}</span><span class="mm-rl ${rl==='admin'?'k':''}">${rl==='admin'?'관리자':'담당자'}</span>${rl==='admin'&&view?'<span class="mm-o">전체 고객 보기</span>':''}${rl==='admin'&&chg?'<span class="mm-o">전체 고객 담당자 변경</span>':''}`;
+ return `<div class="mm-nd ${root?'root':''} ${sel?'sel':''}" ${root?'data-a="mm-sel"':''}>${root?`<button class="ib mm-fold" data-a="mm-fold">${mmIc(s.fold.root?'keyboard_arrow_down':'keyboard_arrow_up')}</button>`:''}<div class="mm-b"><b>${esc(m.n)}</b><div class="mm-em">${m.e}</div><div class="mm-tg">${chips}</div></div><button class="ib mm-pen" data-a="mm-role" data-v="${m.id}">${mmIc('edit')}</button></div>`;
+}
+function mmTeam(){
+ const s=mmS(),c=s.camp,k=mmKids(c).filter(m=>mmShow(m,s.q2)),own=MM[0];
+ return `<button class="mm-camp" data-a="mm-sheet" data-v="camp"><i>${esc(MM_SITES[c][0])}</i><b>${esc(MM_SITES[c])}</b>${mmIc('keyboard_arrow_down')}</button>
+ <div class="mm-seg">${mmSeg()}</div>
+ <label class="mm-srch">${mmIc('search')}<input data-a="mmi" data-k="q2" placeholder="이름·직급 검색" value="${esc(s.q2)}" autocomplete="off"></label>
+ <div class="mm-chn">이 현장 공통 팀 적용 채널 <span>메타</span></div>
+ <div class="mm-tree" id="mmTreeBox"><div class="mm-th"><b>조직도</b><small>${k.length+1}명</small><span><u data-a="mm-addm">+ 멤버 추가</u><i></i><u data-a="mm-fold-all" data-v="0">모두 펼침</u><i></i><u data-a="mm-fold-all" data-v="1">모두 접음</u></span></div>
+ ${s.sel?`<div class="mm-scope">${mmIc('visibility')}<span><b>${esc(own.n)}</b> 님이 보는 범위 — 이 현장 전체</span><u data-a="mm-sel">선택 해제</u></div>`:''}
+ <div class="mm-nds">${mmNode(own,c,true)}${s.fold.root?'':`<div class="mm-ch">${k.map(m=>mmNode(m,c,false)).join('')||'<div class="mm-empty">이 현장에 배정된 멤버가 없습니다</div>'}</div>`}</div></div>`;
+}
+function mmSeg(){const s=mmS();return `<button class="${s.tab==='all'?'on':''}" data-a="mm-tab" data-v="all">멤버 전체</button><button class="${s.tab==='team'?'on':''}" data-a="mm-tab" data-v="team">캠페인별 팀</button>`;}
+/* 담당자 정보 */
+function mmInfo(m){
+ const s=mmS(),sites=m.sites?m.sites:[0,1,2,3,4,5,6,7],cols=['미지정','부재중','방문예약','가계약','정계약','관심없음'];
+ const row=(i,ix)=>cols.map((_,j)=>Math.round(mmRnd(m.id*37+ix*11+j*5+3)*(j===1?420:j===0?260:j===2?60:j===3?18:j===4?8:90)*(i===-1?1:1)));
+ const rows=sites.map((i,ix)=>({n:MM_SITES[i],v:row(i,ix)}));
+ const tot=cols.map((_,j)=>rows.reduce((a,r)=>a+r.v[j],0)),all=tot.reduce((a,x)=>a+x,0)||1;
+ const cell=(r,j)=>{const v=r.v[j];if(s.perc){const rs=r.v.reduce((a,x)=>a+x,0)||1;return Math.round(v/rs*100)+'%';}return v;};
+ const act=[['고객 1','05:18','오픈 일정 문의'],['고객 2','00:42','계약 조건 문의']];
+ const cl=sites.slice(0,6).map((i,ix)=>['고객 '+(ix+3),MM_SITES[i]]);
+ return `<div class="scr wf"><div class="hd"><button class="ib" data-a="mm-back">${mmIc('arrow_back_ios_new')}</button><div class="t">담당자 정보</div><button class="ib" data-a="menu-open">${mmIc('menu')}</button></div><div class="mm-pg">
+ <div class="mm-pf"><div class="mm-pt">${mmAva(m)}<div><div class="mm-nm"><b>${esc(m.n)}</b><span>${mmRoleLbl(m.r)}</span></div><div class="mm-em">${m.e}</div><div class="mm-on">● 활성</div></div></div>
+  <div class="mm-st"><div><small>담당 고객</small><b>${all.toLocaleString()}<i>명</i></b></div><div><small>방문예약</small><b class="bl">${tot[2]}<i>건</i></b></div><div><small>정계약</small><b class="gr">${tot[4]}<i>건</i></b></div></div></div>
+ <div class="mm-bx"><div class="mm-bh"><b>이번 달 실적</b><button class="ib" data-a="mm-perc" aria-label="건수·비율 전환">${mmIc('swap_horiz')}</button></div>
+  <div class="mm-tw"><table class="mm-tb"><tr><th>구분</th>${cols.map(c=>`<th>${c}</th>`).join('')}</tr><tr class="tt"><td>전체</td>${tot.map(v=>`<td>${s.perc?Math.round(v/all*100)+'%':v}</td>`).join('')}</tr>${rows.map(r=>`<tr><td>${esc(r.n)}</td>${r.v.map((v,j)=>`<td class="${v?'':'z'}">${cell(r,j)}</td>`).join('')}</tr>`).join('')}</table></div></div>
+ <div class="mm-bx"><div class="mm-bh"><b>최근 활동</b><u data-a="toast" data-v="이 화면은 캡처 전입니다">전체 보기</u></div><div class="mm-act">${act.map(a=>`<div><i></i><b>${a[0]} <em>메모</em></b><p>"[인스턴트 폼] 어떤 상담을 원하시나요? : ${a[2]}"</p><small>${a[1]}</small></div>`).join('')}</div></div>
+ <div class="mm-bx"><div class="mm-bh"><b>할당 고객 <small>${all.toLocaleString()}명</small></b><u data-a="toast" data-v="이 화면은 캡처 전입니다">전체 보기</u></div>${cl.map(c=>`<div class="mm-cl"><div><b>${c[0]}</b><small>${esc(c[1])}</small></div><span>미지정</span></div>`).join('')}</div></div></div>${tabbar('멤버')}`;
+}
+/* 시트 */
+function mmSheet(){
+ const s=mmS();if(!s.sheet)return '';
+ const head=(t,sub)=>`<div class="grab"></div><div class="sh"><div style="flex:1"><b style="font-size:17px">${t}</b>${sub?`<div class="mm-sub">${sub}</div>`:''}</div><button class="ib" data-a="mm-x">${mmIc('close')}</button></div>`;
+ if(s.sheet==='camp')return `<div class="dim" data-a="mm-x"></div><div class="sheet" style="max-height:70%">${head('현장 선택')}<div class="sb2" style="padding-bottom:20px">${MM_SITES.map((n,i)=>`<div class="opt ${s.camp===i?'on':''}" data-a="mm-camp" data-v="${i}"><i class="mm-ci">${esc(n[0])}</i>${esc(n)}${s.camp===i?'<span style="margin-left:auto">'+mmIc('check')+'</span>':''}</div>`).join('')}</div></div>`;
+ if(s.sheet==='menu'){const m=MM[s.pick];return `<div class="dim" data-a="mm-x"></div><div class="sheet">${head(esc(m.n),esc(m.e))}<div class="sb2" style="padding-bottom:20px"><div class="opt" data-a="mm-info" data-v="${m.id}">${mmIc('person')} 담당자 정보 보기</div><div class="opt" data-a="toast" data-v="이 메뉴는 캡처 전이라 추정입니다">${mmIc('edit')} 호칭 · 현장 배정 변경</div><div class="opt" data-a="toast" data-v="이 메뉴는 캡처 전이라 추정입니다" style="color:var(--red)">${mmIc('do_not_disturb_on')} 비활성화</div></div></div>`;}
+ if(s.sheet==='invite'){const v=s.inv,ok=v.name.trim()&&/^\S+@\S+\.\S+$/.test(v.email.trim());
+  return `<div class="dim" data-a="mm-x"></div><div class="sheet" style="max-height:94%">${head('멤버 초대')}<div class="sb2">
+  <div class="fld"><label style="color:#1b1d22;font-weight:700">이름</label><input data-a="mmi" data-k="iname" placeholder="예: 박지훈" value="${esc(v.name)}" autocomplete="off"></div>
+  <div class="fld"><label style="color:#1b1d22;font-weight:700">이메일</label><input data-a="mmi" data-k="iemail" placeholder="예: park@example.com" value="${esc(v.email)}" autocomplete="off"></div>
+  <div class="fld"><label style="color:#1b1d22;font-weight:700">직급 (호칭)</label><select data-a="mmi" data-k="irank">${MM_RANKS.map(r=>`<option ${v.rank===r?'selected':''}>${r}</option>`).join('')}</select></div>
+  <div class="mm-lb"><b>초기 현장 배정</b> <small>· 선택</small></div><div class="mm-pl"><button class="${v.sites.length?'':'on'}" data-a="mm-isite" data-v="-1">나중에</button>${MM_SITES.map((n,i)=>`<button class="${v.sites.includes(i)?'on':''}" data-a="mm-isite" data-v="${i}">${esc(n)}</button>`).join('')}</div></div>
+  <div class="sf" style="justify-content:flex-end"><button class="btn o" data-a="mm-x">취소</button><button class="btn p" id="mmInvOk" data-a="mm-iok" style="${ok?'':'opacity:.4'}">초대</button></div></div>`;}
+ if(s.sheet==='ratio'){const d=s.draft,c=s.camp,k=mmKids(c),sum=Object.values(d.vals).reduce((a,x)=>a+x,0);
+  const chg=JSON.stringify(d)!==JSON.stringify(mmRat(c)),okRate=d.mode==='auto'||sum===100;
+  const body=d.mode==='rate'?`<div class="mm-mrow"><div class="mm-seg2"><button class="on" data-a="mm-mode" data-v="rate">비율 직접</button><button data-a="mm-mode" data-v="auto">자동 분배</button></div><span>미리보기 월 리드</span><input class="mm-lead" data-a="mmi" data-k="lead" inputmode="numeric" value="${d.lead}"><span>건</span></div>
+   ${[MM[0],...k].map(m=>{const p=d.vals[m.id]||0;return `<div class="mm-sl"><div><b>${esc(m.n)}</b>${m.r==='owner'?'<small>본인 직접영업</small>':''}<span><strong id="mmp${m.id}">${p}%</strong> <small id="mmn${m.id}">월 ~${Math.round(p*d.lead/100)}건</small></span></div><input type="range" min="0" max="100" step="5" value="${p}" data-a="mmr" data-id="${m.id}"></div>`;}).join('')}`
+   :`<div class="mm-mrow"><div class="mm-seg2"><button data-a="mm-mode" data-v="rate">비율 직접</button><button class="on" data-a="mm-mode" data-v="auto">자동 분배</button></div></div>
+   ${[['rr','순서대로 분배','라운드로빈. 등록 순서대로 1명씩 돌아가며 배정.'],['least','리드 보유 적은 순','현재 진행 중인 리드가 가장 적은 사람부터 우선 배정. 형평성 우선.']].map(([k2,t,dd])=>`<div class="mm-rad ${d.auto===k2?'on':''}" data-a="mm-auto" data-v="${k2}"><i></i><div><b>${t}</b><p>${dd}</p></div></div>`).join('')}`;
+  return `<div class="dim" data-a="mm-x"></div><div class="sheet" style="max-height:92%"><div class="grab"></div><div class="sh"><i class="mm-av sm">${esc(MM[0].n[0])}</i><div style="flex:1"><b style="font-size:16px">${esc(MM[0].n)} 직속</b><div class="mm-sub" id="mmSum">${k.length}명 · 합 ${d.mode==='rate'?sum:100}%</div></div><button class="ib" data-a="mm-x">${mmIc('close')}</button></div><div class="sb2" id="mmRb"><div class="mm-lb2">분배 방식</div>${body}</div>
+  <div class="sf"><span class="mm-fm" id="mmFm">${!chg?'변경 사항 없음':okRate?'변경 사항이 저장되지 않았습니다.':'합이 100%여야 저장할 수 있습니다 (현재 '+sum+'%)'}</span><button class="btn o" data-a="mm-x">취소</button><button class="btn p" id="mmSave" data-a="mm-save" style="${chg&&okRate?'':'opacity:.4'}">저장</button></div></div>`;}
+ if(s.sheet==='role'){const m=MM[s.pick],d=s.rd,c=s.camp,ups=MM.filter(x=>x.id!==m.id&&(x.r==='owner'||x.r==='admin'&&x.sites.includes(c)));
+  const up=MM[d.boss]||MM[0];
+  return `<div class="dim" data-a="mm-x"></div><div class="sheet" style="max-height:94%"><div class="grab"></div><div class="sh"><div style="flex:1"><b style="font-size:17px">팀 역할 편집</b><div class="mm-sub">${esc(MM_SITES[c])}</div></div><button class="ib" data-a="mm-x">${mmIc('close')}</button></div><div class="sb2">
+  <div class="mm-pt" style="margin:4px 0 14px">${mmAva(m)}<div><div class="mm-nm"><b>${esc(m.n)}</b></div><div class="mm-em">${mmRoleLbl(d.role)} · ${m.e}</div></div></div>
+  <div class="mm-lb"><b>이 현장에서의 역할</b></div><div class="mm-rolesg"><button class="${d.role==='admin'?'on':''}" data-a="mm-rrole" data-v="admin"><b>관리자</b><small>하위 팀원 고객도</small></button><button class="${d.role==='staff'?'on':''}" data-a="mm-rrole" data-v="staff"><b>담당자</b><small>본인 고객만</small></button></div>
+  <div class="mm-lb"><b>상위자</b> <small>· 이 현장에서 누구 밑인지</small></div><div class="mm-up" data-a="mm-rboss"><i class="mm-av sm">${esc(up.n[0])}</i><b>${esc(up.n)}</b><small>${mmRoleLbl(up.r)}</small>${mmIc('keyboard_arrow_down')}</div>${d.bossOpen?`<div class="mm-uplist">${ups.map(x=>`<div class="opt ${x.id===d.boss?'on':''}" data-a="mm-rboss2" data-v="${x.id}">${esc(x.n)} <small>${mmRoleLbl(x.r)}</small></div>`).join('')}</div>`:''}
+  <div class="mm-lb"><b>이 현장 전체 고객</b></div><div class="mm-tg2"><div><div><b>보기</b><p>메모·통화 기록도 보여요. 고치진 못해요.</p></div><i class="mm-sw ${d.view?'on':''}" data-a="mm-rview"></i></div><div class="sub"><div><b>고객 담당자 변경</b><p>이 현장 팀 누구로든, 본인으로도 돼요.</p></div><i class="mm-sw ${d.chg?'on':''} ${d.view?'':'dis'}" data-a="mm-rchg"></i></div></div></div>
+  <div class="sf"><button class="mm-ex" data-a="mm-rex">현장에서 제외</button><span style="flex:1"></span><button class="btn o" data-a="mm-x">취소</button><button class="btn p" data-a="mm-rsave">저장</button></div></div>`;}
+ return '';
+}
+function asMembers(){
+ const s=mmS();if(s.info!=null)return mmInfo(MM[s.info])+mmSheet();
+ const body=s.tab==='all'?`<button class="mm-inv" data-a="mm-sheet" data-v="invite">${mmIc('person_add')} 멤버 초대</button><div class="mm-seg">${mmSeg()}</div><label class="mm-srch">${mmIc('search')}<input data-a="mmi" data-k="q" placeholder="이름·이메일 검색" value="${esc(s.q)}" autocomplete="off"></label><div id="mmList" class="mm-list">${mmAllList()}</div>`:mmTeam();
+ const k=mmKids(s.camp).length;
+ return `<div class="scr wf"><div class="hd"><button class="ib">${mmIc('arrow_back_ios_new')}</button><div class="t">멤버 관리</div><button class="ib" data-a="menu-open">${mmIc('menu')}</button></div><div class="mm-pg">${body}</div></div>${s.tab==='team'&&s.sel?`<button class="mm-bar" data-a="mm-sheet" data-v="ratio">${mmIc('tune')}<div><b>${esc(MM[0].n)} 직속 · ${k}명</b><small>탭하면 비율 조정</small></div>${mmIc('keyboard_arrow_up')}</button>`:''}${tabbar('멤버')}${mmSheet()}`;
+}
+function mmAct(a,el){
+ const s=mmS(),v=el.dataset.v;
+ switch(a){
+  case 'mm-tab':s.tab=v;s.sel=false;break;
+  case 'mm-info':s.info=+v;s.sheet=null;break;
+  case 'mm-back':s.info=null;break;
+  case 'mm-perc':s.perc=!s.perc;break;
+  case 'mm-menu':s.pick=+v;s.sheet='menu';break;
+  case 'mm-x':s.sheet=null;break;
+  case 'mm-sheet':if(v==='ratio'){s.draft=JSON.parse(JSON.stringify(mmRat(s.camp)));}s.sheet=v;break;
+  case 'mm-camp':s.camp=+v;s.sel=false;s.sheet=null;break;
+  case 'mm-sel':s.sel=!s.sel;break;
+  case 'mm-fold':s.fold.root=!s.fold.root;break;
+  case 'mm-fold-all':s.fold.root=v==='1';break;
+  case 'mm-addm':s.inv={name:'',email:'',rank:'담당자',sites:[s.camp]};s.sheet='invite';break;
+  case 'mm-isite':{const i=+v;if(i<0)s.inv.sites=[];else{const k=s.inv.sites.indexOf(i);k>=0?s.inv.sites.splice(k,1):s.inv.sites.push(i);}break;}
+  case 'mm-iok':{const i=s.inv;if(!(i.name.trim()&&/^\S+@\S+\.\S+$/.test(i.email.trim()))){aToast('이름과 이메일을 입력해 주세요');renderAs(true);return;}s.sheet=null;s.inv={name:'',email:'',rank:'관리자',sites:[]};aToast('초대 메일을 보냈습니다');break;}
+  case 'mm-mode':{const d=s.draft;d.mode=v;break;}
+  case 'mm-auto':s.draft.auto=v;break;
+  case 'mm-save':{const d=s.draft,sum=Object.values(d.vals).reduce((x,y)=>x+y,0);if(JSON.stringify(d)===JSON.stringify(mmRat(s.camp)))return;if(d.mode==='rate'&&sum!==100)return;s.rat[s.camp]=d;s.sheet=null;aToast('분배 설정을 저장했습니다');break;}
+  case 'mm-role':{const m=MM[+v],c=s.camp,o=s.roles[m.id+'_'+c]||{};s.pick=m.id;s.rd={role:mmRole(m,c),boss:o.boss!=null?o.boss:0,view:o.view!=null?o.view:m.r==='admin',chg:o.chg!=null?o.chg:m.r==='admin',bossOpen:false};s.sheet='role';break;}
+  case 'mm-rrole':{const d=s.rd;d.role=v;if(v==='staff'){d.view=false;d.chg=false;}else{d.view=true;}break;}
+  case 'mm-rboss':s.rd.bossOpen=!s.rd.bossOpen;break;
+  case 'mm-rboss2':s.rd.boss=+v;s.rd.bossOpen=false;break;
+  case 'mm-rview':s.rd.view=!s.rd.view;if(!s.rd.view)s.rd.chg=false;break;
+  case 'mm-rchg':if(!s.rd.view)return;s.rd.chg=!s.rd.chg;break;
+  case 'mm-rex':{const m=MM[s.pick];s.sheet=null;aToast(esc(m.n)+' 님을 이 현장에서 제외했습니다 (시안에서는 목록이 바뀌지 않습니다)');break;}
+  case 'mm-rsave':{const m=MM[s.pick],d=s.rd;s.roles[m.id+'_'+s.camp]={role:d.role,boss:d.boss,view:d.view,chg:d.chg};s.sheet=null;aToast('팀 역할을 저장했습니다');break;}
+ }
+ renderAs(true);
+}
+function mmRatRefresh(){
+ const s=mmS(),d=s.draft;if(!d)return;const sum=Object.values(d.vals).reduce((a,x)=>a+x,0),chg=JSON.stringify(d)!==JSON.stringify(mmRat(s.camp)),ok=d.mode==='auto'||sum===100;
+ Object.keys(d.vals).forEach(id=>{const p=d.vals[id],a=document.getElementById('mmp'+id),b=document.getElementById('mmn'+id);if(a)a.textContent=p+'%';if(b)b.textContent='월 ~'+Math.round(p*d.lead/100)+'건';});
+ const sm=document.getElementById('mmSum');if(sm)sm.textContent=mmKids(s.camp).length+'명 · 합 '+sum+'%';
+ const fm=document.getElementById('mmFm');if(fm)fm.textContent=!chg?'변경 사항 없음':ok?'변경 사항이 저장되지 않았습니다.':'합이 100%여야 저장할 수 있습니다 (현재 '+sum+'%)';
+ const sv=document.getElementById('mmSave');if(sv)sv.style.opacity=chg&&ok?'1':'.4';
+}
+
 function asPhone(){
   let h=statusbar();
   const nt=A.navTab||'고객';
   const menuLayer=A.menuOpen?`<div id="menuHost" style="position:absolute;inset:0;z-index:60"></div>`:'';
   if(nt==='일정') return h+asCalendar()+menuLayer+toastHtml(A.toast);
+  if(nt==='멤버') return h+asMembers()+menuLayer+toastHtml(A.toast);
   if(nt!=='고객'){
     const tb=nt==='홈'?'홈':nt==='멤버'?'멤버':'메뉴';
     return h+`<div class="scr" id="liveHost" data-rk="${nt}" style="background:#f5f5f5;padding-bottom:96px"></div>${tabbar(tb)}${menuLayer}`+toastHtml(A.toast);
@@ -1531,6 +1723,8 @@ function renderAs(keep){
 function asOpen(id){A.scr='detail';A.cust=id;A.sheet=null;A.loading=true;renderAs();setTimeout(()=>{if(A.cust===id){A.loading=false;renderAs(true);}},900);}
 phAs.addEventListener('click',e=>{
   const el=e.target.closest('[data-a]');if(!el)return;const a=el.dataset.a,v=el.dataset.v;
+  if(a==='mmi'||a==='mmr')return;
+  if(a.startsWith('mm-')){mmAct(a,el);return;}
   if(a==='call'){e.stopPropagation();aToast('<svg class="ic"><use href="#i-warning"></use></svg> 실제 앱에서는 바로 전화가 걸립니다 (L6)');renderAs(true);return;}
   if(a==='edit'||a==='addf'||a==='search'&&A.scr==='search')return;
   switch(a){
@@ -1588,6 +1782,16 @@ function highlight(ph,id,before){
   else{const sb=host.closest('.sb2');if(sb){const r=host.getBoundingClientRect(),sr=sb.getBoundingClientRect();sb.scrollTop+=r.top-sr.top-40;}}
   m.classList.remove('pulse');void m.offsetWidth;m.classList.add('pulse');
 }
+phAs.addEventListener('input',e=>{
+ const t=e.target.closest('[data-a="mmr"],[data-a="mmi"]');if(!t)return;const s=mmS();
+ if(t.dataset.a==='mmr'){s.draft.vals[t.dataset.id]=+t.value;mmRatRefresh();return;}
+ const k=t.dataset.k;
+ if(k==='q'){s.q=t.value;document.getElementById('mmList').innerHTML=mmAllList();}
+ else if(k==='q2'){s.q2=t.value;const bx=document.getElementById('mmTreeBox');if(bx){const tmp=document.createElement('div');tmp.innerHTML=mmTeam();const nb=tmp.querySelector('#mmTreeBox');if(nb)bx.innerHTML=nb.innerHTML;}}
+ else if(k==='lead'){s.draft.lead=Math.max(0,Math.min(99999,+t.value.replace(/\D/g,'')||0));mmRatRefresh();}
+ else if(k==='iname'||k==='iemail'||k==='irank'){const i=s.inv;if(k==='iname')i.name=t.value;else if(k==='iemail')i.email=t.value;else i.rank=t.value;const ok=i.name.trim()&&/^\S+@\S+\.\S+$/.test(i.email.trim()),b=document.getElementById('mmInvOk');if(b)b.style.opacity=ok?'1':'.4';}
+});
+phAs.addEventListener('change',e=>{if(e.target.closest('[data-a="mmi"][data-k="irank"]')){mmS().inv.rank=e.target.value;}});
 renderAs();
 
 /* =========================================================
@@ -2516,6 +2720,17 @@ if(new URLSearchParams(location.search).get('embed')==='as'){
   document.body.style.cssText='margin:0;overflow:hidden;background:#fff';
   phAs.style.cssText='position:fixed;inset:0;width:100%;height:100%;max-width:none;border:0;border-radius:0;box-shadow:none';
   const st=document.createElement('style');st.textContent='#phAs .notch{display:none}';document.head.appendChild(st);
+  // 고객목록_디자인에서 하단 탭을 누르면 현행 화면도 같은 탭으로 보낸다 (postMessage)
+  window.addEventListener('message',e=>{
+    const d=e.data;
+    if(d&&d.type==='as-click'&&(d.text==='캠페인별 팀'||d.text==='멤버 전체')&&A.navTab==='멤버'){const m=mmS();m.tab=d.text==='멤버 전체'?'all':'team';m.sel=false;m.info=null;m.sheet=null;renderAs(true);return;}
+    if(!d||d.type!=='as-nav')return;
+    const t=d.tab;
+    if(t==='메뉴'){A.menuOpen=true;}
+    else if(t==='멤버'&&A.navTab!=='멤버'){A.navTab=t;A.menuOpen=false;A.mm=null;A.sheet=null;A.calSheet=null;}
+    else{A.navTab=t;A.menuOpen=false;A.scr='list';A.cust=null;A.sheet=null;A.calSheet=null;}
+    renderAs(true);
+  });
 }
 
 </script>
