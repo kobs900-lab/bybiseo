@@ -1,0 +1,8 @@
+{
+  "name": "영업비서 텍스트 스타일 적용",
+  "id": "bybiseo-text-styles-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page"
+}

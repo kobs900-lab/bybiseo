@@ -1,0 +1,8 @@
+{
+  "name": "영업비서 하단 내비 컴포넌트화",
+  "id": "bybiseo-nav-component-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page"
+}

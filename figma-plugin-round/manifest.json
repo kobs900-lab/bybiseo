@@ -1,0 +1,8 @@
+{
+  "name": "영업비서 줄 간격 정수화",
+  "id": "bybiseo-round-lineheight-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page"
+}

@@ -283,6 +283,23 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .cl-app :focus-visible:not(input){outline:2px solid var(--cl-brand);outline-offset:2px}
 .cl-sk{border-radius:var(--r-lg)}
 
+
+/* ───── 화면 켜고 끄기 · DS 적용 시안 비교 ───── */
+.cv-bar{position:sticky;top:48px;z-index:20;display:flex;justify-content:center;flex-wrap:wrap;gap:var(--sp-8);padding:var(--sp-12) var(--sp-16);background:var(--gray-200)}
+.cv-bar label{display:inline-flex;align-items:center;gap:var(--sp-8);height:36px;padding:0 var(--sp-12);border-radius:var(--r-full);background:var(--bg-surface);font-size:var(--fs-body-m);font-weight:var(--fw-semibold);color:var(--text-secondary);cursor:pointer;box-shadow:var(--shadow-card)}
+.cv-bar label:has(input:checked){background:var(--text-primary);color:var(--bg-surface)}.cv-bar input{position:absolute;opacity:0;pointer-events:none}
+.cv-bar .sep{width:1px;background:var(--border-strong);margin:var(--sp-4) var(--sp-4)}
+.cv-bar button{height:36px;padding:0 var(--sp-12);border-radius:var(--r-full);background:var(--bg-surface);font-size:var(--fs-body-m);font-weight:var(--fw-semibold);color:var(--text-secondary);box-shadow:var(--shadow-card)}.cv-bar button.on{background:var(--brand-default);color:var(--text-on-brand)}
+.cv-bar .ds-only{display:none!important}body.cv-ds .cv-bar .ds-only{display:inline-flex!important}.cv-bar button{display:inline-flex;align-items:center;gap:var(--sp-4);line-height:1}.cv-bar label{line-height:1}.cv-bar label input{display:none!important}.cv-bar .sep{align-self:stretch;height:auto;padding:0;box-shadow:none}
+body.cv-hide-asis .cl-col.asis,body.cv-hide-new #colNew{display:none}
+#colDs .cl-cap{color:var(--brand-default)}
+#cvTk{position:fixed;right:16px;top:112px;bottom:16px;width:340px;z-index:60;overflow:auto;border-radius:var(--r-md);background:#fff;color:#111418;box-shadow:var(--shadow-float);font:12px/1.5 var(--font-sans);display:none}
+#cvTk.on{display:block}#cvTk .x{position:sticky;top:0;float:right;margin:8px;width:28px;height:28px;border-radius:50%;background:var(--gray-100);z-index:1}
+#cvTk header{padding:12px 16px;border-bottom:1px solid #E6E9EE}#cvTk header b{display:block;font:700 13px ui-monospace,monospace;word-break:break-all}#cvTk header small{color:#6B7280}
+#cvTk h6{margin:12px 16px 4px;font-size:11px;color:#6B7280}#cvTk .r{display:grid;grid-template-columns:96px 1fr;gap:8px;padding:6px 16px;border-top:1px solid #F2F4F7}#cvTk .r>span{color:#6B7280;word-break:break-all}
+#cvTk .ch{display:flex;flex-wrap:wrap;align-items:center;gap:4px}#cvTk code{padding:1px 6px;border-radius:4px;font:11px ui-monospace,monospace}#cvTk .c3{background:#F0EAFF;color:#5B33D6}#cvTk .c2{background:#EAF1FF;color:#2541A0}#cvTk .c1{background:#F2F4F7;color:#4A5160}#cvTk .raw{background:#FFF0E5;color:#C2410C}#cvTk .sw{width:14px;height:14px;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}#cvTk .lg{display:flex;gap:6px;padding:8px 16px;flex-wrap:wrap}
+.cv-empty{padding:var(--sp-32);text-align:center;color:var(--text-tertiary);font-size:var(--fs-body-m)}
+@media (max-width:860px){.cv-bar{display:none}}
 /* ───── 현행 · 시안 나란히 ───── */
 .cl-page{max-width:1640px;grid-template-columns:auto minmax(0,1fr)}
 .cl-left{display:flex;gap:var(--sp-32);align-items:flex-start}
@@ -1270,6 +1287,15 @@ html.app-only .c2-head{min-height:56px}
 <div class="ds-page" id="ds"></div>
 
 <div class="cl-page">
+  <div class="cv-bar" id="cvBar" style="grid-column:1/-1">
+    <label><input type="checkbox" data-cv="asis" checked>현행</label>
+    <label><input type="checkbox" data-cv="new" checked>기존 시안 v4</label>
+    <label><input type="checkbox" data-cv="ds">디자인시스템 적용 시안</label>
+    <span class="sep ds-only"></span>
+    <button class="ds-only" id="cvCmp" title="기존 시안 v4와 DS 적용 시안만 나란히">⇆ v4와 비교</button>
+    <button id="cvTkBtn">⌖ 토큰 검사</button>
+    <button class="ds-only" id="cvDark">다크</button>
+  </div>
   <div class="cl-left">
     <div class="cl-col asis">
       <div class="cl-cap">현행 <small>가상 데이터로 다시 그린 와이어프레임 · 직접 눌러 볼 수 있음</small></div>
@@ -1283,6 +1309,10 @@ html.app-only .c2-head{min-height:56px}
     <div class="cl-col new" id="colCalB" hidden>
       <div class="cl-cap">시안 B (캘린더 내 텍스트 표기형) <small>달력 셀 안에 고객명을 직접 표시 · 날짜 클릭 시 하단 요약</small></div>
       <div class="cl-frame"><div class="cl-app" id="appCalB"></div></div>
+    </div>
+    <div class="cl-col new" id="colDs" hidden>
+      <div class="cl-cap">디자인시스템 적용 시안 <small>토큰으로 바꾼 같은 시안 · 따로 눌러 이동</small></div>
+      <div class="cl-frame"><div class="cl-app"><iframe id="dsFrame" title="디자인시스템 적용 시안" style="width:100%;height:100%;border:0;display:block;background:var(--gray-0)"></iframe></div></div>
     </div>
     <aside class="cl-col fb" id="fbPanel"></aside>
   </div>
@@ -1953,9 +1983,9 @@ function sheetHTML(){
     <div class="t-foot"><button class="cl-apply" data-a="cal-add-save">저장</button></div>`;
   }
   if(S.sheet === 'cal-month'){
-    const cur = S.calMonth || 11;
-    return `<i class="c2-grip"></i><div class="cl-sh-head"><h2>2026년</h2><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
-    <div class="cl-sh-body"><div class="c2-sgrid" style="grid-template-columns:repeat(3,1fr)">${Array.from({length:12}, (_, i) => `<button class="c2-sopt ${cur === i + 1 ? 'on' : ''}" data-a="cal-m" data-v="${i + 1}" style="justify-content:center">${i + 1}월</button>`).join('')}</div></div>`;
+    const cur = S.calMonth || 11, Y = S.calYear || 2026, py = S.calPickY || Y;
+    return `<i class="c2-grip"></i><div class="cl-sh-head"><div style="flex:1;display:flex;align-items:center;gap:var(--sp-4)"><button class="cl-ibtn" data-a="cal-y" data-v="-1" aria-label="이전 해">${ic('chevron_left')}</button><h2 style="min-width:76px;text-align:center">${py}년</h2><button class="cl-ibtn" data-a="cal-y" data-v="1" aria-label="다음 해">${ic('chevron_right')}</button></div><button class="cl-ibtn" data-a="sheet-x" aria-label="닫기">${ic('close')}</button></div>
+    <div class="cl-sh-body"><div class="c2-sgrid" style="grid-template-columns:repeat(3,1fr)">${Array.from({length:12}, (_, i) => `<button class="c2-sopt ${py === Y && cur === i + 1 ? 'on' : ''}" data-a="cal-m" data-v="${i + 1}" data-y="${py}" style="justify-content:center">${i + 1}월</button>`).join('')}</div></div>`;
   }
   if(S.sheet === 'cal-del'){
     const ev = S.calDel;
@@ -2101,12 +2131,12 @@ function calEvData(m){
   return out;
 }
 function calGrid(m){
-  const first = new Date(2026, m - 1, 1).getDay(), dim = new Date(2026, m, 0).getDate(), prev = new Date(2026, m - 1, 0).getDate();
+  const Y = S.calYear || 2026, first = new Date(Y, m - 1, 1).getDay(), dim = new Date(Y, m, 0).getDate(), prev = new Date(Y, m - 1, 0).getDate();
   const total = Math.ceil((first + dim) / 7) * 7, days = [], other = [];
   for(let i = 0; i < total; i++){ const n = i - first + 1; if(n < 1){ days.push(prev + n); other.push(true); } else if(n > dim){ days.push(n - dim); other.push(true); } else { days.push(n); other.push(false); } }
   return {days, other};
 }
-const calDow = (m, d) => ['일','월','화','수','목','금','토'][new Date(2026, m - 1, d).getDay()];
+const calDow = (m, d) => ['일','월','화','수','목','금','토'][new Date(S.calYear || 2026, m - 1, d).getDay()];
 const calDay0 = m => m === 10 ? 28 : 1;
 /* ───────── 홈 · 멤버 · 메뉴 (현행 화면을 참고해 v4 톤으로 다시 그림 · 모두 가상 데이터) ───────── */
 const PG_TABS = ['홈', '멤버', '메뉴'];
@@ -2576,9 +2606,9 @@ function pgAct(a, b){
 }
 
 function calHead(m){
-  const ar = (v, ico, lb) => `<button type="button" ${v < 1 || v > 12 ? 'disabled' : `data-a="cal-m" data-v="${v}"`} aria-label="${lb}" style="flex:none;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--cl-line);border-radius:var(--r-lg);background:var(--gray-0);color:${v < 1 || v > 12 ? 'var(--gray-300)' : '#4b5563'};cursor:pointer;padding:0"><svg class="cl-ic" style="font-size:var(--fs-title-m);color:inherit"><use href="#i-${ico}"/></svg></button>`;
+  const ar = (v, ico, lb) => `<button type="button" data-a="cal-m" data-v="${v}" aria-label="${lb}" style="flex:none;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--cl-line);border-radius:var(--r-lg);background:var(--gray-0);color:#4b5563;cursor:pointer;padding:0"><svg class="cl-ic" style="font-size:var(--fs-title-m);color:inherit"><use href="#i-${ico}"/></svg></button>`;
   const L = 'chevron_left', R = 'chevron_right';
-  const title = `<button type="button" data-a="cal-month-open" aria-label="월 선택" style="display:inline-flex;align-items:center;gap:var(--sp-8);padding:0 var(--sp-4) 0 var(--sp-2);border:0;background:transparent;font-size:var(--fs-title-l);font-weight:var(--fw-bold);letter-spacing:-.4px;color:var(--gray-950);cursor:pointer;white-space:nowrap">2026. ${pad2(m)}.<svg class="cl-ic" style="font-size:var(--fs-title-m);color:#4b5563"><use href="#i-keyboard_arrow_down"/></svg></button>`;
+  const title = `<button type="button" data-a="cal-month-open" aria-label="연·월 선택" style="display:inline-flex;align-items:center;gap:var(--sp-8);padding:0 var(--sp-4) 0 var(--sp-2);border:0;background:transparent;font-size:var(--fs-title-l);font-weight:var(--fw-bold);letter-spacing:-.4px;color:var(--gray-950);cursor:pointer;white-space:nowrap">${S.calYear || 2026}. ${pad2(m)}.<svg class="cl-ic" style="font-size:var(--fs-title-m);color:#4b5563"><use href="#i-keyboard_arrow_down"/></svg></button>`;
   const today = `<button type="button" data-a="cal-today" style="flex:none;height:30px;padding:0 var(--sp-12);margin-left:var(--sp-2);border-radius:var(--r-lg);border:1px solid var(--cl-line);background:var(--gray-0);color:var(--cl-ink);font-size:var(--fs-caption);font-weight:var(--fw-bold);cursor:pointer;white-space:nowrap">오늘</button>`;
   return `<div class="c2-head" style="background:var(--gray-0);gap:var(--sp-4)">${title}${ar(m - 1, L, '이전 달')}${ar(m + 1, R, '다음 달')}${today}<span style="flex:1"></span><button class="cl-ibtn" style="width:36px" data-a="search-on" aria-label="일정·고객 검색">${ic('search')}</button></div>`;
 }
@@ -2592,14 +2622,14 @@ function drawCalendar(){
   const d = S.calDay || calDay0(m);
   const ED = calEvData(m), dots = {};
   Object.keys(ED).forEach(k => dots[k] = [...new Set(ED[k].map(e => CAL_K[e.k].dot))]);
-  const evs = (ED[d] || []).map(e => ({t:calRange(e), title:e.title, p:e.p, memo:`${e.name} — ${e.title}`, nm:e.name, ci:e.ci, ttl:e.title, date:`2026-${pad2(m)}-${pad2(d)}`, h:e.h, mi:e.mi, dur:e.dur, site:e.site, note:e.memo, who:e.who, camp:'기본 캠페인', badge:CAL_K[e.k].badge}));
+  const evs = (ED[d] || []).map(e => ({t:calRange(e), title:e.title, p:e.p, memo:`${e.name} — ${e.title}`, nm:e.name, ci:e.ci, ttl:e.title, date:`${S.calYear || 2026}-${pad2(m)}-${pad2(d)}`, h:e.h, mi:e.mi, dur:e.dur, site:e.site, note:e.memo, who:e.who, camp:'기본 캠페인', badge:CAL_K[e.k].badge}));
   S.calEvs = evs;
   const G = calGrid(m), gridDays = G.days;
   const weeks = Array.from({length:gridDays.length/7}, (_, w) => w).map(w => {
     const row = gridDays.slice(w*7, w*7+7).map((n, dow) => {
       const idx = w*7 + dow;
       const other = G.other[idx];
-      const isToday = m === 11 && !other && n === 17;
+      const isToday = (S.calYear || 2026) === 2026 && m === 11 && !other && n === 17;
       const sel = !other && n === d;
       const ds = !other && dots[n] ? dots[n] : [];
       const col = other ? 'var(--gray-300)' : isToday ? 'var(--gray-0)' : sel ? 'var(--gray-950)' : dow === 0 ? 'var(--red-500)' : dow === 6 ? 'var(--blue-500)' : 'var(--gray-950)';
@@ -2655,7 +2685,7 @@ function calWeeksB(m, d){
     const row = gridDays.slice(w*7, w*7+7).map((n, dow) => {
       const idx = w*7 + dow;
       const other = G.other[idx];
-      const isToday = m === 11 && !other && n === 17;
+      const isToday = (S.calYear || 2026) === 2026 && m === 11 && !other && n === 17;
       const sel = !other && n === d;
       const items = !other && cellMap[n] ? cellMap[n] : [];
       const col = other ? 'var(--gray-400)' : isToday ? 'var(--gray-0)' : dow === 0 ? 'var(--red-500)' : dow === 6 ? '#0284c7' : 'var(--gray-950)';
@@ -2898,7 +2928,8 @@ const onAppClick = e => {
   else if(a === 'dst-pick'){ const c = C[S.detail]; if(c.st !== b.dataset.k){ c.st = b.dataset.k; c.stAt = stampNow(c); } S.sheet = false; draw(); toast(`상태를 「${c.st}」(으)로 바꿨습니다`); }
   else if(a === 'nav-tab'){ S.navTab = b.dataset.v; S.sub = null; draw(); }
   else if(a === 'cal-day'){ S.calDay = +b.dataset.v; draw(); }
-  else if(a === 'cal-m'){ S.calMonth = +b.dataset.v; S.calDay = calDay0(+b.dataset.v); S.sheet = false; draw(); }
+  else if(a === 'cal-m'){ let y = +(b.dataset.y || S.calYear || 2026), mo = +b.dataset.v; if(mo < 1){ mo = 12; y--; } if(mo > 12){ mo = 1; y++; } S.calYear = y; S.calMonth = mo; S.calDay = calDay0(mo); S.calPickY = null; S.sheet = false; draw(); }
+  else if(a === 'cal-y'){ S.calPickY = (S.calPickY || S.calYear || 2026) + +b.dataset.v; draw(); }
   else if(a === 'pg-sub'){ S.sub = b.dataset.v; draw(); }
   else if(a === 'pg-plat'){ S.sheet = a; draw(); }
   else if(a === 'pg-per'){ const r = pgRangeOf(); S.pgDp = {y:+r.e.slice(0, 4), m:+r.e.slice(5, 7), s:r.s, e:r.e}; S.sheet = 'pg-per'; draw(); }
@@ -2913,8 +2944,8 @@ const onAppClick = e => {
   else if(a === 'pg-theme'){ S.pgTheme = b.dataset.v; draw(); toast(`${b.dataset.v} 테마로 바꿉니다 (시안에서는 화면이 바뀌지 않습니다)`); }
   else if(a === 'pg-restore' || a === 'pg-purge'){ const l = S.pgTrash || [{n:'변가은', c:'기본 캠페인', p:'메타', o:'임하린', d:'2026. 10. 26.'}, {n:'배준호', c:'기본 캠페인', p:'메타', o:'임하린', d:'2026. 10. 26.'}]; const [x] = l.splice(+b.dataset.i, 1); S.pgTrash = l; draw(); toast(`${x.n} 고객을 ${a === 'pg-restore' ? '복원' : '영구 삭제'}했습니다.`); }
   else if(a === 'pg-save'){ toast('프로필을 저장했습니다.'); }
-  else if(a === 'cal-month-open'){ S.sheet = 'cal-month'; draw(); }
-  else if(a === 'cal-today'){ S.calMonth = 11; S.calDay = 17; draw(); }
+  else if(a === 'cal-month-open'){ S.calPickY = null; S.sheet = 'cal-month'; draw(); }
+  else if(a === 'cal-today'){ S.calYear = 2026; S.calMonth = 11; S.calDay = 17; draw(); }
   else if(a === 'cal-vac'){ S.sheet = 'cal-vac'; draw(); }
   else if(a === 'cal-add'){ S.calEdit = null; S.sheet = 'cal-add'; draw(); }
   else if(a === 'cal-ev-edit'){ const ev = (S.calEvs || [])[+b.dataset.i]; S.calVisitCi = ev.ci; S.visitEdit = true; S.visit = {date:ev.date, start:ev.h * 60 + ev.mi, dur:ev.dur, own:C[ev.ci].own, memo:ev.note || ''}; S.sheet = 'visit'; draw(); visitCenter(); }
@@ -2936,9 +2967,10 @@ $('appCalB').addEventListener('click', e => {
   else {
     const a = b.dataset.a;
     if(a === 'cal-day'){ S.calDay = +b.dataset.v; draw(); }
-    else if(a === 'cal-m'){ S.calMonth = +b.dataset.v; S.calDay = calDay0(+b.dataset.v); S.sheet = false; draw(); }
-    else if(a === 'cal-month-open'){ S.sheet = 'cal-month'; draw(); }
-  else if(a === 'cal-today'){ S.calMonth = 11; S.calDay = 17; draw(); }
+    else if(a === 'cal-m'){ let y = +(b.dataset.y || S.calYear || 2026), mo = +b.dataset.v; if(mo < 1){ mo = 12; y--; } if(mo > 12){ mo = 1; y++; } S.calYear = y; S.calMonth = mo; S.calDay = calDay0(mo); S.calPickY = null; S.sheet = false; draw(); }
+  else if(a === 'cal-y'){ S.calPickY = (S.calPickY || S.calYear || 2026) + +b.dataset.v; draw(); }
+    else if(a === 'cal-month-open'){ S.calPickY = null; S.sheet = 'cal-month'; draw(); }
+  else if(a === 'cal-today'){ S.calYear = 2026; S.calMonth = 11; S.calDay = 17; draw(); }
     else if(a === 'nav-tab'){ S.navTab = b.dataset.v; S.sub = null; draw(); }
   }
 });
@@ -3637,5 +3669,75 @@ setVer('v4');
 })(location.hash.slice(1));
 </script>
 <script>/* 요소 선택 도구는 내 컴퓨터에서 열 때만 불러온다 */if(location.protocol === 'file:' || /^(localhost|127\.)/.test(location.hostname)){ const s = document.createElement('script'); s.src = 'pick.js'; document.body.appendChild(s); }</script>
+
+<style>
+#tkbar{position:fixed;right:16px;bottom:16px;z-index:99999;display:flex;gap:4px;padding:4px;border-radius:12px;background:#111418;box-shadow:0 8px 24px rgba(0,0,0,.3);font:600 12px/1 var(--font-sans)}
+#tkbar button{height:32px;padding:0 12px;border-radius:8px;color:#B4BAC5}#tkbar button.on{background:#2B6FF3;color:#fff}
+#tkbox{position:fixed;pointer-events:none;z-index:99997;border:2px solid #2B6FF3;background:rgba(43,111,243,.08);display:none}
+#tkbox span{position:absolute;top:-22px;left:-2px;padding:2px 6px;background:#2B6FF3;color:#fff;font:600 11px/16px var(--font-mono);white-space:nowrap;border-radius:4px}
+#tkp{position:fixed;right:16px;top:16px;bottom:72px;width:340px;z-index:99998;overflow:auto;border-radius:12px;background:#fff;color:#111418;box-shadow:0 12px 32px rgba(0,0,0,.25);font:12px/1.5 var(--font-sans);display:none}
+#tkp header{position:sticky;top:0;padding:12px 16px;background:#fff;border-bottom:1px solid #E6E9EE}#tkp header b{display:block;font:700 13px var(--font-mono);word-break:break-all}#tkp header small{color:#6B7280}
+#tkp h6{margin:12px 16px 4px;font-size:11px;color:#6B7280}
+#tkp .r{display:grid;grid-template-columns:96px 1fr;gap:8px;padding:6px 16px;border-top:1px solid #F2F4F7}#tkp .r>span{color:#6B7280;word-break:break-all}
+#tkp .ch{display:flex;flex-wrap:wrap;align-items:center;gap:4px}#tkp .ch code{padding:1px 6px;border-radius:4px;font:11px var(--font-mono)}
+#tkp .c3{background:#F0EAFF;color:#5B33D6}#tkp .c2{background:#EAF1FF;color:#2541A0}#tkp .c1{background:#F2F4F7;color:#4A5160}#tkp .raw{background:#FFF0E5;color:#C2410C}
+#tkp .sw{width:14px;height:14px;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+#tkp .lg{display:flex;gap:6px;padding:8px 16px;flex-wrap:wrap}
+</style>
+<div id="tkbox"><span></span></div><div id="tkp"></div>
+<div id="tkbar" style="display:none!important"><button id="tkon">⌖ 토큰 검사</button><button id="tkth">다크</button></div>
+<script>
+(()=>{
+const box=document.getElementById('tkbox'),P=document.getElementById('tkp'),on=document.getElementById('tkon');let act=false,pin=null;
+const raw={};[...document.querySelectorAll('style')].forEach(st=>{const t=st.textContent;[':root{','[data-theme="dark"]{'].forEach(sel=>{const i=t.indexOf(sel);if(i<0)return;const b=t.slice(i+sel.length,t.indexOf('\n}',i));const o=raw[sel]=raw[sel]||{};b.replace(/--([\w-]+)\s*:\s*([^;]+);/g,(m,k,v)=>{o[k]=v.trim()})})});
+const prim=k=>/^(gray|blue|red|green|orange|purple|magenta|indigo|pink|teal|cyan|amber|yellow)-\d+$/.test(k);
+const sem=k=>/^(bg|text|border|brand|danger|success|warning|overlay|shadow|fs|fw|r|sp|font)-/.test(k);
+const tier=k=>prim(k)?1:sem(k)?2:3;
+const chain=(k,el)=>{const out=[];const dark=!!el.closest('[data-theme="dark"]');let cur=k,g=0;while(cur&&g++<6){out.push(cur);const v=(dark&&raw['[data-theme="dark"]']?.[cur]!==undefined?raw['[data-theme="dark"]'][cur]:raw[':root{']?.[cur])||'';const m=/^var\(--([\w-]+)\)$/.exec(v);cur=m?m[1]:null;if(!m&&v)out.push('='+v)}return out};
+const tag=(k,el)=>{const c=chain(k,el);return c.map(x=>x[0]==='='?`<code class="c1">${x.slice(1)}</code>`:`<code class="c${tier(x)}">${x}</code>`).join(' → ')};
+function rules(el){const r=[];const walk=list=>{for(const x of list){if(x.cssRules&&!x.selectorText){walk(x.cssRules);continue}if(!x.selectorText)continue;let ok=false;try{ok=el.matches(x.selectorText)}catch(e){}if(ok)r.push(x)}};for(const sh of document.styleSheets){try{walk(sh.cssRules)}catch(e){}}return r}
+const KEY=/^(color|background|background-color|border|border-[\w-]*|outline|box-shadow|font|font-size|font-weight|border-radius|padding|padding-[\w-]+|margin|margin-[\w-]+|gap|row-gap|column-gap|fill|stroke)$/;
+let show=function(el){const decl={};rules(el).forEach(r=>{const body=r.cssText.slice(r.cssText.indexOf('{')+1,r.cssText.lastIndexOf('}'));body.split(/;(?![^(]*\))/).forEach(d=>{const i=d.indexOf(':');if(i<0)return;const p=d.slice(0,i).trim(),v=d.slice(i+1).trim();if(p&&!p.startsWith('--')&&KEY.test(p))decl[p]=v})});
+ (el.getAttribute('style')||'').split(/;(?![^(]*\))/).forEach(d=>{const i=d.indexOf(':');if(i<0)return;const p=d.slice(0,i).trim(),v=d.slice(i+1).trim();if(KEY.test(p))decl[p]=v+' '});
+ const tok=[],rw=[];Object.entries(decl).forEach(([p,v])=>{const ks=[...v.matchAll(/var\(--([\w-]+)/g)].map(m=>m[1]);if(ks.length)tok.push(`<div class="r"><span>${p}</span><div class="ch">${ks.map(k=>tag(k,el)).join('<br>')}</div></div>`);else if(/\d|#|rgb/.test(v)&&!/^(0|none|0px|auto|inherit)\s*$/.test(v.trim()))rw.push(`<div class="r"><span>${p}</span><div class="ch"><code class="raw">${v.trim()}</code></div></div>`)});
+ const cs=getComputedStyle(el),cls=[...el.classList].join('.');
+ P.innerHTML=`<header><b>${el.tagName.toLowerCase()}${cls?'.'+cls:''}</b><small>${Math.round(el.getBoundingClientRect().width)}×${Math.round(el.getBoundingClientRect().height)} · ${el.closest('[data-theme="dark"]')?'다크':'라이트'} · <span class="sw" style="display:inline-block;vertical-align:middle;background:${cs.backgroundColor}"></span> <span class="sw" style="display:inline-block;vertical-align:middle;background:${cs.color}"></span></small></header><div class="lg"><code class="c3">Component</code><code class="c2">Semantic</code><code class="c1">Primitive · 값</code><code class="raw">토큰 아님</code></div><h6>사용된 토큰 (${tok.length})</h6>${tok.join('')||'<div class="r"><span>없음</span></div>'}<h6>직접 쓴 값 (${rw.length})</h6>${rw.join('')||'<div class="r"><span>없음</span></div>'}<h6>계산된 값</h6><div class="r"><span>font</span><div>${cs.fontSize} / ${cs.fontWeight}</div></div><div class="r"><span>color</span><div>${cs.color}</div></div><div class="r"><span>background</span><div>${cs.backgroundColor}</div></div><div class="r"><span>radius</span><div>${cs.borderRadius}</div></div><div class="r"><span>padding</span><div>${cs.padding}</div></div>`;P.style.display='block'};
+const emb=false;window.TK_SCOPE='#colNew .cl-app,#colCalB .cl-app';window.TK_OUT=h=>{document.getElementById('cvTkIn').innerHTML=h};if(emb){document.getElementById('tkbar').style.display='none';P.style.cssText+='visibility:hidden;position:absolute;left:-9999px'}
+const _show=show;show=el=>{_show(el);if(emb)parent.postMessage({tkHTML:P.innerHTML},'*');if(window.TK_OUT){P.style.display='none';window.TK_OUT(P.innerHTML)}};
+addEventListener('message',e=>{const d=e.data||{};if(d.tk==='on'&&!act)on.click();if(d.tk==='off'&&act)on.click();if(d.theme){const dk=d.theme==='dark';if(dk)document.documentElement.dataset.theme='dark';else delete document.documentElement.dataset.theme}});
+const skip=t=>t.closest('#tkbar,#tkp,#cvTk,#cvBar')||(window.TK_SCOPE&&!t.closest(window.TK_SCOPE));window.tkSet=v=>{if(!!v!==act)on.click()};
+const hl=el=>{const r=el.getBoundingClientRect();Object.assign(box.style,{display:'block',left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});box.firstChild.textContent=el.tagName.toLowerCase()+(el.classList[0]?'.'+el.classList[0]:'')};
+document.addEventListener('mouseover',e=>{if(!act||skip(e.target))return;hl(e.target)},true);
+['click','mousedown','mouseup','pointerdown','pointerup'].forEach(t=>document.addEventListener(t,e=>{if(!act||skip(e.target))return;e.preventDefault();e.stopPropagation();if(t==='click'){pin=e.target;show(pin);hl(pin)}},true));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&act)on.click()});
+on.onclick=()=>{act=!act;on.classList.toggle('on',act);if(!act){box.style.display='none';P.style.display='none'}};
+const th=document.getElementById('tkth');th.onclick=()=>{const d=document.documentElement.dataset.theme==='dark';if(d)delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme='dark';th.classList.toggle('on',!d);document.body.style.background=d?'':'#000'};
+})();
+</script>
+<div id="cvTk"><button class="x" onclick="cvTkOff()">✕</button><div id="cvTkIn"><div class="cv-empty">시안에서 요소를 누르면<br>쓰인 토큰이 여기에 나옵니다.</div></div></div>
+<script>
+(()=>{
+  const B=document.body, bar=document.getElementById('cvBar'), col=document.getElementById('colDs'), fr=document.getElementById('dsFrame');
+  const tkB=document.getElementById('cvTkBtn'), dk=document.getElementById('cvDark'), tk=document.getElementById('cvTk'), cmp=document.getElementById('cvCmp');
+  const box=k=>bar.querySelector(`[data-cv=${k}]`);
+  const send=m=>{try{fr.contentWindow.postMessage(m,'*')}catch(e){}};
+  const apply=()=>{
+    B.classList.toggle('cv-hide-asis',!box('asis').checked); B.classList.toggle('cv-hide-new',!box('new').checked);
+    const on=box('ds').checked; B.classList.toggle('cv-ds',on); col.hidden=!on;
+    if(on&&!fr.src) fr.src='ds-applied.html?app';
+    
+    try{localStorage.setItem('cv',JSON.stringify(['asis','new','ds'].map(k=>box(k).checked)))}catch(e){}
+  };
+  try{const v=JSON.parse(localStorage.getItem('cv')||'null');if(v)['asis','new','ds'].forEach((k,i)=>box(k).checked=v[i])}catch(e){}
+  bar.addEventListener('change',apply);
+  cmp.onclick=()=>{box('asis').checked=false;box('new').checked=true;box('ds').checked=true;apply()};
+  window.cvTkOff=()=>{tk.classList.remove('on');tkB.classList.remove('on');send({tk:'off'});window.tkSet&&tkSet(false)};
+  tkB.onclick=()=>{if(tkB.classList.contains('on'))return cvTkOff();tkB.classList.add('on');tk.classList.add('on');send({tk:'on'});window.tkSet&&tkSet(true)};
+  dk.onclick=()=>{const d=!dk.classList.contains('on');dk.classList.toggle('on',d);send({theme:d?'dark':'light'});fr.parentNode.style.background=d?'#0E1014':''};
+  fr.addEventListener('load',()=>{if(tkB.classList.contains('on'))send({tk:'on'});if(dk.classList.contains('on'))send({theme:'dark'})});
+  addEventListener('message',e=>{if(e.data&&e.data.tkHTML)document.getElementById('cvTkIn').innerHTML=e.data.tkHTML});
+  apply();
+})();
+</script>
 </body>
 </html>
